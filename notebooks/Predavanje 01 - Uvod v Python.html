@@ -1,0 +1,2708 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Uvod v Python &#8212; Numerične metode v ekosistemu Pythona</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Funkcije, izjeme, moduli" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html" />
+    <link rel="prev" title="Študijski in izpitni red" href="Numeri%C4%8Dne%20metode%20-%20%C5%A1tudijski%20in%20izpitni%20red.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Numerične metode v ekosistemu Pythona</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Predgovor
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Numeri%C4%8Dne%20metode%20-%20%C5%A1tudijski%20in%20izpitni%20red.html">
+   Študijski in izpitni red
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Uvod v Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">
+   Funkcije, izjeme, moduli
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">
+   Numpy, matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">
+   Objektno programiranje, simbolno računanje
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">
+   Sistemi linearnih enačb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">
+   Sistemi linearnih enačb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">
+   Interpolacija
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">
+   Aproksimacija
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">
+   Reševanje enačb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">
+   Reševanje enačb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">
+   Numerično integriranje
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">
+   Numerično reševanje diferencialnih enačb - začetni problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">
+   Numerično reševanje diferencialnih enačb - robni problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">
+   Testiranje pravilnosti kode, uporabniški vmesnik
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jankoslavic/pynm/master?urlpath=tree/notebooks/notebooks/Predavanje 01 - Uvod v Python.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jankoslavic/pynm"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jankoslavic/pynm/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Predavanje 01 - Uvod v Python.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/Predavanje 01 - Uvod v Python.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Uvod v Python
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kaj-je-ekosistem-pythona">
+     Kaj je ekosistem Pythona?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kdo-se-uci-python-zakaj-ga-uporabljati">
+     Kdo se uči Python, zakaj ga uporabljati?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#uporaba-pythona">
+       Uporaba Pythona?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#python-vs-matlab">
+       Python vs Matlab
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#namestitev-pythona">
+     Namestitev Pythona
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#uporaba-githuba-repozitorija-in-posodobitve">
+       Uporaba githuba repozitorija in posodobitve
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#visual-studio-code">
+       Visual Studio Code
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#namescanje-dodatkov-in-posodobitev">
+       Nameščanje dodatkov in posodobitev
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-notebook-jupyter-lab">
+     Jupyter notebook (Jupyter lab)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#markdown">
+       Markdown
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prvi-program-in-pep">
+     Prvi program in PEP
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pep-python-enhancements-proposal">
+       PEP - Python Enhancements Proposal
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#pep8">
+         PEP8
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#pep20">
+         PEP20
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#osnove-pythona">
+   Osnove Pythona
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#osnovni-podatkovni-tipi-in-operatorji">
+     Osnovni podatkovni tipi in operatorji
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dinamicno-tipiziranje">
+       Dinamično tipiziranje
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#logicni-operatorji">
+       Logični operatorji
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#primerjalni-operatorji">
+       Primerjalni operatorji
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#podatkovni-tipi-za-numericne-vrednosti">
+       Podatkovni tipi za numerične vrednosti
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operatorji-numericnih-vrednosti">
+       Operatorji numeričnih vrednosti
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operatorji-na-nivoju-bitov">
+       Operatorji na nivoju bitov
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sestavljene-podatkovne-strukture">
+     Sestavljene podatkovne strukture
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#niz-string">
+       Niz (string)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#terka-tuple">
+       Terka (tuple)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#seznam-list">
+       Seznam (list)
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#izbrane-operacije-nad-seznami">
+         Izbrane operacije nad seznami
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#zakaj-uporabiti-terko-in-ne-seznama">
+         Zakaj uporabiti terko in ne seznama?
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mnozice-sets">
+       Množice (Sets)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#slovar-dictionary">
+       Slovar (dictionary)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operacije-nad-sestavljenimi-podatkovnimi-strukturami">
+       Operacije nad sestavljenimi podatkovnimi strukturami
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stetje-in-rezanje-sestavljenih-podatkovnih-struktur">
+       Štetje in rezanje sestavljenih podatkovnih struktur
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kontrola-toka-programa">
+     Kontrola toka programa
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stavek-if">
+       Stavek
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         if
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#izraz-if">
+       Izraz
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         if
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#zanka-while">
+       Zanka
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         while
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#zanka-for">
+       Zanka
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         for
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#funkcija-zip">
+       Funkcija
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         zip
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#funkcija-range">
+       Funkcija
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         range
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#funkcija-enumerate">
+       Funkcija
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         enumerate
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#za-konec-plonk-list">
+     Za konec: plonk list :)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">
+   Nekaj vprašanj za razmislek!
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vkljucevanje-lokalnega-video-posnetka-s-transformacijami">
+     Vključevanje lokalnega video posnetka s transformacijami
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Uvod v Python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Uvod v Python
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kaj-je-ekosistem-pythona">
+     Kaj je ekosistem Pythona?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kdo-se-uci-python-zakaj-ga-uporabljati">
+     Kdo se uči Python, zakaj ga uporabljati?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#uporaba-pythona">
+       Uporaba Pythona?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#python-vs-matlab">
+       Python vs Matlab
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#namestitev-pythona">
+     Namestitev Pythona
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#uporaba-githuba-repozitorija-in-posodobitve">
+       Uporaba githuba repozitorija in posodobitve
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#visual-studio-code">
+       Visual Studio Code
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#namescanje-dodatkov-in-posodobitev">
+       Nameščanje dodatkov in posodobitev
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-notebook-jupyter-lab">
+     Jupyter notebook (Jupyter lab)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#markdown">
+       Markdown
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prvi-program-in-pep">
+     Prvi program in PEP
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pep-python-enhancements-proposal">
+       PEP - Python Enhancements Proposal
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#pep8">
+         PEP8
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#pep20">
+         PEP20
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#osnove-pythona">
+   Osnove Pythona
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#osnovni-podatkovni-tipi-in-operatorji">
+     Osnovni podatkovni tipi in operatorji
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dinamicno-tipiziranje">
+       Dinamično tipiziranje
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#logicni-operatorji">
+       Logični operatorji
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#primerjalni-operatorji">
+       Primerjalni operatorji
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#podatkovni-tipi-za-numericne-vrednosti">
+       Podatkovni tipi za numerične vrednosti
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operatorji-numericnih-vrednosti">
+       Operatorji numeričnih vrednosti
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operatorji-na-nivoju-bitov">
+       Operatorji na nivoju bitov
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sestavljene-podatkovne-strukture">
+     Sestavljene podatkovne strukture
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#niz-string">
+       Niz (string)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#terka-tuple">
+       Terka (tuple)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#seznam-list">
+       Seznam (list)
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#izbrane-operacije-nad-seznami">
+         Izbrane operacije nad seznami
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#zakaj-uporabiti-terko-in-ne-seznama">
+         Zakaj uporabiti terko in ne seznama?
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mnozice-sets">
+       Množice (Sets)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#slovar-dictionary">
+       Slovar (dictionary)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operacije-nad-sestavljenimi-podatkovnimi-strukturami">
+       Operacije nad sestavljenimi podatkovnimi strukturami
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stetje-in-rezanje-sestavljenih-podatkovnih-struktur">
+       Štetje in rezanje sestavljenih podatkovnih struktur
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kontrola-toka-programa">
+     Kontrola toka programa
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stavek-if">
+       Stavek
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         if
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#izraz-if">
+       Izraz
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         if
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#zanka-while">
+       Zanka
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         while
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#zanka-for">
+       Zanka
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         for
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#funkcija-zip">
+       Funkcija
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         zip
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#funkcija-range">
+       Funkcija
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         range
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#funkcija-enumerate">
+       Funkcija
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         enumerate
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#za-konec-plonk-list">
+     Za konec: plonk list :)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">
+   Nekaj vprašanj za razmislek!
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vkljucevanje-lokalnega-video-posnetka-s-transformacijami">
+     Vključevanje lokalnega video posnetka s transformacijami
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="uvod-v-python">
+<h1>Uvod v Python<a class="headerlink" href="#uvod-v-python" title="Permalink to this headline">#</a></h1>
+<section id="kaj-je-ekosistem-pythona">
+<h2>Kaj je ekosistem Pythona?<a class="headerlink" href="#kaj-je-ekosistem-pythona" title="Permalink to this headline">#</a></h2>
+<p>Marsikaterega bralca beseda <em>ekosistem</em> zmoti/zmede. <a class="reference external" href="http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika/3539971/ekosistem?page=4&amp;Query=sistem&amp;All=sistem&amp;FilteredDictionaryIds=130&amp;View=1">Slovar slovenskega knjižnega jezika</a> danes pozna samo rabo v povezavi z ekologijo. V računalništvu pa se v zadnjih desetletjih beseda ekosistem uporablja tudi v kontekstu t. i. digitalnega ekosistema; v primeru Pythona to pomeni vso množico različih paketov (samo <a class="reference external" href="https://pypi.org">pypi.org</a> trenutno hrani več kot 330 tisoč različnih paketov), ki temeljijo na programskem jeziku Python in so med seboj povezani.</p>
+<p><strong>Ekosistem Pythona je veliko več kot pa samo programski jezik Python!</strong> Ta knjiga se v okviru prvih štirih predavanj osredotoča na tisti del tega ekosistema, ki je zanimiv in koristen predvsem za inženirske poklice.</p>
+<p>Python je <strong>visokonivojski</strong> programski jezik, z visokim nivojim abstrakcije. <strong>Nizkonivojski</strong> programski jeziki, v nasprotju, imajo nizek nivo abstrakcije (npr. strojna koda).</p>
+<p>Poglemo si izračun <a class="reference external" href="http://sl.wikipedia.org/wiki/Fibonaccijevo_%C5%A1tevilo">Fibonaccijevega števila</a>, ki sledi definiciji:
+$<span class="math notranslate nohighlight">\(F_1 = F_2 = 1\qquad\textrm{in}\qquad F_n = F_{n-1} + F_{n-2}.\)</span>$</p>
+<p>Izračun <span class="math notranslate nohighlight">\(F_n\)</span> v <a class="reference external" href="http://en.wikipedia.org/wiki/Low-level_programming_language">strojni kodi</a>:
+<img width=400 src="./fig/strojna_koda.png"></p>
+<p>MASM koda
+<img width=400 src="./fig/mash_koda.png"></p>
+<p>C</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">Fibonacci</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="k">else</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Fibonacci</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Fibonacci</span><span class="p">(</span><span class="n">n</span><span class="mi">-2</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>Python</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">števila</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="c1"># seznam števil</span>
+<span class="p">[</span><span class="n">število</span><span class="o">*</span><span class="mi">2</span> <span class="k">for</span> <span class="n">število</span> <span class="ow">in</span> <span class="n">števila</span> <span class="k">if</span> <span class="n">število</span><span class="o">&gt;</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[8, 10]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python omogoča visok nivo abstrakcije in zato abstraktno kodo. Sedaj si bomo pogledali primer kode Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">števila</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="c1"># seznam števil</span>
+<span class="p">[</span><span class="n">število</span> <span class="k">for</span> <span class="n">število</span> <span class="ow">in</span> <span class="n">števila</span> <span class="k">if</span> <span class="n">število</span><span class="o">%</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Čeprav v tem trenutku še nimamo dovolj znanja, poskusimo razumeti/prebrati:</p>
+<ol class="simple">
+<li><p>prva vrstica definira seznam števil; vse kar sledi znaku # pa predstavlja komentar</p></li>
+<li><p>rezultat druge vrstice je seznam, kar definirata oglata oklepaja; znotraj oklepaja beremo:</p>
+<ul class="simple">
+<li><p>vrni <code class="docutils literal notranslate"><span class="pre">število</span></code> za vsako (<strong>for</strong>) <code class="docutils literal notranslate"><span class="pre">število</span></code> v (<strong>in</strong>) seznamu <code class="docutils literal notranslate"><span class="pre">števila</span></code>, če (<strong>if</strong>) je pri deljenju <code class="docutils literal notranslate"><span class="pre">število</span></code> z 2 ostanek 1.</p></li>
+</ul>
+</li>
+</ol>
+<p>Vidimo, da je nivo abstrakcije res visok, saj smo potrebovali veliko besed, da smo pojasnili vsebino!</p>
+<p>Poglejmo rezultat:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">števila</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="c1"># seznam števil</span>
+<span class="p">[</span><span class="n">število</span> <span class="k">for</span> <span class="n">število</span> <span class="ow">in</span> <span class="n">števila</span> <span class="k">if</span> <span class="n">število</span><span class="o">%</span><span class="k">2</span>]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 3, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kratek pregled začetkov nekaterih programskih jezikov:</p>
+<ul class="simple">
+<li><p>1957 Fortran, * 1970 Pascal, * 1972 C</p></li>
+<li><p>1980 C++, * 1984 Matlab, * 1986 Objective-C</p></li>
+<li><p><strong>1991 Python</strong>, * 1995 Java, * 1995 Delphi</p></li>
+<li><p>2009 Go, 2012 Julija</p></li>
+</ul>
+</section>
+<section id="kdo-se-uci-python-zakaj-ga-uporabljati">
+<h2>Kdo se uči Python, zakaj ga uporabljati?<a class="headerlink" href="#kdo-se-uci-python-zakaj-ga-uporabljati" title="Permalink to this headline">#</a></h2>
+<p><strong>ZDA</strong></p>
+<p><a class="reference external" href="http://goo.gl/mJC1P8">Python je jezik, ki se ga najpogosteje učijo na najboljših Ameriških univerzah.</a>
+<img width=400 src="./fig/Top39-700.4.png"></p>
+<p>Na univerzi Berkeley v <a class="reference external" href="https://youtu.be/xuNj5paMuow?t=13m18s">začetku študijskega leta 2017/18</a> (več kot 1200 študentov pri predmetu <em>Data science</em>, ki temelji na tehnologiji Jupyter notebook).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">blockquote</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;twitter-tweet&quot;</span> <span class="na">data-lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;&lt;</span><span class="nt">p</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">dir</span><span class="o">=</span><span class="s">&quot;ltr&quot;</span><span class="p">&gt;</span>First day of class in Foundations of <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://twitter.com/hashtag/Datascience?src=hash&quot;</span><span class="p">&gt;</span>#Datascience<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> for <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://twitter.com/BerkeleyDataSci&quot;</span><span class="p">&gt;</span>@BerkeleyDataSci<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> - all materials at <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://t.co/yyoJbaKlnL&quot;</span><span class="p">&gt;</span>https://t.co/yyoJbaKlnL<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://t.co/J6DLd0VQTl&quot;</span><span class="p">&gt;</span>pic.twitter.com/J6DLd0VQTl<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span><span class="ni">&amp;mdash;</span> Cathryn Carson (@CathrynCarson) <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://twitter.com/CathrynCarson/status/900408152348270592&quot;</span><span class="p">&gt;</span>August 23, 2017<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">async</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;//platform.twitter.com/widgets.js&quot;</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">First day of class in Foundations of <a href="https://twitter.com/hashtag/Datascience?src=hash">#Datascience</a> for <a href="https://twitter.com/BerkeleyDataSci">@BerkeleyDataSci</a> - all materials at <a href="https://t.co/yyoJbaKlnL">https://t.co/yyoJbaKlnL</a> <a href="https://t.co/J6DLd0VQTl">pic.twitter.com/J6DLd0VQTl</a></p>&mdash; Cathryn Carson (@CathrynCarson) <a href="https://twitter.com/CathrynCarson/status/900408152348270592">August 23, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></div>
+</div>
+<p>Python v zadnjih 10 letih pospešeno pridobiva na popularnosti in je danes eden od najboljših (<a class="reference external" href="https://spectrum.ieee.org/top-programming-languages/#toggle-gdpr">IEEE Spectrum</a>.) in tudi najpopularnejših programskih jezikov (<a class="reference external" href="https://stackoverflow.blog/2017/09/14/python-growing-quickly/">Why is Python Growing so Quickly?</a> in <a class="reference external" href="https://www.techrepublic.com/article/programming-languages-pythons-growth-is-absolutely-explosive-says-anaconda-ceo-and-not-slowing-down/">Python’s explosive growth</a>).</p>
+<p><strong>Slovenija</strong></p>
+<ul class="simple">
+<li><p>FRI: <a class="reference external" href="https://ucilnica.fri.uni-lj.si/course/view.php?id=166">Programiranje 1</a></p></li>
+<li><p>FMF: Naloge na <a class="reference external" href="https://www.projekt-tomo.si">www.projekt-tomo.si</a>, poiščite: Prvi koraki v Python, Drugi koraki v Python, Python za začetnike</p></li>
+</ul>
+<p><strong>FS</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://lab.fs.uni-lj.si/ladisk/?what=incfl&amp;flnm=NM.php">Numerične metode</a></p></li>
+<li><p><a class="reference external" href="http://lab.fs.uni-lj.si/ladisk/?what=incfl&amp;flnm=PiNM.php">Programiranje in numerične metode</a></p></li>
+<li><p><a class="reference external" href="http://hpc.fs.uni-lj.si/python-intro">Poletna šola HPC</a></p></li>
+</ul>
+<section id="uporaba-pythona">
+<h3>Uporaba Pythona?<a class="headerlink" href="#uporaba-pythona" title="Permalink to this headline">#</a></h3>
+<p>Nekatera mednarodna podjetja: <em>Nasa, Google, Cern</em>.</p>
+<p>Nekatera podjetja v Sloveniji: <em>Kolektor, Iskra Mehanizmi, Hidria, Mahle, Domel, ebm-papst Slovenia, Cimos, Eti.</em></p>
+<p>Nekateri programi, ki imajo vgrajeno skriptno podporo za Python: <em>Abaqus, Ansys Workbench, MSC (Adams, SimXpert), ParaView, LMS Siemens, AVL.</em></p>
+<p>Nekateri komercialni programi v Pythonu:  <em>BitTorrent, Dropbox.</em></p>
+<p>Obširni seznam je <a class="reference external" href="http://en.wikipedia.org/wiki/List_of_Python_software">tukaj</a>.</p>
+</section>
+<section id="python-vs-matlab">
+<h3>Python vs Matlab<a class="headerlink" href="#python-vs-matlab" title="Permalink to this headline">#</a></h3>
+<p>Ker ni bilo boljše možnosti, je bil v preteklosti na področju strojništva bolj popularen Matlab; Matlab je še vedno močno orodje, vendar je danes ekosistem Pythona za večino opravil  bistveno močnejše orodje. Na spletu boste našli ogromno primerjav, npr.: <a class="reference external" href="http://www.pyzo.org/python_vs_matlab.html">Python vs Matlab</a>.</p>
+<p>Kratka primerjave glede na <a class="reference external" href="http://www.southampton.ac.uk/~fangohr/training/python/pdfs/Python-for-Computational-Science-and-Engineering-slides.pdf">vir</a>:</p>
+<img width=500 src="./fig/py_comparison.png">
+<p>Sintaksa je načeloma zelo podobna. Pomembna razlika je, da se indeksi pri <strong>Matlabu</strong> začnejo z 1, v <strong>Pythonu</strong> pa z 0.</p>
+<p>Če ste mlajši od 25-30 let, preostanek te celice verjetno lahko preskočite.</p>
+<p>Če niste, ste se verjetno učili Matlab in se sprašujete zakaj je v vašem klubu čedalje manj članov. Verjetno je čas za prehod na Python; tukaj prispevek, ki vam lahko pomaga: <a class="reference external" href="https://realpython.com/matlab-vs-python/">MATLAB vs Python: Why and How to Make the Switch</a>.</p>
+</section>
+</section>
+<section id="namestitev-pythona">
+<h2>Namestitev Pythona<a class="headerlink" href="#namestitev-pythona" title="Permalink to this headline">#</a></h2>
+<p>Pojdite na <a class="reference external" href="https://www.anaconda.com/download/">www.anaconda.com</a> ter namestite <em>Anaconda</em> distribucijo Pythona; <em>pazite, da izberete verzijo 3.8 ali novejšo</em> (64 bit).</p>
+<p>Pripravili smo <a class="reference external" href="https://www.youtube.com/watch?v=Cp-IuyN67rQ">video navodila</a>, ključni poudarki so:</p>
+<ul class="simple">
+<li><p>namestitev distribucije Anaconda,</p></li>
+<li><p>obkljujkajte, da bo Visual Studio Code (pojasnjen spodaj) naložen preko anaconde (<a class="reference external" href="https://youtu.be/Cp-IuyN67rQ?t=1m48s">1m 48s</a>),</p></li>
+<li><p>posodobite distribucije na zadnje verzije prek ukazne vrstice (<a class="reference external" href="https://youtu.be/Cp-IuyN67rQ?t=2m28s">2m 28s</a>),</p></li>
+<li><p>namestitev Git klienta (pojasnjen spodaj, <a class="reference external" href="https://youtu.be/Cp-IuyN67rQ?t=4m30s">4m 30s</a>),</p></li>
+<li><p>ureditev repozitorija v Visual Studio Code (<a class="reference external" href="https://youtu.be/Cp-IuyN67rQ?t=5m50s">5m 50s</a>).</p></li>
+</ul>
+<section id="uporaba-githuba-repozitorija-in-posodobitve">
+<h3>Uporaba githuba repozitorija in posodobitve<a class="headerlink" href="#uporaba-githuba-repozitorija-in-posodobitve" title="Permalink to this headline">#</a></h3>
+<p>Ta knjiga se vedno dopolnjuje, zadnja verzija je dosegljiva na:</p>
+<ul class="simple">
+<li><p>v izvorni obliki na naslovu <a class="reference external" href="https://github.com/jankoslavic/pypinm/">github.com/jankoslavic/pypinm</a>,</p></li>
+<li><p>v spletni obliki na naslovu <a class="reference external" href="https://jankoslavic.github.io/pypinm.io/">jankoslavic.github.io/pypinm.io</a>.</p></li>
+<li><p>v pdf obliki na naslovu <a class="reference external" href="https://github.com/jankoslavic/pypinm/raw/master/pdf/Programiranje%20in%20numeri%C4%8Dne%20metode%20v%20ekosistemu%20Pythona%20-%20zadnja%20verzija.pdf">github.com/jankoslavic/pypinm</a>.</p></li>
+</ul>
+<p>Najbolje je za sinhronizacijo s spletnim repozitorijem uporabljati kakšnega od Git klientov. Git je sicer zelo močno orodje in skupini razvojnikov omogoča relativno enostavno delo na isti kodi in kontrolo nad različnimi verzijami datotek.</p>
+</section>
+<section id="visual-studio-code">
+<h3>Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permalink to this headline">#</a></h3>
+<img width=500 src="./fig/vsc.png"><p>Pri tem predmetu bomo v glavnem programirali v Jupyter Notebooku, kateri nam omogoča zelo učinkovito programiranje ob uporabi polno formatiranega besedila in interaktivnih prikazov. Kadar želimo programirati obsežnejše in bolj splošno uporabne pakete ter namenske programe, pa se ponavadi poslužimo posebnih razvojnih okolij (angl.  <em>integrated development environment</em> - IDE). Med bolj popularnimi sta <a class="reference external" href="https://www.jetbrains.com/pycharm/download/">pyCharm</a> (glejte Community Edition) in <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code - VSC</a>. V zadnjem obdobju VSC, zaradi hitrosti, enostavnosti uporabe in razširljivosti, pridobiva na priljubljenosti in je že vključen v distribucijo Pythona Anaconda. Proti koncu tega predmeta se bomo vrnili k uporabi VSC, v tem trenutku navedimo zgolj povezavo do odličnega video posnetka na temo <a class="reference external" href="https://www.youtube.com/watch?v=6YLMWU-5H9o">produktivnosti z VSC</a>.</p>
+</section>
+<section id="namescanje-dodatkov-in-posodobitev">
+<h3>Nameščanje dodatkov in posodobitev<a class="headerlink" href="#namescanje-dodatkov-in-posodobitev" title="Permalink to this headline">#</a></h3>
+<p>Na <a class="reference external" href="https://pypi.org">pypi.org</a> se nahaja veliko različnih paketov! Namestimo jih iz ukazne vrstice* (angl. <em>command prompt</em>) tako:</p>
+<ul class="simple">
+<li><p>z ukazom <strong>pip</strong>,</p></li>
+<li><p>bolj popularne pakete lahko namestim tudi z ukazom <strong>conda</strong>,</p></li>
+</ul>
+<p>* Ukazno vrstico prikličete v operacijskem sistemu Windows 10 tako, da kliknite <code class="docutils literal notranslate"><span class="pre">&quot;Start&quot;</span></code> in napišite <code class="docutils literal notranslate"><span class="pre">&quot;command</span> <span class="pre">prompt&quot;</span></code> ter pritisnete <code class="docutils literal notranslate"><span class="pre">&quot;enter&quot;</span></code>.</p>
+<p>Podrobnosti nameščanja dodatkov si bomo pogledali naslednjič. Da boste imeli zadnjo verzijo paketov, izvedite naslednje:</p>
+<ol class="simple">
+<li><p>Odprite ukazno vrstico in sprožite ukaz za posodobitev <em>Anaconde</em>:</p></li>
+</ol>
+<blockquote>
+<div><p>conda update conda</p>
+</div></blockquote>
+<ol class="simple">
+<li><p>nato posodobite še vse nameščene pakete:</p></li>
+</ol>
+<blockquote>
+<div><p>conda update –all</p>
+</div></blockquote>
+</section>
+</section>
+<section id="jupyter-notebook-jupyter-lab">
+<h2>Jupyter notebook (Jupyter lab)<a class="headerlink" href="#jupyter-notebook-jupyter-lab" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://jupyter.org/">Jupyter notebook</a> je  interaktivno okolje, ki deluje kot spletna aplikacija in se lahko uporablja z različnimi programskimi jeziki (npr. Python, Julia, R, C, Fortran … iz prvih treh je nastalo tudi ime JuPyt[e]R).</p>
+<p>Jupyter notebook je najlažje preizkusiti tukaj: <a class="reference external" href="https://try.jupyter.org/">try.jupyter.org</a> ali <a class="reference external" href="https://colab.research.google.com">colab.research.google.com</a>.</p>
+<p><em>Jupyter notebook</em> zaženemo (v poljubni mapi) iz <em>ukazne vrstice</em> ali iz <em>Raziskovalca/Explorerja</em> z ukazom:
+<code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>.
+<img width=500 src="./fig/jupyter_notebook.png"></p>
+<p>Opombe:</p>
+<ul class="simple">
+<li><p>s sprožitvijo <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> pridemo do izboljšanega razvojnega okolja,</p></li>
+<li><p>tukaj predpostavimo, da je pot do datoteke jupyter[.exe] dodana v spremenljivke okolja; distribucija <em>Anaconda</em> s privzetimi nastavitvami to uredi pravilno, sicer iščite pomoč na spletu, npr. <a class="reference external" href="https://www.google.si/search?q=add+program+to+path+windows+10">tukaj</a>,</p></li>
+<li><p>če želite ukazno vrstico sprožiti v poljubni mapi, potem v <em>explorerju</em> pridržite <code class="docutils literal notranslate"><span class="pre">shift</span></code> in kliknite mapo z desnim gumbom; nato izberite <em>Odpri ukazno vrsticu tukaj / Open command window here</em>.</p></li>
+</ul>
+<p>Do Jupyter strežnika dostopamo prek spletnega brskalnika. Najprej se vam prikaže seznam map in datotek do katerih lahko dostopate v okviru mape, v kateri ste sprožili ukaz <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>. Nato poiščite v desnem kotu zgoraj ikono <em>new</em> in nato kliknite <em>Python 3</em>. S tem boste zagnali vaš prvi Jupyter notebook (v okviru jedra Python). Najdite ukazno vrstico in na desni strani kliknite na <em>Help</em> in nato <em>User interface tour</em>. Poglejte si še <em>Help/Keyboard shortcuts</em>.</p>
+<p>Jupyter notebook je sestavjen iz t. i. <em>celic</em> (angl. cell).</p>
+<p>Celica ima dve stanji:</p>
+<ul class="simple">
+<li><p><strong>Ukazno stanje / Command mode</strong>: v to stanje se vstopi s pritiskom [escape],</p></li>
+<li><p><strong>Stanje za urejanje / Edit mode</strong> v to stanje se vstopi s pritiskom [enter].</p></li>
+</ul>
+<p>V obeh primerih se celico izvrši s pritiskom [shift + enter].</p>
+<p>Celice so lahko različnega tipa; tukaj bomo uporabljali dva tipa:</p>
+<ul class="simple">
+<li><p><strong>Code</strong>: v tem primeru celica vsebuje programsko kodo (bližnjica v ukaznem stanju je tipka [y]),</p></li>
+<li><p><strong>Markdown</strong>: v tem primeru celica vsebuje besedilo oblikovano po standardu <em>Markdown</em> (bližnjica v ukaznem stanju je tipka [m]).</p></li>
+</ul>
+<section id="markdown">
+<h3>Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">#</a></h3>
+<p>Jupyter notebook omogoča zapis v načinu <em>markdown</em>, ki ga je v letih 2003-2004 predstavil <a class="reference external" href="https://daringfireball.net/projects/markdown/">John Gruber</a>. Namen markdowna je, da se pisec osredotoča na vsebino, pri tem pa za oblikovanje uporablja nekaj preprostih pravil. Pozneje se markdown lahko prevede v spletno obliko, v pdf (npr. prek LaTeX-a) itd. Bistvena pravila (vezana predvsem na uporabu na Githubu) so <a class="reference external" href="https://help.github.com/articles/basic-writing-and-formatting-syntax/">podana tukaj</a>; spodaj jih bomo na kratko ponovili.</p>
+<p>Naslove definiramo z znakom #:</p>
+<ul class="simple">
+<li><p># pomeni naslov prve stopnje,</p></li>
+<li><p>## pomeni naslov druge stopnje itd*.</p></li>
+</ul>
+<p>* Če pogledate kodo opazite, da se znak \ pojavi pred znakom # zato, da se <em>prikaže</em> sam znak # in ne uporabi njegovo funkcijo za naslov prve stopnje. Podobno je tudi pri drugih posebnih znakih.</p>
+<p>Oblikovanje besedila definirajo posebni znaki; če želimo besedo (ali več besed) v <em>poševni</em> obliki, moramo tako besedilo vstaviti med dva znaka *: tekst v stanju za urejanje v obliki *primer* bi se prikazal kot <em>primer</em>.</p>
+<p>Pregled simbolov, ki definirajo obliko:</p>
+<ul class="simple">
+<li><p><em>poševno</em>:*</p></li>
+<li><p><strong>krepko</strong>: **</p></li>
+<li><p>~~prečrtano~~: ~~</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">simbol</span></code>: `</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">funkcije</span></code>: ``</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">blok</span> <span class="pre">kode</span></code>: ```.</p></li>
+</ul>
+<p>Opomba: za primer bloka kode Python glejte uvodno poglavje, primer Fibonacci.</p>
+<p>V okviru markdowna lahko uporabljamo tudi LaTeX sintakso. LaTeX je zelo zmogljiv sistem za urejanje besedil; na Fakulteti za strojništvo, Univerze v Ljubljani, so predloge za diplomske naloge pripravljene v <a class="reference external" href="http://lab.fs.uni-lj.si/ladisk/?what=incfl&amp;flnm=latex.php">LaTeXu</a> in Wordu. Tukaj bomo LaTeX uporabljali samo za pisanje matematičnih izrazov.</p>
+<p>Poznamo dva načina:</p>
+<ul class="simple">
+<li><p>vrstični način (angl. <em>inline</em>): se začne in konča z znakom \<span class="math notranslate nohighlight">\(, primer: \)</span>a^3=\sqrt{365}$,</p></li>
+<li><p>blokovni način (angl. <em>block mode</em>): se začne in konča z znakoma \<span class="math notranslate nohighlight">\(\\\)</span>, primer:
+$<span class="math notranslate nohighlight">\(\sum F=m\,\ddot{x}\)</span>$</p></li>
+</ul>
+<p>Zgoraj smo že uporabljali sezname, ki jih začnemo z znakom * v novi vrstici:</p>
+<ul class="simple">
+<li><p>lahko pišemo sezname</p>
+<ul>
+<li><p>z več nivoji</p>
+<ul>
+<li><p>3<span class="math notranslate nohighlight">\(.\)</span> nivo</p></li>
+</ul>
+</li>
+<li><p>2<span class="math notranslate nohighlight">\(.\)</span> nivo</p></li>
+</ul>
+</li>
+<li><p>lahko pišemo <em>poševno</em></p></li>
+<li><p>lahko pišemo <strong>krepko</strong>.</p></li>
+</ul>
+<p>Če želimo oštevilčene sezname, začnemo z “1.” nato pa nadaljujemo z “1.”:</p>
+<ol class="simple">
+<li><p>prvi element</p></li>
+<li><p>drugi</p></li>
+<li><p>naslednji …</p></li>
+</ol>
+<p>V dokument lahko vključimo tudi <em>html</em> sintakso (angl. <em>Hypertext Markup Language</em> ali po slovensko jezik za označevanje nadbesedila). Kot html najenostavneje vključimo slike.</p>
+<p>Uporabimo:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">width</span><span class="o">=</span><span class="s">200</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./fig/ladisk.png&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Za prikaz:
+<img width=200 src="./fig/ladisk.png"></p>
+<p>Vključimo lahko tudi zunanje vire (npr. video posnetek iz Youtube). Ker gre za morebitno varnostno tveganje, tega ne naredimo v celici tipa <em>markdown</em> kakor zgoraj, ampak v celici tipa <em>code</em>, pri tem pa uporabimo t. i. magični ukaz (angl. <em>magic</em>) <code class="docutils literal notranslate"><span class="pre">%%html</span></code>, ki definira, da bo celoten blok v obliki html sintakse (privzeto so celice tipa <em>code</em> Python koda):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span> 
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/VLcPd07-gnk&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/VLcPd07-gnk" frameborder="0" allowfullscreen></iframe>
+</div></div>
+</div>
+<p>Magičnih ukazov je v notebooku še veliko (glejte <a class="reference external" href="http://ipython.readthedocs.io/en/stable/interactive/magics.html">dokumentacijo</a>) in nekatere bomo spoznali pozneje, ko jih bomo potrebovali!</p>
+<p>Doslej smo že večkrat uporabili sklicevanje na zunanje vire, to naredimo tako:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[Ime</span> <span class="pre">povezave](naslov</span> <span class="pre">do</span> <span class="pre">vira)</span></code></p>
+<p>Primer: <code class="docutils literal notranslate"><span class="pre">[Spletna</span> <span class="pre">stran</span> <span class="pre">laboratorija</span> <span class="pre">Ladisk](www.ladisk.si)</span></code> se oblikuje kot: <a class="reference external" href="http:///%5C%5Cwww.ladisk.si">Spletna stran laboratorija Ladisk</a>.</p>
+<p>V okviru markdowna lahko pripravimo preproste tabele. Priprava je relativno enostavna: med besede enostavno vstavimo navpične znake | tam, kjer naj bi bila navpična črta. Po naslovni vrstici sledi vrstica, ki definira poravnavo v tabeli.</p>
+<p>Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">Ime</span>   <span class="o">|</span> <span class="n">Masa</span> <span class="p">[</span><span class="n">kg</span><span class="p">]</span>  <span class="o">|</span> <span class="n">Višina</span> <span class="p">[</span><span class="n">cm</span><span class="p">]</span>  <span class="o">|</span>
+<span class="o">|</span><span class="p">:</span><span class="o">-|-</span><span class="p">:</span><span class="o">|</span><span class="p">:</span><span class="o">-</span><span class="p">:</span><span class="o">|</span>
+<span class="o">|</span> <span class="n">Lakotnik</span>  <span class="o">|</span> <span class="mi">180</span>  <span class="o">|</span> <span class="mi">140</span>  <span class="o">|</span>
+<span class="o">|</span> <span class="n">Trdonja</span> <span class="o">|</span> <span class="mi">30</span>  <span class="o">|</span> <span class="mi">70</span>  <span class="o">|</span>
+<span class="o">|</span> <span class="n">Zvitorepec</span>  <span class="o">|</span> <span class="mi">40</span>  <span class="o">|</span> <span class="mi">100</span>  <span class="o">|</span>
+</pre></div>
+</div>
+<p>Rezultira v:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Ime</p></th>
+<th class="text-align:right head"><p>Masa [kg]</p></th>
+<th class="text-align:center head"><p>Višina [cm]</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Lakotnik</p></td>
+<td class="text-align:right"><p>180</p></td>
+<td class="text-align:center"><p>140</p></td>
+</tr>
+<tr class="row-odd"><td><p>Trdonja</p></td>
+<td class="text-align:right"><p>30</p></td>
+<td class="text-align:center"><p>70</p></td>
+</tr>
+<tr class="row-even"><td><p>Zvitorepec</p></td>
+<td class="text-align:right"><p>40</p></td>
+<td class="text-align:center"><p>100</p></td>
+</tr>
+</tbody>
+</table>
+<p>Opazimo, da dvopičje definira poravnavo teksta v stolpcu (levo <code class="docutils literal notranslate"><span class="pre">:-</span></code>, desno <code class="docutils literal notranslate"><span class="pre">-:</span></code> ali sredinsko <code class="docutils literal notranslate"><span class="pre">:-:</span></code>).</p>
+</section>
+</section>
+<section id="prvi-program-in-pep">
+<h2>Prvi program in PEP<a class="headerlink" href="#prvi-program-in-pep" title="Permalink to this headline">#</a></h2>
+<p>Sedaj smo pripravljeni na prvi program napisan v Pythonu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Program lahko zapišemo v poljubnem urejevalniku tekstovnih datotek (npr. <em>Beležka</em>/<em>Notepad</em>) in ga shranimo v datoteko <code class="docutils literal notranslate"><span class="pre">ime.py</span></code>.</p>
+<p>Primer <span class="xref myst">kode</span> v okolju <em>Visual Studio Code</em>:
+<img width=400 src="./fig/vsc_prvi_program.png"></p>
+<p>To datoteko nato poženemo v ukazni vrstici (predpostavimo, da je pot do datoteke python.exe dodana v spremenljivke okolja; distribucija <em>Anaconda</em> s privzetimi nastavitvami to uredi pravilno, sicer glejte tale <a class="reference external" href="https://docs.python.org/3/using/windows.html#configuring-python">vir</a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">ime</span><span class="o">.</span><span class="n">py</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">5.0</span>
+</pre></div>
+</div>
+<p>Z znaki <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> označimo rezultat, ki ga dobimo v ukazni vrstici.</p>
+<p>Zgornji primer izvajanja Python programa predstavlja t. i. <em>klasični način poganjanja programov</em> od začetka do konca. Tukaj bomo bolj pogosto uporabljali t. i. <em>interaktivni način</em>, ko kodo izvajamo znotraj posamezne celice tipa <em>code</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">5.0</span>  <span class="c1"># to je komentar</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># izpiše vrednost a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
+</pre></div>
+</div>
+</div>
+</div>
+<section id="pep-python-enhancements-proposal">
+<h3>PEP - Python Enhancements Proposal<a class="headerlink" href="#pep-python-enhancements-proposal" title="Permalink to this headline">#</a></h3>
+<p>Python ima visoke standarde glede kakovosti in estetike. Že zgodaj v razvoju jezika se je uveljavil princip predlaganja izboljšav prek t. i. <em>Python Enhancements Proposal</em> (PEP na kratko).</p>
+<section id="pep8">
+<h4>PEP8<a class="headerlink" href="#pep8" title="Permalink to this headline">#</a></h4>
+<p>Eden od bolj pomembnih je <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a>, ki definira stil:</p>
+<ul class="simple">
+<li><p>zamik: 4 presledki,</p></li>
+<li><p>en presledek pri operatorju <code class="docutils literal notranslate"><span class="pre">=</span></code>, torej: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">5</span></code> in ne <code class="docutils literal notranslate"><span class="pre">a=5</span></code>,</p></li>
+<li><p>spremenljivke in imena funkcij naj bodo opisne, pišemo jih s podčrtajem: <code class="docutils literal notranslate"><span class="pre">širina_valja</span> <span class="pre">=</span> <span class="pre">5</span></code>,</p></li>
+<li><p>za razrede uporabljamo t. i. format CamelCase.</p></li>
+</ul>
+<ul class="simple">
+<li><p>pri aritmetičnih operaterjih postavimo presledke po občutku: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">3*a</span> <span class="pre">+</span> <span class="pre">4*b</span></code> ali <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">*</span> <span class="pre">b</span></code>,</p></li>
+<li><p>za oklepajem in pred zaklepajem ni presledka, prav tako ni presledka pred oklepajem ob klicu funkcije: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">sin(x)</span></code>, ne pa <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">sin(</span> <span class="pre">x</span> <span class="pre">)</span></code> ali <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">sin</span> <span class="pre">(x)</span></code>,</p></li>
+<li><p>presledek za vejico: <code class="docutils literal notranslate"><span class="pre">range(5,</span> <span class="pre">10)</span></code> in ne <code class="docutils literal notranslate"><span class="pre">range(5,10)</span></code>,</p></li>
+<li><p>brez presledkov na koncu vrstice ali v prazni vrstici,</p></li>
+</ul>
+<ul class="simple">
+<li><p>znotraj funkcije lahko občasno dodamo po <em>eno</em> prazno vrstico,</p></li>
+<li><p>med funkcije postavimo dve prazni vrstici,</p></li>
+<li><p>vsak modul uvozimo (<code class="docutils literal notranslate"><span class="pre">import</span></code>) v ločeni vrstici,</p></li>
+<li><p>najprej uvozimo standardne pythonove knjižnice, nato druge knjižnice (npr. numpy) in na koncu lastne.</p></li>
+</ul>
+<p>Opomba: moderna razvojna orodja nam pomagajo pri oblikovanju kode, ki ustreza PEP8 (v VSC pritisnite <code class="docutils literal notranslate"><span class="pre">ctrl</span></code>+<code class="docutils literal notranslate"><span class="pre">shift</span></code>+<code class="docutils literal notranslate"><span class="pre">P</span></code> ter napišite <em>“Format document”</em> in pritisnite <code class="docutils literal notranslate"><span class="pre">enter</span></code>)!</p>
+</section>
+<section id="pep20">
+<h4>PEP20<a class="headerlink" href="#pep20" title="Permalink to this headline">#</a></h4>
+<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0020/">PEP20</a> je naslednji pomemben PEP, ki se imenuje tudi <em>The zen of Python</em>, torej <em>zen Pythona</em>; to so vodila, ki se jih poskušamo držati pri programiranju. Tukaj navedimo samo nekatera vodila:</p>
+<ul class="simple">
+<li><p>Lepo je bolje kot grdo.</p></li>
+<li><p>Preprosto je bolje kot zakomplicirano.</p></li>
+<li><p>Premočrtno je bolje kot gnezdeno.</p></li>
+<li><p>Berljivost je pomembna.</p></li>
+<li><p>Posebni primeri niso dovolj posebni, da bi prekršili pravilo</p></li>
+<li><p>Če je implementacijo težko pojasniti, je verjetno slaba ideja; če jo je lahko, je mogoče dobra.</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="osnove-pythona">
+<h1>Osnove Pythona<a class="headerlink" href="#osnove-pythona" title="Permalink to this headline">#</a></h1>
+<section id="osnovni-podatkovni-tipi-in-operatorji">
+<h2>Osnovni podatkovni tipi in operatorji<a class="headerlink" href="#osnovni-podatkovni-tipi-in-operatorji" title="Permalink to this headline">#</a></h2>
+<section id="dinamicno-tipiziranje">
+<h3>Dinamično tipiziranje<a class="headerlink" href="#dinamicno-tipiziranje" title="Permalink to this headline">#</a></h3>
+<p>Python	je	dinamično	tipiziran jezik. Tipi	spremenljivk	se	ne	preverjajo. Posledično nekatere operacije niso mogoče na nekaterih tipih oz. so prilagojene tipu podatka (pozneje bomo na primer pogledali množenje niza črk). Tip se določi pri dodelitvi vrednosti, poglejmo primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># to je komentar: a je celo število (integer)</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tip prikažemo z ukazom <code class="docutils literal notranslate"><span class="pre">type</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vrednost <code class="docutils literal notranslate"><span class="pre">a</span></code> lahko prepišemo z novo vrednostjo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># to je sedaj število s plavajočo vejico (float)</span>
+<span class="n">a</span>        <span class="c1"># če `a` tako zapišemo v zadnji vrstici, se bo izpisala vrednost </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+<p>Za izpis vrednosti sicer lahko uporabimo tudi funkcijo <code class="docutils literal notranslate"><span class="pre">print()</span></code>, ki jo bomo podrobneje spoznali pozneje:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dokumentacijo funkcije lahko kličemo s pritiskom [shift + tab]. Npr: napišemo <code class="docutils literal notranslate"><span class="pre">pri</span></code> in pritisnemo [shift + tab] ter se bo v pojavnem oknu prikazala pomoč; če pridržimo [shift], se z dodatnim pritiskom na [tab] prikaže razširjena pomoč, z nadaljnjim dvojnim pritiskom [tab] (skupaj torej 4-krat) se pomoč prikaže v novem oknu.</p>
+<p>Do pomoči dostopamo tudi, tako, da pred funkcijo postavimo <code class="docutils literal notranslate"><span class="pre">?</span></code> (za pomoč) ali <code class="docutils literal notranslate"><span class="pre">??</span></code> (prikaže tudi izvorno kodo, če je ta na voljo).</p>
+<p>Primer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>?print
+??print
+</pre></div>
+</div>
+</section>
+<section id="logicni-operatorji">
+<h3>Logični operatorji<a class="headerlink" href="#logicni-operatorji" title="Permalink to this headline">#</a></h3>
+<p>Logični operatorji so (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not">vir</a>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code>, primer: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">or</span> <span class="pre">b</span></code>; opomba: drugi element se preverja samo, če prvi ni res,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code>, primer: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">and</span> <span class="pre">b</span></code>; opomba: drugi element se preverja samo, če prvi je res,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span></code>, primer: <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">a</span></code>; opomba: ne-logični operatorji imajo prednost: <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code> se interpretira kot <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">(a</span> <span class="pre">==</span> <span class="pre">b)</span></code>.</p></li>
+</ul>
+</section>
+<section id="primerjalni-operatorji">
+<h3>Primerjalni operatorji<a class="headerlink" href="#primerjalni-operatorji" title="Permalink to this headline">#</a></h3>
+<p>Primerjalni operatorji (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#comparisons">vir</a>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> manj kot,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>	manj ali enako,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> večje kot,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> večje ali enako,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> enako,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code> neenako,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is</span></code> istost objekta primerjanih operandov,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code> ali operanda nista isti objekt.</p></li>
+</ul>
+<p>Primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lahko naredimo niz logičnih operatorjev:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">6</span> <span class="o">&lt;</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>preverimo istost (ali gre za isti objekt):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">a</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Uporabimo še logični operator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="mi">6</span> <span class="o">&lt;</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="ow">not</span> <span class="mi">6</span> <span class="o">&lt;</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tukaj velja izpostaviti, da je v logičnih izrazih poleg <code class="docutils literal notranslate"><span class="pre">False</span></code> neresnična tudi vrednost <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>, prazen seznam (ali niz, terka, …); <strong>vse ostalo je <code class="docutils literal notranslate"><span class="pre">True</span></code></strong>.</p>
+<p>Poglejmo nekaj primerov:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="ow">and</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="ow">and</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="p">,)</span> <span class="ow">and</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="podatkovni-tipi-za-numericne-vrednosti">
+<h3>Podatkovni tipi za numerične vrednosti<a class="headerlink" href="#podatkovni-tipi-za-numericne-vrednosti" title="Permalink to this headline">#</a></h3>
+<p>Pogledali si bomo najbolj pogoste podatkovne tipe, ki jih bomo pozneje uporabili (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex">vir</a>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code> za zapis poljubno velikega celega števila,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code> za zapis števil s plavajočo vejico,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">complex</span></code> za zapis števil v kompleksni obliki.</p></li>
+</ul>
+<p>Bolj podrobno bomo podatkovne tipe (natančnost zapisa in podobno) spoznali pri uvodu v numerične metode.</p>
+<p>Primeri:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">celo_število</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">**</span><span class="mi">3000</span>         <span class="c1"># `**` predstavlja potenčni operator</span>
+<span class="n">racionalno_število</span> <span class="o">=</span> <span class="mf">3.141592</span>
+<span class="n">kompleksno_število</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span><span class="n">j</span>     <span class="c1"># `3j` predstavlja imaginarni del</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operatorji-numericnih-vrednosti">
+<h3>Operatorji numeričnih vrednosti<a class="headerlink" href="#operatorji-numericnih-vrednosti" title="Permalink to this headline">#</a></h3>
+<p>Podatkovni tipi razvrščeni po naraščajoči prioriteti (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex">vir</a>):</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code> vsota,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">-</span> <span class="pre">y</span></code>razlika,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">y</span></code> produkt,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">/</span> <span class="pre">y</span></code> deljenje,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">//</span> <span class="pre">y</span></code> celoštevilsko deljenje (rezultat je celo število zaokroženo navzdol),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">y</span></code> ostanek pri celoštevilskem deljenju,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-x</span></code> negiranje,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+x</span></code> nespremenjen,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abs(x)</span></code> absolutna vrednost,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int(x)</span></code> celo število tipa <code class="docutils literal notranslate"><span class="pre">int</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float(x)</span></code> racionalno število tipa <code class="docutils literal notranslate"><span class="pre">float</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">complex(re,</span> <span class="pre">im)</span></code> compleksno število tipa <code class="docutils literal notranslate"><span class="pre">complex</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c.conjugate()</span></code> kompleksno konjugirano število,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">divmod(x,</span> <span class="pre">y)</span></code> vrne par <code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">//</span> <span class="pre">y,</span> <span class="pre">x</span> <span class="pre">%</span> <span class="pre">y)</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pow(x,</span> <span class="pre">y)</span></code> vrne <code class="docutils literal notranslate"><span class="pre">x</span></code> na potenco <code class="docutils literal notranslate"><span class="pre">y</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">**</span> <span class="pre">y</span></code>	vrne <code class="docutils literal notranslate"><span class="pre">x</span></code> na potenco <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+</ol>
+<p>Pri aritmetičnih operatorjih velja izpostaviti različico, pri kateri se rezultat priredi operandu (<a class="reference external" href="https://docs.python.org/3/reference/simple_stmts.html#augmented-assignment-statements">vir</a>). To imenujemo <em>razširjena dodelitev</em> (angl. *augmented assignement).</p>
+<p>Poglejmo si primer. Namesto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># prištejemo vrednost 1</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>lahko zapišemo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span> 
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operatorji-na-nivoju-bitov">
+<h3>Operatorji na nivoju bitov<a class="headerlink" href="#operatorji-na-nivoju-bitov" title="Permalink to this headline">#</a></h3>
+<p>Operatorje na nivoju bitov bomo v inženirski praksi redko uporabljali, vseeno jih navedimo po naraščajoči prioriteti (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bitwise-operations-on-integer-types">vir</a>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">|</span> <span class="pre">y</span></code> <em>ali</em> na nivoju bitov <code class="docutils literal notranslate"><span class="pre">x</span></code> in <code class="docutils literal notranslate"><span class="pre">y</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">^</span> <span class="pre">y</span></code> <em>ekskluzivni ali</em> (samo en, ne oba) na nivoju bitov <code class="docutils literal notranslate"><span class="pre">x</span></code> in <code class="docutils literal notranslate"><span class="pre">y</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&amp;</span> <span class="pre">y</span></code> bitni <em>in</em> na nivoju bitov <code class="docutils literal notranslate"><span class="pre">x</span></code> in <code class="docutils literal notranslate"><span class="pre">y</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;&lt;</span> <span class="pre">n</span></code> premik bitov <code class="docutils literal notranslate"><span class="pre">x</span></code> za <code class="docutils literal notranslate"><span class="pre">n</span></code> bitov levo,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;&gt;</span> <span class="pre">n</span></code> premik bitov <code class="docutils literal notranslate"><span class="pre">x</span></code> za <code class="docutils literal notranslate"><span class="pre">n</span></code> bitov desno,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~x</span></code> negiranje bitov <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+</ul>
+<p>Poglejmo si primer (<a class="reference external" href="https://www.tutorialspoint.com/python/bitwise_operators_example.htm">vir</a>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">21</span>  <span class="c1"># 21 v bitni obliki: 0001 0101 </span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">9</span>   <span class="c1"># 9 v bitni obliki:  0000 1001 </span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span><span class="p">;</span> <span class="c1"># 0000 0001 v bitni obliki predstavlja število 1 v decimalni</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Prikažimo število v bitni obliki:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bin</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0b1&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="sestavljene-podatkovne-strukture">
+<h2>Sestavljene podatkovne strukture<a class="headerlink" href="#sestavljene-podatkovne-strukture" title="Permalink to this headline">#</a></h2>
+<section id="niz-string">
+<h3>Niz (string)<a class="headerlink" href="#niz-string" title="Permalink to this headline">#</a></h3>
+<p>Niz je sestavljen iz znakov po standardu <em>Unicode</em>. V podrobnosti se ne bomo spuščali; pomembno je navesti, da je Python od verzije 3 naprej naredil velik napredek (<a class="reference external" href="https://docs.python.org/3/howto/unicode.html">vir</a>) in da lahko poljubne znake po standardu <em>Unicode</em> uporabimo tako v tekstu, kakor tudi v programskih datotekah .py.</p>
+<p>Niz se začne in zaključi z dvojnim ” ali enojnim ‘ narekovajem.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;tekst&#39;</span> <span class="c1"># b je niz (string)</span>
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;tekst&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pri tem ni težav z imeni, ki smo jih bolj vajeni:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">π</span> <span class="o">=</span> <span class="mf">3.14</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Znak <span class="math notranslate nohighlight">\(\pi\)</span> se v notebooku zapiše, da napišemo <code class="docutils literal notranslate"><span class="pre">\pi</span></code> (imena so ponavadi ista kot se uporabljajo pri zapisu v LaTeXu) in nato pritisnemo [tab].</p>
+<p>Nekatere operacije nad nizi:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;kratek &#39;</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># seštevanje</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="s1">&#39;To je množenje niza. &#39;</span><span class="p">)</span>      <span class="c1"># množenje niza</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Celo število:&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;5&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;5&#39;</span><span class="p">))</span>      <span class="c1"># pretvorba niza &#39;5&#39; v celo število</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Število s plavajočo vejico:&#39;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;5&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;5&#39;</span><span class="p">))</span>  <span class="c1"># pretvorba niza &#39;5&#39; v število s plavajo vejico</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kratek tekst
+To je množenje niza. To je množenje niza. To je množenje niza. 
+Celo število: 10
+Število s plavajočo vejico: 10.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="terka-tuple">
+<h3>Terka (tuple)<a class="headerlink" href="#terka-tuple" title="Permalink to this headline">#</a></h3>
+<p>Tuples (<a class="reference external" href="https://docs.python.org/tutorial/datastructures.html#tuples-and-sequences">vir</a>) ali po slovensko terke so seznami poljubnih <strong>objektov</strong>, ki jih ločimo z vejico in pišemo znotraj okroglih oklepajev:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terka_1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;programiranje&#39;</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terka_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, &#39;programiranje&#39;, 5.0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Večkrat smo že uporabili besedo <em>objekt</em>. Kaj je objekt? Objekte in razrede si bomo podrobneje pogledali pozneje; zaenkrat se zadovoljimo s tem, da je objekt več kot samo <em>ime</em> za določeno vrednost; objekt ima tudi metode.
+Npr. drugi element je tipa <code class="docutils literal notranslate"><span class="pre">str</span></code>, ki ima tudi metodo <code class="docutils literal notranslate"><span class="pre">replace</span></code> za zamenjavo črk:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terka_1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;8&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;p8og8ami8anje&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Če ima terka samo en objekt, potem jo moramo zaključiti z vejico (sicer se ne loči od objekta v oklepaju):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terka_2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">terka_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tuple
+</pre></div>
+</div>
+</div>
+</div>
+<p>Terke lahko zapišemo tudi brez okroglih oklepajev:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terka_3</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;brez oklepajev&#39;</span><span class="p">,</span> <span class="mf">5.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terka_3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, &#39;brez oklepajev&#39;, 5.0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do objektov v terki dostopamo prek indeksa (<strong>se začnejo z 0</strong>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terka_1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Terke <strong>ni mogoče spreminjati</strong> (angl: <em>immutable</em>), elementov ne moremo odstranjevati ali dodajati. Klicanje spodnjega izraza bi vodilo v napako:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">terka_1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;tuple&#39;</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
+</pre></div>
+</div>
+</section>
+<section id="seznam-list">
+<h3>Seznam (list)<a class="headerlink" href="#seznam-list" title="Permalink to this headline">#</a></h3>
+<p>Seznami (<a class="reference external" href="https://docs.python.org/tutorial/datastructures.html#more-on-lists">vir</a>) se zapišejo podobno kot terke, vendar se uporabijo oglati oklepaji:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.0, 2, &#39;d&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Za razliko od terk, se sezname lahko spreminja:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">seznam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 2, &#39;d&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Seznami so spremenljivi (angl. <em>mutable</em>) in treba se je zavedati, da <strong>ime</strong> v bistvu <strong>kaže</strong> na mesto v pomnilniku računalnika:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">seznam</span>
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 2, &#39;d&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sedaj tudi <code class="docutils literal notranslate"><span class="pre">b</span></code> kaže na isto mesto v pomnilniku.</p>
+<p>Poglejmo, kaj se zgodi s <code class="docutils literal notranslate"><span class="pre">seznam</span></code>, če spremenimo element seznama <code class="docutils literal notranslate"><span class="pre">b</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[9, 2, &#39;d&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[9, 2, &#39;d&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Če želimo narediti kopijo podatkov, potem moramo narediti tako:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">seznam</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span>
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[99, 2, &#39;d&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[9, 2, &#39;d&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Primer seznama seznamov:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrika</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrika</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Več o matrikah bomo izvedeli pozneje.</p>
+<section id="izbrane-operacije-nad-seznami">
+<h4>Izbrane operacije nad seznami<a class="headerlink" href="#izbrane-operacije-nad-seznami" title="Permalink to this headline">#</a></h4>
+<p>Tukaj si bomo pogledali nekatere najbolj pogoste operacije, za več, glejte <a class="reference external" href="https://docs.python.org/tutorial/datastructures.html">dokumentacijo</a>.</p>
+<p>Najprej si poglejmo dodajanje elementa:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">]</span>
+<span class="n">seznam</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;dodajanje elementa&#39;</span><span class="p">)</span>
+<span class="n">seznam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, &#39;test&#39;, &#39;dodajanje elementa&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Potem vstavljanje na določeno mesto (z indeksom 1, ostali elementi se zamaknejo):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;na drugo mesto&#39;</span><span class="p">)</span>
+<span class="n">seznam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, &#39;na drugo mesto&#39;, 1, &#39;test&#39;, &#39;dodajanje elementa&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Potem lahko določeni element odstranimo. To naredimo s <code class="docutils literal notranslate"><span class="pre">seznam.pop(i)</span></code> ali <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">seznam[2]</span></code>. Prvi način vrne odstranjeni element, drugi samo odstrani element:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">odstranjeni_element</span> <span class="o">=</span> <span class="n">seznam</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># odstani element z indeksom 2 in ga vrne </span>
+<span class="c1"># podoben učinek bi imel ukaz: del seznam[2]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;seznam:&#39;</span><span class="p">,</span> <span class="n">seznam</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;odstranjeni element:&#39;</span><span class="p">,</span> <span class="n">odstranjeni_element</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>seznam: [0, &#39;na drugo mesto&#39;, &#39;test&#39;, &#39;dodajanje elementa&#39;]
+odstranjeni element: 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Z metodo <code class="docutils literal notranslate"><span class="pre">.index(v)</span></code> najdemo prvi element vrednosti <code class="docutils literal notranslate"><span class="pre">v</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, &#39;na drugo mesto&#39;, &#39;test&#39;, &#39;dodajanje elementa&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="zakaj-uporabiti-terko-in-ne-seznama">
+<h4>Zakaj uporabiti terko in ne seznama?<a class="headerlink" href="#zakaj-uporabiti-terko-in-ne-seznama" title="Permalink to this headline">#</a></h4>
+<p>Terk ne moremo spreminjati, zato je njihova numerična implementacija bistveno bolj lahka (v numeričnem smislu) in spomin se lahko bolje izrabi. Posledično so terke <strong>hitrejše</strong> od seznamov; poleg tega jih ne moretmo po nerodnosti <strong>spremeniti</strong>. Za širši odgovor glejte <a class="reference external" href="http://getpython3.com/diveintopython3/native-datatypes.html#tuples">vir</a>.</p>
+</section>
+</section>
+<section id="mnozice-sets">
+<h3>Množice (Sets)<a class="headerlink" href="#mnozice-sets" title="Permalink to this headline">#</a></h3>
+<p>Množice so v principu podobne <em>množicam</em> kot jih poznamo iz matematike. Množice v Pythonu (<a class="reference external" href="https://docs.python.org/tutorial/datastructures.html#sets">dokumentacija</a>) za razliko od ostalih sestavljenih struktur:</p>
+<ul class="simple">
+<li><p><strong>ne dovoljujejo podvojenih elementov</strong> in</p></li>
+<li><p><strong>nimajo urejenega vrstnega reda</strong> (pomembno, npr. za pravilno uporabo v zankah).</p></li>
+</ul>
+<p>Vredno je poudariti, da sta dodajanje in ugotavljanje pripadnosti elementa množici zelo hitri operaciji.</p>
+<p>Kreiramo jih z zavitimi oklepaji  <code class="docutils literal notranslate"><span class="pre">{}</span></code> ali ukazom <code class="docutils literal notranslate"><span class="pre">set()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;ž&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2, 3, 4, &#39;a&#39;, &#39;ž&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Če se želimo v seznamu znebiti podvojenih elementov, je zelo enostaven način, da kreiramo množico iz seznama:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="n">B</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{4, 6}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Uporabimo lahko tipične matematične operacije nad množicami:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">-</span> <span class="n">A</span>   <span class="c1"># elementi v B brez elementov, ki so tudi v A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{6}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">|</span> <span class="n">B</span>   <span class="c1"># elementi v A ali B</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2, 3, 4, 6, &#39;a&#39;, &#39;ž&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">&amp;</span> <span class="n">B</span>   <span class="c1"># elementi v A in B</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{4}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">^</span> <span class="n">B</span>   <span class="c1"># elementi v A ali B, vendar ne v obeh</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2, 3, 6, &#39;a&#39;, &#39;ž&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="slovar-dictionary">
+<h3>Slovar (dictionary)<a class="headerlink" href="#slovar-dictionary" title="Permalink to this headline">#</a></h3>
+<p>Slovar (<a class="reference external" href="https://docs.python.org/tutorial/datastructures.html#dictionaries">dokumentacija</a>) lahko definiramo eksplicitno s pari <em>ključ : vrednost</em>, ločenimi z vejico znotraj zavitih oklepajev:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parametri</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;višina&#39;</span><span class="p">:</span> <span class="mf">5.2</span><span class="p">,</span> <span class="s1">&#39;širina&#39;</span><span class="p">:</span> <span class="mi">43</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">:</span> <span class="mf">9.81</span><span class="p">}</span>
+<span class="n">parametri</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;višina&#39;: 5.2, &#39;širina&#39;: 43, &#39;g&#39;: 9.81}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do vrednosti (angl. <em>value</em>) elementa dostopamo tako, da uporabimo ključ (angl. <em>key</em>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parametri</span><span class="p">[</span><span class="s1">&#39;višina&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pogosteje uporabljamo metode:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">values()</span></code>, ki vrne vrednosti slovarja,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keys()</span></code>, ki vrne ključe slovarja,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">items()</span></code>, ki seznam terk (ključ, vrednost); to bomo pogosto rabili pri zankah.</p></li>
+</ul>
+<p>Primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parametri</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;višina&#39;, 5.2), (&#39;širina&#39;, 43), (&#39;g&#39;, 9.81)])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Slovarje lahko spreminjamo; npr. dodamo element:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parametri</span><span class="p">[</span><span class="s1">&#39;lega_težišča&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99999</span>
+<span class="n">parametri</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;višina&#39;: 5.2, &#39;širina&#39;: 43, &#39;g&#39;: 9.81, &#39;lega_težišča&#39;: 99999}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Elemente odstranimo (podobno kot zgoraj <code class="docutils literal notranslate"><span class="pre">pop</span></code> odstrani in vrne vrednost <code class="docutils literal notranslate"><span class="pre">del</span></code> samo odstrani):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parametri</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;lega_težišča&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>99999
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parametri</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;višina&#39;: 5.2, &#39;širina&#39;: 43, &#39;g&#39;: 9.81}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operacije-nad-sestavljenimi-podatkovnimi-strukturami">
+<h3>Operacije nad sestavljenimi podatkovnimi strukturami<a class="headerlink" href="#operacije-nad-sestavljenimi-podatkovnimi-strukturami" title="Permalink to this headline">#</a></h3>
+<p>Večina sestavljenih podatkovnih struktur dovoljuje sledeče operacije (<a class="reference external" href="https://docs.python.org/library/stdtypes.html#common-sequence-operations">dokumentacija</a>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">in</span> <span class="pre">s</span></code> vrne <code class="docutils literal notranslate"><span class="pre">True</span></code>, če je kateri element iz <code class="docutils literal notranslate"><span class="pre">s</span></code> enak <code class="docutils literal notranslate"><span class="pre">x</span></code>, sicer vrne <code class="docutils literal notranslate"><span class="pre">False</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">s</span></code> vrne <code class="docutils literal notranslate"><span class="pre">False</span></code>, če je kateri element iz <code class="docutils literal notranslate"><span class="pre">s</span></code> enak <code class="docutils literal notranslate"><span class="pre">x</span></code>, sicer vrne <code class="docutils literal notranslate"><span class="pre">True</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">+</span> <span class="pre">t</span></code> sestavi <code class="docutils literal notranslate"><span class="pre">s</span></code> in <code class="docutils literal notranslate"><span class="pre">t</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">*</span> <span class="pre">n</span></code> ali <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">*</span> <span class="pre">s</span></code> rezultira v <code class="docutils literal notranslate"><span class="pre">n</span></code>-krat ponovljen <code class="docutils literal notranslate"><span class="pre">s</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s[i]</span></code> vrne <code class="docutils literal notranslate"><span class="pre">i</span></code>-ti element iz <code class="docutils literal notranslate"><span class="pre">s</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s[i:j]</span></code> vrne <code class="docutils literal notranslate"><span class="pre">s</span></code> od elementa <code class="docutils literal notranslate"><span class="pre">i</span></code> (vključno) do <code class="docutils literal notranslate"><span class="pre">j</span></code> (ni vključen),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s[i:j:k]</span></code> rezanje <code class="docutils literal notranslate"><span class="pre">s</span></code> od elementa <code class="docutils literal notranslate"><span class="pre">i</span></code> do <code class="docutils literal notranslate"><span class="pre">j</span></code>	po koraku <code class="docutils literal notranslate"><span class="pre">k</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">len(s)</span></code> vrne dolžino <code class="docutils literal notranslate"><span class="pre">s</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min(s)</span></code> vrne najmanjši element iz <code class="docutils literal notranslate"><span class="pre">s</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max(s)</span></code> vrne največji element iz <code class="docutils literal notranslate"><span class="pre">s</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.index(x[,</span> <span class="pre">i[,</span> <span class="pre">j]])</span></code> vrne indeks prve pojave <code class="docutils literal notranslate"><span class="pre">x</span></code> v <code class="docutils literal notranslate"><span class="pre">s</span></code> (od indeksa <code class="docutils literal notranslate"><span class="pre">i</span></code> do <code class="docutils literal notranslate"><span class="pre">j</span></code>),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.count(x)</span></code> vrne število elementov.</p></li>
+</ul>
+<p>Nekateri primeri:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="s1">&#39;abc&#39;</span> <span class="c1"># in primerja ali je objekt v nizu, seznamu,...</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Zgoraj smo imeli seznam <code class="docutils literal notranslate"><span class="pre">parametri</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;g&#39;</span><span class="p">:</span> <span class="mf">9.81</span><span class="p">,</span> <span class="s1">&#39;višina&#39;</span><span class="p">:</span> <span class="mf">5.2</span><span class="p">,</span> <span class="s1">&#39;širina&#39;</span><span class="p">:</span> <span class="mi">43</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Preverimo, ali vsebuje element s ključem <code class="docutils literal notranslate"><span class="pre">širina</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;širina&#39;</span> <span class="ow">in</span> <span class="n">parametri</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stetje-in-rezanje-sestavljenih-podatkovnih-struktur">
+<h3>Štetje in rezanje sestavljenih podatkovnih struktur<a class="headerlink" href="#stetje-in-rezanje-sestavljenih-podatkovnih-struktur" title="Permalink to this headline">#</a></h3>
+<p>Predpostavimo spodnji niz:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abeceda</span> <span class="o">=</span> <span class="s1">&#39;abcčdefghijklmnoprsštuvzž&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>V Pythonu začnemo šteti indekse z 0</strong>! Na spletu lahko najdete razprave o tem ali je prav, da se indeksi začnejo z 0 ali 1. Zakaj začeti z 0 zelo lepo pojasni prof. dr. Janez Demšar v knjigi Python za programerje (<a class="reference external" href="https://ucilnica.fri.uni-lj.si/file.php/166/Python%20za%20programerje.pdf">vir</a>, stran 28) ali pa tudi prof. dr. Edsger W. Dijkstra v zapisu na <a class="reference external" href="http://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html">spletu</a>.</p>
+<p>Rezanje imenujemo operacijo, ko iz seznama izrežemo določene člene.</p>
+<p>Splošno pravilo je:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">:</span><span class="n">k</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>kar pomeni, da se seznam <code class="docutils literal notranslate"><span class="pre">s</span></code> razreže od elementa <code class="docutils literal notranslate"><span class="pre">i</span></code> do <code class="docutils literal notranslate"><span class="pre">j</span></code>	po koraku <code class="docutils literal notranslate"><span class="pre">k</span></code>. Če katerega elementa ne podamo potem se uporabi (logična) vrednost:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code> je privzeto 0, kar pomeni prvi element,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">j</span></code> je privzeto -1, kar pomeni zadnji element,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">k</span></code> je privzeto 1.</p></li>
+</ul>
+<p>Prvi znak je torej:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abeceda</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;a&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Prvi trije znaki so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abeceda</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;abc&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Od prvih 15 znakov, vsak tretji je:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abeceda</span><span class="p">[:</span><span class="mi">15</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ačfil&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Zadnjih petnajst znakov, vsak tretji:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abeceda</span><span class="p">[</span><span class="o">-</span><span class="mi">15</span><span class="p">::</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;jmpšv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ko želimo obrniti vrstni red, lahko to naredimo tako (beremo od začetka do konca po koraku -1, kar pomeni od konca proti začetku s korakom 1:)):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abeceda</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;žzvutšsrponmlkjihgfedčcba&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="kontrola-toka-programa">
+<h2>Kontrola toka programa<a class="headerlink" href="#kontrola-toka-programa" title="Permalink to this headline">#</a></h2>
+<p>Pogledali si bomo nekatera osnovna orodja za kontrolo toka izvajanja programa (<a class="reference external" href="https://docs.python.org/tutorial/controlflow.html">dokumentacija</a>).</p>
+<section id="stavek-if">
+<h3>Stavek <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#stavek-if" title="Permalink to this headline">#</a></h3>
+<p>Tipična oblika stavka <code class="docutils literal notranslate"><span class="pre">if</span></code> (<a class="reference external" href="https://docs.python.org/tutorial/controlflow.html#if-statements">dokumentacija</a>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">pogoj0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Izpolnjen je bil pogoj0&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">pogoj1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Izpolnjen je bil pogoj1&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">pogoj2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Izpolnjen je bil pogoj2&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Noben pogoj ni bil izpolnjen&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a je več od 5&#39;</span><span class="p">)</span> <span class="c1"># se izvede, če je pogoj res. </span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">13</span><span class="o">*</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a je več od 5
+-------------
+</pre></div>
+</div>
+</div>
+</div>
+<p>Zgoraj smo funkcijo <code class="docutils literal notranslate"><span class="pre">print</span></code> zamaknili, saj pripada bloku kode, ki se izvede v primeru <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>. Nekateri programski jeziki kodo znotraj bloka dajo v zavite ali kakšne druge oklepaje in dodatno še zamikajo. Pri Pythonu se samo zamikajo. Zamik je tipično <strong>4 presledke</strong>. Lahko je tudi <strong>tabulator</strong> (manj pogosto), vendar pa smemo v eni datoteki .py uporabljati le en način zamikanja.</p>
+<p>Stavke lahko zapišemo tudi v eno vrstico, vendar je taka uporaba odsvetovana, saj zmanjšuje preglednost kode:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;taka oblika je odsvetovana&#39;</span><span class="p">);</span> <span class="nb">print</span><span class="p">(</span><span class="mi">40</span><span class="o">*</span><span class="s1">&#39;-&#39;</span><span class="p">);</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;uporaba podpičja namesto nove vrstice&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>taka oblika je odsvetovana
+----------------------------------------
+uporaba podpičja namesto nove vrstice
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="izraz-if">
+<h3>Izraz <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#izraz-if" title="Permalink to this headline">#</a></h3>
+<p>Poleg stavka <code class="docutils literal notranslate"><span class="pre">if</span></code> ima Python tudi izraz <code class="docutils literal notranslate"><span class="pre">if</span></code> (angl. <em>ternary operator</em>, glejte <a class="reference external" href="https://docs.python.org/faq/programming.html#is-there-an-equivalent-of-c-s-ternary-operator">dokumentacijo</a>).</p>
+<p>Sintaksa je:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">izvedi</span><span class="p">,</span> <span class="n">če</span> <span class="n">je</span> <span class="kc">True</span><span class="p">]</span> <span class="k">if</span> <span class="n">pogoj</span> <span class="k">else</span> <span class="p">[</span><span class="n">izvedi</span><span class="p">,</span> <span class="n">če</span> <span class="n">je</span> <span class="kc">False</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Preprost primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Je res&#39;</span> <span class="k">if</span> <span class="mi">5</span><span class="o">==</span><span class="mi">3</span> <span class="k">else</span> <span class="s1">&#39;Ni res&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ni res&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If izrazi so zelo uporabni in jih bomo pogosto uporabljali pri izpeljevanju seznamov!</p>
+</section>
+<section id="zanka-while">
+<h3>Zanka <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#zanka-while" title="Permalink to this headline">#</a></h3>
+<p>Sintaksa zanke while (<a class="reference external" href="https://docs.python.org/reference/compound_stmts.html#the-while-statement">dokumentacija</a>) je:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">pogoj</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">koda</span> <span class="n">za</span> <span class="n">izvajanje</span><span class="p">]</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">koda</span> <span class="n">za</span> <span class="n">izvajanje</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Pri tem je treba poudariti, da je del <code class="docutils literal notranslate"><span class="pre">else</span></code> opcijski in se izvede ob izhodu iz zanke <code class="docutils literal notranslate"><span class="pre">while</span></code>. Ukaz <code class="docutils literal notranslate"><span class="pre">break</span></code> prekine zanko in ne izvede <code class="docutils literal notranslate"><span class="pre">else</span></code> dela. Ukaz <code class="docutils literal notranslate"><span class="pre">continue</span></code> prekine izvajanje trenutne kode in gre takoj na testiranje pogoja.</p>
+<p>Preprost primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+--
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="zanka-for">
+<h3>Zanka <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#zanka-for" title="Permalink to this headline">#</a></h3>
+<p>V Pythonu bomo <strong>zelo pogosto</strong> uporabljali zanko <code class="docutils literal notranslate"><span class="pre">for</span></code> (<a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#for-statements">dokumentacija</a>). Sintaksa je:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">seznam_z_elementi</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">koda</span> <span class="n">za</span> <span class="n">izvajanje</span><span class="p">]</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="p">[</span><span class="n">koda</span> <span class="n">za</span> <span class="n">izvajanje</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Podobno kakor pri <code class="docutils literal notranslate"><span class="pre">while</span></code> je tudi tukaj <code class="docutils literal notranslate"><span class="pre">else</span></code> del opcijski.</p>
+<p>Poglejmo primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imena</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jaka&#39;</span><span class="p">,</span> <span class="s1">&#39;Miki&#39;</span><span class="p">,</span> <span class="s1">&#39;Luka&#39;</span><span class="p">,</span> <span class="s1">&#39;Anja&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">ime</span> <span class="ow">in</span> <span class="n">imena</span><span class="p">:</span> <span class="c1"># tukaj se skriva prirejanje; ``ime`` vsakič pridobi novo vrednost</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ime</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jaka
+Miki
+Luka
+Anja
+</pre></div>
+</div>
+</div>
+</div>
+<p>Zelo uporabno je zanke delati čez slovarje:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Slovar je:&#39;</span><span class="p">,</span> <span class="n">parametri</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">parametri</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Slovar je: {&#39;višina&#39;: 5.2, &#39;širina&#39;: 43, &#39;g&#39;: 9.81}
+višina = 5.2
+širina = 43
+g = 9.81
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="funkcija-zip">
+<h3>Funkcija <code class="docutils literal notranslate"><span class="pre">zip</span></code><a class="headerlink" href="#funkcija-zip" title="Permalink to this headline">#</a></h3>
+<p>Ko želimo kombinirati več seznamov v zanki, si pomagamo s funkcijo <code class="docutils literal notranslate"><span class="pre">zip</span></code> (<a class="reference external" href="https://docs.python.org/library/functions.html#zip">dokumentacija</a>); primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">xi</span><span class="p">,</span> <span class="n">yi</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pari so: &#39;</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">yi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pari so:  1 in 10
+Pari so:  2 in 20
+Pari so:  3 in 30
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="funkcija-range">
+<h3>Funkcija <code class="docutils literal notranslate"><span class="pre">range</span></code><a class="headerlink" href="#funkcija-range" title="Permalink to this headline">#</a></h3>
+<p>Pogosto bomo uporabljali zanko <code class="docutils literal notranslate"><span class="pre">for</span></code> v povezavi s funkcijo <code class="docutils literal notranslate"><span class="pre">range</span></code> (<a class="reference external" href="https://docs.python.org/tutorial/controlflow.html#the-range-function">dokumentacija</a>). Sintaksa je:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="n">stop</span><span class="p">)</span>
+<span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">[,</span> <span class="n">step</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Če torej funkcijo kličemo z enim parametrom, je to <code class="docutils literal notranslate"><span class="pre">stop</span></code>: <strong>do</strong> katere številke naštevamo. V primeru klica z dvema parametroma <code class="docutils literal notranslate"><span class="pre">start,</span> <span class="pre">stop</span></code>, naštevamo od, do! Tretji parameter je opcijski in definira korak <code class="docutils literal notranslate"><span class="pre">step</span></code>.</p>
+<p>Poglejmo primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="funkcija-enumerate">
+<h3>Funkcija <code class="docutils literal notranslate"><span class="pre">enumerate</span></code><a class="headerlink" href="#funkcija-enumerate" title="Permalink to this headline">#</a></h3>
+<p>Zanko <code class="docutils literal notranslate"><span class="pre">for</span></code> pogosto uporabljamo tudi s funkcijo <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>, ki elemente oštevilči (<a class="reference external" href="https://docs.python.org/library/functions.html#enumerate">dokumentacija</a>).</p>
+<p>Poglejmo primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ime</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">imena</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">ime</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 Jaka
+1 Miki
+2 Luka
+3 Anja
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="za-konec-plonk-list">
+<h2>Za konec: plonk list :)<a class="headerlink" href="#za-konec-plonk-list" title="Permalink to this headline">#</a></h2>
+<p>Veliko jih je; tukaj je <a class="reference external" href="http://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf">povezava</a> do enega.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="nekaj-vprasanj-za-razmislek">
+<h1>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this headline">#</a></h1>
+<ol class="simple">
+<li><p>Namestite <em>Anaconda</em>.</p></li>
+<li><p>Namestite <em>Visual Studio Code</em>, GIT in iz GitHuba ter prenesite predavanja.</p></li>
+<li><p>V poljubnem delovnem direktoriju zaženite Jupyter notebook.</p></li>
+<li><p>Prikažite uporabo stilov, uporabo poudarjenega, poševnega teksta, uporabo seznamov, enačbe …</p></li>
+<li><p>Definirajte razliko med statičnim in dinamičnim tipiziranjem.</p></li>
+<li><p>Poiščite pomoč poljubnega ukaza (znotraj Pythona in na uradni domači strani).</p></li>
+<li><p>Prikažite uporabo <em>niza</em>, <em>celega števila</em> in <em>števila z uporabo plavajoče vejice</em>.</p></li>
+<li><p>Prikažite uporabo <em>terke</em> in njenih bistvenih lastnosti.</p></li>
+<li><p>Prikažite uporabo <em>seznama</em> in njegovih bistvenih lastnosti.</p></li>
+<li><p>Komentirajte tipične operacije nad seznami.</p></li>
+<li><p>Komentirajte uporabo <em>množic</em> in tipične uporabe.</p></li>
+<li><p>Prikažite uporabo slovarjev.</p></li>
+<li><p>Katere aritmetične operatorje poznamo v Pythonu? Prikažite uporabo.</p></li>
+<li><p>Katere primerjalne operatorje poznamo v Pythonu? Prikažite uporabo.</p></li>
+<li><p>Katere logične operatorje poznamo v Pythonu? Prikažite uporabo.</p></li>
+<li><p>Prikažite uporabo stavka ``if`.</p></li>
+<li><p>Kakšna je razlika med stavikom <code class="docutils literal notranslate"><span class="pre">if</span></code> in izrazom <code class="docutils literal notranslate"><span class="pre">if</span></code>. Prikažite!</p></li>
+<li><p>Prikažite uporabo zanke <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p></li>
+<li><p>Prikažite uporabo zanke <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p></li>
+<li><p>Prikažite uporabo zanke <code class="docutils literal notranslate"><span class="pre">for</span></code> v povezavi s funkcijami <code class="docutils literal notranslate"><span class="pre">range</span></code>, <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>, <code class="docutils literal notranslate"><span class="pre">zip</span></code></p></li>
+</ol>
+<p>Še nekaj branja: <a class="reference external" href="https://automatetheboringstuff.com/">automatetheboringstuff.com</a>.</p>
+<p>In en twit:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">blockquote</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;twitter-tweet&quot;</span> <span class="na">data-lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;&lt;</span><span class="nt">p</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">dir</span><span class="o">=</span><span class="s">&quot;ltr&quot;</span><span class="p">&gt;</span>The most important slide from my <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://twitter.com/PyData&quot;</span><span class="p">&gt;</span>@PyData<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> talk. <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://t.co/Hc8j4ZpHV4&quot;</span><span class="p">&gt;</span>pic.twitter.com/Hc8j4ZpHV4<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span><span class="ni">&amp;mdash;</span> Almar Klein (@almarklein) <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://twitter.com/almarklein/status/708909917684568064&quot;</span><span class="p">&gt;</span>March 13, 2016<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">async</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;//platform.twitter.com/widgets.js&quot;</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The most important slide from my <a href="https://twitter.com/PyData">@PyData</a> talk. <a href="https://t.co/Hc8j4ZpHV4">pic.twitter.com/Hc8j4ZpHV4</a></p>&mdash; Almar Klein (@almarklein) <a href="https://twitter.com/almarklein/status/708909917684568064">March 13, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div></div>
+</div>
+<section id="vkljucevanje-lokalnega-video-posnetka-s-transformacijami">
+<h2>Vključevanje lokalnega video posnetka s transformacijami<a class="headerlink" href="#vkljucevanje-lokalnega-video-posnetka-s-transformacijami" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;style&gt;video{</span><span class="se">\</span>
+<span class="s1">  -moz-transform:scale(0.75) rotate(-90deg);</span><span class="se">\</span>
+<span class="s1">  -webkit-transform:scale(0.75) rotate(-90deg);</span><span class="se">\</span>
+<span class="s1">  -o-transform:scale(0.75) rotate(-90deg);</span><span class="se">\</span>
+<span class="s1">  -ms-transform:scale(0.75) rotate(-90deg);</span><span class="se">\</span>
+<span class="s1">  transform:scale(0.75) rotate(-90deg);</span><span class="se">\</span>
+<span class="s1">}&lt;/style&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>video{  -moz-transform:scale(0.75) rotate(-90deg);  -webkit-transform:scale(0.75) rotate(-90deg);  -o-transform:scale(0.75) rotate(-90deg);  -ms-transform:scale(0.75) rotate(-90deg);  transform:scale(0.75) rotate(-90deg);}</style></div></div>
+</div>
+<p><video controls src="./fig/vodni-top.mkv"/></video></p>
+<p>(Zgornje celice se na github-u ne prikaže pravilno)</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Numeri%C4%8Dne%20metode%20-%20%C5%A1tudijski%20in%20izpitni%20red.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Študijski in izpitni red</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Funkcije, izjeme, moduli</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Janko Slavič<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

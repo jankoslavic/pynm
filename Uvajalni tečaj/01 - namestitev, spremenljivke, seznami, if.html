@@ -1,0 +1,1141 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Osnovne informacije &#8212; Numerične metode v ekosistemu Pythona</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Numerične metode v ekosistemu Pythona</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Predgovor
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Numeri%C4%8Dne%20metode%20-%20%C5%A1tudijski%20in%20izpitni%20red.html">
+   Študijski in izpitni red
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Predavanje%2001%20-%20Uvod%20v%20Python.html">
+   Uvod v Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">
+   Funkcije, izjeme, moduli
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">
+   Numpy, matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">
+   Objektno programiranje, simbolno računanje
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">
+   Sistemi linearnih enačb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">
+   Sistemi linearnih enačb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Predavanje%2007%20-%20Interpolacija.html">
+   Interpolacija
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Predavanje%2008%20-%20Aproksimacija.html">
+   Aproksimacija
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">
+   Reševanje enačb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">
+   Reševanje enačb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">
+   Numerično integriranje
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">
+   Numerično reševanje diferencialnih enačb - začetni problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">
+   Numerično reševanje diferencialnih enačb - robni problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">
+   Testiranje pravilnosti kode, uporabniški vmesnik
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jankoslavic/pynm/master?urlpath=tree/notebooks/Uvajalni tečaj/01 - namestitev, spremenljivke, seznami, if.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jankoslavic/pynm"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jankoslavic/pynm/issues/new?title=Issue%20on%20page%20%2FUvajalni tečaj/01 - namestitev, spremenljivke, seznami, if.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Uvajalni tečaj/01 - namestitev, spremenljivke, seznami, if.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Osnovne informacije
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#potrebna-programska-oprema">
+   Potrebna programska oprema
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uvod-v-python-in-jupyter-notebook">
+   Uvod v Python in Jupyter Notebook
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uporaba-modulov-in-knjiznjic">
+     Uporaba modulov in knjižnjic:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uporaba-primerjalnih-operatorjev">
+     Uporaba primerjalnih operatorjev:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pogledamo-lahko-tip-spremenljivke">
+     Pogledamo lahko tip spremenljivke:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stavek-if">
+     Stavek
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seznami-in-terke">
+     Seznami in terke
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nizi">
+     Nizi
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dodatno">
+   Dodatno
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Osnovne informacije</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Osnovne informacije
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#potrebna-programska-oprema">
+   Potrebna programska oprema
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uvod-v-python-in-jupyter-notebook">
+   Uvod v Python in Jupyter Notebook
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uporaba-modulov-in-knjiznjic">
+     Uporaba modulov in knjižnjic:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uporaba-primerjalnih-operatorjev">
+     Uporaba primerjalnih operatorjev:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pogledamo-lahko-tip-spremenljivke">
+     Pogledamo lahko tip spremenljivke:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stavek-if">
+     Stavek
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seznami-in-terke">
+     Seznami in terke
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nizi">
+     Nizi
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dodatno">
+   Dodatno
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <h1>Kazalo<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Osnovne-informacije" data-toc-modified-id="Osnovne-informacije-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Osnovne informacije</a></span></li><li><span><a href="#Potrebna-programska-oprema" data-toc-modified-id="Potrebna-programska-oprema-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Potrebna programska oprema</a></span></li><li><span><a href="#Uvod-v-Python-in-Jupyter-Notebook" data-toc-modified-id="Uvod-v-Python-in-Jupyter-Notebook-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Uvod v Python in Jupyter Notebook</a></span><ul class="toc-item"><li><span><a href="#Uporaba-modulov-in-knjižnjic:" data-toc-modified-id="Uporaba-modulov-in-knjižnjic:-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Uporaba modulov in knjižnjic:</a></span></li><li><span><a href="#Uporaba-primerjalnih-operatorjev:" data-toc-modified-id="Uporaba-primerjalnih-operatorjev:-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Uporaba primerjalnih operatorjev:</a></span></li><li><span><a href="#Pogledamo-lahko-tip-spremenljivke:" data-toc-modified-id="Pogledamo-lahko-tip-spremenljivke:-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Pogledamo lahko tip spremenljivke:</a></span></li><li><span><a href="#Stavek-if" data-toc-modified-id="Stavek-if-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Stavek <code>if</code></a></span></li><li><span><a href="#Seznami-in-terke" data-toc-modified-id="Seznami-in-terke-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Seznami in terke</a></span></li><li><span><a href="#Nizi" data-toc-modified-id="Nizi-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>Nizi</a></span></li></ul></li><li><span><a href="#Dodatno" data-toc-modified-id="Dodatno-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Dodatno</a></span></li></ul></div><p>Posnetek: na <a class="reference external" href="https://e-ucilnica.fs.uni-lj.si"><code class="docutils literal notranslate"><span class="pre">e-ucilnica.fs.uni-lj.si</span></code></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="osnovne-informacije">
+<h1>Osnovne informacije<a class="headerlink" href="#osnovne-informacije" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p><strong>Spletni repozitorij</strong>: <a class="reference external" href="https://github.com/jankoslavic/pypinm">github.com/jankoslavic/pypinm</a></p>
+<ul>
+<li><p><em>Študijski in izpitni red</em>, literatura, razpored vaj in predavanj, govorilne ure, projektna naloga: <a class="reference external" href="https://github.com/jankoslavic/pypinm/blob/master/PiNM.ipynb">PiNM</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pypinm.io/">Spletna knjiga - predloge za predavanja</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jankoslavic/pypinm/blob/master/projekt/Individualni%20projekt%20-%20predloga.ipynb">Individualni projekt - oblikovna predloga</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jankoslavic/pypinm/tree/master/primeri%20nalog%20in%20izpita">Primeri izpitnih nalog</a></p></li>
+<li><p>…</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p><strong>Sistem za sprotno delo (domače naloge)</strong>: <a class="reference external" href="https://moj.ladisk.si">moj.ladisk.si</a></p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>PiNM forum</strong> - komunikacija z izvajalci in sošolci: <a class="reference external" href="http://pinm.ladisk.si">pinm.ladisk.si</a></p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>e-učilnica</strong> - povezave do gradiv, spletnih učilnic: <a class="reference external" href="https://e-ucilnica.fs.uni-lj.si/course/view.php?id=181">e-ucilnica.fs.uni-lj.si</a>
+(<strong>samovpis: <code class="docutils literal notranslate"><span class="pre">vpis-PiNM-2021-22</span></code></strong>)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="potrebna-programska-oprema">
+<h1>Potrebna programska oprema<a class="headerlink" href="#potrebna-programska-oprema" title="Permalink to this headline">#</a></h1>
+<p>Za pomoč pri namestitvi <a class="reference external" href="https://www.youtube.com/watch?v=Cp-IuyN67rQ">glejte video navodila</a>!</p>
+<ul>
+<li><p><strong>Python</strong> verzije vsaj 3.8:</p>
+<p>Programski jezik, ki ga bomo uporabljali pri PiNM. V paketu <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a> ga dobite skupaj z večino knjižnjic, ki jih boste potrebovali tekom semestra.</p>
+<table>
+  <tr>
+      <td>Anaconda namestitvene datoteke:</td>
+      <td><a href="https://repo.anaconda.com/archive/Anaconda3-2021.11-Windows-x86_64.exe">Windows</a></td>
+      <td><a href="https://repo.anaconda.com/archive/Anaconda3-2021.11-MacOSX-x86_64.pkg">macOS</a></td>
+   <tr>
+</li>
+</ul>
+</table><ul>
+<li><p><a class="reference external" href="https://jupyter.org/">Jupyter Notebook</a></p>
+<p>Okolje za urejanje in izvajanje kode, ki ga bomo pretežno uporabljali na vajah.</p>
+<p><strong>Če ste namestili Anaconda programski paket, je Jupyter Notebook že nameščen na vašem računalniku, dodatna namestitev ni potreba</strong>.</p>
+<p><strong>Zagon</strong>, ko je Jupyter Notebook nameščen:</p>
+</li>
+</ul>
+<video src="img/zagon_jupyter_notebook.mp4" width="800" height="400" controls>
+</video> <ul>
+<li><p><a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>:</p>
+<p>Urejevalnik kode s podporo programskemu jeziku Python. Orodje, namenjeno “klasičnemu” urejanju Python programskih datotek in paketov.</p>
+</li>
+</ul>
+<ul>
+<li><p><a class="reference external" href="https://git-scm.com/downloads">Git</a> sistem kontrole verzij programske kode.</p>
+<p>Sistem Git se pogosto uporablja pri skupinskem delu pri programerskih projektih. Uporabljali ga boste lahko za enostaven prenos posodobljenih predlog  in primerov kode za predavanja.</p>
+<p>Za prenos vseh datotek iz spletnega repozitorija <code class="docutils literal notranslate"><span class="pre">pypinm</span></code>, po namestitvi Git-a, poženete naslednji ukaz v ukazni vrstici:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jankoslavic</span><span class="o">/</span><span class="n">pypinm</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="uvod-v-python-in-jupyter-notebook">
+<h1>Uvod v Python in Jupyter Notebook<a class="headerlink" href="#uvod-v-python-in-jupyter-notebook" title="Permalink to this headline">#</a></h1>
+<p>V okolju Jupyter Notebook pišemo Python kodo v temu namenjene celice.</p>
+<p>Primer enostavnega matematičnega izraza:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.5</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">d</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Aritmetični operatorji</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> seštevanje</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> odštevanje</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> množenje</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> deljenje</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">//</span></code> celoštevilsko deljenje</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">**</span></code> eksponent</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> ostanek pri deljenju</p></li>
+</ul>
+<p>Rezultat lahko izpišemo s <strong>funkcijo</strong> <code class="docutils literal notranslate"><span class="pre">print</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 2
+10
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ali pa enostavno takole:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<section id="uporaba-modulov-in-knjiznjic">
+<h2>Uporaba modulov in knjižnjic:<a class="headerlink" href="#uporaba-modulov-in-knjiznjic" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.42
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kaj pa če želimo natančnejši rezultat?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.42477796076938
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="uporaba-primerjalnih-operatorjev">
+<h2>Uporaba primerjalnih operatorjev:<a class="headerlink" href="#uporaba-primerjalnih-operatorjev" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vrednost</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">vrednost</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;=</span> <span class="n">vrednost</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">!=</span> <span class="n">vrednost</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">==</span> <span class="n">vrednost</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">vrednost</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Primerjalni operatorji</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> manjši</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> večji</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> manjše ali enako</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> večje ali enako</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> enako</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code> neenako</p></li>
+</ul>
+</section>
+<section id="pogledamo-lahko-tip-spremenljivke">
+<h2>Pogledamo lahko tip spremenljivke:<a class="headerlink" href="#pogledamo-lahko-tip-spremenljivke" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vrednost</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">vrednost</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">vrednost</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stavek-if">
+<h2>Stavek <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#stavek-if" title="Permalink to this headline">#</a></h2>
+<p>Kadar želimo, da se del kode izvede le, kadar je izpolnjen določen pogoj:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">vrednost</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">vrednost</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">vrednost</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.858407346410207
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="seznami-in-terke">
+<h2>Seznami in terke<a class="headerlink" href="#seznami-in-terke" title="Permalink to this headline">#</a></h2>
+<p>Pogosto nam pridejo prav seznami numeričnih vrednosti:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">seznam_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2.3, 5, 100]
+</pre></div>
+</div>
+</div>
+</div>
+<p>V seznamih lahko shranjujemo različne tipe podatkov:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam_2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="s1">&#39;nič&#39;</span><span class="p">,</span> <span class="n">seznam_1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">seznam_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.0, &#39;nič&#39;, [1, 2.3, 5, 100]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do elementov seznama dostopamo takole:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">seznam_2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nič
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dolžino seznama preverimo z <code class="docutils literal notranslate"><span class="pre">len</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam_2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.0, &#39;nič&#39;, [1, 2.3, 5, 100]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">seznam_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Terke (ang. <em>tuple</em>) so podatkovna struktura podobna seznamom, s to razliko, da terk ni mogoče spreminjati:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terka</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">seznam_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terka</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [29],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">terka</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="nizi">
+<h2>Nizi<a class="headerlink" href="#nizi" title="Permalink to this headline">#</a></h2>
+<p>Tekst v Python-u predstavimo z nizi (ang. <em>string</em>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">niz</span> <span class="o">=</span> <span class="s2">&quot;Numerične metode&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">niz</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">niz</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="s1">&#39; Python&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nizi so podobni seznamom črk:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">niz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">niz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>So bolj podobni seznamom ali terkam?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">niz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;h&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pogosto za izpisovenje nizov uporabimo funkcijo <code class="docutils literal notranslate"><span class="pre">print</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">niz</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">niz</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="dodatno">
+<h1>Dodatno<a class="headerlink" href="#dodatno" title="Permalink to this headline">#</a></h1>
+<p>Poskusimo narediti enostaven program za celoštevilsko deljenje. Zahteve so:</p>
+<ul class="simple">
+<li><p>Uporabnika vprašamo za dva podatka, vrednost delitelja in deljenca. Uporabimo funkcijo <code class="docutils literal notranslate"><span class="pre">input(&lt;sporočilo&gt;)</span></code>!</p></li>
+<li><p>Obe vrednosti iz niza pretvorimo v število s plavajočo vejico.</p></li>
+<li><p>Preverimo, ali je delitelj različen od nič. Če ni, opozorimo uporabnika in zaključimo.</p></li>
+<li><p>Če smo zgornji test prestali, izpišemo rezultat celoštevilskega deljenja in vrednost ostanka.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rezultat</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Testni vnos &gt;&gt; &#39;</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">rezultat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Rešitev:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deljenec</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Deljenec:&#39;</span><span class="p">)</span>
+<span class="n">delitelj</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Delitelj:&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">float_deljenec</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">deljenec</span><span class="p">)</span>
+<span class="n">float_delitelj</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">delitelj</span><span class="p">)</span>
+<span class="n">float_delitelj</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">float_delitelj</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">rezultat</span> <span class="o">=</span> <span class="n">float_deljenec</span> <span class="o">//</span> <span class="n">float_delitelj</span>
+    <span class="n">ostanek</span> <span class="o">=</span> <span class="n">float_deljenec</span> <span class="o">%</span> <span class="n">float_delitelj</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">rezultat</span><span class="p">,</span> <span class="n">ostanek</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pozor! Delitelj je enak 0&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Uvajalni tečaj"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Janko Slavič<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
