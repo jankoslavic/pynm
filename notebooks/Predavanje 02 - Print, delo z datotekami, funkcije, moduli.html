@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Numpy, matplotlib" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html" />
@@ -108,15 +110,15 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Predgovor
+                <a class="reference internal" href="../README.html">
+                    Numerične metode v ekosistemu Pythona
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Numeri%C4%8Dne%20metode%20-%20%C5%A1tudijski%20in%20izpitni%20red.html">
-   Študijski in izpitni red
+  <a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">
+   Študijski in izpitni red - Numerične metode 2022/23
   </a>
  </li>
  <li class="toctree-l1">
@@ -141,12 +143,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">
-   Sistemi linearnih enačb
+   Uvod v numerične metode in sistemi linearnih enačb
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">
-   Sistemi linearnih enačb
+   Sistemi linearnih enačb - nadaljevanje
   </a>
  </li>
  <li class="toctree-l1">
@@ -166,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">
-   Reševanje enačb
+   Numerično odvajanje
   </a>
  </li>
  <li class="toctree-l1">
@@ -399,6 +401,11 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#">
    Funkcije, izjeme, moduli
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funkcije">
+   Funkcije
+  </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#funkcija-print">
@@ -413,61 +420,49 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#funkcije-v-splosnem">
-     Funkcije v splošnem
+    <a class="reference internal nav-link" href="#delo-z-datotekami">
+     Delo z datotekami
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#posredovanje-argumentov-v-funkcije">
+     Posredovanje argumentov v funkcije
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#posredovanje-argumentov-v-funkcije">
-       Posredovanje argumentov v funkcije
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#primer-dobre-prakse-pri-definiranju-argumentov">
-         Primer dobre prakse pri definiranju argumentov
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#posredovanje-funkcij-kot-argument">
-         Posredovanje funkcij kot argument
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#docstring-funkcije">
-       Docstring funkcije
+      <a class="reference internal nav-link" href="#primer-dobre-prakse-pri-definiranju-argumentov">
+       Primer dobre prakse pri definiranju argumentov
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#lokalna-globalna-imena">
-       Lokalna/globalna imena
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#return">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         return
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#anonimna-funkcija-izraz">
-       Anonimna funkcija/izraz
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#izpeljevanje-seznamov">
-       Izpeljevanje seznamov
+      <a class="reference internal nav-link" href="#posredovanje-funkcij-kot-argument">
+       Posredovanje funkcij kot argument
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#delo-z-datotekami">
-     Delo z datotekami
+    <a class="reference internal nav-link" href="#docstring-funkcije">
+     Docstring funkcije
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lokalna-globalna-imena">
+     Lokalna/globalna imena
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#return">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       return
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#anonimna-funkcija-izraz">
+     Anonimna funkcija/izraz
     </a>
    </li>
   </ul>
@@ -485,63 +480,56 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#moduli">
-   Moduli
+  <a class="reference internal nav-link" href="#osnove-modulov">
+   Osnove modulov
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pisanje-lastnih-modulov">
-     Pisanje lastnih modulov
+    <a class="reference internal nav-link" href="#uvoz-modulov-in-jupyter-notebook">
+     Uvoz modulov in Jupyter notebook
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#uvoz-modulov-in-jupyter-notebook">
-       Uvoz modulov in Jupyter notebook
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#modul-pickle">
-       Modul
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         pickle
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#namestitev-modulov-iz-spleta">
-     Namestitev modulov iz spleta
+    <a class="reference internal nav-link" href="#modul-pickle">
+     Modul
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pickle
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uporaba-modulov-iz-spleta">
+   Uporaba modulov iz spleta
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#upravljalnik-paketov-conda">
+     Upravljalnik paketov
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       conda
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#upravljalnik-paketov-pip">
+     Upravljalnik paketov
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pip
+      </span>
+     </code>
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#upravljalnik-paketov-conda">
-       Upravljalnik paketov
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         conda
-        </span>
-       </code>
+      <a class="reference internal nav-link" href="#primer-namestitve-paketa">
+       Primer namestitve paketa
       </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#upravljalnik-paketov-pip">
-       Upravljalnik paketov
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         pip
-        </span>
-       </code>
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#primer-namestitve-paketa">
-         Primer namestitve paketa
-        </a>
-       </li>
-      </ul>
      </li>
     </ul>
    </li>
@@ -617,6 +605,11 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#">
    Funkcije, izjeme, moduli
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funkcije">
+   Funkcije
+  </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#funkcija-print">
@@ -631,61 +624,49 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#funkcije-v-splosnem">
-     Funkcije v splošnem
+    <a class="reference internal nav-link" href="#delo-z-datotekami">
+     Delo z datotekami
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#posredovanje-argumentov-v-funkcije">
+     Posredovanje argumentov v funkcije
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#posredovanje-argumentov-v-funkcije">
-       Posredovanje argumentov v funkcije
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#primer-dobre-prakse-pri-definiranju-argumentov">
-         Primer dobre prakse pri definiranju argumentov
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#posredovanje-funkcij-kot-argument">
-         Posredovanje funkcij kot argument
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#docstring-funkcije">
-       Docstring funkcije
+      <a class="reference internal nav-link" href="#primer-dobre-prakse-pri-definiranju-argumentov">
+       Primer dobre prakse pri definiranju argumentov
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#lokalna-globalna-imena">
-       Lokalna/globalna imena
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#return">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         return
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#anonimna-funkcija-izraz">
-       Anonimna funkcija/izraz
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#izpeljevanje-seznamov">
-       Izpeljevanje seznamov
+      <a class="reference internal nav-link" href="#posredovanje-funkcij-kot-argument">
+       Posredovanje funkcij kot argument
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#delo-z-datotekami">
-     Delo z datotekami
+    <a class="reference internal nav-link" href="#docstring-funkcije">
+     Docstring funkcije
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lokalna-globalna-imena">
+     Lokalna/globalna imena
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#return">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       return
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#anonimna-funkcija-izraz">
+     Anonimna funkcija/izraz
     </a>
    </li>
   </ul>
@@ -703,63 +684,56 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#moduli">
-   Moduli
+  <a class="reference internal nav-link" href="#osnove-modulov">
+   Osnove modulov
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pisanje-lastnih-modulov">
-     Pisanje lastnih modulov
+    <a class="reference internal nav-link" href="#uvoz-modulov-in-jupyter-notebook">
+     Uvoz modulov in Jupyter notebook
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#uvoz-modulov-in-jupyter-notebook">
-       Uvoz modulov in Jupyter notebook
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#modul-pickle">
-       Modul
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         pickle
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#namestitev-modulov-iz-spleta">
-     Namestitev modulov iz spleta
+    <a class="reference internal nav-link" href="#modul-pickle">
+     Modul
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pickle
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uporaba-modulov-iz-spleta">
+   Uporaba modulov iz spleta
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#upravljalnik-paketov-conda">
+     Upravljalnik paketov
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       conda
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#upravljalnik-paketov-pip">
+     Upravljalnik paketov
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pip
+      </span>
+     </code>
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#upravljalnik-paketov-conda">
-       Upravljalnik paketov
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         conda
-        </span>
-       </code>
+      <a class="reference internal nav-link" href="#primer-namestitve-paketa">
+       Primer namestitve paketa
       </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#upravljalnik-paketov-pip">
-       Upravljalnik paketov
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         pip
-        </span>
-       </code>
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#primer-namestitve-paketa">
-         Primer namestitve paketa
-        </a>
-       </li>
-      </ul>
      </li>
     </ul>
    </li>
@@ -824,6 +798,9 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="funkcije-izjeme-moduli">
 <h1>Funkcije, izjeme, moduli<a class="headerlink" href="#funkcije-izjeme-moduli" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="funkcije">
+<h1>Funkcije<a class="headerlink" href="#funkcije" title="Permalink to this headline">#</a></h1>
 <section id="funkcija-print">
 <h2>Funkcija print<a class="headerlink" href="#funkcija-print" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">print</span></code> predstavlja eno od najbolj pogosto uporabljenih funkcij. Vse podane argumente izpiše, mednje da presledek, na koncu pa gre v novo vrstico.</p>
@@ -1043,10 +1020,6 @@ pi = 3.14
 </div>
 </div>
 <p>Oblikovanje datuma, ure si lahko pogledate v dodatku spodaj.</p>
-</section>
-</section>
-<section id="funkcije-v-splosnem">
-<h2>Funkcije v splošnem<a class="headerlink" href="#funkcije-v-splosnem" title="Permalink to this headline">#</a></h2>
 <p>V Pythonu je veliko funkcij že vgrajenih (glejte <a class="reference external" href="https://docs.python.org/library/functions.html">dokumentacijo</a>); funkcije pa lahko tudi napišemo sami ali jih uvozimo iz t. i. modulov (zgoraj smo uvozili <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, več si bomo pogledali pozneje).</p>
 <p>Generični primer funkcije je (<a class="reference external" href="https://docs.python.org/tutorial/controlflow.html#defining-functions">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ime_funkcije</span><span class="p">(</span><span class="n">parametri</span><span class="p">):</span>
@@ -1082,475 +1055,6 @@ pi = 3.14
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
-</pre></div>
-</div>
-</div>
-</div>
-<section id="posredovanje-argumentov-v-funkcije">
-<h3>Posredovanje argumentov v funkcije<a class="headerlink" href="#posredovanje-argumentov-v-funkcije" title="Permalink to this headline">#</a></h3>
-<p>Python pozna dva načina posredovanja argumentov:</p>
-<ul class="simple">
-<li><p>glede na <strong>mesto</strong> (<em>positional</em>)</p></li>
-<li><p>glede na <strong>ime</strong>.</p></li>
-</ul>
-<p>Poglejmo si oba načina na primeru:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">površina</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="c1"># pozicijsko</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">površina</span><span class="p">(</span><span class="n">širina</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">dolžina</span> <span class="o">=</span> <span class="mi">6</span><span class="p">)</span> <span class="c1"># glede na ime</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18
-</pre></div>
-</div>
-</div>
-</div>
-<p>Priporočeno je, da argumente posredujemo z <em>imenom</em>; s tem zmanjšamo možnost napake!</p>
-<p>Če ne podamo imena, potem se privzame ime glede na vrstni red argumentov; primer:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">površina</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">širina</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
-</pre></div>
-</div>
-</div>
-</div>
-<p>V kolikor mešamo <em>pozicijsko</em> in <em>poimensko</em> posredovanje argumentov, morajo <strong>najprej biti navedeni pozicijski argumenti, šele nato poimenski</strong>. Pri tem poimenski ne sme ponovno definirati pozicijskega; ker je <code class="docutils literal notranslate"><span class="pre">dolžina</span></code> prvi argument, bi klicanje take kode:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">površina</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">dolžina</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>povzročilo napako.</p>
-<section id="primer-dobre-prakse-pri-definiranju-argumentov">
-<h4>Primer dobre prakse pri definiranju argumentov<a class="headerlink" href="#primer-dobre-prakse-pri-definiranju-argumentov" title="Permalink to this headline">#</a></h4>
-<p>Pogosto funkcije dopolnjujemo in dodajamo nove argumente ali pa število argumentov funkciji sploh ne moremo vnaprej definirati!</p>
-<p>Python s tem nima težav. Argumente, ki niso eksplicitno definirani obvladamo z:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">*[ime0]</span></code> terka <code class="docutils literal notranslate"><span class="pre">[ime0]</span></code> vsebuje vse <strong>pozicijske argumente</strong>, ki niso eksplicitno definirani,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">**[ime1]</span></code> slovar <code class="docutils literal notranslate"><span class="pre">[ime1]</span></code> vsebuje vse <strong>poimenske argumente</strong>, ki niso eksplicitno definirani.</p></li>
-</ul>
-<p>Poglejmo primer:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">neka_funkcija</span><span class="p">(</span><span class="n">student</span><span class="p">,</span> <span class="n">izpit</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Prva verzija funkcije&#39;&#39;&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Študent </span><span class="si">{</span><span class="n">student</span><span class="si">}</span><span class="s1"> se je prijavil na izpit: </span><span class="si">{</span><span class="n">izpit</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">neka_funkcija</span><span class="p">(</span><span class="s1">&#39;Janez&#39;</span><span class="p">,</span> <span class="n">izpit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Študent Janez se je prijavil na izpit: True.
-</pre></div>
-</div>
-</div>
-</div>
-<p>Sedaj pa pripravimo drugo, nadgrajeno, verzijo (omogoča enako uporabo kot prva verzija):</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">neka_funkcija</span><span class="p">(</span><span class="o">*</span><span class="n">terka</span><span class="p">,</span> <span class="o">**</span><span class="n">slovar</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Druga verzija funkcije &#39;&#39;&#39;</span>
-    <span class="n">student</span> <span class="o">=</span> <span class="n">terka</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">izpit</span> <span class="o">=</span> <span class="n">slovar</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;izpit&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span> <span class="c1"># True je privzeta vrednost</span>
-    <span class="n">izpisi_sliko</span> <span class="o">=</span> <span class="n">slovar</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;izpisi_sliko&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># False je privzeta vrednost</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Študent </span><span class="si">{</span><span class="n">student</span><span class="si">}</span><span class="s1"> se je prijavil na izpit: </span><span class="si">{</span><span class="n">izpit</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">izpisi_sliko</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;slika:)&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">neka_funkcija</span><span class="p">(</span><span class="s1">&#39;Janez&#39;</span><span class="p">,</span> <span class="n">izpit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Študent Janez se je prijavil na izpit: True.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">neka_funkcija</span><span class="p">(</span><span class="s1">&#39;Janez&#39;</span><span class="p">,</span> <span class="n">izpit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">izpisi_sliko</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">neobstoječi_argument</span><span class="o">=</span><span class="s1">&#39;ni&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Študent Janez se je prijavil na izpit: True.
-slika:)
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="posredovanje-funkcij-kot-argument">
-<h4>Posredovanje funkcij kot argument<a class="headerlink" href="#posredovanje-funkcij-kot-argument" title="Permalink to this headline">#</a></h4>
-<p>Tukaj bi želeli izpostaviti, da so argumenti lahko tudi druge funkcije.</p>
-<p>Poglejmo si primer:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">oblika_a</span><span class="p">(</span><span class="n">vrednost</span><span class="p">):</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Prikaz vrednosti: </span><span class="si">{</span><span class="n">vrednost</span><span class="si">}</span><span class="s1">&#39;</span>
-
-<span class="k">def</span> <span class="nf">oblika_b</span><span class="p">(</span><span class="n">vrednost</span><span class="p">):</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Prikaz vrednosti: </span><span class="si">{</span><span class="n">vrednost</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span>
-
-<span class="k">def</span> <span class="nf">izpis</span><span class="p">(</span><span class="n">oblika</span><span class="p">,</span> <span class="n">vrednost</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">oblika</span><span class="p">(</span><span class="n">vrednost</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Imamo torej dve funkciji <code class="docutils literal notranslate"><span class="pre">oblika_a</span></code> in <code class="docutils literal notranslate"><span class="pre">oblika_b</span></code>, ki malenkost drugače oblikujeta numerično vrednost.</p>
-<p>Poglejmo uporabo:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">izpis</span><span class="p">(</span><span class="n">oblika_a</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prikaz vrednosti: 3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">izpis</span><span class="p">(</span><span class="n">oblika_b</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prikaz vrednosti: 3.00
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="docstring-funkcije">
-<h3>Docstring funkcije<a class="headerlink" href="#docstring-funkcije" title="Permalink to this headline">#</a></h3>
-<p><em>docstring</em> je neobvezen del definicije funkcije, ki dokumentira funkcijo in njeno uporabo. Iz tega stališča je zelo priporočeno, da ga uporabimo.</p>
-<p><a class="reference external" href="https://docs.python.org/tutorial/controlflow.html#documentation-strings">Dokumentacija</a> za docstring navaja bistvene elemente:</p>
-<ul class="simple">
-<li><p>prva vrstica naj bo kratek povzetek funkcije,</p></li>
-<li><p>če je vrstic več, naj bo druga prazna (da se vizualno loči prvo vrstico od preostalega teksta),</p></li>
-<li><p>uporabimo tri narekovaje (dvojne ” ali enojne ‘), ki označujejo večvrstični niz črk.</p></li>
-</ul>
-<p>Primer dokumentirane funkcije:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">površina</span><span class="p">(</span><span class="n">dolžina</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">širina</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Izračun površine pravokotnika</span>
-<span class="sd">    </span>
-<span class="sd">    Funkcija vrne vrednost površine.</span>
-<span class="sd">    </span>
-<span class="sd">    Argumenti:</span>
-<span class="sd">    dolžina: dolžina pravokotnika</span>
-<span class="sd">    širina: dolžina pravokotnika</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">dolžina</span> <span class="o">*</span> <span class="n">širina</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Primer klica s privzetimi argumenti (med klicem funkcije lahko s pritiskom [shift]+[tab] dostopamo do pomoči):</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">površina</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="lokalna-globalna-imena">
-<h3>Lokalna/globalna imena<a class="headerlink" href="#lokalna-globalna-imena" title="Permalink to this headline">#</a></h3>
-<p>Preprosto vodilo pri funkcijah je: <strong>funkcija vidi ven, drugi pa ne vidijo noter</strong>. Funkcija ima notranja imena, ki se ne prekrivajo z istimi imeni v drugih funkcijah.</p>
-<p>Poglejmo si primer:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zunanja</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="k">def</span> <span class="nf">prva</span><span class="p">():</span>
-    <span class="n">notranja</span> <span class="o">=</span> <span class="mi">5</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Tole je zunanja vrednost: </span><span class="si">{</span><span class="n">zunanja</span><span class="si">}</span><span class="s1">, tole pa notranja: </span><span class="si">{</span><span class="n">notranja</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prva</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tole je zunanja vrednost: 3, tole pa notranja: 5
-</pre></div>
-</div>
-</div>
-</div>
-<p>Ker ime <code class="docutils literal notranslate"><span class="pre">notranja</span></code> zunaj funkcije <code class="docutils literal notranslate"><span class="pre">prva</span></code> ni definirano, bi klicanje:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">notranja</span>
-</pre></div>
-</div>
-<p>zunaj funkcije vrnilo napako (v funkcijo ne vidimo).</p>
-<p>Tukaj velja omeniti, da je <strong>posredovanje zunanjih imen v funkcijo mimo argumentov funkcije odsvetovano</strong>.</p>
-</section>
-<section id="return">
-<h3><code class="docutils literal notranslate"><span class="pre">return</span></code><a class="headerlink" href="#return" title="Permalink to this headline">#</a></h3>
-<p>Ukaz <code class="docutils literal notranslate"><span class="pre">return</span></code> vrne vrednosti iz funkcije. Doslej smo spoznali rezultate v obliki ene spremenljivke; ta spremenljivka pa je lahko tudi terka.</p>
-<p>Poglejmo si primer:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vrnem_terko</span><span class="p">():</span>
-    <span class="k">return</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="c1"># to je ekvivalenten zapis za terko: (1, 2, 3)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vrnem_terko</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3)
-</pre></div>
-</div>
-</div>
-</div>
-<p>Rezultat funkcije lahko ujamemo tako:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rezultat</span> <span class="o">=</span> <span class="n">vrnem_terko</span><span class="p">()</span>
-<span class="n">rezultat</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3)
-</pre></div>
-</div>
-</div>
-</div>
-<p>Ali tako, da vrednosti razpakiramo (to sicer velja v splošnem za terke):</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">,</span> <span class="n">i3</span> <span class="o">=</span> <span class="n">vrnem_terko</span><span class="p">()</span>
-<span class="n">i1</span> <span class="c1"># izpis samo ene vrednosti</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="anonimna-funkcija-izraz">
-<h3>Anonimna funkcija/izraz<a class="headerlink" href="#anonimna-funkcija-izraz" title="Permalink to this headline">#</a></h3>
-<p>Anonimna funkcija (glejte <a class="reference external" href="https://docs.python.org/tutorial/controlflow.html#lambda-expressions">dokumentacijo</a>) je funkcija, kateri ne damo imena (zato je <em>anonimna</em>), ampak jo definiramo z ukazom <code class="docutils literal notranslate"><span class="pre">lambda</span></code>. Tipična uporaba je:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="p">[</span><span class="n">seznam</span> <span class="n">parametrov</span><span class="p">]:</span> <span class="n">izraz</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">lambda</span></code> funkcijo si bomo pogledali na primeru razvrščanja:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>od najmanjše do največje vrednosti. To lahko izvedemo z vgrajeno metodo <code class="docutils literal notranslate"><span class="pre">sort</span></code> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list.sort">dokumentacija</a>):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sort</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Metoda ima dva opcijska argumenta:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code> ključ, po katerem razvrstimo elemente</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">reverse</span></code>, če je <code class="docutils literal notranslate"><span class="pre">False</span></code>, se med vrednostmi ključa uporabi <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> sicer <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>.</p></li>
-</ul>
-<p>Opomba: <code class="docutils literal notranslate"><span class="pre">list.sort()</span></code> izvede razvrščanje na obstoječem seznamu in ne vrne seznama. Funkcija <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> (glejte <a class="reference external" href="https://docs.python.org/3/library/functions.html#sorted">dokumentacijo</a>) pa vrne seznam urejenih vrednosti.</p>
-<p>Poglejmo primer:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-<span class="n">seznam</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-<span class="n">seznam</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-8, -4, 3, 6]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Sedaj uporabimo ključ, kjer se bo za primerjavo vrednosti razvrščanja uporabila kvadratna vrednost:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">seznam</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, -4, 6, -8]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="izpeljevanje-seznamov">
-<h3>Izpeljevanje seznamov<a class="headerlink" href="#izpeljevanje-seznamov" title="Permalink to this headline">#</a></h3>
-<p>Pri programiranju se pogosto srečujemo s tem, da moramo izvajati operacije na posameznem elementu seznama. Predhodno smo že spoznali zanko <code class="docutils literal notranslate"><span class="pre">for</span></code>, ki jo lahko uporabimo v takem primeru.</p>
-<p>Oglejmo si primer, kjer izračunamo kvadrat števil:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># izvorni seznam</span>
-<span class="n">rezultat</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># pripravimo prazen seznam v katerega bomo dodajali rezultate</span>
-<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">:</span>
-    <span class="n">rezultat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">rezultat</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 9]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Mnogo enostavneje lahko isti rezultat dosežemo s t. i. <strong>izpeljevanjem seznamov</strong> (angl. <em>list comprehensions</em>, glejte <a class="reference external" href="https://docs.python.org/tutorial/datastructures.html#list-comprehensions">dokumentacijo</a>).</p>
-<p>Zgornji primer bi bil:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># izvorni seznam</span>
-<span class="n">rezultat</span> <span class="o">=</span> <span class="p">[</span><span class="n">element</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">]</span> <span class="c1"># &lt;&lt;&lt; na desni strani = je izpeljevanje seznamov</span>
-<span class="n">rezultat</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 9]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Izpeljevanje seznamov predstavlja koda <code class="docutils literal notranslate"><span class="pre">[element**2</span> <span class="pre">for</span> <span class="pre">element</span> <span class="pre">in</span> <span class="pre">seznam]</span></code>, ki v bistvu pove to, kar je napisano: izračunaj kvadrat za vsak element v seznamu. Da je rezultat seznam, nakazujejo oglati oklepaji.</p>
-<p>Izpeljevanje seznamov ima sledečo sintakso:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">koda</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>in ima predvsem dve prednosti:</p>
-<ul class="simple">
-<li><p><strong>preglednost / kompaktnost</strong> kode in</p></li>
-<li><p>malo <strong>hitrejše</strong> izvajanje.</p></li>
-</ul>
-<p>Preglednost/kompaktnost smo lahko že presodili. Kako preverimo hitrost? Najlažje to naredimo s t. i. magičnim ukazom <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code>, torej <strong>meri čas</strong> (glejte <a class="reference external" href="http://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit">dokumentacijo</a>); spodaj bomo uporabili blokovni magični ukaz (označuje ga <code class="docutils literal notranslate"><span class="pre">%%</span></code>):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">timeit</span> <span class="o">-</span><span class="n">n1000</span>
-</pre></div>
-</div>
-<p>kjer parameter <code class="docutils literal notranslate"><span class="pre">-n1000</span></code> omejuje merjenje časa na 1000 ponovitev.</p>
-<p>Najprej daljši način:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it -n1000
-<span class="n">rezultat</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">:</span>
-    <span class="n">rezultat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>212 µs ± 5.86 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
-</pre></div>
-</div>
-</div>
-</div>
-<p>Nato izpeljevanje seznamov (bolj pregledno in malenkost hitreje):</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it -n1000
-<span class="n">rezultat</span> <span class="o">=</span> <span class="p">[</span><span class="n">element</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>191 µs ± 3.46 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
-</pre></div>
-</div>
-</div>
-</div>
-<p>Poglejmo si še dva uporabna primera:</p>
-<ul class="simple">
-<li><p>uporabo izraza <code class="docutils literal notranslate"><span class="pre">if</span></code> za izračun nove vrednosti,</p></li>
-<li><p>uporabo izraza <code class="docutils literal notranslate"><span class="pre">if</span></code>, če se nova vrednost sploh izračuna.</p></li>
-</ul>
-<p>Pri izračunu nove vrednosti izraz <code class="docutils literal notranslate"><span class="pre">if</span></code> vstavimo v del pred <code class="docutils literal notranslate"><span class="pre">for</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="p">[</span><span class="n">el</span><span class="o">+</span><span class="mi">10</span> <span class="k">if</span> <span class="n">el</span><span class="o">&lt;</span><span class="mi">2</span> <span class="k">else</span> <span class="n">el</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[11, 4, 9]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Pogosto pa za določene elemente izračuna sploh ne želimo izvesti, v tem primeru izraz <code class="docutils literal notranslate"><span class="pre">if</span></code> vstavimo za seznam:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">el</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">seznam</span> <span class="k">if</span> <span class="n">el</span> <span class="o">&gt;</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 9]
 </pre></div>
 </div>
 </div>
@@ -1694,6 +1198,355 @@ konec
 </div>
 <p>Stavek <code class="docutils literal notranslate"><span class="pre">with</span></code> rezultat funkcije <code class="docutils literal notranslate"><span class="pre">open</span></code> shrani v (<em>as</em>) ime <code class="docutils literal notranslate"><span class="pre">datoteka</span></code>, potem pa za vsako vrstico izpišemo vrednosti. Pri izhodu iz stavka <code class="docutils literal notranslate"><span class="pre">with</span></code> se samodejno pokliče metoda <code class="docutils literal notranslate"><span class="pre">datoteka.close()</span></code>. Stavek <code class="docutils literal notranslate"><span class="pre">with</span></code> nam torej omogoča pisanje pregledne in kompaktne kode.</p>
 </section>
+<section id="posredovanje-argumentov-v-funkcije">
+<h2>Posredovanje argumentov v funkcije<a class="headerlink" href="#posredovanje-argumentov-v-funkcije" title="Permalink to this headline">#</a></h2>
+<p>Python pozna dva načina posredovanja argumentov:</p>
+<ul class="simple">
+<li><p>glede na <strong>mesto</strong> (<em>positional</em>)</p></li>
+<li><p>glede na <strong>ime</strong>.</p></li>
+</ul>
+<p>Poglejmo si oba načina na primeru:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">površina</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="c1"># pozicijsko</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">površina</span><span class="p">(</span><span class="n">širina</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">dolžina</span> <span class="o">=</span> <span class="mi">6</span><span class="p">)</span> <span class="c1"># glede na ime</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18
+</pre></div>
+</div>
+</div>
+</div>
+<p>Priporočeno je, da argumente posredujemo z <em>imenom</em>; s tem zmanjšamo možnost napake!</p>
+<p>Če ne podamo imena, potem se privzame ime glede na vrstni red argumentov; primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">površina</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">širina</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+</pre></div>
+</div>
+</div>
+</div>
+<p>V kolikor mešamo <em>pozicijsko</em> in <em>poimensko</em> posredovanje argumentov, morajo <strong>najprej biti navedeni pozicijski argumenti, šele nato poimenski</strong>. Pri tem poimenski ne sme ponovno definirati pozicijskega; ker je <code class="docutils literal notranslate"><span class="pre">dolžina</span></code> prvi argument, bi klicanje take kode:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">površina</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">dolžina</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>povzročilo napako.</p>
+<section id="primer-dobre-prakse-pri-definiranju-argumentov">
+<h3>Primer dobre prakse pri definiranju argumentov<a class="headerlink" href="#primer-dobre-prakse-pri-definiranju-argumentov" title="Permalink to this headline">#</a></h3>
+<p>Pogosto funkcije dopolnjujemo in dodajamo nove argumente ali pa število argumentov funkciji sploh ne moremo vnaprej definirati!</p>
+<p>Python s tem nima težav. Argumente, ki niso eksplicitno definirani obvladamo z:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">*[ime0]</span></code> terka <code class="docutils literal notranslate"><span class="pre">[ime0]</span></code> vsebuje vse <strong>pozicijske argumente</strong>, ki niso eksplicitno definirani,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">**[ime1]</span></code> slovar <code class="docutils literal notranslate"><span class="pre">[ime1]</span></code> vsebuje vse <strong>poimenske argumente</strong>, ki niso eksplicitno definirani.</p></li>
+</ul>
+<p>Poglejmo primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">neka_funkcija</span><span class="p">(</span><span class="n">student</span><span class="p">,</span> <span class="n">izpit</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Prva verzija funkcije&#39;&#39;&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Študent </span><span class="si">{</span><span class="n">student</span><span class="si">}</span><span class="s1"> se je prijavil na izpit: </span><span class="si">{</span><span class="n">izpit</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">neka_funkcija</span><span class="p">(</span><span class="s1">&#39;Janez&#39;</span><span class="p">,</span> <span class="n">izpit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Študent Janez se je prijavil na izpit: True.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sedaj pa pripravimo drugo, nadgrajeno, verzijo (omogoča enako uporabo kot prva verzija):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">neka_funkcija</span><span class="p">(</span><span class="o">*</span><span class="n">terka</span><span class="p">,</span> <span class="o">**</span><span class="n">slovar</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Druga verzija funkcije &#39;&#39;&#39;</span>
+    <span class="n">student</span> <span class="o">=</span> <span class="n">terka</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">izpit</span> <span class="o">=</span> <span class="n">slovar</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;izpit&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span> <span class="c1"># True je privzeta vrednost</span>
+    <span class="n">izpisi_sliko</span> <span class="o">=</span> <span class="n">slovar</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;izpisi_sliko&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># False je privzeta vrednost</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Študent </span><span class="si">{</span><span class="n">student</span><span class="si">}</span><span class="s1"> se je prijavil na izpit: </span><span class="si">{</span><span class="n">izpit</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">izpisi_sliko</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;slika:)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">neka_funkcija</span><span class="p">(</span><span class="s1">&#39;Janez&#39;</span><span class="p">,</span> <span class="n">izpit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Študent Janez se je prijavil na izpit: True.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">neka_funkcija</span><span class="p">(</span><span class="s1">&#39;Janez&#39;</span><span class="p">,</span> <span class="n">izpit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">izpisi_sliko</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">neobstoječi_argument</span><span class="o">=</span><span class="s1">&#39;ni&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Študent Janez se je prijavil na izpit: True.
+slika:)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="posredovanje-funkcij-kot-argument">
+<h3>Posredovanje funkcij kot argument<a class="headerlink" href="#posredovanje-funkcij-kot-argument" title="Permalink to this headline">#</a></h3>
+<p>Tukaj bi želeli izpostaviti, da so argumenti lahko tudi druge funkcije.</p>
+<p>Poglejmo si primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">oblika_a</span><span class="p">(</span><span class="n">vrednost</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Prikaz vrednosti: </span><span class="si">{</span><span class="n">vrednost</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="k">def</span> <span class="nf">oblika_b</span><span class="p">(</span><span class="n">vrednost</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Prikaz vrednosti: </span><span class="si">{</span><span class="n">vrednost</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="k">def</span> <span class="nf">izpis</span><span class="p">(</span><span class="n">oblika</span><span class="p">,</span> <span class="n">vrednost</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">oblika</span><span class="p">(</span><span class="n">vrednost</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Imamo torej dve funkciji <code class="docutils literal notranslate"><span class="pre">oblika_a</span></code> in <code class="docutils literal notranslate"><span class="pre">oblika_b</span></code>, ki malenkost drugače oblikujeta numerično vrednost.</p>
+<p>Poglejmo uporabo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">izpis</span><span class="p">(</span><span class="n">oblika_a</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prikaz vrednosti: 3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">izpis</span><span class="p">(</span><span class="n">oblika_b</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prikaz vrednosti: 3.00
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="docstring-funkcije">
+<h2>Docstring funkcije<a class="headerlink" href="#docstring-funkcije" title="Permalink to this headline">#</a></h2>
+<p><em>docstring</em> je neobvezen del definicije funkcije, ki dokumentira funkcijo in njeno uporabo. Iz tega stališča je zelo priporočeno, da ga uporabimo.</p>
+<p><a class="reference external" href="https://docs.python.org/tutorial/controlflow.html#documentation-strings">Dokumentacija</a> za docstring navaja bistvene elemente:</p>
+<ul class="simple">
+<li><p>prva vrstica naj bo kratek povzetek funkcije,</p></li>
+<li><p>če je vrstic več, naj bo druga prazna (da se vizualno loči prvo vrstico od preostalega teksta),</p></li>
+<li><p>uporabimo tri narekovaje (dvojne ” ali enojne ‘), ki označujejo večvrstični niz črk.</p></li>
+</ul>
+<p>Primer dokumentirane funkcije:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">površina</span><span class="p">(</span><span class="n">dolžina</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">širina</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Izračun površine pravokotnika</span>
+<span class="sd">    </span>
+<span class="sd">    Funkcija vrne vrednost površine.</span>
+<span class="sd">    </span>
+<span class="sd">    Argumenti:</span>
+<span class="sd">    dolžina: dolžina pravokotnika</span>
+<span class="sd">    širina: dolžina pravokotnika</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">dolžina</span> <span class="o">*</span> <span class="n">širina</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Primer klica s privzetimi argumenti (med klicem funkcije lahko s pritiskom [shift]+[tab] dostopamo do pomoči):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">površina</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lokalna-globalna-imena">
+<h2>Lokalna/globalna imena<a class="headerlink" href="#lokalna-globalna-imena" title="Permalink to this headline">#</a></h2>
+<p>Preprosto vodilo pri funkcijah je: <strong>funkcija vidi ven, drugi pa ne vidijo noter</strong>. Funkcija ima notranja imena, ki se ne prekrivajo z istimi imeni v drugih funkcijah.</p>
+<p>Poglejmo si primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zunanja</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">def</span> <span class="nf">prva</span><span class="p">():</span>
+    <span class="n">notranja</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Tole je zunanja vrednost: </span><span class="si">{</span><span class="n">zunanja</span><span class="si">}</span><span class="s1">, tole pa notranja: </span><span class="si">{</span><span class="n">notranja</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prva</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tole je zunanja vrednost: 3, tole pa notranja: 5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ker ime <code class="docutils literal notranslate"><span class="pre">notranja</span></code> zunaj funkcije <code class="docutils literal notranslate"><span class="pre">prva</span></code> ni definirano, bi klicanje:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">notranja</span>
+</pre></div>
+</div>
+<p>zunaj funkcije vrnilo napako (v funkcijo ne vidimo).</p>
+<p>Tukaj velja omeniti, da je <strong>posredovanje zunanjih imen v funkcijo mimo argumentov funkcije odsvetovano</strong>.</p>
+</section>
+<section id="return">
+<h2><code class="docutils literal notranslate"><span class="pre">return</span></code><a class="headerlink" href="#return" title="Permalink to this headline">#</a></h2>
+<p>Ukaz <code class="docutils literal notranslate"><span class="pre">return</span></code> vrne vrednosti iz funkcije. Doslej smo spoznali rezultate v obliki ene spremenljivke; ta spremenljivka pa je lahko tudi terka.</p>
+<p>Poglejmo si primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vrnem_terko</span><span class="p">():</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="c1"># to je ekvivalenten zapis za terko: (1, 2, 3)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vrnem_terko</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Rezultat funkcije lahko ujamemo tako:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rezultat</span> <span class="o">=</span> <span class="n">vrnem_terko</span><span class="p">()</span>
+<span class="n">rezultat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ali tako, da vrednosti razpakiramo (to sicer velja v splošnem za terke):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">,</span> <span class="n">i3</span> <span class="o">=</span> <span class="n">vrnem_terko</span><span class="p">()</span>
+<span class="n">i1</span> <span class="c1"># izpis samo ene vrednosti</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="anonimna-funkcija-izraz">
+<h2>Anonimna funkcija/izraz<a class="headerlink" href="#anonimna-funkcija-izraz" title="Permalink to this headline">#</a></h2>
+<p>Anonimna funkcija (glejte <a class="reference external" href="https://docs.python.org/tutorial/controlflow.html#lambda-expressions">dokumentacijo</a>) je funkcija, kateri ne damo imena (zato je <em>anonimna</em>), ampak jo definiramo z ukazom <code class="docutils literal notranslate"><span class="pre">lambda</span></code>. Tipična uporaba je:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="p">[</span><span class="n">seznam</span> <span class="n">parametrov</span><span class="p">]:</span> <span class="n">izraz</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">lambda</span></code> funkcijo si bomo pogledali na primeru razvrščanja:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>od najmanjše do največje vrednosti. To lahko izvedemo z vgrajeno metodo <code class="docutils literal notranslate"><span class="pre">sort</span></code> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list.sort">dokumentacija</a>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sort</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Metoda ima dva opcijska argumenta:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code> ključ, po katerem razvrstimo elemente</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reverse</span></code>, če je <code class="docutils literal notranslate"><span class="pre">False</span></code>, se med vrednostmi ključa uporabi <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> sicer <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>.</p></li>
+</ul>
+<p>Opomba: <code class="docutils literal notranslate"><span class="pre">list.sort()</span></code> izvede razvrščanje na obstoječem seznamu in ne vrne seznama. Funkcija <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> (glejte <a class="reference external" href="https://docs.python.org/3/library/functions.html#sorted">dokumentacijo</a>) pa vrne seznam urejenih vrednosti.</p>
+<p>Poglejmo primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">seznam</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">seznam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-8, -4, 3, 6]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sedaj uporabimo ključ, kjer se bo za primerjavo vrednosti razvrščanja uporabila kvadratna vrednost:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">seznam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, -4, 6, -8]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="obravnavanje-izjem">
 <h1>Obravnavanje izjem<a class="headerlink" href="#obravnavanje-izjem" title="Permalink to this headline">#</a></h1>
@@ -1795,10 +1648,8 @@ konec
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="moduli">
-<h1>Moduli<a class="headerlink" href="#moduli" title="Permalink to this headline">#</a></h1>
-<section id="pisanje-lastnih-modulov">
-<h2>Pisanje lastnih modulov<a class="headerlink" href="#pisanje-lastnih-modulov" title="Permalink to this headline">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="osnove-modulov">
+<h1>Osnove modulov<a class="headerlink" href="#osnove-modulov" title="Permalink to this headline">#</a></h1>
 <p>Z moduli lahko na enostaven način uporabimo že napisano kodo. Preprosto povedano, moduli nam v Pythonu omogočajo relativno enostavno ohranjanje preglednosti in reda. Ponavadi v modul zapakiramo neko zaključeno funkcijo, skupino funkcij ali npr. objekt (pozneje bomo spoznali, kaj je objekt).</p>
 <p>Za podroben opis uvažanja modulov glejte <a class="reference external" href="https://docs.python.org/reference/import.html#the-import-system">dokumentacijo</a>.</p>
 <p>V mapi <code class="docutils literal notranslate"><span class="pre">moduli</span></code> se nahaja datoteka <code class="docutils literal notranslate"><span class="pre">prvi_modul.py</span></code>, ki ima sledečo vsebino:</p>
@@ -1883,11 +1734,11 @@ konec
 <li><p>v mapah, kjer je nameščen Python (poddirektorij <code class="docutils literal notranslate"><span class="pre">site-packages</span></code>).</p></li>
 </ul>
 <section id="uvoz-modulov-in-jupyter-notebook">
-<h3>Uvoz modulov in Jupyter notebook<a class="headerlink" href="#uvoz-modulov-in-jupyter-notebook" title="Permalink to this headline">#</a></h3>
+<h2>Uvoz modulov in Jupyter notebook<a class="headerlink" href="#uvoz-modulov-in-jupyter-notebook" title="Permalink to this headline">#</a></h2>
 <p>V tej knjigi bomo, zaradi pedagoških razlogov, module vedno uvažali takrat, ko jih bomo prvič potrebovali. <strong>Pravila dobre prakse in pregledne kode priporočajo, da se uvoze vseh modulov izvede na vrhu Jupyter notebooka!</strong></p>
 </section>
 <section id="modul-pickle">
-<h3>Modul <code class="docutils literal notranslate"><span class="pre">pickle</span></code><a class="headerlink" href="#modul-pickle" title="Permalink to this headline">#</a></h3>
+<h2>Modul <code class="docutils literal notranslate"><span class="pre">pickle</span></code><a class="headerlink" href="#modul-pickle" title="Permalink to this headline">#</a></h2>
 <p>Modul <code class="docutils literal notranslate"><span class="pre">pickle</span></code> bomo velikokrat uporabljali za zelo hitro in kompaktno shranjevanje in branje podatkov.
 <code class="docutils literal notranslate"><span class="pre">pickle</span></code> vrednosti spremenljivke shrani v taki obliki, kot so zapisane v spominu. V primeru racionalnih števil tako  <strong>ne izgublja na natančnosti</strong> (zapis v tekstovno obliko izgublja natančnost, saj definiramo število izpisanih števk, ki pa je lahko manjše od števila decimalnih mest v spominu). Poleg tega pa je zapis v <strong>spominu ponavadi manj zahteven</strong> kakor zapis v tekstovni obliki. Ker vrednosti ni treba pretvarjati v/iz tekstovno/e obliko/e, je pisanje/branje tudi <strong>zelo hitro</strong>! Tukaj si bomo pogledali osnovno uporabo, celovito je <code class="docutils literal notranslate"><span class="pre">pickle</span></code> opisan v  <a class="reference external" href="https://docs.python.org/library/pickle.html">dokumentaciji</a>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">pickle</span></code> ima dve pomembni metodi:</p>
@@ -1952,7 +1803,7 @@ konec
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>54.8 ms ± 3.48 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>56.9 ms ± 5.16 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1967,7 +1818,7 @@ konec
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.01 ms ± 25.6 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>913 µs ± 36.1 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1975,8 +1826,8 @@ konec
 <p>Gre skoraj za 20 kratno pohitritev!</p>
 </section>
 </section>
-<section id="namestitev-modulov-iz-spleta">
-<h2>Namestitev modulov iz spleta<a class="headerlink" href="#namestitev-modulov-iz-spleta" title="Permalink to this headline">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="uporaba-modulov-iz-spleta">
+<h1>Uporaba modulov iz spleta<a class="headerlink" href="#uporaba-modulov-iz-spleta" title="Permalink to this headline">#</a></h1>
 <p>Poleg vgrajenih modulov in tistih, ki jih pripravimo sami, obstaja še velika množica modulov, ki jih lahko najdemo na spletu in Pythonu dodajajo nove funkcionalnosti. Šele ti moduli naredijo ekosistem Pythona tako uporaben.</p>
 <p><a class="reference external" href="https://www.anaconda.com/download/">Anaconda</a> je najbolj popularna distribucija Pythona in ima vključenih že veliko modulov (za podroben seznam glejte to <a class="reference external" href="https://docs.anaconda.com/anaconda/packages/pkg-docs">povezavo</a>); predvsem pa ima vključene vse bistvene. Najbolj pomembne na področju inženirskih ved bomo spoznali v okviru te knjige.</p>
 <p>Modul je tehnično gledano ena datoteka, kadar nek večji modul vsebuje več modulov, pa lahko začnemo govoriti o <em>paketih</em>.</p>
@@ -1987,7 +1838,7 @@ konec
 </ul>
 <p>Upravljalnika paketov nista povsem ekvivalentna, pogosto uporabo si bomo pogledali spodaj.</p>
 <section id="upravljalnik-paketov-conda">
-<h3>Upravljalnik paketov <code class="docutils literal notranslate"><span class="pre">conda</span></code><a class="headerlink" href="#upravljalnik-paketov-conda" title="Permalink to this headline">#</a></h3>
+<h2>Upravljalnik paketov <code class="docutils literal notranslate"><span class="pre">conda</span></code><a class="headerlink" href="#upravljalnik-paketov-conda" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span></code> uporabljamo predvsem za module/pakete vključene v distribucijo <em>Anaconda</em>, in ima še nekatere dodatne sposobnosti (npr. kreiranje navideznega okolja, angl. <em>virtual environment</em>).</p>
 <p>Če želimo posodobiti vse nameščene pakete znotraj distribucije Anaconda, najprej posodobimo samo <code class="docutils literal notranslate"><span class="pre">conda</span></code>, nato pa pakete. V ukazni vrstici izvedemo sledeča ukaza:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
@@ -2025,7 +1876,7 @@ konec
 <p>Za več glejte <a class="reference external" href="https://conda.io/docs/user-guide/getting-started.html">dokumentacijo</a>.</p>
 </section>
 <section id="upravljalnik-paketov-pip">
-<h3>Upravljalnik paketov <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#upravljalnik-paketov-pip" title="Permalink to this headline">#</a></h3>
+<h2>Upravljalnik paketov <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#upravljalnik-paketov-pip" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">pip</span></code> je upravljalnik paketov z daljšo zgodovino kot <code class="docutils literal notranslate"><span class="pre">conda</span></code>; podpira bistveno več paketov (<a class="reference external" href="https://pypi.org">pypi.org</a>), vendar ni tako odporen na nezdružljivosti kakor <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Razlik je še več, vendar tukaj ne bomo šli v podrobnosti; uporabljate tistega, ki vam namesti željeni paket!</p>
 <p>Podobno kot pri <code class="docutils literal notranslate"><span class="pre">conda</span></code>, tudi tukaj že nameščene pakete najdemo z ukazom v ukazni vrstici (<a class="reference external" href="https://pip.pypa.io/en/stable/reference/pip_list/">dokumentacija</a>):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="nb">list</span>
@@ -2044,7 +1895,7 @@ konec
 </pre></div>
 </div>
 <section id="primer-namestitve-paketa">
-<h4>Primer namestitve paketa<a class="headerlink" href="#primer-namestitve-paketa" title="Permalink to this headline">#</a></h4>
+<h3>Primer namestitve paketa<a class="headerlink" href="#primer-namestitve-paketa" title="Permalink to this headline">#</a></h3>
 <p>Sicer pa pakete najpogosteje najdemo na spletu (<a class="reference external" href="https://pypi.org">pypi.org</a>). Pojdite na omenjeni portal in poiščite pakete na temo snemanja posnetkov iz portala <a class="reference external" href="https://www.youtube.com">www.youtube.com</a>.  Z iskanjem “youtube download” najdemo obetaven paket <code class="docutils literal notranslate"><span class="pre">youtube_dl</span></code>, ki ga namestimo:</p>
 <p>Sedaj modul uporabimo (za podrobnosti uporabe glejte <a class="reference external" href="http://rg3.github.io/youtube-dl/">dokumentacijo</a>). Najprej uvozimo celotni paket:</p>
 <div class="cell docutils container">
@@ -2066,15 +1917,244 @@ konec
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[youtube] FIa6VZt-wz4: Downloading webpage
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download] Tesla Cybertruck Glass Demo Gone Wrong!!-FIa6VZt-wz4.mp4 has already been downloaded
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download] Resuming download at byte 4348678
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download] 100% of 29.95MiB
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download] Destination: Tesla Cybertruck Glass Demo Gone Wrong!!-FIa6VZt-wz4.mp4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.3% of 28.91MiB at Unknown speed ETA Unknown ETA
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.4% of 28.91MiB at 18.17KiB/s ETA 23:15         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.4% of 28.91MiB at 42.40KiB/s ETA 09:57         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.4% of 28.91MiB at 90.87KiB/s ETA 04:38         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.5% of 28.91MiB at 86.10KiB/s ETA 04:54         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.6% of 28.91MiB at 78.30KiB/s ETA 05:23         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.8% of 28.91MiB at 76.14KiB/s ETA 05:31         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  15.0% of 28.91MiB at 74.25KiB/s ETA 05:38         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  15.3% of 28.91MiB at 71.69KiB/s ETA 05:49         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  15.5% of 28.91MiB at 74.32KiB/s ETA 05:36         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  15.8% of 28.91MiB at 74.72KiB/s ETA 05:33         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  16.0% of 28.91MiB at 74.45KiB/s ETA 05:33         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  16.3% of 28.91MiB at 75.51KiB/s ETA 05:28         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  16.6% of 28.91MiB at 72.68KiB/s ETA 05:39         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  16.8% of 28.91MiB at 73.66KiB/s ETA 05:34         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  17.1% of 28.91MiB at 73.31KiB/s ETA 05:34         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  17.3% of 28.91MiB at 74.08KiB/s ETA 05:30         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  17.6% of 28.91MiB at 74.40KiB/s ETA 05:27         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  17.8% of 28.91MiB at 74.30KiB/s ETA 05:27         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  18.1% of 28.91MiB at 73.86KiB/s ETA 05:28         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  18.3% of 28.91MiB at 74.26KiB/s ETA 05:25         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  18.6% of 28.91MiB at 74.22KiB/s ETA 05:24         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  18.8% of 28.91MiB at 73.88KiB/s ETA 05:25         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  19.1% of 28.91MiB at 73.97KiB/s ETA 05:23         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  19.3% of 28.91MiB at 73.75KiB/s ETA 05:23         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  19.6% of 28.91MiB at 74.16KiB/s ETA 05:21         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  19.9% of 28.91MiB at 74.35KiB/s ETA 05:19         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  20.1% of 28.91MiB at 74.27KiB/s ETA 05:18         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  20.4% of 28.91MiB at 73.98KiB/s ETA 05:18         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  20.6% of 28.91MiB at 74.12KiB/s ETA 05:17         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  20.9% of 28.91MiB at 74.17KiB/s ETA 05:15         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  21.1% of 28.91MiB at 73.91KiB/s ETA 05:15         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  21.3% of 28.91MiB at 74.21KiB/s ETA 05:13         
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  21.6% of 28.91MiB at 74.15KiB/s ETA 05:12         
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [62],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">yt</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;FIa6VZt-wz4&#39;</span><span class="p">])</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:2068,</span> in <span class="ni">YoutubeDL.download</span><span class="nt">(self, url_list)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2065</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">url_list</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2066</span>     <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2067</span>         <span class="c1"># It also downloads the videos</span>
+<span class="ne">-&gt; </span><span class="mi">2068</span>         <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_info</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2069</span>             <span class="n">url</span><span class="p">,</span> <span class="n">force_generic_extractor</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;force_generic_extractor&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">2070</span>     <span class="k">except</span> <span class="n">UnavailableVideoError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2071</span>         <span class="bp">self</span><span class="o">.</span><span class="n">report_error</span><span class="p">(</span><span class="s1">&#39;unable to download video&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:808,</span> in <span class="ni">YoutubeDL.extract_info</span><span class="nt">(self, url, download, ie_key, extra_info, process, force_generic_extractor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">804</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">ie</span><span class="o">.</span><span class="n">working</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">805</span>         <span class="bp">self</span><span class="o">.</span><span class="n">report_warning</span><span class="p">(</span><span class="s1">&#39;The program functionality for this site has been marked as broken, &#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">806</span>                             <span class="s1">&#39;and will probably not work.&#39;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">808</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__extract_info</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">ie</span><span class="p">,</span> <span class="n">download</span><span class="p">,</span> <span class="n">extra_info</span><span class="p">,</span> <span class="n">process</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">809</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">810</span>     <span class="bp">self</span><span class="o">.</span><span class="n">report_error</span><span class="p">(</span><span class="s1">&#39;no suitable InfoExtractor for URL </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">url</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:815,</span> in <span class="ni">YoutubeDL.__handle_extraction_exceptions.&lt;locals&gt;.wrapper</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">813</span> <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">814</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">815</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">816</span>     <span class="k">except</span> <span class="n">GeoRestrictedError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">817</span>         <span class="n">msg</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">msg</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:847,</span> in <span class="ni">YoutubeDL.__extract_info</span><span class="nt">(self, url, ie, download, extra_info, process)</span>
+<span class="g g-Whitespace">    </span><span class="mi">845</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_default_extra_info</span><span class="p">(</span><span class="n">ie_result</span><span class="p">,</span> <span class="n">ie</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">846</span> <span class="k">if</span> <span class="n">process</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">847</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_ie_result</span><span class="p">(</span><span class="n">ie_result</span><span class="p">,</span> <span class="n">download</span><span class="p">,</span> <span class="n">extra_info</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">848</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">849</span>     <span class="k">return</span> <span class="n">ie_result</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:881,</span> in <span class="ni">YoutubeDL.process_ie_result</span><span class="nt">(self, ie_result, download, extra_info)</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span> <span class="k">if</span> <span class="n">result_type</span> <span class="o">==</span> <span class="s1">&#39;video&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="bp">self</span><span class="o">.</span><span class="n">add_extra_info</span><span class="p">(</span><span class="n">ie_result</span><span class="p">,</span> <span class="n">extra_info</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">881</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_video_result</span><span class="p">(</span><span class="n">ie_result</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="n">download</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span> <span class="k">elif</span> <span class="n">result_type</span> <span class="o">==</span> <span class="s1">&#39;url&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">883</span>     <span class="c1"># We have to add extra_info to the results because it may be</span>
+<span class="g g-Whitespace">    </span><span class="mi">884</span>     <span class="c1"># contained in a playlist</span>
+<span class="g g-Whitespace">    </span><span class="mi">885</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_info</span><span class="p">(</span><span class="n">ie_result</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">886</span>                              <span class="n">download</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">887</span>                              <span class="n">ie_key</span><span class="o">=</span><span class="n">ie_result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ie_key&#39;</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">888</span>                              <span class="n">extra_info</span><span class="o">=</span><span class="n">extra_info</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:1692,</span> in <span class="ni">YoutubeDL.process_video_result</span><span class="nt">(self, info_dict, download)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1690</span>         <span class="n">new_info</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">info_dict</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1691</span>         <span class="n">new_info</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1692</span>         <span class="bp">self</span><span class="o">.</span><span class="n">process_info</span><span class="p">(</span><span class="n">new_info</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1693</span> <span class="c1"># We update the info dict with the best quality format (backwards compatibility)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1694</span> <span class="n">info_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">formats_to_download</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:1976,</span> in <span class="ni">YoutubeDL.process_info</span><span class="nt">(self, info_dict)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1973</span>             <span class="n">info_dict</span><span class="p">[</span><span class="s1">&#39;__files_to_merge&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">downloaded</span>
+<span class="g g-Whitespace">   </span><span class="mi">1974</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1975</span>         <span class="c1"># Just a single file</span>
+<span class="ne">-&gt; </span><span class="mi">1976</span>         <span class="n">success</span> <span class="o">=</span> <span class="n">dl</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">info_dict</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1977</span> <span class="k">except</span> <span class="p">(</span><span class="n">compat_urllib_error</span><span class="o">.</span><span class="n">URLError</span><span class="p">,</span> <span class="n">compat_http_client</span><span class="o">.</span><span class="n">HTTPException</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">error</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1978</span>     <span class="bp">self</span><span class="o">.</span><span class="n">report_error</span><span class="p">(</span><span class="s1">&#39;unable to download video data: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">error_to_compat_str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:1915,</span> in <span class="ni">YoutubeDL.process_info.&lt;locals&gt;.dl</span><span class="nt">(name, info)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1913</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;verbose&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1914</span>     <span class="bp">self</span><span class="o">.</span><span class="n">to_screen</span><span class="p">(</span><span class="s1">&#39;[debug] Invoking downloader on </span><span class="si">%r</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">))</span>
+<span class="ne">-&gt; </span><span class="mi">1915</span> <span class="k">return</span> <span class="n">fd</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">info</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\downloader\common.py:366,</span> in <span class="ni">FileDownloader.download</span><span class="nt">(self, filename, info_dict)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="bp">self</span><span class="o">.</span><span class="n">to_screen</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>         <span class="s1">&#39;[download] Sleeping </span><span class="si">%s</span><span class="s1"> seconds...&#39;</span> <span class="o">%</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>             <span class="nb">int</span><span class="p">(</span><span class="n">sleep_interval</span><span class="p">)</span> <span class="k">if</span> <span class="n">sleep_interval</span><span class="o">.</span><span class="n">is_integer</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span>             <span class="k">else</span> <span class="s1">&#39;</span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">sleep_interval</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">sleep_interval</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">366</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">real_download</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">info_dict</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\downloader\http.py:352,</span> in <span class="ni">HttpFD.real_download</span><span class="nt">(self, filename, info_dict)</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">351</span>     <span class="n">establish_connection</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">352</span>     <span class="k">return</span> <span class="n">download</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">353</span> <span class="k">except</span> <span class="n">RetryDownload</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span>     <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\downloader\http.py:238,</span> in <span class="ni">HttpFD.real_download.&lt;locals&gt;.download</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span>         <span class="c1"># Download and write</span>
+<span class="ne">--&gt; </span><span class="mi">238</span>         <span class="n">data_block</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">block_size</span> <span class="k">if</span> <span class="n">data_len</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">min</span><span class="p">(</span><span class="n">block_size</span><span class="p">,</span> <span class="n">data_len</span> <span class="o">-</span> <span class="n">byte_counter</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="c1"># socket.timeout is a subclass of socket.error but may not have</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="c1"># errno set</span>
+<span class="g g-Whitespace">    </span><span class="mi">241</span>     <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\http\client.py:465,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">amt</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span>     <span class="c1"># clip the read to the &quot;end of response&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="n">amt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span>
+<span class="ne">--&gt; </span><span class="mi">465</span> <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span> <span class="ow">and</span> <span class="n">amt</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span>     <span class="c1"># Ideally, we would raise IncompleteRead if the content-length</span>
+<span class="g g-Whitespace">    </span><span class="mi">468</span>     <span class="c1"># wasn&#39;t satisfied, but it might break compatibility.</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_close_conn</span><span class="p">()</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\socket.py:705,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">705</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\ssl.py:1274,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1270</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1271</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1272</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+<span class="g g-Whitespace">   </span><span class="mi">1273</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1274</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1275</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1276</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\ssl.py:1130,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1128</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1129</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1130</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1131</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
 </div>
-</section>
 </section>
 </section>
 </section>
@@ -2113,7 +2193,7 @@ konec
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2022, 9, 7, 6, 45, 33, 145077)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2020, 10, 11, 12, 53, 14, 735309)
 </pre></div>
 </div>
 </div>
@@ -2126,7 +2206,7 @@ konec
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2022-09-07 06:45:33&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2020-10-11 12:53:14&#39;
 </pre></div>
 </div>
 </div>
@@ -2145,7 +2225,7 @@ konec
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2022-09-07 06:45:33 Wed&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2020-10-11 12:53:14 Sun&#39;
 </pre></div>
 </div>
 </div>
@@ -2197,16 +2277,19 @@ konec
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;c:\\_j\\Work Janko\\Pedagosko delo\\_predavanja\\Programiranje in numericne metode\\pynm\\notebooks&#39;,
- &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\python310.zip&#39;,
- &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\DLLs&#39;,
- &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\lib&#39;,
- &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;c:\\_j\\Work Janko\\Pedagosko delo\\_predavanja\\Programiranje in numerične metode\\pypinm&#39;,
+ &#39;c:\\_j\\work janko\\pedagosko delo\\_predavanja\\programiranje in numerične metode\\pypinm\\venv\\scripts\\python38.zip&#39;,
+ &#39;c:\\Users\\slavic\\AppData\\Local\\Programs\\Python\\Python38\\DLLs&#39;,
+ &#39;c:\\Users\\slavic\\AppData\\Local\\Programs\\Python\\Python38\\lib&#39;,
+ &#39;c:\\Users\\slavic\\AppData\\Local\\Programs\\Python\\Python38&#39;,
+ &#39;c:\\_j\\work janko\\pedagosko delo\\_predavanja\\programiranje in numerične metode\\pypinm\\venv&#39;,
  &#39;&#39;,
- &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages&#39;,
- &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\win32&#39;,
- &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\win32\\lib&#39;,
- &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\Pythonwin&#39;]
+ &#39;c:\\_j\\work janko\\pedagosko delo\\_predavanja\\programiranje in numerične metode\\pypinm\\venv\\lib\\site-packages&#39;,
+ &#39;c:\\_j\\work janko\\pedagosko delo\\_predavanja\\programiranje in numerične metode\\pypinm\\venv\\lib\\site-packages\\win32&#39;,
+ &#39;c:\\_j\\work janko\\pedagosko delo\\_predavanja\\programiranje in numerične metode\\pypinm\\venv\\lib\\site-packages\\win32\\lib&#39;,
+ &#39;c:\\_j\\work janko\\pedagosko delo\\_predavanja\\programiranje in numerične metode\\pypinm\\venv\\lib\\site-packages\\Pythonwin&#39;,
+ &#39;c:\\_j\\work janko\\pedagosko delo\\_predavanja\\programiranje in numerične metode\\pypinm\\venv\\lib\\site-packages\\IPython\\extensions&#39;,
+ &#39;C:\\Users\\slavic\\.ipython&#39;]
 </pre></div>
 </div>
 </div>
@@ -2244,7 +2327,7 @@ konec
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;c:\\_j\\Work Janko\\Pedagosko delo\\_predavanja\\Programiranje in numericne metode\\pynm\\notebooks&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;c:\\_j\\Work Janko\\Pedagosko delo\\_predavanja\\Programiranje in numerične metode\\pypinm&#39;
 </pre></div>
 </div>
 </div>
@@ -2272,10 +2355,10 @@ konec
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Našel sem datoteko: Numerične metode - študijski in izpitni red.ipynb
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Našel sem datoteko: NM2020.ipynb
+Našel sem datoteko: PiNM2019-20.ipynb
 Našel sem datoteko: Predavanje 01 - Uvod v Python.ipynb
 Našel sem datoteko: Predavanje 02 - Print, delo z datotekami, funkcije, moduli.ipynb
-Našel sem datoteko: Predavanje 03 - Moduli, numpy, matplotlib.ipynb
 </pre></div>
 </div>
 </div>

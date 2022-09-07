@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Sistemi linearnih enačb &#8212; Numerične metode v ekosistemu Pythona</title>
+    <title>Sistemi linearnih enačb - nadaljevanje &#8212; Numerične metode v ekosistemu Pythona</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,12 +50,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Interpolacija" href="Predavanje%2007%20-%20Interpolacija.html" />
-    <link rel="prev" title="Sistemi linearnih enačb" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html" />
+    <link rel="prev" title="Uvod v numerične metode in sistemi linearnih enačb" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -110,15 +112,15 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Predgovor
+                <a class="reference internal" href="../README.html">
+                    Numerične metode v ekosistemu Pythona
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Numeri%C4%8Dne%20metode%20-%20%C5%A1tudijski%20in%20izpitni%20red.html">
-   Študijski in izpitni red
+  <a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">
+   Študijski in izpitni red - Numerične metode 2022/23
   </a>
  </li>
  <li class="toctree-l1">
@@ -143,12 +145,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">
-   Sistemi linearnih enačb
+   Uvod v numerične metode in sistemi linearnih enačb
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Sistemi linearnih enačb
+   Sistemi linearnih enačb - nadaljevanje
   </a>
  </li>
  <li class="toctree-l1">
@@ -168,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">
-   Reševanje enačb
+   Numerično odvajanje
   </a>
  </li>
  <li class="toctree-l1">
@@ -399,7 +401,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Sistemi linearnih enačb
+   Sistemi linearnih enačb - nadaljevanje
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -480,11 +482,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">
    Nekaj vprašanj za razmislek!
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dodatno">
-   Dodatno
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dodatno">
+     Dodatno
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -495,7 +499,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Sistemi linearnih enačb</h1>
+                <h1>Sistemi linearnih enačb - nadaljevanje</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -507,7 +511,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Sistemi linearnih enačb
+   Sistemi linearnih enačb - nadaljevanje
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -588,11 +592,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">
    Nekaj vprašanj za razmislek!
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dodatno">
-   Dodatno
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dodatno">
+     Dodatno
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -604,8 +610,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="sistemi-linearnih-enacb">
-<h1>Sistemi linearnih enačb<a class="headerlink" href="#sistemi-linearnih-enacb" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="sistemi-linearnih-enacb-nadaljevanje">
+<h1>Sistemi linearnih enačb - nadaljevanje<a class="headerlink" href="#sistemi-linearnih-enacb-nadaljevanje" title="Permalink to this headline">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="razcep-lu">
 <h1>Razcep LU<a class="headerlink" href="#razcep-lu" title="Permalink to this headline">#</a></h1>
@@ -905,9 +911,9 @@ Korak: 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_21392\3999418912.py:1: RuntimeWarning: divide by zero encountered in double_scalars
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_16752\3999418912.py:1: RuntimeWarning: divide by zero encountered in double_scalars
   A[1,:] - A[1,0]/A[0,0] * A[0,:]
-C:\Users\janko\AppData\Local\Temp\ipykernel_21392\3999418912.py:1: RuntimeWarning: invalid value encountered in multiply
+C:\Users\janko\AppData\Local\Temp\ipykernel_16752\3999418912.py:1: RuntimeWarning: invalid value encountered in multiply
   A[1,:] - A[1,0]/A[0,0] * A[0,:]
 </pre></div>
 </div>
@@ -1614,7 +1620,6 @@ Norma 0.04590845211691733
 </div>
 </div>
 <p>Metoda deluje dobro, če je matrika diagonalno dominantna (obstajajo pa metode, ki delujejo tudi, ko matrika ni diagonalno dominantna, glejte npr.: J. Petrišič, Reševanje enačb, 1996, str 149: Metoda konjugiranih gradientov).</p>
-<p>Nekaj vprašanj za razmislek!</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="nekaj-vprasanj-za-razmislek">
@@ -1638,13 +1643,13 @@ Zgornji nastavek ima napako v predzadnji vrstici. Rešitev sistema v knjigi je: 
 <li><p>Na primeru poljubnih podatkov (npr: <code class="docutils literal notranslate"><span class="pre">podatki</span> <span class="pre">=</span> <span class="pre">{a:</span> <span class="pre">pi/4,</span> <span class="pre">b:</span> <span class="pre">pi/4,</span> <span class="pre">F1:</span> <span class="pre">18000,</span> <span class="pre">F2:</span> <span class="pre">12000}</span></code>) pokažite Gaussovo eliminacijo z delnim pivotiranjem.</p></li>
 <li><p>Na primeru poljubnih podatkov (npr: <code class="docutils literal notranslate"><span class="pre">podatki</span> <span class="pre">=</span> <span class="pre">{a:</span> <span class="pre">pi/4,</span> <span class="pre">b:</span> <span class="pre">pi/4,</span> <span class="pre">F1:</span> <span class="pre">18000,</span> <span class="pre">F2:</span> <span class="pre">12000}</span></code>) pokažite Gauss-Seidlov iterativni pristop k iskanju rešitve.</p></li>
 </ol>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="dodatno">
-<h1>Dodatno<a class="headerlink" href="#dodatno" title="Permalink to this headline">#</a></h1>
+<section id="dodatno">
+<h2>Dodatno<a class="headerlink" href="#dodatno" title="Permalink to this headline">#</a></h2>
 <p>Analizirajte, koliko e-mailov dobite na dan:
 <img src="./fig/povprecje_emailov.jpg" width=300>
 <a class="reference external" href="https://plot.ly/ipython-notebooks/graph-gmail-inbox-data/">https://plot.ly/ipython-notebooks/graph-gmail-inbox-data/</a>
 (Nasvet: sledite kodi in uporabite <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> za prikaz).</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1678,7 +1683,7 @@ Zgornji nastavek ima napako v predzadnji vrstici. Rešitev sistema v knjigi je: 
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Sistemi linearnih enačb</p>
+            <p class="prev-next-title">Uvod v numerične metode in sistemi linearnih enačb</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Predavanje%2007%20-%20Interpolacija.html" title="next page">

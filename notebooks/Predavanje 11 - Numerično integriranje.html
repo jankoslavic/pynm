@@ -50,12 +50,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Numerično reševanje diferencialnih enačb - začetni problem" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html" />
-    <link rel="prev" title="Reševanje enačb" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html" />
+    <link rel="prev" title="Numerično odvajanje" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -110,15 +112,15 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Predgovor
+                <a class="reference internal" href="../README.html">
+                    Numerične metode v ekosistemu Pythona
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Numeri%C4%8Dne%20metode%20-%20%C5%A1tudijski%20in%20izpitni%20red.html">
-   Študijski in izpitni red
+  <a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">
+   Študijski in izpitni red - Numerične metode 2022/23
   </a>
  </li>
  <li class="toctree-l1">
@@ -143,12 +145,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">
-   Sistemi linearnih enačb
+   Uvod v numerične metode in sistemi linearnih enačb
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">
-   Sistemi linearnih enačb
+   Sistemi linearnih enačb - nadaljevanje
   </a>
  </li>
  <li class="toctree-l1">
@@ -168,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">
-   Reševanje enačb
+   Numerično odvajanje
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -400,6 +402,11 @@ title="Print to PDF"
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    Numerično integriranje
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uvod">
+   Uvod
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -690,6 +697,11 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#">
    Numerično integriranje
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uvod">
+   Uvod
+  </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#motivacijski-primer">
@@ -968,6 +980,9 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="numericno-integriranje">
 <h1>Numerično integriranje<a class="headerlink" href="#numericno-integriranje" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="uvod">
+<h1>Uvod<a class="headerlink" href="#uvod" title="Permalink to this headline">#</a></h1>
 <p>V okviru tega poglavja bomo za dano funkcijo <span class="math notranslate nohighlight">\(f(x)\)</span> izračunali določen integral:
 $<span class="math notranslate nohighlight">\(\int_a^b\,f(x)\,\textrm{d}x\)</span><span class="math notranslate nohighlight">\(
 kjer sta \)</span>a<span class="math notranslate nohighlight">\( in \)</span>b<span class="math notranslate nohighlight">\( meji integriranja, \)</span>f(x)$ pa so vrednosti funkcije, ki jih pridobimo iz tabele vrednosti ali s pomočjo analitične funkcije.</p>
@@ -1041,246 +1056,7 @@ kjer so \)</span>A_i<span class="math notranslate nohighlight">\( uteži, \)</sp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-CalledProcessError                        Traceback (most recent call last)
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:233, in TexManager._run_checked_subprocess(self, command, tex, cwd)
-    232 try:
---&gt; 233     report = subprocess.check_output(
-    234         command, cwd=cwd if cwd is not None else self.texcache,
-    235         stderr=subprocess.STDOUT)
-    236 except FileNotFoundError as exc:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\subprocess.py:420, in check_output(timeout, *popenargs, **kwargs)
-    418     kwargs[&#39;input&#39;] = empty
---&gt; 420 return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
-    421            **kwargs).stdout
-
-File ~\AppData\Local\Programs\Python\Python310\lib\subprocess.py:524, in run(input, capture_output, timeout, check, *popenargs, **kwargs)
-    523     if check and retcode:
---&gt; 524         raise CalledProcessError(retcode, process.args,
-    525                                  output=stdout, stderr=stderr)
-    526 return CompletedProcess(process.args, retcode, stdout, stderr)
-
-CalledProcessError: Command &#39;[&#39;latex&#39;, &#39;-interaction=nonstopmode&#39;, &#39;--halt-on-error&#39;, &#39;../1acea6f6c115d0ec7a634ed0529287b9.tex&#39;]&#39; returned non-zero exit status 1.
-
-The above exception was the direct cause of the following exception:
-
-RuntimeError                              Traceback (most recent call last)
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\IPython\core\formatters.py:339, in BaseFormatter.__call__(self, obj)
-    337     pass
-    338 else:
---&gt; 339     return printer(obj)
-    340 # Finally look for special method names
-    341 method = get_real_method(obj, self.print_method)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\IPython\core\pylabtools.py:151, in print_figure(fig, fmt, bbox_inches, base64, **kwargs)
-    148     from matplotlib.backend_bases import FigureCanvasBase
-    149     FigureCanvasBase(fig)
---&gt; 151 fig.canvas.print_figure(bytes_io, **kw)
-    152 data = bytes_io.getvalue()
-    153 if fmt == &#39;svg&#39;:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\backend_bases.py:2295, in FigureCanvasBase.print_figure(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)
-   2289     renderer = _get_renderer(
-   2290         self.figure,
-   2291         functools.partial(
-   2292             print_method, orientation=orientation)
-   2293     )
-   2294     with getattr(renderer, &quot;_draw_disabled&quot;, nullcontext)():
--&gt; 2295         self.figure.draw(renderer)
-   2297 if bbox_inches:
-   2298     if bbox_inches == &quot;tight&quot;:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:74, in _finalize_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer, *args, **kwargs)
-     72 @wraps(draw)
-     73 def draw_wrapper(artist, renderer, *args, **kwargs):
----&gt; 74     result = draw(artist, renderer, *args, **kwargs)
-     75     if renderer._rasterizing:
-     76         renderer.stop_rasterizing()
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\figure.py:2845, in Figure.draw(self, renderer)
-   2842         # ValueError can occur when resizing a window.
-   2844 self.patch.draw(renderer)
--&gt; 2845 mimage._draw_list_compositing_images(
-   2846     renderer, self, artists, self.suppressComposite)
-   2848 for sfig in self.subfigs:
-   2849     sfig.draw(renderer)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\image.py:132, in _draw_list_compositing_images(renderer, parent, artists, suppress_composite)
-    130 if not_composite or not has_images:
-    131     for a in artists:
---&gt; 132         a.draw(renderer)
-    133 else:
-    134     # Composite any adjacent images together
-    135     image_group = []
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axes\_base.py:3091, in _AxesBase.draw(self, renderer)
-   3088         a.draw(renderer)
-   3089     renderer.stop_rasterizing()
--&gt; 3091 mimage._draw_list_compositing_images(
-   3092     renderer, self, artists, self.figure.suppressComposite)
-   3094 renderer.close_group(&#39;axes&#39;)
-   3095 self.stale = False
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\image.py:132, in _draw_list_compositing_images(renderer, parent, artists, suppress_composite)
-    130 if not_composite or not has_images:
-    131     for a in artists:
---&gt; 132         a.draw(renderer)
-    133 else:
-    134     # Composite any adjacent images together
-    135     image_group = []
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1159, in Axis.draw(self, renderer, *args, **kwargs)
-   1156 renderer.open_group(__name__, gid=self.get_gid())
-   1158 ticks_to_draw = self._update_ticks()
--&gt; 1159 ticklabelBoxes, ticklabelBoxes2 = self._get_tick_bboxes(ticks_to_draw,
-   1160                                                         renderer)
-   1162 for tick in ticks_to_draw:
-   1163     tick.draw(renderer)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1085, in Axis._get_tick_bboxes(self, ticks, renderer)
-   1083 def _get_tick_bboxes(self, ticks, renderer):
-   1084     &quot;&quot;&quot;Return lists of bboxes for ticks&#39; label1&#39;s and label2&#39;s.&quot;&quot;&quot;
--&gt; 1085     return ([tick.label1.get_window_extent(renderer)
-   1086              for tick in ticks if tick.label1.get_visible()],
-   1087             [tick.label2.get_window_extent(renderer)
-   1088              for tick in ticks if tick.label2.get_visible()])
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1085, in &lt;listcomp&gt;(.0)
-   1083 def _get_tick_bboxes(self, ticks, renderer):
-   1084     &quot;&quot;&quot;Return lists of bboxes for ticks&#39; label1&#39;s and label2&#39;s.&quot;&quot;&quot;
--&gt; 1085     return ([tick.label1.get_window_extent(renderer)
-   1086              for tick in ticks if tick.label1.get_visible()],
-   1087             [tick.label2.get_window_extent(renderer)
-   1088              for tick in ticks if tick.label2.get_visible()])
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\text.py:910, in Text.get_window_extent(self, renderer, dpi)
-    907     raise RuntimeError(&#39;Cannot get window extent w/o renderer&#39;)
-    909 with cbook._setattr_cm(self.figure, dpi=dpi):
---&gt; 910     bbox, info, descent = self._get_layout(self._renderer)
-    911     x, y = self.get_unitless_position()
-    912     x, y = self.get_transform().transform((x, y))
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\text.py:309, in Text._get_layout(self, renderer)
-    306 ys = []
-    308 # Full vertical extent of font, including ascenders and descenders:
---&gt; 309 _, lp_h, lp_d = renderer.get_text_width_height_descent(
-    310     &quot;lp&quot;, self._fontproperties,
-    311     ismath=&quot;TeX&quot; if self.get_usetex() else False)
-    312 min_dy = (lp_h - lp_d) * self._linespacing
-    314 for i, line in enumerate(lines):
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\backends\backend_agg.py:259, in RendererAgg.get_text_width_height_descent(self, s, prop, ismath)
-    257     texmanager = self.get_texmanager()
-    258     fontsize = prop.get_size_in_points()
---&gt; 259     w, h, d = texmanager.get_text_width_height_descent(
-    260         s, fontsize, renderer=self)
-    261     return w, h, d
-    263 if ismath:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:335, in TexManager.get_text_width_height_descent(self, tex, fontsize, renderer)
-    333 if tex.strip() == &#39;&#39;:
-    334     return 0, 0, 0
---&gt; 335 dvifile = self.make_dvi(tex, fontsize)
-    336 dpi_fraction = renderer.points_to_pixels(1.) if renderer else 1
-    337 with dviread.Dvi(dvifile, 72 * dpi_fraction) as dvi:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:271, in TexManager.make_dvi(self, tex, fontsize)
-    262     # Generate the dvi in a temporary directory to avoid race
-    263     # conditions e.g. if multiple processes try to process the same tex
-    264     # string at the same time.  Having tmpdir be a subdirectory of the
-   (...)
-    268     # the absolute path may contain characters (e.g. ~) that TeX does
-    269     # not support.)
-    270     with TemporaryDirectory(dir=Path(dvifile).parent) as tmpdir:
---&gt; 271         self._run_checked_subprocess(
-    272             [&quot;latex&quot;, &quot;-interaction=nonstopmode&quot;, &quot;--halt-on-error&quot;,
-    273              f&quot;../{texfile.name}&quot;], tex, cwd=tmpdir)
-    274         (Path(tmpdir) / Path(dvifile).name).replace(dvifile)
-    275 return dvifile
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:241, in TexManager._run_checked_subprocess(self, command, tex, cwd)
-    237     raise RuntimeError(
-    238         &#39;Failed to process string with tex because {} could not be &#39;
-    239         &#39;found&#39;.format(command[0])) from exc
-    240 except subprocess.CalledProcessError as exc:
---&gt; 241     raise RuntimeError(
-    242         &#39;{prog} was not able to process the following string:\n&#39;
-    243         &#39;{tex!r}\n\n&#39;
-    244         &#39;Here is the full report generated by {prog}:\n&#39;
-    245         &#39;{exc}\n\n&#39;.format(
-    246             prog=command[0],
-    247             tex=tex.encode(&#39;unicode_escape&#39;),
-    248             exc=exc.output.decode(&#39;utf-8&#39;))) from exc
-    249 _log.debug(report)
-    250 return report
-
-RuntimeError: latex was not able to process the following string:
-b&#39;lp&#39;
-
-Here is the full report generated by latex:
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=latex.fmt)
- restricted \write18 enabled.
-entering extended mode
-(../1acea6f6c115d0ec7a634ed0529287b9.tex
-LaTeX2e &lt;2022-06-01&gt; patch level 5
-L3 programming layer &lt;2022-08-23&gt;
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo))
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/type1cm\type1cm.sty)
-======================================================================
-starting package maintenance...
-installation directory: C:\Users\janko\AppData\Local\Programs\MiKTeX
-package repository: https://ctan.ijs.si/tex-archive/systems/win32/miktex/tm/packages/
-
-Unfortunately, the package cm-super could not be installed.
-Please check the log file:
-C:\Users\janko\AppData\Local\MiKTeX\miktex\log\latex.log
-======================================================================
-
-
-! LaTeX Error: File `type1ec.sty&#39; not found.
-
-Type X to quit or &lt;RETURN&gt; to proceed,
-or enter new name. (Default extension: sty)
-
-Enter file name: 
-! Emergency stop.
-&lt;read *&gt; 
-         
-l.6 \usepackage
-               [utf8]{inputenc}^^M
-No pages of output.
-Transcript written on 1acea6f6c115d0ec7a634ed0529287b9.log.
-
-
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 1 Axes&gt;
-</pre></div>
-</div>
+<img alt="../_images/Predavanje 11 - Numerično integriranje_15_0.png" src="../_images/Predavanje 11 - Numerično integriranje_15_0.png" />
 </div>
 </div>
 <p>Analitično izračunajmo točen rezultat:</p>
@@ -1295,7 +1071,7 @@ Transcript written on 1acea6f6c115d0ec7a634ed0529287b9.log.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_16_0.png" src="../_images/Predavanje 11 - Numerično integriranje_16_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_17_0.png" src="../_images/Predavanje 11 - Numerično integriranje_17_0.png" />
 </div>
 </div>
 </section>
@@ -1342,7 +1118,7 @@ Transcript written on 1acea6f6c115d0ec7a634ed0529287b9.log.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_26_0.png" src="../_images/Predavanje 11 - Numerično integriranje_26_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_27_0.png" src="../_images/Predavanje 11 - Numerično integriranje_27_0.png" />
 </div>
 </div>
 <p>Pripravimo sliko:</p>
@@ -1371,246 +1147,7 @@ Transcript written on 1acea6f6c115d0ec7a634ed0529287b9.log.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-CalledProcessError                        Traceback (most recent call last)
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:233, in TexManager._run_checked_subprocess(self, command, tex, cwd)
-    232 try:
---&gt; 233     report = subprocess.check_output(
-    234         command, cwd=cwd if cwd is not None else self.texcache,
-    235         stderr=subprocess.STDOUT)
-    236 except FileNotFoundError as exc:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\subprocess.py:420, in check_output(timeout, *popenargs, **kwargs)
-    418     kwargs[&#39;input&#39;] = empty
---&gt; 420 return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
-    421            **kwargs).stdout
-
-File ~\AppData\Local\Programs\Python\Python310\lib\subprocess.py:524, in run(input, capture_output, timeout, check, *popenargs, **kwargs)
-    523     if check and retcode:
---&gt; 524         raise CalledProcessError(retcode, process.args,
-    525                                  output=stdout, stderr=stderr)
-    526 return CompletedProcess(process.args, retcode, stdout, stderr)
-
-CalledProcessError: Command &#39;[&#39;latex&#39;, &#39;-interaction=nonstopmode&#39;, &#39;--halt-on-error&#39;, &#39;../1acea6f6c115d0ec7a634ed0529287b9.tex&#39;]&#39; returned non-zero exit status 1.
-
-The above exception was the direct cause of the following exception:
-
-RuntimeError                              Traceback (most recent call last)
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\IPython\core\formatters.py:339, in BaseFormatter.__call__(self, obj)
-    337     pass
-    338 else:
---&gt; 339     return printer(obj)
-    340 # Finally look for special method names
-    341 method = get_real_method(obj, self.print_method)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\IPython\core\pylabtools.py:151, in print_figure(fig, fmt, bbox_inches, base64, **kwargs)
-    148     from matplotlib.backend_bases import FigureCanvasBase
-    149     FigureCanvasBase(fig)
---&gt; 151 fig.canvas.print_figure(bytes_io, **kw)
-    152 data = bytes_io.getvalue()
-    153 if fmt == &#39;svg&#39;:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\backend_bases.py:2295, in FigureCanvasBase.print_figure(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)
-   2289     renderer = _get_renderer(
-   2290         self.figure,
-   2291         functools.partial(
-   2292             print_method, orientation=orientation)
-   2293     )
-   2294     with getattr(renderer, &quot;_draw_disabled&quot;, nullcontext)():
--&gt; 2295         self.figure.draw(renderer)
-   2297 if bbox_inches:
-   2298     if bbox_inches == &quot;tight&quot;:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:74, in _finalize_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer, *args, **kwargs)
-     72 @wraps(draw)
-     73 def draw_wrapper(artist, renderer, *args, **kwargs):
----&gt; 74     result = draw(artist, renderer, *args, **kwargs)
-     75     if renderer._rasterizing:
-     76         renderer.stop_rasterizing()
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\figure.py:2845, in Figure.draw(self, renderer)
-   2842         # ValueError can occur when resizing a window.
-   2844 self.patch.draw(renderer)
--&gt; 2845 mimage._draw_list_compositing_images(
-   2846     renderer, self, artists, self.suppressComposite)
-   2848 for sfig in self.subfigs:
-   2849     sfig.draw(renderer)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\image.py:132, in _draw_list_compositing_images(renderer, parent, artists, suppress_composite)
-    130 if not_composite or not has_images:
-    131     for a in artists:
---&gt; 132         a.draw(renderer)
-    133 else:
-    134     # Composite any adjacent images together
-    135     image_group = []
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axes\_base.py:3091, in _AxesBase.draw(self, renderer)
-   3088         a.draw(renderer)
-   3089     renderer.stop_rasterizing()
--&gt; 3091 mimage._draw_list_compositing_images(
-   3092     renderer, self, artists, self.figure.suppressComposite)
-   3094 renderer.close_group(&#39;axes&#39;)
-   3095 self.stale = False
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\image.py:132, in _draw_list_compositing_images(renderer, parent, artists, suppress_composite)
-    130 if not_composite or not has_images:
-    131     for a in artists:
---&gt; 132         a.draw(renderer)
-    133 else:
-    134     # Composite any adjacent images together
-    135     image_group = []
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1159, in Axis.draw(self, renderer, *args, **kwargs)
-   1156 renderer.open_group(__name__, gid=self.get_gid())
-   1158 ticks_to_draw = self._update_ticks()
--&gt; 1159 ticklabelBoxes, ticklabelBoxes2 = self._get_tick_bboxes(ticks_to_draw,
-   1160                                                         renderer)
-   1162 for tick in ticks_to_draw:
-   1163     tick.draw(renderer)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1085, in Axis._get_tick_bboxes(self, ticks, renderer)
-   1083 def _get_tick_bboxes(self, ticks, renderer):
-   1084     &quot;&quot;&quot;Return lists of bboxes for ticks&#39; label1&#39;s and label2&#39;s.&quot;&quot;&quot;
--&gt; 1085     return ([tick.label1.get_window_extent(renderer)
-   1086              for tick in ticks if tick.label1.get_visible()],
-   1087             [tick.label2.get_window_extent(renderer)
-   1088              for tick in ticks if tick.label2.get_visible()])
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1085, in &lt;listcomp&gt;(.0)
-   1083 def _get_tick_bboxes(self, ticks, renderer):
-   1084     &quot;&quot;&quot;Return lists of bboxes for ticks&#39; label1&#39;s and label2&#39;s.&quot;&quot;&quot;
--&gt; 1085     return ([tick.label1.get_window_extent(renderer)
-   1086              for tick in ticks if tick.label1.get_visible()],
-   1087             [tick.label2.get_window_extent(renderer)
-   1088              for tick in ticks if tick.label2.get_visible()])
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\text.py:910, in Text.get_window_extent(self, renderer, dpi)
-    907     raise RuntimeError(&#39;Cannot get window extent w/o renderer&#39;)
-    909 with cbook._setattr_cm(self.figure, dpi=dpi):
---&gt; 910     bbox, info, descent = self._get_layout(self._renderer)
-    911     x, y = self.get_unitless_position()
-    912     x, y = self.get_transform().transform((x, y))
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\text.py:309, in Text._get_layout(self, renderer)
-    306 ys = []
-    308 # Full vertical extent of font, including ascenders and descenders:
---&gt; 309 _, lp_h, lp_d = renderer.get_text_width_height_descent(
-    310     &quot;lp&quot;, self._fontproperties,
-    311     ismath=&quot;TeX&quot; if self.get_usetex() else False)
-    312 min_dy = (lp_h - lp_d) * self._linespacing
-    314 for i, line in enumerate(lines):
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\backends\backend_agg.py:259, in RendererAgg.get_text_width_height_descent(self, s, prop, ismath)
-    257     texmanager = self.get_texmanager()
-    258     fontsize = prop.get_size_in_points()
---&gt; 259     w, h, d = texmanager.get_text_width_height_descent(
-    260         s, fontsize, renderer=self)
-    261     return w, h, d
-    263 if ismath:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:335, in TexManager.get_text_width_height_descent(self, tex, fontsize, renderer)
-    333 if tex.strip() == &#39;&#39;:
-    334     return 0, 0, 0
---&gt; 335 dvifile = self.make_dvi(tex, fontsize)
-    336 dpi_fraction = renderer.points_to_pixels(1.) if renderer else 1
-    337 with dviread.Dvi(dvifile, 72 * dpi_fraction) as dvi:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:271, in TexManager.make_dvi(self, tex, fontsize)
-    262     # Generate the dvi in a temporary directory to avoid race
-    263     # conditions e.g. if multiple processes try to process the same tex
-    264     # string at the same time.  Having tmpdir be a subdirectory of the
-   (...)
-    268     # the absolute path may contain characters (e.g. ~) that TeX does
-    269     # not support.)
-    270     with TemporaryDirectory(dir=Path(dvifile).parent) as tmpdir:
---&gt; 271         self._run_checked_subprocess(
-    272             [&quot;latex&quot;, &quot;-interaction=nonstopmode&quot;, &quot;--halt-on-error&quot;,
-    273              f&quot;../{texfile.name}&quot;], tex, cwd=tmpdir)
-    274         (Path(tmpdir) / Path(dvifile).name).replace(dvifile)
-    275 return dvifile
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:241, in TexManager._run_checked_subprocess(self, command, tex, cwd)
-    237     raise RuntimeError(
-    238         &#39;Failed to process string with tex because {} could not be &#39;
-    239         &#39;found&#39;.format(command[0])) from exc
-    240 except subprocess.CalledProcessError as exc:
---&gt; 241     raise RuntimeError(
-    242         &#39;{prog} was not able to process the following string:\n&#39;
-    243         &#39;{tex!r}\n\n&#39;
-    244         &#39;Here is the full report generated by {prog}:\n&#39;
-    245         &#39;{exc}\n\n&#39;.format(
-    246             prog=command[0],
-    247             tex=tex.encode(&#39;unicode_escape&#39;),
-    248             exc=exc.output.decode(&#39;utf-8&#39;))) from exc
-    249 _log.debug(report)
-    250 return report
-
-RuntimeError: latex was not able to process the following string:
-b&#39;lp&#39;
-
-Here is the full report generated by latex:
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=latex.fmt)
- restricted \write18 enabled.
-entering extended mode
-(../1acea6f6c115d0ec7a634ed0529287b9.tex
-LaTeX2e &lt;2022-06-01&gt; patch level 5
-L3 programming layer &lt;2022-08-23&gt;
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo))
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/type1cm\type1cm.sty)
-======================================================================
-starting package maintenance...
-installation directory: C:\Users\janko\AppData\Local\Programs\MiKTeX
-package repository: https://ctan.ijs.si/tex-archive/systems/win32/miktex/tm/packages/
-
-Unfortunately, the package cm-super could not be installed.
-Please check the log file:
-C:\Users\janko\AppData\Local\MiKTeX\miktex\log\latex.log
-======================================================================
-
-
-! LaTeX Error: File `type1ec.sty&#39; not found.
-
-Type X to quit or &lt;RETURN&gt; to proceed,
-or enter new name. (Default extension: sty)
-
-Enter file name: 
-! Emergency stop.
-&lt;read *&gt; 
-         
-l.6 \usepackage
-               [utf8]{inputenc}^^M
-No pages of output.
-Transcript written on 1acea6f6c115d0ec7a634ed0529287b9.log.
-
-
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 1 Axes&gt;
-</pre></div>
-</div>
+<img alt="../_images/Predavanje 11 - Numerično integriranje_31_0.png" src="../_images/Predavanje 11 - Numerično integriranje_31_0.png" />
 </div>
 </div>
 </section>
@@ -1673,7 +1210,7 @@ $<span class="math notranslate nohighlight">\(I_{\textrm{trapezno sest}}=\sum_{i
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_43_0.png" src="../_images/Predavanje 11 - Numerično integriranje_43_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_44_0.png" src="../_images/Predavanje 11 - Numerično integriranje_44_0.png" />
 </div>
 </div>
 <p>Izračunajmo oceno integrala s sestavljenim trapeznim pravilom:</p>
@@ -1685,7 +1222,7 @@ $<span class="math notranslate nohighlight">\(I_{\textrm{trapezno sest}}=\sum_{i
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_45_0.png" src="../_images/Predavanje 11 - Numerično integriranje_45_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_46_0.png" src="../_images/Predavanje 11 - Numerično integriranje_46_0.png" />
 </div>
 </div>
 <p>Pripravimo sliko:</p>
@@ -1716,246 +1253,7 @@ $<span class="math notranslate nohighlight">\(I_{\textrm{trapezno sest}}=\sum_{i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-CalledProcessError                        Traceback (most recent call last)
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:233, in TexManager._run_checked_subprocess(self, command, tex, cwd)
-    232 try:
---&gt; 233     report = subprocess.check_output(
-    234         command, cwd=cwd if cwd is not None else self.texcache,
-    235         stderr=subprocess.STDOUT)
-    236 except FileNotFoundError as exc:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\subprocess.py:420, in check_output(timeout, *popenargs, **kwargs)
-    418     kwargs[&#39;input&#39;] = empty
---&gt; 420 return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
-    421            **kwargs).stdout
-
-File ~\AppData\Local\Programs\Python\Python310\lib\subprocess.py:524, in run(input, capture_output, timeout, check, *popenargs, **kwargs)
-    523     if check and retcode:
---&gt; 524         raise CalledProcessError(retcode, process.args,
-    525                                  output=stdout, stderr=stderr)
-    526 return CompletedProcess(process.args, retcode, stdout, stderr)
-
-CalledProcessError: Command &#39;[&#39;latex&#39;, &#39;-interaction=nonstopmode&#39;, &#39;--halt-on-error&#39;, &#39;../1acea6f6c115d0ec7a634ed0529287b9.tex&#39;]&#39; returned non-zero exit status 1.
-
-The above exception was the direct cause of the following exception:
-
-RuntimeError                              Traceback (most recent call last)
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\IPython\core\formatters.py:339, in BaseFormatter.__call__(self, obj)
-    337     pass
-    338 else:
---&gt; 339     return printer(obj)
-    340 # Finally look for special method names
-    341 method = get_real_method(obj, self.print_method)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\IPython\core\pylabtools.py:151, in print_figure(fig, fmt, bbox_inches, base64, **kwargs)
-    148     from matplotlib.backend_bases import FigureCanvasBase
-    149     FigureCanvasBase(fig)
---&gt; 151 fig.canvas.print_figure(bytes_io, **kw)
-    152 data = bytes_io.getvalue()
-    153 if fmt == &#39;svg&#39;:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\backend_bases.py:2295, in FigureCanvasBase.print_figure(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)
-   2289     renderer = _get_renderer(
-   2290         self.figure,
-   2291         functools.partial(
-   2292             print_method, orientation=orientation)
-   2293     )
-   2294     with getattr(renderer, &quot;_draw_disabled&quot;, nullcontext)():
--&gt; 2295         self.figure.draw(renderer)
-   2297 if bbox_inches:
-   2298     if bbox_inches == &quot;tight&quot;:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:74, in _finalize_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer, *args, **kwargs)
-     72 @wraps(draw)
-     73 def draw_wrapper(artist, renderer, *args, **kwargs):
----&gt; 74     result = draw(artist, renderer, *args, **kwargs)
-     75     if renderer._rasterizing:
-     76         renderer.stop_rasterizing()
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\figure.py:2845, in Figure.draw(self, renderer)
-   2842         # ValueError can occur when resizing a window.
-   2844 self.patch.draw(renderer)
--&gt; 2845 mimage._draw_list_compositing_images(
-   2846     renderer, self, artists, self.suppressComposite)
-   2848 for sfig in self.subfigs:
-   2849     sfig.draw(renderer)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\image.py:132, in _draw_list_compositing_images(renderer, parent, artists, suppress_composite)
-    130 if not_composite or not has_images:
-    131     for a in artists:
---&gt; 132         a.draw(renderer)
-    133 else:
-    134     # Composite any adjacent images together
-    135     image_group = []
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axes\_base.py:3091, in _AxesBase.draw(self, renderer)
-   3088         a.draw(renderer)
-   3089     renderer.stop_rasterizing()
--&gt; 3091 mimage._draw_list_compositing_images(
-   3092     renderer, self, artists, self.figure.suppressComposite)
-   3094 renderer.close_group(&#39;axes&#39;)
-   3095 self.stale = False
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\image.py:132, in _draw_list_compositing_images(renderer, parent, artists, suppress_composite)
-    130 if not_composite or not has_images:
-    131     for a in artists:
---&gt; 132         a.draw(renderer)
-    133 else:
-    134     # Composite any adjacent images together
-    135     image_group = []
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1159, in Axis.draw(self, renderer, *args, **kwargs)
-   1156 renderer.open_group(__name__, gid=self.get_gid())
-   1158 ticks_to_draw = self._update_ticks()
--&gt; 1159 ticklabelBoxes, ticklabelBoxes2 = self._get_tick_bboxes(ticks_to_draw,
-   1160                                                         renderer)
-   1162 for tick in ticks_to_draw:
-   1163     tick.draw(renderer)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1085, in Axis._get_tick_bboxes(self, ticks, renderer)
-   1083 def _get_tick_bboxes(self, ticks, renderer):
-   1084     &quot;&quot;&quot;Return lists of bboxes for ticks&#39; label1&#39;s and label2&#39;s.&quot;&quot;&quot;
--&gt; 1085     return ([tick.label1.get_window_extent(renderer)
-   1086              for tick in ticks if tick.label1.get_visible()],
-   1087             [tick.label2.get_window_extent(renderer)
-   1088              for tick in ticks if tick.label2.get_visible()])
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1085, in &lt;listcomp&gt;(.0)
-   1083 def _get_tick_bboxes(self, ticks, renderer):
-   1084     &quot;&quot;&quot;Return lists of bboxes for ticks&#39; label1&#39;s and label2&#39;s.&quot;&quot;&quot;
--&gt; 1085     return ([tick.label1.get_window_extent(renderer)
-   1086              for tick in ticks if tick.label1.get_visible()],
-   1087             [tick.label2.get_window_extent(renderer)
-   1088              for tick in ticks if tick.label2.get_visible()])
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\text.py:910, in Text.get_window_extent(self, renderer, dpi)
-    907     raise RuntimeError(&#39;Cannot get window extent w/o renderer&#39;)
-    909 with cbook._setattr_cm(self.figure, dpi=dpi):
---&gt; 910     bbox, info, descent = self._get_layout(self._renderer)
-    911     x, y = self.get_unitless_position()
-    912     x, y = self.get_transform().transform((x, y))
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\text.py:309, in Text._get_layout(self, renderer)
-    306 ys = []
-    308 # Full vertical extent of font, including ascenders and descenders:
---&gt; 309 _, lp_h, lp_d = renderer.get_text_width_height_descent(
-    310     &quot;lp&quot;, self._fontproperties,
-    311     ismath=&quot;TeX&quot; if self.get_usetex() else False)
-    312 min_dy = (lp_h - lp_d) * self._linespacing
-    314 for i, line in enumerate(lines):
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\backends\backend_agg.py:259, in RendererAgg.get_text_width_height_descent(self, s, prop, ismath)
-    257     texmanager = self.get_texmanager()
-    258     fontsize = prop.get_size_in_points()
---&gt; 259     w, h, d = texmanager.get_text_width_height_descent(
-    260         s, fontsize, renderer=self)
-    261     return w, h, d
-    263 if ismath:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:335, in TexManager.get_text_width_height_descent(self, tex, fontsize, renderer)
-    333 if tex.strip() == &#39;&#39;:
-    334     return 0, 0, 0
---&gt; 335 dvifile = self.make_dvi(tex, fontsize)
-    336 dpi_fraction = renderer.points_to_pixels(1.) if renderer else 1
-    337 with dviread.Dvi(dvifile, 72 * dpi_fraction) as dvi:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:271, in TexManager.make_dvi(self, tex, fontsize)
-    262     # Generate the dvi in a temporary directory to avoid race
-    263     # conditions e.g. if multiple processes try to process the same tex
-    264     # string at the same time.  Having tmpdir be a subdirectory of the
-   (...)
-    268     # the absolute path may contain characters (e.g. ~) that TeX does
-    269     # not support.)
-    270     with TemporaryDirectory(dir=Path(dvifile).parent) as tmpdir:
---&gt; 271         self._run_checked_subprocess(
-    272             [&quot;latex&quot;, &quot;-interaction=nonstopmode&quot;, &quot;--halt-on-error&quot;,
-    273              f&quot;../{texfile.name}&quot;], tex, cwd=tmpdir)
-    274         (Path(tmpdir) / Path(dvifile).name).replace(dvifile)
-    275 return dvifile
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:241, in TexManager._run_checked_subprocess(self, command, tex, cwd)
-    237     raise RuntimeError(
-    238         &#39;Failed to process string with tex because {} could not be &#39;
-    239         &#39;found&#39;.format(command[0])) from exc
-    240 except subprocess.CalledProcessError as exc:
---&gt; 241     raise RuntimeError(
-    242         &#39;{prog} was not able to process the following string:\n&#39;
-    243         &#39;{tex!r}\n\n&#39;
-    244         &#39;Here is the full report generated by {prog}:\n&#39;
-    245         &#39;{exc}\n\n&#39;.format(
-    246             prog=command[0],
-    247             tex=tex.encode(&#39;unicode_escape&#39;),
-    248             exc=exc.output.decode(&#39;utf-8&#39;))) from exc
-    249 _log.debug(report)
-    250 return report
-
-RuntimeError: latex was not able to process the following string:
-b&#39;lp&#39;
-
-Here is the full report generated by latex:
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=latex.fmt)
- restricted \write18 enabled.
-entering extended mode
-(../1acea6f6c115d0ec7a634ed0529287b9.tex
-LaTeX2e &lt;2022-06-01&gt; patch level 5
-L3 programming layer &lt;2022-08-23&gt;
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo))
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/type1cm\type1cm.sty)
-======================================================================
-starting package maintenance...
-installation directory: C:\Users\janko\AppData\Local\Programs\MiKTeX
-package repository: https://ctan.ijs.si/tex-archive/systems/win32/miktex/tm/packages/
-
-Unfortunately, the package cm-super could not be installed.
-Please check the log file:
-C:\Users\janko\AppData\Local\MiKTeX\miktex\log\latex.log
-======================================================================
-
-
-! LaTeX Error: File `type1ec.sty&#39; not found.
-
-Type X to quit or &lt;RETURN&gt; to proceed,
-or enter new name. (Default extension: sty)
-
-Enter file name: 
-! Emergency stop.
-&lt;read *&gt; 
-         
-l.6 \usepackage
-               [utf8]{inputenc}^^M
-No pages of output.
-Transcript written on 1acea6f6c115d0ec7a634ed0529287b9.log.
-
-
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 1 Axes&gt;
-</pre></div>
-</div>
+<img alt="../_images/Predavanje 11 - Numerično integriranje_50_0.png" src="../_images/Predavanje 11 - Numerično integriranje_50_0.png" />
 </div>
 </div>
 </section>
@@ -2000,7 +1298,7 @@ ali
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_60_0.png" src="../_images/Predavanje 11 - Numerično integriranje_60_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_61_0.png" src="../_images/Predavanje 11 - Numerično integriranje_61_0.png" />
 </div>
 </div>
 <p>S pomočjo zgornje formule izračunamo boljši približek:</p>
@@ -2042,7 +1340,7 @@ Boljši približek: 1.4408392930139313
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_66_0.png" src="../_images/Predavanje 11 - Numerično integriranje_66_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_67_0.png" src="../_images/Predavanje 11 - Numerično integriranje_67_0.png" />
 </div>
 </div>
 </section>
@@ -2114,7 +1412,7 @@ $<span class="math notranslate nohighlight">\(\int_{a}^b f(x)\,dx.\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_79_0.png" src="../_images/Predavanje 11 - Numerično integriranje_79_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_80_0.png" src="../_images/Predavanje 11 - Numerično integriranje_80_0.png" />
 </div>
 </div>
 <p>Sedaj Lagrangev polinom <span class="math notranslate nohighlight">\(l_0(x)\)</span> integriramo čez celotni interval:</p>
@@ -2126,7 +1424,7 @@ $<span class="math notranslate nohighlight">\(\int_{a}^b f(x)\,dx.\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_81_0.png" src="../_images/Predavanje 11 - Numerično integriranje_81_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_82_0.png" src="../_images/Predavanje 11 - Numerično integriranje_82_0.png" />
 </div>
 </div>
 <p>Izraz poenostavimo in dobimo:</p>
@@ -2138,7 +1436,7 @@ $<span class="math notranslate nohighlight">\(\int_{a}^b f(x)\,dx.\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_83_0.png" src="../_images/Predavanje 11 - Numerično integriranje_83_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_84_0.png" src="../_images/Predavanje 11 - Numerično integriranje_84_0.png" />
 </div>
 </div>
 <p>Ker je širina podintervala konstantna je <span class="math notranslate nohighlight">\(x_1=h_0+h\)</span>, izvedemo zamenjavo:</p>
@@ -2150,7 +1448,7 @@ $<span class="math notranslate nohighlight">\(\int_{a}^b f(x)\,dx.\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_85_0.png" src="../_images/Predavanje 11 - Numerično integriranje_85_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_86_0.png" src="../_images/Predavanje 11 - Numerično integriranje_86_0.png" />
 </div>
 </div>
 <p>Zgornje korake za Lagrangev polinom  <span class="math notranslate nohighlight">\(l_0(x)\)</span> lahko posplošimo za seznam Lagrangevih polinomov:</p>
@@ -2165,7 +1463,7 @@ $<span class="math notranslate nohighlight">\(\int_{a}^b f(x)\,dx.\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_87_0.png" src="../_images/Predavanje 11 - Numerično integriranje_87_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_88_0.png" src="../_images/Predavanje 11 - Numerično integriranje_88_0.png" />
 </div>
 </div>
 <p>Izpeljali smo uteži, ki smo jih uporabili pri trapezni metodi:</p>
@@ -2192,7 +1490,7 @@ $<span class="math notranslate nohighlight">\(E_{\textrm{trapezno}}= -\frac{h^3}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_92_0.png" src="../_images/Predavanje 11 - Numerično integriranje_92_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_93_0.png" src="../_images/Predavanje 11 - Numerično integriranje_93_0.png" />
 </div>
 </div>
 <p>Simpsonovo pravilo (to pravilo se imenuje tudi Simpsonovo 1/3 pravilo) je:</p>
@@ -2210,7 +1508,7 @@ $<span class="math notranslate nohighlight">\(E_{\textrm{Simpsonovo}}= -\frac{h^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_95_0.png" src="../_images/Predavanje 11 - Numerično integriranje_95_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_96_0.png" src="../_images/Predavanje 11 - Numerično integriranje_96_0.png" />
 </div>
 </div>
 <p>Pripravimo sliko. Ker Simsonovo pravilo temelji na kvadratni interpolaciji, moramo naprej pripraviti interpolacijski polinom (pomagamo si s <code class="docutils literal notranslate"><span class="pre">scipy.interpolate</span></code>):</p>
@@ -2249,246 +1547,7 @@ $<span class="math notranslate nohighlight">\(E_{\textrm{Simpsonovo}}= -\frac{h^
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-CalledProcessError                        Traceback (most recent call last)
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:233, in TexManager._run_checked_subprocess(self, command, tex, cwd)
-    232 try:
---&gt; 233     report = subprocess.check_output(
-    234         command, cwd=cwd if cwd is not None else self.texcache,
-    235         stderr=subprocess.STDOUT)
-    236 except FileNotFoundError as exc:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\subprocess.py:420, in check_output(timeout, *popenargs, **kwargs)
-    418     kwargs[&#39;input&#39;] = empty
---&gt; 420 return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
-    421            **kwargs).stdout
-
-File ~\AppData\Local\Programs\Python\Python310\lib\subprocess.py:524, in run(input, capture_output, timeout, check, *popenargs, **kwargs)
-    523     if check and retcode:
---&gt; 524         raise CalledProcessError(retcode, process.args,
-    525                                  output=stdout, stderr=stderr)
-    526 return CompletedProcess(process.args, retcode, stdout, stderr)
-
-CalledProcessError: Command &#39;[&#39;latex&#39;, &#39;-interaction=nonstopmode&#39;, &#39;--halt-on-error&#39;, &#39;../1acea6f6c115d0ec7a634ed0529287b9.tex&#39;]&#39; returned non-zero exit status 1.
-
-The above exception was the direct cause of the following exception:
-
-RuntimeError                              Traceback (most recent call last)
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\IPython\core\formatters.py:339, in BaseFormatter.__call__(self, obj)
-    337     pass
-    338 else:
---&gt; 339     return printer(obj)
-    340 # Finally look for special method names
-    341 method = get_real_method(obj, self.print_method)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\IPython\core\pylabtools.py:151, in print_figure(fig, fmt, bbox_inches, base64, **kwargs)
-    148     from matplotlib.backend_bases import FigureCanvasBase
-    149     FigureCanvasBase(fig)
---&gt; 151 fig.canvas.print_figure(bytes_io, **kw)
-    152 data = bytes_io.getvalue()
-    153 if fmt == &#39;svg&#39;:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\backend_bases.py:2295, in FigureCanvasBase.print_figure(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)
-   2289     renderer = _get_renderer(
-   2290         self.figure,
-   2291         functools.partial(
-   2292             print_method, orientation=orientation)
-   2293     )
-   2294     with getattr(renderer, &quot;_draw_disabled&quot;, nullcontext)():
--&gt; 2295         self.figure.draw(renderer)
-   2297 if bbox_inches:
-   2298     if bbox_inches == &quot;tight&quot;:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:74, in _finalize_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer, *args, **kwargs)
-     72 @wraps(draw)
-     73 def draw_wrapper(artist, renderer, *args, **kwargs):
----&gt; 74     result = draw(artist, renderer, *args, **kwargs)
-     75     if renderer._rasterizing:
-     76         renderer.stop_rasterizing()
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\figure.py:2845, in Figure.draw(self, renderer)
-   2842         # ValueError can occur when resizing a window.
-   2844 self.patch.draw(renderer)
--&gt; 2845 mimage._draw_list_compositing_images(
-   2846     renderer, self, artists, self.suppressComposite)
-   2848 for sfig in self.subfigs:
-   2849     sfig.draw(renderer)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\image.py:132, in _draw_list_compositing_images(renderer, parent, artists, suppress_composite)
-    130 if not_composite or not has_images:
-    131     for a in artists:
---&gt; 132         a.draw(renderer)
-    133 else:
-    134     # Composite any adjacent images together
-    135     image_group = []
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axes\_base.py:3091, in _AxesBase.draw(self, renderer)
-   3088         a.draw(renderer)
-   3089     renderer.stop_rasterizing()
--&gt; 3091 mimage._draw_list_compositing_images(
-   3092     renderer, self, artists, self.figure.suppressComposite)
-   3094 renderer.close_group(&#39;axes&#39;)
-   3095 self.stale = False
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\image.py:132, in _draw_list_compositing_images(renderer, parent, artists, suppress_composite)
-    130 if not_composite or not has_images:
-    131     for a in artists:
---&gt; 132         a.draw(renderer)
-    133 else:
-    134     # Composite any adjacent images together
-    135     image_group = []
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1159, in Axis.draw(self, renderer, *args, **kwargs)
-   1156 renderer.open_group(__name__, gid=self.get_gid())
-   1158 ticks_to_draw = self._update_ticks()
--&gt; 1159 ticklabelBoxes, ticklabelBoxes2 = self._get_tick_bboxes(ticks_to_draw,
-   1160                                                         renderer)
-   1162 for tick in ticks_to_draw:
-   1163     tick.draw(renderer)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1085, in Axis._get_tick_bboxes(self, ticks, renderer)
-   1083 def _get_tick_bboxes(self, ticks, renderer):
-   1084     &quot;&quot;&quot;Return lists of bboxes for ticks&#39; label1&#39;s and label2&#39;s.&quot;&quot;&quot;
--&gt; 1085     return ([tick.label1.get_window_extent(renderer)
-   1086              for tick in ticks if tick.label1.get_visible()],
-   1087             [tick.label2.get_window_extent(renderer)
-   1088              for tick in ticks if tick.label2.get_visible()])
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1085, in &lt;listcomp&gt;(.0)
-   1083 def _get_tick_bboxes(self, ticks, renderer):
-   1084     &quot;&quot;&quot;Return lists of bboxes for ticks&#39; label1&#39;s and label2&#39;s.&quot;&quot;&quot;
--&gt; 1085     return ([tick.label1.get_window_extent(renderer)
-   1086              for tick in ticks if tick.label1.get_visible()],
-   1087             [tick.label2.get_window_extent(renderer)
-   1088              for tick in ticks if tick.label2.get_visible()])
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\text.py:910, in Text.get_window_extent(self, renderer, dpi)
-    907     raise RuntimeError(&#39;Cannot get window extent w/o renderer&#39;)
-    909 with cbook._setattr_cm(self.figure, dpi=dpi):
---&gt; 910     bbox, info, descent = self._get_layout(self._renderer)
-    911     x, y = self.get_unitless_position()
-    912     x, y = self.get_transform().transform((x, y))
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\text.py:309, in Text._get_layout(self, renderer)
-    306 ys = []
-    308 # Full vertical extent of font, including ascenders and descenders:
---&gt; 309 _, lp_h, lp_d = renderer.get_text_width_height_descent(
-    310     &quot;lp&quot;, self._fontproperties,
-    311     ismath=&quot;TeX&quot; if self.get_usetex() else False)
-    312 min_dy = (lp_h - lp_d) * self._linespacing
-    314 for i, line in enumerate(lines):
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\backends\backend_agg.py:259, in RendererAgg.get_text_width_height_descent(self, s, prop, ismath)
-    257     texmanager = self.get_texmanager()
-    258     fontsize = prop.get_size_in_points()
---&gt; 259     w, h, d = texmanager.get_text_width_height_descent(
-    260         s, fontsize, renderer=self)
-    261     return w, h, d
-    263 if ismath:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:335, in TexManager.get_text_width_height_descent(self, tex, fontsize, renderer)
-    333 if tex.strip() == &#39;&#39;:
-    334     return 0, 0, 0
---&gt; 335 dvifile = self.make_dvi(tex, fontsize)
-    336 dpi_fraction = renderer.points_to_pixels(1.) if renderer else 1
-    337 with dviread.Dvi(dvifile, 72 * dpi_fraction) as dvi:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:271, in TexManager.make_dvi(self, tex, fontsize)
-    262     # Generate the dvi in a temporary directory to avoid race
-    263     # conditions e.g. if multiple processes try to process the same tex
-    264     # string at the same time.  Having tmpdir be a subdirectory of the
-   (...)
-    268     # the absolute path may contain characters (e.g. ~) that TeX does
-    269     # not support.)
-    270     with TemporaryDirectory(dir=Path(dvifile).parent) as tmpdir:
---&gt; 271         self._run_checked_subprocess(
-    272             [&quot;latex&quot;, &quot;-interaction=nonstopmode&quot;, &quot;--halt-on-error&quot;,
-    273              f&quot;../{texfile.name}&quot;], tex, cwd=tmpdir)
-    274         (Path(tmpdir) / Path(dvifile).name).replace(dvifile)
-    275 return dvifile
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:241, in TexManager._run_checked_subprocess(self, command, tex, cwd)
-    237     raise RuntimeError(
-    238         &#39;Failed to process string with tex because {} could not be &#39;
-    239         &#39;found&#39;.format(command[0])) from exc
-    240 except subprocess.CalledProcessError as exc:
---&gt; 241     raise RuntimeError(
-    242         &#39;{prog} was not able to process the following string:\n&#39;
-    243         &#39;{tex!r}\n\n&#39;
-    244         &#39;Here is the full report generated by {prog}:\n&#39;
-    245         &#39;{exc}\n\n&#39;.format(
-    246             prog=command[0],
-    247             tex=tex.encode(&#39;unicode_escape&#39;),
-    248             exc=exc.output.decode(&#39;utf-8&#39;))) from exc
-    249 _log.debug(report)
-    250 return report
-
-RuntimeError: latex was not able to process the following string:
-b&#39;lp&#39;
-
-Here is the full report generated by latex:
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=latex.fmt)
- restricted \write18 enabled.
-entering extended mode
-(../1acea6f6c115d0ec7a634ed0529287b9.tex
-LaTeX2e &lt;2022-06-01&gt; patch level 5
-L3 programming layer &lt;2022-08-23&gt;
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo))
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/type1cm\type1cm.sty)
-======================================================================
-starting package maintenance...
-installation directory: C:\Users\janko\AppData\Local\Programs\MiKTeX
-package repository: https://ctan.ijs.si/tex-archive/systems/win32/miktex/tm/packages/
-
-Unfortunately, the package cm-super could not be installed.
-Please check the log file:
-C:\Users\janko\AppData\Local\MiKTeX\miktex\log\latex.log
-======================================================================
-
-
-! LaTeX Error: File `type1ec.sty&#39; not found.
-
-Type X to quit or &lt;RETURN&gt; to proceed,
-or enter new name. (Default extension: sty)
-
-Enter file name: 
-! Emergency stop.
-&lt;read *&gt; 
-         
-l.6 \usepackage
-               [utf8]{inputenc}^^M
-No pages of output.
-Transcript written on 1acea6f6c115d0ec7a634ed0529287b9.log.
-
-
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 1 Axes&gt;
-</pre></div>
-</div>
+<img alt="../_images/Predavanje 11 - Numerično integriranje_101_0.png" src="../_images/Predavanje 11 - Numerično integriranje_101_0.png" />
 </div>
 </div>
 </section>
@@ -2533,7 +1592,7 @@ Transcript written on 1acea6f6c115d0ec7a634ed0529287b9.log.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_106_0.png" src="../_images/Predavanje 11 - Numerično integriranje_106_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_107_0.png" src="../_images/Predavanje 11 - Numerično integriranje_107_0.png" />
 </div>
 </div>
 <p>Simpsonovo 3/8 pravilo je:</p>
@@ -2562,7 +1621,7 @@ $<span class="math notranslate nohighlight">\(E_{\textrm{Simpsonovo 3/8}}= -\fra
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_110_0.png" src="../_images/Predavanje 11 - Numerično integriranje_110_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_111_0.png" src="../_images/Predavanje 11 - Numerično integriranje_111_0.png" />
 </div>
 </div>
 <p>Pripravimo še prikaz:</p>
@@ -2596,246 +1655,7 @@ $<span class="math notranslate nohighlight">\(E_{\textrm{Simpsonovo 3/8}}= -\fra
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-CalledProcessError                        Traceback (most recent call last)
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:233, in TexManager._run_checked_subprocess(self, command, tex, cwd)
-    232 try:
---&gt; 233     report = subprocess.check_output(
-    234         command, cwd=cwd if cwd is not None else self.texcache,
-    235         stderr=subprocess.STDOUT)
-    236 except FileNotFoundError as exc:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\subprocess.py:420, in check_output(timeout, *popenargs, **kwargs)
-    418     kwargs[&#39;input&#39;] = empty
---&gt; 420 return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
-    421            **kwargs).stdout
-
-File ~\AppData\Local\Programs\Python\Python310\lib\subprocess.py:524, in run(input, capture_output, timeout, check, *popenargs, **kwargs)
-    523     if check and retcode:
---&gt; 524         raise CalledProcessError(retcode, process.args,
-    525                                  output=stdout, stderr=stderr)
-    526 return CompletedProcess(process.args, retcode, stdout, stderr)
-
-CalledProcessError: Command &#39;[&#39;latex&#39;, &#39;-interaction=nonstopmode&#39;, &#39;--halt-on-error&#39;, &#39;../1acea6f6c115d0ec7a634ed0529287b9.tex&#39;]&#39; returned non-zero exit status 1.
-
-The above exception was the direct cause of the following exception:
-
-RuntimeError                              Traceback (most recent call last)
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\IPython\core\formatters.py:339, in BaseFormatter.__call__(self, obj)
-    337     pass
-    338 else:
---&gt; 339     return printer(obj)
-    340 # Finally look for special method names
-    341 method = get_real_method(obj, self.print_method)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\IPython\core\pylabtools.py:151, in print_figure(fig, fmt, bbox_inches, base64, **kwargs)
-    148     from matplotlib.backend_bases import FigureCanvasBase
-    149     FigureCanvasBase(fig)
---&gt; 151 fig.canvas.print_figure(bytes_io, **kw)
-    152 data = bytes_io.getvalue()
-    153 if fmt == &#39;svg&#39;:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\backend_bases.py:2295, in FigureCanvasBase.print_figure(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)
-   2289     renderer = _get_renderer(
-   2290         self.figure,
-   2291         functools.partial(
-   2292             print_method, orientation=orientation)
-   2293     )
-   2294     with getattr(renderer, &quot;_draw_disabled&quot;, nullcontext)():
--&gt; 2295         self.figure.draw(renderer)
-   2297 if bbox_inches:
-   2298     if bbox_inches == &quot;tight&quot;:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:74, in _finalize_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer, *args, **kwargs)
-     72 @wraps(draw)
-     73 def draw_wrapper(artist, renderer, *args, **kwargs):
----&gt; 74     result = draw(artist, renderer, *args, **kwargs)
-     75     if renderer._rasterizing:
-     76         renderer.stop_rasterizing()
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\figure.py:2845, in Figure.draw(self, renderer)
-   2842         # ValueError can occur when resizing a window.
-   2844 self.patch.draw(renderer)
--&gt; 2845 mimage._draw_list_compositing_images(
-   2846     renderer, self, artists, self.suppressComposite)
-   2848 for sfig in self.subfigs:
-   2849     sfig.draw(renderer)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\image.py:132, in _draw_list_compositing_images(renderer, parent, artists, suppress_composite)
-    130 if not_composite or not has_images:
-    131     for a in artists:
---&gt; 132         a.draw(renderer)
-    133 else:
-    134     # Composite any adjacent images together
-    135     image_group = []
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axes\_base.py:3091, in _AxesBase.draw(self, renderer)
-   3088         a.draw(renderer)
-   3089     renderer.stop_rasterizing()
--&gt; 3091 mimage._draw_list_compositing_images(
-   3092     renderer, self, artists, self.figure.suppressComposite)
-   3094 renderer.close_group(&#39;axes&#39;)
-   3095 self.stale = False
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\image.py:132, in _draw_list_compositing_images(renderer, parent, artists, suppress_composite)
-    130 if not_composite or not has_images:
-    131     for a in artists:
---&gt; 132         a.draw(renderer)
-    133 else:
-    134     # Composite any adjacent images together
-    135     image_group = []
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1159, in Axis.draw(self, renderer, *args, **kwargs)
-   1156 renderer.open_group(__name__, gid=self.get_gid())
-   1158 ticks_to_draw = self._update_ticks()
--&gt; 1159 ticklabelBoxes, ticklabelBoxes2 = self._get_tick_bboxes(ticks_to_draw,
-   1160                                                         renderer)
-   1162 for tick in ticks_to_draw:
-   1163     tick.draw(renderer)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1085, in Axis._get_tick_bboxes(self, ticks, renderer)
-   1083 def _get_tick_bboxes(self, ticks, renderer):
-   1084     &quot;&quot;&quot;Return lists of bboxes for ticks&#39; label1&#39;s and label2&#39;s.&quot;&quot;&quot;
--&gt; 1085     return ([tick.label1.get_window_extent(renderer)
-   1086              for tick in ticks if tick.label1.get_visible()],
-   1087             [tick.label2.get_window_extent(renderer)
-   1088              for tick in ticks if tick.label2.get_visible()])
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1085, in &lt;listcomp&gt;(.0)
-   1083 def _get_tick_bboxes(self, ticks, renderer):
-   1084     &quot;&quot;&quot;Return lists of bboxes for ticks&#39; label1&#39;s and label2&#39;s.&quot;&quot;&quot;
--&gt; 1085     return ([tick.label1.get_window_extent(renderer)
-   1086              for tick in ticks if tick.label1.get_visible()],
-   1087             [tick.label2.get_window_extent(renderer)
-   1088              for tick in ticks if tick.label2.get_visible()])
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\text.py:910, in Text.get_window_extent(self, renderer, dpi)
-    907     raise RuntimeError(&#39;Cannot get window extent w/o renderer&#39;)
-    909 with cbook._setattr_cm(self.figure, dpi=dpi):
---&gt; 910     bbox, info, descent = self._get_layout(self._renderer)
-    911     x, y = self.get_unitless_position()
-    912     x, y = self.get_transform().transform((x, y))
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\text.py:309, in Text._get_layout(self, renderer)
-    306 ys = []
-    308 # Full vertical extent of font, including ascenders and descenders:
---&gt; 309 _, lp_h, lp_d = renderer.get_text_width_height_descent(
-    310     &quot;lp&quot;, self._fontproperties,
-    311     ismath=&quot;TeX&quot; if self.get_usetex() else False)
-    312 min_dy = (lp_h - lp_d) * self._linespacing
-    314 for i, line in enumerate(lines):
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\backends\backend_agg.py:259, in RendererAgg.get_text_width_height_descent(self, s, prop, ismath)
-    257     texmanager = self.get_texmanager()
-    258     fontsize = prop.get_size_in_points()
---&gt; 259     w, h, d = texmanager.get_text_width_height_descent(
-    260         s, fontsize, renderer=self)
-    261     return w, h, d
-    263 if ismath:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:335, in TexManager.get_text_width_height_descent(self, tex, fontsize, renderer)
-    333 if tex.strip() == &#39;&#39;:
-    334     return 0, 0, 0
---&gt; 335 dvifile = self.make_dvi(tex, fontsize)
-    336 dpi_fraction = renderer.points_to_pixels(1.) if renderer else 1
-    337 with dviread.Dvi(dvifile, 72 * dpi_fraction) as dvi:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:271, in TexManager.make_dvi(self, tex, fontsize)
-    262     # Generate the dvi in a temporary directory to avoid race
-    263     # conditions e.g. if multiple processes try to process the same tex
-    264     # string at the same time.  Having tmpdir be a subdirectory of the
-   (...)
-    268     # the absolute path may contain characters (e.g. ~) that TeX does
-    269     # not support.)
-    270     with TemporaryDirectory(dir=Path(dvifile).parent) as tmpdir:
---&gt; 271         self._run_checked_subprocess(
-    272             [&quot;latex&quot;, &quot;-interaction=nonstopmode&quot;, &quot;--halt-on-error&quot;,
-    273              f&quot;../{texfile.name}&quot;], tex, cwd=tmpdir)
-    274         (Path(tmpdir) / Path(dvifile).name).replace(dvifile)
-    275 return dvifile
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:241, in TexManager._run_checked_subprocess(self, command, tex, cwd)
-    237     raise RuntimeError(
-    238         &#39;Failed to process string with tex because {} could not be &#39;
-    239         &#39;found&#39;.format(command[0])) from exc
-    240 except subprocess.CalledProcessError as exc:
---&gt; 241     raise RuntimeError(
-    242         &#39;{prog} was not able to process the following string:\n&#39;
-    243         &#39;{tex!r}\n\n&#39;
-    244         &#39;Here is the full report generated by {prog}:\n&#39;
-    245         &#39;{exc}\n\n&#39;.format(
-    246             prog=command[0],
-    247             tex=tex.encode(&#39;unicode_escape&#39;),
-    248             exc=exc.output.decode(&#39;utf-8&#39;))) from exc
-    249 _log.debug(report)
-    250 return report
-
-RuntimeError: latex was not able to process the following string:
-b&#39;lp&#39;
-
-Here is the full report generated by latex:
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=latex.fmt)
- restricted \write18 enabled.
-entering extended mode
-(../1acea6f6c115d0ec7a634ed0529287b9.tex
-LaTeX2e &lt;2022-06-01&gt; patch level 5
-L3 programming layer &lt;2022-08-23&gt;
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo))
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/type1cm\type1cm.sty)
-======================================================================
-starting package maintenance...
-installation directory: C:\Users\janko\AppData\Local\Programs\MiKTeX
-package repository: https://ctan.ijs.si/tex-archive/systems/win32/miktex/tm/packages/
-
-Unfortunately, the package cm-super could not be installed.
-Please check the log file:
-C:\Users\janko\AppData\Local\MiKTeX\miktex\log\latex.log
-======================================================================
-
-
-! LaTeX Error: File `type1ec.sty&#39; not found.
-
-Type X to quit or &lt;RETURN&gt; to proceed,
-or enter new name. (Default extension: sty)
-
-Enter file name: 
-! Emergency stop.
-&lt;read *&gt; 
-         
-l.6 \usepackage
-               [utf8]{inputenc}^^M
-No pages of output.
-Transcript written on 1acea6f6c115d0ec7a634ed0529287b9.log.
-
-
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 1 Axes&gt;
-</pre></div>
-</div>
+<img alt="../_images/Predavanje 11 - Numerično integriranje_115_0.png" src="../_images/Predavanje 11 - Numerično integriranje_115_0.png" />
 </div>
 </div>
 </section>
@@ -2879,7 +1699,7 @@ f(x_0)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_120_0.png" src="../_images/Predavanje 11 - Numerično integriranje_120_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_121_0.png" src="../_images/Predavanje 11 - Numerično integriranje_121_0.png" />
 </div>
 </div>
 <p>Pripravimo sliko:</p>
@@ -2909,246 +1729,7 @@ f(x_0)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-CalledProcessError                        Traceback (most recent call last)
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:233, in TexManager._run_checked_subprocess(self, command, tex, cwd)
-    232 try:
---&gt; 233     report = subprocess.check_output(
-    234         command, cwd=cwd if cwd is not None else self.texcache,
-    235         stderr=subprocess.STDOUT)
-    236 except FileNotFoundError as exc:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\subprocess.py:420, in check_output(timeout, *popenargs, **kwargs)
-    418     kwargs[&#39;input&#39;] = empty
---&gt; 420 return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
-    421            **kwargs).stdout
-
-File ~\AppData\Local\Programs\Python\Python310\lib\subprocess.py:524, in run(input, capture_output, timeout, check, *popenargs, **kwargs)
-    523     if check and retcode:
---&gt; 524         raise CalledProcessError(retcode, process.args,
-    525                                  output=stdout, stderr=stderr)
-    526 return CompletedProcess(process.args, retcode, stdout, stderr)
-
-CalledProcessError: Command &#39;[&#39;latex&#39;, &#39;-interaction=nonstopmode&#39;, &#39;--halt-on-error&#39;, &#39;../1acea6f6c115d0ec7a634ed0529287b9.tex&#39;]&#39; returned non-zero exit status 1.
-
-The above exception was the direct cause of the following exception:
-
-RuntimeError                              Traceback (most recent call last)
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\IPython\core\formatters.py:339, in BaseFormatter.__call__(self, obj)
-    337     pass
-    338 else:
---&gt; 339     return printer(obj)
-    340 # Finally look for special method names
-    341 method = get_real_method(obj, self.print_method)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\IPython\core\pylabtools.py:151, in print_figure(fig, fmt, bbox_inches, base64, **kwargs)
-    148     from matplotlib.backend_bases import FigureCanvasBase
-    149     FigureCanvasBase(fig)
---&gt; 151 fig.canvas.print_figure(bytes_io, **kw)
-    152 data = bytes_io.getvalue()
-    153 if fmt == &#39;svg&#39;:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\backend_bases.py:2295, in FigureCanvasBase.print_figure(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)
-   2289     renderer = _get_renderer(
-   2290         self.figure,
-   2291         functools.partial(
-   2292             print_method, orientation=orientation)
-   2293     )
-   2294     with getattr(renderer, &quot;_draw_disabled&quot;, nullcontext)():
--&gt; 2295         self.figure.draw(renderer)
-   2297 if bbox_inches:
-   2298     if bbox_inches == &quot;tight&quot;:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:74, in _finalize_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer, *args, **kwargs)
-     72 @wraps(draw)
-     73 def draw_wrapper(artist, renderer, *args, **kwargs):
----&gt; 74     result = draw(artist, renderer, *args, **kwargs)
-     75     if renderer._rasterizing:
-     76         renderer.stop_rasterizing()
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\figure.py:2845, in Figure.draw(self, renderer)
-   2842         # ValueError can occur when resizing a window.
-   2844 self.patch.draw(renderer)
--&gt; 2845 mimage._draw_list_compositing_images(
-   2846     renderer, self, artists, self.suppressComposite)
-   2848 for sfig in self.subfigs:
-   2849     sfig.draw(renderer)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\image.py:132, in _draw_list_compositing_images(renderer, parent, artists, suppress_composite)
-    130 if not_composite or not has_images:
-    131     for a in artists:
---&gt; 132         a.draw(renderer)
-    133 else:
-    134     # Composite any adjacent images together
-    135     image_group = []
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axes\_base.py:3091, in _AxesBase.draw(self, renderer)
-   3088         a.draw(renderer)
-   3089     renderer.stop_rasterizing()
--&gt; 3091 mimage._draw_list_compositing_images(
-   3092     renderer, self, artists, self.figure.suppressComposite)
-   3094 renderer.close_group(&#39;axes&#39;)
-   3095 self.stale = False
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\image.py:132, in _draw_list_compositing_images(renderer, parent, artists, suppress_composite)
-    130 if not_composite or not has_images:
-    131     for a in artists:
---&gt; 132         a.draw(renderer)
-    133 else:
-    134     # Composite any adjacent images together
-    135     image_group = []
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1159, in Axis.draw(self, renderer, *args, **kwargs)
-   1156 renderer.open_group(__name__, gid=self.get_gid())
-   1158 ticks_to_draw = self._update_ticks()
--&gt; 1159 ticklabelBoxes, ticklabelBoxes2 = self._get_tick_bboxes(ticks_to_draw,
-   1160                                                         renderer)
-   1162 for tick in ticks_to_draw:
-   1163     tick.draw(renderer)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1085, in Axis._get_tick_bboxes(self, ticks, renderer)
-   1083 def _get_tick_bboxes(self, ticks, renderer):
-   1084     &quot;&quot;&quot;Return lists of bboxes for ticks&#39; label1&#39;s and label2&#39;s.&quot;&quot;&quot;
--&gt; 1085     return ([tick.label1.get_window_extent(renderer)
-   1086              for tick in ticks if tick.label1.get_visible()],
-   1087             [tick.label2.get_window_extent(renderer)
-   1088              for tick in ticks if tick.label2.get_visible()])
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1085, in &lt;listcomp&gt;(.0)
-   1083 def _get_tick_bboxes(self, ticks, renderer):
-   1084     &quot;&quot;&quot;Return lists of bboxes for ticks&#39; label1&#39;s and label2&#39;s.&quot;&quot;&quot;
--&gt; 1085     return ([tick.label1.get_window_extent(renderer)
-   1086              for tick in ticks if tick.label1.get_visible()],
-   1087             [tick.label2.get_window_extent(renderer)
-   1088              for tick in ticks if tick.label2.get_visible()])
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\text.py:910, in Text.get_window_extent(self, renderer, dpi)
-    907     raise RuntimeError(&#39;Cannot get window extent w/o renderer&#39;)
-    909 with cbook._setattr_cm(self.figure, dpi=dpi):
---&gt; 910     bbox, info, descent = self._get_layout(self._renderer)
-    911     x, y = self.get_unitless_position()
-    912     x, y = self.get_transform().transform((x, y))
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\text.py:309, in Text._get_layout(self, renderer)
-    306 ys = []
-    308 # Full vertical extent of font, including ascenders and descenders:
---&gt; 309 _, lp_h, lp_d = renderer.get_text_width_height_descent(
-    310     &quot;lp&quot;, self._fontproperties,
-    311     ismath=&quot;TeX&quot; if self.get_usetex() else False)
-    312 min_dy = (lp_h - lp_d) * self._linespacing
-    314 for i, line in enumerate(lines):
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\backends\backend_agg.py:259, in RendererAgg.get_text_width_height_descent(self, s, prop, ismath)
-    257     texmanager = self.get_texmanager()
-    258     fontsize = prop.get_size_in_points()
---&gt; 259     w, h, d = texmanager.get_text_width_height_descent(
-    260         s, fontsize, renderer=self)
-    261     return w, h, d
-    263 if ismath:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:335, in TexManager.get_text_width_height_descent(self, tex, fontsize, renderer)
-    333 if tex.strip() == &#39;&#39;:
-    334     return 0, 0, 0
---&gt; 335 dvifile = self.make_dvi(tex, fontsize)
-    336 dpi_fraction = renderer.points_to_pixels(1.) if renderer else 1
-    337 with dviread.Dvi(dvifile, 72 * dpi_fraction) as dvi:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:271, in TexManager.make_dvi(self, tex, fontsize)
-    262     # Generate the dvi in a temporary directory to avoid race
-    263     # conditions e.g. if multiple processes try to process the same tex
-    264     # string at the same time.  Having tmpdir be a subdirectory of the
-   (...)
-    268     # the absolute path may contain characters (e.g. ~) that TeX does
-    269     # not support.)
-    270     with TemporaryDirectory(dir=Path(dvifile).parent) as tmpdir:
---&gt; 271         self._run_checked_subprocess(
-    272             [&quot;latex&quot;, &quot;-interaction=nonstopmode&quot;, &quot;--halt-on-error&quot;,
-    273              f&quot;../{texfile.name}&quot;], tex, cwd=tmpdir)
-    274         (Path(tmpdir) / Path(dvifile).name).replace(dvifile)
-    275 return dvifile
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:241, in TexManager._run_checked_subprocess(self, command, tex, cwd)
-    237     raise RuntimeError(
-    238         &#39;Failed to process string with tex because {} could not be &#39;
-    239         &#39;found&#39;.format(command[0])) from exc
-    240 except subprocess.CalledProcessError as exc:
---&gt; 241     raise RuntimeError(
-    242         &#39;{prog} was not able to process the following string:\n&#39;
-    243         &#39;{tex!r}\n\n&#39;
-    244         &#39;Here is the full report generated by {prog}:\n&#39;
-    245         &#39;{exc}\n\n&#39;.format(
-    246             prog=command[0],
-    247             tex=tex.encode(&#39;unicode_escape&#39;),
-    248             exc=exc.output.decode(&#39;utf-8&#39;))) from exc
-    249 _log.debug(report)
-    250 return report
-
-RuntimeError: latex was not able to process the following string:
-b&#39;lp&#39;
-
-Here is the full report generated by latex:
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=latex.fmt)
- restricted \write18 enabled.
-entering extended mode
-(../1acea6f6c115d0ec7a634ed0529287b9.tex
-LaTeX2e &lt;2022-06-01&gt; patch level 5
-L3 programming layer &lt;2022-08-23&gt;
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo))
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/type1cm\type1cm.sty)
-======================================================================
-starting package maintenance...
-installation directory: C:\Users\janko\AppData\Local\Programs\MiKTeX
-package repository: https://ctan.ijs.si/tex-archive/systems/win32/miktex/tm/packages/
-
-Unfortunately, the package cm-super could not be installed.
-Please check the log file:
-C:\Users\janko\AppData\Local\MiKTeX\miktex\log\latex.log
-======================================================================
-
-
-! LaTeX Error: File `type1ec.sty&#39; not found.
-
-Type X to quit or &lt;RETURN&gt; to proceed,
-or enter new name. (Default extension: sty)
-
-Enter file name: 
-! Emergency stop.
-&lt;read *&gt; 
-         
-l.6 \usepackage
-               [utf8]{inputenc}^^M
-No pages of output.
-Transcript written on 1acea6f6c115d0ec7a634ed0529287b9.log.
-
-
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 1 Axes&gt;
-</pre></div>
-</div>
+<img alt="../_images/Predavanje 11 - Numerično integriranje_125_0.png" src="../_images/Predavanje 11 - Numerično integriranje_125_0.png" />
 </div>
 </div>
 <section id="boljsa-ocena-integrala">
@@ -3191,7 +1772,7 @@ kjer je \)</span>\eta<span class="math notranslate nohighlight">\( neznana vredn
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_134_0.png" src="../_images/Predavanje 11 - Numerično integriranje_134_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_135_0.png" src="../_images/Predavanje 11 - Numerično integriranje_135_0.png" />
 </div>
 </div>
 <p>S pomočjo zgornje formule izračunamo boljši približek:</p>
@@ -3241,7 +1822,7 @@ Boljši približek: 1.4404218714139077
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_142_0.png" src="../_images/Predavanje 11 - Numerično integriranje_142_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_143_0.png" src="../_images/Predavanje 11 - Numerično integriranje_143_0.png" />
 </div>
 </div>
 </section>
@@ -3299,7 +1880,7 @@ Boljši približek: 1.4404218714139077
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_153_0.png" src="../_images/Predavanje 11 - Numerično integriranje_153_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_154_0.png" src="../_images/Predavanje 11 - Numerično integriranje_154_0.png" />
 </div>
 </div>
 <p>Nato izračunamo boljše približke (dobimo četrti red napake):</p>
@@ -3314,7 +1895,7 @@ Boljši približek: 1.4404218714139077
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_155_0.png" src="../_images/Predavanje 11 - Numerično integriranje_155_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_156_0.png" src="../_images/Predavanje 11 - Numerično integriranje_156_0.png" />
 </div>
 </div>
 <p>Rezultati predstavljajo rezultat Simpsonove metode pri koraku <span class="math notranslate nohighlight">\(h=0,5\)</span>, <span class="math notranslate nohighlight">\(h=0,25\)</span> in <span class="math notranslate nohighlight">\(h=0.125\)</span>:</p>
@@ -3325,7 +1906,7 @@ Boljši približek: 1.4404218714139077
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_157_0.png" src="../_images/Predavanje 11 - Numerično integriranje_157_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_158_0.png" src="../_images/Predavanje 11 - Numerično integriranje_158_0.png" />
 </div>
 </div>
 <p>Ponovno izračunamo boljše približke (dobimo šesti red napake):</p>
@@ -3340,7 +1921,7 @@ Boljši približek: 1.4404218714139077
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_159_0.png" src="../_images/Predavanje 11 - Numerično integriranje_159_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_160_0.png" src="../_images/Predavanje 11 - Numerično integriranje_160_0.png" />
 </div>
 </div>
 <p>Rezultat predstavlja boljši rezultat Simpsonove pri koraku <span class="math notranslate nohighlight">\(h=0,25\)</span> in <span class="math notranslate nohighlight">\(h=0.125\)</span>:</p>
@@ -3352,7 +1933,7 @@ Boljši približek: 1.4404218714139077
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_161_0.png" src="../_images/Predavanje 11 - Numerično integriranje_161_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_162_0.png" src="../_images/Predavanje 11 - Numerično integriranje_162_0.png" />
 </div>
 </div>
 <p>Ponovno izračunamo boljše približke (dobimo osmi red napake):</p>
@@ -3365,7 +1946,7 @@ Boljši približek: 1.4404218714139077
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_163_0.png" src="../_images/Predavanje 11 - Numerično integriranje_163_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_164_0.png" src="../_images/Predavanje 11 - Numerično integriranje_164_0.png" />
 </div>
 </div>
 <p>Rombergova metoda nam torej ponuja visoko natančnost rezultata za relativno majhno numerično ceno. Napako pa ocenimo:</p>
@@ -3421,7 +2002,7 @@ Boljši približek: 1.4404218714139077
 ====================================================================
 </pre></div>
 </div>
-<img alt="../_images/Predavanje 11 - Numerično integriranje_170_1.png" src="../_images/Predavanje 11 - Numerično integriranje_170_1.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_171_1.png" src="../_images/Predavanje 11 - Numerično integriranje_171_1.png" />
 </div>
 </div>
 </section>
@@ -3484,7 +2065,7 @@ $<span class="math notranslate nohighlight">\(\textrm{d}x=\frac{b-a}{2}\textrm{d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_188_0.png" src="../_images/Predavanje 11 - Numerično integriranje_188_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_189_0.png" src="../_images/Predavanje 11 - Numerično integriranje_189_0.png" />
 </div>
 </div>
 <p>Pripravimo dve enačbi (za prvo predpostavimo <span class="math notranslate nohighlight">\(A_0=0, A_1=1\)</span>, za drugo predpostavimo <span class="math notranslate nohighlight">\(A_0=1, A_1=0\)</span>) ter rešimo sistem za <code class="docutils literal notranslate"><span class="pre">w0</span></code> in <code class="docutils literal notranslate"><span class="pre">x0</span></code>:</p>
@@ -3495,7 +2076,7 @@ $<span class="math notranslate nohighlight">\(\textrm{d}x=\frac{b-a}{2}\textrm{d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_190_0.png" src="../_images/Predavanje 11 - Numerično integriranje_190_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_191_0.png" src="../_images/Predavanje 11 - Numerično integriranje_191_0.png" />
 </div>
 </div>
 <p>Za dodatno razlago priporočam <a class="reference external" href="https://www.youtube.com/watch?v=iQ5-4hx25Rw">video posnetek</a>.</p>
@@ -3549,7 +2130,7 @@ Uteži:    (w0, w1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_201_0.png" src="../_images/Predavanje 11 - Numerično integriranje_201_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_202_0.png" src="../_images/Predavanje 11 - Numerično integriranje_202_0.png" />
 </div>
 </div>
 <p>Podobno kakor zgoraj za eno vozlišče, tukaj definirajmo enačbe:</p>
@@ -3564,7 +2145,7 @@ Uteži:    (w0, w1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_203_0.png" src="../_images/Predavanje 11 - Numerično integriranje_203_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_204_0.png" src="../_images/Predavanje 11 - Numerično integriranje_204_0.png" />
 </div>
 </div>
 <p>Rešimo jih za za neznane <span class="math notranslate nohighlight">\(x_i\)</span> in <span class="math notranslate nohighlight">\(w_i\)</span>:</p>
@@ -3576,7 +2157,7 @@ Uteži:    (w0, w1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_205_0.png" src="../_images/Predavanje 11 - Numerično integriranje_205_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_206_0.png" src="../_images/Predavanje 11 - Numerično integriranje_206_0.png" />
 </div>
 </div>
 <p>Določili smo seznam dveh (enakih) rešitev.</p>
@@ -3689,7 +2270,7 @@ Uteži:    (w0, w1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_216_0.png" src="../_images/Predavanje 11 - Numerično integriranje_216_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_217_0.png" src="../_images/Predavanje 11 - Numerično integriranje_217_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3699,7 +2280,7 @@ Uteži:    (w0, w1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_217_0.png" src="../_images/Predavanje 11 - Numerično integriranje_217_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_218_0.png" src="../_images/Predavanje 11 - Numerično integriranje_218_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3709,7 +2290,7 @@ Uteži:    (w0, w1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_218_0.png" src="../_images/Predavanje 11 - Numerično integriranje_218_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_219_0.png" src="../_images/Predavanje 11 - Numerično integriranje_219_0.png" />
 </div>
 </div>
 </section>
@@ -3737,7 +2318,7 @@ Uteži:    (w0, w1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_221_0.png" src="../_images/Predavanje 11 - Numerično integriranje_221_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_222_0.png" src="../_images/Predavanje 11 - Numerično integriranje_222_0.png" />
 </div>
 </div>
 <p>Rezultat je enak predhodnemu:</p>
@@ -3748,7 +2329,7 @@ Uteži:    (w0, w1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_223_0.png" src="../_images/Predavanje 11 - Numerično integriranje_223_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_224_0.png" src="../_images/Predavanje 11 - Numerično integriranje_224_0.png" />
 </div>
 </div>
 </section>
@@ -3797,7 +2378,7 @@ Uteži:    (w0, w1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_229_0.png" src="../_images/Predavanje 11 - Numerično integriranje_229_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_230_0.png" src="../_images/Predavanje 11 - Numerično integriranje_230_0.png" />
 </div>
 </div>
 </section>
@@ -3833,7 +2414,7 @@ Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.inte
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 11 - Numerično integriranje_233_0.png" src="../_images/Predavanje 11 - Numerično integriranje_233_0.png" />
+<img alt="../_images/Predavanje 11 - Numerično integriranje_234_0.png" src="../_images/Predavanje 11 - Numerično integriranje_234_0.png" />
 </div>
 </div>
 </section>
@@ -3894,486 +2475,7 @@ Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.inte
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error in callback &lt;function install_repl_displayhook.&lt;locals&gt;.post_execute at 0x000002027DFD9AB0&gt; (for post_execute):
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-CalledProcessError                        Traceback (most recent call last)
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:233, in TexManager._run_checked_subprocess(self, command, tex, cwd)
-    232 try:
---&gt; 233     report = subprocess.check_output(
-    234         command, cwd=cwd if cwd is not None else self.texcache,
-    235         stderr=subprocess.STDOUT)
-    236 except FileNotFoundError as exc:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\subprocess.py:420, in check_output(timeout, *popenargs, **kwargs)
-    418     kwargs[&#39;input&#39;] = empty
---&gt; 420 return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
-    421            **kwargs).stdout
-
-File ~\AppData\Local\Programs\Python\Python310\lib\subprocess.py:524, in run(input, capture_output, timeout, check, *popenargs, **kwargs)
-    523     if check and retcode:
---&gt; 524         raise CalledProcessError(retcode, process.args,
-    525                                  output=stdout, stderr=stderr)
-    526 return CompletedProcess(process.args, retcode, stdout, stderr)
-
-CalledProcessError: Command &#39;[&#39;latex&#39;, &#39;-interaction=nonstopmode&#39;, &#39;--halt-on-error&#39;, &#39;../1acea6f6c115d0ec7a634ed0529287b9.tex&#39;]&#39; returned non-zero exit status 1.
-
-The above exception was the direct cause of the following exception:
-
-RuntimeError                              Traceback (most recent call last)
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\pyplot.py:137, in install_repl_displayhook.&lt;locals&gt;.post_execute()
-    135 def post_execute():
-    136     if matplotlib.is_interactive():
---&gt; 137         draw_all()
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\_pylab_helpers.py:141, in Gcf.draw_all(cls, force)
-    139 for manager in cls.get_all_fig_managers():
-    140     if force or manager.canvas.figure.stale:
---&gt; 141         manager.canvas.draw_idle()
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\backend_bases.py:2060, in FigureCanvasBase.draw_idle(self, *args, **kwargs)
-   2058 if not self._is_idle_drawing:
-   2059     with self._idle_draw_cntx():
--&gt; 2060         self.draw(*args, **kwargs)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\backends\backend_agg.py:436, in FigureCanvasAgg.draw(self)
-    432 # Acquire a lock on the shared font cache.
-    433 with RendererAgg.lock, \
-    434      (self.toolbar._wait_cursor_for_draw_cm() if self.toolbar
-    435       else nullcontext()):
---&gt; 436     self.figure.draw(self.renderer)
-    437     # A GUI class may be need to update a window using this draw, so
-    438     # don&#39;t forget to call the superclass.
-    439     super().draw()
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:74, in _finalize_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer, *args, **kwargs)
-     72 @wraps(draw)
-     73 def draw_wrapper(artist, renderer, *args, **kwargs):
----&gt; 74     result = draw(artist, renderer, *args, **kwargs)
-     75     if renderer._rasterizing:
-     76         renderer.stop_rasterizing()
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\figure.py:2845, in Figure.draw(self, renderer)
-   2842         # ValueError can occur when resizing a window.
-   2844 self.patch.draw(renderer)
--&gt; 2845 mimage._draw_list_compositing_images(
-   2846     renderer, self, artists, self.suppressComposite)
-   2848 for sfig in self.subfigs:
-   2849     sfig.draw(renderer)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\image.py:132, in _draw_list_compositing_images(renderer, parent, artists, suppress_composite)
-    130 if not_composite or not has_images:
-    131     for a in artists:
---&gt; 132         a.draw(renderer)
-    133 else:
-    134     # Composite any adjacent images together
-    135     image_group = []
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axes\_base.py:3091, in _AxesBase.draw(self, renderer)
-   3088         a.draw(renderer)
-   3089     renderer.stop_rasterizing()
--&gt; 3091 mimage._draw_list_compositing_images(
-   3092     renderer, self, artists, self.figure.suppressComposite)
-   3094 renderer.close_group(&#39;axes&#39;)
-   3095 self.stale = False
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\image.py:132, in _draw_list_compositing_images(renderer, parent, artists, suppress_composite)
-    130 if not_composite or not has_images:
-    131     for a in artists:
---&gt; 132         a.draw(renderer)
-    133 else:
-    134     # Composite any adjacent images together
-    135     image_group = []
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1159, in Axis.draw(self, renderer, *args, **kwargs)
-   1156 renderer.open_group(__name__, gid=self.get_gid())
-   1158 ticks_to_draw = self._update_ticks()
--&gt; 1159 ticklabelBoxes, ticklabelBoxes2 = self._get_tick_bboxes(ticks_to_draw,
-   1160                                                         renderer)
-   1162 for tick in ticks_to_draw:
-   1163     tick.draw(renderer)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1085, in Axis._get_tick_bboxes(self, ticks, renderer)
-   1083 def _get_tick_bboxes(self, ticks, renderer):
-   1084     &quot;&quot;&quot;Return lists of bboxes for ticks&#39; label1&#39;s and label2&#39;s.&quot;&quot;&quot;
--&gt; 1085     return ([tick.label1.get_window_extent(renderer)
-   1086              for tick in ticks if tick.label1.get_visible()],
-   1087             [tick.label2.get_window_extent(renderer)
-   1088              for tick in ticks if tick.label2.get_visible()])
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1085, in &lt;listcomp&gt;(.0)
-   1083 def _get_tick_bboxes(self, ticks, renderer):
-   1084     &quot;&quot;&quot;Return lists of bboxes for ticks&#39; label1&#39;s and label2&#39;s.&quot;&quot;&quot;
--&gt; 1085     return ([tick.label1.get_window_extent(renderer)
-   1086              for tick in ticks if tick.label1.get_visible()],
-   1087             [tick.label2.get_window_extent(renderer)
-   1088              for tick in ticks if tick.label2.get_visible()])
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\text.py:910, in Text.get_window_extent(self, renderer, dpi)
-    907     raise RuntimeError(&#39;Cannot get window extent w/o renderer&#39;)
-    909 with cbook._setattr_cm(self.figure, dpi=dpi):
---&gt; 910     bbox, info, descent = self._get_layout(self._renderer)
-    911     x, y = self.get_unitless_position()
-    912     x, y = self.get_transform().transform((x, y))
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\text.py:309, in Text._get_layout(self, renderer)
-    306 ys = []
-    308 # Full vertical extent of font, including ascenders and descenders:
---&gt; 309 _, lp_h, lp_d = renderer.get_text_width_height_descent(
-    310     &quot;lp&quot;, self._fontproperties,
-    311     ismath=&quot;TeX&quot; if self.get_usetex() else False)
-    312 min_dy = (lp_h - lp_d) * self._linespacing
-    314 for i, line in enumerate(lines):
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\backends\backend_agg.py:259, in RendererAgg.get_text_width_height_descent(self, s, prop, ismath)
-    257     texmanager = self.get_texmanager()
-    258     fontsize = prop.get_size_in_points()
---&gt; 259     w, h, d = texmanager.get_text_width_height_descent(
-    260         s, fontsize, renderer=self)
-    261     return w, h, d
-    263 if ismath:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:335, in TexManager.get_text_width_height_descent(self, tex, fontsize, renderer)
-    333 if tex.strip() == &#39;&#39;:
-    334     return 0, 0, 0
---&gt; 335 dvifile = self.make_dvi(tex, fontsize)
-    336 dpi_fraction = renderer.points_to_pixels(1.) if renderer else 1
-    337 with dviread.Dvi(dvifile, 72 * dpi_fraction) as dvi:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:271, in TexManager.make_dvi(self, tex, fontsize)
-    262     # Generate the dvi in a temporary directory to avoid race
-    263     # conditions e.g. if multiple processes try to process the same tex
-    264     # string at the same time.  Having tmpdir be a subdirectory of the
-   (...)
-    268     # the absolute path may contain characters (e.g. ~) that TeX does
-    269     # not support.)
-    270     with TemporaryDirectory(dir=Path(dvifile).parent) as tmpdir:
---&gt; 271         self._run_checked_subprocess(
-    272             [&quot;latex&quot;, &quot;-interaction=nonstopmode&quot;, &quot;--halt-on-error&quot;,
-    273              f&quot;../{texfile.name}&quot;], tex, cwd=tmpdir)
-    274         (Path(tmpdir) / Path(dvifile).name).replace(dvifile)
-    275 return dvifile
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:241, in TexManager._run_checked_subprocess(self, command, tex, cwd)
-    237     raise RuntimeError(
-    238         &#39;Failed to process string with tex because {} could not be &#39;
-    239         &#39;found&#39;.format(command[0])) from exc
-    240 except subprocess.CalledProcessError as exc:
---&gt; 241     raise RuntimeError(
-    242         &#39;{prog} was not able to process the following string:\n&#39;
-    243         &#39;{tex!r}\n\n&#39;
-    244         &#39;Here is the full report generated by {prog}:\n&#39;
-    245         &#39;{exc}\n\n&#39;.format(
-    246             prog=command[0],
-    247             tex=tex.encode(&#39;unicode_escape&#39;),
-    248             exc=exc.output.decode(&#39;utf-8&#39;))) from exc
-    249 _log.debug(report)
-    250 return report
-
-RuntimeError: latex was not able to process the following string:
-b&#39;lp&#39;
-
-Here is the full report generated by latex:
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=latex.fmt)
- restricted \write18 enabled.
-entering extended mode
-(../1acea6f6c115d0ec7a634ed0529287b9.tex
-LaTeX2e &lt;2022-06-01&gt; patch level 5
-L3 programming layer &lt;2022-08-23&gt;
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo))
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/type1cm\type1cm.sty)
-======================================================================
-starting package maintenance...
-installation directory: C:\Users\janko\AppData\Local\Programs\MiKTeX
-package repository: https://ctan.ijs.si/tex-archive/systems/win32/miktex/tm/packages/
-
-Unfortunately, the package cm-super could not be installed.
-Please check the log file:
-C:\Users\janko\AppData\Local\MiKTeX\miktex\log\latex.log
-======================================================================
-
-
-! LaTeX Error: File `type1ec.sty&#39; not found.
-
-Type X to quit or &lt;RETURN&gt; to proceed,
-or enter new name. (Default extension: sty)
-
-Enter file name: 
-! Emergency stop.
-&lt;read *&gt; 
-         
-l.6 \usepackage
-               [utf8]{inputenc}^^M
-No pages of output.
-Transcript written on 1acea6f6c115d0ec7a634ed0529287b9.log.
-
-
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-CalledProcessError                        Traceback (most recent call last)
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:233, in TexManager._run_checked_subprocess(self, command, tex, cwd)
-    232 try:
---&gt; 233     report = subprocess.check_output(
-    234         command, cwd=cwd if cwd is not None else self.texcache,
-    235         stderr=subprocess.STDOUT)
-    236 except FileNotFoundError as exc:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\subprocess.py:420, in check_output(timeout, *popenargs, **kwargs)
-    418     kwargs[&#39;input&#39;] = empty
---&gt; 420 return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
-    421            **kwargs).stdout
-
-File ~\AppData\Local\Programs\Python\Python310\lib\subprocess.py:524, in run(input, capture_output, timeout, check, *popenargs, **kwargs)
-    523     if check and retcode:
---&gt; 524         raise CalledProcessError(retcode, process.args,
-    525                                  output=stdout, stderr=stderr)
-    526 return CompletedProcess(process.args, retcode, stdout, stderr)
-
-CalledProcessError: Command &#39;[&#39;latex&#39;, &#39;-interaction=nonstopmode&#39;, &#39;--halt-on-error&#39;, &#39;../1acea6f6c115d0ec7a634ed0529287b9.tex&#39;]&#39; returned non-zero exit status 1.
-
-The above exception was the direct cause of the following exception:
-
-RuntimeError                              Traceback (most recent call last)
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\IPython\core\formatters.py:339, in BaseFormatter.__call__(self, obj)
-    337     pass
-    338 else:
---&gt; 339     return printer(obj)
-    340 # Finally look for special method names
-    341 method = get_real_method(obj, self.print_method)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\IPython\core\pylabtools.py:151, in print_figure(fig, fmt, bbox_inches, base64, **kwargs)
-    148     from matplotlib.backend_bases import FigureCanvasBase
-    149     FigureCanvasBase(fig)
---&gt; 151 fig.canvas.print_figure(bytes_io, **kw)
-    152 data = bytes_io.getvalue()
-    153 if fmt == &#39;svg&#39;:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\backend_bases.py:2295, in FigureCanvasBase.print_figure(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)
-   2289     renderer = _get_renderer(
-   2290         self.figure,
-   2291         functools.partial(
-   2292             print_method, orientation=orientation)
-   2293     )
-   2294     with getattr(renderer, &quot;_draw_disabled&quot;, nullcontext)():
--&gt; 2295         self.figure.draw(renderer)
-   2297 if bbox_inches:
-   2298     if bbox_inches == &quot;tight&quot;:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:74, in _finalize_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer, *args, **kwargs)
-     72 @wraps(draw)
-     73 def draw_wrapper(artist, renderer, *args, **kwargs):
----&gt; 74     result = draw(artist, renderer, *args, **kwargs)
-     75     if renderer._rasterizing:
-     76         renderer.stop_rasterizing()
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\figure.py:2845, in Figure.draw(self, renderer)
-   2842         # ValueError can occur when resizing a window.
-   2844 self.patch.draw(renderer)
--&gt; 2845 mimage._draw_list_compositing_images(
-   2846     renderer, self, artists, self.suppressComposite)
-   2848 for sfig in self.subfigs:
-   2849     sfig.draw(renderer)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\image.py:132, in _draw_list_compositing_images(renderer, parent, artists, suppress_composite)
-    130 if not_composite or not has_images:
-    131     for a in artists:
---&gt; 132         a.draw(renderer)
-    133 else:
-    134     # Composite any adjacent images together
-    135     image_group = []
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axes\_base.py:3091, in _AxesBase.draw(self, renderer)
-   3088         a.draw(renderer)
-   3089     renderer.stop_rasterizing()
--&gt; 3091 mimage._draw_list_compositing_images(
-   3092     renderer, self, artists, self.figure.suppressComposite)
-   3094 renderer.close_group(&#39;axes&#39;)
-   3095 self.stale = False
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\image.py:132, in _draw_list_compositing_images(renderer, parent, artists, suppress_composite)
-    130 if not_composite or not has_images:
-    131     for a in artists:
---&gt; 132         a.draw(renderer)
-    133 else:
-    134     # Composite any adjacent images together
-    135     image_group = []
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\artist.py:51, in allow_rasterization.&lt;locals&gt;.draw_wrapper(artist, renderer)
-     48     if artist.get_agg_filter() is not None:
-     49         renderer.start_filter()
----&gt; 51     return draw(artist, renderer)
-     52 finally:
-     53     if artist.get_agg_filter() is not None:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1159, in Axis.draw(self, renderer, *args, **kwargs)
-   1156 renderer.open_group(__name__, gid=self.get_gid())
-   1158 ticks_to_draw = self._update_ticks()
--&gt; 1159 ticklabelBoxes, ticklabelBoxes2 = self._get_tick_bboxes(ticks_to_draw,
-   1160                                                         renderer)
-   1162 for tick in ticks_to_draw:
-   1163     tick.draw(renderer)
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1085, in Axis._get_tick_bboxes(self, ticks, renderer)
-   1083 def _get_tick_bboxes(self, ticks, renderer):
-   1084     &quot;&quot;&quot;Return lists of bboxes for ticks&#39; label1&#39;s and label2&#39;s.&quot;&quot;&quot;
--&gt; 1085     return ([tick.label1.get_window_extent(renderer)
-   1086              for tick in ticks if tick.label1.get_visible()],
-   1087             [tick.label2.get_window_extent(renderer)
-   1088              for tick in ticks if tick.label2.get_visible()])
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\axis.py:1085, in &lt;listcomp&gt;(.0)
-   1083 def _get_tick_bboxes(self, ticks, renderer):
-   1084     &quot;&quot;&quot;Return lists of bboxes for ticks&#39; label1&#39;s and label2&#39;s.&quot;&quot;&quot;
--&gt; 1085     return ([tick.label1.get_window_extent(renderer)
-   1086              for tick in ticks if tick.label1.get_visible()],
-   1087             [tick.label2.get_window_extent(renderer)
-   1088              for tick in ticks if tick.label2.get_visible()])
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\text.py:910, in Text.get_window_extent(self, renderer, dpi)
-    907     raise RuntimeError(&#39;Cannot get window extent w/o renderer&#39;)
-    909 with cbook._setattr_cm(self.figure, dpi=dpi):
---&gt; 910     bbox, info, descent = self._get_layout(self._renderer)
-    911     x, y = self.get_unitless_position()
-    912     x, y = self.get_transform().transform((x, y))
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\text.py:309, in Text._get_layout(self, renderer)
-    306 ys = []
-    308 # Full vertical extent of font, including ascenders and descenders:
---&gt; 309 _, lp_h, lp_d = renderer.get_text_width_height_descent(
-    310     &quot;lp&quot;, self._fontproperties,
-    311     ismath=&quot;TeX&quot; if self.get_usetex() else False)
-    312 min_dy = (lp_h - lp_d) * self._linespacing
-    314 for i, line in enumerate(lines):
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\backends\backend_agg.py:259, in RendererAgg.get_text_width_height_descent(self, s, prop, ismath)
-    257     texmanager = self.get_texmanager()
-    258     fontsize = prop.get_size_in_points()
---&gt; 259     w, h, d = texmanager.get_text_width_height_descent(
-    260         s, fontsize, renderer=self)
-    261     return w, h, d
-    263 if ismath:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:335, in TexManager.get_text_width_height_descent(self, tex, fontsize, renderer)
-    333 if tex.strip() == &#39;&#39;:
-    334     return 0, 0, 0
---&gt; 335 dvifile = self.make_dvi(tex, fontsize)
-    336 dpi_fraction = renderer.points_to_pixels(1.) if renderer else 1
-    337 with dviread.Dvi(dvifile, 72 * dpi_fraction) as dvi:
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:271, in TexManager.make_dvi(self, tex, fontsize)
-    262     # Generate the dvi in a temporary directory to avoid race
-    263     # conditions e.g. if multiple processes try to process the same tex
-    264     # string at the same time.  Having tmpdir be a subdirectory of the
-   (...)
-    268     # the absolute path may contain characters (e.g. ~) that TeX does
-    269     # not support.)
-    270     with TemporaryDirectory(dir=Path(dvifile).parent) as tmpdir:
---&gt; 271         self._run_checked_subprocess(
-    272             [&quot;latex&quot;, &quot;-interaction=nonstopmode&quot;, &quot;--halt-on-error&quot;,
-    273              f&quot;../{texfile.name}&quot;], tex, cwd=tmpdir)
-    274         (Path(tmpdir) / Path(dvifile).name).replace(dvifile)
-    275 return dvifile
-
-File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\matplotlib\texmanager.py:241, in TexManager._run_checked_subprocess(self, command, tex, cwd)
-    237     raise RuntimeError(
-    238         &#39;Failed to process string with tex because {} could not be &#39;
-    239         &#39;found&#39;.format(command[0])) from exc
-    240 except subprocess.CalledProcessError as exc:
---&gt; 241     raise RuntimeError(
-    242         &#39;{prog} was not able to process the following string:\n&#39;
-    243         &#39;{tex!r}\n\n&#39;
-    244         &#39;Here is the full report generated by {prog}:\n&#39;
-    245         &#39;{exc}\n\n&#39;.format(
-    246             prog=command[0],
-    247             tex=tex.encode(&#39;unicode_escape&#39;),
-    248             exc=exc.output.decode(&#39;utf-8&#39;))) from exc
-    249 _log.debug(report)
-    250 return report
-
-RuntimeError: latex was not able to process the following string:
-b&#39;lp&#39;
-
-Here is the full report generated by latex:
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=latex.fmt)
- restricted \write18 enabled.
-entering extended mode
-(../1acea6f6c115d0ec7a634ed0529287b9.tex
-LaTeX2e &lt;2022-06-01&gt; patch level 5
-L3 programming layer &lt;2022-08-23&gt;
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo))
-(C:\Users\janko\AppData\Local\Programs\MiKTeX\tex/latex/type1cm\type1cm.sty)
-======================================================================
-starting package maintenance...
-installation directory: C:\Users\janko\AppData\Local\Programs\MiKTeX
-package repository: https://ctan.ijs.si/tex-archive/systems/win32/miktex/tm/packages/
-
-Unfortunately, the package cm-super could not be installed.
-Please check the log file:
-C:\Users\janko\AppData\Local\MiKTeX\miktex\log\latex.log
-======================================================================
-
-
-! LaTeX Error: File `type1ec.sty&#39; not found.
-
-Type X to quit or &lt;RETURN&gt; to proceed,
-or enter new name. (Default extension: sty)
-
-Enter file name: 
-! Emergency stop.
-&lt;read *&gt; 
-         
-l.6 \usepackage
-               [utf8]{inputenc}^^M
-No pages of output.
-Transcript written on 1acea6f6c115d0ec7a634ed0529287b9.log.
-
-
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 1 Axes&gt;
-</pre></div>
-</div>
+<img alt="../_images/Predavanje 11 - Numerično integriranje_245_0.png" src="../_images/Predavanje 11 - Numerično integriranje_245_0.png" />
 </div>
 </div>
 </section>
@@ -4446,7 +2548,7 @@ Naloga:</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Reševanje enačb</p>
+            <p class="prev-next-title">Numerično odvajanje</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html" title="next page">

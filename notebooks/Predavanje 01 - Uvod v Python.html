@@ -50,12 +50,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Funkcije, izjeme, moduli" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html" />
-    <link rel="prev" title="Študijski in izpitni red" href="Numeri%C4%8Dne%20metode%20-%20%C5%A1tudijski%20in%20izpitni%20red.html" />
+    <link rel="prev" title="Študijski in izpitni red - Numerične metode 2022/23" href="%C5%A0tudijski%20in%20izpitni%20red.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -110,15 +112,15 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Predgovor
+                <a class="reference internal" href="../README.html">
+                    Numerične metode v ekosistemu Pythona
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Numeri%C4%8Dne%20metode%20-%20%C5%A1tudijski%20in%20izpitni%20red.html">
-   Študijski in izpitni red
+  <a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">
+   Študijski in izpitni red - Numerične metode 2022/23
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -143,12 +145,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">
-   Sistemi linearnih enačb
+   Uvod v numerične metode in sistemi linearnih enačb
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">
-   Sistemi linearnih enačb
+   Sistemi linearnih enačb - nadaljevanje
   </a>
  </li>
  <li class="toctree-l1">
@@ -168,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">
-   Reševanje enačb
+   Numerično odvajanje
   </a>
  </li>
  <li class="toctree-l1">
@@ -424,61 +426,61 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#namestitev-pythona">
+   Namestitev Pythona
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#namestitev-pythona">
-     Namestitev Pythona
+    <a class="reference internal nav-link" href="#uporaba-githuba-repozitorija-in-posodobitve">
+     Uporaba githuba repozitorija in posodobitve
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#uporaba-githuba-repozitorija-in-posodobitve">
-       Uporaba githuba repozitorija in posodobitve
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#visual-studio-code">
-       Visual Studio Code
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#namescanje-dodatkov-in-posodobitev">
-       Nameščanje dodatkov in posodobitev
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jupyter-notebook-jupyter-lab">
-     Jupyter notebook (Jupyter lab)
+    <a class="reference internal nav-link" href="#visual-studio-code">
+     Visual Studio Code
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#markdown">
-       Markdown
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#prvi-program-in-pep">
-     Prvi program in PEP
+    <a class="reference internal nav-link" href="#namescanje-dodatkov-in-posodobitev">
+     Nameščanje dodatkov in posodobitev
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebook-jupyter-lab">
+   Jupyter notebook (Jupyter lab)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#markdown">
+     Markdown
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prvi-program-in-pep">
+   Prvi program in PEP
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pep-python-enhancements-proposal">
+     PEP - Python Enhancements Proposal
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pep-python-enhancements-proposal">
-       PEP - Python Enhancements Proposal
+      <a class="reference internal nav-link" href="#pep8">
+       PEP8
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#pep8">
-         PEP8
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#pep20">
-         PEP20
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pep20">
+       PEP20
+      </a>
      </li>
     </ul>
    </li>
@@ -626,6 +628,11 @@ title="Print to PDF"
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#izpeljevanje-seznamov">
+       Izpeljevanje seznamov
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#funkcija-zip">
        Funkcija
        <code class="docutils literal notranslate">
@@ -657,12 +664,12 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#za-konec-plonk-list">
-     Za konec: plonk list :)
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#za-konec-plonk-list">
+   Za konec: plonk list :)
+  </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">
@@ -722,61 +729,61 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#namestitev-pythona">
+   Namestitev Pythona
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#namestitev-pythona">
-     Namestitev Pythona
+    <a class="reference internal nav-link" href="#uporaba-githuba-repozitorija-in-posodobitve">
+     Uporaba githuba repozitorija in posodobitve
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#uporaba-githuba-repozitorija-in-posodobitve">
-       Uporaba githuba repozitorija in posodobitve
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#visual-studio-code">
-       Visual Studio Code
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#namescanje-dodatkov-in-posodobitev">
-       Nameščanje dodatkov in posodobitev
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jupyter-notebook-jupyter-lab">
-     Jupyter notebook (Jupyter lab)
+    <a class="reference internal nav-link" href="#visual-studio-code">
+     Visual Studio Code
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#markdown">
-       Markdown
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#prvi-program-in-pep">
-     Prvi program in PEP
+    <a class="reference internal nav-link" href="#namescanje-dodatkov-in-posodobitev">
+     Nameščanje dodatkov in posodobitev
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebook-jupyter-lab">
+   Jupyter notebook (Jupyter lab)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#markdown">
+     Markdown
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prvi-program-in-pep">
+   Prvi program in PEP
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pep-python-enhancements-proposal">
+     PEP - Python Enhancements Proposal
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pep-python-enhancements-proposal">
-       PEP - Python Enhancements Proposal
+      <a class="reference internal nav-link" href="#pep8">
+       PEP8
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#pep8">
-         PEP8
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#pep20">
-         PEP20
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pep20">
+       PEP20
+      </a>
      </li>
     </ul>
    </li>
@@ -924,6 +931,11 @@ title="Print to PDF"
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#izpeljevanje-seznamov">
+       Izpeljevanje seznamov
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#funkcija-zip">
        Funkcija
        <code class="docutils literal notranslate">
@@ -955,12 +967,12 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#za-konec-plonk-list">
-     Za konec: plonk list :)
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#za-konec-plonk-list">
+   Za konec: plonk list :)
+  </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">
@@ -1118,8 +1130,9 @@ $<span class="math notranslate nohighlight">\(F_1 = F_2 = 1\qquad\textrm{in}\qqu
 <p>Če niste, ste se verjetno učili Matlab in se sprašujete zakaj je v vašem klubu čedalje manj članov. Verjetno je čas za prehod na Python; tukaj prispevek, ki vam lahko pomaga: <a class="reference external" href="https://realpython.com/matlab-vs-python/">MATLAB vs Python: Why and How to Make the Switch</a>.</p>
 </section>
 </section>
-<section id="namestitev-pythona">
-<h2>Namestitev Pythona<a class="headerlink" href="#namestitev-pythona" title="Permalink to this headline">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="namestitev-pythona">
+<h1>Namestitev Pythona<a class="headerlink" href="#namestitev-pythona" title="Permalink to this headline">#</a></h1>
 <p>Pojdite na <a class="reference external" href="https://www.anaconda.com/download/">www.anaconda.com</a> ter namestite <em>Anaconda</em> distribucijo Pythona; <em>pazite, da izberete verzijo 3.8 ali novejšo</em> (64 bit).</p>
 <p>Pripravili smo <a class="reference external" href="https://www.youtube.com/watch?v=Cp-IuyN67rQ">video navodila</a>, ključni poudarki so:</p>
 <ul class="simple">
@@ -1130,7 +1143,7 @@ $<span class="math notranslate nohighlight">\(F_1 = F_2 = 1\qquad\textrm{in}\qqu
 <li><p>ureditev repozitorija v Visual Studio Code (<a class="reference external" href="https://youtu.be/Cp-IuyN67rQ?t=5m50s">5m 50s</a>).</p></li>
 </ul>
 <section id="uporaba-githuba-repozitorija-in-posodobitve">
-<h3>Uporaba githuba repozitorija in posodobitve<a class="headerlink" href="#uporaba-githuba-repozitorija-in-posodobitve" title="Permalink to this headline">#</a></h3>
+<h2>Uporaba githuba repozitorija in posodobitve<a class="headerlink" href="#uporaba-githuba-repozitorija-in-posodobitve" title="Permalink to this headline">#</a></h2>
 <p>Ta knjiga se vedno dopolnjuje, zadnja verzija je dosegljiva na:</p>
 <ul class="simple">
 <li><p>v izvorni obliki na naslovu <a class="reference external" href="https://github.com/jankoslavic/pypinm/">github.com/jankoslavic/pypinm</a>,</p></li>
@@ -1140,11 +1153,11 @@ $<span class="math notranslate nohighlight">\(F_1 = F_2 = 1\qquad\textrm{in}\qqu
 <p>Najbolje je za sinhronizacijo s spletnim repozitorijem uporabljati kakšnega od Git klientov. Git je sicer zelo močno orodje in skupini razvojnikov omogoča relativno enostavno delo na isti kodi in kontrolo nad različnimi verzijami datotek.</p>
 </section>
 <section id="visual-studio-code">
-<h3>Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permalink to this headline">#</a></h3>
+<h2>Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permalink to this headline">#</a></h2>
 <img width=500 src="./fig/vsc.png"><p>Pri tem predmetu bomo v glavnem programirali v Jupyter Notebooku, kateri nam omogoča zelo učinkovito programiranje ob uporabi polno formatiranega besedila in interaktivnih prikazov. Kadar želimo programirati obsežnejše in bolj splošno uporabne pakete ter namenske programe, pa se ponavadi poslužimo posebnih razvojnih okolij (angl.  <em>integrated development environment</em> - IDE). Med bolj popularnimi sta <a class="reference external" href="https://www.jetbrains.com/pycharm/download/">pyCharm</a> (glejte Community Edition) in <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code - VSC</a>. V zadnjem obdobju VSC, zaradi hitrosti, enostavnosti uporabe in razširljivosti, pridobiva na priljubljenosti in je že vključen v distribucijo Pythona Anaconda. Proti koncu tega predmeta se bomo vrnili k uporabi VSC, v tem trenutku navedimo zgolj povezavo do odličnega video posnetka na temo <a class="reference external" href="https://www.youtube.com/watch?v=6YLMWU-5H9o">produktivnosti z VSC</a>.</p>
 </section>
 <section id="namescanje-dodatkov-in-posodobitev">
-<h3>Nameščanje dodatkov in posodobitev<a class="headerlink" href="#namescanje-dodatkov-in-posodobitev" title="Permalink to this headline">#</a></h3>
+<h2>Nameščanje dodatkov in posodobitev<a class="headerlink" href="#namescanje-dodatkov-in-posodobitev" title="Permalink to this headline">#</a></h2>
 <p>Na <a class="reference external" href="https://pypi.org">pypi.org</a> se nahaja veliko različnih paketov! Namestimo jih iz ukazne vrstice* (angl. <em>command prompt</em>) tako:</p>
 <ul class="simple">
 <li><p>z ukazom <strong>pip</strong>,</p></li>
@@ -1166,8 +1179,8 @@ $<span class="math notranslate nohighlight">\(F_1 = F_2 = 1\qquad\textrm{in}\qqu
 </div></blockquote>
 </section>
 </section>
-<section id="jupyter-notebook-jupyter-lab">
-<h2>Jupyter notebook (Jupyter lab)<a class="headerlink" href="#jupyter-notebook-jupyter-lab" title="Permalink to this headline">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="jupyter-notebook-jupyter-lab">
+<h1>Jupyter notebook (Jupyter lab)<a class="headerlink" href="#jupyter-notebook-jupyter-lab" title="Permalink to this headline">#</a></h1>
 <p><a class="reference external" href="https://jupyter.org/">Jupyter notebook</a> je  interaktivno okolje, ki deluje kot spletna aplikacija in se lahko uporablja z različnimi programskimi jeziki (npr. Python, Julia, R, C, Fortran … iz prvih treh je nastalo tudi ime JuPyt[e]R).</p>
 <p>Jupyter notebook je najlažje preizkusiti tukaj: <a class="reference external" href="https://try.jupyter.org/">try.jupyter.org</a> ali <a class="reference external" href="https://colab.research.google.com">colab.research.google.com</a>.</p>
 <p><em>Jupyter notebook</em> zaženemo (v poljubni mapi) iz <em>ukazne vrstice</em> ali iz <em>Raziskovalca/Explorerja</em> z ukazom:
@@ -1193,7 +1206,7 @@ $<span class="math notranslate nohighlight">\(F_1 = F_2 = 1\qquad\textrm{in}\qqu
 <li><p><strong>Markdown</strong>: v tem primeru celica vsebuje besedilo oblikovano po standardu <em>Markdown</em> (bližnjica v ukaznem stanju je tipka [m]).</p></li>
 </ul>
 <section id="markdown">
-<h3>Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">#</a></h3>
+<h2>Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">#</a></h2>
 <p>Jupyter notebook omogoča zapis v načinu <em>markdown</em>, ki ga je v letih 2003-2004 predstavil <a class="reference external" href="https://daringfireball.net/projects/markdown/">John Gruber</a>. Namen markdowna je, da se pisec osredotoča na vsebino, pri tem pa za oblikovanje uporablja nekaj preprostih pravil. Pozneje se markdown lahko prevede v spletno obliko, v pdf (npr. prek LaTeX-a) itd. Bistvena pravila (vezana predvsem na uporabu na Githubu) so <a class="reference external" href="https://help.github.com/articles/basic-writing-and-formatting-syntax/">podana tukaj</a>; spodaj jih bomo na kratko ponovili.</p>
 <p>Naslove definiramo z znakom #:</p>
 <ul class="simple">
@@ -1298,8 +1311,8 @@ $<span class="math notranslate nohighlight">\(\sum F=m\,\ddot{x}\)</span>$</p></
 <p>Opazimo, da dvopičje definira poravnavo teksta v stolpcu (levo <code class="docutils literal notranslate"><span class="pre">:-</span></code>, desno <code class="docutils literal notranslate"><span class="pre">-:</span></code> ali sredinsko <code class="docutils literal notranslate"><span class="pre">:-:</span></code>).</p>
 </section>
 </section>
-<section id="prvi-program-in-pep">
-<h2>Prvi program in PEP<a class="headerlink" href="#prvi-program-in-pep" title="Permalink to this headline">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="prvi-program-in-pep">
+<h1>Prvi program in PEP<a class="headerlink" href="#prvi-program-in-pep" title="Permalink to this headline">#</a></h1>
 <p>Sedaj smo pripravljeni na prvi program napisan v Pythonu:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">5.0</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -1329,10 +1342,10 @@ $<span class="math notranslate nohighlight">\(\sum F=m\,\ddot{x}\)</span>$</p></
 </div>
 </div>
 <section id="pep-python-enhancements-proposal">
-<h3>PEP - Python Enhancements Proposal<a class="headerlink" href="#pep-python-enhancements-proposal" title="Permalink to this headline">#</a></h3>
+<h2>PEP - Python Enhancements Proposal<a class="headerlink" href="#pep-python-enhancements-proposal" title="Permalink to this headline">#</a></h2>
 <p>Python ima visoke standarde glede kakovosti in estetike. Že zgodaj v razvoju jezika se je uveljavil princip predlaganja izboljšav prek t. i. <em>Python Enhancements Proposal</em> (PEP na kratko).</p>
 <section id="pep8">
-<h4>PEP8<a class="headerlink" href="#pep8" title="Permalink to this headline">#</a></h4>
+<h3>PEP8<a class="headerlink" href="#pep8" title="Permalink to this headline">#</a></h3>
 <p>Eden od bolj pomembnih je <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a>, ki definira stil:</p>
 <ul class="simple">
 <li><p>zamik: 4 presledki,</p></li>
@@ -1355,7 +1368,7 @@ $<span class="math notranslate nohighlight">\(\sum F=m\,\ddot{x}\)</span>$</p></
 <p>Opomba: moderna razvojna orodja nam pomagajo pri oblikovanju kode, ki ustreza PEP8 (v VSC pritisnite <code class="docutils literal notranslate"><span class="pre">ctrl</span></code>+<code class="docutils literal notranslate"><span class="pre">shift</span></code>+<code class="docutils literal notranslate"><span class="pre">P</span></code> ter napišite <em>“Format document”</em> in pritisnite <code class="docutils literal notranslate"><span class="pre">enter</span></code>)!</p>
 </section>
 <section id="pep20">
-<h4>PEP20<a class="headerlink" href="#pep20" title="Permalink to this headline">#</a></h4>
+<h3>PEP20<a class="headerlink" href="#pep20" title="Permalink to this headline">#</a></h3>
 <p><a class="reference external" href="https://www.python.org/dev/peps/pep-0020/">PEP20</a> je naslednji pomemben PEP, ki se imenuje tudi <em>The zen of Python</em>, torej <em>zen Pythona</em>; to so vodila, ki se jih poskušamo držati pri programiranju. Tukaj navedimo samo nekatera vodila:</p>
 <ul class="simple">
 <li><p>Lepo je bolje kot grdo.</p></li>
@@ -1365,7 +1378,6 @@ $<span class="math notranslate nohighlight">\(\sum F=m\,\ddot{x}\)</span>$</p></
 <li><p>Posebni primeri niso dovolj posebni, da bi prekršili pravilo</p></li>
 <li><p>Če je implementacijo težko pojasniti, je verjetno slaba ideja; če jo je lahko, je mogoče dobra.</p></li>
 </ul>
-</section>
 </section>
 </section>
 </section>
@@ -2497,6 +2509,127 @@ g = 9.81
 </div>
 </div>
 </section>
+<section id="izpeljevanje-seznamov">
+<h3>Izpeljevanje seznamov<a class="headerlink" href="#izpeljevanje-seznamov" title="Permalink to this headline">#</a></h3>
+<p>Pri programiranju se pogosto srečujemo s tem, da moramo izvajati operacije na posameznem elementu seznama. Predhodno smo že spoznali zanko <code class="docutils literal notranslate"><span class="pre">for</span></code>, ki jo lahko uporabimo v takem primeru.</p>
+<p>Oglejmo si primer, kjer izračunamo kvadrat števil:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># izvorni seznam</span>
+<span class="n">rezultat</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># pripravimo prazen seznam v katerega bomo dodajali rezultate</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">:</span>
+    <span class="n">rezultat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">rezultat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 9]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mnogo enostavneje lahko isti rezultat dosežemo s t. i. <strong>izpeljevanjem seznamov</strong> (angl. <em>list comprehensions</em>, glejte <a class="reference external" href="https://docs.python.org/tutorial/datastructures.html#list-comprehensions">dokumentacijo</a>).</p>
+<p>Zgornji primer bi bil:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># izvorni seznam</span>
+<span class="n">rezultat</span> <span class="o">=</span> <span class="p">[</span><span class="n">element</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">]</span> <span class="c1"># &lt;&lt;&lt; na desni strani = je izpeljevanje seznamov</span>
+<span class="n">rezultat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 9]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Izpeljevanje seznamov predstavlja koda <code class="docutils literal notranslate"><span class="pre">[element**2</span> <span class="pre">for</span> <span class="pre">element</span> <span class="pre">in</span> <span class="pre">seznam]</span></code>, ki v bistvu pove to, kar je napisano: izračunaj kvadrat za vsak element v seznamu. Da je rezultat seznam, nakazujejo oglati oklepaji.</p>
+<p>Izpeljevanje seznamov ima sledečo sintakso:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">koda</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>in ima predvsem dve prednosti:</p>
+<ul class="simple">
+<li><p><strong>preglednost / kompaktnost</strong> kode in</p></li>
+<li><p>malo <strong>hitrejše</strong> izvajanje.</p></li>
+</ul>
+<p>Preglednost/kompaktnost smo lahko že presodili. Kako preverimo hitrost? Najlažje to naredimo s t. i. magičnim ukazom <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code>, torej <strong>meri čas</strong> (glejte <a class="reference external" href="http://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit">dokumentacijo</a>); spodaj bomo uporabili blokovni magični ukaz (označuje ga <code class="docutils literal notranslate"><span class="pre">%%</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">timeit</span> <span class="o">-</span><span class="n">n1000</span>
+</pre></div>
+</div>
+<p>kjer parameter <code class="docutils literal notranslate"><span class="pre">-n1000</span></code> omejuje merjenje časa na 1000 ponovitev.</p>
+<p>Najprej daljši način:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it -n1000
+<span class="n">rezultat</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">:</span>
+    <span class="n">rezultat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>206 µs ± 3.04 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nato izpeljevanje seznamov (bolj pregledno in malenkost hitreje):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it -n1000
+<span class="n">rezultat</span> <span class="o">=</span> <span class="p">[</span><span class="n">element</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>188 µs ± 2.33 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Poglejmo si še dva uporabna primera:</p>
+<ul class="simple">
+<li><p>uporabo izraza <code class="docutils literal notranslate"><span class="pre">if</span></code> za izračun nove vrednosti,</p></li>
+<li><p>uporabo izraza <code class="docutils literal notranslate"><span class="pre">if</span></code>, če se nova vrednost sploh izračuna.</p></li>
+</ul>
+<p>Pri izračunu nove vrednosti izraz <code class="docutils literal notranslate"><span class="pre">if</span></code> vstavimo v del pred <code class="docutils literal notranslate"><span class="pre">for</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="p">[</span><span class="n">el</span><span class="o">+</span><span class="mi">10</span> <span class="k">if</span> <span class="n">el</span><span class="o">&lt;</span><span class="mi">2</span> <span class="k">else</span> <span class="n">el</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[11, 4, 9]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pogosto pa za določene elemente izračuna sploh ne želimo izvesti, v tem primeru izraz <code class="docutils literal notranslate"><span class="pre">if</span></code> vstavimo za seznam:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">el</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">seznam</span> <span class="k">if</span> <span class="n">el</span> <span class="o">&gt;</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 9]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="funkcija-zip">
 <h3>Funkcija <code class="docutils literal notranslate"><span class="pre">zip</span></code><a class="headerlink" href="#funkcija-zip" title="Permalink to this headline">#</a></h3>
 <p>Ko želimo kombinirati več seznamov v zanki, si pomagamo s funkcijo <code class="docutils literal notranslate"><span class="pre">zip</span></code> (<a class="reference external" href="https://docs.python.org/library/functions.html#zip">dokumentacija</a>); primer:</p>
@@ -2566,10 +2699,10 @@ Pari so:  3 in 30
 </div>
 </section>
 </section>
-<section id="za-konec-plonk-list">
-<h2>Za konec: plonk list :)<a class="headerlink" href="#za-konec-plonk-list" title="Permalink to this headline">#</a></h2>
-<p>Veliko jih je; tukaj je <a class="reference external" href="http://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf">povezava</a> do enega.</p>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="za-konec-plonk-list">
+<h1>Za konec: plonk list :)<a class="headerlink" href="#za-konec-plonk-list" title="Permalink to this headline">#</a></h1>
+<p>Veliko jih je; tukaj je <a class="reference external" href="http://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf">povezava</a> do enega.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="nekaj-vprasanj-za-razmislek">
 <h1>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this headline">#</a></h1>
@@ -2666,11 +2799,11 @@ Pari so:  3 in 30
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Numeri%C4%8Dne%20metode%20-%20%C5%A1tudijski%20in%20izpitni%20red.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="%C5%A0tudijski%20in%20izpitni%20red.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Študijski in izpitni red</p>
+            <p class="prev-next-title">Študijski in izpitni red - Numerične metode 2022/23</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html" title="next page">

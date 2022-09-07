@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Reševanje enačb &#8212; Numerične metode v ekosistemu Pythona</title>
+    <title>Numerično odvajanje &#8212; Numerične metode v ekosistemu Pythona</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -110,15 +112,15 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Predgovor
+                <a class="reference internal" href="../README.html">
+                    Numerične metode v ekosistemu Pythona
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Numeri%C4%8Dne%20metode%20-%20%C5%A1tudijski%20in%20izpitni%20red.html">
-   Študijski in izpitni red
+  <a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">
+   Študijski in izpitni red - Numerične metode 2022/23
   </a>
  </li>
  <li class="toctree-l1">
@@ -143,12 +145,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">
-   Sistemi linearnih enačb
+   Uvod v numerične metode in sistemi linearnih enačb
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">
-   Sistemi linearnih enačb
+   Sistemi linearnih enačb - nadaljevanje
   </a>
  </li>
  <li class="toctree-l1">
@@ -168,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Reševanje enačb
+   Numerično odvajanje
   </a>
  </li>
  <li class="toctree-l1">
@@ -399,7 +401,12 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Reševanje enačb
+   Numerično odvajanje
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uvod">
+   Uvod
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -551,7 +558,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Reševanje enačb</h1>
+                <h1>Numerično odvajanje</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -563,7 +570,12 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Reševanje enačb
+   Numerično odvajanje
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uvod">
+   Uvod
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -716,8 +728,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="resevanje-enacb">
-<h1>Reševanje enačb<a class="headerlink" href="#resevanje-enacb" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="numericno-odvajanje">
+<h1>Numerično odvajanje<a class="headerlink" href="#numericno-odvajanje" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="uvod">
+<h1>Uvod<a class="headerlink" href="#uvod" title="Permalink to this headline">#</a></h1>
 <p>Vsako elementarno funkcijo lahko analitično odvajamo. Definicija odvoda je:
 $<span class="math notranslate nohighlight">\(f'(x)=\lim_{\Delta x \rightarrow 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}.\)</span>$</p>
 <p>Neposredna uporaba zgornje enačbe vodi v odštevanje zelo podobnih funkcijskih vrednostih (<span class="math notranslate nohighlight">\(f(x+\Delta x)\)</span>, <span class="math notranslate nohighlight">\(f(x)\)</span>), obremenjenih z zaokrožitveno napako, ki jih delimo z majhno vrednostjo <span class="math notranslate nohighlight">\(\Delta x\)</span>; posledično ima odvod bistveno manj signifikantnih števk kakor pa funkcijske vrednosti. Numeričnemu odvajanju se izognemo, če imamo to možnost; je pa v nekaterih primerih (npr. reševanje diferencialnih enačb) nepogrešljivo orodje!</p>
@@ -800,7 +815,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_20_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_20_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_21_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_21_0.png" />
 </div>
 </div>
 <p>Člen <span class="math notranslate nohighlight">\(\mathcal{O}\left(h^{2}\right)\)</span> vsebuje člene drugega in višjega reda. V zgornji enačbi je uporabljena začasna spremenljivko za odvajanje <span class="math notranslate nohighlight">\(\xi_1\)</span>; izvedmo odvajanje in vstavimo <span class="math notranslate nohighlight">\(\xi_1=x\)</span>:</p>
@@ -811,7 +826,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_22_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_22_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_23_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_23_0.png" />
 </div>
 </div>
 <p>Zapišemo enačbo:</p>
@@ -823,7 +838,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_24_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_24_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_25_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_25_0.png" />
 </div>
 </div>
 <p>Rešimo jo za prvi odvod <span class="math notranslate nohighlight">\(f'(x)\)</span>:</p>
@@ -835,7 +850,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_26_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_26_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_27_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_27_0.png" />
 </div>
 </div>
 <p>V kolikor odvoda drugega in višjih redov ne upoštevamo, smo naredili torej napako:</p>
@@ -847,7 +862,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_28_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_28_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_29_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_29_0.png" />
 </div>
 </div>
 <p>Napaka <span class="math notranslate nohighlight">\(\mathcal{O}\left(h^{1}\right)\)</span> je torej prvega reda in če ta člen zanemarimo, naredimo <em>napako metode</em> in dobimo oceno odvoda:</p>
@@ -859,7 +874,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_30_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_30_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_31_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_31_0.png" />
 </div>
 </div>
 <p>Ugotovimo, da gre za isti izraz, kakor smo ga izpeljali zgoraj, torej je:</p>
@@ -893,7 +908,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_35_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_35_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_36_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_36_0.png" />
 </div>
 </div>
 <p>Ugotovimo, da se pri razliki vrste naprej in nazaj odštevajo členi sodega reda; definirajmo:</p>
@@ -906,7 +921,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_37_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_37_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_38_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_38_0.png" />
 </div>
 </div>
 <p>Izvedemo sledeče korake:</p>
@@ -936,7 +951,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_41_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_41_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_42_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_42_0.png" />
 </div>
 </div>
 <p>Ali:</p>
@@ -967,7 +982,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_44_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_44_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_45_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_45_0.png" />
 </div>
 </div>
 </section>
@@ -1000,7 +1015,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_49_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_49_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_50_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_50_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1019,7 +1034,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_52_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_52_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_53_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_53_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1029,7 +1044,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_53_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_53_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_54_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_54_0.png" />
 </div>
 </div>
 <p>Potrdimo lahko, da je napaka pri koraku <span class="math notranslate nohighlight">\(h/10\)</span> res približno 1/10 tiste pri koraku <span class="math notranslate nohighlight">\(h\)</span>.</p>
@@ -1041,7 +1056,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_56_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_56_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_57_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_57_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1060,7 +1075,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_59_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_59_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_60_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_60_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1070,7 +1085,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_60_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_60_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_61_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_61_0.png" />
 </div>
 </div>
 <p>Potrdimo lahko, da je napaka pri koraku <span class="math notranslate nohighlight">\(h/10\)</span> res približno 1/100 tiste pri koraku <span class="math notranslate nohighlight">\(h\)</span>.</p>
@@ -1087,7 +1102,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_64_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_64_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_65_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_65_0.png" />
 </div>
 </div>
 <p>Določimo drugi odvod:</p>
@@ -1110,7 +1125,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_68_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_68_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_69_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_69_0.png" />
 </div>
 </div>
 <p>Ali:</p>
@@ -1141,7 +1156,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_71_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_71_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_72_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_72_0.png" />
 </div>
 </div>
 </section>
@@ -1156,7 +1171,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_74_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_74_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_75_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_75_0.png" />
 </div>
 </div>
 <p>Uporaba 1. odvoda, ki smo ga izpeljali zgoraj, nam ne bi koristila, saj je red napake <span class="math notranslate nohighlight">\(\mathcal{O}\left(h^{2}\right)\)</span>, kar pomeni, da bi v zgornji pri deljenju s <span class="math notranslate nohighlight">\(h^3\)</span> dobili <span class="math notranslate nohighlight">\(\mathcal{O}\left(h^{-1}\right)\)</span>.</p>
@@ -1169,7 +1184,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_77_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_77_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_78_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_78_0.png" />
 </div>
 </div>
 <p>Sedaj imamo dve enačbi in dve neznanki; sistem bomo rešili po korakih:</p>
@@ -1201,7 +1216,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_81_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_81_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_82_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_82_0.png" />
 </div>
 </div>
 <p>Ali:</p>
@@ -1236,7 +1251,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_84_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_84_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_85_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_85_0.png" />
 </div>
 </div>
 </section>
@@ -1251,7 +1266,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_87_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_87_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_88_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_88_0.png" />
 </div>
 </div>
 <p>Pripravimo dodatno enačbo na podlagi točk, ki sta od <span class="math notranslate nohighlight">\(x\)</span> oddaljeni za <span class="math notranslate nohighlight">\(2h\)</span> in <span class="math notranslate nohighlight">\(-2h\)</span>:</p>
@@ -1263,7 +1278,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_89_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_89_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_90_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_90_0.png" />
 </div>
 </div>
 <p>Iz dveh enačb določimo 4. odvod:</p>
@@ -1287,7 +1302,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_93_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_93_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_94_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_94_0.png" />
 </div>
 </div>
 <p>Ali:</p>
@@ -1322,7 +1337,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_96_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_96_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_97_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_97_0.png" />
 </div>
 </div>
 </section>
@@ -1338,7 +1353,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_100_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_100_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_101_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_101_0.png" />
 </div>
 </div>
 <p>Na razpolago imamo 5 funkcijskih vrednosti (pri legah <span class="math notranslate nohighlight">\(x-2h, x-h, x, x+h, x+2h\)</span>), ki jih damo v seznam:</p>
@@ -1357,7 +1372,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_104_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_104_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_105_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_105_0.png" />
 </div>
 </div>
 <p>Sedaj posplošimo in izračunajmo uteži za vse funkcijske vrednosti in za vse ocene odvodov:</p>
@@ -1370,7 +1385,7 @@ $<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_106_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_106_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_107_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_107_0.png" />
 </div>
 </div>
 <p>Zgornje povzetke lahko tudi zapišemo v tabelarični obliki:</p>
@@ -1495,7 +1510,7 @@ $<span class="math notranslate nohighlight">\(\overline{f}'(x_i)=\frac{2^n\,f_o'
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_124_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_124_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_125_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_125_0.png" />
 </div>
 </div>
 <p>in koraku <span class="math notranslate nohighlight">\(h\)</span> je</p>
@@ -1508,7 +1523,7 @@ $<span class="math notranslate nohighlight">\(\overline{f}'(x_i)=\frac{2^n\,f_o'
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_126_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_126_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_127_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_127_0.png" />
 </div>
 </div>
 <p>Izračun pri koraku <span class="math notranslate nohighlight">\(2h\)</span>:</p>
@@ -1521,7 +1536,7 @@ $<span class="math notranslate nohighlight">\(\overline{f}'(x_i)=\frac{2^n\,f_o'
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_128_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_128_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_129_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_129_0.png" />
 </div>
 </div>
 <p>Izračunajmo izboljšano oceno za <span class="math notranslate nohighlight">\(x=\pi\)</span>:</p>
@@ -1533,7 +1548,7 @@ $<span class="math notranslate nohighlight">\(\overline{f}'(x_i)=\frac{2^n\,f_o'
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_130_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_130_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_131_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_131_0.png" />
 </div>
 </div>
 <p>Vidimo, da je izboljšana ocena najbližje teoretični vrednosti <span class="math notranslate nohighlight">\(\cos(\pi)=-1\)</span>.</p>
@@ -1803,7 +1818,7 @@ $<span class="math notranslate nohighlight">\(\overline{f}'(x_i)=\frac{2^n\,f_o'
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_156_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_156_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_157_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_157_0.png" />
 </div>
 </div>
 </section>
@@ -1874,7 +1889,7 @@ $<span class="math notranslate nohighlight">\(\overline{f}'(x_i)=\frac{2^n\,f_o'
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_43520\2765671333.py:1: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_1972\2765671333.py:1: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   def fun(x, dtype=np.float): # funkcija
 </pre></div>
@@ -1935,7 +1950,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_177_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_177_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_178_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_178_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1945,7 +1960,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_178_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_178_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_179_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_179_0.png" />
 </div>
 </div>
 <p>Definirajmo sedaj korak:</p>
@@ -1974,7 +1989,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_43520\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_1972\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
   f1_ocena = (fun(x+h, dtype=dtype)-fun(x-h,dtype=dtype))/(2*dtype(h))
 </pre></div>
 </div>
@@ -2013,7 +2028,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_188_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_188_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_189_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_189_0.png" />
 </div>
 </div>
 <p>Pri relativno velikem koraku <span class="math notranslate nohighlight">\(h\)</span> prevladuje napaka metode, pri majhnem koraku pa zaokrožitvnea napaka; optimalni korak lahko ocenimo glede na:</p>
@@ -2033,7 +2048,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_191_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_191_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_192_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_192_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2043,7 +2058,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_192_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_192_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_193_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_193_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2053,7 +2068,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_193_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_193_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_194_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_194_0.png" />
 </div>
 </div>
 <p>Najbolje se izkaže 64-bitni zapis, vendar pa tudi pri tem korak manjši od cca <code class="docutils literal notranslate"><span class="pre">1e-5</span></code> ni priporočen!</p>
@@ -2082,7 +2097,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_200_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_200_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_201_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_201_0.png" />
 </div>
 </div>
 <p>Pri klicu s korakom <span class="math notranslate nohighlight">\(h=0.1\)</span> dobimo točni dve (tri) števki (podobno kakor pri centralni diferenčni shemi), zmanjšanjem koraka na desetino pa bi število točnih števk približno podvojili:</p>
@@ -2096,7 +2111,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_202_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_202_0.png" />
+<img alt="../_images/Predavanje 10 - Numerično odvajanje_203_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_203_0.png" />
 </div>
 </div>
 </section>

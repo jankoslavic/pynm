@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Predgovor &#8212; Numerične metode v ekosistemu Pythona</title>
+    <title>Numerične metode v ekosistemu Pythona &#8212; Numerične metode v ekosistemu Pythona</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Študijski in izpitni red" href="notebooks/Numeri%C4%8Dne%20metode%20-%20%C5%A1tudijski%20in%20izpitni%20red.html" />
+    <link rel="next" title="Študijski in izpitni red - Numerične metode 2022/23" href="notebooks/%C5%A0tudijski%20in%20izpitni%20red.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -108,14 +108,14 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Predgovor
+                    Numerične metode v ekosistemu Pythona
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/Numeri%C4%8Dne%20metode%20-%20%C5%A1tudijski%20in%20izpitni%20red.html">
-   Študijski in izpitni red
+  <a class="reference internal" href="notebooks/%C5%A0tudijski%20in%20izpitni%20red.html">
+   Študijski in izpitni red - Numerične metode 2022/23
   </a>
  </li>
  <li class="toctree-l1">
@@ -140,12 +140,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">
-   Sistemi linearnih enačb
+   Uvod v numerične metode in sistemi linearnih enačb
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">
-   Sistemi linearnih enačb
+   Sistemi linearnih enačb - nadaljevanje
   </a>
  </li>
  <li class="toctree-l1">
@@ -165,7 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">
-   Reševanje enačb
+   Numerično odvajanje
   </a>
  </li>
  <li class="toctree-l1">
@@ -343,23 +343,60 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dovoljenje-za-uporabo-license">
+   Dovoljenje za uporabo (License)
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Predgovor</h1>
+                <h1>Numerične metode v ekosistemu Pythona</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dovoljenje-za-uporabo-license">
+   Dovoljenje za uporabo (License)
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -367,14 +404,17 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="predgovor">
-<h1>Predgovor<a class="headerlink" href="#predgovor" title="Permalink to this headline">#</a></h1>
-<p>Ta knjiga je nastala na podlagi raziskovalno-razvojnega dela Laboratorija za dinamiko strojev in konstrukcij. Procesiranje signalov je elementarni del več deset člankov objavljenih v vodilnih revijah področja (npr.: Mechanical Systems and Signal Processing, Elsevier) kakor tudi bistveni vsebinski del naprav za končno kontrolo, ki so implementirana v slovenski in tuji industriji. Procesiranje signalov predstavlja tudi pomeben del monografije na temo vibracijskega utrujanja (glejte: <span id="id1">Slavič <em>et al.</em> [<a class="reference internal" href="bibliography.html#id3" title="Janko Slavič, Miha Boltežar, Matjaž Mršnik, Martin Češnik, and Jaka Javh. Vibration Fatigue by Spectral Methods: From Structural Dynamics to Fatigue Damage–Theory and Experiments. Elsevier, 2020.">2020</a>]</span>), ki kot prva povezuje spektralne metode identifikacije poškodovanosti s teorijo strukturne dinamike.</p>
-<p>Knjigo na temo procesiranja signalov ni mogoče napisati, ne da bi se zahvalili avtorjem referenčnih monografij, ki so postavili temelje teorije naključnih procesov:  <span id="id2">Rice [<a class="reference internal" href="bibliography.html#id66" title="Stephen O. Rice. Mathematical analysis of random noise. The Bell System Technical Journal, 24(1):46–156, 1945.">1945</a>]</span>, <span id="id3">Bendat and Piersol [<a class="reference internal" href="bibliography.html#id151" title="Julius S. Bendat and Allan G. Piersol. Random Data: Analysis and Measurement Procedures. John Wiley &amp; Sons, 4$^\text th$ edition, 2011.">2011</a>]</span>,  <span id="id4">Newland [<a class="reference internal" href="bibliography.html#id88" title="David E. Newland. An Introduction to Random Vibrations, Spectral &amp; Wavelet Analysis. Courier Corporation, 3$^\text rd$ edition, 2012.">2012</a>]</span>. Ta knjiga bo osredotočena na procesiranje signalov za uporabo v inženirski praksi na področju analize vibracij in zvota ter bo v določeni meri sledila viru <span id="id5">Shin and Hammond [<a class="reference internal" href="bibliography.html#id173" title="Kihong Shin and Joseph Hammond. Fundamentals of Signal Processing for Sound and Vibration Engineers. John Wiley &amp; Sons, 2008. ISBN 9780470511886. URL: http://adsabs.harvard.edu/abs/1991VKILV...1Q....P, doi:10.1016/0016-0032(60)90684-0.">2008</a>]</span>. Knjiga se naslanja tudi na vir <span id="id6">Slavič <em>et al.</em> [<a class="reference internal" href="bibliography.html#id3" title="Janko Slavič, Miha Boltežar, Matjaž Mršnik, Martin Češnik, and Jaka Javh. Vibration Fatigue by Spectral Methods: From Structural Dynamics to Fatigue Damage–Theory and Experiments. Elsevier, 2020.">2020</a>]</span>. Mogoče se v tem trenutku zdi, da naključni procesi z inženirskimi izzivi nimajo veliko skupnega, ampak proti koncu te knjige bomo ugotovili, da tudi obravnava praktično katerega-koli realnega sistema brez teorije naključnih procesov, najmanj zaradi negotovosti pri merjenju, ni mogoča.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Tako bomo označevali posebne opombe!</p>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="numericne-metode-v-ekosistemu-pythona">
+<h1>Numerične metode v ekosistemu Pythona<a class="headerlink" href="#numericne-metode-v-ekosistemu-pythona" title="Permalink to this headline">#</a></h1>
+<p>Predavanja temeljijo na ekosistemu Python in bodo izvedena v obliki Jupyter notebook-ov.
+Tukaj predstavljena vsebina je osnova za predmet Numerične metode, ki se poučujeta na <span class="xref myst">Fakulteti za strojništvo (Univerza v Ljubljani)</span>:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.ladisk.si/?what=incfl&amp;flnm=NM.php">Numerične metode 2l. RR</a></p></li>
+</ul>
+<section id="dovoljenje-za-uporabo-license">
+<h2>Dovoljenje za uporabo (License)<a class="headerlink" href="#dovoljenje-za-uporabo-license" title="Permalink to this headline">#</a></h2>
+<p>To delo je prosto za nekomercialno uporabo pri čemer morate navesti vir, avtorja in Fakulteto za strojništvo, Univerze v Ljubljani.</p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -406,10 +446,10 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="notebooks/Numeri%C4%8Dne%20metode%20-%20%C5%A1tudijski%20in%20izpitni%20red.html" title="next page">
+    <a class='right-next' id="next-link" href="notebooks/%C5%A0tudijski%20in%20izpitni%20red.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Študijski in izpitni red</p>
+        <p class="prev-next-title">Študijski in izpitni red - Numerične metode 2022/23</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

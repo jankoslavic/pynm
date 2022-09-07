@@ -50,11 +50,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Reševanje enačb" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html" />
+    <link rel="next" title="Numerično odvajanje" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html" />
     <link rel="prev" title="Aproksimacija" href="Predavanje%2008%20-%20Aproksimacija.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -110,15 +112,15 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Predgovor
+                <a class="reference internal" href="../README.html">
+                    Numerične metode v ekosistemu Pythona
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Numeri%C4%8Dne%20metode%20-%20%C5%A1tudijski%20in%20izpitni%20red.html">
-   Študijski in izpitni red
+  <a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">
+   Študijski in izpitni red - Numerične metode 2022/23
   </a>
  </li>
  <li class="toctree-l1">
@@ -143,12 +145,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">
-   Sistemi linearnih enačb
+   Uvod v numerične metode in sistemi linearnih enačb
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">
-   Sistemi linearnih enačb
+   Sistemi linearnih enačb - nadaljevanje
   </a>
  </li>
  <li class="toctree-l1">
@@ -168,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">
-   Reševanje enačb
+   Numerično odvajanje
   </a>
  </li>
  <li class="toctree-l1">
@@ -401,6 +403,11 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#">
    Reševanje enačb
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uvod">
+   Uvod
+  </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#omejitve-funkcije-f-x">
@@ -602,6 +609,11 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#">
    Reševanje enačb
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uvod">
+   Uvod
+  </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#omejitve-funkcije-f-x">
@@ -792,6 +804,9 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="resevanje-enacb">
 <h1>Reševanje enačb<a class="headerlink" href="#resevanje-enacb" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="uvod">
+<h1>Uvod<a class="headerlink" href="#uvod" title="Permalink to this headline">#</a></h1>
 <p>Za uvod si oglejmo spodnji video:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -877,7 +892,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 09 - Reševanje enačb_14_0.png" src="../_images/Predavanje 09 - Reševanje enačb_14_0.png" />
+<img alt="../_images/Predavanje 09 - Reševanje enačb_15_0.png" src="../_images/Predavanje 09 - Reševanje enačb_15_0.png" />
 </div>
 </div>
 <p>Opazimo, da so ničle funkcije <span class="math notranslate nohighlight">\(f(x)\)</span> blizu -0,7 in +0,7. Objekt <code class="docutils literal notranslate"><span class="pre">poly1d</span></code> ima atribut <code class="docutils literal notranslate"><span class="pre">roots</span></code> ali tudi <code class="docutils literal notranslate"><span class="pre">r</span></code> (<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.poly1d.html">glejte dokumentacijo</a>), ki vrne te ničle:</p>
@@ -991,7 +1006,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 09 - Reševanje enačb_35_0.png" src="../_images/Predavanje 09 - Reševanje enačb_35_0.png" />
+<img alt="../_images/Predavanje 09 - Reševanje enačb_36_0.png" src="../_images/Predavanje 09 - Reševanje enačb_36_0.png" />
 </div>
 </div>
 <p>Da smo torej na intervalu <span class="math notranslate nohighlight">\([0, 1]\)</span> izračunali rešitev z natančnostjo <span class="math notranslate nohighlight">\(\Delta x=0,001\)</span>, smo morali 1000-krat klicati funkcijo <span class="math notranslate nohighlight">\(f(x)\)</span>. Gre za zelo neučinkovito metodo, zato bomo iskali boljše načine; najprej s preprostim iterativnim inkrementalnim pristopom.</p>
@@ -1178,7 +1193,7 @@ in po \)</span>n<span class="math notranslate nohighlight">\( korakih:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>582 µs ± 30.2 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>408 µs ± 11.8 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1196,7 +1211,7 @@ in po \)</span>n<span class="math notranslate nohighlight">\( korakih:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 09 - Reševanje enačb_66_0.png" src="../_images/Predavanje 09 - Reševanje enačb_66_0.png" />
+<img alt="../_images/Predavanje 09 - Reševanje enačb_67_0.png" src="../_images/Predavanje 09 - Reševanje enačb_67_0.png" />
 </div>
 </div>
 <p>V primeru iskanja na intervalu <span class="math notranslate nohighlight">\([-1, 1]\)</span> najdemo pravo ničlo:</p>
@@ -1259,7 +1274,7 @@ in po \)</span>n<span class="math notranslate nohighlight">\( korakih:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>154 µs ± 3.95 µs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>190 µs ± 85.4 µs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1395,7 +1410,7 @@ Rešitev: 0.73460351, D: 0.00000
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>247 µs ± 18.9 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>474 µs ± 21.6 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1469,7 +1484,7 @@ Rešitev: 3.142, D: 0.00002
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>378 µs ± 27.1 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>873 µs ± 66.6 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1595,7 +1610,7 @@ kjer je \)</span>C<span class="math notranslate nohighlight">\(:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14.6 µs ± 1.95 µs per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.8 µs ± 701 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1633,7 +1648,7 @@ kjer je \)</span>C<span class="math notranslate nohighlight">\(:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>123 µs ± 8.32 µs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>283 µs ± 6.74 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1825,7 +1840,7 @@ $<span class="math notranslate nohighlight">\(x^2 + y -2=0\qquad\textrm{in}\qqua
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 09 - Reševanje enačb_174_0.png" src="../_images/Predavanje 09 - Reševanje enačb_174_0.png" />
+<img alt="../_images/Predavanje 09 - Reševanje enačb_175_0.png" src="../_images/Predavanje 09 - Reševanje enačb_175_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1883,7 +1898,7 @@ Prva rešitev: (2, 3)
     <a class='right-next' id="next-link" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Reševanje enačb</p>
+        <p class="prev-next-title">Numerično odvajanje</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
