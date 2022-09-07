@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="50mm"
+   height="18.262453mm"
+   viewBox="0 0 50 18.262453"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1-alpha (17bc918, 2021-03-28)"
+   sodipodi:docname="sistem-in-out.svg"
+   inkscape:export-filename="C:\_j\Work Janko\Pedagosko delo\_predavanja\Procesiranje signalov\signal_processing\notebooks\images\sistem-in-out.png"
+   inkscape:export-xdpi="300.42712"
+   inkscape:export-ydpi="300.42712"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     objecttolerance="10.0"
+     gridtolerance="10.0"
+     guidetolerance="10.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.8070215"
+     inkscape:cx="101.17486"
+     inkscape:cy="74.456145"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1084" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend-1"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1084-4" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-8.7733718,-18.129512)">
+    <rect
+       style="opacity:1;fill:none;stroke:#000000;stroke-width:0.4;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       id="rect846"
+       width="17.862453"
+       height="17.862453"
+       x="24.842146"
+       y="18.329512"
+       ry="2.6312537" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.139237px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="M 8.7733718,27.260739 H 21.364782"
+       id="path2851" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.139237px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-1)"
+       d="M 45.911653,27.260739 H 58.503062"
+       id="path1079-0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.88056px;line-height:1.25;font-family:pccmti10;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;-inkscape-font-specification:'pccmti10, Normal';font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="12.02475"
+       y="25.545193"
+       id="text4024"><tspan
+         sodipodi:role="line"
+         id="tspan4022"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055993px;font-family:pccmti10;-inkscape-font-specification:'pccmti10, Normal';stroke-width:0.264583;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="12.02475"
+         y="25.545193">x(t)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.88056px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="49.061657"
+       y="25.545193"
+       id="text4024-8"><tspan
+         sodipodi:role="line"
+         id="tspan4022-5"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;font-family:pccmti10;-inkscape-font-specification:pccmti10;stroke-width:0.264583"
+         x="49.061657"
+         y="25.545193">y(t)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.88056px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="27.980955"
+       y="28.588049"
+       id="text4024-1"><tspan
+         sodipodi:role="line"
+         id="tspan4022-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;font-family:pccmr10;-inkscape-font-specification:pccmr10;stroke-width:0.264583"
+         x="27.980955"
+         y="28.588049">Sistem</tspan></text>
+  </g>
+</svg>

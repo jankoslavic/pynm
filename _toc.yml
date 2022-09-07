@@ -1,0 +1,23 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+# - file: markdown
+- file: notebooks/Študijski in izpitni red.ipynb
+- file: notebooks/Predavanje 01 - Uvod v Python.ipynb
+- file: notebooks/Predavanje 02 - Print, delo z datotekami, funkcije, moduli.ipynb
+- file: notebooks/Predavanje 03 - Moduli, numpy, matplotlib.ipynb
+- file: notebooks/Predavanje 04 - Objektno programiranje, simbolno računanje.ipynb
+- file: notebooks/Predavanje 05 - Uvod v numerične metode in sistemi linearnih enačb 1.ipynb
+- file: notebooks/Predavanje 06 - Sistemi linearnih enačb 2.ipynb
+- file: notebooks/Predavanje 07 - Interpolacija.ipynb
+- file: notebooks/Predavanje 08 - Aproksimacija.ipynb
+- file: notebooks/Predavanje 09 - Reševanje enačb.ipynb
+- file: notebooks/Predavanje 10 - Numerično odvajanje.ipynb
+- file: notebooks/Predavanje 11 - Numerično integriranje.ipynb
+- file: notebooks/Predavanje 12 - Numerično reševanje diferencialnih enačb - začetni problem.ipynb
+- file: notebooks/Predavanje 13 - Numerično reševanje diferencialnih enačb - robni problem.ipynb
+- file: notebooks/Predavanje 14 - Testiranje pravilnosti kode, uporabniški vmesnik.ipynb
+- file: bibliography
