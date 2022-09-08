@@ -1,13 +1,10 @@
 # Numerične metode v ekosistemu Pythona, Janko Slavič, 2022
 
-Predavanja temeljijo na ekosistemu Python in bodo izvedena v obliki Jupyter notebook-ov.
 Tukaj predstavljena vsebina je osnova za predmet Numerične metode, ki se poučujeta na [Fakulteti za strojništvo (Univerza v Ljubljani)](https://www.fs.uni-lj.si):
 
 * [Numerične metode 2l. RR](http://www.ladisk.si/?what=incfl&flnm=NM.php)
 
 Predloge predavanj se nahajajo v mapi `notebooks`, lahko pa si jih ogledate v spletni knjigi (povezave so navedene spodaj).
-
-Prosimo, da si dobro preberete [študijski in izpitni red](https://jankoslavic.github.io/pynm/notebooks/%C5%A0tudijski%20in%20izpitni%20red.html), tam so navedene ključne informacije v zvezi z opravljanjem predmeta.
 
 **Razpored predavanj**
 
