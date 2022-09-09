@@ -5,7 +5,7 @@ Tukaj predstavljena vsebina je osnova za predmet Numerične metode, ki se pouču
 
 * [Numerične metode 2l. RR](http://www.ladisk.si/?what=incfl&flnm=NM.php)
 
-Predloge predavanj se nahajajo v mapi `notebooks`, lahko pa si jih ogledate v spletni knjigi (povezave so navedene spodaj).
+Predloge predavanj se nahajajo v mapi `notebooks`, lahko pa si jih ogledate v [spletni knjigi](https://jankoslavic.github.io/pynm/README.html) (povezave so navedene spodaj).
 
 Prosimo, da si dobro preberete [študijski in izpitni red](https://jankoslavic.github.io/pynm/notebooks/%C5%A0tudijski%20in%20izpitni%20red.html), tam so navedene ključne informacije v zvezi z opravljanjem predmeta.
 
