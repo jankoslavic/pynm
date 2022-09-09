@@ -1,10 +1,12 @@
 # Numerične metode v ekosistemu Pythona, Janko Slavič, 2022
 
-Tukaj predstavljena vsebina je osnova za predmet Numerične metode, ki se poučujeta na [Fakulteti za strojništvo (Univerza v Ljubljani)](https://www.fs.uni-lj.si):
+Tukaj predstavljena vsebina je osnova za predmet Numerične metode, ki se poučujeta na [Fakulteti za strojništvo (Univerza v Ljubljani)](www.fs.uni-lj.si):
 
 * [Numerične metode 2l. RR](http://www.ladisk.si/?what=incfl&flnm=NM.php)
 
-Predloge predavanj se nahajajo v mapi `notebooks`, lahko pa si jih ogledate v spletni knjigi (povezave so navedene spodaj).
+Predloge predavanj se nahajajo v mapi `notebooks`, lahko pa si jih ogledate v [spletni knjigi](https://jankoslavic.github.io/pynm/README.html) (povezave so navedene spodaj).
+
+Prosimo, da si preberete [študijski in izpitni red](https://jankoslavic.github.io/pynm/notebooks/%C5%A0tudijski%20in%20izpitni%20red.html), tam so navedene ključne informacije v zvezi z opravljanjem predmeta.
 
 **Razpored predavanj**
 
@@ -22,7 +24,7 @@ Predloge predavanj se nahajajo v mapi `notebooks`, lahko pa si jih ogledate v sp
 1. [9.jan: Numerično reševanje diferencialnih enačb - začetni problem](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2012%20-%20Numerično%20reševanje%20diferencialnih%20enačb%20-%20začetni%20problem.html)
 1. [16.jan: Numerično reševanje diferencialnih enačb - robni problem](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2013%20-%20Numerično%20reševanje%20diferencialnih%20enačb%20-%20robni%20problem.html)
 1. [Testiranje pravilnosti kode, uporabniški vmesnik](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode,%20uporabniški%20vmesnik.html)
-1. [Uvod v Mathematico*](https://github.com/jankoslavic/pynm/blob/main/notebooks/Uvod%20v%20Mathematico.nb)
+1. Uvod v Mathematico*
 
 \* Fakultativno predavanje, študentje Fakultete za strojništvo UNI-LJ imate možnost pridobiti licenčno verzijo programa Mathematica na tej [povezavi](http://www.fs.uni-lj.si/studijska_dejavnost/it_podpora/programska_oprema_za_studente/2015071415154271/Registracija%20Mathematica/).
 
