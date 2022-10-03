@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -1031,13 +1033,13 @@ $<span class="math notranslate nohighlight">\(F_1 = F_2 = 1\qquad\textrm{in}\qqu
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">števila</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="c1"># seznam števil</span>
-<span class="p">[</span><span class="n">število</span><span class="o">*</span><span class="mi">2</span> <span class="k">for</span> <span class="n">število</span> <span class="ow">in</span> <span class="n">števila</span> <span class="k">if</span> <span class="n">število</span><span class="o">&gt;</span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">števila</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="c1"># seznam števil</span>
+<span class="p">[</span><span class="n">število</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">število</span> <span class="ow">in</span> <span class="n">števila</span> <span class="k">if</span> <span class="n">število</span><span class="o">&gt;</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[8, 10]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[16, 25]
 </pre></div>
 </div>
 </div>
@@ -1144,9 +1146,8 @@ $<span class="math notranslate nohighlight">\(F_1 = F_2 = 1\qquad\textrm{in}\qqu
 <h2>Uporaba githuba repozitorija in posodobitve<a class="headerlink" href="#uporaba-githuba-repozitorija-in-posodobitve" title="Permalink to this headline">#</a></h2>
 <p>Ta knjiga se vedno dopolnjuje, zadnja verzija je dosegljiva na:</p>
 <ul class="simple">
-<li><p>v izvorni obliki na naslovu <a class="reference external" href="https://github.com/jankoslavic/pypinm/">github.com/jankoslavic/pypinm</a>,</p></li>
-<li><p>v spletni obliki na naslovu <a class="reference external" href="https://jankoslavic.github.io/pypinm.io/">jankoslavic.github.io/pypinm.io</a>.</p></li>
-<li><p>v pdf obliki na naslovu <a class="reference external" href="https://github.com/jankoslavic/pypinm/raw/master/pdf/Programiranje%20in%20numeri%C4%8Dne%20metode%20v%20ekosistemu%20Pythona%20-%20zadnja%20verzija.pdf">github.com/jankoslavic/pypinm</a>.</p></li>
+<li><p>v izvorni obliki na naslovu <a class="reference external" href="https://github.com/jankoslavic/pynm/">github.com/jankoslavic/pynm</a>,</p></li>
+<li><p>v spletni obliki na naslovu <a class="reference external" href="https://jankoslavic.github.io/pynm/">https://jankoslavic.github.io/pynm</a>.</p></li>
 </ul>
 <p>Najbolje je za sinhronizacijo s spletnim repozitorijem uporabljati kakšnega od Git klientov. Git je sicer zelo močno orodje in skupini razvojnikov omogoča relativno enostavno delo na isti kodi in kontrolo nad različnimi verzijami datotek.</p>
 </section>
@@ -2576,7 +2577,7 @@ g = 9.81
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>204 µs ± 4.08 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>236 µs ± 15.2 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2590,7 +2591,7 @@ g = 9.81
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>191 µs ± 3.61 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>210 µs ± 12.8 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>

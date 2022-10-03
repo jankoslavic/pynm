@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Študijski in izpitni red: 2022/23" href="notebooks/%C5%A0tudijski%20in%20izpitni%20red.html" />
@@ -414,19 +416,19 @@ title="Print to PDF"
 <p>Prosimo, da si preberete <a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/%C5%A0tudijski%20in%20izpitni%20red.html">študijski in izpitni red</a>, tam so navedene ključne informacije v zvezi z opravljanjem predmeta.</p>
 <p><strong>Razpored predavanj</strong></p>
 <ol class="simple">
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2001%20-%20Uvod%20v%20Python.html">3.okt: Uvod v Python</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2002%20-%20Print,%20delo%20z%20datotekami,%20funkcije,%20moduli.html">10.okt: Print, delo z datotekami, funkcije, moduli</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2003%20-%20Moduli,%20numpy,%20matplotlib.html">17.okt: Moduli, numpy, matplotlib</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2004%20-%20Objektno%20programiranje,%20simbolno%20ra%C4%8Dunanje.html">24.okt: Objektno programiranje, simbolno računanje</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">7.nov: Uvod v numerične metode in sistemi linearnih enačb 1</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">14.nov: Sistemi linearnih enačb 2</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2007%20-%20Interpolacija.html">21.nov: Interpolacija</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2008%20-%20Aproksimacija.html">28.nov: Aproksimacija</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">5.dec: Reševanje enačb</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">12.dec: Numerično odvajanje</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">19.dec: Numerično integriranje</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">9.jan: Numerično reševanje diferencialnih enačb - začetni problem</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">16.jan: Numerično reševanje diferencialnih enačb - robni problem</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2001%20-%20Uvod%20v%20Python.html">3.okt: Uvod v Python, 1. del</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2001%20-%20Uvod%20v%20Python.html">10.okt: Uvod v Python, 2. del</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2002%20-%20Print,%20delo%20z%20datotekami,%20funkcije,%20moduli.html">17.okt: Print, delo z datotekami, funkcije, moduli</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2003%20-%20Moduli,%20numpy,%20matplotlib.html">24.okt: Moduli, numpy, matplotlib</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2004%20-%20Objektno%20programiranje,%20simbolno%20ra%C4%8Dunanje.html">7.nov: Objektno programiranje, simbolno računanje</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">14.nov: Uvod v numerične metode in sistemi linearnih enačb 1</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">21.nov: Sistemi linearnih enačb 2</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2007%20-%20Interpolacija.html">28.nov: Interpolacija</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2008%20-%20Aproksimacija.html">5.dec: Aproksimacija</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">12.dec: Reševanje enačb</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">19.dec: Numerično odvajanje</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">9.jan: Numerično integriranje</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">16.jan: Numerično reševanje diferencialnih enačb - začetni problem</a> in <a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">robni problem</a></p></li>
 <li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode,%20uporabni%C5%A1ki%20vmesnik.html">Testiranje pravilnosti kode, uporabniški vmesnik</a></p></li>
 <li><p>Uvod v Mathematico*</p></li>
 </ol>

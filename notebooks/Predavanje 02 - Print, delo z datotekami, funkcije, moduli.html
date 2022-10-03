@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Numpy, matplotlib" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html" />
@@ -1801,7 +1803,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>51.7 ms ± 1.99 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>61.2 ms ± 11.9 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1816,7 +1818,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.86 ms ± 525 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.12 ms ± 39.4 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1915,106 +1917,106 @@ slika:)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[youtube] FIa6VZt-wz4: Downloading webpage
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download] Resuming download at byte 2124641
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download] Destination: Tesla Cybertruck Glass Demo Gone Wrong!!-FIa6VZt-wz4.mp4
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   0.0% of 28.91MiB at Unknown speed ETA Unknown ETA
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.0% of 28.91MiB at  7.59KiB/s ETA 01:00:28
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   0.0% of 28.91MiB at 47.67KiB/s ETA 10:21         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.0% of 28.91MiB at 22.76KiB/s ETA 20:09   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   0.0% of 28.91MiB at 111.22KiB/s ETA 04:26        
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.0% of 28.91MiB at 53.10KiB/s ETA 08:38   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   0.1% of 28.91MiB at 238.33KiB/s ETA 02:04        
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.1% of 28.91MiB at 109.92KiB/s ETA 04:10  
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   0.1% of 28.91MiB at 94.03KiB/s ETA 05:14         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.1% of 28.91MiB at 61.98KiB/s ETA 07:23   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   0.2% of 28.91MiB at 83.03KiB/s ETA 05:55         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.2% of 28.91MiB at 65.45KiB/s ETA 06:59   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   0.4% of 28.91MiB at 83.30KiB/s ETA 05:53         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.4% of 28.91MiB at 72.52KiB/s ETA 06:17   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   0.7% of 28.91MiB at 73.55KiB/s ETA 06:39         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.7% of 28.91MiB at 72.09KiB/s ETA 06:18   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   0.9% of 28.91MiB at 73.87KiB/s ETA 06:37         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   8.0% of 28.91MiB at 71.19KiB/s ETA 06:22   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   1.2% of 28.91MiB at 76.09KiB/s ETA 06:24         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   8.2% of 28.91MiB at 69.57KiB/s ETA 06:30   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   1.5% of 28.91MiB at 73.59KiB/s ETA 06:36         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   8.4% of 28.91MiB at 69.25KiB/s ETA 06:31   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   1.7% of 28.91MiB at 74.18KiB/s ETA 06:32         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   8.6% of 28.91MiB at 69.78KiB/s ETA 06:27   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   1.9% of 28.91MiB at 74.05KiB/s ETA 06:31         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   8.9% of 28.91MiB at 70.03KiB/s ETA 06:25   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   2.2% of 28.91MiB at 74.96KiB/s ETA 06:26         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   9.1% of 28.91MiB at 69.16KiB/s ETA 06:29   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   2.5% of 28.91MiB at 75.29KiB/s ETA 06:23         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   9.3% of 28.91MiB at 70.03KiB/s ETA 06:23   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   2.7% of 28.91MiB at 74.25KiB/s ETA 06:27         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   9.6% of 28.91MiB at 69.47KiB/s ETA 06:25   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   3.0% of 28.91MiB at 74.64KiB/s ETA 06:24         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   9.8% of 28.91MiB at 69.41KiB/s ETA 06:24   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   3.2% of 28.91MiB at 74.83KiB/s ETA 06:22         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  10.1% of 28.91MiB at 69.26KiB/s ETA 06:24   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   3.5% of 28.91MiB at 74.41KiB/s ETA 06:24         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  10.3% of 28.91MiB at 69.60KiB/s ETA 06:21   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   3.7% of 28.91MiB at 73.75KiB/s ETA 06:26         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  10.5% of 28.91MiB at 69.84KiB/s ETA 06:19   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   3.9% of 28.91MiB at 74.00KiB/s ETA 06:24         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  10.8% of 28.91MiB at 70.08KiB/s ETA 06:16   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   4.2% of 28.91MiB at 74.81KiB/s ETA 06:19         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  11.0% of 28.91MiB at 69.70KiB/s ETA 06:17   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   4.5% of 28.91MiB at 74.35KiB/s ETA 06:20         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  11.2% of 28.91MiB at 70.16KiB/s ETA 06:14   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   4.7% of 28.91MiB at 74.69KiB/s ETA 06:17         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  11.5% of 28.91MiB at 69.74KiB/s ETA 06:15   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   5.0% of 28.91MiB at 74.75KiB/s ETA 06:16         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  11.7% of 28.91MiB at 70.18KiB/s ETA 06:12   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   5.3% of 28.91MiB at 74.59KiB/s ETA 06:15         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  12.0% of 28.91MiB at 69.41KiB/s ETA 06:15   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   5.5% of 28.91MiB at 73.63KiB/s ETA 06:19         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  12.2% of 28.91MiB at 69.57KiB/s ETA 06:13   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   5.7% of 28.91MiB at 74.05KiB/s ETA 06:16         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  12.5% of 28.91MiB at 69.64KiB/s ETA 06:12   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   6.0% of 28.91MiB at 73.77KiB/s ETA 06:17         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  12.7% of 28.91MiB at 70.04KiB/s ETA 06:09   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   6.2% of 28.91MiB at 74.02KiB/s ETA 06:14         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.0% of 28.91MiB at 70.01KiB/s ETA 06:08   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   6.5% of 28.91MiB at 74.07KiB/s ETA 06:13         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.2% of 28.91MiB at 69.69KiB/s ETA 06:08   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   6.8% of 28.91MiB at 73.91KiB/s ETA 06:13         
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.0% of 28.91MiB at 74.11KiB/s ETA 06:11         
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.4% of 28.91MiB at 69.60KiB/s ETA 06:08   
 </pre></div>
 </div>
 </div>
