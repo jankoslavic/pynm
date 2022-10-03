@@ -10,19 +10,19 @@ Prosimo, da si preberete [študijski in izpitni red](https://jankoslavic.github.
 
 **Razpored predavanj**
 
-1. [3.okt: Uvod v Python](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2001%20-%20Uvod%20v%20Python.html)
-1. [10.okt: Print, delo z datotekami, funkcije, moduli](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2002%20-%20Print,%20delo%20z%20datotekami,%20funkcije,%20moduli.html)
-1. [17.okt: Moduli, numpy, matplotlib](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2003%20-%20Moduli,%20numpy,%20matplotlib.html)
-1. [24.okt: Objektno programiranje, simbolno računanje](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2004%20-%20Objektno%20programiranje,%20simbolno%20računanje.html)
-1. [7.nov: Uvod v numerične metode in sistemi linearnih enačb 1](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2005%20-%20Uvod%20v%20numerične%20metode%20in%20sistemi%20linearnih%20enačb%201.html)
-1. [14.nov: Sistemi linearnih enačb 2](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2006%20-%20Sistemi%20linearnih%20enačb%202.html)
-1. [21.nov: Interpolacija](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2007%20-%20Interpolacija.html)
-1. [28.nov: Aproksimacija](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2008%20-%20Aproksimacija.html)
-1. [5.dec: Reševanje enačb](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2009%20-%20Reševanje%20enačb.html)
-1. [12.dec: Numerično odvajanje](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2010%20-%20Numerično%20odvajanje.html)
-1. [19.dec: Numerično integriranje](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2011%20-%20Numerično%20integriranje.html)
-1. [9.jan: Numerično reševanje diferencialnih enačb - začetni problem](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2012%20-%20Numerično%20reševanje%20diferencialnih%20enačb%20-%20začetni%20problem.html)
-1. [16.jan: Numerično reševanje diferencialnih enačb - robni problem](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2013%20-%20Numerično%20reševanje%20diferencialnih%20enačb%20-%20robni%20problem.html)
+1. [3.okt: Uvod v Python, 1. del](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2001%20-%20Uvod%20v%20Python.html)
+1. [10.okt: Uvod v Python, 2. del](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2001%20-%20Uvod%20v%20Python.html)
+1. [17.okt: Print, delo z datotekami, funkcije, moduli](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2002%20-%20Print,%20delo%20z%20datotekami,%20funkcije,%20moduli.html)
+1. [24.okt: Moduli, numpy, matplotlib](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2003%20-%20Moduli,%20numpy,%20matplotlib.html)
+1. [7.nov: Objektno programiranje, simbolno računanje](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2004%20-%20Objektno%20programiranje,%20simbolno%20računanje.html)
+1. [14.nov: Uvod v numerične metode in sistemi linearnih enačb 1](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2005%20-%20Uvod%20v%20numerične%20metode%20in%20sistemi%20linearnih%20enačb%201.html)
+1. [21.nov: Sistemi linearnih enačb 2](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2006%20-%20Sistemi%20linearnih%20enačb%202.html)
+1. [28.nov: Interpolacija](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2007%20-%20Interpolacija.html)
+1. [5.dec: Aproksimacija](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2008%20-%20Aproksimacija.html)
+1. [12.dec: Reševanje enačb](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2009%20-%20Reševanje%20enačb.html)
+1. [19.dec: Numerično odvajanje](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2010%20-%20Numerično%20odvajanje.html)
+1. [9.jan: Numerično integriranje](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2011%20-%20Numerično%20integriranje.html)
+1. [16.jan: Numerično reševanje diferencialnih enačb - začetni problem](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2012%20-%20Numerično%20reševanje%20diferencialnih%20enačb%20-%20začetni%20problem.html) in [robni problem](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2013%20-%20Numerično%20reševanje%20diferencialnih%20enačb%20-%20robni%20problem.html)
 1. [Testiranje pravilnosti kode, uporabniški vmesnik](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode,%20uporabniški%20vmesnik.html)
 1. Uvod v Mathematico*
 
