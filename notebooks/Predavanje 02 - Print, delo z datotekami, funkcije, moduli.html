@@ -418,13 +418,13 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#funkcije-v-splosnem">
-     Funkcije v splošnem
+    <a class="reference internal nav-link" href="#delo-z-datotekami">
+     Delo z datotekami
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#delo-z-datotekami">
-     Delo z datotekami
+    <a class="reference internal nav-link" href="#funkcije-v-splosnem">
+     Funkcije v splošnem
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -627,13 +627,13 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#funkcije-v-splosnem">
-     Funkcije v splošnem
+    <a class="reference internal nav-link" href="#delo-z-datotekami">
+     Delo z datotekami
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#delo-z-datotekami">
-     Delo z datotekami
+    <a class="reference internal nav-link" href="#funkcije-v-splosnem">
+     Funkcije v splošnem
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -1030,48 +1030,6 @@ pi = 3.14
 <p>Oblikovanje datuma, ure si lahko pogledate v dodatku spodaj.</p>
 </section>
 </section>
-<section id="funkcije-v-splosnem">
-<h2>Funkcije v splošnem<a class="headerlink" href="#funkcije-v-splosnem" title="Permalink to this headline">#</a></h2>
-<p>V Pythonu je veliko funkcij že vgrajenih (glejte <a class="reference external" href="https://docs.python.org/library/functions.html">dokumentacijo</a>); funkcije pa lahko tudi napišemo sami ali jih uvozimo iz t. i. modulov (zgoraj smo uvozili <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, več si bomo pogledali pozneje).</p>
-<p>Generični primer funkcije je (<a class="reference external" href="https://docs.python.org/tutorial/controlflow.html#defining-functions">dokumentacija</a>):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ime_funkcije</span><span class="p">(</span><span class="n">parametri</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;docstring&#39;&#39;&#39;</span>
-    <span class="p">[</span><span class="n">koda</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">vsebina</span>
-</pre></div>
-</div>
-<p>Pri tem izpostavimo:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">def</span></code> označuje definicijo funkcije,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ime_funkcije</span></code> <strong>imena funkcije po PEP8 pišemo z malo, večbesedna povežemo s podčrtajem</strong>,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">parametri</span></code> parametri funkcije, več bomo povedali spodaj,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">docstring</span></code> (opcijsko) dokumentacija funkcije,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[koda]</span></code> koda funkcije,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> (opcijsko) ukaz za izhod iz funkcije, kar sledi se vrne kot rezultat (če ni <code class="docutils literal notranslate"><span class="pre">return</span></code> ali po return ni ničesar, se vrne <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
-</ul>
-<p>Primer preproste funkcije:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">površina</span><span class="p">(</span><span class="n">dolžina</span><span class="p">,</span> <span class="n">širina</span><span class="p">):</span>
-    <span class="n">S</span> <span class="o">=</span> <span class="n">dolžina</span> <span class="o">*</span> <span class="n">širina</span>
-    <span class="k">return</span> <span class="n">S</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">površina</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="delo-z-datotekami">
 <h2>Delo z datotekami<a class="headerlink" href="#delo-z-datotekami" title="Permalink to this headline">#</a></h2>
 <p>Delo z datotekami je pomembno, saj podatke pogosto shranjujemo v datoteke ali jih beremo iz njih. Datoteko, iz katere želimo brati ali vanjo pisati, moramo najprej odpreti. To izvedemo z ukazom <code class="docutils literal notranslate"><span class="pre">open</span></code> (<a class="reference external" href="https://docs.python.org/library/functions.html#open">dokumentacija</a>):</p>
@@ -1208,6 +1166,48 @@ konec
 </div>
 </div>
 <p>Stavek <code class="docutils literal notranslate"><span class="pre">with</span></code> rezultat funkcije <code class="docutils literal notranslate"><span class="pre">open</span></code> shrani v (<em>as</em>) ime <code class="docutils literal notranslate"><span class="pre">datoteka</span></code>, potem pa za vsako vrstico izpišemo vrednosti. Pri izhodu iz stavka <code class="docutils literal notranslate"><span class="pre">with</span></code> se samodejno pokliče metoda <code class="docutils literal notranslate"><span class="pre">datoteka.close()</span></code>. Stavek <code class="docutils literal notranslate"><span class="pre">with</span></code> nam torej omogoča pisanje pregledne in kompaktne kode.</p>
+</section>
+<section id="funkcije-v-splosnem">
+<h2>Funkcije v splošnem<a class="headerlink" href="#funkcije-v-splosnem" title="Permalink to this headline">#</a></h2>
+<p>V Pythonu je veliko funkcij že vgrajenih (glejte <a class="reference external" href="https://docs.python.org/library/functions.html">dokumentacijo</a>); funkcije pa lahko tudi napišemo sami ali jih uvozimo iz t. i. modulov (zgoraj smo uvozili <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, več si bomo pogledali pozneje).</p>
+<p>Generični primer funkcije je (<a class="reference external" href="https://docs.python.org/tutorial/controlflow.html#defining-functions">dokumentacija</a>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ime_funkcije</span><span class="p">(</span><span class="n">parametri</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;docstring&#39;&#39;&#39;</span>
+    <span class="p">[</span><span class="n">koda</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">vsebina</span>
+</pre></div>
+</div>
+<p>Pri tem izpostavimo:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span></code> označuje definicijo funkcije,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ime_funkcije</span></code> <strong>imena funkcije po PEP8 pišemo z malo, večbesedna povežemo s podčrtajem</strong>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parametri</span></code> parametri funkcije, več bomo povedali spodaj,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docstring</span></code> (opcijsko) dokumentacija funkcije,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[koda]</span></code> koda funkcije,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> (opcijsko) ukaz za izhod iz funkcije, kar sledi se vrne kot rezultat (če ni <code class="docutils literal notranslate"><span class="pre">return</span></code> ali po return ni ničesar, se vrne <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+</ul>
+<p>Primer preproste funkcije:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">površina</span><span class="p">(</span><span class="n">dolžina</span><span class="p">,</span> <span class="n">širina</span><span class="p">):</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">dolžina</span> <span class="o">*</span> <span class="n">širina</span>
+    <span class="k">return</span> <span class="n">S</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">površina</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="posredovanje-argumentov-v-funkcije">
 <h2>Posredovanje argumentov v funkcije<a class="headerlink" href="#posredovanje-argumentov-v-funkcije" title="Permalink to this headline">#</a></h2>
@@ -1814,7 +1814,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>54 ms ± 1.94 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90.8 ms ± 28.6 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1829,7 +1829,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.24 ms ± 147 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.73 ms ± 268 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1928,106 +1928,103 @@ slika:)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[youtube] FIa6VZt-wz4: Downloading webpage
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download] Resuming download at byte 2124641
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download] Resuming download at byte 4066273
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download] Destination: Tesla Cybertruck Glass Demo Gone Wrong!!-FIa6VZt-wz4.mp4
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.0% of 28.91MiB at  6.16KiB/s ETA 01:14:29
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.4% of 28.91MiB at  8.97KiB/s ETA 47:39
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.0% of 28.91MiB at 18.36KiB/s ETA 24:59   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.4% of 28.91MiB at 26.69KiB/s ETA 16:00
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.0% of 28.91MiB at 42.54KiB/s ETA 10:46   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.4% of 28.91MiB at 62.27KiB/s ETA 06:51
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.1% of 28.91MiB at 88.99KiB/s ETA 05:09   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.5% of 28.91MiB at 133.43KiB/s ETA 03:11
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.1% of 28.91MiB at 63.91KiB/s ETA 07:10   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.5% of 28.91MiB at 101.27KiB/s ETA 04:12
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.2% of 28.91MiB at 64.96KiB/s ETA 07:02   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.6% of 28.91MiB at 74.61KiB/s ETA 05:42 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.4% of 28.91MiB at 69.86KiB/s ETA 06:32   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.8% of 28.91MiB at 76.65KiB/s ETA 05:32 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.7% of 28.91MiB at 67.19KiB/s ETA 06:46   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.1% of 28.91MiB at 84.84KiB/s ETA 04:59 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   7.9% of 28.91MiB at 63.99KiB/s ETA 07:06   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.4% of 28.91MiB at 78.62KiB/s ETA 05:22 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   8.1% of 28.91MiB at 68.48KiB/s ETA 06:37   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.7% of 28.91MiB at 76.12KiB/s ETA 05:31 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   8.4% of 28.91MiB at 66.40KiB/s ETA 06:48   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.9% of 28.91MiB at 74.00KiB/s ETA 05:40 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   8.6% of 28.91MiB at 68.54KiB/s ETA 06:34   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  15.1% of 28.91MiB at 74.83KiB/s ETA 05:35 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   8.9% of 28.91MiB at 67.78KiB/s ETA 06:37   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  15.4% of 28.91MiB at 76.80KiB/s ETA 05:26 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   9.2% of 28.91MiB at 68.82KiB/s ETA 06:30   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  15.7% of 28.91MiB at 77.40KiB/s ETA 05:22 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   9.4% of 28.91MiB at 67.97KiB/s ETA 06:34   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  16.0% of 28.91MiB at 76.86KiB/s ETA 05:23 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   9.6% of 28.91MiB at 68.32KiB/s ETA 06:31   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  16.2% of 28.91MiB at 77.87KiB/s ETA 05:18 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]   9.9% of 28.91MiB at 68.62KiB/s ETA 06:28   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  16.5% of 28.91MiB at 77.83KiB/s ETA 05:17 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  10.1% of 28.91MiB at 68.00KiB/s ETA 06:31   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  16.8% of 28.91MiB at 77.66KiB/s ETA 05:17 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  10.3% of 28.91MiB at 68.25KiB/s ETA 06:28   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  17.0% of 28.91MiB at 78.23KiB/s ETA 05:13 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  10.6% of 28.91MiB at 67.73KiB/s ETA 06:30   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  17.3% of 28.91MiB at 75.57KiB/s ETA 05:23 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  10.8% of 28.91MiB at 68.33KiB/s ETA 06:26   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  17.5% of 28.91MiB at 76.11KiB/s ETA 05:20 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  11.1% of 28.91MiB at 68.34KiB/s ETA 06:25   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  17.8% of 28.91MiB at 75.95KiB/s ETA 05:20 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  11.3% of 28.91MiB at 68.02KiB/s ETA 06:26   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  18.1% of 28.91MiB at 76.77KiB/s ETA 05:15 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  11.5% of 28.91MiB at 67.57KiB/s ETA 06:27   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  18.4% of 28.91MiB at 76.98KiB/s ETA 05:13 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  11.7% of 28.91MiB at 68.36KiB/s ETA 06:22   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  18.7% of 28.91MiB at 77.28KiB/s ETA 05:11 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  12.0% of 28.91MiB at 67.79KiB/s ETA 06:24   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  18.9% of 28.91MiB at 77.51KiB/s ETA 05:09 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  12.2% of 28.91MiB at 66.34KiB/s ETA 06:31   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  19.2% of 28.91MiB at 77.14KiB/s ETA 05:10 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  12.4% of 28.91MiB at 67.01KiB/s ETA 06:27   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  19.5% of 28.91MiB at 77.52KiB/s ETA 05:07 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  12.7% of 28.91MiB at 67.86KiB/s ETA 06:21   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  19.7% of 28.91MiB at 77.90KiB/s ETA 05:04 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.0% of 28.91MiB at 67.97KiB/s ETA 06:19   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  20.0% of 28.91MiB at 77.52KiB/s ETA 05:05 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.2% of 28.91MiB at 67.83KiB/s ETA 06:18   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.4% of 28.91MiB at 67.87KiB/s ETA 06:17   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  20.3% of 28.91MiB at 75.69KiB/s ETA 05:11 
 </pre></div>
 </div>
 </div>
