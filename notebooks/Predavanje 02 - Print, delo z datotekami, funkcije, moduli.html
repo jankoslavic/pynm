@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Numpy, matplotlib" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html" />
@@ -1655,6 +1657,9 @@ slika:)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ime ni pričakovanega tipa `str`.
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -1814,7 +1819,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90.8 ms ± 28.6 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>120 ms ± 6.88 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1829,7 +1834,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.73 ms ± 268 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.17 ms ± 247 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1934,97 +1939,228 @@ slika:)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download] Destination: Tesla Cybertruck Glass Demo Gone Wrong!!-FIa6VZt-wz4.mp4
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.4% of 28.91MiB at  8.97KiB/s ETA 47:39
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.4% of 28.91MiB at  6.87KiB/s ETA 01:02:13
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.4% of 28.91MiB at 26.69KiB/s ETA 16:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.4% of 28.91MiB at 20.60KiB/s ETA 20:44   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.4% of 28.91MiB at 62.27KiB/s ETA 06:51
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.4% of 28.91MiB at 47.62KiB/s ETA 08:58   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.5% of 28.91MiB at 133.43KiB/s ETA 03:11
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.5% of 28.91MiB at 101.21KiB/s ETA 04:13  
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.5% of 28.91MiB at 101.27KiB/s ETA 04:12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.5% of 28.91MiB at 91.30KiB/s ETA 04:40   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.6% of 28.91MiB at 74.61KiB/s ETA 05:42 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.6% of 28.91MiB at 73.43KiB/s ETA 05:48   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.8% of 28.91MiB at 76.65KiB/s ETA 05:32 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  13.8% of 28.91MiB at 80.99KiB/s ETA 05:14   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.1% of 28.91MiB at 84.84KiB/s ETA 04:59 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.1% of 28.91MiB at 90.28KiB/s ETA 04:41   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.4% of 28.91MiB at 78.62KiB/s ETA 05:22 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.5% of 28.91MiB at 82.47KiB/s ETA 05:06   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.7% of 28.91MiB at 76.12KiB/s ETA 05:31 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.7% of 28.91MiB at 84.03KiB/s ETA 05:00   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  14.9% of 28.91MiB at 74.00KiB/s ETA 05:40 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  15.1% of 28.91MiB at 83.63KiB/s ETA 05:00   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  15.1% of 28.91MiB at 74.83KiB/s ETA 05:35 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  15.3% of 28.91MiB at 83.83KiB/s ETA 04:59   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  15.4% of 28.91MiB at 76.80KiB/s ETA 05:26 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  15.6% of 28.91MiB at 82.36KiB/s ETA 05:03   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  15.7% of 28.91MiB at 77.40KiB/s ETA 05:22 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  15.9% of 28.91MiB at 83.62KiB/s ETA 04:57   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  16.0% of 28.91MiB at 76.86KiB/s ETA 05:23 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  16.2% of 28.91MiB at 83.77KiB/s ETA 04:56   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  16.2% of 28.91MiB at 77.87KiB/s ETA 05:18 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  16.5% of 28.91MiB at 82.76KiB/s ETA 04:58   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  16.5% of 28.91MiB at 77.83KiB/s ETA 05:17 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  16.7% of 28.91MiB at 83.75KiB/s ETA 04:54   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  16.8% of 28.91MiB at 77.66KiB/s ETA 05:17 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  17.1% of 28.91MiB at 83.99KiB/s ETA 04:52   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  17.0% of 28.91MiB at 78.23KiB/s ETA 05:13 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  17.4% of 28.91MiB at 83.19KiB/s ETA 04:54   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  17.3% of 28.91MiB at 75.57KiB/s ETA 05:23 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  17.6% of 28.91MiB at 83.63KiB/s ETA 04:51   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  17.5% of 28.91MiB at 76.11KiB/s ETA 05:20 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  17.9% of 28.91MiB at 83.51KiB/s ETA 04:51   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  17.8% of 28.91MiB at 75.95KiB/s ETA 05:20 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  18.2% of 28.91MiB at 82.79KiB/s ETA 04:52   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  18.1% of 28.91MiB at 76.77KiB/s ETA 05:15 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  18.4% of 28.91MiB at 83.28KiB/s ETA 04:49   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  18.4% of 28.91MiB at 76.98KiB/s ETA 05:13 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  18.8% of 28.91MiB at 83.17KiB/s ETA 04:49   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  18.7% of 28.91MiB at 77.28KiB/s ETA 05:11 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  19.0% of 28.91MiB at 84.12KiB/s ETA 04:44   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  18.9% of 28.91MiB at 77.51KiB/s ETA 05:09 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  19.4% of 28.91MiB at 82.94KiB/s ETA 04:47   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  19.2% of 28.91MiB at 77.14KiB/s ETA 05:10 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  19.6% of 28.91MiB at 83.41KiB/s ETA 04:45   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  19.5% of 28.91MiB at 77.52KiB/s ETA 05:07 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  20.0% of 28.91MiB at 83.47KiB/s ETA 04:43   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  19.7% of 28.91MiB at 77.90KiB/s ETA 05:04 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  20.2% of 28.91MiB at 83.07KiB/s ETA 04:44   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  20.0% of 28.91MiB at 77.52KiB/s ETA 05:05 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  20.5% of 28.91MiB at 83.51KiB/s ETA 04:41   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  20.3% of 28.91MiB at 75.69KiB/s ETA 05:11 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  20.8% of 28.91MiB at 83.01KiB/s ETA 04:42   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[download]  21.1% of 28.91MiB at 83.38KiB/s ETA 04:40   
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [62],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">yt</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;FIa6VZt-wz4&#39;</span><span class="p">])</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:2068,</span> in <span class="ni">YoutubeDL.download</span><span class="nt">(self, url_list)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2065</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">url_list</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2066</span>     <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2067</span>         <span class="c1"># It also downloads the videos</span>
+<span class="ne">-&gt; </span><span class="mi">2068</span>         <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_info</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2069</span>             <span class="n">url</span><span class="p">,</span> <span class="n">force_generic_extractor</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;force_generic_extractor&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">2070</span>     <span class="k">except</span> <span class="n">UnavailableVideoError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2071</span>         <span class="bp">self</span><span class="o">.</span><span class="n">report_error</span><span class="p">(</span><span class="s1">&#39;unable to download video&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:808,</span> in <span class="ni">YoutubeDL.extract_info</span><span class="nt">(self, url, download, ie_key, extra_info, process, force_generic_extractor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">804</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">ie</span><span class="o">.</span><span class="n">working</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">805</span>         <span class="bp">self</span><span class="o">.</span><span class="n">report_warning</span><span class="p">(</span><span class="s1">&#39;The program functionality for this site has been marked as broken, &#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">806</span>                             <span class="s1">&#39;and will probably not work.&#39;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">808</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__extract_info</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">ie</span><span class="p">,</span> <span class="n">download</span><span class="p">,</span> <span class="n">extra_info</span><span class="p">,</span> <span class="n">process</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">809</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">810</span>     <span class="bp">self</span><span class="o">.</span><span class="n">report_error</span><span class="p">(</span><span class="s1">&#39;no suitable InfoExtractor for URL </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">url</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:815,</span> in <span class="ni">YoutubeDL.__handle_extraction_exceptions.&lt;locals&gt;.wrapper</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">813</span> <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">814</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">815</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">816</span>     <span class="k">except</span> <span class="n">GeoRestrictedError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">817</span>         <span class="n">msg</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">msg</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:847,</span> in <span class="ni">YoutubeDL.__extract_info</span><span class="nt">(self, url, ie, download, extra_info, process)</span>
+<span class="g g-Whitespace">    </span><span class="mi">845</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_default_extra_info</span><span class="p">(</span><span class="n">ie_result</span><span class="p">,</span> <span class="n">ie</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">846</span> <span class="k">if</span> <span class="n">process</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">847</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_ie_result</span><span class="p">(</span><span class="n">ie_result</span><span class="p">,</span> <span class="n">download</span><span class="p">,</span> <span class="n">extra_info</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">848</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">849</span>     <span class="k">return</span> <span class="n">ie_result</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:881,</span> in <span class="ni">YoutubeDL.process_ie_result</span><span class="nt">(self, ie_result, download, extra_info)</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span> <span class="k">if</span> <span class="n">result_type</span> <span class="o">==</span> <span class="s1">&#39;video&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="bp">self</span><span class="o">.</span><span class="n">add_extra_info</span><span class="p">(</span><span class="n">ie_result</span><span class="p">,</span> <span class="n">extra_info</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">881</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_video_result</span><span class="p">(</span><span class="n">ie_result</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="n">download</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span> <span class="k">elif</span> <span class="n">result_type</span> <span class="o">==</span> <span class="s1">&#39;url&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">883</span>     <span class="c1"># We have to add extra_info to the results because it may be</span>
+<span class="g g-Whitespace">    </span><span class="mi">884</span>     <span class="c1"># contained in a playlist</span>
+<span class="g g-Whitespace">    </span><span class="mi">885</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_info</span><span class="p">(</span><span class="n">ie_result</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">886</span>                              <span class="n">download</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">887</span>                              <span class="n">ie_key</span><span class="o">=</span><span class="n">ie_result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ie_key&#39;</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">888</span>                              <span class="n">extra_info</span><span class="o">=</span><span class="n">extra_info</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:1692,</span> in <span class="ni">YoutubeDL.process_video_result</span><span class="nt">(self, info_dict, download)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1690</span>         <span class="n">new_info</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">info_dict</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1691</span>         <span class="n">new_info</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1692</span>         <span class="bp">self</span><span class="o">.</span><span class="n">process_info</span><span class="p">(</span><span class="n">new_info</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1693</span> <span class="c1"># We update the info dict with the best quality format (backwards compatibility)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1694</span> <span class="n">info_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">formats_to_download</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:1976,</span> in <span class="ni">YoutubeDL.process_info</span><span class="nt">(self, info_dict)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1973</span>             <span class="n">info_dict</span><span class="p">[</span><span class="s1">&#39;__files_to_merge&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">downloaded</span>
+<span class="g g-Whitespace">   </span><span class="mi">1974</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1975</span>         <span class="c1"># Just a single file</span>
+<span class="ne">-&gt; </span><span class="mi">1976</span>         <span class="n">success</span> <span class="o">=</span> <span class="n">dl</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">info_dict</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1977</span> <span class="k">except</span> <span class="p">(</span><span class="n">compat_urllib_error</span><span class="o">.</span><span class="n">URLError</span><span class="p">,</span> <span class="n">compat_http_client</span><span class="o">.</span><span class="n">HTTPException</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">error</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1978</span>     <span class="bp">self</span><span class="o">.</span><span class="n">report_error</span><span class="p">(</span><span class="s1">&#39;unable to download video data: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">error_to_compat_str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:1915,</span> in <span class="ni">YoutubeDL.process_info.&lt;locals&gt;.dl</span><span class="nt">(name, info)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1913</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;verbose&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1914</span>     <span class="bp">self</span><span class="o">.</span><span class="n">to_screen</span><span class="p">(</span><span class="s1">&#39;[debug] Invoking downloader on </span><span class="si">%r</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">))</span>
+<span class="ne">-&gt; </span><span class="mi">1915</span> <span class="k">return</span> <span class="n">fd</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">info</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\downloader\common.py:366,</span> in <span class="ni">FileDownloader.download</span><span class="nt">(self, filename, info_dict)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="bp">self</span><span class="o">.</span><span class="n">to_screen</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span>         <span class="s1">&#39;[download] Sleeping </span><span class="si">%s</span><span class="s1"> seconds...&#39;</span> <span class="o">%</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>             <span class="nb">int</span><span class="p">(</span><span class="n">sleep_interval</span><span class="p">)</span> <span class="k">if</span> <span class="n">sleep_interval</span><span class="o">.</span><span class="n">is_integer</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span>             <span class="k">else</span> <span class="s1">&#39;</span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">sleep_interval</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">sleep_interval</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">366</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">real_download</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">info_dict</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\downloader\http.py:352,</span> in <span class="ni">HttpFD.real_download</span><span class="nt">(self, filename, info_dict)</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">351</span>     <span class="n">establish_connection</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">352</span>     <span class="k">return</span> <span class="n">download</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">353</span> <span class="k">except</span> <span class="n">RetryDownload</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span>     <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\downloader\http.py:238,</span> in <span class="ni">HttpFD.real_download.&lt;locals&gt;.download</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span>         <span class="c1"># Download and write</span>
+<span class="ne">--&gt; </span><span class="mi">238</span>         <span class="n">data_block</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">block_size</span> <span class="k">if</span> <span class="n">data_len</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">min</span><span class="p">(</span><span class="n">block_size</span><span class="p">,</span> <span class="n">data_len</span> <span class="o">-</span> <span class="n">byte_counter</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="c1"># socket.timeout is a subclass of socket.error but may not have</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="c1"># errno set</span>
+<span class="g g-Whitespace">    </span><span class="mi">241</span>     <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\http\client.py:465,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">amt</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span>     <span class="c1"># clip the read to the &quot;end of response&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="n">amt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span>
+<span class="ne">--&gt; </span><span class="mi">465</span> <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span> <span class="ow">and</span> <span class="n">amt</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span>     <span class="c1"># Ideally, we would raise IncompleteRead if the content-length</span>
+<span class="g g-Whitespace">    </span><span class="mi">468</span>     <span class="c1"># wasn&#39;t satisfied, but it might break compatibility.</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_close_conn</span><span class="p">()</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\socket.py:705,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">705</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\ssl.py:1274,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1270</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1271</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1272</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+<span class="g g-Whitespace">   </span><span class="mi">1273</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1274</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1275</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1276</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\ssl.py:1130,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1128</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1129</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1130</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1131</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
