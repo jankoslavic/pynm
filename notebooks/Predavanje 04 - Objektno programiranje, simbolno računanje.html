@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -921,6 +919,27 @@ title="Print to PDF"
 <p>Poglejmo si primer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Pravokotnik</span><span class="p">(</span><span class="n">višina</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">set_širina</span><span class="p">(</span><span class="n">širina</span><span class="o">=</span><span class="s1">&#39;7&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">površina</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Pravokotnik</span><span class="p">(</span><span class="n">višina</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">a</span><span class="o">.</span><span class="n">set_širina</span><span class="p">(</span><span class="n">širina</span><span class="o">=</span><span class="s1">&#39;7&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">a</span><span class="o">.</span><span class="n">površina</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;Pravokotnik&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pravokotnik</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Razred za objekt pravokotnik&quot;&quot;&quot;</span>
 
@@ -932,6 +951,8 @@ title="Print to PDF"
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">širina</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">višina</span>
     
     <span class="k">def</span> <span class="nf">set_širina</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">širina</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">širina</span><span class="p">)</span><span class="o">!=</span><span class="nb">int</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;ddd&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">širina</span> <span class="o">=</span> <span class="n">širina</span>
 </pre></div>
 </div>
@@ -1031,12 +1052,28 @@ title="Print to PDF"
 <p>Primer, ko novi razred <code class="docutils literal notranslate"><span class="pre">Kvadrat</span></code> podeduje obstoječega (<code class="docutils literal notranslate"><span class="pre">Pravokotnik</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kv</span> <span class="o">=</span> <span class="n">Kvadrat</span><span class="p">(</span><span class="n">širina</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">kv</span><span class="o">.</span><span class="n">površina</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ne me hecat&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kvadrat</span><span class="p">(</span><span class="n">Pravokotnik</span><span class="p">):</span>
     <span class="s2">&quot;Razred kvadrat&quot;</span>
     
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">širina</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="c1"># kličimo iniciacijo razreda Pravokotnik</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">širina</span><span class="o">=</span><span class="n">širina</span><span class="p">,</span> <span class="n">višina</span><span class="o">=</span><span class="n">širina</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">površina</span><span class="p">(</span><span class="n">karkoli</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Ne me hecat&#39;</span>
         
     <span class="k">def</span> <span class="nf">set_širina</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">širina</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">širina</span> <span class="o">=</span> <span class="n">širina</span>
@@ -1114,7 +1151,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_38_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_38_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_40_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_40_0.png" />
 </div>
 </div>
 <p>Če nekaj takega izvajamo pogosto, potem je bolje, da si pripravimo svoj razred <code class="docutils literal notranslate"><span class="pre">Seznam</span></code>, ki deduje od <code class="docutils literal notranslate"><span class="pre">list</span></code> in dodamo metodo za prikaz <code class="docutils literal notranslate"><span class="pre">nariši</span></code>:</p>
@@ -1179,7 +1216,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_47_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_47_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_49_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_49_0.png" />
 </div>
 </div>
 </section>
@@ -1250,32 +1287,32 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_64_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_64_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_66_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_66_0.png" />
 </div>
 </div>
 <p>Funkcijo lahko tudi poimenujemo; tukaj je primer, kjer uporabimo funkcijo sinus in konstanto <span class="math notranslate nohighlight">\(\pi\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">1.2</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">f</span>
+<span class="n">f</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_66_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_66_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_68_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_68_0.png" />
 </div>
 </div>
 <p>Bralec se morebiti sprašuje, zakaj potrebujemo <em>novo</em> funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.sin()</span></code>, saj imamo vendar že tisto iz paketa <code class="docutils literal notranslate"><span class="pre">numpy</span></code>! Razlog je v tem, da simbolni izračun potrebuje popolnoma drugačno obravnavo kakor numerični in zato je koda zadaj povsem drugačna.</p>
 <p>Če želimo zapisati enačbo, torej da enačimo en izraz z drugim, to naredimo takole:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">enačba</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="mf">0.5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">enačba</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">),</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">enačba</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_69_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_69_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_71_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_71_0.png" />
 </div>
 </div>
 <p>Nedefinirane matematične funkcije zapišemo kot (<a class="reference external" href="https://docs.sympy.org/latest/modules/core.html#sympy.core.function.Function">dokumentacija</a>):</p>
@@ -1294,7 +1331,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_73_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_73_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_75_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_75_0.png" />
 </div>
 </div>
 <p>Pri definiranju spremenljivk lahko dodajamo predpostavke:</p>
@@ -1307,7 +1344,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">is_positive</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">is_positive</span> 
 </pre></div>
 </div>
 </div>
@@ -1325,7 +1362,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_78_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_78_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_80_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_80_0.png" />
 </div>
 </div>
 <p>Z metodo <code class="docutils literal notranslate"><span class="pre">assumptions0</span></code> pogledamo predpostavke objekta:</p>
@@ -1337,24 +1374,24 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;positive&#39;: True,
- &#39;infinite&#39;: False,
- &#39;negative&#39;: False,
- &#39;nonnegative&#39;: True,
+ &#39;extended_nonzero&#39;: True,
+ &#39;extended_nonpositive&#39;: False,
+ &#39;finite&#39;: True,
  &#39;nonpositive&#39;: False,
+ &#39;commutative&#39;: True,
+ &#39;real&#39;: True,
+ &#39;complex&#39;: True,
+ &#39;extended_negative&#39;: False,
+ &#39;nonzero&#39;: True,
+ &#39;hermitian&#39;: True,
+ &#39;nonnegative&#39;: True,
+ &#39;infinite&#39;: False,
  &#39;extended_nonnegative&#39;: True,
  &#39;extended_positive&#39;: True,
- &#39;imaginary&#39;: False,
- &#39;extended_negative&#39;: False,
- &#39;finite&#39;: True,
- &#39;extended_nonpositive&#39;: False,
- &#39;real&#39;: True,
- &#39;extended_nonzero&#39;: True,
- &#39;hermitian&#39;: True,
- &#39;zero&#39;: False,
- &#39;nonzero&#39;: True,
+ &#39;negative&#39;: False,
  &#39;extended_real&#39;: True,
- &#39;complex&#39;: True,
- &#39;commutative&#39;: True}
+ &#39;imaginary&#39;: False,
+ &#39;zero&#39;: False}
 </pre></div>
 </div>
 </div>
@@ -1385,7 +1422,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_85_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_85_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_87_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_87_0.png" />
 </div>
 </div>
 <p>Nekateri izračuni:</p>
@@ -1396,7 +1433,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_87_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_87_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_89_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_89_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1406,7 +1443,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_88_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_88_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_90_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_90_0.png" />
 </div>
 </div>
 </section>
@@ -1420,7 +1457,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_91_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_91_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_93_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_93_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1430,7 +1467,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_92_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_92_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_94_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_94_0.png" />
 </div>
 </div>
 </section>
@@ -1447,7 +1484,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_96_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_96_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_98_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_98_0.png" />
 </div>
 </div>
 <p>Če želimo sedaj namesto <span class="math notranslate nohighlight">\(x\)</span> uporabiti vrednost, npr <code class="docutils literal notranslate"><span class="pre">0.5</span></code>, to naredimo z metodo <code class="docutils literal notranslate"><span class="pre">subs()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/tutorial/basic_operations.html#substitution">dokumentacija</a>):</p>
@@ -1458,7 +1495,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_98_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_98_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_100_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_100_0.png" />
 </div>
 </div>
 <p>Zgoraj smo uporabili konstanto <span class="math notranslate nohighlight">\(\pi\)</span> (<a class="reference external" href="http://docs.sympy.org/latest/modules/core.html?highlight=pi#sympy.core.numbers.Pi">dokumentacija</a>); nekatere tipično uporabljene konstante so:</p>
@@ -1481,7 +1518,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_102_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_102_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_104_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_104_0.png" />
 </div>
 </div>
 <p>Podobno je z <code class="docutils literal notranslate"><span class="pre">N</span></code>:</p>
@@ -1492,7 +1529,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_104_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_104_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_106_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_106_0.png" />
 </div>
 </div>
 <p>Mimogrede smo pokazali, da pod pogojem, da v izrazu nimamo števil s plavajočo vejico, lahko rezultat prikažemo poljubno natančno (<a class="reference external" href="http://docs.sympy.org/latest/modules/evalf.html">dokumentacija</a>).</p>
@@ -1512,7 +1549,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_108_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_108_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_110_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_110_0.png" />
 </div>
 </div>
 <p>ali seznam terk:</p>
@@ -1523,7 +1560,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_110_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_110_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_112_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_112_0.png" />
 </div>
 </div>
 <p>Podobno ima metoda <code class="docutils literal notranslate"><span class="pre">sympy.evalf()</span></code> argument <code class="docutils literal notranslate"><span class="pre">subs</span></code>, ki sprejme slovar zamenjav, primer:</p>
@@ -1534,7 +1571,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_112_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_112_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_114_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_114_0.png" />
 </div>
 </div>
 <p>Metoda <code class="docutils literal notranslate"><span class="pre">sympy.subs</span></code> pa lahko zamenja simbol (ali izraz) tudi z drugim izrazom:</p>
@@ -1545,7 +1582,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_114_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_114_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_116_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_116_0.png" />
 </div>
 </div>
 </section>
@@ -1562,7 +1599,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_117_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_117_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_119_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_119_0.png" />
 </div>
 </div>
 <p>numerično učinkovito izračunali pri tisoč vrednostih <span class="math notranslate nohighlight">\(x\)</span>.</p>
@@ -1605,7 +1642,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>218 ms ± 37.7 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>228 ms ± 40.2 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -1625,7 +1662,17 @@ title="Print to PDF"
 <p>Primer uporabe:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_hitra</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">modules</span><span class="o">=</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_132_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_132_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_hitra</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 <span class="n">y_vec_hitra</span> <span class="o">=</span> <span class="n">f_hitra</span><span class="p">(</span><span class="n">x_vec</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1634,13 +1681,25 @@ title="Print to PDF"
 <p>Preverimo hitrost:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_hitra</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span><span class="mf">3.</span><span class="p">,</span><span class="mf">4.</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3.55975281, 20.22665693, 53.84134754])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it -n100
 <span class="n">f_hitra</span><span class="p">(</span><span class="n">x_vec</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32.9 µs ± 9.69 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24.5 µs ± 5.21 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1697,8 +1756,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_142_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_142_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x1af0bcfcc40&gt;
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_146_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_146_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x1f840c7c8e0&gt;
 </pre></div>
 </div>
 </div>
@@ -1733,7 +1792,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_148_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_148_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_152_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_152_0.png" />
 </div>
 </div>
 <section id="parametricni-izris">
@@ -1763,7 +1822,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_153_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_153_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_157_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_157_0.png" />
 </div>
 </div>
 </section>
@@ -1796,7 +1855,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_158_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_158_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_162_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_162_0.png" />
 </div>
 </div>
 <p>Za ostale prikaze glejte <a class="reference external" href="http://docs.sympy.org/latest/modules/plotting.html#module-sympy.plotting.plot">dokumentacijo</a>.</p>
@@ -1817,7 +1876,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_164_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_164_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_168_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_168_0.png" />
 </div>
 </div>
 <p>in ga sedaj <strong>razčlenimo</strong> (angl. <em>expand</em>, glejte <a class="reference external" href="http://docs.sympy.org/latest/tutorial/simplification.html#expand">dokumentacijo</a>):</p>
@@ -1829,7 +1888,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_166_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_166_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_170_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_170_0.png" />
 </div>
 </div>
 <p>Če želimo pogledati koeficiente pred <code class="docutils literal notranslate"><span class="pre">x</span></code>, to naredimo z metodo <code class="docutils literal notranslate"><span class="pre">coeff()</span></code>:</p>
@@ -1840,7 +1899,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_168_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_168_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_172_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_172_0.png" />
 </div>
 </div>
 <p>Argumenti funkcije definirajo, kakšno razširitev želimo (<a class="reference external" href="http://docs.sympy.org/latest/tutorial/simplification.html#expand">dokumentacija</a>). Če želimo npr. trigonometrično razširitev, potem uporabimo <code class="docutils literal notranslate"><span class="pre">trig=True</span></code>:</p>
@@ -1852,7 +1911,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_170_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_170_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_174_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_174_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1862,7 +1921,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_171_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_171_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_175_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_175_0.png" />
 </div>
 </div>
 <p>Obratna operacija od razčlenitve je <strong>razcepitev</strong> ali <strong>razstavljanje</strong> ali <strong>faktorizacija</strong> (angl. <em>factor</em>, <a class="reference external" href="http://docs.sympy.org/latest/tutorial/simplification.html#factor">dokumentacija</a>):</p>
@@ -1873,7 +1932,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_173_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_173_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_177_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_177_0.png" />
 </div>
 </div>
 <p>Če nas zanimajo posamezni členi, potem to naredimo s funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.factor_list</span></code>:</p>
@@ -1884,7 +1943,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_175_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_175_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_179_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_179_0.png" />
 </div>
 </div>
 </section>
@@ -1906,7 +1965,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_179_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_179_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_183_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_183_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1916,7 +1975,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_180_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_180_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_184_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_184_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1926,7 +1985,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_181_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_181_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_185_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_185_0.png" />
 </div>
 </div>
 </section>
@@ -1942,7 +2001,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_184_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_184_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_188_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_188_0.png" />
 </div>
 </div>
 <p>Razcep na parcialne ulomke (angl. <em>partial fraction decomposition</em>) izvedemo s funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.apart()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/tutorial/simplification.html#apart">dokumentacija</a>):</p>
@@ -1954,7 +2013,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_186_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_186_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_190_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_190_0.png" />
 </div>
 </div>
 <p>in potem ponovno v obratni smeri s funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.together()</span></code>:</p>
@@ -1965,7 +2024,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_188_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_188_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_192_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_192_0.png" />
 </div>
 </div>
 <p>V slednjem primeru pridemo do podobnega rezultata s <code class="docutils literal notranslate"><span class="pre">sympy.simplify()</span></code>:</p>
@@ -1976,7 +2035,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_190_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_190_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_194_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_194_0.png" />
 </div>
 </div>
 </section>
@@ -1993,7 +2052,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_194_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_194_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_198_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_198_0.png" />
 </div>
 </div>
 <p>Odvajajmo ga po <span class="math notranslate nohighlight">\(x\)</span>:</p>
@@ -2004,7 +2063,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_196_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_196_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_200_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_200_0.png" />
 </div>
 </div>
 <p>ali tudi</p>
@@ -2015,7 +2074,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_198_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_198_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_202_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_202_0.png" />
 </div>
 </div>
 <p>Odvode višjega reda definiramo tako:</p>
@@ -2026,7 +2085,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_200_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_200_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_204_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_204_0.png" />
 </div>
 </div>
 <p>ali (isti rezultat malo drugače):</p>
@@ -2037,7 +2096,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_202_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_202_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_206_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_206_0.png" />
 </div>
 </div>
 <p>Odvod po več spremenljivkah <span class="math notranslate nohighlight">\(\frac{d^3f}{dx\,dy^2}\)</span> izvedemo takole:</p>
@@ -2048,7 +2107,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_204_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_204_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_208_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_208_0.png" />
 </div>
 </div>
 </section>
@@ -2069,6 +2128,8 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> in <code class="docutils literal notranslate"><span class="pre">b</span></code> meje integriranja.</p></li>
 </ul>
 <p>Primer nedoločenega integriranja:</p>
+<p>Tole je moja enačba:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle x \cos{\left(y z \right)} + \begin{cases} - \frac{\cos{\left(x y \right)}}{y} &amp; \text{for}\: y \neq 0 \\0 &amp; \text{otherwise} \end{cases}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -2078,7 +2139,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_208_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_208_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_213_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_213_0.png" />
 </div>
 </div>
 <p>Opazimo, da <code class="docutils literal notranslate"><span class="pre">sympy</span></code> pravilno upošteva možnost, da je <span class="math notranslate nohighlight">\(y=0\)</span>.</p>
@@ -2090,7 +2151,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_211_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_211_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_216_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_216_0.png" />
 </div>
 </div>
 <p>Primer, ko so meje v neskončnosti (uporabimo konstanto za neskončnost <code class="docutils literal notranslate"><span class="pre">sympy.oo</span></code>):</p>
@@ -2101,7 +2162,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_213_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_213_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_218_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_218_0.png" />
 </div>
 </div>
 </section>
@@ -2126,7 +2187,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_217_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_217_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_222_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_222_0.png" />
 </div>
 </div>
 <p>Šele ko uporabimo metodo <code class="docutils literal notranslate"><span class="pre">doit_()</span></code>, se izračun izvede:</p>
@@ -2137,7 +2198,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_219_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_219_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_224_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_224_0.png" />
 </div>
 </div>
 <p>Poglejmo še številčni rezultat:</p>
@@ -2148,7 +2209,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_221_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_221_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_226_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_226_0.png" />
 </div>
 </div>
 <p>Produkt vrste definiramo podobno s funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.Product</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/modules/concrete.html#sympy.concrete.products.Product">dokumentacija</a>):</p>
@@ -2169,7 +2230,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_224_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_224_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_229_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_229_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2179,7 +2240,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_225_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_225_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_230_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_230_0.png" />
 </div>
 </div>
 </section>
@@ -2205,7 +2266,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_229_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_229_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_234_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_234_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2215,7 +2276,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_230_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_230_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_235_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_235_0.png" />
 </div>
 </div>
 <p>Za primer si poglejmo uporabo limite na definiciji odvoda:
@@ -2237,7 +2298,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_235_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_235_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_240_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_240_0.png" />
 </div>
 </div>
 <p>Enak rezultat izračunamo tudi z uporabo limite:</p>
@@ -2248,7 +2309,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_237_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_237_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_242_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_242_0.png" />
 </div>
 </div>
 </section>
@@ -2269,13 +2330,23 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 <p>Primer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_246_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_246_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">sym</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># privzete vrednosti x0=0, in n=6</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_241_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_241_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_247_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_247_0.png" />
 </div>
 </div>
 <p>Če želimo definirati drugo izhodišče (<code class="docutils literal notranslate"><span class="pre">x0=2</span></code>) in z več členi (<code class="docutils literal notranslate"><span class="pre">n=8</span></code>), to izvedemo takole:</p>
@@ -2287,7 +2358,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_243_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_243_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_249_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_249_0.png" />
 </div>
 </div>
 <p>Rezultat vključuje tudi red veljavnosti; na ta način lahko kontroliramo veljavnosti izvajanja (<span class="math notranslate nohighlight">\(\mathcal{O}\)</span>).</p>
@@ -2300,7 +2371,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_245_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_245_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_251_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_251_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2311,7 +2382,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_246_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_246_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_252_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_252_0.png" />
 </div>
 </div>
 <p>Izračuna <code class="docutils literal notranslate"><span class="pre">s1</span></code> in <code class="docutils literal notranslate"><span class="pre">s2</span></code> imata različna reda veljavnosti, posledično je produkt:</p>
@@ -2322,7 +2393,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_248_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_248_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_254_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_254_0.png" />
 </div>
 </div>
 <p>natančen samo do reda <span class="math notranslate nohighlight">\(\mathcal{O}(x^2)\)</span>, kar <code class="docutils literal notranslate"><span class="pre">sympy</span></code> ustrezno obravnava:</p>
@@ -2334,7 +2405,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_250_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_250_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_256_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_256_0.png" />
 </div>
 </div>
 <p>Podatek o stopnji veljavnosti lahko odstranimo:</p>
@@ -2345,7 +2416,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_252_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_252_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_258_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_258_0.png" />
 </div>
 </div>
 </section>
@@ -2372,7 +2443,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_259_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_259_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_265_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_265_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2383,7 +2454,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_260_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_260_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_266_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_266_0.png" />
 </div>
 </div>
 <p>Sedaj si poglejmo nekatere tipične operacije; najprej množenje matrike in vektorja:</p>
@@ -2394,7 +2465,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_262_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_262_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_268_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_268_0.png" />
 </div>
 </div>
 <p>Nato skalarni produkt dveh vektorjev (paziti moramo na transponiranje enega od vektorjev):</p>
@@ -2405,7 +2476,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_264_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_264_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_270_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_270_0.png" />
 </div>
 </div>
 <p>Determinanta in inverzna matrika:</p>
@@ -2416,7 +2487,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_266_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_266_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_272_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_272_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2426,7 +2497,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_267_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_267_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_273_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_273_0.png" />
 </div>
 </div>
 <p>Množenje in potenca matrike:</p>
@@ -2437,7 +2508,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_269_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_269_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_275_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_275_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2447,7 +2518,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_270_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_270_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_276_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_276_0.png" />
 </div>
 </div>
 </section>
@@ -2483,7 +2554,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_275_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_275_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_281_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_281_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2493,7 +2564,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_276_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_276_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_282_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_282_0.png" />
 </div>
 </div>
 <p>Prikažimo rešitev (opazimo, da smo našli samo dve od neskončno rešitev):</p>
@@ -2507,7 +2578,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_278_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_278_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_284_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_284_0.png" />
 </div>
 </div>
 <p>Kvadratna enačba:</p>
@@ -2519,7 +2590,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_280_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_280_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_286_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_286_0.png" />
 </div>
 </div>
 <p>Sistem enačb:</p>
@@ -2531,7 +2602,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_282_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_282_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_288_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_288_0.png" />
 </div>
 </div>
 <p>Za nelinearne sisteme pa lahko uporabimo tudi numerično reševanje s funkcijo  <code class="docutils literal notranslate"><span class="pre">sympy.nsolve()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/modules/solvers/solvers.html#sympy.solvers.solvers.nsolve">dokumentacija</a>):</p>
@@ -2557,7 +2628,17 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_285_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_285_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [135],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">eq</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">sol</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">nsolve</span><span class="p">(</span><span class="n">en</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">sol</span>
+
+<span class="ne">NameError</span>: name &#39;en&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -2590,7 +2671,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_293_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_293_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_299_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_299_0.png" />
 </div>
 </div>
 </section>
@@ -2626,7 +2707,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_299_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_299_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_305_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_305_0.png" />
 </div>
 </div>
 <p>Poglejmo lastnosti diferencialne enačbe:</p>
@@ -2637,7 +2718,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_301_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_301_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_307_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_307_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2647,17 +2728,14 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;factorable&#39;,
- &#39;nth_algebraic&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;nth_algebraic&#39;,
  &#39;nth_linear_constant_coeff_undetermined_coefficients&#39;,
  &#39;nth_linear_euler_eq_nonhomogeneous_undetermined_coefficients&#39;,
  &#39;nth_linear_constant_coeff_variation_of_parameters&#39;,
  &#39;nth_linear_euler_eq_nonhomogeneous_variation_of_parameters&#39;,
  &#39;nth_algebraic_Integral&#39;,
  &#39;nth_linear_constant_coeff_variation_of_parameters_Integral&#39;,
- &#39;nth_linear_euler_eq_nonhomogeneous_variation_of_parameters_Integral&#39;,
- &#39;2nd_nonlinear_autonomous_conserved&#39;,
- &#39;2nd_nonlinear_autonomous_conserved_Integral&#39;)
+ &#39;nth_linear_euler_eq_nonhomogeneous_variation_of_parameters_Integral&#39;)
 </pre></div>
 </div>
 </div>
@@ -2675,7 +2753,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_304_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_304_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_310_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_310_0.png" />
 </div>
 </div>
 <p>Desno stran enačbe prikličemo takole (<code class="docutils literal notranslate"><span class="pre">rhs</span></code> - right-hand side):</p>
@@ -2686,7 +2764,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_306_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_306_0.png" />
+<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_312_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_312_0.png" />
 </div>
 </div>
 </section>

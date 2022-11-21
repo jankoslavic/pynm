@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -617,24 +615,41 @@ title="Print to PDF"
 <h1>Razcep LU<a class="headerlink" href="#razcep-lu" title="Permalink to this headline">#</a></h1>
 <p>Za rešitev sistema linearnih enačb zahteva Gaussov eliminacijski postopek najmanjše število računskih operacij.</p>
 <p>V primeru, ko se matrika koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> ne spreminja in se spreminja zgolj vektor konstant <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>, se je mogoče izogniti ponovni Gaussovi eliminaciji matrike koeficientov. Z razcepom matrike <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> lahko pridemo do rešitve z manj računskimi operacijami. V ta namen si bomo pogledali razcep LU!</p>
-<p>Poljubno matriko lahko zapišemo kot produkt dveh matrik:
-$<span class="math notranslate nohighlight">\(\mathbf{A}=\mathbf{B}\,\mathbf{C}.\)</span><span class="math notranslate nohighlight">\(
-Pri tem je možnosti za zapis matrik \)</span>\mathbf{B}<span class="math notranslate nohighlight">\( in \)</span>\mathbf{C}$ neskončno veliko.</p>
+<p>Poljubno matriko lahko zapišemo kot produkt dveh matrik:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{A}=\mathbf{B}\,\mathbf{C}.
+\]</div>
+<p>Pri tem je možnosti za zapis matrik <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> in <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> neskončno veliko.</p>
 <p>Pri razcepu LU zahtevamo, da je matrika <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> spodnje trikotna in matrika <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> zgornje trikotna:</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{A}=\mathbf{L}\,\mathbf{U}.\]</div>
+\[
+\mathbf{A}=\mathbf{L}\,\mathbf{U}.
+\]</div>
 <p>Vsaka od matrik <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> in <span class="math notranslate nohighlight">\(\mathbf{U}\)</span> ima <span class="math notranslate nohighlight">\((n+1)\,n/2\)</span> neničelnih elementov; skupaj torej <span class="math notranslate nohighlight">\(n^2+n\)</span> neznank. Znana matrika <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> definira <span class="math notranslate nohighlight">\(n^2\)</span> vrednosti. Za enolično določitev matrik <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> in <span class="math notranslate nohighlight">\(\mathbf{U}\)</span> torej manjka
 <span class="math notranslate nohighlight">\(n\)</span> enačb. Tukaj bomo uporabili razcep LU, ki dodatne enačbe pridobi s pogojem <span class="math notranslate nohighlight">\(L_{ii}=1\)</span>, <span class="math notranslate nohighlight">\(i=0, 1,\dots,n-1\)</span>.</p>
-<p>Sistem linearnih enačb:
-$<span class="math notranslate nohighlight">\(\mathbf{A}\mathbf{x}=\mathbf{b}\)</span><span class="math notranslate nohighlight">\(
-torej zapišemo z razcepom matrike \)</span>\mathbf{A}<span class="math notranslate nohighlight">\(:
-\)</span><span class="math notranslate nohighlight">\(\mathbf{L}\,\underbrace{\mathbf{U}\,\mathbf{x}}_{\mathbf{y}}=\mathbf{b}.\)</span>$</p>
+<p>Sistem linearnih enačb:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{A}\mathbf{x}=\mathbf{b}
+\]</div>
+<p>torej zapišemo z razcepom matrike <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{L}\,\underbrace{\mathbf{U}\,\mathbf{x}}_{\mathbf{y}}=\mathbf{b}.
+\]</div>
 <p>Do rešitve sistema <span class="math notranslate nohighlight">\(\mathbf{A}\mathbf{x}=\mathbf{b}\)</span> sedaj pridemo tako, da rešimo dva trikotna sistema enačb.</p>
-<p>Najprej izračunamo vektor <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>:
-$<span class="math notranslate nohighlight">\(\mathbf{L}\,\mathbf{y}=\mathbf{b}.\qquad \textrm{(direktno vstavljanje)}\)</span><span class="math notranslate nohighlight">\(
-Ko je \)</span>\mathbf{y}<span class="math notranslate nohighlight">\( izračunan, lahko iz:
-\)</span><span class="math notranslate nohighlight">\(\mathbf{U}\,\mathbf{x}=\mathbf{y}\qquad \textrm{(obratno vstavljanje)}\)</span><span class="math notranslate nohighlight">\(
-določimo \)</span>\mathbf{x}$.</p>
+<p>Najprej izračunamo vektor <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{L}\,\mathbf{y}=\mathbf{b}.\qquad \textrm{(direktno vstavljanje)}
+\]</div>
+<p>Ko je <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> izračunan, lahko iz:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{U}\,\mathbf{x}=\mathbf{y}\qquad \textrm{(obratno vstavljanje)}
+\]</div>
+<p>določimo <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>.</p>
 <section id="razcep-lu-matrike-koeficientov-mathbf-a">
 <h2>Razcep LU matrike koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span><a class="headerlink" href="#razcep-lu-matrike-koeficientov-mathbf-a" title="Permalink to this headline">#</a></h2>
 <p>V nadaljevanju bomo pokazali, da Gaussova eliminacija dejanjsko predstavlja razcep LU matrike koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>. Pri tem si bomo pomagali s simbolnim izračunom, zato uvozimo paket <code class="docutils literal notranslate"><span class="pre">sympy</span></code>:</p>
@@ -911,9 +926,9 @@ Korak: 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_57072\3999418912.py:1: RuntimeWarning: divide by zero encountered in double_scalars
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_26400\3999418912.py:1: RuntimeWarning: divide by zero encountered in double_scalars
   A[1,:] - A[1,0]/A[0,0] * A[0,:]
-C:\Users\janko\AppData\Local\Temp\ipykernel_57072\3999418912.py:1: RuntimeWarning: invalid value encountered in multiply
+C:\Users\janko\AppData\Local\Temp\ipykernel_26400\3999418912.py:1: RuntimeWarning: invalid value encountered in multiply
   A[1,:] - A[1,0]/A[0,0] * A[0,:]
 </pre></div>
 </div>
@@ -925,8 +940,11 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_57072\3999418912.py:1: RuntimeWarnin
 <p>Opazimo, da imamo težavo z deljenjem z 0 v prvi vrstici. Elementarne operacije, ki jih nad sistemom lahko izvajamo, dovoljujejo zamenjavo poljubnih vrstic. Sistem lahko preuredimo tako, da pivotni element ni enak 0. Vseeno se lahko zgodi, da ima pivotni element, s katerim delimo, zelo majhno vrednost <span class="math notranslate nohighlight">\(\varepsilon\)</span>. Ker bi to povečevalo zaokrožitveno napako, izmed vseh vrstic za pivotno vrstico izberemo tisto, katere pivot ima največjo absolutno vrednost.</p>
 <p>Če med Gaussovo eliminacijo zamenjamo vrstice tako, da je pivotni element največji, to imenujemo <strong>pivotiranje vrstic</strong> ali tudi <strong>delno pivotiranje</strong>. Tako dosežemo, da je Gaussova eliminacija numerično stabilna.</p>
 <p>Pokazati je mogoče, da pri reševanju sistema enačb <span class="math notranslate nohighlight">\(\mathbf{A}\,\mathbf{x}=\mathbf{b}\)</span>, pri katerem je matrika <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> diagonalno dominantna, pivotiranje po vrsticah ni potrebno. Reševanje je brez pivotiranja numerično stabilno.</p>
-<p>Pravokotna matrika <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> dimenzije <span class="math notranslate nohighlight">\(n\)</span> je <strong>diagonalno dominantna</strong>, če je absolutna vrednost diagonalnega elementa vsake vrstice večja od vsote absolutnih vrednosti ostalih elementov v vrstici:
-$<span class="math notranslate nohighlight">\(\left|A_{ii}\right|&gt; \sum_{j=1, j\ne i}^n \left|A_{ij}\right|\)</span>$</p>
+<p>Pravokotna matrika <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> dimenzije <span class="math notranslate nohighlight">\(n\)</span> je <strong>diagonalno dominantna</strong>, če je absolutna vrednost diagonalnega elementa vsake vrstice večja od vsote absolutnih vrednosti ostalih elementov v vrstici:</p>
+<div class="math notranslate nohighlight">
+\[
+\left|A_{ii}\right|&gt; \sum_{j=1, j\ne i}^n \left|A_{ij}\right|
+\]</div>
 <section id="gaussova-eliminacija-z-delnim-pivotiranjem">
 <h2>Gaussova eliminacija z delnim pivotiranjem<a class="headerlink" href="#gaussova-eliminacija-z-delnim-pivotiranjem" title="Permalink to this headline">#</a></h2>
 <p>Pogledali si bomo Gaussovo eliminacijo z <strong>delnim pivotiranjem</strong>. Brez delnega pivotiranja v <span class="math notranslate nohighlight">\(i\)</span>-tem koraku eliminacije izberemo vrstico <span class="math notranslate nohighlight">\(i\)</span> za pivotiranje. Pri delnem pivotiranju pa najprej preverimo, ali je <span class="math notranslate nohighlight">\(i\)</span>-ti diagonalni element po absolutni vrednosti največji element v stolpcu <span class="math notranslate nohighlight">\(i\)</span> na ali pod diagonalo; če ni, zamenjamo vrstico <span class="math notranslate nohighlight">\(i\)</span> s
@@ -1160,6 +1178,57 @@ Pivot vrsta: [ 0. -6.  6.]
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [31],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">lu_factor</span><span class="p">,</span> <span class="n">lu_solve</span>
+
+<span class="n">File</span> <span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Programs</span>\<span class="n">Python</span>\<span class="n">Python310</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">scipy</span>\<span class="n">linalg</span>\<span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">216</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span> <span class="kn">from</span> <span class="nn">._procrustes</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span> <span class="kn">from</span> <span class="nn">._decomp_update</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="ne">--&gt; </span><span class="mi">216</span> <span class="kn">from</span> <span class="nn">._sketches</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span> <span class="kn">from</span> <span class="nn">._decomp_cossin</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span> <span class="c1"># Deprecated namespaces, to be removed in v2.0.0</span>
+
+<span class="n">File</span> <span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Programs</span>\<span class="n">Python</span>\<span class="n">Python310</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">scipy</span>\<span class="n">linalg</span>\<span class="n">_sketches</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span> <span class="nn">scipy._lib._util</span> <span class="kn">import</span> <span class="n">check_random_state</span><span class="p">,</span> <span class="n">rng_integers</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="kn">from</span> <span class="nn">scipy.sparse</span> <span class="kn">import</span> <span class="n">csc_matrix</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;clarkson_woodruff_transform&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="k">def</span> <span class="nf">cwt_matrix</span><span class="p">(</span><span class="n">n_rows</span><span class="p">,</span> <span class="n">n_columns</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<span class="n">File</span> <span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Programs</span>\<span class="n">Python</span>\<span class="n">Python310</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">scipy</span>\<span class="n">sparse</span>\<span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">283</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span> <span class="kn">from</span> <span class="nn">._arrays</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span>     <span class="n">csr_array</span><span class="p">,</span> <span class="n">csc_array</span><span class="p">,</span> <span class="n">lil_array</span><span class="p">,</span> <span class="n">dok_array</span><span class="p">,</span> <span class="n">coo_array</span><span class="p">,</span> <span class="n">dia_array</span><span class="p">,</span> <span class="n">bsr_array</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">282</span> <span class="c1"># For backward compatibility with v0.19.</span>
+<span class="ne">--&gt; </span><span class="mi">283</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">csgraph</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span> <span class="c1"># Deprecated namespaces, to be removed in v2.0.0</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span>     <span class="n">base</span><span class="p">,</span> <span class="n">bsr</span><span class="p">,</span> <span class="n">compressed</span><span class="p">,</span> <span class="n">construct</span><span class="p">,</span> <span class="n">coo</span><span class="p">,</span> <span class="n">csc</span><span class="p">,</span> <span class="n">csr</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">dia</span><span class="p">,</span> <span class="n">dok</span><span class="p">,</span> <span class="n">extract</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">288</span>     <span class="n">lil</span><span class="p">,</span> <span class="n">sparsetools</span><span class="p">,</span> <span class="n">sputils</span>
+<span class="g g-Whitespace">    </span><span class="mi">289</span> <span class="p">)</span>
+
+<span class="n">File</span> <span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Programs</span>\<span class="n">Python</span>\<span class="n">Python310</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">scipy</span>\<span class="n">sparse</span>\<span class="n">csgraph</span>\<span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">187</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span> <span class="kn">from</span> <span class="nn">._laplacian</span> <span class="kn">import</span> <span class="n">laplacian</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span> <span class="kn">from</span> <span class="nn">._shortest_path</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span>     <span class="n">shortest_path</span><span class="p">,</span> <span class="n">floyd_warshall</span><span class="p">,</span> <span class="n">dijkstra</span><span class="p">,</span> <span class="n">bellman_ford</span><span class="p">,</span> <span class="n">johnson</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="n">NegativeCycleError</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">187</span> <span class="kn">from</span> <span class="nn">._traversal</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span>     <span class="n">breadth_first_order</span><span class="p">,</span> <span class="n">depth_first_order</span><span class="p">,</span> <span class="n">breadth_first_tree</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span>     <span class="n">depth_first_tree</span><span class="p">,</span> <span class="n">connected_components</span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span> <span class="kn">from</span> <span class="nn">._min_spanning_tree</span> <span class="kn">import</span> <span class="n">minimum_spanning_tree</span>
+<span class="g g-Whitespace">    </span><span class="mi">192</span> <span class="kn">from</span> <span class="nn">._flow</span> <span class="kn">import</span> <span class="n">maximum_flow</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:404,</span> in <span class="ni">parent</span><span class="nt">(self)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 <p>Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.linalg.lu_factor</span></code> (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.lu_factor.html">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lu_factor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">overwrite_a</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">check_finite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1249,15 +1318,18 @@ Pivot vrsta: [ 0. -6.  6.]
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="racunanje-inverzne-matrike">
 <h1>Računanje inverzne matrike<a class="headerlink" href="#racunanje-inverzne-matrike" title="Permalink to this headline">#</a></h1>
-<p>Inverzno matriko h kvadratni matriki <span class="math notranslate nohighlight">\(\textbf{A}\)</span> reda <span class="math notranslate nohighlight">\(n\times n\)</span> označimo z <span class="math notranslate nohighlight">\(\textbf{A}^{-1}\)</span>. Je matrika reda <span class="math notranslate nohighlight">\(n\times n\)</span>,  takšna, da velja
-$<span class="math notranslate nohighlight">\(\mathbf{A}\,\mathbf{A}^{-1} = \mathbf{A}^{-1}\,\mathbf{A} = \mathbf{I},\)</span><span class="math notranslate nohighlight">\(
-kjer je \)</span>\mathbf{I}$ enotska matrika.</p>
-<p>Najbolj učinkovit način za izračun inverzne matrike od matrike <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> je rešitev matrične enačbe:
-$<span class="math notranslate nohighlight">\(\mathbf{A}\,\mathbf{X}=\mathbf{I}.\)</span><span class="math notranslate nohighlight">\( 
-Matrika \)</span>\mathbf{X}<span class="math notranslate nohighlight">\( je inverzna matriki \)</span>\mathbf{A}<span class="math notranslate nohighlight">\(: \)</span>\mathbf{A}^{-1}=\mathbf{X}$.</p>
-<p>Izračun inverzne matrike je torej enak reševanju <span class="math notranslate nohighlight">\(n\)</span> sistemov <span class="math notranslate nohighlight">\(n\)</span> linarnih enačb:
-$<span class="math notranslate nohighlight">\(\mathbf{A}\,\mathbf{x}_i=\mathbf{b}_i,\qquad i=0,1,2,\dots,n-1,\)</span><span class="math notranslate nohighlight">\(
-kjer je \)</span>\mathbf{b}_i<span class="math notranslate nohighlight">\( \)</span>i<span class="math notranslate nohighlight">\(-ti stolpec matrike \)</span>\mathbf{B}=\mathbf{I}$.</p>
+<p>Inverzno matriko h kvadratni matriki <span class="math notranslate nohighlight">\(\textbf{A}\)</span> reda <span class="math notranslate nohighlight">\(n\times n\)</span> označimo z <span class="math notranslate nohighlight">\(\textbf{A}^{-1}\)</span>. Je matrika reda <span class="math notranslate nohighlight">\(n\times n\)</span>,  takšna, da velja</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{A}\,\mathbf{A}^{-1} = \mathbf{A}^{-1}\,\mathbf{A} = \mathbf{I},\]</div>
+<p>kjer je <span class="math notranslate nohighlight">\(\mathbf{I}\)</span> enotska matrika.</p>
+<p>Najbolj učinkovit način za izračun inverzne matrike od matrike <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> je rešitev matrične enačbe:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{A}\,\mathbf{X}=\mathbf{I}.\]</div>
+<p>Matrika <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> je inverzna matriki <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>: <span class="math notranslate nohighlight">\(\mathbf{A}^{-1}=\mathbf{X}\)</span>.</p>
+<p>Izračun inverzne matrike je torej enak reševanju <span class="math notranslate nohighlight">\(n\)</span> sistemov <span class="math notranslate nohighlight">\(n\)</span> linarnih enačb:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{A}\,\mathbf{x}_i=\mathbf{b}_i,\qquad i=0,1,2,\dots,n-1,\]</div>
+<p>kjer je <span class="math notranslate nohighlight">\(\mathbf{b}_i\)</span> <span class="math notranslate nohighlight">\(i\)</span>-ti stolpec matrike <span class="math notranslate nohighlight">\(\mathbf{B}=\mathbf{I}\)</span>.</p>
 <p><em>Numerična zahtevnost:</em> izvedemo razcep LU nad matriko <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> (računski obseg reda <span class="math notranslate nohighlight">\(n^3\)</span>) in nato
 poiščemo rešitev za vsak <span class="math notranslate nohighlight">\(\mathbf{x}_i\)</span> (<span class="math notranslate nohighlight">\(2\,n^2\)</span> računskih operacij za vsak <span class="math notranslate nohighlight">\(i\)</span>). Skupni računski obseg je torej še vedno reda <span class="math notranslate nohighlight">\(n^3\)</span>. (Če bi <span class="math notranslate nohighlight">\(n\)</span> krat izvajali Gaussovo eliminacijo, bi bil obseg reda <span class="math notranslate nohighlight">\(n^4\)</span>.)</p>
 <div class="cell docutils container">
@@ -1311,9 +1383,9 @@ poiščemo rešitev za vsak <span class="math notranslate nohighlight">\(\mathbf
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-1.66666667e-01, -1.66666667e-01,  1.38777878e-17],
-       [-2.77777778e-01, -4.44444444e-01, -3.33333333e-01],
-       [-1.11111111e-01, -4.44444444e-01, -3.33333333e-01]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.16666667, -0.16666667,  0.        ],
+       [-0.27777778, -0.44444444, -0.33333333],
+       [-0.11111111, -0.44444444, -0.33333333]])
 </pre></div>
 </div>
 </div>
@@ -1327,8 +1399,8 @@ poiščemo rešitev za vsak <span class="math notranslate nohighlight">\(\mathbf
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.00000000e+00,  0.00000000e+00,  1.11022302e-16],
-       [ 0.00000000e+00,  1.00000000e+00, -1.11022302e-16],
-       [ 5.55111512e-17,  0.00000000e+00,  1.00000000e+00]])
+       [ 2.22044605e-16,  1.00000000e+00, -1.11022302e-16],
+       [-1.66533454e-16,  0.00000000e+00,  1.00000000e+00]])
 </pre></div>
 </div>
 </div>
@@ -1342,9 +1414,9 @@ poiščemo rešitev za vsak <span class="math notranslate nohighlight">\(\mathbf
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-1.66666667e-01, -1.66666667e-01,  1.38777878e-17],
-       [-2.77777778e-01, -4.44444444e-01, -3.33333333e-01],
-       [-1.11111111e-01, -4.44444444e-01, -3.33333333e-01]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.16666667, -0.16666667,  0.        ],
+       [-0.27777778, -0.44444444, -0.33333333],
+       [-0.11111111, -0.44444444, -0.33333333]])
 </pre></div>
 </div>
 </div>
@@ -1358,9 +1430,9 @@ poiščemo rešitev za vsak <span class="math notranslate nohighlight">\(\mathbf
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-1.66666667e-01, -1.66666667e-01,  1.38777878e-17],
-       [-2.77777778e-01, -4.44444444e-01, -3.33333333e-01],
-       [-1.11111111e-01, -4.44444444e-01, -3.33333333e-01]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.16666667, -0.16666667,  0.        ],
+       [-0.27777778, -0.44444444, -0.33333333],
+       [-0.11111111, -0.44444444, -0.33333333]])
 </pre></div>
 </div>
 </div>
@@ -1383,29 +1455,47 @@ poiščemo rešitev za vsak <span class="math notranslate nohighlight">\(\mathbf
     src="https://www.youtube.com/embed/N6upu99LbfQ"
     frameborder="0"
     allowfullscreen
-
 ></iframe>
 </div></div>
 </div>
 <p>Kadar rešujemo sistem <span class="math notranslate nohighlight">\(m\)</span> linearnih enačbami z <span class="math notranslate nohighlight">\(n\)</span> neznankami ter velja <span class="math notranslate nohighlight">\(m&gt;n\)</span> in je rang <span class="math notranslate nohighlight">\(n+1\)</span>, imamo predoločeni sistem.</p>
-<p>Predoločeni (tudi <strong>nekonsistenten sistem</strong>):
-$<span class="math notranslate nohighlight">\(\mathbf{A}\,\mathbf{x}=\mathbf{b},\)</span>$
-nima rešitve. Lahko pa poiščemo najboljši približek rešitve z metodo <strong>najmanjših kvadratov</strong> .</p>
-<p>Vsota kvadratov preostankov je definirana s skalarnim produktom:
-$<span class="math notranslate nohighlight">\(\left\lVert r\right\rVert ^2=(\mathbf{A}\,\mathbf{x}-\mathbf{b})^T\,(\mathbf{A}\,\mathbf{x}-\mathbf{b})\)</span><span class="math notranslate nohighlight">\(
-kar preoblikujemo v:
-\)</span><span class="math notranslate nohighlight">\(\left\lVert r\right\rVert^2=\mathbf{x}^T\mathbf{A}^T\mathbf{A}\mathbf{x}-2\mathbf{b}^T\mathbf{A}\mathbf{x}+\mathbf{b}^T\mathbf{b},\)</span><span class="math notranslate nohighlight">\(
-kjer smo upoštevali, da zaradi skalarne vrednosti velja: \)</span>\mathbf{b}^T\mathbf{A}\mathbf{x}=(\mathbf{b}^T(\mathbf{A}\mathbf{x}))^T=(\mathbf{A}\mathbf{x})^T\mathbf{b}$.</p>
-<p>Rešitev enačbe, gradient vsote kvadratov, določa njen minimum:
-$<span class="math notranslate nohighlight">\(\nabla_x\,\left\lVert r\right\rVert^2=2\mathbf{A}^T\mathbf{A}\,\mathbf{x}-2\mathbf{A}^T\,\mathbf{b}=0\)</span><span class="math notranslate nohighlight">\(
-Tako iz normalne enačbe:
-\)</span><span class="math notranslate nohighlight">\(\mathbf{A}^T\mathbf{A}\,\mathbf{x}=\mathbf{A}^T\,\mathbf{b}\)</span><span class="math notranslate nohighlight">\(
-določimo najboljši približek rešitve:
-\)</span><span class="math notranslate nohighlight">\(\mathbf{x}=\left(\mathbf{A}^T\mathbf{A}\right)^{-1}\mathbf{A}^T\,\mathbf{b}.\)</span>$</p>
-<p>Z vpeljavo <strong>psevdo inverzne matrike</strong>:
-$<span class="math notranslate nohighlight">\(\mathbf{A}^+=\left(\mathbf{A}^T\mathbf{A}\right)^{-1}\mathbf{A}^T\)</span><span class="math notranslate nohighlight">\(
-k matriki \)</span>\mathbf{A}<span class="math notranslate nohighlight">\( je rešitev predoločenega sistema zapisana:
-\)</span><span class="math notranslate nohighlight">\(\mathbf{x}=\mathbf{A}^+\,\mathbf{b}.\)</span>$</p>
+<p>Predoločeni (tudi <strong>nekonsistenten sistem</strong>):</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{A}\,\mathbf{x}=\mathbf{b},\]</div>
+<p>nima rešitve. Lahko pa poiščemo najboljši približek rešitve z metodo <strong>najmanjših kvadratov</strong> .</p>
+<p>Vsota kvadratov preostankov je definirana s skalarnim produktom:</p>
+<div class="math notranslate nohighlight">
+\[\left\lVert r\right\rVert ^2=(\mathbf{A}\,\mathbf{x}-\mathbf{b})^T\,(\mathbf{A}\,\mathbf{x}-\mathbf{b})\]</div>
+<p>kar preoblikujemo v:</p>
+<div class="math notranslate nohighlight">
+\[\left\lVert r\right\rVert^2=\mathbf{x}^T\mathbf{A}^T\mathbf{A}\mathbf{x}-2\mathbf{b}^T\mathbf{A}\mathbf{x}+\mathbf{b}^T\mathbf{b},
+\]</div>
+<p>kjer smo upoštevali, da zaradi skalarne vrednosti velja: <span class="math notranslate nohighlight">\(\mathbf{b}^T\mathbf{A}\mathbf{x}=(\mathbf{b}^T(\mathbf{A}\mathbf{x}))^T=(\mathbf{A}\mathbf{x})^T\mathbf{b}\)</span>.</p>
+<p>Rešitev enačbe, gradient vsote kvadratov, določa njen minimum:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_x\,\left\lVert r\right\rVert^2=2\mathbf{A}^T\mathbf{A}\,\mathbf{x}-2\mathbf{A}^T\,\mathbf{b}=0
+\]</div>
+<p>Tako iz normalne enačbe:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{A}^T\mathbf{A}\,\mathbf{x}=\mathbf{A}^T\,\mathbf{b}
+\]</div>
+<p>določimo najboljši približek rešitve:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{x}=\left(\mathbf{A}^T\mathbf{A}\right)^{-1}\mathbf{A}^T\,\mathbf{b}.
+\]</div>
+<p>Z vpeljavo <strong>psevdo inverzne matrike</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{A}^+=\left(\mathbf{A}^T\mathbf{A}\right)^{-1}\mathbf{A}^T
+\]</div>
+<p>k matriki <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> je rešitev predoločenega sistema zapisana:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{x}=\mathbf{A}^+\,\mathbf{b}.
+\]</div>
 <p>Zgoraj predstavljen postopek je relativo enostaven, je pa numerično zahteven in lahko v nekaterih primerih slabo pogojen; priporočeno je da v praksi psevdo inverzno matriko izračunamo z uporabo funkcij:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">numpy.linalg.pinv</span></code> iz modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.pinv.html">dokumentacija</a>),</p></li>
@@ -1491,10 +1581,10 @@ k matriki \)</span>\mathbf{A}<span class="math notranslate nohighlight">\( je re
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-8.88178420e-16,  2.77555756e-15,  3.33066907e-16,
-         3.33066907e-15, -1.11022302e-15,  2.99760217e-15],
-       [ 1.22124533e-15, -6.10622664e-16,  4.44089210e-16,
-        -6.66133815e-16,  1.11022302e-15, -1.27675648e-15]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-4.44089210e-16,  2.77555756e-15,  0.00000000e+00,
+         3.33066907e-15, -1.11022302e-15,  2.77555756e-15],
+       [ 9.99200722e-16, -6.66133815e-16,  6.66133815e-16,
+        -6.66133815e-16,  1.11022302e-15, -1.11022302e-15]])
 </pre></div>
 </div>
 </div>
@@ -1510,16 +1600,27 @@ k matriki \)</span>\mathbf{A}<span class="math notranslate nohighlight">\( je re
 </ul>
 <section id="gauss-seidlova-metoda">
 <h2>Gauss-Seidlova metoda<a class="headerlink" href="#gauss-seidlova-metoda" title="Permalink to this headline">#</a></h2>
-<p>V nadaljevanju si bomo pogledali idejo <em>Gauss-Seidelove</em> iterativne metode. Najprej sistem enačb <span class="math notranslate nohighlight">\(\mathbf{A}\,\mathbf{x}=\mathbf{b}\)</span> zapišemo kot:
-$<span class="math notranslate nohighlight">\(\sum_{j=0}^{n-1} A_{ij}x_j=b_i\qquad{}i=0,1,\dots,n-1.\)</span>$</p>
-<p>Predpostavim, da smo v <span class="math notranslate nohighlight">\(k-1\)</span> koraku iterativne metode in so znani približki <span class="math notranslate nohighlight">\(x_{j}^{(k-1)}\)</span> (<span class="math notranslate nohighlight">\(j=0,1,\dots, n-1\)</span>). Iz zgornje vsote izpostavimo člen <span class="math notranslate nohighlight">\(i\)</span>:
-$<span class="math notranslate nohighlight">\(A_{ii}\,x_{i}^{(k-1)} +\sum_{j=0, j\ne i}^{n-1} A_{ij}x_{j}^{(k-1)}=b_i\qquad{}i=0,1,\dots,n-1,\)</span>$</p>
-<p>Ker približki <span class="math notranslate nohighlight">\(x_{j}^{(k-1)}\)</span> ne izpolnjujejo natančno linearnega problema, lahko iz zgornje enačbe določimo nov približek <span class="math notranslate nohighlight">\(x_{i}^{(k)}\)</span>:
-$<span class="math notranslate nohighlight">\(x_{i}^{(k)} =\frac{1}{A_{ii}}\left(b_i-\sum_{j=0}^{i-1} A_{ij}x_{j}^{(k)}-\sum_{j=i+1}^{n-1} A_{ij}x_{j}^{(k-1)}\right)\)</span>$</p>
+<p>V nadaljevanju si bomo pogledali idejo <em>Gauss-Seidelove</em> iterativne metode. Najprej sistem enačb <span class="math notranslate nohighlight">\(\mathbf{A}\,\mathbf{x}=\mathbf{b}\)</span> zapišemo kot:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{j=0}^{n-1} A_{ij}x_j=b_i\qquad{}i=0,1,\dots,n-1.
+\]</div>
+<p>Predpostavim, da smo v <span class="math notranslate nohighlight">\(k-1\)</span> koraku iterativne metode in so znani približki <span class="math notranslate nohighlight">\(x_{j}^{(k-1)}\)</span> (<span class="math notranslate nohighlight">\(j=0,1,\dots, n-1\)</span>). Iz zgornje vsote izpostavimo člen <span class="math notranslate nohighlight">\(i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+A_{ii}\,x_{i}^{(k-1)} +\sum_{j=0, j\ne i}^{n-1} A_{ij}x_{j}^{(k-1)}=b_i\qquad{}i=0,1,\dots,n-1.
+\]</div>
+<p>Ker približki <span class="math notranslate nohighlight">\(x_{j}^{(k-1)}\)</span> ne izpolnjujejo natančno linearnega problema, lahko iz zgornje enačbe določimo nov približek <span class="math notranslate nohighlight">\(x_{i}^{(k)}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x_{i}^{(k)} =\frac{1}{A_{ii}}\left(b_i-\sum_{j=0}^{i-1} A_{ij}x_{j}^{(k)}-\sum_{j=i+1}^{n-1} A_{ij}x_{j}^{(k-1)}\right)
+\]</div>
 <p>Vsoto smo razdelili na dva dela in za izračun <span class="math notranslate nohighlight">\(i\)</span>-tega člena upoštevali v <span class="math notranslate nohighlight">\(k\)</span>-ti iteraciji že določene člene z indeksom manjšim od <span class="math notranslate nohighlight">\(i\)</span>.</p>
 <p>Iterativni pristop prekinemo, ko dosežemo želeno natančnost rešitve <span class="math notranslate nohighlight">\(\epsilon\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[||x_{i}^{(k)}-x_{i}^{(k-1)}||&lt;\epsilon\]</div>
+\[
+||x_{i}^{(k)}-x_{i}^{(k-1)}||&lt;\epsilon
+\]</div>
 </section>
 <section id="zgled">
 <h2>Zgled<a class="headerlink" href="#zgled" title="Permalink to this headline">#</a></h2>
@@ -1570,9 +1671,12 @@ $<span class="math notranslate nohighlight">\(x_{i}^{(k)} =\frac{1}{A_{ii}}\left
 </div>
 </div>
 </div>
-<p>Izvedemo iteracije:
-$<span class="math notranslate nohighlight">\(x_{i}^{(k)} =\frac{1}{A_{ii}}\left(b_i-\sum_{j=0}^{i-1} A_{ij}x_{j}^{(k)}-\sum_{j=i+1}^{n-1} A_{ij}x_{j}^{(k-1)}\right)\)</span>$
-(Ker bomo vrednosti takoj zapisali v <code class="docutils literal notranslate"><span class="pre">x</span></code>, ni treba razbiti vsote na dva dela)</p>
+<p>Izvedemo iteracije:</p>
+<div class="math notranslate nohighlight">
+\[
+x_{i}^{(k)} =\frac{1}{A_{ii}}\left(b_i-\sum_{j=0}^{i-1} A_{ij}x_{j}^{(k)}-\sum_{j=i+1}^{n-1} A_{ij}x_{j}^{(k-1)}\right)
+\]</div>
+<p>(Ker bomo vrednosti takoj zapisali v <code class="docutils literal notranslate"><span class="pre">x</span></code>, ni treba razbiti vsote na dva dela)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
