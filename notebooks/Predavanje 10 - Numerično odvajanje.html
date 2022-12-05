@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -733,8 +731,11 @@ title="Print to PDF"
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="uvod">
 <h1>Uvod<a class="headerlink" href="#uvod" title="Permalink to this headline">#</a></h1>
-<p>Vsako elementarno funkcijo lahko analitično odvajamo. Definicija odvoda je:
-$<span class="math notranslate nohighlight">\(f'(x)=\lim_{\Delta x \rightarrow 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}.\)</span>$</p>
+<p>Vsako elementarno funkcijo lahko analitično odvajamo. Definicija odvoda je:</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x)=\lim_{\Delta x \rightarrow 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}.
+\]</div>
 <p>Neposredna uporaba zgornje enačbe vodi v odštevanje zelo podobnih funkcijskih vrednostih (<span class="math notranslate nohighlight">\(f(x+\Delta x)\)</span>, <span class="math notranslate nohighlight">\(f(x)\)</span>), obremenjenih z zaokrožitveno napako, ki jih delimo z majhno vrednostjo <span class="math notranslate nohighlight">\(\Delta x\)</span>; posledično ima odvod bistveno manj signifikantnih števk kakor pa funkcijske vrednosti. Numeričnemu odvajanju se izognemo, če imamo to možnost; je pa v nekaterih primerih (npr. reševanje diferencialnih enačb) nepogrešljivo orodje!</p>
 <p>Pri numeričnem odvajanju imamo dva, v principu različna, pristopa:</p>
 <ol class="simple">
@@ -744,11 +745,17 @@ $<span class="math notranslate nohighlight">\(f'(x)=\lim_{\Delta x \rightarrow 0
 <p>V okviru tega poglavja se bomo seznanili s tem, kako numerično izračunamo odvod funkcije <span class="math notranslate nohighlight">\(f(x)\)</span>; pri tem so vrednosti funkcije <span class="math notranslate nohighlight">\(f(x)\)</span> podane tabelarično (pari <span class="math notranslate nohighlight">\(x_i\)</span>, <span class="math notranslate nohighlight">\(y_i\)</span>), kakor je prikazano na sliki:
 <img src='./fig/odvajanje_tabela.png' width=400>
 Najprej se bomo osredotočili na ekvidistantno, s korakom <span class="math notranslate nohighlight">\(h\)</span>, razporejene vrednosti <span class="math notranslate nohighlight">\(x_i\)</span>; vrednosti funkcije pa bodo <span class="math notranslate nohighlight">\(y_i=f(x_i)\)</span>.</p>
-<p>Glede na zgornjo definicijo odvoda, bi prvi odvod (za mesto <span class="math notranslate nohighlight">\(i\)</span>) lahko zapisali:
-$<span class="math notranslate nohighlight">\(y_i'=\frac{y_{i+1}-y_{i}}{h},\)</span><span class="math notranslate nohighlight">\(
-kjer je \)</span>h=x_{i+1}-x_{i}<span class="math notranslate nohighlight">\(. S preoblikovanjem enačbe:
-\)</span><span class="math notranslate nohighlight">\(y_i'=-\frac{y_{i}}{h}+\frac{y_{i+1}}{h},\)</span><span class="math notranslate nohighlight">\(
-lahko tudi rečemo, da za prvi odvod funkcije na mestu \)</span>i<span class="math notranslate nohighlight">\(, **utežimo** funkcijsko vrednost pri \)</span>i<span class="math notranslate nohighlight">\( z \)</span>-1/h<span class="math notranslate nohighlight">\( in funkcijsko vrednost pri \)</span>i+1<span class="math notranslate nohighlight">\( z \)</span>+1/h$.</p>
+<p>Glede na zgornjo definicijo odvoda, bi prvi odvod (za mesto <span class="math notranslate nohighlight">\(i\)</span>) lahko zapisali:</p>
+<div class="math notranslate nohighlight">
+\[
+y_i'=\frac{y_{i+1}-y_{i}}{h},
+\]</div>
+<p>kjer je <span class="math notranslate nohighlight">\(h=x_{i+1}-x_{i}\)</span>. S preoblikovanjem enačbe:</p>
+<div class="math notranslate nohighlight">
+\[
+y_i'=-\frac{y_{i}}{h}+\frac{y_{i+1}}{h},
+\]</div>
+<p>lahko tudi rečemo, da za prvi odvod funkcije na mestu <span class="math notranslate nohighlight">\(i\)</span>, <strong>utežimo</strong> funkcijsko vrednost pri <span class="math notranslate nohighlight">\(i\)</span> z <span class="math notranslate nohighlight">\(-1/h\)</span> in funkcijsko vrednost pri <span class="math notranslate nohighlight">\(i+1\)</span> z <span class="math notranslate nohighlight">\(+1/h\)</span>.</p>
 <p>V nadaljevanju si bomo pogledali teoretično ozadje kako določimo ustrezne <strong>uteži</strong> za različne stopnje odvodov, katere možnosti pri tem imamo in kako to vpliva na red natančnosti.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="aproksimacija-prvega-odvoda-po-metodi-koncnih-razlik">
@@ -774,21 +781,30 @@ lahko tudi rečemo, da za prvi odvod funkcije na mestu \)</span>i<span class="ma
 </div></div>
 </div>
 <p>Odvod <span class="math notranslate nohighlight">\(f'(x)\)</span> lahko aproksimiramo na podlagi razvoja Taylorjeve vrste. To metodo imenujemo <strong>metoda končnih razlik</strong> ali tudi <strong>diferenčna metoda</strong>.</p>
-<p>Razvijmo <strong>Taylorjevo vrsto naprej</strong> (naprej, zaradi člena <span class="math notranslate nohighlight">\(+h\)</span>):
-$<span class="math notranslate nohighlight">\(f{\left (x + h \right )} =\sum_{n=0}^{\infty}\frac{h^n}{n!}\frac{d^n}{dx^n}f(x)= f{\left (x \right )} + h\, f'\left (x \right ) + \underbrace{\frac{h^2}{2}\,f''(x)+\cdots}_{\mathcal{O}\left(h^{2}\right)}\)</span>$</p>
+<p>Razvijmo <strong>Taylorjevo vrsto naprej</strong> (naprej, zaradi člena <span class="math notranslate nohighlight">\(+h\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+f{\left (x + h \right )} =\sum_{n=0}^{\infty}\frac{h^n}{n!}\frac{d^n}{dx^n}f(x)= f{\left (x \right )} + h\, f'\left (x \right ) + \underbrace{\frac{h^2}{2}\,f''(x)+\cdots}_{\mathcal{O}\left(h^{2}\right)}
+\]</div>
 <p>Člen <span class="math notranslate nohighlight">\(\mathcal{O}\left(h^{2}\right)\)</span> označuje napako drugega reda. Če iz enačbe izrazimo prvi odvod:</p>
 <div class="math notranslate nohighlight">
-\[f'{\left (x \right )}=\frac{1}{h}\left(f{\left (x + h \right )} - f{\left (x \right )}\right) - \underbrace{\frac{h}{2}\,f''(x)+\cdots}_{\mathcal{O}\left(h^{1}\right)}\]</div>
-<p>Ugotovimo, da lahko ocenimo prvi odvod v točki <span class="math notranslate nohighlight">\(x_i\)</span> (to je: <span class="math notranslate nohighlight">\(f_o'(x_i)\)</span>) na podlagi dveh zaporednih funkcijskih vrednosti:
-$<span class="math notranslate nohighlight">\(f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)\)</span><span class="math notranslate nohighlight">\(
-in pri tem naredimo **napako metode**, ki je prvega reda \)</span>\mathcal{O}\left(h^{1}\right)$.</p>
+\[
+f'{\left (x \right )}=\frac{1}{h}\left(f{\left (x + h \right )} - f{\left (x \right )}\right) - \underbrace{\frac{h}{2}\,f''(x)+\cdots}_{\mathcal{O}\left(h^{1}\right)}
+\]</div>
+<p>Ugotovimo, da lahko ocenimo prvi odvod v točki <span class="math notranslate nohighlight">\(x_i\)</span> (to je: <span class="math notranslate nohighlight">\(f_o'(x_i)\)</span>) na podlagi dveh zaporednih funkcijskih vrednosti:</p>
+<div class="math notranslate nohighlight">
+\[
+f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
+\]</div>
+<p>in pri tem naredimo <strong>napako metode</strong>, ki je prvega reda <span class="math notranslate nohighlight">\(\mathcal{O}\left(h^{1}\right)\)</span>.</p>
 <p>Uporabili smo <span class="math notranslate nohighlight">\(y_i=f(x_i)\)</span> (glejte sliko zgoraj).</p>
 <p>Napaka je:</p>
 <div class="math notranslate nohighlight">
 \[e=-\frac{h}{2}\,f''(\xi),\]</div>
 <p>kjer je <span class="math notranslate nohighlight">\(\xi\)</span> neznana vrednost na intervalu <span class="math notranslate nohighlight">\([x_i, x_{i+1}]\)</span> in smo zanemarili višje člene.</p>
-<p>Velja torej izraz:
-$<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i)+e\)</span>$</p>
+<p>Velja torej izraz:</p>
+<div class="math notranslate nohighlight">
+\[f'(x_i)=f_o'(x_i)+e\]</div>
 <p>Sedaj si poglejmo, kako pridemo do istega rezultata s strojno izpeljavo; najprej uvozimo <code class="docutils literal notranslate"><span class="pre">sympy</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1889,7 +1905,7 @@ $<span class="math notranslate nohighlight">\(\overline{f}'(x_i)=\frac{2^n\,f_o'
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_57456\2765671333.py:1: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_30920\2765671333.py:1: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   def fun(x, dtype=np.float): # funkcija
 </pre></div>
@@ -1989,7 +2005,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_57456\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_30920\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
   f1_ocena = (fun(x+h, dtype=dtype)-fun(x-h,dtype=dtype))/(2*dtype(h))
 </pre></div>
 </div>
