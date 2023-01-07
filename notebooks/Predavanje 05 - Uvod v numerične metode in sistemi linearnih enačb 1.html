@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -695,16 +693,17 @@ izračunu!</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="uvod-v-sisteme-linearnih-enacb">
 <h1>Uvod v sisteme linearnih enačb<a class="headerlink" href="#uvod-v-sisteme-linearnih-enacb" title="Permalink to this headline">#</a></h1>
-<p>Pod zgornjim naslovom razumemo sistem <span class="math notranslate nohighlight">\(m\)</span> linearnih enačb (<span class="math notranslate nohighlight">\(E_i, i=0, 1,\dots,m-1\)</span>) z <span class="math notranslate nohighlight">\(n\)</span> neznankami (<span class="math notranslate nohighlight">\(x_j, j=0,1,\dots,n-1\)</span>):
-$<span class="math notranslate nohighlight">\(
+<p>Pod zgornjim naslovom razumemo sistem <span class="math notranslate nohighlight">\(m\)</span> linearnih enačb (<span class="math notranslate nohighlight">\(E_i, i=0, 1,\dots,m-1\)</span>) z <span class="math notranslate nohighlight">\(n\)</span> neznankami (<span class="math notranslate nohighlight">\(x_j, j=0,1,\dots,n-1\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{array}{rllllllll}
 E_0: &amp; A_{0,0}\,x_0 &amp;+&amp;A_{0,1}\,x_1&amp;+&amp; \ldots &amp;+&amp;A_{0,n-1}\,x_{n-1}&amp;=&amp;b_0\\
 E_1: &amp; A_{1,0}\,x_0 &amp;+&amp;A_{1,1}\,x_1&amp;+&amp; \ldots &amp;+&amp;A_{1,n-1}\,x_{n-1}&amp;=&amp;b_1\\
 \vdots &amp;&amp; &amp;&amp;&amp; \vdots\\
 E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&amp;A_{m-1,n-1}\,x_{n-1}&amp;=&amp;b_{m-1}.\\
 \end{array}
-\)</span><span class="math notranslate nohighlight">\(
-Koeficienti \)</span>A_{i,j}<span class="math notranslate nohighlight">\( in \)</span>b_i$ so znana števila.</p>
+\end{split}\]</div>
+<p>Koeficienti <span class="math notranslate nohighlight">\(A_{i,j}\)</span> in <span class="math notranslate nohighlight">\(b_i\)</span> so znana števila.</p>
 <p>V kolikor je desna stran enaka nič, torej <span class="math notranslate nohighlight">\(b_i=0\)</span>, imenujemo sistem <strong>homogenem</strong>, sicer je sistem <strong>nehomogen</strong>.</p>
 <p>Sistem enačb lahko zapišemo tudi v matrični obliki:</p>
 <div class="math notranslate nohighlight">
@@ -886,10 +885,12 @@ Koeficienti \)</span>A_{i,j}<span class="math notranslate nohighlight">\( in \)<
 <li><p>natanko eno rešitev, ko je število neznank <span class="math notranslate nohighlight">\(n\)</span> enako rangu <span class="math notranslate nohighlight">\(r\)</span> (rešitev je neodvisna) in</p></li>
 <li><p>neskončno mnogo rešitev, ko je rang <span class="math notranslate nohighlight">\(r\)</span> manjši od števila neznank <span class="math notranslate nohighlight">\(n\)</span> (rešitev je odvisna od <span class="math notranslate nohighlight">\(n-r\)</span> parametrov).</p></li>
 </ul>
-<p>Najprej se bomo omejili na sistem <span class="math notranslate nohighlight">\(m=n\)</span> linearnih enačb z <span class="math notranslate nohighlight">\(n\)</span> neznankami ter velja <span class="math notranslate nohighlight">\(n=r\)</span>:
-$<span class="math notranslate nohighlight">\(\mathbf{A}\,\mathbf{x}=\mathbf{b}.\)</span>$</p>
-<p>Pod zgornjimi pogoji je matrika koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> nesingularna (<span class="math notranslate nohighlight">\(|\mathbf{A}|\neq 0\)</span>) in sistem ima rešitev:
-$<span class="math notranslate nohighlight">\(\mathbf{x}=\mathbf{A^{-1}}\,\mathbf{b}.\)</span>$</p>
+<p>Najprej se bomo omejili na sistem <span class="math notranslate nohighlight">\(m=n\)</span> linearnih enačb z <span class="math notranslate nohighlight">\(n\)</span> neznankami ter velja <span class="math notranslate nohighlight">\(n=r\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{A}\,\mathbf{x}=\mathbf{b}.\]</div>
+<p>Pod zgornjimi pogoji je matrika koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> nesingularna (<span class="math notranslate nohighlight">\(|\mathbf{A}|\neq 0\)</span>) in sistem ima rešitev:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}=\mathbf{A^{-1}}\,\mathbf{b}.\]</div>
 <p>Poglejmo si primer sistema, ko so <strong>enačbe linearno odvisne</strong> (<span class="math notranslate nohighlight">\(r&lt;n\)</span>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -968,11 +969,15 @@ $<span class="math notranslate nohighlight">\(\mathbf{x}=\mathbf{A^{-1}}\,\mathb
 <p>Z <span class="math notranslate nohighlight">\(||\textbf{A}||\)</span> je označena <strong>norma</strong> matrike.</p>
 <p>Obstaja več načinov računanja norme; navedimo dve:</p>
 <ul class="simple">
-<li><p>Evklidska norma (tudi Frobeniusova):
-$<span class="math notranslate nohighlight">\(||\textbf{A}||_e=\sqrt{\sum_{i=1}^n\sum_{j=1}^nA_{ij}^2}\)</span>$</p></li>
-<li><p>Norma vsote vrstic ali tudi neskončna norma:
-$<span class="math notranslate nohighlight">\(||\textbf{A}||_{\infty}=\max_{1\le i\le n}\sum_{j=1}^n |A_{ij}|\)</span>$</p></li>
+<li><p>Evklidska norma (tudi Frobeniusova):</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[||\textbf{A}||_e=\sqrt{\sum_{i=1}^n\sum_{j=1}^nA_{ij}^2}\]</div>
+<ul class="simple">
+<li><p>Norma vsote vrstic ali tudi neskončna norma:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[||\textbf{A}||_{\infty}=\max_{1\le i\le n}\sum_{j=1}^n |A_{ij}|\]</div>
 <p>Pogojenost računamo z vgrajeno funkcijo <code class="docutils literal notranslate"><span class="pre">numpy.linalg.cond</span></code> (<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.cond.html">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cond</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
@@ -1138,8 +1143,9 @@ $<span class="math notranslate nohighlight">\(||\textbf{A}||_{\infty}=\max_{1\le
 <h1>Gaussova eliminacija<a class="headerlink" href="#gaussova-eliminacija" title="Permalink to this headline">#</a></h1>
 <p>Predpostavimo, da rešujemo sistem <span class="math notranslate nohighlight">\(n\)</span> enačb za <span class="math notranslate nohighlight">\(n\)</span> neznank, ki ima rang <span class="math notranslate nohighlight">\(n\)</span>. Tak sistem je enolično rešljiv.</p>
 <p>Gaussova eliminacija spada med direktne metode, saj s pomočjo elementarnih vrstičnih operacij sistem enačb prevedemo v zgornje poravnani trikotni sistem (pod glavno diagonalo v razširjeni matriki so vrednosti nič).</p>
-<p>Najprej pripravimo razširjeno matriko koeficientov:
-$<span class="math notranslate nohighlight">\(\begin{bmatrix}
+<p>Najprej pripravimo razširjeno matriko koeficientov:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
 \mathbf{A}|\mathbf{b}
 \end{bmatrix}=
 \left[\begin{array}{cccc|c}
@@ -1148,7 +1154,7 @@ A_{1,0}&amp;A_{1,1}&amp;\cdots &amp; A_{1,n-1} &amp; b_1\\
 \vdots&amp;\vdots&amp;\ddots &amp; \vdots &amp; \vdots\\
 A_{n-1,0}&amp;A_{n-1,1}&amp;\cdots &amp; A_{n-1,n-1} &amp; b_{n-1}\\
 \end{array}\right]
-\)</span>$</p>
+\end{split}\]</div>
 <p>Gaussovo eliminacijo si bomo pogledali na zgledu:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1413,22 +1419,23 @@ Za rešitev <span class="math notranslate nohighlight">\(n\)</span> linearnih en
 <section class="tex2jax_ignore mathjax_ignore" id="nekaj-vprasanj-za-razmislek">
 <h1>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this headline">#</a></h1>
 <ol>
-<li><p>Za sistem enačb:
-$<span class="math notranslate nohighlight">\(
- \mathbf{A}=
- \begin{bmatrix}
- 1 &amp; -4 &amp; 1\\
- 1 &amp; 6 &amp; -1\\
- 2 &amp; -1 &amp; 2
- \end{bmatrix}
- \qquad
- \mathbf{b}=
- \begin{bmatrix}
- 7\\
- 13\\
- 5
- \end{bmatrix}
- \)</span>$</p>
+<li><p>Za sistem enačb:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \mathbf{A}=
+    \begin{bmatrix}
+    1 &amp; -4 &amp; 1\\
+    1 &amp; 6 &amp; -1\\
+    2 &amp; -1 &amp; 2
+    \end{bmatrix}
+    \qquad
+    \mathbf{b}=
+    \begin{bmatrix}
+    7\\
+    13\\
+    5
+    \end{bmatrix}
+    \end{split}\]</div>
 <p>najdite rešitev s pomočjo <code class="docutils literal notranslate"><span class="pre">np.linalg.solve()</span></code>.</p>
 </li>
 <li><p>Za zgoraj definirano matriko <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> določite Evklidsko normo (lastni program).</p></li>
