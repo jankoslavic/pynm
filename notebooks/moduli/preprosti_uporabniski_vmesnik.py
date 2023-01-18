@@ -18,9 +18,9 @@ class MainWindow(QtWidgets.QMainWindow):
         """ Konstruktor MainWindow objekta
         """
         QtWidgets.QMainWindow.__init__(self)
-        self.setWindowTitle('Glavno okno')
-        self.setGeometry(50, 50, 600, 400)
-        # self.showMaximized()
+        self.setWindowTitle('Glavno okno - Jernej')
+        self.setGeometry(0, 0, 1600, 1400)
+        #self.showMaximized()
         self.init_status_bar()
         self.init_central_widget()
         self.init_actions()
@@ -32,7 +32,7 @@ class MainWindow(QtWidgets.QMainWindow):
         """ Function to create Status Bar
         """
         self.status_bar = QtWidgets.QStatusBar()
-        self.status_bar.showMessage('Pripravljen', 2000)
+        self.status_bar.showMessage('Pripravljen', 4000)
         self.setStatusBar(self.status_bar)
 
     def init_central_widget(self):

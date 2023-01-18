@@ -65,7 +65,7 @@ class MainWindow(QtWidgets.QMainWindow):
         v_layout = QtWidgets.QVBoxLayout()
         h_layout = QtWidgets.QHBoxLayout()
         self.function_text = QtWidgets.QTextEdit()
-        self.function_text.setFontPointSize(20)
+        self.function_text.setFontPointSize(10)
         self.function_text.setText('np.sin')
         self.function_text.setMaximumHeight(50)
         self.submit_btn = QtWidgets.QPushButton('Prikaži')
