@@ -1,35 +1,45 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Objektno programiranje, simbolno računanje &#8212; Numerične metode v ekosistemu Pythona</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -37,12 +47,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,65 +60,95 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Predavanje 04 - Objektno programiranje, simbolno računanje';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Uvod v numerične metode in sistemi linearnih enačb" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html" />
     <link rel="prev" title="Numpy, matplotlib" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Numerične metode v ekosistemu Pythona</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -118,789 +158,372 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">
-   Študijski in izpitni red: 2022/23
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">
-   Uvod v Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">
-   Funkcije, izjeme, moduli
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">
-   Numpy, matplotlib
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Objektno programiranje, simbolno računanje
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">
-   Uvod v numerične metode in sistemi linearnih enačb
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">
-   Sistemi linearnih enačb - nadaljevanje
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">
-   Interpolacija
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">
-   Aproksimacija
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">
-   Reševanje enačb
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">
-   Numerično odvajanje
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">
-   Numerično integriranje
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">
-   Numerično reševanje diferencialnih enačb - začetni problem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">
-   Numerično reševanje diferencialnih enačb - robni problem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">
-   Testiranje pravilnosti kode, uporabniški vmesnik
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2022/23</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Numpy, matplotlib</a></li>
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Objektno programiranje, simbolno računanje</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">Uvod v numerične metode in sistemi linearnih enačb</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">Sistemi linearnih enačb - nadaljevanje</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">Interpolacija</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">Aproksimacija</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">Reševanje enačb</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">Numerično odvajanje</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">Numerično integriranje</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">Numerično reševanje diferencialnih enačb - začetni problem</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">Numerično reševanje diferencialnih enačb - robni problem</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">Testiranje pravilnosti kode, uporabniški vmesnik</a></li>
+
+
+
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/jankoslavic/pynm/master?urlpath=tree/notebooks/notebooks/Predavanje 04 - Objektno programiranje, simbolno računanje.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jankoslavic/pynm" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jankoslavic/pynm/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Predavanje 04 - Objektno programiranje, simbolno računanje.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/Predavanje 04 - Objektno programiranje, simbolno računanje.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/jankoslavic/pynm"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/jankoslavic/pynm/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Predavanje 04 - Objektno programiranje, simbolno računanje.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/notebooks/Predavanje 04 - Objektno programiranje, simbolno računanje.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Objektno programiranje, simbolno računanje
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objektno-programiranje">
-   Objektno programiranje
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dedovanje">
-     Dedovanje
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#primer-dedovanja-razreda-list-seznam">
-       Primer dedovanja razreda
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         list
-        </span>
-       </code>
-       (seznam)
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simbolno-racunanje-s-sympy">
-   Simbolno računanje s
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     SymPy
-    </span>
-   </code>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#definiranje-spremenljivk-in-numericni-izracun">
-     Definiranje spremenljivk in numerični izračun
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#racionalna-stevila">
-       Racionalna števila
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#kompleksna-stevila">
-       Kompleksna števila
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numericni-izracun">
-       Numerični izračun
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sympy-in-numpy">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       SymPy
-      </span>
-     </code>
-     in
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       NumPy
-      </span>
-     </code>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#uporaba-funkcije-lambdify">
-       Uporaba funkcije
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         lambdify
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graficni-prikaz">
-     Grafični prikaz
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#parametricni-izris">
-       Parametrični izris
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#izris-v-prostoru">
-       Izris v prostoru
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#algebra">
-     Algebra
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#uporaba-expand-in-factor">
-       Uporaba
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         expand
-        </span>
-       </code>
-       in
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         factor
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#poenostavljanje-izrazov-s-simplify">
-       Poenostavljanje izrazov s
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         simplify
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#uporaba-apart-in-together">
-     Uporaba
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       apart
-      </span>
-     </code>
-     in
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       together
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#odvajanje">
-     Odvajanje
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integriranje">
-     Integriranje
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vsota-in-produkt-vrste">
-     Vsota in produkt vrste
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#limitni-racun">
-     Limitni račun
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taylorjeve-vrste">
-     Taylorjeve vrste
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#linearna-algebra">
-     Linearna algebra
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#matrike-in-vektorji">
-       Matrike in vektorji
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#resevanje-enacb">
-     Reševanje enačb
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#resevanje-diferencialnih-enacb">
-     Reševanje diferencialnih enačb
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#nedefinirane-funkcije">
-       Nedefinirane funkcije
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#diferencialne-enacbe">
-       Diferencialne enačbe
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">
-   Nekaj vprašanj za razmislek!
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dodatno">
-   Dodatno
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sympy-mechanics">
-     sympy.mechanics
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Objektno programiranje, simbolno računanje</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Objektno programiranje, simbolno računanje
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objektno-programiranje">
-   Objektno programiranje
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dedovanje">
-     Dedovanje
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#primer-dedovanja-razreda-list-seznam">
-       Primer dedovanja razreda
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         list
-        </span>
-       </code>
-       (seznam)
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simbolno-racunanje-s-sympy">
-   Simbolno računanje s
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     SymPy
-    </span>
-   </code>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#definiranje-spremenljivk-in-numericni-izracun">
-     Definiranje spremenljivk in numerični izračun
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#racionalna-stevila">
-       Racionalna števila
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#kompleksna-stevila">
-       Kompleksna števila
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numericni-izracun">
-       Numerični izračun
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sympy-in-numpy">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       SymPy
-      </span>
-     </code>
-     in
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       NumPy
-      </span>
-     </code>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#uporaba-funkcije-lambdify">
-       Uporaba funkcije
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         lambdify
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graficni-prikaz">
-     Grafični prikaz
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#parametricni-izris">
-       Parametrični izris
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#izris-v-prostoru">
-       Izris v prostoru
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#algebra">
-     Algebra
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#uporaba-expand-in-factor">
-       Uporaba
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         expand
-        </span>
-       </code>
-       in
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         factor
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#poenostavljanje-izrazov-s-simplify">
-       Poenostavljanje izrazov s
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         simplify
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#uporaba-apart-in-together">
-     Uporaba
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       apart
-      </span>
-     </code>
-     in
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       together
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#odvajanje">
-     Odvajanje
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integriranje">
-     Integriranje
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vsota-in-produkt-vrste">
-     Vsota in produkt vrste
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#limitni-racun">
-     Limitni račun
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taylorjeve-vrste">
-     Taylorjeve vrste
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#linearna-algebra">
-     Linearna algebra
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#matrike-in-vektorji">
-       Matrike in vektorji
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#resevanje-enacb">
-     Reševanje enačb
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#resevanje-diferencialnih-enacb">
-     Reševanje diferencialnih enačb
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#nedefinirane-funkcije">
-       Nedefinirane funkcije
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#diferencialne-enacbe">
-       Diferencialne enačbe
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">
-   Nekaj vprašanj za razmislek!
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dodatno">
-   Dodatno
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sympy-mechanics">
-     sympy.mechanics
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Objektno programiranje, simbolno računanje</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Objektno programiranje, simbolno računanje</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#objektno-programiranje">Objektno programiranje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dedovanje">Dedovanje</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-dedovanja-razreda-list-seznam">Primer dedovanja razreda <code class="docutils literal notranslate"><span class="pre">list</span></code> (seznam)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simbolno-racunanje-s-sympy">Simbolno računanje s <code class="docutils literal notranslate"><span class="pre">SymPy</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definiranje-spremenljivk-in-numericni-izracun">Definiranje spremenljivk in numerični izračun</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#racionalna-stevila">Racionalna števila</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kompleksna-stevila">Kompleksna števila</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numericni-izracun">Numerični izračun</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sympy-in-numpy"><code class="docutils literal notranslate"><span class="pre">SymPy</span></code> in <code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-funkcije-lambdify">Uporaba funkcije <code class="docutils literal notranslate"><span class="pre">lambdify</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficni-prikaz">Grafični prikaz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametricni-izris">Parametrični izris</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#izris-v-prostoru">Izris v prostoru</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra">Algebra</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-expand-in-factor">Uporaba <code class="docutils literal notranslate"><span class="pre">expand</span></code> in <code class="docutils literal notranslate"><span class="pre">factor</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poenostavljanje-izrazov-s-simplify">Poenostavljanje izrazov s <code class="docutils literal notranslate"><span class="pre">simplify</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-apart-in-together">Uporaba <code class="docutils literal notranslate"><span class="pre">apart</span></code> in <code class="docutils literal notranslate"><span class="pre">together</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#odvajanje">Odvajanje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integriranje">Integriranje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vsota-in-produkt-vrste">Vsota in produkt vrste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitni-racun">Limitni račun</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taylorjeve-vrste">Taylorjeve vrste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearna-algebra">Linearna algebra</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrike-in-vektorji">Matrike in vektorji</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resevanje-enacb">Reševanje enačb</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resevanje-diferencialnih-enacb">Reševanje diferencialnih enačb</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nedefinirane-funkcije">Nedefinirane funkcije</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferencialne-enacbe">Diferencialne enačbe</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sympy-mechanics">sympy.mechanics</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="objektno-programiranje-simbolno-racunanje">
 <h1>Objektno programiranje, simbolno računanje<a class="headerlink" href="#objektno-programiranje-simbolno-racunanje" title="Permalink to this headline">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="objektno-programiranje">
 <h1>Objektno programiranje<a class="headerlink" href="#objektno-programiranje" title="Permalink to this headline">#</a></h1>
 <p>Pri programiranju poznamo različne pristope, dokumentacija Python-a (<a class="reference external" href="https://docs.python.org/howto/functional.html">docs.python.org</a>) omenja npr:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><strong>proceduralni</strong>: seznam navodil, kaj je treba izvesti (npr.: <code class="docutils literal notranslate"><span class="pre">C,</span> <span class="pre">Pascal</span></code>)</p></li>
 <li><p><strong>deklerativni</strong>: opišemo kaj želimo, programski jezik pa izvede (npr., <code class="docutils literal notranslate"><span class="pre">SQL</span></code>)</p></li>
 <li><p><strong>funkcijski</strong>: programiranje temelji na funkcijah (npr.: <code class="docutils literal notranslate"><span class="pre">Haskell</span></code> )</p></li>
@@ -1114,7 +737,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_38_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_38_0.png" />
+<img alt="../_images/f8b4da503a78c90986411b7602123ac579aa1c77db648a37c723f4a82ebc2b7f.png" src="../_images/f8b4da503a78c90986411b7602123ac579aa1c77db648a37c723f4a82ebc2b7f.png" />
 </div>
 </div>
 <p>Če nekaj takega izvajamo pogosto, potem je bolje, da si pripravimo svoj razred <code class="docutils literal notranslate"><span class="pre">Seznam</span></code>, ki deduje od <code class="docutils literal notranslate"><span class="pre">list</span></code> in dodamo metodo za prikaz <code class="docutils literal notranslate"><span class="pre">nariši</span></code>:</p>
@@ -1179,7 +802,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_47_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_47_0.png" />
+<img alt="../_images/dee1b4137353c68df0e3596a6c3257e86dbacd02294fb6a58b7a5b3cfb008b1a.png" src="../_images/dee1b4137353c68df0e3596a6c3257e86dbacd02294fb6a58b7a5b3cfb008b1a.png" />
 </div>
 </div>
 </section>
@@ -1250,7 +873,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_64_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_64_0.png" />
+<img alt="../_images/0a58b752f319b2638f2e0923cdaee2e59539ac0ed3fd94aa16a3177f6de716f0.png" src="../_images/0a58b752f319b2638f2e0923cdaee2e59539ac0ed3fd94aa16a3177f6de716f0.png" />
 </div>
 </div>
 <p>Funkcijo lahko tudi poimenujemo; tukaj je primer, kjer uporabimo funkcijo sinus in konstanto <span class="math notranslate nohighlight">\(\pi\)</span>:</p>
@@ -1262,7 +885,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_66_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_66_0.png" />
+<img alt="../_images/cfcc51e0412854e8546efdf4bb8cd925db42e52b8047decee6e23824ae68aa62.png" src="../_images/cfcc51e0412854e8546efdf4bb8cd925db42e52b8047decee6e23824ae68aa62.png" />
 </div>
 </div>
 <p>Bralec se morebiti sprašuje, zakaj potrebujemo <em>novo</em> funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.sin()</span></code>, saj imamo vendar že tisto iz paketa <code class="docutils literal notranslate"><span class="pre">numpy</span></code>! Razlog je v tem, da simbolni izračun potrebuje popolnoma drugačno obravnavo kakor numerični in zato je koda zadaj povsem drugačna.</p>
@@ -1275,7 +898,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_69_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_69_0.png" />
+<img alt="../_images/777022286609fdca993fe6da9d1b72dda54856d502a4362bad39de429a43bbed.png" src="../_images/777022286609fdca993fe6da9d1b72dda54856d502a4362bad39de429a43bbed.png" />
 </div>
 </div>
 <p>Nedefinirane matematične funkcije zapišemo kot (<a class="reference external" href="https://docs.sympy.org/latest/modules/core.html#sympy.core.function.Function">dokumentacija</a>):</p>
@@ -1294,7 +917,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_73_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_73_0.png" />
+<img alt="../_images/46ab96b323b3800edfe8945835e11774775d2aecb673078d1da11f27c953b53a.png" src="../_images/46ab96b323b3800edfe8945835e11774775d2aecb673078d1da11f27c953b53a.png" />
 </div>
 </div>
 <p>Pri definiranju spremenljivk lahko dodajamo predpostavke:</p>
@@ -1325,7 +948,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_78_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_78_0.png" />
+<img alt="../_images/a62f1bf0f037de5a14e602497a42670c302da5db132010539cd91d2d25add5c6.png" src="../_images/a62f1bf0f037de5a14e602497a42670c302da5db132010539cd91d2d25add5c6.png" />
 </div>
 </div>
 <p>Z metodo <code class="docutils literal notranslate"><span class="pre">assumptions0</span></code> pogledamo predpostavke objekta:</p>
@@ -1337,23 +960,23 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;positive&#39;: True,
- &#39;extended_nonpositive&#39;: False,
- &#39;negative&#39;: False,
- &#39;commutative&#39;: True,
- &#39;zero&#39;: False,
- &#39;extended_nonzero&#39;: True,
- &#39;extended_negative&#39;: False,
- &#39;real&#39;: True,
- &#39;hermitian&#39;: True,
- &#39;nonpositive&#39;: False,
  &#39;extended_nonnegative&#39;: True,
  &#39;extended_positive&#39;: True,
+ &#39;commutative&#39;: True,
+ &#39;extended_nonzero&#39;: True,
  &#39;nonzero&#39;: True,
- &#39;infinite&#39;: False,
- &#39;complex&#39;: True,
+ &#39;extended_negative&#39;: False,
+ &#39;negative&#39;: False,
  &#39;nonnegative&#39;: True,
- &#39;imaginary&#39;: False,
+ &#39;nonpositive&#39;: False,
+ &#39;complex&#39;: True,
+ &#39;extended_nonpositive&#39;: False,
+ &#39;hermitian&#39;: True,
+ &#39;infinite&#39;: False,
  &#39;extended_real&#39;: True,
+ &#39;zero&#39;: False,
+ &#39;imaginary&#39;: False,
+ &#39;real&#39;: True,
  &#39;finite&#39;: True}
 </pre></div>
 </div>
@@ -1385,7 +1008,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_85_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_85_0.png" />
+<img alt="../_images/2ca5a7b1da0abcb8a66ef64f5a9e3514537ecc465bab19847940ee9d78c1e2e3.png" src="../_images/2ca5a7b1da0abcb8a66ef64f5a9e3514537ecc465bab19847940ee9d78c1e2e3.png" />
 </div>
 </div>
 <p>Nekateri izračuni:</p>
@@ -1396,7 +1019,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_87_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_87_0.png" />
+<img alt="../_images/3e760233670809c9a0cf4c0a69ab2c3370ef48b0881970894778a077d95dcb6f.png" src="../_images/3e760233670809c9a0cf4c0a69ab2c3370ef48b0881970894778a077d95dcb6f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1406,7 +1029,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_88_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_88_0.png" />
+<img alt="../_images/fd756d14a146a98aa8b0ae85e116f62254d37bd387ff9cbe78351c3370315ad8.png" src="../_images/fd756d14a146a98aa8b0ae85e116f62254d37bd387ff9cbe78351c3370315ad8.png" />
 </div>
 </div>
 </section>
@@ -1420,7 +1043,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_91_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_91_0.png" />
+<img alt="../_images/7f73cfcbe4fc082bfddd0a93d02f113cfa9740ac742f3b14fc31c9deade4ad18.png" src="../_images/7f73cfcbe4fc082bfddd0a93d02f113cfa9740ac742f3b14fc31c9deade4ad18.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1430,7 +1053,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_92_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_92_0.png" />
+<img alt="../_images/d42ce757c38d93f08ca9ba5ba51bc1dbb529ac27fbdf9ae82e39d2572c183f67.png" src="../_images/d42ce757c38d93f08ca9ba5ba51bc1dbb529ac27fbdf9ae82e39d2572c183f67.png" />
 </div>
 </div>
 </section>
@@ -1447,7 +1070,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_96_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_96_0.png" />
+<img alt="../_images/a2626477b6f1da44add829001c3a0c9b0cf48b39fef1f16124a2089287d944ae.png" src="../_images/a2626477b6f1da44add829001c3a0c9b0cf48b39fef1f16124a2089287d944ae.png" />
 </div>
 </div>
 <p>Če želimo sedaj namesto <span class="math notranslate nohighlight">\(x\)</span> uporabiti vrednost, npr <code class="docutils literal notranslate"><span class="pre">0.5</span></code>, to naredimo z metodo <code class="docutils literal notranslate"><span class="pre">subs()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/tutorial/basic_operations.html#substitution">dokumentacija</a>):</p>
@@ -1458,7 +1081,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_98_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_98_0.png" />
+<img alt="../_images/1452e1e4d1e82556721f6d08e442268ffb64fb788cc0c270671aa8ee09383c96.png" src="../_images/1452e1e4d1e82556721f6d08e442268ffb64fb788cc0c270671aa8ee09383c96.png" />
 </div>
 </div>
 <p>Zgoraj smo uporabili konstanto <span class="math notranslate nohighlight">\(\pi\)</span> (<a class="reference external" href="http://docs.sympy.org/latest/modules/core.html?highlight=pi#sympy.core.numbers.Pi">dokumentacija</a>); nekatere tipično uporabljene konstante so:</p>
@@ -1481,7 +1104,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_102_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_102_0.png" />
+<img alt="../_images/859af3bf52cefb83321b9b1092e7e8bf8151cc3bc8bc532e26d9fbe1815908ce.png" src="../_images/859af3bf52cefb83321b9b1092e7e8bf8151cc3bc8bc532e26d9fbe1815908ce.png" />
 </div>
 </div>
 <p>Podobno je z <code class="docutils literal notranslate"><span class="pre">N</span></code>:</p>
@@ -1492,7 +1115,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_104_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_104_0.png" />
+<img alt="../_images/859af3bf52cefb83321b9b1092e7e8bf8151cc3bc8bc532e26d9fbe1815908ce.png" src="../_images/859af3bf52cefb83321b9b1092e7e8bf8151cc3bc8bc532e26d9fbe1815908ce.png" />
 </div>
 </div>
 <p>Mimogrede smo pokazali, da pod pogojem, da v izrazu nimamo števil s plavajočo vejico, lahko rezultat prikažemo poljubno natančno (<a class="reference external" href="http://docs.sympy.org/latest/modules/evalf.html">dokumentacija</a>).</p>
@@ -1512,7 +1135,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_108_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_108_0.png" />
+<img alt="../_images/9166a76e4c7188a60c99c6c89cc0834bef1c30309bc070a9db6f09d3cf3f7823.png" src="../_images/9166a76e4c7188a60c99c6c89cc0834bef1c30309bc070a9db6f09d3cf3f7823.png" />
 </div>
 </div>
 <p>ali seznam terk:</p>
@@ -1523,7 +1146,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_110_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_110_0.png" />
+<img alt="../_images/9166a76e4c7188a60c99c6c89cc0834bef1c30309bc070a9db6f09d3cf3f7823.png" src="../_images/9166a76e4c7188a60c99c6c89cc0834bef1c30309bc070a9db6f09d3cf3f7823.png" />
 </div>
 </div>
 <p>Podobno ima metoda <code class="docutils literal notranslate"><span class="pre">sympy.evalf()</span></code> argument <code class="docutils literal notranslate"><span class="pre">subs</span></code>, ki sprejme slovar zamenjav, primer:</p>
@@ -1534,7 +1157,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_112_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_112_0.png" />
+<img alt="../_images/b51127934d3ba17a39febdbc570fbb6a30142bcf157b4c479e692177012146ee.png" src="../_images/b51127934d3ba17a39febdbc570fbb6a30142bcf157b4c479e692177012146ee.png" />
 </div>
 </div>
 <p>Metoda <code class="docutils literal notranslate"><span class="pre">sympy.subs</span></code> pa lahko zamenja simbol (ali izraz) tudi z drugim izrazom:</p>
@@ -1545,7 +1168,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_114_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_114_0.png" />
+<img alt="../_images/8a4e4235f4eeb3ac8d36895aed005f6e891473586120516a4b052364d8e22920.png" src="../_images/8a4e4235f4eeb3ac8d36895aed005f6e891473586120516a4b052364d8e22920.png" />
 </div>
 </div>
 </section>
@@ -1562,7 +1185,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_117_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_117_0.png" />
+<img alt="../_images/d9a678613784e35364d07be8a03846a09e7f062d51612e636b2d8dfaf26a1fb8.png" src="../_images/d9a678613784e35364d07be8a03846a09e7f062d51612e636b2d8dfaf26a1fb8.png" />
 </div>
 </div>
 <p>numerično učinkovito izračunali pri tisoč vrednostih <span class="math notranslate nohighlight">\(x\)</span>.</p>
@@ -1605,7 +1228,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>324 ms ± 32 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>124 ms ± 10.1 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -1640,7 +1263,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32.3 µs ± 3.39 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27.5 µs ± 3.93 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1697,8 +1320,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_142_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_142_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x25712e1a200&gt;
+<img alt="../_images/af6c1a380807271974d733a1f6e2044b5fb17d9e6eb1c5d2e5f685ed8360b0ea.png" src="../_images/af6c1a380807271974d733a1f6e2044b5fb17d9e6eb1c5d2e5f685ed8360b0ea.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x13ece19f790&gt;
 </pre></div>
 </div>
 </div>
@@ -1733,7 +1356,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_148_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_148_0.png" />
+<img alt="../_images/311f4944ce11a2e58c5f4575140f96bf30ac3de1349e7cc7f79510bdcbfa0c97.png" src="../_images/311f4944ce11a2e58c5f4575140f96bf30ac3de1349e7cc7f79510bdcbfa0c97.png" />
 </div>
 </div>
 <section id="parametricni-izris">
@@ -1763,7 +1386,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_153_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_153_0.png" />
+<img alt="../_images/9c913443231bee895174a3c65fe8692ec36474162526ae1b64cd5abcb2d97c16.png" src="../_images/9c913443231bee895174a3c65fe8692ec36474162526ae1b64cd5abcb2d97c16.png" />
 </div>
 </div>
 </section>
@@ -1796,7 +1419,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_158_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_158_0.png" />
+<img alt="../_images/198101393475e15489398c8a947f1d05973d17e1a707c76c195ca056c2ed3efd.png" src="../_images/198101393475e15489398c8a947f1d05973d17e1a707c76c195ca056c2ed3efd.png" />
 </div>
 </div>
 <p>Za ostale prikaze glejte <a class="reference external" href="http://docs.sympy.org/latest/modules/plotting.html#module-sympy.plotting.plot">dokumentacijo</a>.</p>
@@ -1817,7 +1440,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_164_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_164_0.png" />
+<img alt="../_images/3cc11bc42bdefbfd1fbe06ea901bc6cecd22b035958ec803d54e477ed2065229.png" src="../_images/3cc11bc42bdefbfd1fbe06ea901bc6cecd22b035958ec803d54e477ed2065229.png" />
 </div>
 </div>
 <p>in ga sedaj <strong>razčlenimo</strong> (angl. <em>expand</em>, glejte <a class="reference external" href="http://docs.sympy.org/latest/tutorial/simplification.html#expand">dokumentacijo</a>):</p>
@@ -1829,7 +1452,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_166_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_166_0.png" />
+<img alt="../_images/589ca0fc7877657d05318af33172a1af97a738abd2e8abaaca2f241bce3d9011.png" src="../_images/589ca0fc7877657d05318af33172a1af97a738abd2e8abaaca2f241bce3d9011.png" />
 </div>
 </div>
 <p>Če želimo pogledati koeficiente pred <code class="docutils literal notranslate"><span class="pre">x</span></code>, to naredimo z metodo <code class="docutils literal notranslate"><span class="pre">coeff()</span></code>:</p>
@@ -1840,7 +1463,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_168_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_168_0.png" />
+<img alt="../_images/a28165f21132b3ecda9391d48dd23cbf7651e859ca1d98f2e94c43afe484c0db.png" src="../_images/a28165f21132b3ecda9391d48dd23cbf7651e859ca1d98f2e94c43afe484c0db.png" />
 </div>
 </div>
 <p>Argumenti funkcije definirajo, kakšno razširitev želimo (<a class="reference external" href="http://docs.sympy.org/latest/tutorial/simplification.html#expand">dokumentacija</a>). Če želimo npr. trigonometrično razširitev, potem uporabimo <code class="docutils literal notranslate"><span class="pre">trig=True</span></code>:</p>
@@ -1852,7 +1475,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_170_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_170_0.png" />
+<img alt="../_images/8b34ba99a4f7048425077d6ac4c1c293ee1ebc08b7ea1575a02d5fafe89c99c4.png" src="../_images/8b34ba99a4f7048425077d6ac4c1c293ee1ebc08b7ea1575a02d5fafe89c99c4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1862,7 +1485,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_171_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_171_0.png" />
+<img alt="../_images/fb42666eb43c1bb178478c20f131d31217baccdc140b5d178e396db42a33ebcb.png" src="../_images/fb42666eb43c1bb178478c20f131d31217baccdc140b5d178e396db42a33ebcb.png" />
 </div>
 </div>
 <p>Obratna operacija od razčlenitve je <strong>razcepitev</strong> ali <strong>razstavljanje</strong> ali <strong>faktorizacija</strong> (angl. <em>factor</em>, <a class="reference external" href="http://docs.sympy.org/latest/tutorial/simplification.html#factor">dokumentacija</a>):</p>
@@ -1873,7 +1496,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_173_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_173_0.png" />
+<img alt="../_images/3cc11bc42bdefbfd1fbe06ea901bc6cecd22b035958ec803d54e477ed2065229.png" src="../_images/3cc11bc42bdefbfd1fbe06ea901bc6cecd22b035958ec803d54e477ed2065229.png" />
 </div>
 </div>
 <p>Če nas zanimajo posamezni členi, potem to naredimo s funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.factor_list</span></code>:</p>
@@ -1884,7 +1507,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_175_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_175_0.png" />
+<img alt="../_images/ea8ae5130c19f84527a047c18aea43263991bebe71dbff0d037e41efaff76e07.png" src="../_images/ea8ae5130c19f84527a047c18aea43263991bebe71dbff0d037e41efaff76e07.png" />
 </div>
 </div>
 </section>
@@ -1906,7 +1529,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_179_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_179_0.png" />
+<img alt="../_images/783d038914bb2cb41e6724f4af16e608e3e346428912d00891dd1a93bab41f01.png" src="../_images/783d038914bb2cb41e6724f4af16e608e3e346428912d00891dd1a93bab41f01.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1916,7 +1539,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_180_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_180_0.png" />
+<img alt="../_images/d81096050bd44ce57b5d5fe4208dfd494a47c011aecee7a2c422785cd87b6ef4.png" src="../_images/d81096050bd44ce57b5d5fe4208dfd494a47c011aecee7a2c422785cd87b6ef4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1926,7 +1549,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_181_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_181_0.png" />
+<img alt="../_images/563d6094e9255fa98dbf43b31d020ace326b4c3d38a2225d6c37125c8a7d4901.png" src="../_images/563d6094e9255fa98dbf43b31d020ace326b4c3d38a2225d6c37125c8a7d4901.png" />
 </div>
 </div>
 </section>
@@ -1942,7 +1565,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_184_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_184_0.png" />
+<img alt="../_images/407e11504bce7437320ce4d1c6155e1c8708d783b74d2606cc2b350e4d347bdc.png" src="../_images/407e11504bce7437320ce4d1c6155e1c8708d783b74d2606cc2b350e4d347bdc.png" />
 </div>
 </div>
 <p>Razcep na parcialne ulomke (angl. <em>partial fraction decomposition</em>) izvedemo s funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.apart()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/tutorial/simplification.html#apart">dokumentacija</a>):</p>
@@ -1954,7 +1577,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_186_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_186_0.png" />
+<img alt="../_images/0032336f88627f88a1ef3e16d428b97d5584c3b2dc314c41def286a1b6154535.png" src="../_images/0032336f88627f88a1ef3e16d428b97d5584c3b2dc314c41def286a1b6154535.png" />
 </div>
 </div>
 <p>in potem ponovno v obratni smeri s funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.together()</span></code>:</p>
@@ -1965,7 +1588,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_188_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_188_0.png" />
+<img alt="../_images/407e11504bce7437320ce4d1c6155e1c8708d783b74d2606cc2b350e4d347bdc.png" src="../_images/407e11504bce7437320ce4d1c6155e1c8708d783b74d2606cc2b350e4d347bdc.png" />
 </div>
 </div>
 <p>V slednjem primeru pridemo do podobnega rezultata s <code class="docutils literal notranslate"><span class="pre">sympy.simplify()</span></code>:</p>
@@ -1976,7 +1599,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_190_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_190_0.png" />
+<img alt="../_images/407e11504bce7437320ce4d1c6155e1c8708d783b74d2606cc2b350e4d347bdc.png" src="../_images/407e11504bce7437320ce4d1c6155e1c8708d783b74d2606cc2b350e4d347bdc.png" />
 </div>
 </div>
 </section>
@@ -1993,7 +1616,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_194_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_194_0.png" />
+<img alt="../_images/5ff7249ddff2b921d4836494423a55b5390f3604939c5488ed676c7cb003b511.png" src="../_images/5ff7249ddff2b921d4836494423a55b5390f3604939c5488ed676c7cb003b511.png" />
 </div>
 </div>
 <p>Odvajajmo ga po <span class="math notranslate nohighlight">\(x\)</span>:</p>
@@ -2004,7 +1627,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_196_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_196_0.png" />
+<img alt="../_images/396c7f6d437daf0a8f06b229731fa6e27509d443ce5e651f334b6c56b1d7d1c3.png" src="../_images/396c7f6d437daf0a8f06b229731fa6e27509d443ce5e651f334b6c56b1d7d1c3.png" />
 </div>
 </div>
 <p>ali tudi</p>
@@ -2015,7 +1638,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_198_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_198_0.png" />
+<img alt="../_images/396c7f6d437daf0a8f06b229731fa6e27509d443ce5e651f334b6c56b1d7d1c3.png" src="../_images/396c7f6d437daf0a8f06b229731fa6e27509d443ce5e651f334b6c56b1d7d1c3.png" />
 </div>
 </div>
 <p>Odvode višjega reda definiramo tako:</p>
@@ -2026,7 +1649,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_200_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_200_0.png" />
+<img alt="../_images/3e75788866ec8f130111685bdadeb806093bff676ebdadcb9d66fe19083ad52c.png" src="../_images/3e75788866ec8f130111685bdadeb806093bff676ebdadcb9d66fe19083ad52c.png" />
 </div>
 </div>
 <p>ali (isti rezultat malo drugače):</p>
@@ -2037,7 +1660,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_202_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_202_0.png" />
+<img alt="../_images/3e75788866ec8f130111685bdadeb806093bff676ebdadcb9d66fe19083ad52c.png" src="../_images/3e75788866ec8f130111685bdadeb806093bff676ebdadcb9d66fe19083ad52c.png" />
 </div>
 </div>
 <p>Odvod po več spremenljivkah <span class="math notranslate nohighlight">\(\frac{d^3f}{dx\,dy^2}\)</span> izvedemo takole:</p>
@@ -2048,7 +1671,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_204_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_204_0.png" />
+<img alt="../_images/4a1fb2f486edb296169ae8d717c1232a5be8055c2d18238bfdbbf0d4b91981a8.png" src="../_images/4a1fb2f486edb296169ae8d717c1232a5be8055c2d18238bfdbbf0d4b91981a8.png" />
 </div>
 </div>
 </section>
@@ -2078,7 +1701,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_208_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_208_0.png" />
+<img alt="../_images/5659145c23aeb9a34f4a2f81a12f1fce627f01c74acef6ebc8ea5e1f6e2ef166.png" src="../_images/5659145c23aeb9a34f4a2f81a12f1fce627f01c74acef6ebc8ea5e1f6e2ef166.png" />
 </div>
 </div>
 <p>Opazimo, da <code class="docutils literal notranslate"><span class="pre">sympy</span></code> pravilno upošteva možnost, da je <span class="math notranslate nohighlight">\(y=0\)</span>.</p>
@@ -2090,7 +1713,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_211_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_211_0.png" />
+<img alt="../_images/b7111734a58ceccf79603e820280d7fc1612dc1b22c061d32eb5a553a649f9c9.png" src="../_images/b7111734a58ceccf79603e820280d7fc1612dc1b22c061d32eb5a553a649f9c9.png" />
 </div>
 </div>
 <p>Primer, ko so meje v neskončnosti (uporabimo konstanto za neskončnost <code class="docutils literal notranslate"><span class="pre">sympy.oo</span></code>):</p>
@@ -2101,7 +1724,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_213_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_213_0.png" />
+<img alt="../_images/ccef02a8d83a3c43a6ef7751e0c9d76bac908e2bb2411907f1c600908ecb5eff.png" src="../_images/ccef02a8d83a3c43a6ef7751e0c9d76bac908e2bb2411907f1c600908ecb5eff.png" />
 </div>
 </div>
 </section>
@@ -2126,7 +1749,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_217_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_217_0.png" />
+<img alt="../_images/294dce18e8c07e6fdb70e7f5c58d0b5add61b77dea190a4b5f065f8cc748c4cb.png" src="../_images/294dce18e8c07e6fdb70e7f5c58d0b5add61b77dea190a4b5f065f8cc748c4cb.png" />
 </div>
 </div>
 <p>Šele ko uporabimo metodo <code class="docutils literal notranslate"><span class="pre">doit_()</span></code>, se izračun izvede:</p>
@@ -2137,7 +1760,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_219_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_219_0.png" />
+<img alt="../_images/ebe6feee72f542ebd434c62a7d53ae25e602a21454cd9539ca783630cfd423a5.png" src="../_images/ebe6feee72f542ebd434c62a7d53ae25e602a21454cd9539ca783630cfd423a5.png" />
 </div>
 </div>
 <p>Poglejmo še številčni rezultat:</p>
@@ -2148,7 +1771,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_221_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_221_0.png" />
+<img alt="../_images/c93686befe153074e678fb4b337ce6c7b80083932202eeb9002b915a963d425a.png" src="../_images/c93686befe153074e678fb4b337ce6c7b80083932202eeb9002b915a963d425a.png" />
 </div>
 </div>
 <p>Produkt vrste definiramo podobno s funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.Product</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/modules/concrete.html#sympy.concrete.products.Product">dokumentacija</a>):</p>
@@ -2169,7 +1792,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_224_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_224_0.png" />
+<img alt="../_images/8207d5e77928e425180f9d0a5d27e000de3732fb3b10a844e1110064a8dba45e.png" src="../_images/8207d5e77928e425180f9d0a5d27e000de3732fb3b10a844e1110064a8dba45e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2179,7 +1802,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_225_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_225_0.png" />
+<img alt="../_images/3fed1b161ded0a4bfb92a7120f15189ad891707a9875d6f46569cd738d7dc0e6.png" src="../_images/3fed1b161ded0a4bfb92a7120f15189ad891707a9875d6f46569cd738d7dc0e6.png" />
 </div>
 </div>
 </section>
@@ -2205,7 +1828,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_229_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_229_0.png" />
+<img alt="../_images/765b1df3002a67d91142c2d544525bcf3ffdd0e71b84c22aeddf3d2249911bee.png" src="../_images/765b1df3002a67d91142c2d544525bcf3ffdd0e71b84c22aeddf3d2249911bee.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2215,7 +1838,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_230_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_230_0.png" />
+<img alt="../_images/d81096050bd44ce57b5d5fe4208dfd494a47c011aecee7a2c422785cd87b6ef4.png" src="../_images/d81096050bd44ce57b5d5fe4208dfd494a47c011aecee7a2c422785cd87b6ef4.png" />
 </div>
 </div>
 <p>Za primer si poglejmo uporabo limite na definiciji odvoda:
@@ -2237,7 +1860,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_235_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_235_0.png" />
+<img alt="../_images/396c7f6d437daf0a8f06b229731fa6e27509d443ce5e651f334b6c56b1d7d1c3.png" src="../_images/396c7f6d437daf0a8f06b229731fa6e27509d443ce5e651f334b6c56b1d7d1c3.png" />
 </div>
 </div>
 <p>Enak rezultat izračunamo tudi z uporabo limite:</p>
@@ -2248,7 +1871,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_237_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_237_0.png" />
+<img alt="../_images/396c7f6d437daf0a8f06b229731fa6e27509d443ce5e651f334b6c56b1d7d1c3.png" src="../_images/396c7f6d437daf0a8f06b229731fa6e27509d443ce5e651f334b6c56b1d7d1c3.png" />
 </div>
 </div>
 </section>
@@ -2275,7 +1898,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_241_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_241_0.png" />
+<img alt="../_images/6086771a78e1d58325f476fdb7530df32cd6bec3980477b49838a1d42e8a2734.png" src="../_images/6086771a78e1d58325f476fdb7530df32cd6bec3980477b49838a1d42e8a2734.png" />
 </div>
 </div>
 <p>Če želimo definirati drugo izhodišče (<code class="docutils literal notranslate"><span class="pre">x0=2</span></code>) in z več členi (<code class="docutils literal notranslate"><span class="pre">n=8</span></code>), to izvedemo takole:</p>
@@ -2287,7 +1910,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_243_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_243_0.png" />
+<img alt="../_images/ccb74c260fb2439ed8791276eb4cc1345a27e03fc3e563289b53d65f1426c0d9.png" src="../_images/ccb74c260fb2439ed8791276eb4cc1345a27e03fc3e563289b53d65f1426c0d9.png" />
 </div>
 </div>
 <p>Rezultat vključuje tudi red veljavnosti; na ta način lahko kontroliramo veljavnosti izvajanja (<span class="math notranslate nohighlight">\(\mathcal{O}\)</span>).</p>
@@ -2300,7 +1923,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_245_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_245_0.png" />
+<img alt="../_images/a0fdaf198fbda3d65519dbf747af74d4b3503616fab85006f4f3de8d170e5461.png" src="../_images/a0fdaf198fbda3d65519dbf747af74d4b3503616fab85006f4f3de8d170e5461.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2311,7 +1934,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_246_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_246_0.png" />
+<img alt="../_images/33ee20909f81aa49fad6303bc8185685896d8c21895128cdd0a5cd99ff7dc3af.png" src="../_images/33ee20909f81aa49fad6303bc8185685896d8c21895128cdd0a5cd99ff7dc3af.png" />
 </div>
 </div>
 <p>Izračuna <code class="docutils literal notranslate"><span class="pre">s1</span></code> in <code class="docutils literal notranslate"><span class="pre">s2</span></code> imata različna reda veljavnosti, posledično je produkt:</p>
@@ -2322,7 +1945,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_248_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_248_0.png" />
+<img alt="../_images/d1fb8f5094a70485cf6bf923c26dffc6ea062a78624f8d2d0db5cd261857fb8e.png" src="../_images/d1fb8f5094a70485cf6bf923c26dffc6ea062a78624f8d2d0db5cd261857fb8e.png" />
 </div>
 </div>
 <p>natančen samo do reda <span class="math notranslate nohighlight">\(\mathcal{O}(x^2)\)</span>, kar <code class="docutils literal notranslate"><span class="pre">sympy</span></code> ustrezno obravnava:</p>
@@ -2334,7 +1957,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_250_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_250_0.png" />
+<img alt="../_images/33ee20909f81aa49fad6303bc8185685896d8c21895128cdd0a5cd99ff7dc3af.png" src="../_images/33ee20909f81aa49fad6303bc8185685896d8c21895128cdd0a5cd99ff7dc3af.png" />
 </div>
 </div>
 <p>Podatek o stopnji veljavnosti lahko odstranimo:</p>
@@ -2345,7 +1968,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_252_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_252_0.png" />
+<img alt="../_images/a62f1bf0f037de5a14e602497a42670c302da5db132010539cd91d2d25add5c6.png" src="../_images/a62f1bf0f037de5a14e602497a42670c302da5db132010539cd91d2d25add5c6.png" />
 </div>
 </div>
 </section>
@@ -2372,7 +1995,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_259_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_259_0.png" />
+<img alt="../_images/fabbff8489dae2de9d637c573cb2e58a71e2a56533eae66813e92544d1998f10.png" src="../_images/fabbff8489dae2de9d637c573cb2e58a71e2a56533eae66813e92544d1998f10.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2383,7 +2006,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_260_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_260_0.png" />
+<img alt="../_images/628aca1b0bd366381d226be6630f54c7add0c34f8bdadadbc166ba2f532a49e4.png" src="../_images/628aca1b0bd366381d226be6630f54c7add0c34f8bdadadbc166ba2f532a49e4.png" />
 </div>
 </div>
 <p>Sedaj si poglejmo nekatere tipične operacije; najprej množenje matrike in vektorja:</p>
@@ -2394,7 +2017,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_262_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_262_0.png" />
+<img alt="../_images/4a33616a9cd466c20d65bb4cc8c401604f1bf0360bdeb5d3a23f5601a2cd6ce7.png" src="../_images/4a33616a9cd466c20d65bb4cc8c401604f1bf0360bdeb5d3a23f5601a2cd6ce7.png" />
 </div>
 </div>
 <p>Nato skalarni produkt dveh vektorjev (paziti moramo na transponiranje enega od vektorjev):</p>
@@ -2405,7 +2028,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_264_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_264_0.png" />
+<img alt="../_images/a4a13a20e65c0166d76e6ec0c8c4be9437a04a239ad6f3fd007d5840ff469eee.png" src="../_images/a4a13a20e65c0166d76e6ec0c8c4be9437a04a239ad6f3fd007d5840ff469eee.png" />
 </div>
 </div>
 <p>Determinanta in inverzna matrika:</p>
@@ -2416,7 +2039,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_266_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_266_0.png" />
+<img alt="../_images/cf8bfc95bdea0f0958b5b25357197d51b6855b256fad827706f1d63d5310209e.png" src="../_images/cf8bfc95bdea0f0958b5b25357197d51b6855b256fad827706f1d63d5310209e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2426,7 +2049,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_267_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_267_0.png" />
+<img alt="../_images/dc4b4e738f3014f76c8991edccbe7cc1d7988734a224eff3f4e36a21248ed856.png" src="../_images/dc4b4e738f3014f76c8991edccbe7cc1d7988734a224eff3f4e36a21248ed856.png" />
 </div>
 </div>
 <p>Množenje in potenca matrike:</p>
@@ -2437,7 +2060,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_269_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_269_0.png" />
+<img alt="../_images/2d69eb351594020673abcebf0e7778d508a6ac4f154ef62ce2c471bd59d5f875.png" src="../_images/2d69eb351594020673abcebf0e7778d508a6ac4f154ef62ce2c471bd59d5f875.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2447,7 +2070,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_270_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_270_0.png" />
+<img alt="../_images/2d69eb351594020673abcebf0e7778d508a6ac4f154ef62ce2c471bd59d5f875.png" src="../_images/2d69eb351594020673abcebf0e7778d508a6ac4f154ef62ce2c471bd59d5f875.png" />
 </div>
 </div>
 </section>
@@ -2483,7 +2106,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_275_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_275_0.png" />
+<img alt="../_images/aefb226d64133b4090ef5e4e32d7ce419454cb2b3af84b01502006d9700ca680.png" src="../_images/aefb226d64133b4090ef5e4e32d7ce419454cb2b3af84b01502006d9700ca680.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2493,7 +2116,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_276_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_276_0.png" />
+<img alt="../_images/996f6c8b63435e031989a119dcafc65e0a4be15d89e8caa4ced84f09ae430573.png" src="../_images/996f6c8b63435e031989a119dcafc65e0a4be15d89e8caa4ced84f09ae430573.png" />
 </div>
 </div>
 <p>Prikažimo rešitev (opazimo, da smo našli samo dve od neskončno rešitev):</p>
@@ -2507,7 +2130,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_278_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_278_0.png" />
+<img alt="../_images/66619297dc406c113edf949de84fdac2cb46bba8f0093976528c9e9b450be514.png" src="../_images/66619297dc406c113edf949de84fdac2cb46bba8f0093976528c9e9b450be514.png" />
 </div>
 </div>
 <p>Kvadratna enačba:</p>
@@ -2519,7 +2142,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_280_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_280_0.png" />
+<img alt="../_images/de690edcf14d63955807697e02e7df87fa230038145155159e732a4027064bff.png" src="../_images/de690edcf14d63955807697e02e7df87fa230038145155159e732a4027064bff.png" />
 </div>
 </div>
 <p>Sistem enačb:</p>
@@ -2531,7 +2154,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_282_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_282_0.png" />
+<img alt="../_images/c40a008cc79d11ec047f7e2976b517d14620f442831024cde2ce9330e1f0cdb2.png" src="../_images/c40a008cc79d11ec047f7e2976b517d14620f442831024cde2ce9330e1f0cdb2.png" />
 </div>
 </div>
 <p>Za nelinearne sisteme pa lahko uporabimo tudi numerično reševanje s funkcijo  <code class="docutils literal notranslate"><span class="pre">sympy.nsolve()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/modules/solvers/solvers.html#sympy.solvers.solvers.nsolve">dokumentacija</a>):</p>
@@ -2557,7 +2180,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_285_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_285_0.png" />
+<img alt="../_images/947d82f9c72d06572fc73015eea31fa7697d8c85513435f3524df1e693961c6a.png" src="../_images/947d82f9c72d06572fc73015eea31fa7697d8c85513435f3524df1e693961c6a.png" />
 </div>
 </div>
 </section>
@@ -2590,7 +2213,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_293_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_293_0.png" />
+<img alt="../_images/50bdc56afd8d4bb6b9647984fea28a3f81a8d360908606061f35028370f5ba1e.png" src="../_images/50bdc56afd8d4bb6b9647984fea28a3f81a8d360908606061f35028370f5ba1e.png" />
 </div>
 </div>
 </section>
@@ -2626,7 +2249,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_299_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_299_0.png" />
+<img alt="../_images/0027f162394cf7b608f00e65d67715045d1a55737aa57fe987c8bd9d0b1d53bd.png" src="../_images/0027f162394cf7b608f00e65d67715045d1a55737aa57fe987c8bd9d0b1d53bd.png" />
 </div>
 </div>
 <p>Poglejmo lastnosti diferencialne enačbe:</p>
@@ -2637,7 +2260,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_301_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_301_0.png" />
+<img alt="../_images/d09c16c60c1bec6d87b5a6ea36a28d98601be002bd4b459592b55e0896ad9754.png" src="../_images/d09c16c60c1bec6d87b5a6ea36a28d98601be002bd4b459592b55e0896ad9754.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2675,7 +2298,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_304_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_304_0.png" />
+<img alt="../_images/8e869e77442b73494e310bc3572115707e2b3ef9523fd8ab8638f48b49ff29bb.png" src="../_images/8e869e77442b73494e310bc3572115707e2b3ef9523fd8ab8638f48b49ff29bb.png" />
 </div>
 </div>
 <p>Desno stran enačbe prikličemo takole (<code class="docutils literal notranslate"><span class="pre">rhs</span></code> - right-hand side):</p>
@@ -2686,7 +2309,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_306_0.png" src="../_images/Predavanje 04 - Objektno programiranje, simbolno računanje_306_0.png" />
+<img alt="../_images/41356b2e05b013a527154169a141e22f72de9a830c85863c698c2908b1a0cbd1.png" src="../_images/41356b2e05b013a527154169a141e22f72de9a830c85863c698c2908b1a0cbd1.png" />
 </div>
 </div>
 </section>
@@ -2694,7 +2317,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="nekaj-vprasanj-za-razmislek">
 <h1>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this headline">#</a></h1>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Pojasnite na primeru <em>proceduralno</em> in <em>funkcijsko</em> programiranje.</p></li>
 </ol>
 <ul class="simple">
@@ -2745,7 +2368,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
@@ -2753,50 +2376,157 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Numpy, matplotlib</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Numpy, matplotlib</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Uvod v numerične metode in sistemi linearnih enačb</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Janko Slavič<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Objektno programiranje, simbolno računanje</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#objektno-programiranje">Objektno programiranje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dedovanje">Dedovanje</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-dedovanja-razreda-list-seznam">Primer dedovanja razreda <code class="docutils literal notranslate"><span class="pre">list</span></code> (seznam)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simbolno-racunanje-s-sympy">Simbolno računanje s <code class="docutils literal notranslate"><span class="pre">SymPy</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definiranje-spremenljivk-in-numericni-izracun">Definiranje spremenljivk in numerični izračun</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#racionalna-stevila">Racionalna števila</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kompleksna-stevila">Kompleksna števila</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numericni-izracun">Numerični izračun</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sympy-in-numpy"><code class="docutils literal notranslate"><span class="pre">SymPy</span></code> in <code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-funkcije-lambdify">Uporaba funkcije <code class="docutils literal notranslate"><span class="pre">lambdify</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficni-prikaz">Grafični prikaz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametricni-izris">Parametrični izris</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#izris-v-prostoru">Izris v prostoru</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra">Algebra</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-expand-in-factor">Uporaba <code class="docutils literal notranslate"><span class="pre">expand</span></code> in <code class="docutils literal notranslate"><span class="pre">factor</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poenostavljanje-izrazov-s-simplify">Poenostavljanje izrazov s <code class="docutils literal notranslate"><span class="pre">simplify</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-apart-in-together">Uporaba <code class="docutils literal notranslate"><span class="pre">apart</span></code> in <code class="docutils literal notranslate"><span class="pre">together</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#odvajanje">Odvajanje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integriranje">Integriranje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vsota-in-produkt-vrste">Vsota in produkt vrste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitni-racun">Limitni račun</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taylorjeve-vrste">Taylorjeve vrste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearna-algebra">Linearna algebra</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrike-in-vektorji">Matrike in vektorji</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resevanje-enacb">Reševanje enačb</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resevanje-diferencialnih-enacb">Reševanje diferencialnih enačb</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nedefinirane-funkcije">Nedefinirane funkcije</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferencialne-enacbe">Diferencialne enačbe</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sympy-mechanics">sympy.mechanics</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Janko Slavič
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

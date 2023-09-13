@@ -1,35 +1,45 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Aproksimacija &#8212; Numerične metode v ekosistemu Pythona</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -37,12 +47,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,65 +60,98 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"12ba221653864f27a2762e9070c158fc": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "f5f3bb094ecc409497d568058ba26912": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_caf9b9e8ea3f44028e227a6ceb292380", "IPY_MODEL_c24ca5d8b70440ec8297704317dc454f", "IPY_MODEL_848d06be25db48d88a9dfd7f2297d671"], "layout": "IPY_MODEL_12ba221653864f27a2762e9070c158fc"}}, "bb5b09e9170b4a94b446be3d50ba75fd": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "69f50cb503b9436c9b85975fb28fc44e": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "caf9b9e8ea3f44028e227a6ceb292380": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "naklon", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_bb5b09e9170b4a94b446be3d50ba75fd", "max": 50, "min": 0, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 2, "style": "IPY_MODEL_69f50cb503b9436c9b85975fb28fc44e", "value": 27}}, "b2bb08d7fbe747bbafe206751e946455": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3895dda8e06d4c18bf7be1510b01d334": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "c24ca5d8b70440ec8297704317dc454f": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "premik", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_b2bb08d7fbe747bbafe206751e946455", "max": 10, "min": -10, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_3895dda8e06d4c18bf7be1510b01d334", "value": -8}}, "e8c941c199964d089b8b70a626eef536": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "848d06be25db48d88a9dfd7f2297d671": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_e8c941c199964d089b8b70a626eef536", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {"needs_background": "light"}, "data": {"text/plain": "<Figure size 432x288 with 1 Axes>", "image/png": "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\n"}}]}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Predavanje 08 - Aproksimacija';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Reševanje enačb" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html" />
     <link rel="prev" title="Interpolacija" href="Predavanje%2007%20-%20Interpolacija.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Numerične metode v ekosistemu Pythona</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -118,474 +161,333 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">
-   Študijski in izpitni red: 2022/23
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">
-   Uvod v Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">
-   Funkcije, izjeme, moduli
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">
-   Numpy, matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">
-   Objektno programiranje, simbolno računanje
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">
-   Uvod v numerične metode in sistemi linearnih enačb
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">
-   Sistemi linearnih enačb - nadaljevanje
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">
-   Interpolacija
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Aproksimacija
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">
-   Reševanje enačb
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">
-   Numerično odvajanje
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">
-   Numerično integriranje
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">
-   Numerično reševanje diferencialnih enačb - začetni problem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">
-   Numerično reševanje diferencialnih enačb - robni problem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">
-   Testiranje pravilnosti kode, uporabniški vmesnik
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2022/23</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Numpy, matplotlib</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">Objektno programiranje, simbolno računanje</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">Uvod v numerične metode in sistemi linearnih enačb</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">Sistemi linearnih enačb - nadaljevanje</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">Interpolacija</a></li>
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Aproksimacija</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">Reševanje enačb</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">Numerično odvajanje</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">Numerično integriranje</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">Numerično reševanje diferencialnih enačb - začetni problem</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">Numerično reševanje diferencialnih enačb - robni problem</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">Testiranje pravilnosti kode, uporabniški vmesnik</a></li>
+
+
+
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/jankoslavic/pynm/master?urlpath=tree/notebooks/notebooks/Predavanje 08 - Aproksimacija.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jankoslavic/pynm" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jankoslavic/pynm/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Predavanje 08 - Aproksimacija.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/Predavanje 08 - Aproksimacija.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/jankoslavic/pynm"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/jankoslavic/pynm/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Predavanje 08 - Aproksimacija.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/notebooks/Predavanje 08 - Aproksimacija.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Aproksimacija
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uvod">
-   Uvod
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#metoda-najmanjsih-kvadratov-za-linearno-funkcijo">
-   Metoda najmanjših kvadratov za linearno funkcijo
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#uporaba-psevdo-inverzne-matrike">
-     Uporaba psevdo inverzne matrike
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#metoda-najmanjsih-kvadratov-za-poljubni-polinom">
-   Metoda najmanjših kvadratov za poljubni polinom
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numericni-zgled">
-     Numerični zgled
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#uporaba-numpy-za-aproksimacjo-s-polinomom">
-     Uporaba
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       numpy
-      </span>
-     </code>
-     za aproksimacjo s polinomom
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aproksimacija-s-poljubno-funkcijo">
-   Aproksimacija s poljubno funkcijo
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aproksimacija-s-harmonsko-funkcijo">
-     Aproksimacija s harmonsko funkcijo
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">
-   Nekaj vprašanj za razmislek!
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dodatno">
-   Dodatno
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aproksimacija-z-zlepki-in-uporabo-scipy">
-     Aproksimacija z zlepki in uporabo
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       SciPy
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Aproksimacija</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Aproksimacija
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uvod">
-   Uvod
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#metoda-najmanjsih-kvadratov-za-linearno-funkcijo">
-   Metoda najmanjših kvadratov za linearno funkcijo
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#uporaba-psevdo-inverzne-matrike">
-     Uporaba psevdo inverzne matrike
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#metoda-najmanjsih-kvadratov-za-poljubni-polinom">
-   Metoda najmanjših kvadratov za poljubni polinom
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numericni-zgled">
-     Numerični zgled
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#uporaba-numpy-za-aproksimacjo-s-polinomom">
-     Uporaba
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       numpy
-      </span>
-     </code>
-     za aproksimacjo s polinomom
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aproksimacija-s-poljubno-funkcijo">
-   Aproksimacija s poljubno funkcijo
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aproksimacija-s-harmonsko-funkcijo">
-     Aproksimacija s harmonsko funkcijo
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">
-   Nekaj vprašanj za razmislek!
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dodatno">
-   Dodatno
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aproksimacija-z-zlepki-in-uporabo-scipy">
-     Aproksimacija z zlepki in uporabo
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       SciPy
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Aproksimacija</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Aproksimacija</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metoda-najmanjsih-kvadratov-za-linearno-funkcijo">Metoda najmanjših kvadratov za linearno funkcijo</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-psevdo-inverzne-matrike">Uporaba psevdo inverzne matrike</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metoda-najmanjsih-kvadratov-za-poljubni-polinom">Metoda najmanjših kvadratov za poljubni polinom</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numericni-zgled">Numerični zgled</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-numpy-za-aproksimacjo-s-polinomom">Uporaba <code class="docutils literal notranslate"><span class="pre">numpy</span></code> za aproksimacjo s polinomom</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-s-poljubno-funkcijo">Aproksimacija s poljubno funkcijo</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-s-harmonsko-funkcijo">Aproksimacija s harmonsko funkcijo</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-z-zlepki-in-uporabo-scipy">Aproksimacija z zlepki in uporabo <code class="docutils literal notranslate"><span class="pre">SciPy</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="aproksimacija">
 <h1>Aproksimacija<a class="headerlink" href="#aproksimacija" title="Permalink to this headline">#</a></h1>
 </section>
@@ -615,7 +517,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 08 - Aproksimacija_5_0.png" src="../_images/Predavanje 08 - Aproksimacija_5_0.png" />
+<img alt="../_images/8935c83c687a9ee37f1884ca455bcc32d01b753f62427f83b26362cf109b9f1e.png" src="../_images/8935c83c687a9ee37f1884ca455bcc32d01b753f62427f83b26362cf109b9f1e.png" />
 </div>
 </div>
 <p>Za konkreten primer bi bilo, glede na poznavanje fizikalnega ozadja linearne vzmeti, primerno, da bi meritve poskušali popisati z linearno funkcijo:
@@ -644,15 +546,15 @@ $<span class="math notranslate nohighlight">\(f(x) = a_0\,x+ a_1\)</span>$</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<iframe
-    width="800"
-    height="300"
-    src="https://www.youtube.com/embed/8-oixY6GG9E"
-    frameborder="0"
-    allowfullscreen
-
-></iframe>
-</div></div>
+        <iframe
+            width="800"
+            height="300"
+            src="https://www.youtube.com/embed/8-oixY6GG9E"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
 </div>
 <p>Poiskati moramo konstanti <span class="math notranslate nohighlight">\(a_0\)</span>, <span class="math notranslate nohighlight">\(a_1\)</span>, da bo vsota kvadratov razlik med funkcijo in tabelirano vrednostjo (<span class="math notranslate nohighlight">\(x_i, y_i\)</span>, kjer <span class="math notranslate nohighlight">\(i=0,1,\dots, n-1\)</span> in je <span class="math notranslate nohighlight">\(n\)</span> število tabeliranih podatkov):</p>
 <div class="math notranslate nohighlight">
@@ -764,9 +666,7 @@ b: [764.7085 243.92  ]
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "db31cf862d8845779b11386f3d5b6c3b"}
-</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "f5f3bb094ecc409497d568058ba26912"}</script></div>
 </div>
 <section id="uporaba-psevdo-inverzne-matrike">
 <h2>Uporaba psevdo inverzne matrike<a class="headerlink" href="#uporaba-psevdo-inverzne-matrike" title="Permalink to this headline">#</a></h2>
@@ -1023,7 +923,7 @@ b: [764.7085 243.92  ]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 08 - Aproksimacija_63_0.png" src="../_images/Predavanje 08 - Aproksimacija_63_0.png" />
+<img alt="../_images/29ab4f15771de5cda0535da23e4850e2ef0fd9c183eaa7b5d11bd125e8e37ac8.png" src="../_images/29ab4f15771de5cda0535da23e4850e2ef0fd9c183eaa7b5d11bd125e8e37ac8.png" />
 </div>
 </div>
 <p>Poglejmo še napako aproksimacije:
@@ -1103,7 +1003,7 @@ $<span class="math notranslate nohighlight">\(e_i=y_i - f(x_i)\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 08 - Aproksimacija_76_0.png" src="../_images/Predavanje 08 - Aproksimacija_76_0.png" />
+<img alt="../_images/29ab4f15771de5cda0535da23e4850e2ef0fd9c183eaa7b5d11bd125e8e37ac8.png" src="../_images/29ab4f15771de5cda0535da23e4850e2ef0fd9c183eaa7b5d11bd125e8e37ac8.png" />
 </div>
 </div>
 <p>Izračunajmo ničle polinoma:</p>
@@ -1150,7 +1050,7 @@ $<span class="math notranslate nohighlight">\(e_i=y_i - f(x_i)\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 08 - Aproksimacija_85_0.png" src="../_images/Predavanje 08 - Aproksimacija_85_0.png" />
+<img alt="../_images/ce185b388c1477eea826fcdf4953dd25a265c99efaf23e1f951a468a5005226e.png" src="../_images/ce185b388c1477eea826fcdf4953dd25a265c99efaf23e1f951a468a5005226e.png" />
 </div>
 </div>
 <p>Aproksimacijo z nelinearno funkcijo bomo izvedli s pomočjo <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit</span></code> (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html">dokumentacija</a>):</p>
@@ -1215,14 +1115,14 @@ $<span class="math notranslate nohighlight">\(e_i=y_i - f(x_i)\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 08 - Aproksimacija_95_0.png" src="../_images/Predavanje 08 - Aproksimacija_95_0.png" />
+<img alt="../_images/e69d4e5c2e6e43614819cca3bbb19942caf04595cd9cdffcb31f3be7d78d161e.png" src="../_images/e69d4e5c2e6e43614819cca3bbb19942caf04595cd9cdffcb31f3be7d78d161e.png" />
 </div>
 </div>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="nekaj-vprasanj-za-razmislek">
 <h1>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this headline">#</a></h1>
-<ol>
+<ol class="arabic">
 <li><p>Podatki:
 $<span class="math notranslate nohighlight">\(x = [-1.00, -0.50, 0.00, 0.50, 1.00]\)</span><span class="math notranslate nohighlight">\(
 \)</span><span class="math notranslate nohighlight">\(y = [−1.00, −0.55, 0.00, 0.45, 1.00]\)</span>$
@@ -1327,7 +1227,7 @@ Pripravite in pojasnite funkcijo za linearno aproksimacijo.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 08 - Aproksimacija_108_0.png" src="../_images/Predavanje 08 - Aproksimacija_108_0.png" />
+<img alt="../_images/822c2ad6fd55ef368d785febc4ac8f43b7ea1f8a54d4b9b0453fe0bae6065973.png" src="../_images/822c2ad6fd55ef368d785febc4ac8f43b7ea1f8a54d4b9b0453fe0bae6065973.png" />
 </div>
 </div>
 <p>Izvedimo še aproksimacijo:</p>
@@ -1349,7 +1249,7 @@ Pripravite in pojasnite funkcijo za linearno aproksimacijo.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 08 - Aproksimacija_111_0.png" src="../_images/Predavanje 08 - Aproksimacija_111_0.png" />
+<img alt="../_images/512cdccd071be2dc6d133e641fd245b389c19d61a4b0a2e71d07b96ab0a85e80.png" src="../_images/512cdccd071be2dc6d133e641fd245b389c19d61a4b0a2e71d07b96ab0a85e80.png" />
 </div>
 </div>
 <p>Dejanski preostanek:</p>
@@ -1368,12 +1268,6 @@ Pripravite in pojasnite funkcijo za linearno aproksimacijo.</p></li>
 </section>
 </section>
 
-
-<script type="application/vnd.jupyter.widget-state+json">
-{"state": {"e8b754aa53a94f658e0473ce11290be4": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "db31cf862d8845779b11386f3d5b6c3b": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_f96e49dd5ee44b408129f789ff86b2ae", "IPY_MODEL_380311e9afeb4080b39fa4aa0c078b70", "IPY_MODEL_d23ab0c5e4ba4dc3b04e0f32af10328e"], "layout": "IPY_MODEL_e8b754aa53a94f658e0473ce11290be4"}}, "b886d6c4fd074b0697e1a5c05e564e3b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "378eb4a6f784456f8cf28e31e526696a": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "f96e49dd5ee44b408129f789ff86b2ae": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "naklon", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_b886d6c4fd074b0697e1a5c05e564e3b", "max": 50, "min": 0, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 2, "style": "IPY_MODEL_378eb4a6f784456f8cf28e31e526696a", "value": 27}}, "2eadd135884b4abab216e85c5f5e6618": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "fc955a78bcec440eb0be85e5fc70176c": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "380311e9afeb4080b39fa4aa0c078b70": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "premik", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_2eadd135884b4abab216e85c5f5e6618", "max": 10, "min": -10, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_fc955a78bcec440eb0be85e5fc70176c", "value": -8}}, "7c8cb2349a8348e8b1004ba0236fae03": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d23ab0c5e4ba4dc3b04e0f32af10328e": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_7c8cb2349a8348e8b1004ba0236fae03", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {"needs_background": "light"}, "data": {"text/plain": "<Figure size 432x288 with 1 Axes>", "image/png": "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\n"}}]}}}, "version_major": 2, "version_minor": 0}
-</script>
-
-
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -1386,7 +1280,7 @@ Pripravite in pojasnite funkcijo za linearno aproksimacijo.</p></li>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
@@ -1394,50 +1288,125 @@ Pripravite in pojasnite funkcijo za linearno aproksimacijo.</p></li>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Predavanje%2007%20-%20Interpolacija.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Interpolacija</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Predavanje%2007%20-%20Interpolacija.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Interpolacija</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Reševanje enačb</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Janko Slavič<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Aproksimacija</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metoda-najmanjsih-kvadratov-za-linearno-funkcijo">Metoda najmanjših kvadratov za linearno funkcijo</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-psevdo-inverzne-matrike">Uporaba psevdo inverzne matrike</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metoda-najmanjsih-kvadratov-za-poljubni-polinom">Metoda najmanjših kvadratov za poljubni polinom</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numericni-zgled">Numerični zgled</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-numpy-za-aproksimacjo-s-polinomom">Uporaba <code class="docutils literal notranslate"><span class="pre">numpy</span></code> za aproksimacjo s polinomom</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-s-poljubno-funkcijo">Aproksimacija s poljubno funkcijo</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-s-harmonsko-funkcijo">Aproksimacija s harmonsko funkcijo</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-z-zlepki-in-uporabo-scipy">Aproksimacija z zlepki in uporabo <code class="docutils literal notranslate"><span class="pre">SciPy</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Janko Slavič
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

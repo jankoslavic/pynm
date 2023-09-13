@@ -1,35 +1,45 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Moduli, zanke, funkcije &#8212; Numerične metode v ekosistemu Pythona</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -37,12 +47,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,63 +60,93 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Uvajalni tečaj/02 - moduli, zanke, funkcije';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Numerične metode v ekosistemu Pythona</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -116,526 +156,337 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/%C5%A0tudijski%20in%20izpitni%20red.html">
-   Študijski in izpitni red: 2022/23
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/Predavanje%2001%20-%20Uvod%20v%20Python.html">
-   Uvod v Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">
-   Funkcije, izjeme, moduli
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">
-   Numpy, matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">
-   Objektno programiranje, simbolno računanje
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">
-   Uvod v numerične metode in sistemi linearnih enačb
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">
-   Sistemi linearnih enačb - nadaljevanje
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/Predavanje%2007%20-%20Interpolacija.html">
-   Interpolacija
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/Predavanje%2008%20-%20Aproksimacija.html">
-   Aproksimacija
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">
-   Reševanje enačb
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">
-   Numerično odvajanje
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">
-   Numerično integriranje
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">
-   Numerično reševanje diferencialnih enačb - začetni problem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">
-   Numerično reševanje diferencialnih enačb - robni problem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../notebooks/Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">
-   Testiranje pravilnosti kode, uporabniški vmesnik
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2022/23</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Numpy, matplotlib</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">Objektno programiranje, simbolno računanje</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">Uvod v numerične metode in sistemi linearnih enačb</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">Sistemi linearnih enačb - nadaljevanje</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2007%20-%20Interpolacija.html">Interpolacija</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2008%20-%20Aproksimacija.html">Aproksimacija</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">Reševanje enačb</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">Numerično odvajanje</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">Numerično integriranje</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">Numerično reševanje diferencialnih enačb - začetni problem</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">Numerično reševanje diferencialnih enačb - robni problem</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">Testiranje pravilnosti kode, uporabniški vmesnik</a></li>
+
+
+
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/jankoslavic/pynm/master?urlpath=tree/notebooks/Uvajalni tečaj/02 - moduli, zanke, funkcije.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jankoslavic/pynm" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jankoslavic/pynm/issues/new?title=Issue%20on%20page%20%2FUvajalni tečaj/02 - moduli, zanke, funkcije.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Uvajalni tečaj/02 - moduli, zanke, funkcije.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/jankoslavic/pynm"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/jankoslavic/pynm/issues/new?title=Issue%20on%20page%20%2FUvajalni tečaj/02 - moduli, zanke, funkcije.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/Uvajalni tečaj/02 - moduli, zanke, funkcije.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Moduli, zanke, funkcije
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zanki-for-in-while">
-     Zanki
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     in
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       while
-      </span>
-     </code>
-     :
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#definicije-lastnih-funkcij">
-     Definicije lastnih funkcij
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#moduli-nadaljevanje">
-     Moduli - nadaljevanje
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numpy">
-       Numpy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#maplotlib">
-       Maplotlib
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#primer-uporaba-python-a-za-dimenzioniranje-nosilca">
-   Primer: uporaba Python-a za dimenzioniranje nosilca
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#naloga">
-     Naloga
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#enacbe">
-     Enačbe
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#podatki">
-     Podatki:
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#resitev">
-     Rešitev
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#najvecja-upogibna-napetost-v-nosilcu">
-       Največja upogibna napetost v nosilcu
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#upogibnica">
-       Upogibnica
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#funkcija-napetost-upogib">
-       Funkcija
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         napetost_upogib
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dimenzioniranje-nosilca">
-       Dimenzioniranje nosilca
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dodatek">
-       Dodatek:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Moduli, zanke, funkcije</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Moduli, zanke, funkcije
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zanki-for-in-while">
-     Zanki
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     in
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       while
-      </span>
-     </code>
-     :
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#definicije-lastnih-funkcij">
-     Definicije lastnih funkcij
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#moduli-nadaljevanje">
-     Moduli - nadaljevanje
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numpy">
-       Numpy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#maplotlib">
-       Maplotlib
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#primer-uporaba-python-a-za-dimenzioniranje-nosilca">
-   Primer: uporaba Python-a za dimenzioniranje nosilca
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#naloga">
-     Naloga
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#enacbe">
-     Enačbe
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#podatki">
-     Podatki:
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#resitev">
-     Rešitev
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#najvecja-upogibna-napetost-v-nosilcu">
-       Največja upogibna napetost v nosilcu
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#upogibnica">
-       Upogibnica
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#funkcija-napetost-upogib">
-       Funkcija
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         napetost_upogib
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dimenzioniranje-nosilca">
-       Dimenzioniranje nosilca
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dodatek">
-       Dodatek:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Moduli, zanke, funkcije</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Moduli, zanke, funkcije</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zanki-for-in-while">Zanki <code class="docutils literal notranslate"><span class="pre">for</span></code> in <code class="docutils literal notranslate"><span class="pre">while</span></code>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicije-lastnih-funkcij">Definicije lastnih funkcij</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moduli-nadaljevanje">Moduli - nadaljevanje</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">Numpy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maplotlib">Maplotlib</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-uporaba-python-a-za-dimenzioniranje-nosilca">Primer: uporaba Python-a za dimenzioniranje nosilca</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga">Naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enacbe">Enačbe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#podatki">Podatki:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resitev">Rešitev</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#najvecja-upogibna-napetost-v-nosilcu">Največja upogibna napetost v nosilcu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upogibnica">Upogibnica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcija-napetost-upogib">Funkcija <code class="docutils literal notranslate"><span class="pre">napetost_upogib</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimenzioniranje-nosilca">Dimenzioniranje nosilca</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatek">Dodatek:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <h1>Kazalo<span class="tocSkip"></span></h1>
 <div class="toc"><ul class="toc-item"><li><span><a href="#Moduli,-zanke,-funkcije" data-toc-modified-id="Moduli,-zanke,-funkcije-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Moduli, zanke, funkcije</a></span><ul class="toc-item"><li><span><a href="#Zanki-for-in-while:" data-toc-modified-id="Zanki-for-in-while:-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Zanki <code>for</code> in <code>while</code>:</a></span></li><li><span><a href="#Definicije-lastnih-funkcij" data-toc-modified-id="Definicije-lastnih-funkcij-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Definicije lastnih funkcij</a></span></li><li><span><a href="#Moduli---nadaljevanje" data-toc-modified-id="Moduli---nadaljevanje-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Moduli - nadaljevanje</a></span><ul class="toc-item"><li><span><a href="#Numpy" data-toc-modified-id="Numpy-1.3.1"><span class="toc-item-num">1.3.1&nbsp;&nbsp;</span>Numpy</a></span></li><li><span><a href="#Maplotlib" data-toc-modified-id="Maplotlib-1.3.2"><span class="toc-item-num">1.3.2&nbsp;&nbsp;</span>Maplotlib</a></span></li></ul></li></ul></li><li><span><a href="#Primer:-uporaba-Python-a-za-dimenzioniranje-nosilca" data-toc-modified-id="Primer:-uporaba-Python-a-za-dimenzioniranje-nosilca-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Primer: uporaba Python-a za dimenzioniranje nosilca</a></span><ul class="toc-item"><li><span><a href="#Naloga" data-toc-modified-id="Naloga-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Naloga</a></span></li><li><span><a href="#Enačbe" data-toc-modified-id="Enačbe-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Enačbe</a></span></li><li><span><a href="#Podatki:" data-toc-modified-id="Podatki:-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Podatki:</a></span></li><li><span><a href="#Rešitev" data-toc-modified-id="Rešitev-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Rešitev</a></span><ul class="toc-item"><li><span><a href="#Največja-upogibna-napetost-v-nosilcu" data-toc-modified-id="Največja-upogibna-napetost-v-nosilcu-2.4.1"><span class="toc-item-num">2.4.1&nbsp;&nbsp;</span>Največja upogibna napetost v nosilcu</a></span></li><li><span><a href="#Upogibnica" data-toc-modified-id="Upogibnica-2.4.2"><span class="toc-item-num">2.4.2&nbsp;&nbsp;</span>Upogibnica</a></span></li><li><span><a href="#Funkcija-napetost_upogib" data-toc-modified-id="Funkcija-napetost_upogib-2.4.3"><span class="toc-item-num">2.4.3&nbsp;&nbsp;</span>Funkcija <code>napetost_upogib</code></a></span></li><li><span><a href="#Dimenzioniranje-nosilca" data-toc-modified-id="Dimenzioniranje-nosilca-2.4.4"><span class="toc-item-num">2.4.4&nbsp;&nbsp;</span>Dimenzioniranje nosilca</a></span></li><li><span><a href="#Dodatek:" data-toc-modified-id="Dodatek:-2.4.5"><span class="toc-item-num">2.4.5&nbsp;&nbsp;</span>Dodatek:</a></span></li></ul></li></ul></li></ul></div><section class="tex2jax_ignore mathjax_ignore" id="moduli-zanke-funkcije">
 <h1>Moduli, zanke, funkcije<a class="headerlink" href="#moduli-zanke-funkcije" title="Permalink to this headline">#</a></h1>
@@ -953,10 +804,10 @@ izpiši_vse_dvakrat_2(seznam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1b26ec8cc10&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x23f1a378bb0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/02 - moduli, zanke, funkcije_38_1.png" src="../_images/02 - moduli, zanke, funkcije_38_1.png" />
+<img alt="../_images/49f621b5af792189b2eded69be76223515403bf3223c33d228d7a19bb015c251.png" src="../_images/49f621b5af792189b2eded69be76223515403bf3223c33d228d7a19bb015c251.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -971,10 +822,10 @@ izpiši_vse_dvakrat_2(seznam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1b26ebf18d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x23f1c4a4040&gt;
 </pre></div>
 </div>
-<img alt="../_images/02 - moduli, zanke, funkcije_39_1.png" src="../_images/02 - moduli, zanke, funkcije_39_1.png" />
+<img alt="../_images/5a9d7b40f066ec5a6b0eb1ca00a9a956cc1cb62d6e888af7e30447207de60bed.png" src="../_images/5a9d7b40f066ec5a6b0eb1ca00a9a956cc1cb62d6e888af7e30447207de60bed.png" />
 </div>
 </div>
 </section>
@@ -985,13 +836,13 @@ izpiši_vse_dvakrat_2(seznam)
 <p>Obravnavamo nosilec na sliki.</p>
 <img src="img/konzola.png" style="width:550px"><section id="naloga">
 <h2>Naloga<a class="headerlink" href="#naloga" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Izračunaj največjo upogibno napetost v nosilcu <span class="math notranslate nohighlight">\(\sigma_{\text{max}}\)</span>.</p></li>
 </ol>
 <ul class="simple">
 <li><p>Izračunaj in izriši upogibnico nosilca <span class="math notranslate nohighlight">\(y(x)\)</span> pri podani obremenitvi <span class="math notranslate nohighlight">\(F\)</span>.</p></li>
 </ul>
-<ol class="simple">
+<ol class="arabic simple" start="3">
 <li><p>* Definiraj funkcijo <code class="docutils literal notranslate"><span class="pre">napetost_upogib</span></code>, ki pri podanih parametrih <em>izriše</em> upogibnico nosilca in <em>vrne</em> vrednost največje upogibne napetosti <span class="math notranslate nohighlight">\(\sigma_{\text{max}}\)</span>.</p></li>
 <li><p>* Za različne možne <code class="docutils literal notranslate"><span class="pre">višine</span></code> prereza <span class="math notranslate nohighlight">\(h\)</span> izberi najmanjšo, pri kateri je največja upogibna napetost v nosilcu manjša od dopustne napetosti (<span class="math notranslate nohighlight">\(\sigma_{\text{max}} \leq \sigma_{\text{dop}}\)</span>).</p></li>
 </ol>
@@ -1118,10 +969,10 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1b270e30520&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x23f1c525450&gt;]
 </pre></div>
 </div>
-<img alt="../_images/02 - moduli, zanke, funkcije_58_1.png" src="../_images/02 - moduli, zanke, funkcije_58_1.png" />
+<img alt="../_images/d934fe10507dc61448ffd77bbca28fe91fc12c9db36cb30ea018c512ad1f9e6d.png" src="../_images/d934fe10507dc61448ffd77bbca28fe91fc12c9db36cb30ea018c512ad1f9e6d.png" />
 </div>
 </div>
 <p>Izris še opremimo:</p>
@@ -1139,13 +990,13 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y [mm]&#39;)
 </pre></div>
 </div>
-<img alt="../_images/02 - moduli, zanke, funkcije_60_1.png" src="../_images/02 - moduli, zanke, funkcije_60_1.png" />
+<img alt="../_images/c67f6a4bca1eee5dab46c3ba983343b527442e17f991939476fce79999af8066.png" src="../_images/c67f6a4bca1eee5dab46c3ba983343b527442e17f991939476fce79999af8066.png" />
 </div>
 </div>
 </section>
 <section id="funkcija-napetost-upogib">
 <h3>Funkcija <code class="docutils literal notranslate"><span class="pre">napetost_upogib</span></code><a class="headerlink" href="#funkcija-napetost-upogib" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<ol class="arabic simple" start="3">
 <li><p>* Definiraj funkcijo <code class="docutils literal notranslate"><span class="pre">napetost_upogib</span></code>, ki pri podanih parametrih <em>izriše</em> upogibnico nosilca in <em>vrne</em> vrednost največje upogibne napetosti <span class="math notranslate nohighlight">\(\sigma_{\text{max}}\)</span>.</p></li>
 </ol>
 <div class="cell docutils container">
@@ -1188,13 +1039,13 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200.0
 </pre></div>
 </div>
-<img alt="../_images/02 - moduli, zanke, funkcije_63_1.png" src="../_images/02 - moduli, zanke, funkcije_63_1.png" />
+<img alt="../_images/c67f6a4bca1eee5dab46c3ba983343b527442e17f991939476fce79999af8066.png" src="../_images/c67f6a4bca1eee5dab46c3ba983343b527442e17f991939476fce79999af8066.png" />
 </div>
 </div>
 </section>
 <section id="dimenzioniranje-nosilca">
 <h3>Dimenzioniranje nosilca<a class="headerlink" href="#dimenzioniranje-nosilca" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<ol class="arabic simple" start="4">
 <li><p>* Za različne možne <code class="docutils literal notranslate"><span class="pre">višine</span></code> prereza <span class="math notranslate nohighlight">\(h\)</span> izberi najmanjšo, pri kateri je največja upogibna napetost v nosilcu manjša od dopustne napetosti (<span class="math notranslate nohighlight">\(\sigma_{\text{max}} \leq \sigma_{\text{dop}}\)</span>).</p></li>
 </ol>
 <div class="cell docutils container">
@@ -1212,7 +1063,7 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Izbrana višina: 14.0 mm
 </pre></div>
 </div>
-<img alt="../_images/02 - moduli, zanke, funkcije_65_1.png" src="../_images/02 - moduli, zanke, funkcije_65_1.png" />
+<img alt="../_images/9f39e3fde9f1cd5dd7d9447e598f580712ebed2fbdd413fe23354f8fe46f2aac.png" src="../_images/9f39e3fde9f1cd5dd7d9447e598f580712ebed2fbdd413fe23354f8fe46f2aac.png" />
 </div>
 </div>
 </section>
@@ -1236,7 +1087,7 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./Uvajalni tečaj"
         },
         predefinedOutput: true
@@ -1244,36 +1095,111 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Moduli, zanke, funkcije</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zanki-for-in-while">Zanki <code class="docutils literal notranslate"><span class="pre">for</span></code> in <code class="docutils literal notranslate"><span class="pre">while</span></code>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicije-lastnih-funkcij">Definicije lastnih funkcij</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moduli-nadaljevanje">Moduli - nadaljevanje</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">Numpy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maplotlib">Maplotlib</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-uporaba-python-a-za-dimenzioniranje-nosilca">Primer: uporaba Python-a za dimenzioniranje nosilca</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga">Naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enacbe">Enačbe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#podatki">Podatki:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resitev">Rešitev</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#najvecja-upogibna-napetost-v-nosilcu">Največja upogibna napetost v nosilcu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upogibnica">Upogibnica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcija-napetost-upogib">Funkcija <code class="docutils literal notranslate"><span class="pre">napetost_upogib</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimenzioniranje-nosilca">Dimenzioniranje nosilca</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatek">Dodatek:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Janko Slavič<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Janko Slavič
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

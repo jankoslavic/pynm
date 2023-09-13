@@ -1,35 +1,45 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Numerično odvajanje &#8212; Numerične metode v ekosistemu Pythona</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -37,12 +47,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,65 +60,95 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Predavanje 10 - Numerično odvajanje';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Numerično integriranje" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html" />
     <link rel="prev" title="Reševanje enačb" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Numerične metode v ekosistemu Pythona</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -118,616 +158,346 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">
-   Študijski in izpitni red: 2022/23
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">
-   Uvod v Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">
-   Funkcije, izjeme, moduli
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">
-   Numpy, matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">
-   Objektno programiranje, simbolno računanje
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">
-   Uvod v numerične metode in sistemi linearnih enačb
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">
-   Sistemi linearnih enačb - nadaljevanje
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">
-   Interpolacija
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">
-   Aproksimacija
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">
-   Reševanje enačb
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Numerično odvajanje
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">
-   Numerično integriranje
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">
-   Numerično reševanje diferencialnih enačb - začetni problem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">
-   Numerično reševanje diferencialnih enačb - robni problem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">
-   Testiranje pravilnosti kode, uporabniški vmesnik
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2022/23</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Numpy, matplotlib</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">Objektno programiranje, simbolno računanje</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">Uvod v numerične metode in sistemi linearnih enačb</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">Sistemi linearnih enačb - nadaljevanje</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">Interpolacija</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">Aproksimacija</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">Reševanje enačb</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Numerično odvajanje</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">Numerično integriranje</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">Numerično reševanje diferencialnih enačb - začetni problem</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">Numerično reševanje diferencialnih enačb - robni problem</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">Testiranje pravilnosti kode, uporabniški vmesnik</a></li>
+
+
+
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/jankoslavic/pynm/master?urlpath=tree/notebooks/notebooks/Predavanje 10 - Numerično odvajanje.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jankoslavic/pynm" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jankoslavic/pynm/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Predavanje 10 - Numerično odvajanje.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/Predavanje 10 - Numerično odvajanje.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/jankoslavic/pynm"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/jankoslavic/pynm/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Predavanje 10 - Numerično odvajanje.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/notebooks/Predavanje 10 - Numerično odvajanje.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Numerično odvajanje
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uvod">
-   Uvod
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aproksimacija-prvega-odvoda-po-metodi-koncnih-razlik">
-   Aproksimacija prvega odvoda po metodi končnih razlik
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#centralna-diferencna-shema">
-   Centralna diferenčna shema
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#odvod-f-x">
-     Odvod
-     <span class="math notranslate nohighlight">
-      \(f'(x)\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zgled-exp-x">
-     Zgled:
-     <span class="math notranslate nohighlight">
-      \(\exp(-x)\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Odvod
-     <span class="math notranslate nohighlight">
-      \(f''(x)\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Odvod
-     <span class="math notranslate nohighlight">
-      \(f'''(x)\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#odvod-f-4-x">
-     Odvod
-     <span class="math notranslate nohighlight">
-      \(f^{(4)}(x)\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#povzetek-centralne-diferencne-sheme">
-     Povzetek centralne diferenčne sheme*
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#uporaba-scipy-misc-central-diff-weights">
-     Uporaba
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       scipy.misc.central_diff_weights
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#izboljsan-priblizek-richardsonova-ekstrapolacija">
-     Izboljšan približek - Richardsonova ekstrapolacija
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#zgled">
-       Zgled
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#necentralna-diferencna-shema">
-   Necentralna diferenčna shema
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#diferencna-shema-naprej">
-     Diferenčna shema naprej
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#diferencna-shema-nazaj">
-     Diferenčna shema nazaj
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uporaba-numpy-gradient">
-   Uporaba
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     numpy.gradient
-    </span>
-   </code>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Zgled
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zaokrozitvena-napaka-pri-numericnem-odvajanju">
-   Zaokrožitvena napaka pri numeričnem odvajanju*
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Zgled
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aproksimacija-odvoda-s-kompleksnim-korakom">
-   Aproksimacija odvoda s kompleksnim korakom*
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">
-   Nekaj vprašanj za razmislek!
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dodatno">
-   Dodatno
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Numerično odvajanje</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Numerično odvajanje
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uvod">
-   Uvod
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aproksimacija-prvega-odvoda-po-metodi-koncnih-razlik">
-   Aproksimacija prvega odvoda po metodi končnih razlik
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#centralna-diferencna-shema">
-   Centralna diferenčna shema
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#odvod-f-x">
-     Odvod
-     <span class="math notranslate nohighlight">
-      \(f'(x)\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zgled-exp-x">
-     Zgled:
-     <span class="math notranslate nohighlight">
-      \(\exp(-x)\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Odvod
-     <span class="math notranslate nohighlight">
-      \(f''(x)\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Odvod
-     <span class="math notranslate nohighlight">
-      \(f'''(x)\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#odvod-f-4-x">
-     Odvod
-     <span class="math notranslate nohighlight">
-      \(f^{(4)}(x)\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#povzetek-centralne-diferencne-sheme">
-     Povzetek centralne diferenčne sheme*
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#uporaba-scipy-misc-central-diff-weights">
-     Uporaba
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       scipy.misc.central_diff_weights
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#izboljsan-priblizek-richardsonova-ekstrapolacija">
-     Izboljšan približek - Richardsonova ekstrapolacija
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#zgled">
-       Zgled
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#necentralna-diferencna-shema">
-   Necentralna diferenčna shema
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#diferencna-shema-naprej">
-     Diferenčna shema naprej
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#diferencna-shema-nazaj">
-     Diferenčna shema nazaj
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uporaba-numpy-gradient">
-   Uporaba
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     numpy.gradient
-    </span>
-   </code>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Zgled
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zaokrozitvena-napaka-pri-numericnem-odvajanju">
-   Zaokrožitvena napaka pri numeričnem odvajanju*
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Zgled
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aproksimacija-odvoda-s-kompleksnim-korakom">
-   Aproksimacija odvoda s kompleksnim korakom*
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">
-   Nekaj vprašanj za razmislek!
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dodatno">
-   Dodatno
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Numerično odvajanje</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Numerično odvajanje</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-prvega-odvoda-po-metodi-koncnih-razlik">Aproksimacija prvega odvoda po metodi končnih razlik</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#centralna-diferencna-shema">Centralna diferenčna shema</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#odvod-f-x">Odvod <span class="math notranslate nohighlight">\(f'(x)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled-exp-x">Zgled: <span class="math notranslate nohighlight">\(\exp(-x)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Odvod <span class="math notranslate nohighlight">\(f''(x)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Odvod <span class="math notranslate nohighlight">\(f'''(x)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#odvod-f-4-x">Odvod <span class="math notranslate nohighlight">\(f^{(4)}(x)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#povzetek-centralne-diferencne-sheme">Povzetek centralne diferenčne sheme*</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-scipy-misc-central-diff-weights">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.misc.central_diff_weights</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izboljsan-priblizek-richardsonova-ekstrapolacija">Izboljšan približek - Richardsonova ekstrapolacija</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled">Zgled</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#necentralna-diferencna-shema">Necentralna diferenčna shema</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diferencna-shema-naprej">Diferenčna shema naprej</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diferencna-shema-nazaj">Diferenčna shema nazaj</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-numpy-gradient">Uporaba <code class="docutils literal notranslate"><span class="pre">numpy.gradient</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Zgled</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#zaokrozitvena-napaka-pri-numericnem-odvajanju">Zaokrožitvena napaka pri numeričnem odvajanju*</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Zgled</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-odvoda-s-kompleksnim-korakom">Aproksimacija odvoda s kompleksnim korakom*</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="numericno-odvajanje">
 <h1>Numerično odvajanje<a class="headerlink" href="#numericno-odvajanje" title="Permalink to this headline">#</a></h1>
 </section>
@@ -740,7 +510,7 @@ f'(x)=\lim_{\Delta x \rightarrow 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}.
 \]</div>
 <p>Neposredna uporaba zgornje enačbe vodi v odštevanje zelo podobnih funkcijskih vrednostih (<span class="math notranslate nohighlight">\(f(x+\Delta x)\)</span>, <span class="math notranslate nohighlight">\(f(x)\)</span>), obremenjenih z zaokrožitveno napako, ki jih delimo z majhno vrednostjo <span class="math notranslate nohighlight">\(\Delta x\)</span>; posledično ima odvod bistveno manj signifikantnih števk kakor pa funkcijske vrednosti. Numeričnemu odvajanju se izognemo, če imamo to možnost; je pa v nekaterih primerih (npr. reševanje diferencialnih enačb) nepogrešljivo orodje!</p>
 <p>Pri numeričnem odvajanju imamo dva, v principu različna, pristopa:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>najprej izvedemo <strong>interpolacijo/aproksimacijo</strong>, nato pa na podlagi znanih interpolacijskih/aproksimacijskih funkcij izračunamo odvod (o tej temi smo že govorili pri interpolaciji oz. aproksimaciji) in</p></li>
 <li><p>računanje odvoda <strong>neposredno iz vrednosti iz tabele</strong>.</p></li>
 </ol>
@@ -772,15 +542,15 @@ y_i'=-\frac{y_{i}}{h}+\frac{y_{i+1}}{h},
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<iframe
-    width="800"
-    height="300"
-    src="https://www.youtube.com/embed/YYuGL-VP2BE"
-    frameborder="0"
-    allowfullscreen
-
-></iframe>
-</div></div>
+        <iframe
+            width="800"
+            height="300"
+            src="https://www.youtube.com/embed/YYuGL-VP2BE"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
 </div>
 <p>Odvod <span class="math notranslate nohighlight">\(f'(x)\)</span> lahko aproksimiramo na podlagi razvoja Taylorjeve vrste. To metodo imenujemo <strong>metoda končnih razlik</strong> ali tudi <strong>diferenčna metoda</strong>.</p>
 <p>Razvijmo <strong>Taylorjevo vrsto naprej</strong> (naprej, zaradi člena <span class="math notranslate nohighlight">\(+h\)</span>):</p>
@@ -833,7 +603,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_21_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_21_0.png" />
+<img alt="../_images/90a4107c3529fda9ec1f3e58e05546cef2da70362e1f3a590d00716091001428.png" src="../_images/90a4107c3529fda9ec1f3e58e05546cef2da70362e1f3a590d00716091001428.png" />
 </div>
 </div>
 <p>Člen <span class="math notranslate nohighlight">\(\mathcal{O}\left(h^{2}\right)\)</span> vsebuje člene drugega in višjega reda. V zgornji enačbi je uporabljena začasna spremenljivko za odvajanje <span class="math notranslate nohighlight">\(\xi_1\)</span>; izvedmo odvajanje in vstavimo <span class="math notranslate nohighlight">\(\xi_1=x\)</span>:</p>
@@ -844,7 +614,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_23_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_23_0.png" />
+<img alt="../_images/c2f11a9cc0ce37e3e0a755dfe486be6d8e7009f053b1f65bc0a738fd0946f8c7.png" src="../_images/c2f11a9cc0ce37e3e0a755dfe486be6d8e7009f053b1f65bc0a738fd0946f8c7.png" />
 </div>
 </div>
 <p>Zapišemo enačbo:</p>
@@ -856,7 +626,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_25_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_25_0.png" />
+<img alt="../_images/3ebe8d4aafe92065cbed7539aac63b807e45769ff730fe69910b58186ae08281.png" src="../_images/3ebe8d4aafe92065cbed7539aac63b807e45769ff730fe69910b58186ae08281.png" />
 </div>
 </div>
 <p>Rešimo jo za prvi odvod <span class="math notranslate nohighlight">\(f'(x)\)</span>:</p>
@@ -868,7 +638,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_27_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_27_0.png" />
+<img alt="../_images/046eb7a3722b69f74910776f2707801d3a7187f96f1dbea19fa594b727f84e5c.png" src="../_images/046eb7a3722b69f74910776f2707801d3a7187f96f1dbea19fa594b727f84e5c.png" />
 </div>
 </div>
 <p>V kolikor odvoda drugega in višjih redov ne upoštevamo, smo naredili torej napako:</p>
@@ -880,7 +650,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_29_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_29_0.png" />
+<img alt="../_images/dba3cf105aae8161400070e9beaf8e51e70f43b51586a4cb3c37d019c17866f3.png" src="../_images/dba3cf105aae8161400070e9beaf8e51e70f43b51586a4cb3c37d019c17866f3.png" />
 </div>
 </div>
 <p>Napaka <span class="math notranslate nohighlight">\(\mathcal{O}\left(h^{1}\right)\)</span> je torej prvega reda in če ta člen zanemarimo, naredimo <em>napako metode</em> in dobimo oceno odvoda:</p>
@@ -892,7 +662,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_31_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_31_0.png" />
+<img alt="../_images/13d9df2cf53b349f327d1fd3628f4dd4ab38bdfae4be4b5efb691b1b099f6fce.png" src="../_images/13d9df2cf53b349f327d1fd3628f4dd4ab38bdfae4be4b5efb691b1b099f6fce.png" />
 </div>
 </div>
 <p>Ugotovimo, da gre za isti izraz, kakor smo ga izpeljali zgoraj, torej je:</p>
@@ -901,15 +671,15 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 <p>Uteži torej so:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+1}\)</span></p></th>
+<tr class="row-odd"><th class="text-center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+1}\)</span></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i'=\frac{1}{h}\cdot\)</span></p></td>
-<td class="text-align:center"><p>-1</p></td>
-<td class="text-align:center"><p>1</p></td>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i'=\frac{1}{h}\cdot\)</span></p></td>
+<td class="text-center"><p>-1</p></td>
+<td class="text-center"><p>1</p></td>
 </tr>
 </tbody>
 </table>
@@ -926,7 +696,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_36_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_36_0.png" />
+<img alt="../_images/40b3597ea528f7945bd87d8d8dadd33d42a0e083c51cfb4b1a4772d6b9e72561.png" src="../_images/40b3597ea528f7945bd87d8d8dadd33d42a0e083c51cfb4b1a4772d6b9e72561.png" />
 </div>
 </div>
 <p>Ugotovimo, da se pri razliki vrste naprej in nazaj odštevajo členi sodega reda; definirajmo:</p>
@@ -939,11 +709,11 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_38_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_38_0.png" />
+<img alt="../_images/c319f03984e378cb551addc99289b2eec4a681dd494a19f2eeeb4bea81342142.png" src="../_images/c319f03984e378cb551addc99289b2eec4a681dd494a19f2eeeb4bea81342142.png" />
 </div>
 </div>
 <p>Izvedemo sledeče korake:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Taylorjevo vrsto nazaj odštejemo od vrste naprej, sodi odvodi se odštejejo,</p></li>
 <li><p>rešimo enačbo za prvi odvod,</p></li>
 <li><p>določimo napako metode,</p></li>
@@ -969,7 +739,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_42_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_42_0.png" />
+<img alt="../_images/c5d646016aedbeafe676dc9ce7d75f4a9ea6ad8208726cdf0a9f833be7a985cc.png" src="../_images/c5d646016aedbeafe676dc9ce7d75f4a9ea6ad8208726cdf0a9f833be7a985cc.png" />
 </div>
 </div>
 <p>Ali:</p>
@@ -978,17 +748,17 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 <p>Uteži torej so:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i-1}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+1}\)</span></p></th>
+<tr class="row-odd"><th class="text-center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i-1}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+1}\)</span></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i'=\frac{1}{2h}\cdot\)</span></p></td>
-<td class="text-align:center"><p>-1</p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>1</p></td>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i'=\frac{1}{2h}\cdot\)</span></p></td>
+<td class="text-center"><p>-1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
 </tr>
 </tbody>
 </table>
@@ -1000,7 +770,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_45_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_45_0.png" />
+<img alt="../_images/919118b034b43743a94213d4a29a41281772708497d122d00de7afe6b3f67e16.png" src="../_images/919118b034b43743a94213d4a29a41281772708497d122d00de7afe6b3f67e16.png" />
 </div>
 </div>
 </section>
@@ -1033,7 +803,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_50_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_50_0.png" />
+<img alt="../_images/13d9df2cf53b349f327d1fd3628f4dd4ab38bdfae4be4b5efb691b1b099f6fce.png" src="../_images/13d9df2cf53b349f327d1fd3628f4dd4ab38bdfae4be4b5efb691b1b099f6fce.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1052,7 +822,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_53_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_53_0.png" />
+<img alt="../_images/ba2fbab0f8540d26aacbb07b4225bbacc5bbe4a833bf73db16ed03735c523109.png" src="../_images/ba2fbab0f8540d26aacbb07b4225bbacc5bbe4a833bf73db16ed03735c523109.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1062,7 +832,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_54_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_54_0.png" />
+<img alt="../_images/230835bb62689df61dac8a529ce62054eb1037c322afe7099dd0527b4a1197c1.png" src="../_images/230835bb62689df61dac8a529ce62054eb1037c322afe7099dd0527b4a1197c1.png" />
 </div>
 </div>
 <p>Potrdimo lahko, da je napaka pri koraku <span class="math notranslate nohighlight">\(h/10\)</span> res približno 1/10 tiste pri koraku <span class="math notranslate nohighlight">\(h\)</span>.</p>
@@ -1074,7 +844,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_57_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_57_0.png" />
+<img alt="../_images/c5d646016aedbeafe676dc9ce7d75f4a9ea6ad8208726cdf0a9f833be7a985cc.png" src="../_images/c5d646016aedbeafe676dc9ce7d75f4a9ea6ad8208726cdf0a9f833be7a985cc.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1093,7 +863,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_60_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_60_0.png" />
+<img alt="../_images/bf9b126dbc8e9633c43bcd96179f4ef5c677c52b9fd8cfd9963da1c84a342942.png" src="../_images/bf9b126dbc8e9633c43bcd96179f4ef5c677c52b9fd8cfd9963da1c84a342942.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1103,7 +873,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_61_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_61_0.png" />
+<img alt="../_images/f4a69bd8d8abae044936a87ca89d67c5c26c096b9872d38204eeb2279a6b2b46.png" src="../_images/f4a69bd8d8abae044936a87ca89d67c5c26c096b9872d38204eeb2279a6b2b46.png" />
 </div>
 </div>
 <p>Potrdimo lahko, da je napaka pri koraku <span class="math notranslate nohighlight">\(h/10\)</span> res približno 1/100 tiste pri koraku <span class="math notranslate nohighlight">\(h\)</span>.</p>
@@ -1120,7 +890,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_65_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_65_0.png" />
+<img alt="../_images/55774f8d7ead89855a2ced7f8e76db0b5c6bdea27e0682e892d11d2af0d7cd80.png" src="../_images/55774f8d7ead89855a2ced7f8e76db0b5c6bdea27e0682e892d11d2af0d7cd80.png" />
 </div>
 </div>
 <p>Določimo drugi odvod:</p>
@@ -1143,7 +913,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_69_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_69_0.png" />
+<img alt="../_images/f4d02b9c7b7289d758b9ea5faf94e74206b9f7bbd572aef685dc2a886c541bd4.png" src="../_images/f4d02b9c7b7289d758b9ea5faf94e74206b9f7bbd572aef685dc2a886c541bd4.png" />
 </div>
 </div>
 <p>Ali:</p>
@@ -1152,17 +922,17 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 <p>Uteži torej so:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i-1}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+1}\)</span></p></th>
+<tr class="row-odd"><th class="text-center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i-1}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+1}\)</span></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i''=\frac{1}{h^2}\cdot\)</span></p></td>
-<td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>-2</p></td>
-<td class="text-align:center"><p>1</p></td>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i''=\frac{1}{h^2}\cdot\)</span></p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>-2</p></td>
+<td class="text-center"><p>1</p></td>
 </tr>
 </tbody>
 </table>
@@ -1174,7 +944,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_72_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_72_0.png" />
+<img alt="../_images/919118b034b43743a94213d4a29a41281772708497d122d00de7afe6b3f67e16.png" src="../_images/919118b034b43743a94213d4a29a41281772708497d122d00de7afe6b3f67e16.png" />
 </div>
 </div>
 </section>
@@ -1189,7 +959,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_75_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_75_0.png" />
+<img alt="../_images/b59256f34c5d1f21b7df31f0b603b1e859c2cd04431768435f2a08d0af51780b.png" src="../_images/b59256f34c5d1f21b7df31f0b603b1e859c2cd04431768435f2a08d0af51780b.png" />
 </div>
 </div>
 <p>Uporaba 1. odvoda, ki smo ga izpeljali zgoraj, nam ne bi koristila, saj je red napake <span class="math notranslate nohighlight">\(\mathcal{O}\left(h^{2}\right)\)</span>, kar pomeni, da bi v zgornji pri deljenju s <span class="math notranslate nohighlight">\(h^3\)</span> dobili <span class="math notranslate nohighlight">\(\mathcal{O}\left(h^{-1}\right)\)</span>.</p>
@@ -1202,11 +972,11 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_78_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_78_0.png" />
+<img alt="../_images/83ef55e404a14700050cba26f98b24a508817b5958ecc39486fec79a10be3236.png" src="../_images/83ef55e404a14700050cba26f98b24a508817b5958ecc39486fec79a10be3236.png" />
 </div>
 </div>
 <p>Sedaj imamo dve enačbi in dve neznanki; sistem bomo rešili po korakih:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>enačbo <code class="docutils literal notranslate"><span class="pre">eq_h</span></code> rešimo za prvi odvod,</p></li>
 <li><p>enačbo <code class="docutils literal notranslate"><span class="pre">eq_2h</span></code> rešimo za prvi odvod,</p></li>
 <li><p>enačimo rezultata prvih dveh korakov in rešimo za tretji odvod,</p></li>
@@ -1234,7 +1004,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_82_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_82_0.png" />
+<img alt="../_images/11662643d87704e75600f1afe387e226a454cb9b3b12e5931c4fcf25a3908bae.png" src="../_images/11662643d87704e75600f1afe387e226a454cb9b3b12e5931c4fcf25a3908bae.png" />
 </div>
 </div>
 <p>Ali:</p>
@@ -1243,21 +1013,21 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 <p>Uteži torej so:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i-2}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i-1}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+1}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+2}\)</span></p></th>
+<tr class="row-odd"><th class="text-center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i-2}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i-1}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+1}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+2}\)</span></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i'''=\frac{1}{h^3}\cdot\)</span></p></td>
-<td class="text-align:center"><p>-0.5</p></td>
-<td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>-1</p></td>
-<td class="text-align:center"><p>0.5</p></td>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i'''=\frac{1}{h^3}\cdot\)</span></p></td>
+<td class="text-center"><p>-0.5</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>-1</p></td>
+<td class="text-center"><p>0.5</p></td>
 </tr>
 </tbody>
 </table>
@@ -1269,7 +1039,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_85_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_85_0.png" />
+<img alt="../_images/919118b034b43743a94213d4a29a41281772708497d122d00de7afe6b3f67e16.png" src="../_images/919118b034b43743a94213d4a29a41281772708497d122d00de7afe6b3f67e16.png" />
 </div>
 </div>
 </section>
@@ -1284,7 +1054,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_88_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_88_0.png" />
+<img alt="../_images/ac18da98ea6603074ac533367e7bc53d3b46830e6ea8cdf149fac4789cfdd94c.png" src="../_images/ac18da98ea6603074ac533367e7bc53d3b46830e6ea8cdf149fac4789cfdd94c.png" />
 </div>
 </div>
 <p>Pripravimo dodatno enačbo na podlagi točk, ki sta od <span class="math notranslate nohighlight">\(x\)</span> oddaljeni za <span class="math notranslate nohighlight">\(2h\)</span> in <span class="math notranslate nohighlight">\(-2h\)</span>:</p>
@@ -1296,7 +1066,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_90_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_90_0.png" />
+<img alt="../_images/a714764c31548424ad22a685c32b856fd15fb6ffa9f2ea81c62f1d65d1cc7867.png" src="../_images/a714764c31548424ad22a685c32b856fd15fb6ffa9f2ea81c62f1d65d1cc7867.png" />
 </div>
 </div>
 <p>Iz dveh enačb določimo 4. odvod:</p>
@@ -1320,7 +1090,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_94_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_94_0.png" />
+<img alt="../_images/0ef22f4420460966850efe04c9869996c4ffb8332b3185b1846f7329497c2fc1.png" src="../_images/0ef22f4420460966850efe04c9869996c4ffb8332b3185b1846f7329497c2fc1.png" />
 </div>
 </div>
 <p>Ali:</p>
@@ -1329,21 +1099,21 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 <p>Uteži torej so:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i-2}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i-1}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+1}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+2}\)</span></p></th>
+<tr class="row-odd"><th class="text-center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i-2}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i-1}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+1}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+2}\)</span></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i^{(4)}=\frac{1}{h^4}\cdot\)</span></p></td>
-<td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>-4</p></td>
-<td class="text-align:center"><p>6</p></td>
-<td class="text-align:center"><p>-4</p></td>
-<td class="text-align:center"><p>1</p></td>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i^{(4)}=\frac{1}{h^4}\cdot\)</span></p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>-4</p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p>-4</p></td>
+<td class="text-center"><p>1</p></td>
 </tr>
 </tbody>
 </table>
@@ -1355,7 +1125,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_97_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_97_0.png" />
+<img alt="../_images/919118b034b43743a94213d4a29a41281772708497d122d00de7afe6b3f67e16.png" src="../_images/919118b034b43743a94213d4a29a41281772708497d122d00de7afe6b3f67e16.png" />
 </div>
 </div>
 </section>
@@ -1371,7 +1141,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_101_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_101_0.png" />
+<img alt="../_images/9aabdb9f5752a81563ddeaab54d089e0839bcae8975140c824ec878bdd1ae5a1.png" src="../_images/9aabdb9f5752a81563ddeaab54d089e0839bcae8975140c824ec878bdd1ae5a1.png" />
 </div>
 </div>
 <p>Na razpolago imamo 5 funkcijskih vrednosti (pri legah <span class="math notranslate nohighlight">\(x-2h, x-h, x, x+h, x+2h\)</span>), ki jih damo v seznam:</p>
@@ -1390,7 +1160,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_105_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_105_0.png" />
+<img alt="../_images/5c19f8685f6f08fe29758af67c15a08d9b640c75611f4318035ff2ef7c4e42ba.png" src="../_images/5c19f8685f6f08fe29758af67c15a08d9b640c75611f4318035ff2ef7c4e42ba.png" />
 </div>
 </div>
 <p>Sedaj posplošimo in izračunajmo uteži za vse funkcijske vrednosti in za vse ocene odvodov:</p>
@@ -1403,48 +1173,48 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_107_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_107_0.png" />
+<img alt="../_images/c6f6af67dd9b2723986985cc66c3578128ddb4784699f5eeb663db8548128b43.png" src="../_images/c6f6af67dd9b2723986985cc66c3578128ddb4784699f5eeb663db8548128b43.png" />
 </div>
 </div>
 <p>Zgornje povzetke lahko tudi zapišemo v tabelarični obliki:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i-2}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i-1}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+1}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+2}\)</span></p></th>
+<tr class="row-odd"><th class="text-center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i-2}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i-1}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+1}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+2}\)</span></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i'=\frac{1}{h}\cdot\)</span></p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>-0.5</p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>0.5</p></td>
-<td class="text-align:center"><p>0</p></td>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i'=\frac{1}{h}\cdot\)</span></p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>-0.5</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0.5</p></td>
+<td class="text-center"><p>0</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i''=\frac{1}{h^2}\cdot\)</span></p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>-2</p></td>
-<td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>0</p></td>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i''=\frac{1}{h^2}\cdot\)</span></p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>-2</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i'''=\frac{1}{h^3}\cdot\)</span></p></td>
-<td class="text-align:center"><p>-0.5</p></td>
-<td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>-1</p></td>
-<td class="text-align:center"><p>0.5</p></td>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i'''=\frac{1}{h^3}\cdot\)</span></p></td>
+<td class="text-center"><p>-0.5</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>-1</p></td>
+<td class="text-center"><p>0.5</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i^{(4)}=\frac{1}{h^4}\cdot\)</span></p></td>
-<td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>-4</p></td>
-<td class="text-align:center"><p>6</p></td>
-<td class="text-align:center"><p>-4</p></td>
-<td class="text-align:center"><p>1</p></td>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i^{(4)}=\frac{1}{h^4}\cdot\)</span></p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>-4</p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p>-4</p></td>
+<td class="text-center"><p>1</p></td>
 </tr>
 </tbody>
 </table>
@@ -1528,7 +1298,7 @@ $<span class="math notranslate nohighlight">\(\overline{f}'(x_i)=\frac{2^n\,f_o'
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_125_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_125_0.png" />
+<img alt="../_images/2d9f72456ab4a8087babd6d0004d973c33824617aa24362d01151805d0c09784.png" src="../_images/2d9f72456ab4a8087babd6d0004d973c33824617aa24362d01151805d0c09784.png" />
 </div>
 </div>
 <p>in koraku <span class="math notranslate nohighlight">\(h\)</span> je</p>
@@ -1541,7 +1311,7 @@ $<span class="math notranslate nohighlight">\(\overline{f}'(x_i)=\frac{2^n\,f_o'
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_127_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_127_0.png" />
+<img alt="../_images/eab88a604ae9462da1c12f43991d2c05eede1cb71adbdc55fce14b2709ba2533.png" src="../_images/eab88a604ae9462da1c12f43991d2c05eede1cb71adbdc55fce14b2709ba2533.png" />
 </div>
 </div>
 <p>Izračun pri koraku <span class="math notranslate nohighlight">\(2h\)</span>:</p>
@@ -1554,7 +1324,7 @@ $<span class="math notranslate nohighlight">\(\overline{f}'(x_i)=\frac{2^n\,f_o'
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_129_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_129_0.png" />
+<img alt="../_images/c1e9135fbef07e1784bc40bb390537f61454298874ba426c9bd9ddc4a59114bc.png" src="../_images/c1e9135fbef07e1784bc40bb390537f61454298874ba426c9bd9ddc4a59114bc.png" />
 </div>
 </div>
 <p>Izračunajmo izboljšano oceno za <span class="math notranslate nohighlight">\(x=\pi\)</span>:</p>
@@ -1566,7 +1336,7 @@ $<span class="math notranslate nohighlight">\(\overline{f}'(x_i)=\frac{2^n\,f_o'
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_131_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_131_0.png" />
+<img alt="../_images/cc3ea6ca61de57503b1f74e466e64cc6f8d6334f051c2d0c38b57aad613463d9.png" src="../_images/cc3ea6ca61de57503b1f74e466e64cc6f8d6334f051c2d0c38b57aad613463d9.png" />
 </div>
 </div>
 <p>Vidimo, da je izboljšana ocena najbližje teoretični vrednosti <span class="math notranslate nohighlight">\(\cos(\pi)=-1\)</span>.</p>
@@ -1587,89 +1357,89 @@ $<span class="math notranslate nohighlight">\(\overline{f}'(x_i)=\frac{2^n\,f_o'
 <p>Diferenčna shema naprej z redom napake <span class="math notranslate nohighlight">\(\mathcal{O}(h^{1})\)</span>:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+1}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+2}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+3}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+4}\)</span></p></th>
+<tr class="row-odd"><th class="text-center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+1}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+2}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+3}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+4}\)</span></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i'=\frac{1}{h}\cdot\)</span></p></td>
-<td class="text-align:center"><p>-1</p></td>
-<td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>0</p></td>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i'=\frac{1}{h}\cdot\)</span></p></td>
+<td class="text-center"><p>-1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i''=\frac{1}{h^2}\cdot\)</span></p></td>
-<td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>-2</p></td>
-<td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>0</p></td>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i''=\frac{1}{h^2}\cdot\)</span></p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>-2</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i'''=\frac{1}{h^3}\cdot\)</span></p></td>
-<td class="text-align:center"><p>-1</p></td>
-<td class="text-align:center"><p>3</p></td>
-<td class="text-align:center"><p>-3</p></td>
-<td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>0</p></td>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i'''=\frac{1}{h^3}\cdot\)</span></p></td>
+<td class="text-center"><p>-1</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>-3</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>0</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i^{(4)}=\frac{1}{h^4}\cdot\)</span></p></td>
-<td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>-4</p></td>
-<td class="text-align:center"><p>6</p></td>
-<td class="text-align:center"><p>-4</p></td>
-<td class="text-align:center"><p>1</p></td>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i^{(4)}=\frac{1}{h^4}\cdot\)</span></p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>-4</p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p>-4</p></td>
+<td class="text-center"><p>1</p></td>
 </tr>
 </tbody>
 </table>
 <p>Diferenčna shema naprej z redom napake <span class="math notranslate nohighlight">\(\mathcal{O}(h^{2})\)</span>:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+1}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+2}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+3}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+4}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i+5}\)</span></p></th>
+<tr class="row-odd"><th class="text-center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+1}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+2}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+3}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+4}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i+5}\)</span></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i'=\frac{1}{2h}\cdot\)</span></p></td>
-<td class="text-align:center"><p>-3</p></td>
-<td class="text-align:center"><p>4</p></td>
-<td class="text-align:center"><p>-1</p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>0</p></td>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i'=\frac{1}{2h}\cdot\)</span></p></td>
+<td class="text-center"><p>-3</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>-1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i''=\frac{1}{h^2}\cdot\)</span></p></td>
-<td class="text-align:center"><p>2</p></td>
-<td class="text-align:center"><p>-5</p></td>
-<td class="text-align:center"><p>4</p></td>
-<td class="text-align:center"><p>-1</p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>0</p></td>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i''=\frac{1}{h^2}\cdot\)</span></p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>-5</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>-1</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i'''=\frac{1}{2h^3}\cdot\)</span></p></td>
-<td class="text-align:center"><p>-5</p></td>
-<td class="text-align:center"><p>18</p></td>
-<td class="text-align:center"><p>-24</p></td>
-<td class="text-align:center"><p>14</p></td>
-<td class="text-align:center"><p>-3</p></td>
-<td class="text-align:center"><p>0</p></td>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i'''=\frac{1}{2h^3}\cdot\)</span></p></td>
+<td class="text-center"><p>-5</p></td>
+<td class="text-center"><p>18</p></td>
+<td class="text-center"><p>-24</p></td>
+<td class="text-center"><p>14</p></td>
+<td class="text-center"><p>-3</p></td>
+<td class="text-center"><p>0</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i^{(4)}=\frac{1}{h^4}\cdot\)</span></p></td>
-<td class="text-align:center"><p>3</p></td>
-<td class="text-align:center"><p>-14</p></td>
-<td class="text-align:center"><p>26</p></td>
-<td class="text-align:center"><p>-24</p></td>
-<td class="text-align:center"><p>11</p></td>
-<td class="text-align:center"><p>-2</p></td>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i^{(4)}=\frac{1}{h^4}\cdot\)</span></p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>-14</p></td>
+<td class="text-center"><p>26</p></td>
+<td class="text-center"><p>-24</p></td>
+<td class="text-center"><p>11</p></td>
+<td class="text-center"><p>-2</p></td>
 </tr>
 </tbody>
 </table>
@@ -1679,89 +1449,89 @@ $<span class="math notranslate nohighlight">\(\overline{f}'(x_i)=\frac{2^n\,f_o'
 <p>Diferenčna shema nazaj z redom napake <span class="math notranslate nohighlight">\(\mathcal{O}(h^{1})\)</span>:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i-4}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i-3}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i-2}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i-1}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
+<tr class="row-odd"><th class="text-center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i-4}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i-3}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i-2}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i-1}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i'=\frac{1}{h}\cdot\)</span></p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>-1</p></td>
-<td class="text-align:center"><p>1</p></td>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i'=\frac{1}{h}\cdot\)</span></p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>-1</p></td>
+<td class="text-center"><p>1</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i''=\frac{1}{h^2}\cdot\)</span></p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>-2</p></td>
-<td class="text-align:center"><p>1</p></td>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i''=\frac{1}{h^2}\cdot\)</span></p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>-2</p></td>
+<td class="text-center"><p>1</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i'''=\frac{1}{h^3}\cdot\)</span></p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>-1</p></td>
-<td class="text-align:center"><p>3</p></td>
-<td class="text-align:center"><p>-3</p></td>
-<td class="text-align:center"><p>1</p></td>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i'''=\frac{1}{h^3}\cdot\)</span></p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>-1</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>-3</p></td>
+<td class="text-center"><p>1</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i^{(4)}=\frac{1}{h^4}\cdot\)</span></p></td>
-<td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>-4</p></td>
-<td class="text-align:center"><p>6</p></td>
-<td class="text-align:center"><p>-4</p></td>
-<td class="text-align:center"><p>1</p></td>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i^{(4)}=\frac{1}{h^4}\cdot\)</span></p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>-4</p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p>-4</p></td>
+<td class="text-center"><p>1</p></td>
 </tr>
 </tbody>
 </table>
 <p>Diferenčna shema nazaj z redom napake <span class="math notranslate nohighlight">\(\mathcal{O}(h^{2})\)</span>:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i-5}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i-4}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i-3}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i-2}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i-1}\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
+<tr class="row-odd"><th class="text-center head"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i-5}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i-4}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i-3}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i-2}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i-1}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(y_{i}\)</span></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i'=\frac{1}{2h}\cdot\)</span></p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>-4</p></td>
-<td class="text-align:center"><p>3</p></td>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i'=\frac{1}{2h}\cdot\)</span></p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>-4</p></td>
+<td class="text-center"><p>3</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i''=\frac{1}{h^2}\cdot\)</span></p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>-1</p></td>
-<td class="text-align:center"><p>4</p></td>
-<td class="text-align:center"><p>-5</p></td>
-<td class="text-align:center"><p>2</p></td>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i''=\frac{1}{h^2}\cdot\)</span></p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>-1</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>-5</p></td>
+<td class="text-center"><p>2</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i'''=\frac{1}{2h^3}\cdot\)</span></p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>3</p></td>
-<td class="text-align:center"><p>-14</p></td>
-<td class="text-align:center"><p>24</p></td>
-<td class="text-align:center"><p>-18</p></td>
-<td class="text-align:center"><p>5</p></td>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i'''=\frac{1}{2h^3}\cdot\)</span></p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>-14</p></td>
+<td class="text-center"><p>24</p></td>
+<td class="text-center"><p>-18</p></td>
+<td class="text-center"><p>5</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(y_i^{(4)}=\frac{1}{h^4}\cdot\)</span></p></td>
-<td class="text-align:center"><p>-2</p></td>
-<td class="text-align:center"><p>11</p></td>
-<td class="text-align:center"><p>-24</p></td>
-<td class="text-align:center"><p>26</p></td>
-<td class="text-align:center"><p>-14</p></td>
-<td class="text-align:center"><p>3</p></td>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(y_i^{(4)}=\frac{1}{h^4}\cdot\)</span></p></td>
+<td class="text-center"><p>-2</p></td>
+<td class="text-center"><p>11</p></td>
+<td class="text-center"><p>-24</p></td>
+<td class="text-center"><p>26</p></td>
+<td class="text-center"><p>-14</p></td>
+<td class="text-center"><p>3</p></td>
 </tr>
 </tbody>
 </table>
@@ -1836,7 +1606,7 @@ $<span class="math notranslate nohighlight">\(\overline{f}'(x_i)=\frac{2^n\,f_o'
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_157_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_157_0.png" />
+<img alt="../_images/6f74830df6b10a7ec08650cdd7a3921d27b5c7eb50b31683b19e5b41194c51ae.png" src="../_images/6f74830df6b10a7ec08650cdd7a3921d27b5c7eb50b31683b19e5b41194c51ae.png" />
 </div>
 </div>
 </section>
@@ -1858,7 +1628,7 @@ $<span class="math notranslate nohighlight">\(\overline{f}'(x_i)=\frac{2^n\,f_o'
 <section id="id4">
 <h2>Zgled<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Spodaj si bomo pogledali primer, kjer bomo natančnost spreminjali v treh korakih:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">float16</span></code> -
 16-bitni zapis: predznak 1 bit, 5 bitov eksponent, 10 bitov mantisa</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">float32</span></code> -
@@ -1907,7 +1677,7 @@ $<span class="math notranslate nohighlight">\(\overline{f}'(x_i)=\frac{2^n\,f_o'
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_25188\2765671333.py:1: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_32984\2765671333.py:1: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   def fun(x, dtype=np.float): # funkcija
 </pre></div>
@@ -1968,7 +1738,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_178_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_178_0.png" />
+<img alt="../_images/e915b6b9e0446709a7bef855c9e4c760c305661100ff1243386f1dbdeacadcda.png" src="../_images/e915b6b9e0446709a7bef855c9e4c760c305661100ff1243386f1dbdeacadcda.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1978,7 +1748,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_179_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_179_0.png" />
+<img alt="../_images/0e682d623cdf09f027c8b033629808103f300a022750bfc1f106052b288025c2.png" src="../_images/0e682d623cdf09f027c8b033629808103f300a022750bfc1f106052b288025c2.png" />
 </div>
 </div>
 <p>Definirajmo sedaj korak:</p>
@@ -2007,7 +1777,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_25188\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_32984\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
   f1_ocena = (fun(x+h, dtype=dtype)-fun(x-h,dtype=dtype))/(2*dtype(h))
 </pre></div>
 </div>
@@ -2046,7 +1816,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_189_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_189_0.png" />
+<img alt="../_images/9e4c0f08fa77409d913418c17e612c0ef6ad43efb6ac4b4a99bf4fb8f5819e33.png" src="../_images/9e4c0f08fa77409d913418c17e612c0ef6ad43efb6ac4b4a99bf4fb8f5819e33.png" />
 </div>
 </div>
 <p>Pri relativno velikem koraku <span class="math notranslate nohighlight">\(h\)</span> prevladuje napaka metode, pri majhnem koraku pa zaokrožitvnea napaka; optimalni korak lahko ocenimo glede na:</p>
@@ -2066,7 +1836,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_192_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_192_0.png" />
+<img alt="../_images/dbc8c438dd8624d39dc3a455a9e939b3f42154d9ee88b7f6bc035cf9bb3902a0.png" src="../_images/dbc8c438dd8624d39dc3a455a9e939b3f42154d9ee88b7f6bc035cf9bb3902a0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2076,7 +1846,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_193_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_193_0.png" />
+<img alt="../_images/a28ff9125583cb0d0664502fbd6ac5a66b1a122e3c284270bd40697d02e87c41.png" src="../_images/a28ff9125583cb0d0664502fbd6ac5a66b1a122e3c284270bd40697d02e87c41.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2086,7 +1856,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_194_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_194_0.png" />
+<img alt="../_images/9d2c51c67e4f40c52d53874d43b82d3dab2ac83ee699e9a91d2ea5995dc77aa8.png" src="../_images/9d2c51c67e4f40c52d53874d43b82d3dab2ac83ee699e9a91d2ea5995dc77aa8.png" />
 </div>
 </div>
 <p>Najbolje se izkaže 64-bitni zapis, vendar pa tudi pri tem korak manjši od cca <code class="docutils literal notranslate"><span class="pre">1e-5</span></code> ni priporočen!</p>
@@ -2115,7 +1885,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_201_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_201_0.png" />
+<img alt="../_images/f7c54ce0311350b3d12ede7326031814eeab54516129b31274749d23e27c31f6.png" src="../_images/f7c54ce0311350b3d12ede7326031814eeab54516129b31274749d23e27c31f6.png" />
 </div>
 </div>
 <p>Pri klicu s korakom <span class="math notranslate nohighlight">\(h=0.1\)</span> dobimo točni dve (tri) števki (podobno kakor pri centralni diferenčni shemi), zmanjšanjem koraka na desetino pa bi število točnih števk približno podvojili:</p>
@@ -2129,13 +1899,13 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Predavanje 10 - Numerično odvajanje_203_0.png" src="../_images/Predavanje 10 - Numerično odvajanje_203_0.png" />
+<img alt="../_images/d623eb36dc2373afab2d6483c7b361389e102a993e9c80f311391b126e7aab1b.png" src="../_images/d623eb36dc2373afab2d6483c7b361389e102a993e9c80f311391b126e7aab1b.png" />
 </div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="nekaj-vprasanj-za-razmislek">
 <h1>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this headline">#</a></h1>
-<ol>
+<ol class="arabic">
 <li><p>Za batni mehanizem na spodnji sliki strojno izpeljite kinematiko gibanja bata, če se kolenasta gred giblje po zakonu <span class="math notranslate nohighlight">\(\varphi(t)=\omega\,t\)</span>.
 <img src='./fig/batni_mehanizem.png' width=300></p></li>
 <li><p>Za kotno hitrosti <span class="math notranslate nohighlight">\(\omega=2\,\pi\,50\,\)</span>rad/s izrišite lego bata v treh obratih gredi. Uporabite: <span class="math notranslate nohighlight">\(r=0,03\,\)</span>m in <span class="math notranslate nohighlight">\(l=0,1\,\)</span>m.</p></li>
@@ -2173,7 +1943,7 @@ Dodatek k domačim nalogam: 6. vprašanje bi lahko nadaljevali in zašumljene po
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
@@ -2181,50 +1951,138 @@ Dodatek k domačim nalogam: 6. vprašanje bi lahko nadaljevali in zašumljene po
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Reševanje enačb</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Reševanje enačb</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Numerično integriranje</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Janko Slavič<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Numerično odvajanje</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-prvega-odvoda-po-metodi-koncnih-razlik">Aproksimacija prvega odvoda po metodi končnih razlik</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#centralna-diferencna-shema">Centralna diferenčna shema</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#odvod-f-x">Odvod <span class="math notranslate nohighlight">\(f'(x)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled-exp-x">Zgled: <span class="math notranslate nohighlight">\(\exp(-x)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Odvod <span class="math notranslate nohighlight">\(f''(x)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Odvod <span class="math notranslate nohighlight">\(f'''(x)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#odvod-f-4-x">Odvod <span class="math notranslate nohighlight">\(f^{(4)}(x)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#povzetek-centralne-diferencne-sheme">Povzetek centralne diferenčne sheme*</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-scipy-misc-central-diff-weights">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.misc.central_diff_weights</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izboljsan-priblizek-richardsonova-ekstrapolacija">Izboljšan približek - Richardsonova ekstrapolacija</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled">Zgled</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#necentralna-diferencna-shema">Necentralna diferenčna shema</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diferencna-shema-naprej">Diferenčna shema naprej</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diferencna-shema-nazaj">Diferenčna shema nazaj</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-numpy-gradient">Uporaba <code class="docutils literal notranslate"><span class="pre">numpy.gradient</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Zgled</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#zaokrozitvena-napaka-pri-numericnem-odvajanju">Zaokrožitvena napaka pri numeričnem odvajanju*</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Zgled</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-odvoda-s-kompleksnim-korakom">Aproksimacija odvoda s kompleksnim korakom*</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Janko Slavič
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
