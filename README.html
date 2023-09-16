@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Numerične metode v ekosistemu Pythona, Janko Slavič, 2022/23 &#8212; Numerične metode v ekosistemu Pythona</title>
+    <title>Numerične metode v ekosistemu Pythona, Janko Slavič, 2023/24 &#8212; Numerične metode v ekosistemu Pythona</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -65,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Študijski in izpitni red: 2022/23" href="notebooks/%C5%A0tudijski%20in%20izpitni%20red.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -74,6 +76,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -150,7 +161,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2022/23
+                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2023/24
                 </a>
             </li>
         </ul>
@@ -412,10 +423,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -423,7 +434,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -440,7 +451,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Numerične metode v ekosistemu Pythona, Janko Slavič, 2022/23</h1>
+    <h1>Numerične metode v ekosistemu Pythona, Janko Slavič, 2023/24</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -462,8 +473,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="numericne-metode-v-ekosistemu-pythona-janko-slavic-2022-23">
-<h1>Numerične metode v ekosistemu Pythona, Janko Slavič, 2022/23<a class="headerlink" href="#numericne-metode-v-ekosistemu-pythona-janko-slavic-2022-23" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="numericne-metode-v-ekosistemu-pythona-janko-slavic-2023-24">
+<h1>Numerične metode v ekosistemu Pythona, Janko Slavič, 2023/24<a class="headerlink" href="#numericne-metode-v-ekosistemu-pythona-janko-slavic-2023-24" title="Permalink to this heading">#</a></h1>
 <p>Tukaj predstavljena vsebina je osnova za predmet Numerične metode, ki se poučujeta na <span class="xref myst">Fakulteti za strojništvo (Univerza v Ljubljani)</span>:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.ladisk.si/?what=incfl&amp;flnm=NM.php">Numerične metode 2l. RR</a></p></li>
@@ -472,25 +483,25 @@ document.write(`
 <p>Prosimo, da si preberete <a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/%C5%A0tudijski%20in%20izpitni%20red.html">študijski in izpitni red</a>, tam so navedene ključne informacije v zvezi z opravljanjem predmeta.</p>
 <p><strong>Razpored predavanj</strong></p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2001%20-%20Uvod%20v%20Python.html">3.okt: Uvod v Python, 1. del</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2001%20-%20Uvod%20v%20Python.html">10.okt: Uvod v Python, 2. del</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2002%20-%20Print,%20delo%20z%20datotekami,%20funkcije,%20moduli.html">17.okt: Print, delo z datotekami, funkcije, moduli</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2003%20-%20Moduli,%20numpy,%20matplotlib.html">24.okt: Moduli, numpy, matplotlib</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2004%20-%20Objektno%20programiranje,%20simbolno%20ra%C4%8Dunanje.html">7.nov: Objektno programiranje, simbolno računanje</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">14.nov: Uvod v numerične metode in sistemi linearnih enačb 1</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">21.nov: Sistemi linearnih enačb 2</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2007%20-%20Interpolacija.html">28.nov: Interpolacija</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2008%20-%20Aproksimacija.html">5.dec: Aproksimacija</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">12.dec: Reševanje enačb</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">19.dec: Numerično odvajanje</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">9.jan: Numerično integriranje</a></p></li>
-<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">16.jan: Numerično reševanje diferencialnih enačb - začetni problem</a> in <a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">robni problem</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2001%20-%20Uvod%20v%20Python.html">2.okt: Uvod v Python, 1. del</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2001%20-%20Uvod%20v%20Python.html">9.okt: Uvod v Python, 2. del</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2002%20-%20Print,%20delo%20z%20datotekami,%20funkcije,%20moduli.html">16.okt: Print, delo z datotekami, funkcije, moduli</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2003%20-%20Moduli,%20numpy,%20matplotlib.html">23.okt: Moduli, numpy, matplotlib</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2004%20-%20Objektno%20programiranje,%20simbolno%20ra%C4%8Dunanje.html">6.nov: Objektno programiranje, simbolno računanje</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">13.nov: Uvod v numerične metode in sistemi linearnih enačb 1</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">20.nov: Sistemi linearnih enačb 2</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2007%20-%20Interpolacija.html">27.nov: Interpolacija</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2008%20-%20Aproksimacija.html">4.dec: Aproksimacija</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">11.dec: Reševanje enačb</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">18.dec: Numerično odvajanje</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">8.jan: Numerično integriranje</a></p></li>
+<li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">15.jan: Numerično reševanje diferencialnih enačb - začetni problem</a> in <a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">robni problem</a></p></li>
 <li><p><a class="reference external" href="https://jankoslavic.github.io/pynm/notebooks/Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode,%20uporabni%C5%A1ki%20vmesnik.html">Testiranje pravilnosti kode, uporabniški vmesnik</a></p></li>
 <li><p>Uvod v Mathematico*</p></li>
 </ol>
 <p>* Fakultativno predavanje, študentje Fakultete za strojništvo UNI-LJ imate možnost pridobiti licenčno verzijo programa Mathematica na tej <a class="reference external" href="http://www.fs.uni-lj.si/studijska_dejavnost/it_podpora/programska_oprema_za_studente/2015071415154271/Registracija%20Mathematica/">povezavi</a>.</p>
 <section id="dovoljenje-za-uporabo-license">
-<h2>Dovoljenje za uporabo (License)<a class="headerlink" href="#dovoljenje-za-uporabo-license" title="Permalink to this headline">#</a></h2>
+<h2>Dovoljenje za uporabo (License)<a class="headerlink" href="#dovoljenje-za-uporabo-license" title="Permalink to this heading">#</a></h2>
 <p>To delo je prosto za nekomercialno uporabo pri čemer morate navesti vir, avtorja in Fakulteto za strojništvo, Univerze v Ljubljani.</p>
 </section>
 <div class="toctree-wrapper compound">
@@ -522,11 +533,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="right-next"
        href="notebooks/%C5%A0tudijski%20in%20izpitni%20red.html"
@@ -537,10 +547,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -603,8 +610,8 @@ By Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
   <footer class="bd-footer">
   </footer>

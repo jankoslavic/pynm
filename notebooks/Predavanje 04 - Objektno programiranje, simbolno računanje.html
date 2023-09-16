@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Objektno programiranje, simbolno računanje &#8212; Numerične metode v ekosistemu Pythona</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Uvod v numerične metode in sistemi linearnih enačb" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html" />
     <link rel="prev" title="Numpy, matplotlib" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -77,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -153,7 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../README.html">
-                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2022/23
+                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2023/24
                 </a>
             </li>
         </ul>
@@ -415,10 +426,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -426,7 +437,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -518,10 +529,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="objektno-programiranje-simbolno-racunanje">
-<h1>Objektno programiranje, simbolno računanje<a class="headerlink" href="#objektno-programiranje-simbolno-racunanje" title="Permalink to this headline">#</a></h1>
+<h1>Objektno programiranje, simbolno računanje<a class="headerlink" href="#objektno-programiranje-simbolno-racunanje" title="Permalink to this heading">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="objektno-programiranje">
-<h1>Objektno programiranje<a class="headerlink" href="#objektno-programiranje" title="Permalink to this headline">#</a></h1>
+<h1>Objektno programiranje<a class="headerlink" href="#objektno-programiranje" title="Permalink to this heading">#</a></h1>
 <p>Pri programiranju poznamo različne pristope, dokumentacija Python-a (<a class="reference external" href="https://docs.python.org/howto/functional.html">docs.python.org</a>) omenja npr:</p>
 <ol class="arabic simple">
 <li><p><strong>proceduralni</strong>: seznam navodil, kaj je treba izvesti (npr.: <code class="docutils literal notranslate"><span class="pre">C,</span> <span class="pre">Pascal</span></code>)</p></li>
@@ -533,7 +544,7 @@ document.write(`
 <p>Objektno programiranje v Pythonu temelji na <strong>razredih</strong> (<em>class</em>), objekti so pa <strong>instance</strong> (<em>instance</em>) razreda.  Pogledali si bomo zgolj nekatere osnove objektnega programiranja (da boste lažje razumeli kodo drugih avtorjev in jo prirejali svojim potrebam).</p>
 <p>Razred definiramo z ukazom <code class="docutils literal notranslate"><span class="pre">class</span></code> (<a class="reference external" href="https://docs.python.org/tutorial/classes.html">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ImeRazreda</span><span class="p">:</span>
-    <span class="sd">&#39;&#39;&#39;docstring&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;docstring&#39;&#39;&#39;</span>
     <span class="p">[</span><span class="n">izraz</span> <span class="mi">1</span><span class="p">]</span>
     <span class="p">[</span><span class="n">izraz</span> <span class="mi">2</span><span class="p">]</span>
     <span class="o">.</span>
@@ -545,7 +556,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pravokotnik</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Razred za objekt pravokotnik&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Razred za objekt pravokotnik&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">širina</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">višina</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># to je konstruktor objekta. Se izvede, ko kličemo Pravokotnik(sirina=1, visina=4)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">širina</span> <span class="o">=</span> <span class="n">širina</span> 
@@ -641,7 +652,7 @@ document.write(`
 </div>
 </div>
 <section id="dedovanje">
-<h2>Dedovanje<a class="headerlink" href="#dedovanje" title="Permalink to this headline">#</a></h2>
+<h2>Dedovanje<a class="headerlink" href="#dedovanje" title="Permalink to this heading">#</a></h2>
 <p>Pomembna lastnost razredov je dedovanje; samo ime pove bistvo: tako kot ljudje dedujemo od svojih staršev, podobno velja tudi za razrede.  Vsak razred (<code class="docutils literal notranslate"><span class="pre">class</span></code>) tako lahko deduje lastnosti kakega drugega razreda (<a class="reference external" href="https://docs.python.org/tutorial/classes.html#inheritance">dokumentacija</a>). Lahko ima celo več staršev (v te podrobnosti tukaj ne bomo šli).</p>
 <p>Sintaksa razreda, ki deduje, je:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Otrok</span><span class="p">(</span><span class="n">Starš</span><span class="p">):</span>
@@ -704,7 +715,7 @@ document.write(`
 </div>
 </div>
 <section id="primer-dedovanja-razreda-list-seznam">
-<h3>Primer dedovanja razreda <code class="docutils literal notranslate"><span class="pre">list</span></code> (seznam)<a class="headerlink" href="#primer-dedovanja-razreda-list-seznam" title="Permalink to this headline">#</a></h3>
+<h3>Primer dedovanja razreda <code class="docutils literal notranslate"><span class="pre">list</span></code> (seznam)<a class="headerlink" href="#primer-dedovanja-razreda-list-seznam" title="Permalink to this heading">#</a></h3>
 <p>Najprej pripravimo seznam:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -737,7 +748,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f8b4da503a78c90986411b7602123ac579aa1c77db648a37c723f4a82ebc2b7f.png" src="../_images/f8b4da503a78c90986411b7602123ac579aa1c77db648a37c723f4a82ebc2b7f.png" />
+<img alt="../_images/bb4d905b04821494daa65e4c5dbadea3fa6f030d9233bb0d1b7605d36c4938c3.png" src="../_images/bb4d905b04821494daa65e4c5dbadea3fa6f030d9233bb0d1b7605d36c4938c3.png" />
 </div>
 </div>
 <p>Če nekaj takega izvajamo pogosto, potem je bolje, da si pripravimo svoj razred <code class="docutils literal notranslate"><span class="pre">Seznam</span></code>, ki deduje od <code class="docutils literal notranslate"><span class="pre">list</span></code> in dodamo metodo za prikaz <code class="docutils literal notranslate"><span class="pre">nariši</span></code>:</p>
@@ -802,14 +813,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dee1b4137353c68df0e3596a6c3257e86dbacd02294fb6a58b7a5b3cfb008b1a.png" src="../_images/dee1b4137353c68df0e3596a6c3257e86dbacd02294fb6a58b7a5b3cfb008b1a.png" />
+<img alt="../_images/33cdf05d61737edc7db6a75e43e92318ad631ef6274e8ba39816c0a12041d616.png" src="../_images/33cdf05d61737edc7db6a75e43e92318ad631ef6274e8ba39816c0a12041d616.png" />
 </div>
 </div>
 </section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="simbolno-racunanje-s-sympy">
-<h1>Simbolno računanje s <code class="docutils literal notranslate"><span class="pre">SymPy</span></code><a class="headerlink" href="#simbolno-racunanje-s-sympy" title="Permalink to this headline">#</a></h1>
+<h1>Simbolno računanje s <code class="docutils literal notranslate"><span class="pre">SymPy</span></code><a class="headerlink" href="#simbolno-racunanje-s-sympy" title="Permalink to this heading">#</a></h1>
 <p>Termin <strong>simbolno računanje</strong> pomeni, da matematične izraze rešujemo strojno v obliki abstraktnih simbolov (in <strong>ne numerično</strong>). Strojno simbolno računanje nam pomaga kadar nas zanima <strong>rezultat v simbolni obliki</strong> in so izrazi preobsežni za klasično reševanje na list in papir. K strojnemu reševanju se zatečemo tudi zaradi zmanjšanja možnosti napake (pri obsežnih izračunih se ljudje lahko zmotimo).</p>
 <p><strong>Simbolno računanje nikakor ni nadomestek numeričnih metod!</strong></p>
 <p>Pogledali si bomo nekatere osnove, nekateri priporočeni dodatni viri pa so:</p>
@@ -842,7 +853,7 @@ document.write(`
 </div>
 </div>
 <section id="definiranje-spremenljivk-in-numericni-izracun">
-<h2>Definiranje spremenljivk in numerični izračun<a class="headerlink" href="#definiranje-spremenljivk-in-numericni-izracun" title="Permalink to this headline">#</a></h2>
+<h2>Definiranje spremenljivk in numerični izračun<a class="headerlink" href="#definiranje-spremenljivk-in-numericni-izracun" title="Permalink to this heading">#</a></h2>
 <p>Spremenljivke definiramo takole:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -960,24 +971,24 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;positive&#39;: True,
- &#39;extended_nonnegative&#39;: True,
- &#39;extended_positive&#39;: True,
- &#39;commutative&#39;: True,
- &#39;extended_nonzero&#39;: True,
- &#39;nonzero&#39;: True,
- &#39;extended_negative&#39;: False,
- &#39;negative&#39;: False,
- &#39;nonnegative&#39;: True,
- &#39;nonpositive&#39;: False,
- &#39;complex&#39;: True,
- &#39;extended_nonpositive&#39;: False,
- &#39;hermitian&#39;: True,
- &#39;infinite&#39;: False,
  &#39;extended_real&#39;: True,
- &#39;zero&#39;: False,
- &#39;imaginary&#39;: False,
+ &#39;nonpositive&#39;: False,
  &#39;real&#39;: True,
- &#39;finite&#39;: True}
+ &#39;hermitian&#39;: True,
+ &#39;extended_positive&#39;: True,
+ &#39;finite&#39;: True,
+ &#39;imaginary&#39;: False,
+ &#39;infinite&#39;: False,
+ &#39;extended_negative&#39;: False,
+ &#39;nonzero&#39;: True,
+ &#39;zero&#39;: False,
+ &#39;nonnegative&#39;: True,
+ &#39;complex&#39;: True,
+ &#39;commutative&#39;: True,
+ &#39;extended_nonnegative&#39;: True,
+ &#39;extended_nonzero&#39;: True,
+ &#39;negative&#39;: False,
+ &#39;extended_nonpositive&#39;: False}
 </pre></div>
 </div>
 </div>
@@ -991,7 +1002,7 @@ document.write(`
 </ul>
 <p>Ti tipi so pomembni, saj lahko vplivajo na način reševanja in na rešitev.</p>
 <section id="racionalna-stevila">
-<h3>Racionalna števila<a class="headerlink" href="#racionalna-stevila" title="Permalink to this headline">#</a></h3>
+<h3>Racionalna števila<a class="headerlink" href="#racionalna-stevila" title="Permalink to this heading">#</a></h3>
 <p>Zgoraj smo že definirali <em>realna števila</em>. Poglejmo na primeru sedaj <em>racionalna števila</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1034,7 +1045,7 @@ document.write(`
 </div>
 </section>
 <section id="kompleksna-stevila">
-<h3>Kompleksna števila<a class="headerlink" href="#kompleksna-stevila" title="Permalink to this headline">#</a></h3>
+<h3>Kompleksna števila<a class="headerlink" href="#kompleksna-stevila" title="Permalink to this heading">#</a></h3>
 <p>Imaginarno število se zapiše z <code class="docutils literal notranslate"><span class="pre">I</span></code> (to je drugače kot pri <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, kjer je imaginarni del definiran z <code class="docutils literal notranslate"><span class="pre">j</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1058,7 +1069,7 @@ document.write(`
 </div>
 </section>
 <section id="numericni-izracun">
-<h3>Numerični izračun<a class="headerlink" href="#numericni-izracun" title="Permalink to this headline">#</a></h3>
+<h3>Numerični izračun<a class="headerlink" href="#numericni-izracun" title="Permalink to this heading">#</a></h3>
 <p>Pri simbolnem izračunu najprej analitične izraze rešimo, poenostavimo itd., nato pa pogosto želimo tudi izračunati konkreten rezultat.</p>
 <p>Poglejmo primer:</p>
 <div class="cell docutils container">
@@ -1174,7 +1185,7 @@ document.write(`
 </section>
 </section>
 <section id="sympy-in-numpy">
-<h2><code class="docutils literal notranslate"><span class="pre">SymPy</span></code> in <code class="docutils literal notranslate"><span class="pre">NumPy</span></code><a class="headerlink" href="#sympy-in-numpy" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">SymPy</span></code> in <code class="docutils literal notranslate"><span class="pre">NumPy</span></code><a class="headerlink" href="#sympy-in-numpy" title="Permalink to this heading">#</a></h2>
 <p>Pogosto <code class="docutils literal notranslate"><span class="pre">sympy</span></code> povežemo z <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. Za primer si poglejmo, kako bi izraz:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1228,13 +1239,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>124 ms ± 10.1 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>138 ms ± 13.7 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
 </div>
 <section id="uporaba-funkcije-lambdify">
-<h3>Uporaba funkcije <code class="docutils literal notranslate"><span class="pre">lambdify</span></code><a class="headerlink" href="#uporaba-funkcije-lambdify" title="Permalink to this headline">#</a></h3>
+<h3>Uporaba funkcije <code class="docutils literal notranslate"><span class="pre">lambdify</span></code><a class="headerlink" href="#uporaba-funkcije-lambdify" title="Permalink to this heading">#</a></h3>
 <p>Bistveno hitrejši način je uporaba pristopa <code class="docutils literal notranslate"><span class="pre">lambdify</span></code>, kjer se pripravi prevedena funkcija, optimirana za numerično izvajanje. Sintaksa funkcije <code class="docutils literal notranslate"><span class="pre">sympy.lambdify()</span></code> je (<a class="reference external" href="http://docs.sympy.org/latest/modules/utilities/lambdify.html#sympy.utilities.lambdify.lambdify">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">simboli</span><span class="p">,</span> <span class="n">funkcija</span><span class="p">,</span> <span class="n">modules</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
@@ -1263,7 +1274,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27.5 µs ± 3.93 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27.2 µs ± 807 ns per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1290,7 +1301,7 @@ document.write(`
 </section>
 </section>
 <section id="graficni-prikaz">
-<h2>Grafični prikaz<a class="headerlink" href="#graficni-prikaz" title="Permalink to this headline">#</a></h2>
+<h2>Grafični prikaz<a class="headerlink" href="#graficni-prikaz" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">SymPy</span></code> ima na <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> temelječ prikaz podatkov. Prikaz je sicer glede na <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> bolj omejen in ga uporabljamo za preproste prikaze. (<a class="reference external" href="http://docs.sympy.org/latest/modules/plotting.html">dokumentacija</a>).</p>
 <p>Pogledali si bomo preproste primere, ki se navezujejo na funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.plotting.plot</span></code>; najprej uvozimo funkcijo:</p>
 <div class="cell docutils container">
@@ -1320,8 +1331,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/af6c1a380807271974d733a1f6e2044b5fb17d9e6eb1c5d2e5f685ed8360b0ea.png" src="../_images/af6c1a380807271974d733a1f6e2044b5fb17d9e6eb1c5d2e5f685ed8360b0ea.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x13ece19f790&gt;
+<img alt="../_images/135951f99ec00f0285928c0a702f8e159b55250fcf8afae14c2ef2d1587f400e.png" src="../_images/135951f99ec00f0285928c0a702f8e159b55250fcf8afae14c2ef2d1587f400e.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x1593d992950&gt;
 </pre></div>
 </div>
 </div>
@@ -1356,11 +1367,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/311f4944ce11a2e58c5f4575140f96bf30ac3de1349e7cc7f79510bdcbfa0c97.png" src="../_images/311f4944ce11a2e58c5f4575140f96bf30ac3de1349e7cc7f79510bdcbfa0c97.png" />
+<img alt="../_images/15f093292baa18c542cf9cff1fe3ef37c417f50f23f1035bcf5e6044dab4900a.png" src="../_images/15f093292baa18c542cf9cff1fe3ef37c417f50f23f1035bcf5e6044dab4900a.png" />
 </div>
 </div>
 <section id="parametricni-izris">
-<h3>Parametrični izris<a class="headerlink" href="#parametricni-izris" title="Permalink to this headline">#</a></h3>
+<h3>Parametrični izris<a class="headerlink" href="#parametricni-izris" title="Permalink to this heading">#</a></h3>
 <p>Podobno uporabljamo funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.plotting.plot_parametric</span></code> za parametrični izris (<a class="reference external" href="http://docs.sympy.org/latest/modules/plotting.html#sympy.plotting.plot.plot_parametric">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_parametric</span><span class="p">(</span><span class="n">izraz_x</span><span class="p">,</span> <span class="n">izraz_y</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
@@ -1386,12 +1397,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9c913443231bee895174a3c65fe8692ec36474162526ae1b64cd5abcb2d97c16.png" src="../_images/9c913443231bee895174a3c65fe8692ec36474162526ae1b64cd5abcb2d97c16.png" />
+<img alt="../_images/95c640a3c9000f3a8083266663353e8e0935cd268e4a566cf70e487b63abcc97.png" src="../_images/95c640a3c9000f3a8083266663353e8e0935cd268e4a566cf70e487b63abcc97.png" />
 </div>
 </div>
 </section>
 <section id="izris-v-prostoru">
-<h3>Izris v prostoru<a class="headerlink" href="#izris-v-prostoru" title="Permalink to this headline">#</a></h3>
+<h3>Izris v prostoru<a class="headerlink" href="#izris-v-prostoru" title="Permalink to this heading">#</a></h3>
 <p>Funkcija <code class="docutils literal notranslate"><span class="pre">sympy.plotting.plot3D</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/modules/plotting.html#sympy.plotting.plot.plot3d">dokumentacija</a>) za izris v prostoru ima sintakso:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot3d</span><span class="p">(</span><span class="n">izraz</span><span class="p">,</span> <span class="n">razpon_x</span><span class="p">,</span> <span class="n">razpon_y</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
@@ -1419,17 +1430,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/198101393475e15489398c8a947f1d05973d17e1a707c76c195ca056c2ed3efd.png" src="../_images/198101393475e15489398c8a947f1d05973d17e1a707c76c195ca056c2ed3efd.png" />
+<img alt="../_images/40138da8f4aef5608793451c6908be7229edbc3d918fce2faf72e84e3f713567.png" src="../_images/40138da8f4aef5608793451c6908be7229edbc3d918fce2faf72e84e3f713567.png" />
 </div>
 </div>
 <p>Za ostale prikaze glejte <a class="reference external" href="http://docs.sympy.org/latest/modules/plotting.html#module-sympy.plotting.plot">dokumentacijo</a>.</p>
 </section>
 </section>
 <section id="algebra">
-<h2>Algebra<a class="headerlink" href="#algebra" title="Permalink to this headline">#</a></h2>
+<h2>Algebra<a class="headerlink" href="#algebra" title="Permalink to this heading">#</a></h2>
 <p>V tem poglavju si bomo pogledali nekatere osnove uporabe <code class="docutils literal notranslate"><span class="pre">SymPy</span></code> za algebrajske operacije.</p>
 <section id="uporaba-expand-in-factor">
-<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">expand</span></code> in <code class="docutils literal notranslate"><span class="pre">factor</span></code><a class="headerlink" href="#uporaba-expand-in-factor" title="Permalink to this headline">#</a></h3>
+<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">expand</span></code> in <code class="docutils literal notranslate"><span class="pre">factor</span></code><a class="headerlink" href="#uporaba-expand-in-factor" title="Permalink to this heading">#</a></h3>
 <p>Definirajmo matematični izraz:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1512,7 +1523,7 @@ document.write(`
 </div>
 </section>
 <section id="poenostavljanje-izrazov-s-simplify">
-<h3>Poenostavljanje izrazov s <code class="docutils literal notranslate"><span class="pre">simplify</span></code><a class="headerlink" href="#poenostavljanje-izrazov-s-simplify" title="Permalink to this headline">#</a></h3>
+<h3>Poenostavljanje izrazov s <code class="docutils literal notranslate"><span class="pre">simplify</span></code><a class="headerlink" href="#poenostavljanje-izrazov-s-simplify" title="Permalink to this heading">#</a></h3>
 <p>Funkcija <code class="docutils literal notranslate"><span class="pre">sympy.simplify()</span></code>  (<a class="reference external" href="http://docs.sympy.org/latest/tutorial/simplification.html#simplify">dokumentacija</a>) poskuša poenostaviti izraze v bolj preproste (npr. s krajšanjem spremenljivk).</p>
 <p>Za posebne namene lahko poenostavimo tudi z:</p>
 <ul class="simple">
@@ -1555,7 +1566,7 @@ document.write(`
 </section>
 </section>
 <section id="uporaba-apart-in-together">
-<h2>Uporaba <code class="docutils literal notranslate"><span class="pre">apart</span></code> in <code class="docutils literal notranslate"><span class="pre">together</span></code><a class="headerlink" href="#uporaba-apart-in-together" title="Permalink to this headline">#</a></h2>
+<h2>Uporaba <code class="docutils literal notranslate"><span class="pre">apart</span></code> in <code class="docutils literal notranslate"><span class="pre">together</span></code><a class="headerlink" href="#uporaba-apart-in-together" title="Permalink to this heading">#</a></h2>
 <p>Funkciji uporabljamo za delo z ulomki:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1604,7 +1615,7 @@ document.write(`
 </div>
 </section>
 <section id="odvajanje">
-<h2>Odvajanje<a class="headerlink" href="#odvajanje" title="Permalink to this headline">#</a></h2>
+<h2>Odvajanje<a class="headerlink" href="#odvajanje" title="Permalink to this heading">#</a></h2>
 <p>Odvajanje je načeloma relativno preprosta matematična operacija, ki jo izvedemo s funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.diff()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/tutorial/calculus.html#derivatives">dokumentacija</a>):</p>
 <p>Pripravimo primer:</p>
 <div class="cell docutils container">
@@ -1676,7 +1687,7 @@ document.write(`
 </div>
 </section>
 <section id="integriranje">
-<h2>Integriranje<a class="headerlink" href="#integriranje" title="Permalink to this headline">#</a></h2>
+<h2>Integriranje<a class="headerlink" href="#integriranje" title="Permalink to this heading">#</a></h2>
 <p>Funkcijo <code class="docutils literal notranslate"><span class="pre">integrate</span></code> lahko uporabimo za nedoločeno integriranje (<a class="reference external" href="http://docs.sympy.org/latest/modules/integrals/integrals.html#module-sympy.integrals">dokumentacija</a>):</p>
 <div class="highlight-pythoon notranslate"><div class="highlight"><pre><span></span>integrate(f, x)
 </pre></div>
@@ -1729,7 +1740,7 @@ document.write(`
 </div>
 </section>
 <section id="vsota-in-produkt-vrste">
-<h2>Vsota in produkt vrste<a class="headerlink" href="#vsota-in-produkt-vrste" title="Permalink to this headline">#</a></h2>
+<h2>Vsota in produkt vrste<a class="headerlink" href="#vsota-in-produkt-vrste" title="Permalink to this heading">#</a></h2>
 <p>Vsoto vrste definiramo s pomočju funkcije <code class="docutils literal notranslate"><span class="pre">sympy.Sum()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/modules/concrete.html#sympy.concrete.summations.Sum">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">Sum</span><span class="p">(</span><span class="n">izraz</span><span class="p">,</span> <span class="p">(</span><span class="n">spr</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span>
 </pre></div>
@@ -1807,7 +1818,7 @@ document.write(`
 </div>
 </section>
 <section id="limitni-racun">
-<h2>Limitni račun<a class="headerlink" href="#limitni-racun" title="Permalink to this headline">#</a></h2>
+<h2>Limitni račun<a class="headerlink" href="#limitni-racun" title="Permalink to this heading">#</a></h2>
 <p>Limite računamo s pomočjo funkcije <code class="docutils literal notranslate"><span class="pre">sympy.limit()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/tutorial/calculus.html#limits">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x0</span><span class="p">)</span>
 </pre></div>
@@ -1876,7 +1887,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </section>
 <section id="taylorjeve-vrste">
-<h2>Taylorjeve vrste<a class="headerlink" href="#taylorjeve-vrste" title="Permalink to this headline">#</a></h2>
+<h2>Taylorjeve vrste<a class="headerlink" href="#taylorjeve-vrste" title="Permalink to this heading">#</a></h2>
 <p>Taylorjeve vrste izračunamo s pomočjo funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.series()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/modules/series/series.html#id1">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">izraz</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="nb">dir</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1973,9 +1984,9 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </section>
 <section id="linearna-algebra">
-<h2>Linearna algebra<a class="headerlink" href="#linearna-algebra" title="Permalink to this headline">#</a></h2>
+<h2>Linearna algebra<a class="headerlink" href="#linearna-algebra" title="Permalink to this heading">#</a></h2>
 <section id="matrike-in-vektorji">
-<h3>Matrike in vektorji<a class="headerlink" href="#matrike-in-vektorji" title="Permalink to this headline">#</a></h3>
+<h3>Matrike in vektorji<a class="headerlink" href="#matrike-in-vektorji" title="Permalink to this heading">#</a></h3>
 <p>Matrike in vektorje definiramo s funkcjo <code class="docutils literal notranslate"><span class="pre">Matrix</span></code>. Če se pri <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> ni treba dosledno držati matematičnega zapisa vektorjev in matrik, je pri <code class="docutils literal notranslate"><span class="pre">sympy</span></code> to nujno.</p>
 <p>Poglejmo si primer; najprej pripravimo spremenljivke:</p>
 <div class="cell docutils container">
@@ -2076,7 +2087,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </section>
 </section>
 <section id="resevanje-enacb">
-<h2>Reševanje enačb<a class="headerlink" href="#resevanje-enacb" title="Permalink to this headline">#</a></h2>
+<h2>Reševanje enačb<a class="headerlink" href="#resevanje-enacb" title="Permalink to this heading">#</a></h2>
 <p>Enačbe in sistem enačb rešujemo s funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.solve()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/modules/solvers/solvers.html#algebraic-equations">dokumentacija</a>). Podprto je reševanje sledečih enačb:</p>
 <ul class="simple">
 <li><p>polinomske enačbe,</p></li>
@@ -2130,7 +2141,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/66619297dc406c113edf949de84fdac2cb46bba8f0093976528c9e9b450be514.png" src="../_images/66619297dc406c113edf949de84fdac2cb46bba8f0093976528c9e9b450be514.png" />
+<img alt="../_images/c461cd95cdfd0c187efac669f0a4a195552201be176d0877ad209ca2fcaadbff.png" src="../_images/c461cd95cdfd0c187efac669f0a4a195552201be176d0877ad209ca2fcaadbff.png" />
 </div>
 </div>
 <p>Kvadratna enačba:</p>
@@ -2185,9 +2196,9 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </section>
 <section id="resevanje-diferencialnih-enacb">
-<h2>Reševanje diferencialnih enačb<a class="headerlink" href="#resevanje-diferencialnih-enacb" title="Permalink to this headline">#</a></h2>
+<h2>Reševanje diferencialnih enačb<a class="headerlink" href="#resevanje-diferencialnih-enacb" title="Permalink to this heading">#</a></h2>
 <section id="nedefinirane-funkcije">
-<h3>Nedefinirane funkcije<a class="headerlink" href="#nedefinirane-funkcije" title="Permalink to this headline">#</a></h3>
+<h3>Nedefinirane funkcije<a class="headerlink" href="#nedefinirane-funkcije" title="Permalink to this heading">#</a></h3>
 <p>Preden si ogledamo diferencialne enačbe, moramo spoznati nedefinirane funkcije. Take funkcije definiramo <code class="docutils literal notranslate"><span class="pre">sympy.Function</span></code> <a class="reference external" href="https://docs.sympy.org/latest/modules/functions/index.html">dokumentacija</a>.</p>
 <p>Kot primer si poglejmo kako definiramo enačbo <span class="math notranslate nohighlight">\(\ddot x(t)=g\)</span>. Najprej definirajmo nedoločeno funkcijo:</p>
 <div class="cell docutils container">
@@ -2218,7 +2229,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </section>
 <section id="diferencialne-enacbe">
-<h3>Diferencialne enačbe<a class="headerlink" href="#diferencialne-enacbe" title="Permalink to this headline">#</a></h3>
+<h3>Diferencialne enačbe<a class="headerlink" href="#diferencialne-enacbe" title="Permalink to this heading">#</a></h3>
 <p>Diferencialne enačbe in sisteme diferencialnih enačb rešujemo s funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.dsolve()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/modules/solvers/ode.html#dsolve">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hint</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">simplify</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
              <span class="n">ics</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">eta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -2316,7 +2327,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="nekaj-vprasanj-za-razmislek">
-<h1>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this headline">#</a></h1>
+<h1>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this heading">#</a></h1>
 <ol class="arabic simple">
 <li><p>Pojasnite na primeru <em>proceduralno</em> in <em>funkcijsko</em> programiranje.</p></li>
 </ol>
@@ -2349,9 +2360,9 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </ul>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="dodatno">
-<h1>Dodatno<a class="headerlink" href="#dodatno" title="Permalink to this headline">#</a></h1>
+<h1>Dodatno<a class="headerlink" href="#dodatno" title="Permalink to this heading">#</a></h1>
 <section id="sympy-mechanics">
-<h2>sympy.mechanics<a class="headerlink" href="#sympy-mechanics" title="Permalink to this headline">#</a></h2>
+<h2>sympy.mechanics<a class="headerlink" href="#sympy-mechanics" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">sympy</span></code> ima vgrajeno podporo za klasično mehaniko (<a class="reference external" href="http://docs.sympy.org/latest/modules/physics/mechanics/index.html#classical-mechanics">dokumentacija</a>). Celovit tutorial je bil prikazan na znanstveni konferenci <a class="reference external" href="https://www.youtube.com/watch?v=r4piIKV4sDw">SciPy 2016</a>.</p>
 </section>
 </section>
@@ -2381,11 +2392,10 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html"
@@ -2405,10 +2415,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -2523,8 +2530,8 @@ By Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
   <footer class="bd-footer">
   </footer>

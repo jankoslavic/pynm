@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Uvod v numerične metode in sistemi linearnih enačb &#8212; Numerične metode v ekosistemu Pythona</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Sistemi linearnih enačb - nadaljevanje" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html" />
     <link rel="prev" title="Objektno programiranje, simbolno računanje" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -77,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -153,7 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../README.html">
-                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2022/23
+                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2023/24
                 </a>
             </li>
         </ul>
@@ -415,10 +426,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -426,7 +437,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -492,10 +503,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="uvod-v-numericne-metode-in-sistemi-linearnih-enacb">
-<h1>Uvod v numerične metode in sistemi linearnih enačb<a class="headerlink" href="#uvod-v-numericne-metode-in-sistemi-linearnih-enacb" title="Permalink to this headline">#</a></h1>
+<h1>Uvod v numerične metode in sistemi linearnih enačb<a class="headerlink" href="#uvod-v-numericne-metode-in-sistemi-linearnih-enacb" title="Permalink to this heading">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="uvod-v-numericne-metode">
-<h1>Uvod v numerične metode<a class="headerlink" href="#uvod-v-numericne-metode" title="Permalink to this headline">#</a></h1>
+<h1>Uvod v numerične metode<a class="headerlink" href="#uvod-v-numericne-metode" title="Permalink to this heading">#</a></h1>
 <p>Kadar želimo simulirati izbrani fizikalni proces, ponavadi postopamo takole:</p>
 <ol class="arabic simple">
 <li><p>postavimo matematični model*,</p></li>
@@ -506,7 +517,7 @@ document.write(`
 <p>* Če lahko matematični model rešimo analitično, numerično reševanje ni potrebno.</p>
 <p>Matematični model poskušamo rešiti analitično, saj taka rešitev ni obremenjena z napakami. Iz tega razloga se v okviru matematike učimo reševanja sistema enačb, integriranja, odvajanja in podobno. Bistvo <strong>numeričnih metod</strong> je, da matematične modele rešujemo <strong>numerično</strong>, torej na podlagi <strong>diskretnih vrednosti</strong>. Kakor bomo spoznali pozneje, nam numerični pristop v primerjavi z analitičnim omogoča reševanje bistveno obsežnejših in kompleksnejših problemov.</p>
 <section id="zaokrozitvena-napaka">
-<h2>Zaokrožitvena napaka<a class="headerlink" href="#zaokrozitvena-napaka" title="Permalink to this headline">#</a></h2>
+<h2>Zaokrožitvena napaka<a class="headerlink" href="#zaokrozitvena-napaka" title="Permalink to this heading">#</a></h2>
 <p>V nadaljevanju si bomo pogledali nekatere omejitve in izzive numeričnega pristopa. Prva omejitev je, da so v računalniku realne vrednosti vedno zapisane s končno natančnostjo. V Pythonu se števila pogosto zapišejo v dvojni natančnosti s približno 15 signifikantnimi števkami.</p>
 <p>Število z dvojno natančnostjo se v Pythonu imenuje <strong>float64</strong> in je zapisano v spomin v binarni obliki v 64 bitih (11 bitov eksponent in 53 bitov mantisa (1 bit za predznak)). Ker je mantisa definirana na podlagi 52 binarnih števk, se lahko pojavi pri njegovem zapisu <em>relativna napaka</em> največ <span class="math notranslate nohighlight">\(\epsilon\approx2.2\cdot 10^{-16}\)</span>. Ta napaka se imenuje <strong>osnovna zaokrožitvena napaka</strong> in se lahko pojavi pri vsakem vmesnem
 izračunu!</p>
@@ -545,7 +556,7 @@ izračunu!</p>
 </div>
 </section>
 <section id="napaka-metode">
-<h2>Napaka metode<a class="headerlink" href="#napaka-metode" title="Permalink to this headline">#</a></h2>
+<h2>Napaka metode<a class="headerlink" href="#napaka-metode" title="Permalink to this heading">#</a></h2>
 <p>Poleg zaokrožitvene napake pa se pogosto srečamo tudi z <strong>napako metode</strong> ali <strong>metodično napako</strong>, ki jo naredimo takrat, ko natančen analitični postopek reševanja matematičnega modela zamenjamo s približnim numeričnim.</p>
 <p>Pomembna lastnost numeričnih algoritmov je <strong>stabilnost</strong>. To pomeni, da majhna sprememba vhodnih podatkov povzroči majhno spremembo rezultatov. Če se ob majhni spremembi na vhodu rezultati zelo spremenijo, pravimo, da je <strong>algoritem nestabilen</strong>. V praksi torej uporabljamo stabilne algoritme; bomo pa pozneje spoznali, da je stabilnost lahko pogojena tudi z vhodnimi podatki!</p>
 <p>Poznamo pa tudi nestabilnost matematičnega modela/naloge/enačbe; v tem primeru govorimo o <strong>slabi pogojenosti</strong>.</p>
@@ -557,7 +568,7 @@ izračunu!</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="uvod-v-sisteme-linearnih-enacb">
-<h1>Uvod v sisteme linearnih enačb<a class="headerlink" href="#uvod-v-sisteme-linearnih-enacb" title="Permalink to this headline">#</a></h1>
+<h1>Uvod v sisteme linearnih enačb<a class="headerlink" href="#uvod-v-sisteme-linearnih-enacb" title="Permalink to this heading">#</a></h1>
 <p>Pod zgornjim naslovom razumemo sistem <span class="math notranslate nohighlight">\(m\)</span> linearnih enačb (<span class="math notranslate nohighlight">\(E_i, i=0, 1,\dots,m-1\)</span>) z <span class="math notranslate nohighlight">\(n\)</span> neznankami (<span class="math notranslate nohighlight">\(x_j, j=0,1,\dots,n-1\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -581,7 +592,7 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 <li><p>matrične  spremenljivke pišemo z veliko črko poudarjeno, npr.: <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p></li>
 </ul>
 <section id="o-resitvi-sistema-linearnih-enacb">
-<h2>O rešitvi sistema linearnih enačb<a class="headerlink" href="#o-resitvi-sistema-linearnih-enacb" title="Permalink to this headline">#</a></h2>
+<h2>O rešitvi sistema linearnih enačb<a class="headerlink" href="#o-resitvi-sistema-linearnih-enacb" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
@@ -825,7 +836,7 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 </div>
 </section>
 <section id="norma-in-pogojenost-sistemov-enacb">
-<h2>Norma in pogojenost sistemov enačb<a class="headerlink" href="#norma-in-pogojenost-sistemov-enacb" title="Permalink to this headline">#</a></h2>
+<h2>Norma in pogojenost sistemov enačb<a class="headerlink" href="#norma-in-pogojenost-sistemov-enacb" title="Permalink to this heading">#</a></h2>
 <p>Numerična naloga je slabo pogojena, če majhna sprememba podatkov povzroči veliko spremembo rezultata. V primeru <em>majhne spremembe podatkov</em>, ki povzročijo <em>majhno spremembo rezultatov</em>, pa je naloga <strong>dobro pogojena</strong>.</p>
 <p>Sistem enačb je ponavadi dobro pogojen, če so absolutne vrednosti diagonalnih elementov matrike koeficientov velike v primerjavi z absolutnimi vrednostmi izven diagonalnih elementov.</p>
 <p>Za sistem linearnih enačb <span class="math notranslate nohighlight">\(\mathbf{A}\,\mathbf{x}=\mathbf{b}\)</span> lahko računamo <strong>število pogojenosti</strong> (<em>angl.</em> condition number):</p>
@@ -851,7 +862,7 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 <p>Če je število pogojenosti majhno, potem je matrika dobro pogojena in obratno - pri slabi pogojenosti se število pogojenosti zelo poveča.</p>
 <p>Žal je izračun pogojenosti matrike numerično relativno zahteven.</p>
 <section id="primer-slabo-pogojene-matrike">
-<h3>Primer slabo pogojene matrike<a class="headerlink" href="#primer-slabo-pogojene-matrike" title="Permalink to this headline">#</a></h3>
+<h3>Primer slabo pogojene matrike<a class="headerlink" href="#primer-slabo-pogojene-matrike" title="Permalink to this heading">#</a></h3>
 <p>Pogledali si bomo slabo pogojen sistem, kjer bomo z malenkostno spremembo na matriki koeficientov povzročili veliko spremembo rešitve.</p>
 <p>Matrika koeficientov:</p>
 <div class="cell docutils container">
@@ -998,14 +1009,14 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 </section>
 </section>
 <section id="numericno-resevanje-sistemov-linearnih-enacb">
-<h2>Numerično reševanje sistemov linearnih enačb<a class="headerlink" href="#numericno-resevanje-sistemov-linearnih-enacb" title="Permalink to this headline">#</a></h2>
+<h2>Numerično reševanje sistemov linearnih enačb<a class="headerlink" href="#numericno-resevanje-sistemov-linearnih-enacb" title="Permalink to this heading">#</a></h2>
 <p>Pogledali si bomo dva, v principu različna pristopa k reševanju sistemov linearnih enačb:</p>
 <p>A) <strong>Direktni pristop</strong>: nad sistemom enačb izvajamo elementarne operacije, s katerimi predelamo sistem enačb v lažje rešljivega,</p>
 <p>B) <strong>Iterativni pristop</strong>: izberemo začetni približek, nato pa približek iterativno izboljšujemo.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="gaussova-eliminacija">
-<h1>Gaussova eliminacija<a class="headerlink" href="#gaussova-eliminacija" title="Permalink to this headline">#</a></h1>
+<h1>Gaussova eliminacija<a class="headerlink" href="#gaussova-eliminacija" title="Permalink to this heading">#</a></h1>
 <p>Predpostavimo, da rešujemo sistem <span class="math notranslate nohighlight">\(n\)</span> enačb za <span class="math notranslate nohighlight">\(n\)</span> neznank, ki ima rang <span class="math notranslate nohighlight">\(n\)</span>. Tak sistem je enolično rešljiv.</p>
 <p>Gaussova eliminacija spada med direktne metode, saj s pomočjo elementarnih vrstičnih operacij sistem enačb prevedemo v zgornje poravnani trikotni sistem (pod glavno diagonalo v razširjeni matriki so vrednosti nič).</p>
 <p>Najprej pripravimo razširjeno matriko koeficientov:</p>
@@ -1196,7 +1207,7 @@ A_{n-1,0}&amp;A_{n-1,1}&amp;\cdots &amp; A_{n-1,n-1} &amp; b_{n-1}\\
 </div>
 </div>
 <section id="povzetek-gaussove-eliminacije">
-<h2>Povzetek Gaussove eliminacije<a class="headerlink" href="#povzetek-gaussove-eliminacije" title="Permalink to this headline">#</a></h2>
+<h2>Povzetek Gaussove eliminacije<a class="headerlink" href="#povzetek-gaussove-eliminacije" title="Permalink to this heading">#</a></h2>
 <p>V modul <code class="docutils literal notranslate"><span class="pre">orodja.py</span></code> shranimo funkciji:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1254,14 +1265,14 @@ A_{n-1,0}&amp;A_{n-1,1}&amp;\cdots &amp; A_{n-1,n-1} &amp; b_{n-1}\\
 </div>
 </section>
 <section id="numericna-zahtevnost">
-<h2>Numerična zahtevnost<a class="headerlink" href="#numericna-zahtevnost" title="Permalink to this headline">#</a></h2>
+<h2>Numerična zahtevnost<a class="headerlink" href="#numericna-zahtevnost" title="Permalink to this heading">#</a></h2>
 <p>Numerično zahtevnost ocenjujemo po številu matematičnih operacij, ki so potrebne za izračun.
 Za rešitev <span class="math notranslate nohighlight">\(n\)</span> linearnih enačb tako z Gaussovo eliminacijo potrebujemo približno <span class="math notranslate nohighlight">\(n^3/3\)</span> matematičnih operacij. Za določitev neznank <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> potrebujemo še dodatnih približno <span class="math notranslate nohighlight">\(n^2\)</span> operacij.</p>
 <p>Pri Gaussovi eliminaciji smo eliminacijo izvedli samo za člene pod diagonalo; če bi z eliminacijo nadaljevali in jo izvedli tudi za člene nad diagonalo, bi izvedli t. i. <em>Gauss-Jordanovo</em> eliminacijo, za katero pa potrebujemo dodatnih približno <span class="math notranslate nohighlight">\(n^3/3\)</span> operacij* (kar se šteje kot glavna slabost te metode).</p>
 <p>* Nekaj komentarjev na temo števila numeričnih operacij najdete tukaj: <a class="reference external" href="http://pinm.ladisk.si/303/kako-dolo%C4%8Damo-numeri%C4%8Dno-zahtevnost-algoritmov">pinm.ladisk.si</a>.</p>
 </section>
 <section id="uporaba-knjiznjice-numpy">
-<h2>Uporaba knjižnjice <code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#uporaba-knjiznjice-numpy" title="Permalink to this headline">#</a></h2>
+<h2>Uporaba knjižnjice <code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#uporaba-knjiznjice-numpy" title="Permalink to this heading">#</a></h2>
 <p>Reševanje sistema linearnih enačb z <code class="docutils literal notranslate"><span class="pre">numpy.linalg.solve</span></code> (<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.solve.html">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">solve</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
@@ -1282,7 +1293,7 @@ Za rešitev <span class="math notranslate nohighlight">\(n\)</span> linearnih en
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="nekaj-vprasanj-za-razmislek">
-<h1>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this headline">#</a></h1>
+<h1>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this heading">#</a></h1>
 <ol class="arabic">
 <li><p>Za sistem enačb:</p>
 <div class="math notranslate nohighlight">
@@ -1319,7 +1330,7 @@ Določite sistem enačb v primeru dveh teles. Določite matriko koeficientov <sp
 </ol>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="dodatno">
-<h1>Dodatno<a class="headerlink" href="#dodatno" title="Permalink to this headline">#</a></h1>
+<h1>Dodatno<a class="headerlink" href="#dodatno" title="Permalink to this heading">#</a></h1>
 <p>Poglejte si strani:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.micropython.org">micropython.org</a></p></li>
@@ -1327,7 +1338,7 @@ Določite sistem enačb v primeru dveh teles. Določite matriko koeficientov <sp
 <li><p><a class="reference external" href="http://www.openmodal.com">openmodal.com</a></p></li>
 </ul>
 <section id="primer-simbolnega-resevanja-sistema-linearnih-enacb-v-okviru-sympy">
-<h2>Primer simbolnega reševanja sistema linearnih enačb v okviru <code class="docutils literal notranslate"><span class="pre">sympy</span></code><a class="headerlink" href="#primer-simbolnega-resevanja-sistema-linearnih-enacb-v-okviru-sympy" title="Permalink to this headline">#</a></h2>
+<h2>Primer simbolnega reševanja sistema linearnih enačb v okviru <code class="docutils literal notranslate"><span class="pre">sympy</span></code><a class="headerlink" href="#primer-simbolnega-resevanja-sistema-linearnih-enacb-v-okviru-sympy" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -1412,11 +1423,10 @@ Določite sistem enačb v primeru dveh teles. Določite matriko koeficientov <sp
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html"
@@ -1436,10 +1446,7 @@ Določite sistem enačb v primeru dveh teles. Določite matriko koeficientov <sp
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1528,8 +1535,8 @@ By Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
   <footer class="bd-footer">
   </footer>

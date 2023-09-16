@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>&lt;no title&gt; &#8212; Numerične metode v ekosistemu Pythona</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -66,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -75,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -151,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../README.html">
-                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2022/23
+                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2023/24
                 </a>
             </li>
         </ul>
@@ -413,10 +424,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -424,7 +435,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -482,7 +493,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">Lagrange_pol</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Funkcija vrne Lagrangev polinom za i</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Funkcija vrne Lagrangev polinom za i</span>
 <span class="sd">    X: simbolna spremenljivka</span>
 <span class="sd">    x: seznam podatkov (podanih točk)</span>
 <span class="sd">    i: indeks za katerega se računa polinom</span>
@@ -536,7 +547,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8dbf43a591ae101a08ec8d564a2727c271c604b20d1133f73fe37ef5162eebd8.png" src="../_images/8dbf43a591ae101a08ec8d564a2727c271c604b20d1133f73fe37ef5162eebd8.png" />
+<img alt="../_images/7501e3db568c89479b5d30d0b6d39371d804a2961acdc85a678229f8fa9d68a5.png" src="../_images/7501e3db568c89479b5d30d0b6d39371d804a2961acdc85a678229f8fa9d68a5.png" />
 </div>
 </div>
 <p>Vprašanje 2: Definirajte funkcijo za Lagrangevo polinomsko interpolacijo. Na primeru pojasnite kako deluje.</p>
@@ -544,7 +555,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definirajmo funkcijo</span>
 <span class="k">def</span> <span class="nf">interpolation_Lagrange</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Izvede interpolacijo po Lagrangevi metodi.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Izvede interpolacijo po Lagrangevi metodi.</span>
 <span class="sd">    x in y predstavljata seznam podatkov (podane točke)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
@@ -576,7 +587,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bbd17f4c2a01008ed91d957a4688ab9d75a822ae70ed5b282feba7f4752d17a1.png" src="../_images/bbd17f4c2a01008ed91d957a4688ab9d75a822ae70ed5b282feba7f4752d17a1.png" />
+<img alt="../_images/3f3ba4ab9c07f3ac0757555693b907b5e6617300d3fc9905d162f42d7947e0c0.png" src="../_images/3f3ba4ab9c07f3ac0757555693b907b5e6617300d3fc9905d162f42d7947e0c0.png" />
 </div>
 </div>
 <p>Za lažje razumevanje narišimo še posamezne Lagrangeove polinome.</p>
@@ -599,7 +610,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2701d8dded7c9981d533ba3ecb846343c7d104f308e2a75666a4d641ca526546.png" src="../_images/2701d8dded7c9981d533ba3ecb846343c7d104f308e2a75666a4d641ca526546.png" />
+<img alt="../_images/b42efdb4d474b69178fbdedfc326b1232b87c81f49b702eeb5066894b6fc1868.png" src="../_images/b42efdb4d474b69178fbdedfc326b1232b87c81f49b702eeb5066894b6fc1868.png" />
 </div>
 </div>
 <p>Vprašanje 3: Pojasnite teoretično ozadje naravnih kubičnih zlepkov.</p>
@@ -609,7 +620,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">kubicni_zlepki_koeficient</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">k0</span><span class="p">,</span> <span class="n">kn</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Vrne matriko koeficientov in konstant</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Vrne matriko koeficientov in konstant</span>
 <span class="sd">    </span>
 <span class="sd">    x in y predstavljata seznam znanih vrednosti.</span>
 <span class="sd">    x mora biti ekvidistanten</span>
@@ -637,7 +648,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">kubicni_zlepki</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x_najdi</span><span class="p">,</span> <span class="n">k0</span><span class="p">,</span> <span class="n">kn</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Vrne kubicni zlepek pri delitvi `xint`</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Vrne kubicni zlepek pri delitvi `xint`</span>
 <span class="sd">    </span>
 <span class="sd">    k: koeficienti kubičnih zlepkov</span>
 <span class="sd">    x in y: znane vrednosti, x mora biti ekvidistanten</span>
@@ -702,19 +713,19 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">xint</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">50</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">yint</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">kubicni_zlepki</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">k0</span><span class="p">,</span> <span class="n">kn</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">xint</span><span class="p">])</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xint</span><span class="p">,</span> <span class="n">yint</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Naravni kubični zlepek&#39;</span><span class="p">)</span>
 
-<span class="nn">Input In [12],</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="nn">Cell In[12], line 2,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">xint</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">50</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">yint</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">kubicni_zlepki</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">k0</span><span class="p">,</span> <span class="n">kn</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">xint</span><span class="p">])</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xint</span><span class="p">,</span> <span class="n">yint</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Naravni kubični zlepek&#39;</span><span class="p">)</span>
 
-<span class="nn">Input In [10],</span> in <span class="ni">kubicni_zlepki</span><span class="nt">(k, x, y, x_najdi, k0, kn)</span>
+<span class="nn">Cell In[10], line 19,</span> in <span class="ni">kubicni_zlepki</span><span class="nt">(k, x, y, x_najdi, k0, kn)</span>
 <span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span>
 <span class="ne">---&gt; </span><span class="mi">19</span> <span class="n">out</span> <span class="o">=</span> <span class="p">((</span><span class="n">x_najdi</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="n">h</span> <span class="o">-</span> <span class="p">(</span><span class="n">x_najdi</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">h</span><span class="p">)</span><span class="o">*</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mf">6.0</span> \
@@ -822,16 +833,12 @@ interpolirajte z uporabo <code class="docutils literal notranslate"><span class=
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -894,8 +901,8 @@ By Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
   <footer class="bd-footer">
   </footer>

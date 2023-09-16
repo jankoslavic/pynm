@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>ING &#8212; Numerične metode v ekosistemu Pythona</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -66,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -75,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -151,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../README.html">
-                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2022/23
+                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2023/24
                 </a>
             </li>
         </ul>
@@ -413,10 +424,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -424,7 +435,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -476,7 +487,7 @@ document.write(`
 </div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="ing">
-<h1>ING<a class="headerlink" href="#ing" title="Permalink to this headline">#</a></h1>
+<h1>ING<a class="headerlink" href="#ing" title="Permalink to this heading">#</a></h1>
 <p>Na sliki je prikazana trajektorija gibanja krogle po ravnini. Pospešek v <span class="math notranslate nohighlight">\(x\)</span> koordinati je podan z izrazom <span class="math notranslate nohighlight">\(p(t) = a\,t^2+b\,t+c\)</span>.</p>
 <img width='600px' src='ING.jpeg'><div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -490,7 +501,7 @@ document.write(`
 </div>
 </div>
 <section id="vprasanje">
-<h2>1. vprašanje<a class="headerlink" href="#vprasanje" title="Permalink to this headline">#</a></h2>
+<h2>1. vprašanje<a class="headerlink" href="#vprasanje" title="Permalink to this heading">#</a></h2>
 <p>S trapeznim pravilom lahko izračunamo tudi numerični integral v začetni točki podanega niza. (1: Da, 2: Ne)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -499,7 +510,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="n">odgovor1</span> <span class="o">=</span> <span class="c1"># #?</span>
                <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -509,7 +520,7 @@ document.write(`
 </div>
 </section>
 <section id="id1">
-<h2>2. vprašanje<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2>2. vprašanje<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>Določite numerični integral <span class="math notranslate nohighlight">\(\int_{0}^{t_2} p(x)\,dx\)</span> s sestavljeno trapezno metodo pri koraku <span class="math notranslate nohighlight">\(t_2\)</span>.</p>
 <p>Enote: m/s</p>
 <div class="cell docutils container">
@@ -521,7 +532,7 @@ document.write(`
 </div>
 </section>
 <section id="id2">
-<h2>3. vprašanje<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>3. vprašanje<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Določite numerični integral <span class="math notranslate nohighlight">\(\int_{0}^{t_2} p(t)\,dx\)</span> s sestavljeno trapezno metodo pri koraku <span class="math notranslate nohighlight">\(t_2/2\)</span>.</p>
 <p>Enote: m/s</p>
 <div class="cell docutils container">
@@ -533,7 +544,7 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h2>4. vprašanje<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<h2>4. vprašanje<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>Na podlagi zgoraj izračunanih integralov s korakom <span class="math notranslate nohighlight">\(t_2\)</span> in <span class="math notranslate nohighlight">\(t_2/2\)</span> določite izboljšan približek integrala.</p>
 <p>Enote: m/s</p>
 <div class="cell docutils container">
@@ -545,7 +556,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h2>5. vprašanje<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<h2>5. vprašanje<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>Opazovani časovni interval <span class="math notranslate nohighlight">\([0,t_2]\)</span> razdelite na <span class="math notranslate nohighlight">\(n\)</span> ekvidistantnih odsekov s korakom <span class="math notranslate nohighlight">\(h\)</span>. Določite korak <span class="math notranslate nohighlight">\(h\)</span>.</p>
 <p>Enote: s</p>
 <div class="cell docutils container">
@@ -557,7 +568,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h2>6. vprašanje<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<h2>6. vprašanje<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p>S kumulativno trapezno metodo (<code class="docutils literal notranslate"><span class="pre">scipy.integrate.cumtrapz</span></code>) izračunajte vrednost integrala pri vseh diskretnih točkah ob uporabi koraka <span class="math notranslate nohighlight">\(h\)</span>. (Torej: <span class="math notranslate nohighlight">\(\int_{0}^{t_i} p(x)\,dx\)</span>), kjer je <span class="math notranslate nohighlight">\(t_i\)</span> diskretna točka.</p>
 <p>Enote: m/s</p>
 <div class="cell docutils container">
@@ -595,16 +606,12 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -672,8 +679,8 @@ By Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
   <footer class="bd-footer">
   </footer>

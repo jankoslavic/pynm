@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Moduli, zanke, funkcije &#8212; Numerične metode v ekosistemu Pythona</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -66,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -75,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -151,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../README.html">
-                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2022/23
+                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2023/24
                 </a>
             </li>
         </ul>
@@ -413,10 +424,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -424,7 +435,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -489,7 +500,7 @@ document.write(`
                   
   <h1>Kazalo<span class="tocSkip"></span></h1>
 <div class="toc"><ul class="toc-item"><li><span><a href="#Moduli,-zanke,-funkcije" data-toc-modified-id="Moduli,-zanke,-funkcije-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Moduli, zanke, funkcije</a></span><ul class="toc-item"><li><span><a href="#Zanki-for-in-while:" data-toc-modified-id="Zanki-for-in-while:-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Zanki <code>for</code> in <code>while</code>:</a></span></li><li><span><a href="#Definicije-lastnih-funkcij" data-toc-modified-id="Definicije-lastnih-funkcij-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Definicije lastnih funkcij</a></span></li><li><span><a href="#Moduli---nadaljevanje" data-toc-modified-id="Moduli---nadaljevanje-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Moduli - nadaljevanje</a></span><ul class="toc-item"><li><span><a href="#Numpy" data-toc-modified-id="Numpy-1.3.1"><span class="toc-item-num">1.3.1&nbsp;&nbsp;</span>Numpy</a></span></li><li><span><a href="#Maplotlib" data-toc-modified-id="Maplotlib-1.3.2"><span class="toc-item-num">1.3.2&nbsp;&nbsp;</span>Maplotlib</a></span></li></ul></li></ul></li><li><span><a href="#Primer:-uporaba-Python-a-za-dimenzioniranje-nosilca" data-toc-modified-id="Primer:-uporaba-Python-a-za-dimenzioniranje-nosilca-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Primer: uporaba Python-a za dimenzioniranje nosilca</a></span><ul class="toc-item"><li><span><a href="#Naloga" data-toc-modified-id="Naloga-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Naloga</a></span></li><li><span><a href="#Enačbe" data-toc-modified-id="Enačbe-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Enačbe</a></span></li><li><span><a href="#Podatki:" data-toc-modified-id="Podatki:-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Podatki:</a></span></li><li><span><a href="#Rešitev" data-toc-modified-id="Rešitev-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Rešitev</a></span><ul class="toc-item"><li><span><a href="#Največja-upogibna-napetost-v-nosilcu" data-toc-modified-id="Največja-upogibna-napetost-v-nosilcu-2.4.1"><span class="toc-item-num">2.4.1&nbsp;&nbsp;</span>Največja upogibna napetost v nosilcu</a></span></li><li><span><a href="#Upogibnica" data-toc-modified-id="Upogibnica-2.4.2"><span class="toc-item-num">2.4.2&nbsp;&nbsp;</span>Upogibnica</a></span></li><li><span><a href="#Funkcija-napetost_upogib" data-toc-modified-id="Funkcija-napetost_upogib-2.4.3"><span class="toc-item-num">2.4.3&nbsp;&nbsp;</span>Funkcija <code>napetost_upogib</code></a></span></li><li><span><a href="#Dimenzioniranje-nosilca" data-toc-modified-id="Dimenzioniranje-nosilca-2.4.4"><span class="toc-item-num">2.4.4&nbsp;&nbsp;</span>Dimenzioniranje nosilca</a></span></li><li><span><a href="#Dodatek:" data-toc-modified-id="Dodatek:-2.4.5"><span class="toc-item-num">2.4.5&nbsp;&nbsp;</span>Dodatek:</a></span></li></ul></li></ul></li></ul></div><section class="tex2jax_ignore mathjax_ignore" id="moduli-zanke-funkcije">
-<h1>Moduli, zanke, funkcije<a class="headerlink" href="#moduli-zanke-funkcije" title="Permalink to this headline">#</a></h1>
+<h1>Moduli, zanke, funkcije<a class="headerlink" href="#moduli-zanke-funkcije" title="Permalink to this heading">#</a></h1>
 <p>Priprava podatkov, komentarji kode:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -501,7 +512,7 @@ document.write(`
 </div>
 </div>
 <section id="zanki-for-in-while">
-<h2>Zanki <code class="docutils literal notranslate"><span class="pre">for</span></code> in <code class="docutils literal notranslate"><span class="pre">while</span></code>:<a class="headerlink" href="#zanki-for-in-while" title="Permalink to this headline">#</a></h2>
+<h2>Zanki <code class="docutils literal notranslate"><span class="pre">for</span></code> in <code class="docutils literal notranslate"><span class="pre">while</span></code>:<a class="headerlink" href="#zanki-for-in-while" title="Permalink to this heading">#</a></h2>
 <p>Kadar želimo, da se koda izvede za vsak element seznama ali terke:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -617,7 +628,7 @@ ii
 </ul>
 </section>
 <section id="definicije-lastnih-funkcij">
-<h2>Definicije lastnih funkcij<a class="headerlink" href="#definicije-lastnih-funkcij" title="Permalink to this headline">#</a></h2>
+<h2>Definicije lastnih funkcij<a class="headerlink" href="#definicije-lastnih-funkcij" title="Permalink to this heading">#</a></h2>
 <p>Kadar želimo neko kodo uporabiti več kot enkrat, je je dobro definirati v obliki funkcije. Sintaksa je naslednja:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -647,7 +658,7 @@ ii
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">izpiši_vse_dvakrat_2</span><span class="p">(</span><span class="n">seznam</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Funkcija, ki izpiše dvakratnik vsakega elementa v podanem seznamu.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">:</span>
@@ -675,7 +686,7 @@ izpiši_vse_dvakrat_2(seznam)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">izpiši_vse_dvakrat_3</span><span class="p">(</span><span class="n">seznam</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Funkcija, ki izpiše dvakratnik vsakega elementa v podanem seznamu.</span>
 <span class="sd">    Vrne seznam dvakratnikov elementov podanega seznama.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -711,9 +722,9 @@ izpiši_vse_dvakrat_2(seznam)
 </div>
 </section>
 <section id="moduli-nadaljevanje">
-<h2>Moduli - nadaljevanje<a class="headerlink" href="#moduli-nadaljevanje" title="Permalink to this headline">#</a></h2>
+<h2>Moduli - nadaljevanje<a class="headerlink" href="#moduli-nadaljevanje" title="Permalink to this heading">#</a></h2>
 <section id="numpy">
-<h3>Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h3>
+<h3>Numpy<a class="headerlink" href="#numpy" title="Permalink to this heading">#</a></h3>
 <p>Modul z orodji za numerično računanje. Del paketa Anaconda.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -788,7 +799,7 @@ izpiši_vse_dvakrat_2(seznam)
 </div>
 </section>
 <section id="maplotlib">
-<h3>Maplotlib<a class="headerlink" href="#maplotlib" title="Permalink to this headline">#</a></h3>
+<h3>Maplotlib<a class="headerlink" href="#maplotlib" title="Permalink to this heading">#</a></h3>
 <p>Modul, nemenjen izrisu grafov. Prav tako del paketa Anaconda.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -804,10 +815,10 @@ izpiši_vse_dvakrat_2(seznam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x23f1a378bb0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x24649584dc0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/49f621b5af792189b2eded69be76223515403bf3223c33d228d7a19bb015c251.png" src="../_images/49f621b5af792189b2eded69be76223515403bf3223c33d228d7a19bb015c251.png" />
+<img alt="../_images/d8246a2de049a2ae154ac2b4d6bd72136dcc221b67d02e396fe77bc784aa21ae.png" src="../_images/d8246a2de049a2ae154ac2b4d6bd72136dcc221b67d02e396fe77bc784aa21ae.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -822,20 +833,20 @@ izpiši_vse_dvakrat_2(seznam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x23f1c4a4040&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x246391d3cd0&gt;
 </pre></div>
 </div>
-<img alt="../_images/5a9d7b40f066ec5a6b0eb1ca00a9a956cc1cb62d6e888af7e30447207de60bed.png" src="../_images/5a9d7b40f066ec5a6b0eb1ca00a9a956cc1cb62d6e888af7e30447207de60bed.png" />
+<img alt="../_images/3dbfe5d9a8bd0a2f7e7a6c2859852dca7463a0e670171be45b1ce0ea5c50095f.png" src="../_images/3dbfe5d9a8bd0a2f7e7a6c2859852dca7463a0e670171be45b1ce0ea5c50095f.png" />
 </div>
 </div>
 </section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="primer-uporaba-python-a-za-dimenzioniranje-nosilca">
-<h1>Primer: uporaba Python-a za dimenzioniranje nosilca<a class="headerlink" href="#primer-uporaba-python-a-za-dimenzioniranje-nosilca" title="Permalink to this headline">#</a></h1>
+<h1>Primer: uporaba Python-a za dimenzioniranje nosilca<a class="headerlink" href="#primer-uporaba-python-a-za-dimenzioniranje-nosilca" title="Permalink to this heading">#</a></h1>
 <p>Obravnavamo nosilec na sliki.</p>
 <img src="img/konzola.png" style="width:550px"><section id="naloga">
-<h2>Naloga<a class="headerlink" href="#naloga" title="Permalink to this headline">#</a></h2>
+<h2>Naloga<a class="headerlink" href="#naloga" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Izračunaj največjo upogibno napetost v nosilcu <span class="math notranslate nohighlight">\(\sigma_{\text{max}}\)</span>.</p></li>
 </ol>
@@ -848,7 +859,7 @@ izpiši_vse_dvakrat_2(seznam)
 </ol>
 </section>
 <section id="enacbe">
-<h2>Enačbe<a class="headerlink" href="#enacbe" title="Permalink to this headline">#</a></h2>
+<h2>Enačbe<a class="headerlink" href="#enacbe" title="Permalink to this heading">#</a></h2>
 <p>Odpornostni in vztrajnostni moment prereza:
 $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</p>
 <div class="math notranslate nohighlight">
@@ -869,7 +880,7 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 \[y = \frac{f}{2} \, (2 - 3u + u^3)\]</div>
 </section>
 <section id="podatki">
-<h2>Podatki:<a class="headerlink" href="#podatki" title="Permalink to this headline">#</a></h2>
+<h2>Podatki:<a class="headerlink" href="#podatki" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -894,9 +905,9 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 </div>
 </section>
 <section id="resitev">
-<h2>Rešitev<a class="headerlink" href="#resitev" title="Permalink to this headline">#</a></h2>
+<h2>Rešitev<a class="headerlink" href="#resitev" title="Permalink to this heading">#</a></h2>
 <section id="najvecja-upogibna-napetost-v-nosilcu">
-<h3>Največja upogibna napetost v nosilcu<a class="headerlink" href="#najvecja-upogibna-napetost-v-nosilcu" title="Permalink to this headline">#</a></h3>
+<h3>Največja upogibna napetost v nosilcu<a class="headerlink" href="#najvecja-upogibna-napetost-v-nosilcu" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">W_z</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">h</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">6</span>
@@ -915,7 +926,7 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 </div>
 </section>
 <section id="upogibnica">
-<h3>Upogibnica<a class="headerlink" href="#upogibnica" title="Permalink to this headline">#</a></h3>
+<h3>Upogibnica<a class="headerlink" href="#upogibnica" title="Permalink to this heading">#</a></h3>
 <p>Najprej pripravimo polje koordinate <span class="math notranslate nohighlight">\(x\)</span>, kjer želimo izračunati upogibnico:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -969,10 +980,10 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x23f1c525450&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x246496fe860&gt;]
 </pre></div>
 </div>
-<img alt="../_images/d934fe10507dc61448ffd77bbca28fe91fc12c9db36cb30ea018c512ad1f9e6d.png" src="../_images/d934fe10507dc61448ffd77bbca28fe91fc12c9db36cb30ea018c512ad1f9e6d.png" />
+<img alt="../_images/4aae90132c19eab24c2deaeaf4dd02db3842c0aed770dc13b48431caf64402d1.png" src="../_images/4aae90132c19eab24c2deaeaf4dd02db3842c0aed770dc13b48431caf64402d1.png" />
 </div>
 </div>
 <p>Izris še opremimo:</p>
@@ -990,19 +1001,19 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y [mm]&#39;)
 </pre></div>
 </div>
-<img alt="../_images/c67f6a4bca1eee5dab46c3ba983343b527442e17f991939476fce79999af8066.png" src="../_images/c67f6a4bca1eee5dab46c3ba983343b527442e17f991939476fce79999af8066.png" />
+<img alt="../_images/cbffef25acb3f9412ab9ec84cbc734098598968c2dba8cd458936d033e73024c.png" src="../_images/cbffef25acb3f9412ab9ec84cbc734098598968c2dba8cd458936d033e73024c.png" />
 </div>
 </div>
 </section>
 <section id="funkcija-napetost-upogib">
-<h3>Funkcija <code class="docutils literal notranslate"><span class="pre">napetost_upogib</span></code><a class="headerlink" href="#funkcija-napetost-upogib" title="Permalink to this headline">#</a></h3>
+<h3>Funkcija <code class="docutils literal notranslate"><span class="pre">napetost_upogib</span></code><a class="headerlink" href="#funkcija-napetost-upogib" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple" start="3">
 <li><p>* Definiraj funkcijo <code class="docutils literal notranslate"><span class="pre">napetost_upogib</span></code>, ki pri podanih parametrih <em>izriše</em> upogibnico nosilca in <em>vrne</em> vrednost največje upogibne napetosti <span class="math notranslate nohighlight">\(\sigma_{\text{max}}\)</span>.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">napetost_upogib</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">izriši</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Za konzolno vpet nosilec in podane parametre izriše upogibnico</span>
 <span class="sd">    ter vrne vrednost maksimalne napetosti.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1039,12 +1050,12 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200.0
 </pre></div>
 </div>
-<img alt="../_images/c67f6a4bca1eee5dab46c3ba983343b527442e17f991939476fce79999af8066.png" src="../_images/c67f6a4bca1eee5dab46c3ba983343b527442e17f991939476fce79999af8066.png" />
+<img alt="../_images/cbffef25acb3f9412ab9ec84cbc734098598968c2dba8cd458936d033e73024c.png" src="../_images/cbffef25acb3f9412ab9ec84cbc734098598968c2dba8cd458936d033e73024c.png" />
 </div>
 </div>
 </section>
 <section id="dimenzioniranje-nosilca">
-<h3>Dimenzioniranje nosilca<a class="headerlink" href="#dimenzioniranje-nosilca" title="Permalink to this headline">#</a></h3>
+<h3>Dimenzioniranje nosilca<a class="headerlink" href="#dimenzioniranje-nosilca" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple" start="4">
 <li><p>* Za različne možne <code class="docutils literal notranslate"><span class="pre">višine</span></code> prereza <span class="math notranslate nohighlight">\(h\)</span> izberi najmanjšo, pri kateri je največja upogibna napetost v nosilcu manjša od dopustne napetosti (<span class="math notranslate nohighlight">\(\sigma_{\text{max}} \leq \sigma_{\text{dop}}\)</span>).</p></li>
 </ol>
@@ -1063,13 +1074,13 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Izbrana višina: 14.0 mm
 </pre></div>
 </div>
-<img alt="../_images/9f39e3fde9f1cd5dd7d9447e598f580712ebed2fbdd413fe23354f8fe46f2aac.png" src="../_images/9f39e3fde9f1cd5dd7d9447e598f580712ebed2fbdd413fe23354f8fe46f2aac.png" />
+<img alt="../_images/c7c409a7119cb4d93c136e8c53969a1a9cb9aa3d389dfdd40a0aef855e2dd9b6.png" src="../_images/c7c409a7119cb4d93c136e8c53969a1a9cb9aa3d389dfdd40a0aef855e2dd9b6.png" />
 </div>
 </div>
 </section>
 <hr class="docutils" />
 <section id="dodatek">
-<h3>Dodatek:<a class="headerlink" href="#dodatek" title="Permalink to this headline">#</a></h3>
+<h3>Dodatek:<a class="headerlink" href="#dodatek" title="Permalink to this heading">#</a></h3>
 <p>Pripravi modul (<code class="docutils literal notranslate"><span class="pre">.py</span></code> datoteko) z orodji za dimenzioniranje konzolno vpetega nosilca.</p>
 </section>
 </section>
@@ -1100,16 +1111,12 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1196,8 +1203,8 @@ By Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
   <footer class="bd-footer">
   </footer>

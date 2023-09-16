@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Funkcije, izjeme, moduli &#8212; Numerične metode v ekosistemu Pythona</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -66,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Numpy, matplotlib" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html" />
     <link rel="prev" title="Uvod v Python" href="Predavanje%2001%20-%20Uvod%20v%20Python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -75,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -151,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../README.html">
-                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2022/23
+                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2023/24
                 </a>
             </li>
         </ul>
@@ -413,10 +424,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -424,7 +435,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -509,12 +520,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="funkcije-izjeme-moduli">
-<h1>Funkcije, izjeme, moduli<a class="headerlink" href="#funkcije-izjeme-moduli" title="Permalink to this headline">#</a></h1>
+<h1>Funkcije, izjeme, moduli<a class="headerlink" href="#funkcije-izjeme-moduli" title="Permalink to this heading">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="funkcije">
-<h1>Funkcije<a class="headerlink" href="#funkcije" title="Permalink to this headline">#</a></h1>
+<h1>Funkcije<a class="headerlink" href="#funkcije" title="Permalink to this heading">#</a></h1>
 <section id="funkcija-print">
-<h2>Funkcija print<a class="headerlink" href="#funkcija-print" title="Permalink to this headline">#</a></h2>
+<h2>Funkcija print<a class="headerlink" href="#funkcija-print" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">print</span></code> predstavlja eno od najbolj pogosto uporabljenih funkcij. Vse podane argumente izpiše, mednje da presledek, na koncu pa gre v novo vrstico.</p>
 <p>Poglejmo primer:</p>
 <div class="cell docutils container">
@@ -584,7 +595,7 @@ document.write(`
 </div>
 </div>
 <section id="oblikovanje-nizov">
-<h3>Oblikovanje nizov<a class="headerlink" href="#oblikovanje-nizov" title="Permalink to this headline">#</a></h3>
+<h3>Oblikovanje nizov<a class="headerlink" href="#oblikovanje-nizov" title="Permalink to this heading">#</a></h3>
 <p>Pri oblikovanju/formatiranju nizov imamo na voljo več orodij:</p>
 <ul class="simple">
 <li><p><strong>f-niz</strong> (angl. <em>f-string</em>, <em>f</em> zaradi “formatirani”), <a class="reference external" href="https://docs.python.org/reference/lexical_analysis.html#f-strings">dokumentacija</a>,</p></li>
@@ -735,7 +746,7 @@ pi = 3.14
 </section>
 </section>
 <section id="delo-z-datotekami">
-<h2>Delo z datotekami<a class="headerlink" href="#delo-z-datotekami" title="Permalink to this headline">#</a></h2>
+<h2>Delo z datotekami<a class="headerlink" href="#delo-z-datotekami" title="Permalink to this heading">#</a></h2>
 <p>Delo z datotekami je pomembno, saj podatke pogosto shranjujemo v datoteke ali jih beremo iz njih. Datoteko, iz katere želimo brati ali vanjo pisati, moramo najprej odpreti. To izvedemo z ukazom <code class="docutils literal notranslate"><span class="pre">open</span></code> (<a class="reference external" href="https://docs.python.org/library/functions.html#open">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">errors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">closefd</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">opener</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -872,11 +883,11 @@ konec
 <p>Stavek <code class="docutils literal notranslate"><span class="pre">with</span></code> rezultat funkcije <code class="docutils literal notranslate"><span class="pre">open</span></code> shrani v (<em>as</em>) ime <code class="docutils literal notranslate"><span class="pre">datoteka</span></code>, potem pa za vsako vrstico izpišemo vrednosti. Pri izhodu iz stavka <code class="docutils literal notranslate"><span class="pre">with</span></code> se samodejno pokliče metoda <code class="docutils literal notranslate"><span class="pre">datoteka.close()</span></code>. Stavek <code class="docutils literal notranslate"><span class="pre">with</span></code> nam torej omogoča pisanje pregledne in kompaktne kode.</p>
 </section>
 <section id="funkcije-v-splosnem">
-<h2>Funkcije v splošnem<a class="headerlink" href="#funkcije-v-splosnem" title="Permalink to this headline">#</a></h2>
+<h2>Funkcije v splošnem<a class="headerlink" href="#funkcije-v-splosnem" title="Permalink to this heading">#</a></h2>
 <p>V Pythonu je veliko funkcij že vgrajenih (glejte <a class="reference external" href="https://docs.python.org/library/functions.html">dokumentacijo</a>); funkcije pa lahko tudi napišemo sami ali jih uvozimo iz t. i. modulov (zgoraj smo uvozili <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, več si bomo pogledali pozneje).</p>
 <p>Generični primer funkcije je (<a class="reference external" href="https://docs.python.org/tutorial/controlflow.html#defining-functions">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ime_funkcije</span><span class="p">(</span><span class="n">parametri</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;docstring&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;docstring&#39;&#39;&#39;</span>
     <span class="p">[</span><span class="n">koda</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">vsebina</span>
 </pre></div>
@@ -914,7 +925,7 @@ konec
 </div>
 </section>
 <section id="posredovanje-argumentov-v-funkcije">
-<h2>Posredovanje argumentov v funkcije<a class="headerlink" href="#posredovanje-argumentov-v-funkcije" title="Permalink to this headline">#</a></h2>
+<h2>Posredovanje argumentov v funkcije<a class="headerlink" href="#posredovanje-argumentov-v-funkcije" title="Permalink to this heading">#</a></h2>
 <p>Python pozna dva načina posredovanja argumentov:</p>
 <ul class="simple">
 <li><p>glede na <strong>mesto</strong> (<em>positional</em>)</p></li>
@@ -965,7 +976,7 @@ konec
 </div>
 <p>povzročilo napako.</p>
 <section id="primer-dobre-prakse-pri-definiranju-argumentov">
-<h3>Primer dobre prakse pri definiranju argumentov<a class="headerlink" href="#primer-dobre-prakse-pri-definiranju-argumentov" title="Permalink to this headline">#</a></h3>
+<h3>Primer dobre prakse pri definiranju argumentov<a class="headerlink" href="#primer-dobre-prakse-pri-definiranju-argumentov" title="Permalink to this heading">#</a></h3>
 <p>Pogosto funkcije dopolnjujemo in dodajamo nove argumente ali pa število argumentov funkciji sploh ne moremo vnaprej definirati!</p>
 <p>Python s tem nima težav. Argumente, ki niso eksplicitno definirani obvladamo z:</p>
 <ul class="simple">
@@ -976,7 +987,7 @@ konec
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">neka_funkcija</span><span class="p">(</span><span class="n">student</span><span class="p">,</span> <span class="n">izpit</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Prva verzija funkcije&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39; Prva verzija funkcije&#39;&#39;&#39;</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Študent </span><span class="si">{</span><span class="n">student</span><span class="si">}</span><span class="s1"> se je prijavil na izpit: </span><span class="si">{</span><span class="n">izpit</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -998,7 +1009,7 @@ konec
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">neka_funkcija</span><span class="p">(</span><span class="o">*</span><span class="n">terka</span><span class="p">,</span> <span class="o">**</span><span class="n">slovar</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Druga verzija funkcije &#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39; Druga verzija funkcije &#39;&#39;&#39;</span>
     <span class="n">student</span> <span class="o">=</span> <span class="n">terka</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">izpit</span> <span class="o">=</span> <span class="n">slovar</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;izpit&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span> <span class="c1"># True je privzeta vrednost</span>
     <span class="n">izpisi_sliko</span> <span class="o">=</span> <span class="n">slovar</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;izpisi_sliko&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># False je privzeta vrednost</span>
@@ -1037,7 +1048,7 @@ slika:)
 </div>
 </section>
 <section id="posredovanje-funkcij-kot-argument">
-<h3>Posredovanje funkcij kot argument<a class="headerlink" href="#posredovanje-funkcij-kot-argument" title="Permalink to this headline">#</a></h3>
+<h3>Posredovanje funkcij kot argument<a class="headerlink" href="#posredovanje-funkcij-kot-argument" title="Permalink to this heading">#</a></h3>
 <p>Tukaj bi želeli izpostaviti, da so argumenti lahko tudi druge funkcije.</p>
 <p>Poglejmo si primer:</p>
 <div class="cell docutils container">
@@ -1083,7 +1094,7 @@ slika:)
 </section>
 </section>
 <section id="docstring-funkcije">
-<h2>Docstring funkcije<a class="headerlink" href="#docstring-funkcije" title="Permalink to this headline">#</a></h2>
+<h2>Docstring funkcije<a class="headerlink" href="#docstring-funkcije" title="Permalink to this heading">#</a></h2>
 <p><em>docstring</em> je neobvezen del definicije funkcije, ki dokumentira funkcijo in njeno uporabo. Iz tega stališča je zelo priporočeno, da ga uporabimo.</p>
 <p><a class="reference external" href="https://docs.python.org/tutorial/controlflow.html#documentation-strings">Dokumentacija</a> za docstring navaja bistvene elemente:</p>
 <ul class="simple">
@@ -1095,7 +1106,7 @@ slika:)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">površina</span><span class="p">(</span><span class="n">dolžina</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">širina</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Izračun površine pravokotnika</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Izračun površine pravokotnika</span>
 <span class="sd">    </span>
 <span class="sd">    Funkcija vrne vrednost površine.</span>
 <span class="sd">    </span>
@@ -1123,7 +1134,7 @@ slika:)
 </div>
 </section>
 <section id="lokalna-globalna-imena">
-<h2>Lokalna/globalna imena<a class="headerlink" href="#lokalna-globalna-imena" title="Permalink to this headline">#</a></h2>
+<h2>Lokalna/globalna imena<a class="headerlink" href="#lokalna-globalna-imena" title="Permalink to this heading">#</a></h2>
 <p>Preprosto vodilo pri funkcijah je: <strong>funkcija vidi ven, drugi pa ne vidijo noter</strong>. Funkcija ima notranja imena, ki se ne prekrivajo z istimi imeni v drugih funkcijah.</p>
 <p>Poglejmo si primer:</p>
 <div class="cell docutils container">
@@ -1156,7 +1167,7 @@ slika:)
 <p>Tukaj velja omeniti, da je <strong>posredovanje zunanjih imen v funkcijo mimo argumentov funkcije odsvetovano</strong>.</p>
 </section>
 <section id="return">
-<h2><code class="docutils literal notranslate"><span class="pre">return</span></code><a class="headerlink" href="#return" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">return</span></code><a class="headerlink" href="#return" title="Permalink to this heading">#</a></h2>
 <p>Ukaz <code class="docutils literal notranslate"><span class="pre">return</span></code> vrne vrednosti iz funkcije. Doslej smo spoznali rezultate v obliki ene spremenljivke; ta spremenljivka pa je lahko tudi terka.</p>
 <p>Poglejmo si primer:</p>
 <div class="cell docutils container">
@@ -1209,7 +1220,7 @@ slika:)
 </div>
 </section>
 <section id="anonimna-funkcija-izraz">
-<h2>Anonimna funkcija/izraz<a class="headerlink" href="#anonimna-funkcija-izraz" title="Permalink to this headline">#</a></h2>
+<h2>Anonimna funkcija/izraz<a class="headerlink" href="#anonimna-funkcija-izraz" title="Permalink to this heading">#</a></h2>
 <p>Anonimna funkcija (glejte <a class="reference external" href="https://docs.python.org/tutorial/controlflow.html#lambda-expressions">dokumentacijo</a>) je funkcija, kateri ne damo imena (zato je <em>anonimna</em>), ampak jo definiramo z ukazom <code class="docutils literal notranslate"><span class="pre">lambda</span></code>. Tipična uporaba je:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="p">[</span><span class="n">seznam</span> <span class="n">parametrov</span><span class="p">]:</span> <span class="n">izraz</span>
 </pre></div>
@@ -1264,7 +1275,7 @@ slika:)
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="obravnavanje-izjem">
-<h1>Obravnavanje izjem<a class="headerlink" href="#obravnavanje-izjem" title="Permalink to this headline">#</a></h1>
+<h1>Obravnavanje izjem<a class="headerlink" href="#obravnavanje-izjem" title="Permalink to this heading">#</a></h1>
 <p>Pri programiranju se relativno pogosto pojavijo izjeme; na primer: deljenje z nič.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
 
@@ -1337,7 +1348,7 @@ slika:)
 </div>
 </div>
 <section id="prozenje-izjem">
-<h2>Proženje izjem<a class="headerlink" href="#prozenje-izjem" title="Permalink to this headline">#</a></h2>
+<h2>Proženje izjem<a class="headerlink" href="#prozenje-izjem" title="Permalink to this heading">#</a></h2>
 <p>Izjeme pa lahko tudi sami prožimo; to naredimo z ukazom <code class="docutils literal notranslate"><span class="pre">raise</span></code> (<a class="reference external" href="https://docs.python.org/tutorial/errors.html#raising-exceptions">dokumentacija</a>).</p>
 <p>Primer proženja napake je:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Opis izjeme&#39;</span><span class="p">)</span>
@@ -1364,7 +1375,7 @@ slika:)
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="osnove-modulov">
-<h1>Osnove modulov<a class="headerlink" href="#osnove-modulov" title="Permalink to this headline">#</a></h1>
+<h1>Osnove modulov<a class="headerlink" href="#osnove-modulov" title="Permalink to this heading">#</a></h1>
 <p>Z moduli lahko na enostaven način uporabimo že napisano kodo. Preprosto povedano, moduli nam v Pythonu omogočajo relativno enostavno ohranjanje preglednosti in reda. Ponavadi v modul zapakiramo neko zaključeno funkcijo, skupino funkcij ali npr. objekt (pozneje bomo spoznali, kaj je objekt).</p>
 <p>Za podroben opis uvažanja modulov glejte <a class="reference external" href="https://docs.python.org/reference/import.html#the-import-system">dokumentacijo</a>.</p>
 <p>V mapi <code class="docutils literal notranslate"><span class="pre">moduli</span></code> se nahaja datoteka <code class="docutils literal notranslate"><span class="pre">prvi_modul.py</span></code>, ki ima sledečo vsebino:</p>
@@ -1449,11 +1460,11 @@ slika:)
 <li><p>v mapah, kjer je nameščen Python (poddirektorij <code class="docutils literal notranslate"><span class="pre">site-packages</span></code>).</p></li>
 </ul>
 <section id="uvoz-modulov-in-jupyter-notebook">
-<h2>Uvoz modulov in Jupyter notebook<a class="headerlink" href="#uvoz-modulov-in-jupyter-notebook" title="Permalink to this headline">#</a></h2>
+<h2>Uvoz modulov in Jupyter notebook<a class="headerlink" href="#uvoz-modulov-in-jupyter-notebook" title="Permalink to this heading">#</a></h2>
 <p>V tej knjigi bomo, zaradi pedagoških razlogov, module vedno uvažali takrat, ko jih bomo prvič potrebovali. <strong>Pravila dobre prakse in pregledne kode priporočajo, da se uvoze vseh modulov izvede na vrhu Jupyter notebooka!</strong></p>
 </section>
 <section id="modul-pickle">
-<h2>Modul <code class="docutils literal notranslate"><span class="pre">pickle</span></code><a class="headerlink" href="#modul-pickle" title="Permalink to this headline">#</a></h2>
+<h2>Modul <code class="docutils literal notranslate"><span class="pre">pickle</span></code><a class="headerlink" href="#modul-pickle" title="Permalink to this heading">#</a></h2>
 <p>Modul <code class="docutils literal notranslate"><span class="pre">pickle</span></code> bomo velikokrat uporabljali za zelo hitro in kompaktno shranjevanje in branje podatkov.
 <code class="docutils literal notranslate"><span class="pre">pickle</span></code> vrednosti spremenljivke shrani v taki obliki, kot so zapisane v spominu. V primeru racionalnih števil tako  <strong>ne izgublja na natančnosti</strong> (zapis v tekstovno obliko izgublja natančnost, saj definiramo število izpisanih števk, ki pa je lahko manjše od števila decimalnih mest v spominu). Poleg tega pa je zapis v <strong>spominu ponavadi manj zahteven</strong> kakor zapis v tekstovni obliki. Ker vrednosti ni treba pretvarjati v/iz tekstovno/e obliko/e, je pisanje/branje tudi <strong>zelo hitro</strong>! Tukaj si bomo pogledali osnovno uporabo, celovito je <code class="docutils literal notranslate"><span class="pre">pickle</span></code> opisan v  <a class="reference external" href="https://docs.python.org/library/pickle.html">dokumentaciji</a>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">pickle</span></code> ima dve pomembni metodi:</p>
@@ -1518,7 +1529,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47.3 ms ± 859 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>97.2 ms ± 22.4 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1533,7 +1544,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.61 ms ± 71.2 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.91 ms ± 371 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1542,7 +1553,7 @@ slika:)
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="uporaba-modulov-iz-spleta">
-<h1>Uporaba modulov iz spleta<a class="headerlink" href="#uporaba-modulov-iz-spleta" title="Permalink to this headline">#</a></h1>
+<h1>Uporaba modulov iz spleta<a class="headerlink" href="#uporaba-modulov-iz-spleta" title="Permalink to this heading">#</a></h1>
 <p>Poleg vgrajenih modulov in tistih, ki jih pripravimo sami, obstaja še velika množica modulov, ki jih lahko najdemo na spletu in Pythonu dodajajo nove funkcionalnosti. Šele ti moduli naredijo ekosistem Pythona tako uporaben.</p>
 <p><a class="reference external" href="https://www.anaconda.com/download/">Anaconda</a> je najbolj popularna distribucija Pythona in ima vključenih že veliko modulov (za podroben seznam glejte to <a class="reference external" href="https://docs.anaconda.com/anaconda/packages/pkg-docs">povezavo</a>); predvsem pa ima vključene vse bistvene. Najbolj pomembne na področju inženirskih ved bomo spoznali v okviru te knjige.</p>
 <p>Modul je tehnično gledano ena datoteka, kadar nek večji modul vsebuje več modulov, pa lahko začnemo govoriti o <em>paketih</em>.</p>
@@ -1553,7 +1564,7 @@ slika:)
 </ul>
 <p>Upravljalnika paketov nista povsem ekvivalentna, pogosto uporabo si bomo pogledali spodaj.</p>
 <section id="upravljalnik-paketov-conda">
-<h2>Upravljalnik paketov <code class="docutils literal notranslate"><span class="pre">conda</span></code><a class="headerlink" href="#upravljalnik-paketov-conda" title="Permalink to this headline">#</a></h2>
+<h2>Upravljalnik paketov <code class="docutils literal notranslate"><span class="pre">conda</span></code><a class="headerlink" href="#upravljalnik-paketov-conda" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span></code> uporabljamo predvsem za module/pakete vključene v distribucijo <em>Anaconda</em>, in ima še nekatere dodatne sposobnosti (npr. kreiranje navideznega okolja, angl. <em>virtual environment</em>).</p>
 <p>Če želimo posodobiti vse nameščene pakete znotraj distribucije Anaconda, najprej posodobimo samo <code class="docutils literal notranslate"><span class="pre">conda</span></code>, nato pa pakete. V ukazni vrstici izvedemo sledeča ukaza:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
@@ -1568,7 +1579,7 @@ slika:)
 <p>Poglejmo primer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rezultat</span> <span class="o">=</span> <span class="o">!</span>conda list
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rezultat</span> <span class="o">=</span> <span class="o">!</span>conda<span class="w"> </span>list
 <span class="n">rezultat</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -1591,7 +1602,7 @@ slika:)
 <p>Za več glejte <a class="reference external" href="https://conda.io/docs/user-guide/getting-started.html">dokumentacijo</a>.</p>
 </section>
 <section id="upravljalnik-paketov-pip">
-<h2>Upravljalnik paketov <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#upravljalnik-paketov-pip" title="Permalink to this headline">#</a></h2>
+<h2>Upravljalnik paketov <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#upravljalnik-paketov-pip" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">pip</span></code> je upravljalnik paketov z daljšo zgodovino kot <code class="docutils literal notranslate"><span class="pre">conda</span></code>; podpira bistveno več paketov (<a class="reference external" href="https://pypi.org">pypi.org</a>), vendar ni tako odporen na nezdružljivosti kakor <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Razlik je še več, vendar tukaj ne bomo šli v podrobnosti; uporabljate tistega, ki vam namesti željeni paket!</p>
 <p>Podobno kot pri <code class="docutils literal notranslate"><span class="pre">conda</span></code>, tudi tukaj že nameščene pakete najdemo z ukazom v ukazni vrstici (<a class="reference external" href="https://pip.pypa.io/en/stable/reference/pip_list/">dokumentacija</a>):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="nb">list</span>
@@ -1610,7 +1621,7 @@ slika:)
 </pre></div>
 </div>
 <section id="primer-namestitve-paketa">
-<h3>Primer namestitve paketa<a class="headerlink" href="#primer-namestitve-paketa" title="Permalink to this headline">#</a></h3>
+<h3>Primer namestitve paketa<a class="headerlink" href="#primer-namestitve-paketa" title="Permalink to this heading">#</a></h3>
 <p>Sicer pa pakete najpogosteje najdemo na spletu (<a class="reference external" href="https://pypi.org">pypi.org</a>). Pojdite na omenjeni portal in poiščite pakete na temo snemanja posnetkov iz portala <a class="reference external" href="https://www.youtube.com">www.youtube.com</a>.  Z iskanjem “youtube download” najdemo obetaven paket <code class="docutils literal notranslate"><span class="pre">youtube_dl</span></code>, ki ga namestimo:</p>
 <p>Sedaj modul uporabimo (za podrobnosti uporabe glejte <a class="reference external" href="http://rg3.github.io/youtube-dl/">dokumentacijo</a>). Najprej uvozimo celotni paket:</p>
 <div class="cell docutils container">
@@ -1701,8 +1712,8 @@ slika:)
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
 <span class="ne">DownloadError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
-<span class="nn">Input In [62],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">yt</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;FIa6VZt-wz4&#39;</span><span class="p">])</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">62</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">yt</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;FIa6VZt-wz4&#39;</span><span class="p">]);</span>
 
 <span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:2068,</span> in <span class="ni">YoutubeDL.download</span><span class="nt">(self, url_list)</span>
 <span class="g g-Whitespace">   </span><span class="mi">2065</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">url_list</span><span class="p">:</span>
@@ -1748,7 +1759,7 @@ slika:)
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="nekaj-vprasanj-za-razmislek">
-<h1>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this headline">#</a></h1>
+<h1>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this heading">#</a></h1>
 <ol class="arabic simple">
 <li><p>Odprite datoteko za zapis in vanjo vpišite formatirani (skupaj 7 mest, 3 decimalna mesta) seznam v dveh stolpcih. Razločevalni znak med stolpci naj bo prazen znak ‘ ‘.</p></li>
 <li><p>Odprite pripeto datoteko <code class="docutils literal notranslate"><span class="pre">zapis_labview.lvm</span></code> (gre za zapis iz programa LabView) in preberite glavo v obliki slovarja (‘ime polja’: vrednost).</p></li>
@@ -1769,9 +1780,9 @@ slika:)
 </ol>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="dodatno">
-<h1>Dodatno<a class="headerlink" href="#dodatno" title="Permalink to this headline">#</a></h1>
+<h1>Dodatno<a class="headerlink" href="#dodatno" title="Permalink to this heading">#</a></h1>
 <section id="oblikovanje-datuma-in-casa">
-<h2>Oblikovanje datuma in časa<a class="headerlink" href="#oblikovanje-datuma-in-casa" title="Permalink to this headline">#</a></h2>
+<h2>Oblikovanje datuma in časa<a class="headerlink" href="#oblikovanje-datuma-in-casa" title="Permalink to this heading">#</a></h2>
 <p>Najprej uvozimo modul za delo z datumom in časom <code class="docutils literal notranslate"><span class="pre">datetime</span></code> in prikažemo trenutni čas z datumom (uporabimo funkcijo <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime.now"><code class="docutils literal notranslate"><span class="pre">now()</span></code></a>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1834,20 +1845,20 @@ slika:)
 </div>
 </section>
 <section id="uporabljajte-www-stackoverflow-com">
-<h2>Uporabljajte <a class="reference external" href="http://www.stackoverflow.com">www.stackoverflow.com</a>!<a class="headerlink" href="#uporabljajte-www-stackoverflow-com" title="Permalink to this headline">#</a></h2>
+<h2>Uporabljajte <a class="reference external" href="http://www.stackoverflow.com">www.stackoverflow.com</a>!<a class="headerlink" href="#uporabljajte-www-stackoverflow-com" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="http://www.stackoverflow.com">http://www.stackoverflow.com</a></p>
 </section>
 <section id="nekateri-moduli">
-<h2>Nekateri moduli<a class="headerlink" href="#nekateri-moduli" title="Permalink to this headline">#</a></h2>
+<h2>Nekateri moduli<a class="headerlink" href="#nekateri-moduli" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">openpyxl</span></code> za pisanje in branje Excel xlsx/xlsm datotek: <a class="reference external" href="http://openpyxl.readthedocs.org/en/latest/index.html">vir</a>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">openpyxl</span></code> za pisanje in branje Excel xlsx/xlsm datotek: <a class="reference external" href="http://openpyxl.readthedocs.org/en/latest/index.html#">vir</a>,</p></li>
 </ol>
 <ul class="simple">
 <li><p>Regularni izrazi (zelo močno orodje za iskanje po nizih): <a class="reference external" href="https://docs.python.org/library/re.html">vir</a>.</p></li>
 </ul>
 </section>
 <section id="modul-sys">
-<h2>Modul <code class="docutils literal notranslate"><span class="pre">sys</span></code><a class="headerlink" href="#modul-sys" title="Permalink to this headline">#</a></h2>
+<h2>Modul <code class="docutils literal notranslate"><span class="pre">sys</span></code><a class="headerlink" href="#modul-sys" title="Permalink to this heading">#</a></h2>
 <p>Python ima veliko število vgrajenih modulov (in še veliko se jih lahko prenese s spleta, npr. <a class="reference external" href="https://pypi.org/">tukaj</a>), ki dodajo različne funkcionalnosti.</p>
 <p>Modul <code class="docutils literal notranslate"><span class="pre">sys</span></code> omogoča dostop do objektov, ki jih uporablja interpreter.</p>
 <p>Poglejmo si primer; najprej uvozimo modul:</p>
@@ -1885,7 +1896,7 @@ slika:)
 </div>
 </section>
 <section id="modul-os">
-<h2>Modul <code class="docutils literal notranslate"><span class="pre">os</span></code><a class="headerlink" href="#modul-os" title="Permalink to this headline">#</a></h2>
+<h2>Modul <code class="docutils literal notranslate"><span class="pre">os</span></code><a class="headerlink" href="#modul-os" title="Permalink to this heading">#</a></h2>
 <p>Modul <code class="docutils literal notranslate"><span class="pre">os</span></code> je namenjen delu z operacijskim sistemom in skrbi za združljivost z različnimi operacijskimi sistemi (če npr. napišete program na sistemu <em>Windows</em>, bo delal tudi na sistemu <em>linux</em>).</p>
 <p>Uvozimo modul:</p>
 <div class="cell docutils container">
@@ -1981,11 +1992,10 @@ Našel sem datoteko: Predavanje 02 - Print, delo z datotekami, funkcije, moduli.
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Predavanje%2001%20-%20Uvod%20v%20Python.html"
@@ -2005,10 +2015,7 @@ Našel sem datoteko: Predavanje 02 - Print, delo z datotekami, funkcije, moduli.
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -2116,8 +2123,8 @@ By Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
   <footer class="bd-footer">
   </footer>
