@@ -1529,7 +1529,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>97.2 ms ± 22.4 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140 ms ± 24.2 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1544,7 +1544,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.91 ms ± 371 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.09 ms ± 934 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1622,135 +1622,18 @@ slika:)
 </div>
 <section id="primer-namestitve-paketa">
 <h3>Primer namestitve paketa<a class="headerlink" href="#primer-namestitve-paketa" title="Permalink to this heading">#</a></h3>
-<p>Sicer pa pakete najpogosteje najdemo na spletu (<a class="reference external" href="https://pypi.org">pypi.org</a>). Pojdite na omenjeni portal in poiščite pakete na temo snemanja posnetkov iz portala <a class="reference external" href="https://www.youtube.com">www.youtube.com</a>.  Z iskanjem “youtube download” najdemo obetaven paket <code class="docutils literal notranslate"><span class="pre">youtube_dl</span></code>, ki ga namestimo:</p>
-<p>Sedaj modul uporabimo (za podrobnosti uporabe glejte <a class="reference external" href="http://rg3.github.io/youtube-dl/">dokumentacijo</a>). Najprej uvozimo celotni paket:</p>
+<p>Sicer pa pakete najpogosteje najdemo na spletu (<a class="reference external" href="https://pypi.org">pypi.org</a>). Pojdite na omenjeni portal in poiščite pakete na temo snemanja posnetkov iz portala <a class="reference external" href="https://www.youtube.com">www.youtube.com</a>.  Z iskanjem “pytube” najdemo obetaven paket, ki ga namestimo:</p>
+<p>Sedaj modul uporabimo (za podrobnosti uporabe glejte <a class="reference external" href="https://github.com/pytube/pytube">dokumentacijo</a>). Najprej uvozimo celotni paket:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">youtube_dl</span>
-<span class="n">yt</span> <span class="o">=</span> <span class="n">youtube_dl</span><span class="o">.</span><span class="n">YoutubeDL</span><span class="p">()</span> <span class="c1"># kreiramo instanco objekta (kaj to točno pomeni, spoznamo pozneje)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Prenesemo poljubni video:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yt</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;FIa6VZt-wz4&#39;</span><span class="p">]);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytube</span>
+<span class="n">yt</span> <span class="o">=</span> <span class="n">pytube</span><span class="o">.</span><span class="n">YouTube</span><span class="p">(</span><span class="s1">&#39;https://www.youtube.com/watch?v=P4IrAXbpeyI&#39;</span><span class="p">)</span> <span class="c1"># kreiramo instanco objekta (kaj to točno pomeni, spoznamo pozneje)</span>
+<span class="n">yt</span><span class="o">.</span><span class="n">streams</span><span class="o">.</span><span class="n">get_highest_resolution</span><span class="p">()</span><span class="o">.</span><span class="n">download</span><span class="p">()</span> <span class="c1">#Prenesemo video</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[youtube] FIa6VZt-wz4: Downloading webpage
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[youtube] FIa6VZt-wz4: Downloading API JSON
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR: Unable to extract uploader id; please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; see  https://yt-dl.org/update  on how to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">RegexNotFoundError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:815,</span> in <span class="ni">YoutubeDL.__handle_extraction_exceptions.&lt;locals&gt;.wrapper</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">814</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">815</span>     <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">816</span> <span class="k">except</span> <span class="n">GeoRestrictedError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:836,</span> in <span class="ni">YoutubeDL.__extract_info</span><span class="nt">(self, url, ie, download, extra_info, process)</span>
-<span class="g g-Whitespace">    </span><span class="mi">834</span> <span class="nd">@__handle_extraction_exceptions</span>
-<span class="g g-Whitespace">    </span><span class="mi">835</span> <span class="k">def</span> <span class="nf">__extract_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">ie</span><span class="p">,</span> <span class="n">download</span><span class="p">,</span> <span class="n">extra_info</span><span class="p">,</span> <span class="n">process</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">836</span>     <span class="n">ie_result</span> <span class="o">=</span> <span class="n">ie</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">837</span>     <span class="k">if</span> <span class="n">ie_result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># Finished already (backwards compatibility; listformats and friends should be moved here)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\extractor\common.py:534,</span> in <span class="ni">InfoExtractor.extract</span><span class="nt">(self, url)</span>
-<span class="g g-Whitespace">    </span><span class="mi">533</span> <span class="bp">self</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">534</span> <span class="n">ie_result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_real_extract</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">535</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_x_forwarded_for_ip</span><span class="p">:</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\extractor\youtube.py:1794,</span> in <span class="ni">YoutubeIE._real_extract</span><span class="nt">(self, url)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1782</span> <span class="n">owner_profile_url</span> <span class="o">=</span> <span class="n">microformat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ownerProfileUrl&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1784</span> <span class="n">info</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">   </span><span class="mi">1785</span>     <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">video_id</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1786</span>     <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_live_title</span><span class="p">(</span><span class="n">video_title</span><span class="p">)</span> <span class="k">if</span> <span class="n">is_live</span> <span class="k">else</span> <span class="n">video_title</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1787</span>     <span class="s1">&#39;formats&#39;</span><span class="p">:</span> <span class="n">formats</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1788</span>     <span class="s1">&#39;thumbnails&#39;</span><span class="p">:</span> <span class="n">thumbnails</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1789</span>     <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="n">video_description</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1790</span>     <span class="s1">&#39;upload_date&#39;</span><span class="p">:</span> <span class="n">unified_strdate</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1791</span>         <span class="n">microformat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;uploadDate&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1792</span>         <span class="ow">or</span> <span class="n">search_meta</span><span class="p">(</span><span class="s1">&#39;uploadDate&#39;</span><span class="p">)),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1793</span>     <span class="s1">&#39;uploader&#39;</span><span class="p">:</span> <span class="n">video_details</span><span class="p">[</span><span class="s1">&#39;author&#39;</span><span class="p">],</span>
-<span class="ne">-&gt; </span><span class="mi">1794</span>     <span class="s1">&#39;uploader_id&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_search_regex</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;/(?:channel|user)/([^/?&amp;#]+)&#39;</span><span class="p">,</span> <span class="n">owner_profile_url</span><span class="p">,</span> <span class="s1">&#39;uploader id&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">owner_profile_url</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1795</span>     <span class="s1">&#39;uploader_url&#39;</span><span class="p">:</span> <span class="n">owner_profile_url</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1796</span>     <span class="s1">&#39;channel_id&#39;</span><span class="p">:</span> <span class="n">channel_id</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1797</span>     <span class="s1">&#39;channel_url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://www.youtube.com/channel/&#39;</span> <span class="o">+</span> <span class="n">channel_id</span> <span class="k">if</span> <span class="n">channel_id</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1798</span>     <span class="s1">&#39;duration&#39;</span><span class="p">:</span> <span class="n">duration</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1799</span>     <span class="s1">&#39;view_count&#39;</span><span class="p">:</span> <span class="n">int_or_none</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1800</span>         <span class="n">video_details</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;viewCount&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1801</span>         <span class="ow">or</span> <span class="n">microformat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;viewCount&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1802</span>         <span class="ow">or</span> <span class="n">search_meta</span><span class="p">(</span><span class="s1">&#39;interactionCount&#39;</span><span class="p">)),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1803</span>     <span class="s1">&#39;average_rating&#39;</span><span class="p">:</span> <span class="n">float_or_none</span><span class="p">(</span><span class="n">video_details</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;averageRating&#39;</span><span class="p">)),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1804</span>     <span class="s1">&#39;age_limit&#39;</span><span class="p">:</span> <span class="mi">18</span> <span class="k">if</span> <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1805</span>         <span class="n">microformat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;isFamilySafe&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">False</span>
-<span class="g g-Whitespace">   </span><span class="mi">1806</span>         <span class="ow">or</span> <span class="n">search_meta</span><span class="p">(</span><span class="s1">&#39;isFamilyFriendly&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;false&#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1807</span>         <span class="ow">or</span> <span class="n">search_meta</span><span class="p">(</span><span class="s1">&#39;og:restrictions:age&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;18+&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1808</span>     <span class="s1">&#39;webpage_url&#39;</span><span class="p">:</span> <span class="n">webpage_url</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1809</span>     <span class="s1">&#39;categories&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">category</span><span class="p">]</span> <span class="k">if</span> <span class="n">category</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1810</span>     <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="n">keywords</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1811</span>     <span class="s1">&#39;is_live&#39;</span><span class="p">:</span> <span class="n">is_live</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1812</span> <span class="p">}</span>
-<span class="g g-Whitespace">   </span><span class="mi">1814</span> <span class="n">pctr</span> <span class="o">=</span> <span class="n">try_get</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1815</span>     <span class="n">player_response</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1816</span>     <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;captions&#39;</span><span class="p">][</span><span class="s1">&#39;playerCaptionsTracklistRenderer&#39;</span><span class="p">],</span> <span class="nb">dict</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\extractor\common.py:1012,</span> in <span class="ni">InfoExtractor._search_regex</span><span class="nt">(self, pattern, string, name, default, fatal, flags, group)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1011</span> <span class="k">elif</span> <span class="n">fatal</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1012</span>     <span class="k">raise</span> <span class="n">RegexNotFoundError</span><span class="p">(</span><span class="s1">&#39;Unable to extract </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">_name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="ne">RegexNotFoundError</span>: Unable to extract uploader id; please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; see  https://yt-dl.org/update  on how to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">DownloadError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">62</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">yt</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;FIa6VZt-wz4&#39;</span><span class="p">]);</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:2068,</span> in <span class="ni">YoutubeDL.download</span><span class="nt">(self, url_list)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2065</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">url_list</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2066</span>     <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2067</span>         <span class="c1"># It also downloads the videos</span>
-<span class="ne">-&gt; </span><span class="mi">2068</span>         <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_info</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2069</span>             <span class="n">url</span><span class="p">,</span> <span class="n">force_generic_extractor</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;force_generic_extractor&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
-<span class="g g-Whitespace">   </span><span class="mi">2070</span>     <span class="k">except</span> <span class="n">UnavailableVideoError</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2071</span>         <span class="bp">self</span><span class="o">.</span><span class="n">report_error</span><span class="p">(</span><span class="s1">&#39;unable to download video&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:808,</span> in <span class="ni">YoutubeDL.extract_info</span><span class="nt">(self, url, download, ie_key, extra_info, process, force_generic_extractor)</span>
-<span class="g g-Whitespace">    </span><span class="mi">804</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">ie</span><span class="o">.</span><span class="n">working</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">805</span>         <span class="bp">self</span><span class="o">.</span><span class="n">report_warning</span><span class="p">(</span><span class="s1">&#39;The program functionality for this site has been marked as broken, &#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">806</span>                             <span class="s1">&#39;and will probably not work.&#39;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">808</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__extract_info</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">ie</span><span class="p">,</span> <span class="n">download</span><span class="p">,</span> <span class="n">extra_info</span><span class="p">,</span> <span class="n">process</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">809</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">810</span>     <span class="bp">self</span><span class="o">.</span><span class="n">report_error</span><span class="p">(</span><span class="s1">&#39;no suitable InfoExtractor for URL </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">url</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:824,</span> in <span class="ni">YoutubeDL.__handle_extraction_exceptions.&lt;locals&gt;.wrapper</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">822</span>     <span class="bp">self</span><span class="o">.</span><span class="n">report_error</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">823</span> <span class="k">except</span> <span class="n">ExtractorError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  <span class="c1"># An error we somewhat expected</span>
-<span class="ne">--&gt; </span><span class="mi">824</span>     <span class="bp">self</span><span class="o">.</span><span class="n">report_error</span><span class="p">(</span><span class="n">compat_str</span><span class="p">(</span><span class="n">e</span><span class="p">),</span> <span class="n">e</span><span class="o">.</span><span class="n">format_traceback</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">825</span> <span class="k">except</span> <span class="n">MaxDownloadsReached</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">826</span>     <span class="k">raise</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:628,</span> in <span class="ni">YoutubeDL.report_error</span><span class="nt">(self, message, tb)</span>
-<span class="g g-Whitespace">    </span><span class="mi">626</span>     <span class="n">_msg_header</span> <span class="o">=</span> <span class="s1">&#39;ERROR:&#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">627</span> <span class="n">error_message</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">_msg_header</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">628</span> <span class="bp">self</span><span class="o">.</span><span class="n">trouble</span><span class="p">(</span><span class="n">error_message</span><span class="p">,</span> <span class="n">tb</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:598,</span> in <span class="ni">YoutubeDL.trouble</span><span class="nt">(self, message, tb)</span>
-<span class="g g-Whitespace">    </span><span class="mi">596</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">597</span>         <span class="n">exc_info</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">598</span>     <span class="k">raise</span> <span class="n">DownloadError</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">exc_info</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">599</span> <span class="bp">self</span><span class="o">.</span><span class="n">_download_retcode</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="ne">DownloadError</span>: ERROR: Unable to extract uploader id; please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; see  https://yt-dl.org/update  on how to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;c:\\_j\\Work Janko\\Pedagosko delo\\_predavanja\\Programiranje in numericne metode\\pynm\\notebooks\\Strojništvo je zabavno - 2 del.mp4&#39;
 </pre></div>
 </div>
 </div>
@@ -1793,7 +1676,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2020, 10, 11, 12, 53, 14, 735309)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 9, 24, 9, 37, 53, 250056)
 </pre></div>
 </div>
 </div>
@@ -1806,7 +1689,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2020-10-11 12:53:14&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2023-09-24 09:37:53&#39;
 </pre></div>
 </div>
 </div>
@@ -1825,7 +1708,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2020-10-11 12:53:14 Sun&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2023-09-24 09:37:53 Sun&#39;
 </pre></div>
 </div>
 </div>
@@ -1877,19 +1760,17 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;c:\\_j\\Work Janko\\Pedagosko delo\\_predavanja\\Programiranje in numerične metode\\pypinm&#39;,
- &#39;c:\\_j\\work janko\\pedagosko delo\\_predavanja\\programiranje in numerične metode\\pypinm\\venv\\scripts\\python38.zip&#39;,
- &#39;c:\\Users\\slavic\\AppData\\Local\\Programs\\Python\\Python38\\DLLs&#39;,
- &#39;c:\\Users\\slavic\\AppData\\Local\\Programs\\Python\\Python38\\lib&#39;,
- &#39;c:\\Users\\slavic\\AppData\\Local\\Programs\\Python\\Python38&#39;,
- &#39;c:\\_j\\work janko\\pedagosko delo\\_predavanja\\programiranje in numerične metode\\pypinm\\venv&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;c:\\_j\\Work Janko\\Pedagosko delo\\_predavanja\\Programiranje in numericne metode\\pynm\\notebooks&#39;,
+ &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\python310.zip&#39;,
+ &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\DLLs&#39;,
+ &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\lib&#39;,
+ &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310&#39;,
  &#39;&#39;,
- &#39;c:\\_j\\work janko\\pedagosko delo\\_predavanja\\programiranje in numerične metode\\pypinm\\venv\\lib\\site-packages&#39;,
- &#39;c:\\_j\\work janko\\pedagosko delo\\_predavanja\\programiranje in numerične metode\\pypinm\\venv\\lib\\site-packages\\win32&#39;,
- &#39;c:\\_j\\work janko\\pedagosko delo\\_predavanja\\programiranje in numerične metode\\pypinm\\venv\\lib\\site-packages\\win32\\lib&#39;,
- &#39;c:\\_j\\work janko\\pedagosko delo\\_predavanja\\programiranje in numerične metode\\pypinm\\venv\\lib\\site-packages\\Pythonwin&#39;,
- &#39;c:\\_j\\work janko\\pedagosko delo\\_predavanja\\programiranje in numerične metode\\pypinm\\venv\\lib\\site-packages\\IPython\\extensions&#39;,
- &#39;C:\\Users\\slavic\\.ipython&#39;]
+ &#39;C:\\Users\\janko\\AppData\\Roaming\\Python\\Python310\\site-packages&#39;,
+ &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages&#39;,
+ &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\win32&#39;,
+ &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\win32\\lib&#39;,
+ &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\Pythonwin&#39;]
 </pre></div>
 </div>
 </div>
@@ -1927,7 +1808,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;c:\\_j\\Work Janko\\Pedagosko delo\\_predavanja\\Programiranje in numerične metode\\pypinm&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;c:\\_j\\Work Janko\\Pedagosko delo\\_predavanja\\Programiranje in numericne metode\\pynm\\notebooks&#39;
 </pre></div>
 </div>
 </div>
@@ -1955,10 +1836,10 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Našel sem datoteko: NM2020.ipynb
-Našel sem datoteko: PiNM2019-20.ipynb
-Našel sem datoteko: Predavanje 01 - Uvod v Python.ipynb
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Našel sem datoteko: Predavanje 01 - Uvod v Python.ipynb
 Našel sem datoteko: Predavanje 02 - Print, delo z datotekami, funkcije, moduli.ipynb
+Našel sem datoteko: Predavanje 03 - Moduli, numpy, matplotlib.ipynb
+Našel sem datoteko: Predavanje 04 - Objektno programiranje, simbolno računanje.ipynb
 </pre></div>
 </div>
 </div>
