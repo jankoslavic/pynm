@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="sl" >
 
   <head>
     <meta charset="utf-8" />
@@ -54,6 +54,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -65,12 +66,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Predavanje 01 - Uvod v Python';</script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="Abecedni seznam" href="../genindex.html" />
+    <link rel="search" title="Išči" href="../search.html" />
     <link rel="next" title="Funkcije, izjeme, moduli" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html" />
     <link rel="prev" title="Študijski in izpitni red: 2023/24" href="%C5%A0tudijski%20in%20izpitni%20red.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="sl"/>
   </head>
   
   
@@ -327,7 +328,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/jankoslavic/pynm" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Izvorno skladišče"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -344,7 +345,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/jankoslavic/pynm/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Predavanje 01 - Uvod v Python.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Odprite številko"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -365,7 +366,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Prenesite to stran">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -374,7 +375,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/notebooks/Predavanje 01 - Uvod v Python.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Prenesite izvorno datoteko"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -392,7 +393,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Natisni v PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -412,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Celozaslonski način"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -436,7 +437,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -460,7 +461,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Vsebina </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -671,7 +672,7 @@ $<span class="math notranslate nohighlight">\(F_1 = F_2 = 1\qquad\textrm{in}\qqu
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="namestitev-pythona">
 <h1>Namestitev Pythona<a class="headerlink" href="#namestitev-pythona" title="Permalink to this heading">#</a></h1>
-<p>Pojdite na <a class="reference external" href="https://www.python.org/downloads/">www.python.org</a> ter namestite Python; <em>pazite, da izberete verzijo 3.8 ali novejšo</em> (64 bit). Pri tem sledite pripravljenim <a class="reference external" href="https://youtu.be/PWSombIVVDw">video navodilom</a>.</p>
+<p>Pojdite na <a class="reference external" href="https://www.python.org/downloads/">www.python.org</a> ter namestite Python; <em>pazite, da izberete verzijo 3.10 ali novejšo</em> (64 bit). Pri tem sledite pripravljenim <a class="reference external" href="https://youtu.be/PWSombIVVDw">video navodilom</a>.</p>
 <section id="uporaba-githuba-repozitorija-in-posodobitve">
 <h2>Uporaba githuba repozitorija in posodobitve<a class="headerlink" href="#uporaba-githuba-repozitorija-in-posodobitve" title="Permalink to this heading">#</a></h2>
 <p>Ta knjiga se vedno dopolnjuje, zadnja verzija je dosegljiva na:</p>
@@ -690,7 +691,7 @@ Za namestitev VSC sledite <a class="reference external" href="https://youtu.be/P
 <section id="namescanje-dodatkov-in-posodobitev">
 <h2>Nameščanje dodatkov in posodobitev<a class="headerlink" href="#namescanje-dodatkov-in-posodobitev" title="Permalink to this heading">#</a></h2>
 <p>Na <a class="reference external" href="https://pypi.org">pypi.org</a> se nahaja veliko različnih paketov! Namestimo jih iz ukazne vrstice* (angl. <em>command prompt</em>) z ukazom <strong>pip</strong>.</p>
-<p>* Ukazno vrstico prikličete v operacijskem sistemu Windows 10 tako, da kliknite <code class="docutils literal notranslate"><span class="pre">&quot;Start&quot;</span></code> in napišite <code class="docutils literal notranslate"><span class="pre">&quot;command</span> <span class="pre">prompt&quot;</span></code> ter pritisnete <code class="docutils literal notranslate"><span class="pre">&quot;enter&quot;</span></code> ali pa odprete terminal znotraj VSC (<a class="reference external" href="https://youtu.be/PWSombIVVDw&amp;t=146">video</a>).</p>
+<p>* Ukazno vrstico prikličete v operacijskem sistemu Windows tako, da kliknite <code class="docutils literal notranslate"><span class="pre">&quot;Start&quot;</span></code> in napišite <code class="docutils literal notranslate"><span class="pre">&quot;command</span> <span class="pre">prompt&quot;</span></code> ter pritisnete <code class="docutils literal notranslate"><span class="pre">&quot;enter&quot;</span></code> ali pa odprete terminal znotraj VSC (<a class="reference external" href="https://youtu.be/PWSombIVVDw&amp;t=146">video</a>).</p>
 <p>Podrobnosti nameščanja dodatkov si bomo pogledali naslednjič. Da boste imeli zadnjo verzijo paketov, izvedite naslednje:</p>
 <ol class="arabic">
 <li><p>Odprite ukazno vrstico,</p></li>
@@ -771,7 +772,7 @@ $<span class="math notranslate nohighlight">\(\sum F=m\,\ddot{x}\)</span>$</p></
 <li><p>lahko pišemo <em>poševno</em></p></li>
 <li><p>lahko pišemo <strong>krepko</strong>.</p></li>
 </ul>
-<p>Če želimo oštevilčene sezname, začnemo z “1.” nato pa nadaljujemo z “1.”:</p>
+<p>Če želimo oštevilčene sezname, začnemo z „1.“ nato pa nadaljujemo z „1.“:</p>
 <ol class="arabic simple">
 <li><p>prvi element</p></li>
 <li><p>drugi</p></li>
@@ -889,7 +890,7 @@ $<span class="math notranslate nohighlight">\(\sum F=m\,\ddot{x}\)</span>$</p></
 <li><p>vsak modul uvozimo (<code class="docutils literal notranslate"><span class="pre">import</span></code>) v ločeni vrstici,</p></li>
 <li><p>najprej uvozimo standardne pythonove knjižnice, nato druge knjižnice (npr. numpy) in na koncu lastne.</p></li>
 </ul>
-<p>Opomba: moderna razvojna orodja nam pomagajo pri oblikovanju kode, ki ustreza PEP8 (v VSC pritisnite <code class="docutils literal notranslate"><span class="pre">ctrl</span></code>+<code class="docutils literal notranslate"><span class="pre">shift</span></code>+<code class="docutils literal notranslate"><span class="pre">P</span></code> ter napišite <em>“Format document”</em> in pritisnite <code class="docutils literal notranslate"><span class="pre">enter</span></code>)!</p>
+<p>Opomba: moderna razvojna orodja nam pomagajo pri oblikovanju kode, ki ustreza PEP8 (v VSC pritisnite <code class="docutils literal notranslate"><span class="pre">ctrl</span></code>+<code class="docutils literal notranslate"><span class="pre">shift</span></code>+<code class="docutils literal notranslate"><span class="pre">P</span></code> ter napišite <em>„Format document“</em> in pritisnite <code class="docutils literal notranslate"><span class="pre">enter</span></code>)!</p>
 </section>
 <section id="pep20">
 <h3>PEP20<a class="headerlink" href="#pep20" title="Permalink to this heading">#</a></h3>
@@ -1232,7 +1233,7 @@ $<span class="math notranslate nohighlight">\(\sum F=m\,\ddot{x}\)</span>$</p></
 <section id="niz-string">
 <h3>Niz (string)<a class="headerlink" href="#niz-string" title="Permalink to this heading">#</a></h3>
 <p>Niz je sestavljen iz znakov po standardu <em>Unicode</em>. V podrobnosti se ne bomo spuščali; pomembno je navesti, da je Python od verzije 3 naprej naredil velik napredek (<a class="reference external" href="https://docs.python.org/3/howto/unicode.html">vir</a>) in da lahko poljubne znake po standardu <em>Unicode</em> uporabimo tako v tekstu, kakor tudi v programskih datotekah .py.</p>
-<p>Niz se začne in zaključi z dvojnim ” ali enojnim ‘ narekovajem.</p>
+<p>Niz se začne in zaključi z dvojnim “ ali enojnim ‚ narekovajem.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;tekst&#39;</span> <span class="c1"># b je niz (string)</span>
@@ -2102,7 +2103,7 @@ g = 9.81
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>215 µs ± 2.47 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>244 µs ± 9.09 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2116,7 +2117,7 @@ g = 9.81
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>195 µs ± 2.97 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>193 µs ± 5.14 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2331,7 +2332,7 @@ Pari so:  3 in 30
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">nazaj</p>
         <p class="prev-next-title">Študijski in izpitni red: 2023/24</p>
       </div>
     </a>
@@ -2339,7 +2340,7 @@ Pari so:  3 in 30
        href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html"
        title="next page">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">naprej</p>
         <p class="prev-next-title">Funkcije, izjeme, moduli</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -2355,7 +2356,7 @@ Pari so:  3 in 30
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Vsebina
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -2443,7 +2444,7 @@ Pari so:  3 in 30
   <div class="footer-item">
     
 <p class="component-author">
-By Janko Slavič
+Avtor Janko Slavič
 </p>
 
   </div>

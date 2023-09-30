@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="sl" >
 
   <head>
     <meta charset="utf-8" />
@@ -54,6 +54,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -63,12 +64,12 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Predavanje 02 - Print, delo z datotekami, funkcije, moduli';</script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="Abecedni seznam" href="../genindex.html" />
+    <link rel="search" title="Išči" href="../search.html" />
     <link rel="next" title="Numpy, matplotlib" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html" />
     <link rel="prev" title="Uvod v Python" href="Predavanje%2001%20-%20Uvod%20v%20Python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="sl"/>
   </head>
   
   
@@ -325,7 +326,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/jankoslavic/pynm" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Izvorno skladišče"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -342,7 +343,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/jankoslavic/pynm/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Predavanje 02 - Print, delo z datotekami, funkcije, moduli.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Odprite številko"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -363,7 +364,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Prenesite to stran">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -372,7 +373,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/notebooks/Predavanje 02 - Print, delo z datotekami, funkcije, moduli.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Prenesite izvorno datoteko"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -390,7 +391,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Natisni v PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -410,7 +411,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Celozaslonski način"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -434,7 +435,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -458,7 +459,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Vsebina </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -558,8 +559,8 @@ document.write(`
 <li><p><strong>\n</strong> vstavi <em>prelomi vrstico</em>,</p></li>
 <li><p><strong>\t</strong> vstavi <em>tabulator</em>,</p></li>
 <li><p><strong>\b</strong> izbriše zadnji znak <em>backspace</em>,</p></li>
-<li><p><strong>'</strong> izpiše enojni narekovaj ‘,</p></li>
-<li><p><strong>&quot;</strong> izpiše dvojni narekovaj “,</p></li>
+<li><p><strong>'</strong> izpiše enojni narekovaj ‚,</p></li>
+<li><p><strong>&quot;</strong> izpiše dvojni narekovaj „,</p></li>
 <li><p><strong>\</strong> prikaže <em>izhodni znak</em> (angl. <em>backslash</em>),</p></li>
 <li><p><strong>\</strong> nova vrstica v večvrstičnem nizu.</p></li>
 </ul>
@@ -598,7 +599,7 @@ document.write(`
 <h3>Oblikovanje nizov<a class="headerlink" href="#oblikovanje-nizov" title="Permalink to this heading">#</a></h3>
 <p>Pri oblikovanju/formatiranju nizov imamo na voljo več orodij:</p>
 <ul class="simple">
-<li><p><strong>f-niz</strong> (angl. <em>f-string</em>, <em>f</em> zaradi “formatirani”), <a class="reference external" href="https://docs.python.org/reference/lexical_analysis.html#f-strings">dokumentacija</a>,</p></li>
+<li><p><strong>f-niz</strong> (angl. <em>f-string</em>, <em>f</em> zaradi „formatirani“), <a class="reference external" href="https://docs.python.org/reference/lexical_analysis.html#f-strings">dokumentacija</a>,</p></li>
 <li><p><strong>metoda <code class="docutils literal notranslate"><span class="pre">.format()</span></code></strong>, <a class="reference external" href="https://docs.python.org/library/stdtypes.html#str.format">dokumentacija</a>,</p></li>
 <li><p><strong>%</strong> oblikovanje, <a class="reference external" href="https://docs.python.org/library/stdtypes.html#string-formatting-operations">dokumentacija</a>.</p></li>
 </ul>
@@ -1100,7 +1101,7 @@ slika:)
 <ul class="simple">
 <li><p>prva vrstica naj bo kratek povzetek funkcije,</p></li>
 <li><p>če je vrstic več, naj bo druga prazna (da se vizualno loči prvo vrstico od preostalega teksta),</p></li>
-<li><p>uporabimo tri narekovaje (dvojne ” ali enojne ‘), ki označujejo večvrstični niz črk.</p></li>
+<li><p>uporabimo tri narekovaje (dvojne “ ali enojne ‚), ki označujejo večvrstični niz črk.</p></li>
 </ul>
 <p>Primer dokumentirane funkcije:</p>
 <div class="cell docutils container">
@@ -1529,7 +1530,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140 ms ± 24.2 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>48.6 ms ± 3.22 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1544,7 +1545,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.09 ms ± 934 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>985 µs ± 33.7 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1622,7 +1623,7 @@ slika:)
 </div>
 <section id="primer-namestitve-paketa">
 <h3>Primer namestitve paketa<a class="headerlink" href="#primer-namestitve-paketa" title="Permalink to this heading">#</a></h3>
-<p>Sicer pa pakete najpogosteje najdemo na spletu (<a class="reference external" href="https://pypi.org">pypi.org</a>). Pojdite na omenjeni portal in poiščite pakete na temo snemanja posnetkov iz portala <a class="reference external" href="https://www.youtube.com">www.youtube.com</a>.  Z iskanjem “pytube” najdemo obetaven paket, ki ga namestimo:</p>
+<p>Sicer pa pakete najpogosteje najdemo na spletu (<a class="reference external" href="https://pypi.org">pypi.org</a>). Pojdite na omenjeni portal in poiščite pakete na temo snemanja posnetkov iz portala <a class="reference external" href="https://www.youtube.com">www.youtube.com</a>.  Z iskanjem „pytube“ najdemo obetaven paket, ki ga namestimo:</p>
 <p>Sedaj modul uporabimo (za podrobnosti uporabe glejte <a class="reference external" href="https://github.com/pytube/pytube">dokumentacijo</a>). Najprej uvozimo celotni paket:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1644,8 +1645,8 @@ slika:)
 <section class="tex2jax_ignore mathjax_ignore" id="nekaj-vprasanj-za-razmislek">
 <h1>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this heading">#</a></h1>
 <ol class="arabic simple">
-<li><p>Odprite datoteko za zapis in vanjo vpišite formatirani (skupaj 7 mest, 3 decimalna mesta) seznam v dveh stolpcih. Razločevalni znak med stolpci naj bo prazen znak ‘ ‘.</p></li>
-<li><p>Odprite pripeto datoteko <code class="docutils literal notranslate"><span class="pre">zapis_labview.lvm</span></code> (gre za zapis iz programa LabView) in preberite glavo v obliki slovarja (‘ime polja’: vrednost).</p></li>
+<li><p>Odprite datoteko za zapis in vanjo vpišite formatirani (skupaj 7 mest, 3 decimalna mesta) seznam v dveh stolpcih. Razločevalni znak med stolpci naj bo prazen znak ‚ ‚.</p></li>
+<li><p>Odprite pripeto datoteko <code class="docutils literal notranslate"><span class="pre">zapis_labview.lvm</span></code> (gre za zapis iz programa LabView) in preberite glavo v obliki slovarja (‚ime polja‘: vrednost).</p></li>
 <li><p>V datoteki iz prejšnje točke preberite podatke (uporabite funkcijo <code class="docutils literal notranslate"><span class="pre">replace()</span></code> za zamenjavo decimalne vejice v piko in nato pretvorite niz v število. Najdite ustrezno dokumentacijo/help).</p></li>
 <li><p>Na poljubnem seznamu besed prikažite uporabo izpeljevanja seznamov tako, da zamenjate poljuben samoglasnik.</p></li>
 <li><p>Napišite funkcijo. Če se v funkcijo vstavi seznam besed, potem naj vrne dolžino besed. Če se v funkcjo vstavi seznam numeričnih vrednosti, potem naj vrne njihovo vrednost povečano za ena.</p></li>
@@ -1676,7 +1677,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 9, 24, 9, 37, 53, 250056)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 9, 30, 16, 13, 1, 805865)
 </pre></div>
 </div>
 </div>
@@ -1689,7 +1690,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2023-09-24 09:37:53&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2023-09-30 16:13:01&#39;
 </pre></div>
 </div>
 </div>
@@ -1708,7 +1709,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2023-09-24 09:37:53 Sun&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2023-09-30 16:13:01 Sat&#39;
 </pre></div>
 </div>
 </div>
@@ -1883,7 +1884,7 @@ Našel sem datoteko: Predavanje 04 - Objektno programiranje, simbolno računanje
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">nazaj</p>
         <p class="prev-next-title">Uvod v Python</p>
       </div>
     </a>
@@ -1891,7 +1892,7 @@ Našel sem datoteko: Predavanje 04 - Objektno programiranje, simbolno računanje
        href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html"
        title="next page">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">naprej</p>
         <p class="prev-next-title">Numpy, matplotlib</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -1907,7 +1908,7 @@ Našel sem datoteko: Predavanje 04 - Objektno programiranje, simbolno računanje
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Vsebina
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -1971,7 +1972,7 @@ Našel sem datoteko: Predavanje 04 - Objektno programiranje, simbolno računanje
   <div class="footer-item">
     
 <p class="component-author">
-By Janko Slavič
+Avtor Janko Slavič
 </p>
 
   </div>

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="sl" >
 
   <head>
     <meta charset="utf-8" />
@@ -54,6 +54,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -65,12 +66,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Predavanje 13 - Numerično reševanje diferencialnih enačb - robni problem';</script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="Abecedni seznam" href="../genindex.html" />
+    <link rel="search" title="Išči" href="../search.html" />
     <link rel="next" title="Testiranje pravilnosti kode, uporabniški vmesnik" href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html" />
     <link rel="prev" title="Numerično reševanje diferencialnih enačb - začetni problem" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="sl"/>
   </head>
   
   
@@ -327,7 +328,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/jankoslavic/pynm" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
+   title="Izvorno skladišče"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -344,7 +345,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/jankoslavic/pynm/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Predavanje 13 - Numerično reševanje diferencialnih enačb - robni problem.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
+   title="Odprite številko"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -365,7 +366,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Prenesite to stran">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -374,7 +375,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/notebooks/Predavanje 13 - Numerično reševanje diferencialnih enačb - robni problem.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Prenesite izvorno datoteko"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -392,7 +393,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Natisni v PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -412,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Celozaslonski način"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -436,7 +437,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -460,7 +461,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Vsebina </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -1185,7 +1186,7 @@ y_3'&amp;=&amp;q(x)/(EI).\\
 <h2>Numerični zgled: vertikalni met<a class="headerlink" href="#numericni-zgled-vertikalni-met" title="Permalink to this heading">#</a></h2>
 <p>Zgoraj smo vertikalni met rešili s strelsko metodo; uporabimo sedaj metodo končnih razlik. Najprej robni problem:
 $<span class="math notranslate nohighlight">\(y''(t)=F_y/m-g,\qquad y(0)=0,\quad y(1)=10.\)</span><span class="math notranslate nohighlight">\(
-zapisati s pomočjo centralne diferenčne sheme (\)</span>F_y=-c,y’$):</p>
+zapisati s pomočjo centralne diferenčne sheme (\)</span>F_y=-c,y‘$):</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{h^2}\left(y_{i-1}-2\,y_{i}+y_{i+1}\right)= -c\left(\frac{1}{2h}\left(-y_{i-1}+y_{i+1}\right)\right)/m-g.\]</div>
 <p>(Tukaj smo predpostavili, da je zračni upor linearno odvisen od hitrost. V nasprotnem primeru bi imeli nelinearni robni problem, in posledično razvili sistem nelinearnih enačb.)</p>
@@ -1665,7 +1666,7 @@ robnim pogojem.</p>
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">nazaj</p>
         <p class="prev-next-title">Numerično reševanje diferencialnih enačb - začetni problem</p>
       </div>
     </a>
@@ -1673,7 +1674,7 @@ robnim pogojem.</p>
        href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html"
        title="next page">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">naprej</p>
         <p class="prev-next-title">Testiranje pravilnosti kode, uporabniški vmesnik</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -1689,7 +1690,7 @@ robnim pogojem.</p>
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Vsebina
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -1727,7 +1728,7 @@ robnim pogojem.</p>
   <div class="footer-item">
     
 <p class="component-author">
-By Janko Slavič
+Avtor Janko Slavič
 </p>
 
   </div>
