@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -492,7 +492,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-modulov-iz-spleta">Uporaba modulov iz spleta</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upravljalnik-paketov-conda">Upravljalnik paketov <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upravljalnik-paketov-pip">Upravljalnik paketov <code class="docutils literal notranslate"><span class="pre">pip</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-namestitve-paketa">Primer namestitve paketa</a></li>
 </ul>
@@ -1530,7 +1529,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>48.6 ms ± 3.22 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>45.6 ms ± 342 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1545,7 +1544,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>985 µs ± 33.7 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>892 µs ± 37.7 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1556,60 +1555,35 @@ slika:)
 <section class="tex2jax_ignore mathjax_ignore" id="uporaba-modulov-iz-spleta">
 <h1>Uporaba modulov iz spleta<a class="headerlink" href="#uporaba-modulov-iz-spleta" title="Permalink to this heading">#</a></h1>
 <p>Poleg vgrajenih modulov in tistih, ki jih pripravimo sami, obstaja še velika množica modulov, ki jih lahko najdemo na spletu in Pythonu dodajajo nove funkcionalnosti. Šele ti moduli naredijo ekosistem Pythona tako uporaben.</p>
-<p><a class="reference external" href="https://www.anaconda.com/download/">Anaconda</a> je najbolj popularna distribucija Pythona in ima vključenih že veliko modulov (za podroben seznam glejte to <a class="reference external" href="https://docs.anaconda.com/anaconda/packages/pkg-docs">povezavo</a>); predvsem pa ima vključene vse bistvene. Najbolj pomembne na področju inženirskih ved bomo spoznali v okviru te knjige.</p>
-<p>Modul je tehnično gledano ena datoteka, kadar nek večji modul vsebuje več modulov, pa lahko začnemo govoriti o <em>paketih</em>.</p>
-<p>Module oz pakete lahko <em>posodabljamo</em> ali nameščamo <em>nove</em>, pri tem nam pomagajo t. i. <em>upravljalniki paketov</em> (angl. <em>package manager</em>). Najbolj pogosto uporabljamo:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span></code>: <a class="reference external" href="https://pip.pypa.io/en/stable/">dokumentacija</a>,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">conda</span></code>: <a class="reference external" href="https://conda.io/docs/">dokumentacija</a>.</p></li>
-</ul>
-<p>Upravljalnika paketov nista povsem ekvivalentna, pogosto uporabo si bomo pogledali spodaj.</p>
-<section id="upravljalnik-paketov-conda">
-<h2>Upravljalnik paketov <code class="docutils literal notranslate"><span class="pre">conda</span></code><a class="headerlink" href="#upravljalnik-paketov-conda" title="Permalink to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">conda</span></code> uporabljamo predvsem za module/pakete vključene v distribucijo <em>Anaconda</em>, in ima še nekatere dodatne sposobnosti (npr. kreiranje navideznega okolja, angl. <em>virtual environment</em>).</p>
-<p>Če želimo posodobiti vse nameščene pakete znotraj distribucije Anaconda, najprej posodobimo samo <code class="docutils literal notranslate"><span class="pre">conda</span></code>, nato pa pakete. V ukazni vrstici izvedemo sledeča ukaza:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
-<span class="n">conda</span> <span class="n">update</span> <span class="o">--</span><span class="nb">all</span>
-</pre></div>
-</div>
-<p>Kateri paketi so nameščeni, preverimo z ukazom (v ukazni vrstici):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
+<p>Modul je tehnično gledano ena datoteka, kadar nek večji modul vsebuje več modulov, pa lahko začnemo govoriti o <em>paketih</em>. Najbolj pomembne pakete na področju inženirskih ved bomo spoznali v okviru te knjige.</p>
+<p>Module oz. pakete lahko <em>posodabljamo</em> ali nameščamo <em>nove</em>, pri tem nam pomagajo t. i. <em>upravljalniki paketov</em> (angl. <em>package manager</em>). Najbolj pogost upravljalnik paketov je <code class="docutils literal notranslate"><span class="pre">pip</span></code> (<a class="reference external" href="https://pip.pypa.io/en/stable/">dokumentacija</a>).</p>
+<section id="upravljalnik-paketov-pip">
+<h2>Upravljalnik paketov <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#upravljalnik-paketov-pip" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span></code> je upravljalnik paketov z dolgo zgodovino in podpira veliko število paketov (<a class="reference external" href="https://pypi.org">pypi.org</a>).</p>
+<p>Že nameščene pakete najdemo z ukazom v ukazni vrstici (<a class="reference external" href="https://pip.pypa.io/en/stable/reference/pip_list/">dokumentacija</a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="nb">list</span>
 </pre></div>
 </div>
 <p>Namesto izhoda v ukazno vrstico bomo večkrat uporabljali možnost <em>Jupyter notebooka</em>, ko s pomočjo klicaja (!) v celici s kodo izvedemo ukaz v ukazni vrstici  (gre za kratko obliko magičnega ukaza <code class="docutils literal notranslate"><span class="pre">%sx</span></code> - shell execute, glejte <a class="reference external" href="http://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-sx">dokumentacijo</a>). Opomba: dva klicaja bi vrnila celoten rezultat neposredno v notebook (ker je izpis zelo dolg, smo se temu izognili).</p>
 <p>Poglejmo primer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rezultat</span> <span class="o">=</span> <span class="o">!</span>conda<span class="w"> </span>list
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rezultat</span> <span class="o">=</span> <span class="o">!</span>pip<span class="w"> </span>list
 <span class="n">rezultat</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&quot;&#39;conda&#39; is not recognized as an internal or external command,&quot;,
- &#39;operable program or batch file.&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Package                           Version&#39;,
+ &#39;--------------------------------- ------------&#39;,
+ &#39;accessible-pygments               0.0.4&#39;,
+ &#39;alabaster                         0.7.13&#39;,
+ &#39;anyio                             4.0.0&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 <p>Pakete namestimo z ukazom (v ukazni vrstici):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="p">[</span><span class="n">ime</span> <span class="n">paketa</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>in odstranimo z:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">remove</span> <span class="p">[</span><span class="n">ime</span> <span class="n">paketa</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>Za več glejte <a class="reference external" href="https://conda.io/docs/user-guide/getting-started.html">dokumentacijo</a>.</p>
-</section>
-<section id="upravljalnik-paketov-pip">
-<h2>Upravljalnik paketov <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#upravljalnik-paketov-pip" title="Permalink to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span></code> je upravljalnik paketov z daljšo zgodovino kot <code class="docutils literal notranslate"><span class="pre">conda</span></code>; podpira bistveno več paketov (<a class="reference external" href="https://pypi.org">pypi.org</a>), vendar ni tako odporen na nezdružljivosti kakor <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Razlik je še več, vendar tukaj ne bomo šli v podrobnosti; uporabljate tistega, ki vam namesti željeni paket!</p>
-<p>Podobno kot pri <code class="docutils literal notranslate"><span class="pre">conda</span></code>, tudi tukaj že nameščene pakete najdemo z ukazom v ukazni vrstici (<a class="reference external" href="https://pip.pypa.io/en/stable/reference/pip_list/">dokumentacija</a>):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="nb">list</span>
-</pre></div>
-</div>
-<p>Pakete s <code class="docutils literal notranslate"><span class="pre">pip</span></code> namestimo z:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="p">[</span><span class="n">ime_paketa</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -1621,6 +1595,7 @@ slika:)
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">uninstall</span> <span class="p">[</span><span class="n">ime_paketa</span><span class="p">]</span>
 </pre></div>
 </div>
+<p>Za več glejte <a class="reference external" href="https://pip.pypa.io/en/stable/getting-started/">dokumentacijo</a>.</p>
 <section id="primer-namestitve-paketa">
 <h3>Primer namestitve paketa<a class="headerlink" href="#primer-namestitve-paketa" title="Permalink to this heading">#</a></h3>
 <p>Sicer pa pakete najpogosteje najdemo na spletu (<a class="reference external" href="https://pypi.org">pypi.org</a>). Pojdite na omenjeni portal in poiščite pakete na temo snemanja posnetkov iz portala <a class="reference external" href="https://www.youtube.com">www.youtube.com</a>.  Z iskanjem „pytube“ najdemo obetaven paket, ki ga namestimo:</p>
@@ -1634,7 +1609,14 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;c:\\_j\\Work Janko\\Pedagosko delo\\_predavanja\\Programiranje in numericne metode\\pynm\\notebooks\\Strojništvo je zabavno - 2 del.mp4&#39;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">61</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pytube</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">yt</span> <span class="o">=</span> <span class="n">pytube</span><span class="o">.</span><span class="n">YouTube</span><span class="p">(</span><span class="s1">&#39;https://www.youtube.com/watch?v=P4IrAXbpeyI&#39;</span><span class="p">)</span> <span class="c1"># kreiramo instanco objekta (kaj to točno pomeni, spoznamo pozneje)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">yt</span><span class="o">.</span><span class="n">streams</span><span class="o">.</span><span class="n">get_highest_resolution</span><span class="p">()</span><span class="o">.</span><span class="n">download</span><span class="p">()</span> <span class="c1">#Prenesemo video</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pytube&#39;
 </pre></div>
 </div>
 </div>
@@ -1676,21 +1658,11 @@ slika:)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 9, 30, 16, 13, 1, 805865)
-</pre></div>
-</div>
-</div>
 </div>
 <p>Podatek o času oblikujemo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sedaj</span><span class="si">:</span><span class="s1">%Y-%m-%d %H:%M:%S</span><span class="si">}</span><span class="s1">&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2023-09-30 16:13:01&#39;
 </pre></div>
 </div>
 </div>
@@ -1708,21 +1680,11 @@ slika:)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2023-09-30 16:13:01 Sat&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Sedaj v obratno smer, torej iz niza v <code class="docutils literal notranslate"><span class="pre">datetime</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s1">&#39;2017-09-28 05:31:45&#39;</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2017, 9, 28, 5, 31, 45)
 </pre></div>
 </div>
 </div>
@@ -1760,21 +1722,6 @@ slika:)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;c:\\_j\\Work Janko\\Pedagosko delo\\_predavanja\\Programiranje in numericne metode\\pynm\\notebooks&#39;,
- &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\python310.zip&#39;,
- &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\DLLs&#39;,
- &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\lib&#39;,
- &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310&#39;,
- &#39;&#39;,
- &#39;C:\\Users\\janko\\AppData\\Roaming\\Python\\Python310\\site-packages&#39;,
- &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages&#39;,
- &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\win32&#39;,
- &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\win32\\lib&#39;,
- &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\Pythonwin&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="modul-os">
@@ -1795,21 +1742,11 @@ slika:)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;.&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>ali trenutno mapo v absolutni obliki:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">curdir</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;c:\\_j\\Work Janko\\Pedagosko delo\\_predavanja\\Programiranje in numericne metode\\pynm\\notebooks&#39;
 </pre></div>
 </div>
 </div>
@@ -1833,14 +1770,6 @@ slika:)
             <span class="n">i</span> <span class="o">+=</span><span class="mi">1</span>
         <span class="k">if</span> <span class="n">i</span><span class="o">&gt;</span><span class="mi">3</span><span class="p">:</span>
             <span class="k">break</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Našel sem datoteko: Predavanje 01 - Uvod v Python.ipynb
-Našel sem datoteko: Predavanje 02 - Print, delo z datotekami, funkcije, moduli.ipynb
-Našel sem datoteko: Predavanje 03 - Moduli, numpy, matplotlib.ipynb
-Našel sem datoteko: Predavanje 04 - Objektno programiranje, simbolno računanje.ipynb
 </pre></div>
 </div>
 </div>
@@ -1941,7 +1870,6 @@ Našel sem datoteko: Predavanje 04 - Objektno programiranje, simbolno računanje
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-modulov-iz-spleta">Uporaba modulov iz spleta</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upravljalnik-paketov-conda">Upravljalnik paketov <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upravljalnik-paketov-pip">Upravljalnik paketov <code class="docutils literal notranslate"><span class="pre">pip</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-namestitve-paketa">Primer namestitve paketa</a></li>
 </ul>
@@ -2005,8 +1933,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

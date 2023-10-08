@@ -1,131 +1,35 @@
 Traceback (most recent call last):
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python311\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
     executenb(
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1305, in execute
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python311\Lib\site-packages\nbclient\client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_core\utils\__init__.py", line 166, in wrapped
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python311\Lib\site-packages\jupyter_core\utils\__init__.py", line 168, in wrapped
     return loop.run_until_complete(inner)
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 646, in run_until_complete
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
     return future.result()
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 705, in async_execute
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python311\Lib\site-packages\nbclient\client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python311\Lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python311\Lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-yt.download(url_list = ['FIa6VZt-wz4']);
+import pytube
+yt = pytube.YouTube('https://www.youtube.com/watch?v=P4IrAXbpeyI') # kreiramo instanco objekta (kaj to točno pomeni, spoznamo pozneje)
+yt.streams.get_highest_resolution().download() #Prenesemo video
 ------------------
 
------ stdout -----
-[youtube] FIa6VZt-wz4: Downloading webpage
------ stdout -----
-[youtube] FIa6VZt-wz4: Downloading API JSON
------ stderr -----
-ERROR: Unable to extract uploader id; please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; see  https://yt-dl.org/update  on how to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.
-------------------
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mRegexNotFoundError[0m                        Traceback (most recent call last)
-File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:815[0m, in [0;36mYoutubeDL.__handle_extraction_exceptions.<locals>.wrapper[1;34m(self, *args, **kwargs)[0m
-[0;32m    814[0m [38;5;28;01mtry[39;00m:
-[1;32m--> 815[0m     [38;5;28;01mreturn[39;00m func([38;5;28mself[39m, [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
-[0;32m    816[0m [38;5;28;01mexcept[39;00m GeoRestrictedError [38;5;28;01mas[39;00m e:
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[61], line 1[0m
+[1;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mpytube[39;00m
+[0;32m      2[0m yt [38;5;241m=[39m pytube[38;5;241m.[39mYouTube([38;5;124m'[39m[38;5;124mhttps://www.youtube.com/watch?v=P4IrAXbpeyI[39m[38;5;124m'[39m) [38;5;66;03m# kreiramo instanco objekta (kaj to točno pomeni, spoznamo pozneje)[39;00m
+[0;32m      3[0m yt[38;5;241m.[39mstreams[38;5;241m.[39mget_highest_resolution()[38;5;241m.[39mdownload() [38;5;66;03m#Prenesemo video[39;00m
 
-File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:836[0m, in [0;36mYoutubeDL.__extract_info[1;34m(self, url, ie, download, extra_info, process)[0m
-[0;32m    834[0m [38;5;129m@__handle_extraction_exceptions[39m
-[0;32m    835[0m [38;5;28;01mdef[39;00m [38;5;21m__extract_info[39m([38;5;28mself[39m, url, ie, download, extra_info, process):
-[1;32m--> 836[0m     ie_result [38;5;241m=[39m [43mie[49m[38;5;241;43m.[39;49m[43mextract[49m[43m([49m[43murl[49m[43m)[49m
-[0;32m    837[0m     [38;5;28;01mif[39;00m ie_result [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:  [38;5;66;03m# Finished already (backwards compatibility; listformats and friends should be moved here)[39;00m
-
-File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\extractor\common.py:534[0m, in [0;36mInfoExtractor.extract[1;34m(self, url)[0m
-[0;32m    533[0m [38;5;28mself[39m[38;5;241m.[39minitialize()
-[1;32m--> 534[0m ie_result [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_real_extract[49m[43m([49m[43murl[49m[43m)[49m
-[0;32m    535[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_x_forwarded_for_ip:
-
-File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\extractor\youtube.py:1794[0m, in [0;36mYoutubeIE._real_extract[1;34m(self, url)[0m
-[0;32m   1782[0m owner_profile_url [38;5;241m=[39m microformat[38;5;241m.[39mget([38;5;124m'[39m[38;5;124mownerProfileUrl[39m[38;5;124m'[39m)
-[0;32m   1784[0m info [38;5;241m=[39m {
-[0;32m   1785[0m     [38;5;124m'[39m[38;5;124mid[39m[38;5;124m'[39m: video_id,
-[0;32m   1786[0m     [38;5;124m'[39m[38;5;124mtitle[39m[38;5;124m'[39m: [38;5;28mself[39m[38;5;241m.[39m_live_title(video_title) [38;5;28;01mif[39;00m is_live [38;5;28;01melse[39;00m video_title,
-[0;32m   1787[0m     [38;5;124m'[39m[38;5;124mformats[39m[38;5;124m'[39m: formats,
-[0;32m   1788[0m     [38;5;124m'[39m[38;5;124mthumbnails[39m[38;5;124m'[39m: thumbnails,
-[0;32m   1789[0m     [38;5;124m'[39m[38;5;124mdescription[39m[38;5;124m'[39m: video_description,
-[0;32m   1790[0m     [38;5;124m'[39m[38;5;124mupload_date[39m[38;5;124m'[39m: unified_strdate(
-[0;32m   1791[0m         microformat[38;5;241m.[39mget([38;5;124m'[39m[38;5;124muploadDate[39m[38;5;124m'[39m)
-[0;32m   1792[0m         [38;5;129;01mor[39;00m search_meta([38;5;124m'[39m[38;5;124muploadDate[39m[38;5;124m'[39m)),
-[0;32m   1793[0m     [38;5;124m'[39m[38;5;124muploader[39m[38;5;124m'[39m: video_details[[38;5;124m'[39m[38;5;124mauthor[39m[38;5;124m'[39m],
-[1;32m-> 1794[0m     [38;5;124m'[39m[38;5;124muploader_id[39m[38;5;124m'[39m: [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_search_regex[49m[43m([49m[38;5;124;43mr[39;49m[38;5;124;43m'[39;49m[38;5;124;43m/(?:channel|user)/([^/?&#]+)[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mowner_profile_url[49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43muploader id[39;49m[38;5;124;43m'[39;49m[43m)[49m [38;5;28;01mif[39;00m owner_profile_url [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m,
-[0;32m   1795[0m     [38;5;124m'[39m[38;5;124muploader_url[39m[38;5;124m'[39m: owner_profile_url,
-[0;32m   1796[0m     [38;5;124m'[39m[38;5;124mchannel_id[39m[38;5;124m'[39m: channel_id,
-[0;32m   1797[0m     [38;5;124m'[39m[38;5;124mchannel_url[39m[38;5;124m'[39m: [38;5;124m'[39m[38;5;124mhttps://www.youtube.com/channel/[39m[38;5;124m'[39m [38;5;241m+[39m channel_id [38;5;28;01mif[39;00m channel_id [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m,
-[0;32m   1798[0m     [38;5;124m'[39m[38;5;124mduration[39m[38;5;124m'[39m: duration,
-[0;32m   1799[0m     [38;5;124m'[39m[38;5;124mview_count[39m[38;5;124m'[39m: int_or_none(
-[0;32m   1800[0m         video_details[38;5;241m.[39mget([38;5;124m'[39m[38;5;124mviewCount[39m[38;5;124m'[39m)
-[0;32m   1801[0m         [38;5;129;01mor[39;00m microformat[38;5;241m.[39mget([38;5;124m'[39m[38;5;124mviewCount[39m[38;5;124m'[39m)
-[0;32m   1802[0m         [38;5;129;01mor[39;00m search_meta([38;5;124m'[39m[38;5;124minteractionCount[39m[38;5;124m'[39m)),
-[0;32m   1803[0m     [38;5;124m'[39m[38;5;124maverage_rating[39m[38;5;124m'[39m: float_or_none(video_details[38;5;241m.[39mget([38;5;124m'[39m[38;5;124maverageRating[39m[38;5;124m'[39m)),
-[0;32m   1804[0m     [38;5;124m'[39m[38;5;124mage_limit[39m[38;5;124m'[39m: [38;5;241m18[39m [38;5;28;01mif[39;00m (
-[0;32m   1805[0m         microformat[38;5;241m.[39mget([38;5;124m'[39m[38;5;124misFamilySafe[39m[38;5;124m'[39m) [38;5;129;01mis[39;00m [38;5;28;01mFalse[39;00m
-[0;32m   1806[0m         [38;5;129;01mor[39;00m search_meta([38;5;124m'[39m[38;5;124misFamilyFriendly[39m[38;5;124m'[39m) [38;5;241m==[39m [38;5;124m'[39m[38;5;124mfalse[39m[38;5;124m'[39m
-[0;32m   1807[0m         [38;5;129;01mor[39;00m search_meta([38;5;124m'[39m[38;5;124mog:restrictions:age[39m[38;5;124m'[39m) [38;5;241m==[39m [38;5;124m'[39m[38;5;124m18+[39m[38;5;124m'[39m) [38;5;28;01melse[39;00m [38;5;241m0[39m,
-[0;32m   1808[0m     [38;5;124m'[39m[38;5;124mwebpage_url[39m[38;5;124m'[39m: webpage_url,
-[0;32m   1809[0m     [38;5;124m'[39m[38;5;124mcategories[39m[38;5;124m'[39m: [category] [38;5;28;01mif[39;00m category [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m,
-[0;32m   1810[0m     [38;5;124m'[39m[38;5;124mtags[39m[38;5;124m'[39m: keywords,
-[0;32m   1811[0m     [38;5;124m'[39m[38;5;124mis_live[39m[38;5;124m'[39m: is_live,
-[0;32m   1812[0m }
-[0;32m   1814[0m pctr [38;5;241m=[39m try_get(
-[0;32m   1815[0m     player_response,
-[0;32m   1816[0m     [38;5;28;01mlambda[39;00m x: x[[38;5;124m'[39m[38;5;124mcaptions[39m[38;5;124m'[39m][[38;5;124m'[39m[38;5;124mplayerCaptionsTracklistRenderer[39m[38;5;124m'[39m], [38;5;28mdict[39m)
-
-File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\extractor\common.py:1012[0m, in [0;36mInfoExtractor._search_regex[1;34m(self, pattern, string, name, default, fatal, flags, group)[0m
-[0;32m   1011[0m [38;5;28;01melif[39;00m fatal:
-[1;32m-> 1012[0m     [38;5;28;01mraise[39;00m RegexNotFoundError([38;5;124m'[39m[38;5;124mUnable to extract [39m[38;5;132;01m%s[39;00m[38;5;124m'[39m [38;5;241m%[39m _name)
-[0;32m   1013[0m [38;5;28;01melse[39;00m:
-
-[1;31mRegexNotFoundError[0m: Unable to extract uploader id; please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; see  https://yt-dl.org/update  on how to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.
-
-During handling of the above exception, another exception occurred:
-
-[1;31mDownloadError[0m                             Traceback (most recent call last)
-Cell [1;32mIn[62], line 1[0m
-[1;32m----> 1[0m [43myt[49m[38;5;241;43m.[39;49m[43mdownload[49m[43m([49m[43murl_list[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43m[[49m[38;5;124;43m'[39;49m[38;5;124;43mFIa6VZt-wz4[39;49m[38;5;124;43m'[39;49m[43m][49m[43m)[49m;
-
-File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:2068[0m, in [0;36mYoutubeDL.download[1;34m(self, url_list)[0m
-[0;32m   2065[0m [38;5;28;01mfor[39;00m url [38;5;129;01min[39;00m url_list:
-[0;32m   2066[0m     [38;5;28;01mtry[39;00m:
-[0;32m   2067[0m         [38;5;66;03m# It also downloads the videos[39;00m
-[1;32m-> 2068[0m         res [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mextract_info[49m[43m([49m
-[0;32m   2069[0m [43m            [49m[43murl[49m[43m,[49m[43m [49m[43mforce_generic_extractor[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mparams[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mforce_generic_extractor[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;28;43;01mFalse[39;49;00m[43m)[49m[43m)[49m
-[0;32m   2070[0m     [38;5;28;01mexcept[39;00m UnavailableVideoError:
-[0;32m   2071[0m         [38;5;28mself[39m[38;5;241m.[39mreport_error([38;5;124m'[39m[38;5;124munable to download video[39m[38;5;124m'[39m)
-
-File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:808[0m, in [0;36mYoutubeDL.extract_info[1;34m(self, url, download, ie_key, extra_info, process, force_generic_extractor)[0m
-[0;32m    804[0m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m ie[38;5;241m.[39mworking():
-[0;32m    805[0m         [38;5;28mself[39m[38;5;241m.[39mreport_warning([38;5;124m'[39m[38;5;124mThe program functionality for this site has been marked as broken, [39m[38;5;124m'[39m
-[0;32m    806[0m                             [38;5;124m'[39m[38;5;124mand will probably not work.[39m[38;5;124m'[39m)
-[1;32m--> 808[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m__extract_info[49m[43m([49m[43murl[49m[43m,[49m[43m [49m[43mie[49m[43m,[49m[43m [49m[43mdownload[49m[43m,[49m[43m [49m[43mextra_info[49m[43m,[49m[43m [49m[43mprocess[49m[43m)[49m
-[0;32m    809[0m [38;5;28;01melse[39;00m:
-[0;32m    810[0m     [38;5;28mself[39m[38;5;241m.[39mreport_error([38;5;124m'[39m[38;5;124mno suitable InfoExtractor for URL [39m[38;5;132;01m%s[39;00m[38;5;124m'[39m [38;5;241m%[39m url)
-
-File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:824[0m, in [0;36mYoutubeDL.__handle_extraction_exceptions.<locals>.wrapper[1;34m(self, *args, **kwargs)[0m
-[0;32m    822[0m     [38;5;28mself[39m[38;5;241m.[39mreport_error(msg)
-[0;32m    823[0m [38;5;28;01mexcept[39;00m ExtractorError [38;5;28;01mas[39;00m e:  [38;5;66;03m# An error we somewhat expected[39;00m
-[1;32m--> 824[0m     [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mreport_error[49m[43m([49m[43mcompat_str[49m[43m([49m[43me[49m[43m)[49m[43m,[49m[43m [49m[43me[49m[38;5;241;43m.[39;49m[43mformat_traceback[49m[43m([49m[43m)[49m[43m)[49m
-[0;32m    825[0m [38;5;28;01mexcept[39;00m MaxDownloadsReached:
-[0;32m    826[0m     [38;5;28;01mraise[39;00m
-
-File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:628[0m, in [0;36mYoutubeDL.report_error[1;34m(self, message, tb)[0m
-[0;32m    626[0m     _msg_header [38;5;241m=[39m [38;5;124m'[39m[38;5;124mERROR:[39m[38;5;124m'[39m
-[0;32m    627[0m error_message [38;5;241m=[39m [38;5;124m'[39m[38;5;132;01m%s[39;00m[38;5;124m [39m[38;5;132;01m%s[39;00m[38;5;124m'[39m [38;5;241m%[39m (_msg_header, message)
-[1;32m--> 628[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mtrouble[49m[43m([49m[43merror_message[49m[43m,[49m[43m [49m[43mtb[49m[43m)[49m
-
-File [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\youtube_dl\YoutubeDL.py:598[0m, in [0;36mYoutubeDL.trouble[1;34m(self, message, tb)[0m
-[0;32m    596[0m     [38;5;28;01melse[39;00m:
-[0;32m    597[0m         exc_info [38;5;241m=[39m sys[38;5;241m.[39mexc_info()
-[1;32m--> 598[0m     [38;5;28;01mraise[39;00m DownloadError(message, exc_info)
-[0;32m    599[0m [38;5;28mself[39m[38;5;241m.[39m_download_retcode [38;5;241m=[39m [38;5;241m1[39m
-
-[1;31mDownloadError[0m: ERROR: Unable to extract uploader id; please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; see  https://yt-dl.org/update  on how to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.
+[1;31mModuleNotFoundError[0m: No module named 'pytube'
 
