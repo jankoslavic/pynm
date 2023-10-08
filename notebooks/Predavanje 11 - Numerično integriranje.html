@@ -177,101 +177,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Numpy, matplotlib</a></li>
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">Objektno programiranje, simbolno računanje</a></li>
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">Uvod v numerične metode in sistemi linearnih enačb</a></li>
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">Sistemi linearnih enačb - nadaljevanje</a></li>
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">Interpolacija</a></li>
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">Aproksimacija</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">Reševanje enačb</a></li>
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">Numerično odvajanje</a></li>
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Numerično integriranje</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">Numerično reševanje diferencialnih enačb - začetni problem</a></li>
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">Numerično reševanje diferencialnih enačb - robni problem</a></li>
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">Testiranje pravilnosti kode, uporabniški vmesnik</a></li>
-
-
-
 </ul>
 
     </div>
@@ -465,73 +383,71 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Numerično integriranje</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivacijski-primer">Motivacijski primer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivacijski-primer">Motivacijski primer</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-cotesov-pristop">Newton-Cotesov pristop</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trapezno-pravilo">Trapezno pravilo</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numericna-implementacija">Numerična implementacija</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numericni-zgled">Numerični zgled</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#napaka-trapeznega-pravila">Napaka trapeznega pravila</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-cotesov-pristop">Newton-Cotesov pristop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trapezno-pravilo">Trapezno pravilo</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numericna-implementacija">Numerična implementacija</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numericni-zgled">Numerični zgled</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#napaka-trapeznega-pravila">Napaka trapeznega pravila</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sestavljeno-trapezno-pravilo">Sestavljeno trapezno pravilo</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Numerična implementacija</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Numerični zgled</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#napaka-sestavljenega-trapeznega-pravila">Napaka sestavljenega trapeznega pravila</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boljsi-priblizek-integrala">Boljši približek integrala</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Numerični zgled</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-implementacija-sestavljenega-trapeznega-pravila"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> implementacija sestavljenega trapeznega pravila</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sestavljeno-trapezno-pravilo">Sestavljeno trapezno pravilo</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Numerična implementacija</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Numerični zgled</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#napaka-sestavljenega-trapeznega-pravila">Napaka sestavljenega trapeznega pravila</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boljsi-priblizek-integrala">Boljši približek integrala</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Numerični zgled</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-implementacija-sestavljenega-trapeznega-pravila"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> implementacija sestavljenega trapeznega pravila</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simpsonova-in-druge-metode">Simpsonova in druge metode</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#izpeljava-trapeznega-pravila-z-uporabo-lagrangevih-polinomov">Izpeljava trapeznega pravila z uporabo Lagrangevih polinomov</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#izracun-utezi-za-simpsonovo-pravilo">Izračun uteži za Simpsonovo pravilo</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-newton-cotes"><code class="docutils literal notranslate"><span class="pre">scipy.integrate.newton_cotes</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#izracun-utezi-za-simpsonovo-3-8-pravilo">Izračun uteži za Simpsonovo 3/8 pravilo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simpsonova-in-druge-metode">Simpsonova in druge metode</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#izpeljava-trapeznega-pravila-z-uporabo-lagrangevih-polinomov">Izpeljava trapeznega pravila z uporabo Lagrangevih polinomov</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#izracun-utezi-za-simpsonovo-pravilo">Izračun uteži za Simpsonovo pravilo</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-newton-cotes"><code class="docutils literal notranslate"><span class="pre">scipy.integrate.newton_cotes</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#izracun-utezi-za-simpsonovo-3-8-pravilo">Izračun uteži za Simpsonovo 3/8 pravilo</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sestavljeno-simpsonovo-pravilo">Sestavljeno Simpsonovo pravilo</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boljsa-ocena-integrala">Boljša ocena integrala</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Numerični zgled</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simpsonova-metoda-v-scipy-integrate-simps">Simpsonova metoda v <code class="docutils literal notranslate"><span class="pre">scipy.integrate.simps</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sestavljeno-simpsonovo-pravilo">Sestavljeno Simpsonovo pravilo</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boljsa-ocena-integrala">Boljša ocena integrala</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Numerični zgled</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simpsonova-metoda-v-scipy-integrate-simps">Simpsonova metoda v <code class="docutils literal notranslate"><span class="pre">scipy.integrate.simps</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rombergova-metoda">Rombergova metoda*</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rombergova-metoda-v-scipy-integrate-romb">Rombergova metoda v <code class="docutils literal notranslate"><span class="pre">scipy.integrate.romb</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussov-integracijski-pristop">Gaussov integracijski pristop</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussova-kvadratura-z-enim-vozliscem">Gaussova kvadratura z enim vozliščem</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standardne-meje-x-l-1-in-x-d-1">Standardne meje: <span class="math notranslate nohighlight">\(x_L=-1\)</span> in <span class="math notranslate nohighlight">\(x_D=1\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strojno-izpeljevanje-utezi-in-gaussove-tocke">Strojno izpeljevanje uteži in Gaussove točke</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussova-integracijska-metoda-z-vec-vozlisci">Gaussova integracijska metoda z več vozlišči</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strojno-izpeljevanje">Strojno izpeljevanje</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Numerična implementacija</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-fixed-quad"><code class="docutils literal notranslate"><span class="pre">scipy.integrate.fixed_quad</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rombergova-metoda">Rombergova metoda*</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rombergova-metoda-v-scipy-integrate-romb">Rombergova metoda v <code class="docutils literal notranslate"><span class="pre">scipy.integrate.romb</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate"><code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intergracijske-funkcije-ki-zahtevajo-definicijsko-funkcijo">Intergracijske funkcije, ki zahtevajo definicijsko <em>funkcijo</em>:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-quad"><code class="docutils literal notranslate"><span class="pre">scipy.integrate.quad</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-dblquad"><code class="docutils literal notranslate"><span class="pre">scipy.integrate.dblquad</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussov-integracijski-pristop">Gaussov integracijski pristop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussova-kvadratura-z-enim-vozliscem">Gaussova kvadratura z enim vozliščem</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standardne-meje-x-l-1-in-x-d-1">Standardne meje: <span class="math notranslate nohighlight">\(x_L=-1\)</span> in <span class="math notranslate nohighlight">\(x_D=1\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strojno-izpeljevanje-utezi-in-gaussove-tocke">Strojno izpeljevanje uteži in Gaussove točke</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intergracijske-funkcije-ki-zahtevajo-tabelo-vrednosti">Intergracijske funkcije, ki zahtevajo tabelo vrednosti:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussova-integracijska-metoda-z-vec-vozlisci">Gaussova integracijska metoda z več vozlišči</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strojno-izpeljevanje">Strojno izpeljevanje</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Numerična implementacija</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-fixed-quad"><code class="docutils literal notranslate"><span class="pre">scipy.integrate.fixed_quad</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate"><code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intergracijske-funkcije-ki-zahtevajo-definicijsko-funkcijo">Intergracijske funkcije, ki zahtevajo definicijsko <em>funkcijo</em>:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-quad"><code class="docutils literal notranslate"><span class="pre">scipy.integrate.quad</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-dblquad"><code class="docutils literal notranslate"><span class="pre">scipy.integrate.dblquad</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intergracijske-funkcije-ki-zahtevajo-tabelo-vrednosti">Intergracijske funkcije, ki zahtevajo tabelo vrednosti:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -544,9 +460,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numericno-integriranje">
 <h1>Numerično integriranje<a class="headerlink" href="#numericno-integriranje" title="Permalink to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="uvod">
-<h1>Uvod<a class="headerlink" href="#uvod" title="Permalink to this heading">#</a></h1>
+<section id="uvod">
+<h2>Uvod<a class="headerlink" href="#uvod" title="Permalink to this heading">#</a></h2>
 <p>V okviru tega poglavja bomo za dano funkcijo <span class="math notranslate nohighlight">\(f(x)\)</span> izračunali določen integral:</p>
 <div class="math notranslate nohighlight">
 \[\int_a^b\,f(x)\,\textrm{d}x\]</div>
@@ -565,7 +480,7 @@ document.write(`
 <li><p><em>Gaussov integracijski pristop</em>, kjer so vozlišča postavljena tako, da se doseže natančnost za polinome.</p></li>
 </ol>
 <section id="motivacijski-primer">
-<h2>Motivacijski primer<a class="headerlink" href="#motivacijski-primer" title="Permalink to this heading">#</a></h2>
+<h3>Motivacijski primer<a class="headerlink" href="#motivacijski-primer" title="Permalink to this heading">#</a></h3>
 <p>Pri numeričnem integriranju si bomo pomagali s konkretnim primerom:</p>
 <div class="math notranslate nohighlight">
 \[\int_1^2 x\,\sin(x)\,\textrm{d}x\]</div>
@@ -643,13 +558,13 @@ document.write(`
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="newton-cotesov-pristop">
-<h1>Newton-Cotesov pristop<a class="headerlink" href="#newton-cotesov-pristop" title="Permalink to this heading">#</a></h1>
+<section id="newton-cotesov-pristop">
+<h2>Newton-Cotesov pristop<a class="headerlink" href="#newton-cotesov-pristop" title="Permalink to this heading">#</a></h2>
 <p>Na sliki je prikazan splošen primer, kjer je razdalja med vozlišči <span class="math notranslate nohighlight">\(x_i\)</span> enaka <span class="math notranslate nohighlight">\(h\)</span> (gre za <strong>ekvidistantno delitev</strong>).
 <img src='./fig/integriranje.png' width=400></p>
 <p>V okviru tega poglavja si bomo najprej pogledali trapezno ter sestavljeno trapezno pravilo, pozneje pa bosta sledili še Simpsonova ter Rombergova metoda.</p>
 <section id="trapezno-pravilo">
-<h2>Trapezno pravilo<a class="headerlink" href="#trapezno-pravilo" title="Permalink to this heading">#</a></h2>
+<h3>Trapezno pravilo<a class="headerlink" href="#trapezno-pravilo" title="Permalink to this heading">#</a></h3>
 <p>Trapezno pravilo vrednosti podintegralske funkcije <span class="math notranslate nohighlight">\(f(x)\)</span> na (pod)intervalu <span class="math notranslate nohighlight">\([x_0, x_1]\)</span> interpolira z linearno funkcijo. Za dve vozliščni točki to pomeni, da površino pod grafom funkcije približno izračunamo kot:</p>
 <div class="math notranslate nohighlight">
 \[I_{\textrm{trapezno}}=\sum_{i=0}^{n=1}A_i\,f(x_i)=\frac{h}{2}\cdot\left(f(x_0)+f(x_1)\right).\]</div>
@@ -657,7 +572,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[A_0 = A_1 = \frac{1}{2}\,h.\]</div>
 <section id="numericna-implementacija">
-<h3>Numerična implementacija<a class="headerlink" href="#numericna-implementacija" title="Permalink to this heading">#</a></h3>
+<h4>Numerična implementacija<a class="headerlink" href="#numericna-implementacija" title="Permalink to this heading">#</a></h4>
 <p>Numerična implementacija je:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -675,7 +590,7 @@ document.write(`
 </div>
 </section>
 <section id="numericni-zgled">
-<h3>Numerični zgled<a class="headerlink" href="#numericni-zgled" title="Permalink to this heading">#</a></h3>
+<h4>Numerični zgled<a class="headerlink" href="#numericni-zgled" title="Permalink to this heading">#</a></h4>
 <p>V konkretnem primeru to pomeni, da prvo in zadnjo funkcijsko vrednost utežimo s <span class="math notranslate nohighlight">\(h/2\)</span>. V našem primeru je <span class="math notranslate nohighlight">\(h=1\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -719,7 +634,7 @@ document.write(`
 </div>
 </section>
 <section id="napaka-trapeznega-pravila">
-<h3>Napaka trapeznega pravila<a class="headerlink" href="#napaka-trapeznega-pravila" title="Permalink to this heading">#</a></h3>
+<h4>Napaka trapeznega pravila<a class="headerlink" href="#napaka-trapeznega-pravila" title="Permalink to this heading">#</a></h4>
 <p>Razlika med analitično vrednostjo integrala in numeričnim približkom <span class="math notranslate nohighlight">\(I\)</span> je napaka metode:</p>
 <div class="math notranslate nohighlight">
 \[E = \int_a^bf(x)\,d x-I,\]</div>
@@ -730,7 +645,7 @@ document.write(`
 </section>
 </section>
 <section id="sestavljeno-trapezno-pravilo">
-<h2>Sestavljeno trapezno pravilo<a class="headerlink" href="#sestavljeno-trapezno-pravilo" title="Permalink to this heading">#</a></h2>
+<h3>Sestavljeno trapezno pravilo<a class="headerlink" href="#sestavljeno-trapezno-pravilo" title="Permalink to this heading">#</a></h3>
 <p>Če razdelimo interval <span class="math notranslate nohighlight">\([a, b]\)</span> na <span class="math notranslate nohighlight">\(n\)</span> podintervalov in na vsakem uporabimo trapezno pravilo integriranja,  govorimo o <em>sestavljenem trapeznem pravilu</em> (angl. <em>composite trapezoidal rule</em>).</p>
 <p>V tem primeru za vsak podinterval <span class="math notranslate nohighlight">\(i\)</span> uporabimo trapezno pravilo in torej za meje podinterval <span class="math notranslate nohighlight">\(x_i\)</span> in <span class="math notranslate nohighlight">\(x_{i+1}\)</span> uporabimo uteži <span class="math notranslate nohighlight">\(A_i=A_{i+i}=h/2\)</span>. Ker so notranja vozlišča podvojena, sledi:</p>
 <div class="math notranslate nohighlight">
@@ -742,7 +657,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[I_{\textrm{trapezno sest}}=\sum_{i=0}^{n}A_i\,f(x_i)=\left(\frac{y_0}{2} + y_1+y_2+\cdots+y_{n-1}+\frac{y_{n}}{2}\right)\,h.\]</div>
 <section id="id1">
-<h3>Numerična implementacija<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h4>Numerična implementacija<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
 <p>Numerična implementacija je:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -760,7 +675,7 @@ document.write(`
 </div>
 </section>
 <section id="id2">
-<h3>Numerični zgled<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h4>Numerični zgled<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
 <p>Zgoraj smo že pripravili podatke za dva podintervala (tri vozlišča):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -829,7 +744,7 @@ document.write(`
 </div>
 </section>
 <section id="napaka-sestavljenega-trapeznega-pravila">
-<h3>Napaka sestavljenega trapeznega pravila<a class="headerlink" href="#napaka-sestavljenega-trapeznega-pravila" title="Permalink to this heading">#</a></h3>
+<h4>Napaka sestavljenega trapeznega pravila<a class="headerlink" href="#napaka-sestavljenega-trapeznega-pravila" title="Permalink to this heading">#</a></h4>
 <p>Napaka sestavljenega trapeznega pravila izhaja iz napake trapeznega pravila; pri tem tako napako naredimo <span class="math notranslate nohighlight">\(n\)</span>-krat.</p>
 <p>Ker velja <span class="math notranslate nohighlight">\(h\cdot n=b-a\)</span>, izpeljemo napako sestavljenega trapeznega pravila kot:</p>
 <div class="math notranslate nohighlight">
@@ -837,7 +752,7 @@ document.write(`
 <p><span class="math notranslate nohighlight">\(\eta\)</span> je vrednost na intervalu <span class="math notranslate nohighlight">\([a,b]\)</span>. Napaka je drugega reda <span class="math notranslate nohighlight">\(\mathcal{O}(h^2)\)</span>.</p>
 </section>
 <section id="boljsi-priblizek-integrala">
-<h3>Boljši približek integrala<a class="headerlink" href="#boljsi-priblizek-integrala" title="Permalink to this heading">#</a></h3>
+<h4>Boljši približek integrala<a class="headerlink" href="#boljsi-priblizek-integrala" title="Permalink to this heading">#</a></h4>
 <p>V nadaljevanju si bomo pogledali t. i. <strong>Richardsonovo ekstrapolacijo</strong>, pri kateri na podlagi ocene integrala s korakom <span class="math notranslate nohighlight">\(h\)</span> in <span class="math notranslate nohighlight">\(2h\)</span> izračunamo boljši približek.</p>
 <p>V kolikor integral <span class="math notranslate nohighlight">\(I\)</span> numerično izračunamo pri dveh različnih korakih <span class="math notranslate nohighlight">\(h\)</span> in <span class="math notranslate nohighlight">\(2\,h\)</span>, velja:</p>
 <div class="math notranslate nohighlight">
@@ -863,7 +778,7 @@ document.write(`
 \[I_h^* = \frac{4}{3}\,I_h - \frac{1}{3}\,I_{2h}\]</div>
 </section>
 <section id="id3">
-<h3>Numerični zgled<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h4>Numerični zgled<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
 <p>Predhodno smo s trapeznim pravilom že izračunali integral pri koraku <span class="math notranslate nohighlight">\(h=1\)</span> in pri koraku <span class="math notranslate nohighlight">\(h=0,5\)</span>, rezultata sta bila:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -892,7 +807,7 @@ Boljši približek: 1.4408392930139313
 </div>
 </section>
 <section id="numpy-implementacija-sestavljenega-trapeznega-pravila">
-<h3><code class="docutils literal notranslate"><span class="pre">numpy</span></code> implementacija sestavljenega trapeznega pravila<a class="headerlink" href="#numpy-implementacija-sestavljenega-trapeznega-pravila" title="Permalink to this heading">#</a></h3>
+<h4><code class="docutils literal notranslate"><span class="pre">numpy</span></code> implementacija sestavljenega trapeznega pravila<a class="headerlink" href="#numpy-implementacija-sestavljenega-trapeznega-pravila" title="Permalink to this heading">#</a></h4>
 <p>Sestavljeno trapezno pravilo je implementirano tudi v paketu <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, s funkcijo <code class="docutils literal notranslate"><span class="pre">numpy.trapz</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trapz</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -920,7 +835,7 @@ Boljši približek: 1.4408392930139313
 </section>
 </section>
 <section id="simpsonova-in-druge-metode">
-<h2>Simpsonova in druge metode<a class="headerlink" href="#simpsonova-in-druge-metode" title="Permalink to this heading">#</a></h2>
+<h3>Simpsonova in druge metode<a class="headerlink" href="#simpsonova-in-druge-metode" title="Permalink to this heading">#</a></h3>
 <p>Zgoraj smo si pogledali trapezno pravilo, ki temelji na linearni interpolacijski funkciji na posameznem podintervalu. Z interpolacijo višjega reda lahko izpeljemo še druge integracijske metode.</p>
 <p>Izračunati moramo:</p>
 <div class="math notranslate nohighlight">
@@ -941,7 +856,7 @@ Boljši približek: 1.4408392930139313
 <div class="math notranslate nohighlight">
 \[A_i = \int_{x_0}^{x_{n}} l_i(x)\,dx\]</div>
 <section id="izpeljava-trapeznega-pravila-z-uporabo-lagrangevih-polinomov">
-<h3>Izpeljava trapeznega pravila z uporabo Lagrangevih polinomov<a class="headerlink" href="#izpeljava-trapeznega-pravila-z-uporabo-lagrangevih-polinomov" title="Permalink to this heading">#</a></h3>
+<h4>Izpeljava trapeznega pravila z uporabo Lagrangevih polinomov<a class="headerlink" href="#izpeljava-trapeznega-pravila-z-uporabo-lagrangevih-polinomov" title="Permalink to this heading">#</a></h4>
 <p>Poglejmo si kako z Lagrangevim interpolacijskim polinomom prve stopnje strojno izpeljemo uteži <span class="math notranslate nohighlight">\(A_i\)</span> v primeru trapeznega pravila.</p>
 <p>Najprej v simbolni obliki definirajmo spremenljivko <code class="docutils literal notranslate"><span class="pre">x</span></code>, vozlišči <code class="docutils literal notranslate"><span class="pre">x0</span></code> in <code class="docutils literal notranslate"><span class="pre">x1</span></code> ter korak <code class="docutils literal notranslate"><span class="pre">h</span></code>:</p>
 <div class="cell docutils container">
@@ -1052,7 +967,7 @@ Boljši približek: 1.4408392930139313
 \[E_{\textrm{trapezno}}= -\frac{h^3}{12}f''(\xi).\]</div>
 </section>
 <section id="izracun-utezi-za-simpsonovo-pravilo">
-<h3>Izračun uteži za Simpsonovo pravilo<a class="headerlink" href="#izracun-utezi-za-simpsonovo-pravilo" title="Permalink to this heading">#</a></h3>
+<h4>Izračun uteži za Simpsonovo pravilo<a class="headerlink" href="#izracun-utezi-za-simpsonovo-pravilo" title="Permalink to this heading">#</a></h4>
 <p>Potem ko smo zgoraj pokazali strnjen izračun za trapezno pravilo, lahko podobno izvedemo za kvadratno interpolacijo čez tri točke (<span class="math notranslate nohighlight">\(n=3\)</span>).</p>
 <p>Izračun uteži je analogen zgornjemu:</p>
 <div class="cell docutils container">
@@ -1129,7 +1044,7 @@ Boljši približek: 1.4408392930139313
 </div>
 </section>
 <section id="scipy-integrate-newton-cotes">
-<h3><code class="docutils literal notranslate"><span class="pre">scipy.integrate.newton_cotes</span></code><a class="headerlink" href="#scipy-integrate-newton-cotes" title="Permalink to this heading">#</a></h3>
+<h4><code class="docutils literal notranslate"><span class="pre">scipy.integrate.newton_cotes</span></code><a class="headerlink" href="#scipy-integrate-newton-cotes" title="Permalink to this heading">#</a></h4>
 <p>Koeficiente integracijskega pristopa Newton-Cotes pridobimo tudi s pomočjo <code class="docutils literal notranslate"><span class="pre">scipy.integrate.newton_cotes()</span></code> <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.newton_cotes.html#scipy.integrate.newton_cotes">dokumentacija</a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">newton_cotes</span><span class="p">(</span><span class="n">rn</span><span class="p">,</span> <span class="n">equal</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
@@ -1156,7 +1071,7 @@ Boljši približek: 1.4408392930139313
 </div>
 </section>
 <section id="izracun-utezi-za-simpsonovo-3-8-pravilo">
-<h3>Izračun uteži za Simpsonovo 3/8 pravilo<a class="headerlink" href="#izracun-utezi-za-simpsonovo-3-8-pravilo" title="Permalink to this heading">#</a></h3>
+<h4>Izračun uteži za Simpsonovo 3/8 pravilo<a class="headerlink" href="#izracun-utezi-za-simpsonovo-3-8-pravilo" title="Permalink to this heading">#</a></h4>
 <p>Nadaljujemo lahko s kubično interpolacijo čez štiri točke (<span class="math notranslate nohighlight">\(n=4\)</span>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1239,7 +1154,7 @@ Boljši približek: 1.4408392930139313
 </section>
 </section>
 <section id="sestavljeno-simpsonovo-pravilo">
-<h2>Sestavljeno Simpsonovo pravilo<a class="headerlink" href="#sestavljeno-simpsonovo-pravilo" title="Permalink to this heading">#</a></h2>
+<h3>Sestavljeno Simpsonovo pravilo<a class="headerlink" href="#sestavljeno-simpsonovo-pravilo" title="Permalink to this heading">#</a></h3>
 <p>Interval <span class="math notranslate nohighlight">\([a, b]\)</span> razdelimo na sodo število <span class="math notranslate nohighlight">\(n\)</span> podintervalov enake širine <span class="math notranslate nohighlight">\(h=(b - a)/n\)</span>, s čimer so definirana vozlišča <span class="math notranslate nohighlight">\(x_i=a+i\,h\)</span> za <span class="math notranslate nohighlight">\(i=0,1,\dots,n\)</span>. V tem primeru zapišemo sestavljeno Simpsonovo pravilo:</p>
 <div class="math notranslate nohighlight">
 \[\int_{a}^{b}f(x)\,\textrm{d}x=
@@ -1311,7 +1226,7 @@ f(x_0)
 </div>
 </div>
 <section id="boljsa-ocena-integrala">
-<h3>Boljša ocena integrala<a class="headerlink" href="#boljsa-ocena-integrala" title="Permalink to this heading">#</a></h3>
+<h4>Boljša ocena integrala<a class="headerlink" href="#boljsa-ocena-integrala" title="Permalink to this heading">#</a></h4>
 <p>Napaka sestavljene Simpsonove metode je definirana z:</p>
 <div class="math notranslate nohighlight">
 \[E_{\textrm{Sestavljeno Simpsonovo 1/3}}= 
@@ -1342,7 +1257,7 @@ f(x_0)
 \[I_h^* = \frac{16}{15}\,I_h - \frac{1}{15}\,I_{2h}\]</div>
 </section>
 <section id="id4">
-<h3>Numerični zgled<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h4>Numerični zgled<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
 <p>Predhodno smo s Simpsonovim pravilom že izračunali integral pri koraku <span class="math notranslate nohighlight">\(h=0,5\)</span> in pri koraku <span class="math notranslate nohighlight">\(h=0,25\)</span>, rezultata sta bila:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1372,7 +1287,7 @@ Boljši približek: 1.4404218714139077
 <p>Pridobimo boljši numerični približek, izgubimo pa oceno napake!</p>
 </section>
 <section id="simpsonova-metoda-v-scipy-integrate-simps">
-<h3>Simpsonova metoda v <code class="docutils literal notranslate"><span class="pre">scipy.integrate.simps</span></code><a class="headerlink" href="#simpsonova-metoda-v-scipy-integrate-simps" title="Permalink to this heading">#</a></h3>
+<h4>Simpsonova metoda v <code class="docutils literal notranslate"><span class="pre">scipy.integrate.simps</span></code><a class="headerlink" href="#simpsonova-metoda-v-scipy-integrate-simps" title="Permalink to this heading">#</a></h4>
 <p>V <code class="docutils literal notranslate"><span class="pre">scipy</span></code> je implementirano sestavljeno Simpsonovo pravilo v <code class="docutils literal notranslate"><span class="pre">scipy.integrate.simps()</span></code> (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.simps.html">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">simps</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">even</span><span class="o">=</span><span class="s1">&#39;avg&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1407,7 +1322,7 @@ Boljši približek: 1.4404218714139077
 </section>
 </section>
 <section id="rombergova-metoda">
-<h2>Rombergova metoda*<a class="headerlink" href="#rombergova-metoda" title="Permalink to this heading">#</a></h2>
+<h3>Rombergova metoda*<a class="headerlink" href="#rombergova-metoda" title="Permalink to this heading">#</a></h3>
 <p>Rombergova metoda temelji na Richardsonovi ekstrapolaciji. Predpostavimo, da integral <span class="math notranslate nohighlight">\(\int_a^b f(x)\textrm{d}x\)</span> integriramo na intervalu <span class="math notranslate nohighlight">\([a,b]\)</span>, ki ga razdelimo na <span class="math notranslate nohighlight">\(2^{n-1}\)</span> podintervalov (<span class="math notranslate nohighlight">\(n=1,2,4,8, \dots\)</span>).</p>
 <p>Rezultat trapeznega pravila pri <span class="math notranslate nohighlight">\(n=1\)</span> označimo z <span class="math notranslate nohighlight">\(R_{\underbrace{1}_{n},\underbrace{1}_{j}}\)</span>, pri čemer <span class="math notranslate nohighlight">\(j\)</span> označuje natančnost pridobljenega rezultata <span class="math notranslate nohighlight">\(\mathcal{O}(h^{2j})\)</span>.</p>
 <p>Če uporabimo trapezno integracijsko pravilo pri <span class="math notranslate nohighlight">\(n=1,2,4 \dots\)</span> podintervalih, izračunamo:</p>
@@ -1449,7 +1364,7 @@ Boljši približek: 1.4404218714139077
 <p>Poglejmo si primer od zgoraj. Najprej s sestavljeno trapezno metodo izračunamo integral pri različnih korakih (drugi red napake):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># O(h^2)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## O(h^2)</span>
 <span class="n">R1_1</span> <span class="o">=</span> <span class="n">trapezno_sest</span><span class="p">(</span><span class="n">y9v</span><span class="p">[::</span><span class="mi">8</span><span class="p">],</span> <span class="mi">8</span><span class="o">*</span><span class="n">h9v</span><span class="p">)</span> <span class="c1"># h=1.0</span>
 <span class="n">R2_1</span> <span class="o">=</span> <span class="n">trapezno_sest</span><span class="p">(</span><span class="n">y9v</span><span class="p">[::</span><span class="mi">4</span><span class="p">],</span> <span class="mi">4</span><span class="o">*</span><span class="n">h9v</span><span class="p">)</span> <span class="c1"># h=0.5</span>
 <span class="n">R3_1</span> <span class="o">=</span> <span class="n">trapezno_sest</span><span class="p">(</span><span class="n">y9v</span><span class="p">[::</span><span class="mi">2</span><span class="p">],</span> <span class="mi">2</span><span class="o">*</span><span class="n">h9v</span><span class="p">)</span> <span class="c1"># h=0.25</span>
@@ -1465,7 +1380,7 @@ Boljši približek: 1.4404218714139077
 <p>Nato izračunamo boljše približke (dobimo četrti red napake):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># O(h^4)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## O(h^4)</span>
 <span class="n">R2_2</span> <span class="o">=</span> <span class="n">R2_1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">R2_1</span> <span class="o">-</span> <span class="n">R1_1</span><span class="p">)</span>
 <span class="n">R3_2</span> <span class="o">=</span> <span class="n">R3_1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">R3_1</span> <span class="o">-</span> <span class="n">R2_1</span><span class="p">)</span>
 <span class="n">R4_2</span> <span class="o">=</span> <span class="n">R4_1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">R4_1</span> <span class="o">-</span> <span class="n">R3_1</span><span class="p">)</span>
@@ -1491,7 +1406,7 @@ Boljši približek: 1.4404218714139077
 <p>Ponovno izračunamo boljše približke (dobimo šesti red napake):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># O(h6)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## O(h6)</span>
 <span class="n">R3_3</span> <span class="o">=</span> <span class="n">R3_2</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">15</span> <span class="o">*</span> <span class="p">(</span><span class="n">R3_2</span> <span class="o">-</span> <span class="n">R2_2</span><span class="p">)</span>
 <span class="n">R4_3</span> <span class="o">=</span> <span class="n">R4_2</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">15</span> <span class="o">*</span> <span class="p">(</span><span class="n">R4_2</span> <span class="o">-</span> <span class="n">R3_2</span><span class="p">)</span>
 
@@ -1518,7 +1433,7 @@ Boljši približek: 1.4404218714139077
 <p>Ponovno izračunamo boljše približke (dobimo osmi red napake):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># O(h8)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## O(h8)</span>
 <span class="n">R4_4</span> <span class="o">=</span> <span class="n">R4_3</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">63</span> <span class="o">*</span> <span class="p">(</span><span class="n">R4_3</span> <span class="o">-</span> <span class="n">R3_3</span><span class="p">)</span>
 <span class="n">R4_4</span>
 </pre></div>
@@ -1532,7 +1447,7 @@ Boljši približek: 1.4404218714139077
 <div class="math notranslate nohighlight">
 \[E = \left|R_{n,n}-R_{n-1,n-1}\right|.\]</div>
 <section id="rombergova-metoda-v-scipy-integrate-romb">
-<h3>Rombergova metoda v <code class="docutils literal notranslate"><span class="pre">scipy.integrate.romb</span></code><a class="headerlink" href="#rombergova-metoda-v-scipy-integrate-romb" title="Permalink to this heading">#</a></h3>
+<h4>Rombergova metoda v <code class="docutils literal notranslate"><span class="pre">scipy.integrate.romb</span></code><a class="headerlink" href="#rombergova-metoda-v-scipy-integrate-romb" title="Permalink to this heading">#</a></h4>
 <p>V <code class="docutils literal notranslate"><span class="pre">scipy</span></code> je implementirana Rombergova metoda v <code class="docutils literal notranslate"><span class="pre">scipy.integrate.romb()</span></code> (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.romb.html#scipy.integrate.romb">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">romb</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
@@ -1587,8 +1502,8 @@ Boljši približek: 1.4404218714139077
 </section>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="gaussov-integracijski-pristop">
-<h1>Gaussov integracijski pristop<a class="headerlink" href="#gaussov-integracijski-pristop" title="Permalink to this heading">#</a></h1>
+<section id="gaussov-integracijski-pristop">
+<h2>Gaussov integracijski pristop<a class="headerlink" href="#gaussov-integracijski-pristop" title="Permalink to this heading">#</a></h2>
 <p>Newton-Cotesov pristop temelji na polinomu <span class="math notranslate nohighlight">\(n\)</span>-te stopnje in napaka je <span class="math notranslate nohighlight">\(n+1\)</span> stopnje. To pomeni, da integracija daje točen rezultat, če je integrirana funkcija polinom stopnje <span class="math notranslate nohighlight">\(n\)</span> ali manj.</p>
 <p>Gaussov integracijski pristop je v principu drugačen: cilj je integral funkcije <span class="math notranslate nohighlight">\(f(x)\)</span> nadomestiti z uteženo vsoto vrednosti funkcije pri diskretnih vrednostih <span class="math notranslate nohighlight">\(f(x_i)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1596,7 +1511,7 @@ Boljši približek: 1.4404218714139077
 <p>Pri tem je neznana utež <span class="math notranslate nohighlight">\(A_i\)</span> in tudi lega vozlišča <span class="math notranslate nohighlight">\(x_i\)</span>. Za stopnje polinoma <span class="math notranslate nohighlight">\(n\)</span> bomo potrebovali tudi več  točk <span class="math notranslate nohighlight">\((x_i, f(x_i))\)</span>.</p>
 <p>V nadaljevanju bomo spoznali, da lahko zelo učinkovito izračunamo numerično točen integral. Prednost Gaussove integracije je tudi, da lahko izračuna integral funkcij s singularnostmi (npr: <span class="math notranslate nohighlight">\(\int_0^1\sin(x)/\sqrt{(x)}\,dx\)</span>).</p>
 <section id="gaussova-kvadratura-z-enim-vozliscem">
-<h2>Gaussova kvadratura z enim vozliščem<a class="headerlink" href="#gaussova-kvadratura-z-enim-vozliscem" title="Permalink to this heading">#</a></h2>
+<h3>Gaussova kvadratura z enim vozliščem<a class="headerlink" href="#gaussova-kvadratura-z-enim-vozliscem" title="Permalink to this heading">#</a></h3>
 <p>Predpostavimo, da želimo integrirati polinom stopnje <span class="math notranslate nohighlight">\(n=1\)</span> (linearna funkcija):</p>
 <div class="math notranslate nohighlight">
 \[f(x)=P_1(x)=a_0+a_1\,x.\]</div>
@@ -1618,7 +1533,7 @@ Boljši približek: 1.4404218714139077
 <p>Če je integrirana funkcija linearna, bomo samo na podlagi vrednosti v eni točki izračunali pravo vrednost!</p>
 <p>Da je Gaussov integracijski pristop neodvisen od mej integriranja <span class="math notranslate nohighlight">\(x_L\)</span>, <span class="math notranslate nohighlight">\(x_D\)</span>, pa uvedemo standardne meje.</p>
 <section id="standardne-meje-x-l-1-in-x-d-1">
-<h3>Standardne meje: <span class="math notranslate nohighlight">\(x_L=-1\)</span> in <span class="math notranslate nohighlight">\(x_D=1\)</span><a class="headerlink" href="#standardne-meje-x-l-1-in-x-d-1" title="Permalink to this heading">#</a></h3>
+<h4>Standardne meje: <span class="math notranslate nohighlight">\(x_L=-1\)</span> in <span class="math notranslate nohighlight">\(x_D=1\)</span><a class="headerlink" href="#standardne-meje-x-l-1-in-x-d-1" title="Permalink to this heading">#</a></h4>
 <p>Zaradi splošnosti meje <span class="math notranslate nohighlight">\(x\in[x_L, x_D]\)</span> transformiramo v <span class="math notranslate nohighlight">\(\xi\in[-1, +1]\)</span> s pomočjo:</p>
 <div class="math notranslate nohighlight">
 \[x=\frac{x_D+x_L}{2}+\frac{x_D-x_L}{2}\xi\]</div>
@@ -1634,7 +1549,7 @@ Boljši približek: 1.4404218714139077
 <p>V primeru standardnih mej, je pri eni Gaussovi točki utež <span class="math notranslate nohighlight">\(A_0=2\)</span> in <span class="math notranslate nohighlight">\(x_0=0\)</span> vrednost, pri kateri moramo izračunati funkcijo <span class="math notranslate nohighlight">\(f(x_0)\)</span>.</p>
 </section>
 <section id="strojno-izpeljevanje-utezi-in-gaussove-tocke">
-<h3>Strojno izpeljevanje uteži in Gaussove točke<a class="headerlink" href="#strojno-izpeljevanje-utezi-in-gaussove-tocke" title="Permalink to this heading">#</a></h3>
+<h4>Strojno izpeljevanje uteži in Gaussove točke<a class="headerlink" href="#strojno-izpeljevanje-utezi-in-gaussove-tocke" title="Permalink to this heading">#</a></h4>
 <p>Definirajmo simbole in nastavimo enačbo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1664,7 +1579,7 @@ Boljši približek: 1.4404218714139077
 </section>
 </section>
 <section id="gaussova-integracijska-metoda-z-vec-vozlisci">
-<h2>Gaussova integracijska metoda z več vozlišči<a class="headerlink" href="#gaussova-integracijska-metoda-z-vec-vozlisci" title="Permalink to this heading">#</a></h2>
+<h3>Gaussova integracijska metoda z več vozlišči<a class="headerlink" href="#gaussova-integracijska-metoda-z-vec-vozlisci" title="Permalink to this heading">#</a></h3>
 <p>Izpeljati želimo Gaussovo integracijsko metodo, ki bo upoštevala na intervalu <span class="math notranslate nohighlight">\([a,b]\)</span> <span class="math notranslate nohighlight">\(v\)</span> vozlišč in bo točno izračunala integral polinomov do stopnje <span class="math notranslate nohighlight">\(n=2v-1\)</span>. Veljati mora:</p>
 <div class="math notranslate nohighlight">
 \[\int_a^bP_{2v-1}(x)\,\textrm{d}x = \sum_{i=0}^{v-1} A_i\,P_{2v-1}(x_i).\]</div>
@@ -1674,7 +1589,7 @@ Boljši približek: 1.4404218714139077
 \[P_{2v-1}(x)=\sum_{i=0}^{2v-1} a_i\,x^i.\]</div>
 <p>Z dvema Gaussovima točkama/vozliščema točno izračunamo integral polinoma do tretjega reda, s tremi Gausovimi vozlišči pa točno izračunamo integral polinoma do petega reda!</p>
 <section id="strojno-izpeljevanje">
-<h3>Strojno izpeljevanje<a class="headerlink" href="#strojno-izpeljevanje" title="Permalink to this heading">#</a></h3>
+<h4>Strojno izpeljevanje<a class="headerlink" href="#strojno-izpeljevanje" title="Permalink to this heading">#</a></h4>
 <p>Pripravimo si najprej simbolni zapis polinoma in ustreznih spremenljivk:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1809,7 +1724,7 @@ Uteži:    (A0, A1)
 \[I_{\textrm{Gauss3}}= \frac{5}{9}\,f\left(-\frac{\sqrt{15}}{5}\right) + \frac{8}{9}\,f\left(0\right)+\frac{5}{9}\,f\left(\frac{\sqrt{15}}{5}\right).\]</div>
 </section>
 <section id="id5">
-<h3>Numerična implementacija<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h4>Numerična implementacija<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
 <p>Numerična implementacija (vključno s transformacijo mej) za eno, dve ali tri vozlišča:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1877,7 +1792,7 @@ Uteži:    (A0, A1)
 </div>
 </section>
 <section id="scipy-integrate-fixed-quad">
-<h3><code class="docutils literal notranslate"><span class="pre">scipy.integrate.fixed_quad</span></code><a class="headerlink" href="#scipy-integrate-fixed-quad" title="Permalink to this heading">#</a></h3>
+<h4><code class="docutils literal notranslate"><span class="pre">scipy.integrate.fixed_quad</span></code><a class="headerlink" href="#scipy-integrate-fixed-quad" title="Permalink to this heading">#</a></h4>
 <p>Znotraj <code class="docutils literal notranslate"><span class="pre">scipy</span></code> je Gaussova integracijska metoda implementirana v okviru funkcije <code class="docutils literal notranslate"><span class="pre">scipy.integrate.fixed_quad()</span></code> (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.fixed_quad.html">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fixed_quad</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(),</span> <span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
@@ -1917,11 +1832,11 @@ Uteži:    (A0, A1)
 </section>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="scipy-integrate">
-<h1><code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code><a class="headerlink" href="#scipy-integrate" title="Permalink to this heading">#</a></h1>
+<section id="scipy-integrate">
+<h2><code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code><a class="headerlink" href="#scipy-integrate" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code> je močno orodje za numerično integriranje (glejte <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/integrate.html">dokumentacijo</a>). V nadaljevanju si bomo pogledali nekatere funkcije.</p>
 <section id="intergracijske-funkcije-ki-zahtevajo-definicijsko-funkcijo">
-<h2>Intergracijske funkcije, ki zahtevajo definicijsko <em>funkcijo</em>:<a class="headerlink" href="#intergracijske-funkcije-ki-zahtevajo-definicijsko-funkcijo" title="Permalink to this heading">#</a></h2>
+<h3>Intergracijske funkcije, ki zahtevajo definicijsko <em>funkcijo</em>:<a class="headerlink" href="#intergracijske-funkcije-ki-zahtevajo-definicijsko-funkcijo" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">quad(func,</span> <span class="pre">a,</span> <span class="pre">b[,</span> <span class="pre">args,</span> <span class="pre">full_output,</span> <span class="pre">...])</span></code>	izračuna določeni integral <code class="docutils literal notranslate"><span class="pre">func(x)</span></code> v mejah [<code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>],</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dblquad(func,</span> <span class="pre">a,</span> <span class="pre">b,</span> <span class="pre">gfun,</span> <span class="pre">hfun[,</span> <span class="pre">args,</span> <span class="pre">...])</span></code>	izračuna določeni integral <code class="docutils literal notranslate"><span class="pre">func(x,y)</span></code>,</p></li>
@@ -1930,7 +1845,7 @@ Uteži:    (A0, A1)
 <li><p><code class="docutils literal notranslate"><span class="pre">romberg(function,</span> <span class="pre">a,</span> <span class="pre">b[,</span> <span class="pre">args,</span> <span class="pre">tol,</span> <span class="pre">rtol,</span> <span class="pre">...])</span></code>	integracija Romberg za funkcijo <code class="docutils literal notranslate"><span class="pre">function</span></code>,</p></li>
 </ul>
 <section id="scipy-integrate-quad">
-<h3><code class="docutils literal notranslate"><span class="pre">scipy.integrate.quad</span></code><a class="headerlink" href="#scipy-integrate-quad" title="Permalink to this heading">#</a></h3>
+<h4><code class="docutils literal notranslate"><span class="pre">scipy.integrate.quad</span></code><a class="headerlink" href="#scipy-integrate-quad" title="Permalink to this heading">#</a></h4>
 <p>Poglejmo si zelo uporabno funkcijo za integriranje, <code class="docutils literal notranslate"><span class="pre">scipy.integrate.quad()</span></code> (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.quad.html#scipy.integrate.quad">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quad</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(),</span> <span class="n">full_output</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">epsabs</span><span class="o">=</span><span class="mf">1.49e-08</span><span class="p">,</span> <span class="n">epsrel</span><span class="o">=</span><span class="mf">1.49e-08</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> 
      <span class="n">points</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">wvar</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">wopts</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxp1</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">limlst</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
@@ -1965,7 +1880,7 @@ Uteži:    (A0, A1)
 </div>
 </section>
 <section id="scipy-integrate-dblquad">
-<h3><code class="docutils literal notranslate"><span class="pre">scipy.integrate.dblquad</span></code><a class="headerlink" href="#scipy-integrate-dblquad" title="Permalink to this heading">#</a></h3>
+<h4><code class="docutils literal notranslate"><span class="pre">scipy.integrate.dblquad</span></code><a class="headerlink" href="#scipy-integrate-dblquad" title="Permalink to this heading">#</a></h4>
 <p>Gre za podobno funkcijo kot <code class="docutils literal notranslate"><span class="pre">quad</span></code>, vendar za integriranje po dveh spremenljivkah (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.dblquad.html#scipy.integrate.dblquad">dokumentacija</a>).
 Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.integrate.dblquad()</span></code> izračuna dvojni integral <code class="docutils literal notranslate"><span class="pre">func(y,</span> <span class="pre">x)</span></code> v mejah od <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[a,</span> <span class="pre">b]</span></code> in <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">[gfun(x),</span> <span class="pre">hfun(x)]</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dblquad</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">gfun</span><span class="p">,</span> <span class="n">hfun</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(),</span> <span class="n">epsabs</span><span class="o">=</span><span class="mf">1.49e-08</span><span class="p">,</span> <span class="n">epsrel</span><span class="o">=</span><span class="mf">1.49e-08</span><span class="p">)</span>
@@ -2002,7 +1917,7 @@ Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.inte
 </section>
 </section>
 <section id="intergracijske-funkcije-ki-zahtevajo-tabelo-vrednosti">
-<h2>Intergracijske funkcije, ki zahtevajo tabelo vrednosti:<a class="headerlink" href="#intergracijske-funkcije-ki-zahtevajo-tabelo-vrednosti" title="Permalink to this heading">#</a></h2>
+<h3>Intergracijske funkcije, ki zahtevajo tabelo vrednosti:<a class="headerlink" href="#intergracijske-funkcije-ki-zahtevajo-tabelo-vrednosti" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">trapz(y[,</span> <span class="pre">x,</span> <span class="pre">dx,</span> <span class="pre">axis])</span></code> sestavljeno trapezno pravilo,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cumtrapz(y[,</span> <span class="pre">x,</span> <span class="pre">dx,</span> <span class="pre">axis,</span> <span class="pre">initial])</span></code> kumulativni integral podintegralske funkcije (vrne rezultat v vsakem vozlišču),</p></li>
@@ -2062,8 +1977,8 @@ Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.inte
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="nekaj-vprasanj-za-razmislek">
-<h1>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this heading">#</a></h1>
+<section id="nekaj-vprasanj-za-razmislek">
+<h2>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Na sliki (vir: J. Slavič: Dinamika, meh. nihanja …, 2014) je prikazan trikotnik s stranicami dolžine <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, z debelino <span class="math notranslate nohighlight">\(h\)</span> in gostoto <span class="math notranslate nohighlight">\(\rho\)</span>.
 <img src="./fig/Slavic_2014_str_242_slika_5.4.png" width=200>
@@ -2085,8 +2000,8 @@ Rešitev:
 ekvivalentna obremenitev <span class="math notranslate nohighlight">\(Q = \int_0^L{q(x) \mathrm{d}x}\)</span>, pozicija (težišče) <span class="math notranslate nohighlight">\(x_Q = \frac{ \int_0^L{x\,q(x) \mathrm{d}x} }{ \int_0^L{q(x) \mathrm{d}x} }\)</span></p></li>
 </ol>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="dodatno">
-<h1>Dodatno<a class="headerlink" href="#dodatno" title="Permalink to this heading">#</a></h1>
+<section id="dodatno">
+<h2>Dodatno<a class="headerlink" href="#dodatno" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Obravnavajte prikazan enoosni primer, obremenjen s porazdeljeno obremenitvijo <span class="math notranslate nohighlight">\(n(x)\)</span> ter točkovno silo <span class="math notranslate nohighlight">\(F=10\,\)</span>kN. Dolžina palice je <span class="math notranslate nohighlight">\(L = 2\,\)</span>m, konstanta <span class="math notranslate nohighlight">\(n_0 = 15\,\)</span>kN/m in <span class="math notranslate nohighlight">\(EA = 200000\,\mathrm{MPa} \times 50×50\, \mathrm{mm^2}\)</span>.
 <img src="./fig/nal-num_integriranje_2-2.jpg" width=350>
@@ -2097,6 +2012,7 @@ Naloga:</p>
 </ol>
 </li>
 </ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2162,73 +2078,71 @@ Naloga:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Numerično integriranje</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivacijski-primer">Motivacijski primer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivacijski-primer">Motivacijski primer</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-cotesov-pristop">Newton-Cotesov pristop</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trapezno-pravilo">Trapezno pravilo</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numericna-implementacija">Numerična implementacija</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numericni-zgled">Numerični zgled</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#napaka-trapeznega-pravila">Napaka trapeznega pravila</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-cotesov-pristop">Newton-Cotesov pristop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trapezno-pravilo">Trapezno pravilo</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numericna-implementacija">Numerična implementacija</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numericni-zgled">Numerični zgled</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#napaka-trapeznega-pravila">Napaka trapeznega pravila</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sestavljeno-trapezno-pravilo">Sestavljeno trapezno pravilo</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Numerična implementacija</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Numerični zgled</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#napaka-sestavljenega-trapeznega-pravila">Napaka sestavljenega trapeznega pravila</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boljsi-priblizek-integrala">Boljši približek integrala</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Numerični zgled</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-implementacija-sestavljenega-trapeznega-pravila"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> implementacija sestavljenega trapeznega pravila</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sestavljeno-trapezno-pravilo">Sestavljeno trapezno pravilo</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Numerična implementacija</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Numerični zgled</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#napaka-sestavljenega-trapeznega-pravila">Napaka sestavljenega trapeznega pravila</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boljsi-priblizek-integrala">Boljši približek integrala</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Numerični zgled</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-implementacija-sestavljenega-trapeznega-pravila"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> implementacija sestavljenega trapeznega pravila</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simpsonova-in-druge-metode">Simpsonova in druge metode</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#izpeljava-trapeznega-pravila-z-uporabo-lagrangevih-polinomov">Izpeljava trapeznega pravila z uporabo Lagrangevih polinomov</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#izracun-utezi-za-simpsonovo-pravilo">Izračun uteži za Simpsonovo pravilo</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-newton-cotes"><code class="docutils literal notranslate"><span class="pre">scipy.integrate.newton_cotes</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#izracun-utezi-za-simpsonovo-3-8-pravilo">Izračun uteži za Simpsonovo 3/8 pravilo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simpsonova-in-druge-metode">Simpsonova in druge metode</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#izpeljava-trapeznega-pravila-z-uporabo-lagrangevih-polinomov">Izpeljava trapeznega pravila z uporabo Lagrangevih polinomov</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#izracun-utezi-za-simpsonovo-pravilo">Izračun uteži za Simpsonovo pravilo</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-newton-cotes"><code class="docutils literal notranslate"><span class="pre">scipy.integrate.newton_cotes</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#izracun-utezi-za-simpsonovo-3-8-pravilo">Izračun uteži za Simpsonovo 3/8 pravilo</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sestavljeno-simpsonovo-pravilo">Sestavljeno Simpsonovo pravilo</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boljsa-ocena-integrala">Boljša ocena integrala</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Numerični zgled</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simpsonova-metoda-v-scipy-integrate-simps">Simpsonova metoda v <code class="docutils literal notranslate"><span class="pre">scipy.integrate.simps</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sestavljeno-simpsonovo-pravilo">Sestavljeno Simpsonovo pravilo</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boljsa-ocena-integrala">Boljša ocena integrala</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Numerični zgled</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simpsonova-metoda-v-scipy-integrate-simps">Simpsonova metoda v <code class="docutils literal notranslate"><span class="pre">scipy.integrate.simps</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rombergova-metoda">Rombergova metoda*</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rombergova-metoda-v-scipy-integrate-romb">Rombergova metoda v <code class="docutils literal notranslate"><span class="pre">scipy.integrate.romb</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussov-integracijski-pristop">Gaussov integracijski pristop</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussova-kvadratura-z-enim-vozliscem">Gaussova kvadratura z enim vozliščem</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standardne-meje-x-l-1-in-x-d-1">Standardne meje: <span class="math notranslate nohighlight">\(x_L=-1\)</span> in <span class="math notranslate nohighlight">\(x_D=1\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strojno-izpeljevanje-utezi-in-gaussove-tocke">Strojno izpeljevanje uteži in Gaussove točke</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussova-integracijska-metoda-z-vec-vozlisci">Gaussova integracijska metoda z več vozlišči</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strojno-izpeljevanje">Strojno izpeljevanje</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Numerična implementacija</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-fixed-quad"><code class="docutils literal notranslate"><span class="pre">scipy.integrate.fixed_quad</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rombergova-metoda">Rombergova metoda*</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rombergova-metoda-v-scipy-integrate-romb">Rombergova metoda v <code class="docutils literal notranslate"><span class="pre">scipy.integrate.romb</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate"><code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intergracijske-funkcije-ki-zahtevajo-definicijsko-funkcijo">Intergracijske funkcije, ki zahtevajo definicijsko <em>funkcijo</em>:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-quad"><code class="docutils literal notranslate"><span class="pre">scipy.integrate.quad</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-dblquad"><code class="docutils literal notranslate"><span class="pre">scipy.integrate.dblquad</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussov-integracijski-pristop">Gaussov integracijski pristop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussova-kvadratura-z-enim-vozliscem">Gaussova kvadratura z enim vozliščem</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#standardne-meje-x-l-1-in-x-d-1">Standardne meje: <span class="math notranslate nohighlight">\(x_L=-1\)</span> in <span class="math notranslate nohighlight">\(x_D=1\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strojno-izpeljevanje-utezi-in-gaussove-tocke">Strojno izpeljevanje uteži in Gaussove točke</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intergracijske-funkcije-ki-zahtevajo-tabelo-vrednosti">Intergracijske funkcije, ki zahtevajo tabelo vrednosti:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussova-integracijska-metoda-z-vec-vozlisci">Gaussova integracijska metoda z več vozlišči</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#strojno-izpeljevanje">Strojno izpeljevanje</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Numerična implementacija</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-fixed-quad"><code class="docutils literal notranslate"><span class="pre">scipy.integrate.fixed_quad</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate"><code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intergracijske-funkcije-ki-zahtevajo-definicijsko-funkcijo">Intergracijske funkcije, ki zahtevajo definicijsko <em>funkcijo</em>:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-quad"><code class="docutils literal notranslate"><span class="pre">scipy.integrate.quad</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-dblquad"><code class="docutils literal notranslate"><span class="pre">scipy.integrate.dblquad</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intergracijske-funkcije-ki-zahtevajo-tabelo-vrednosti">Intergracijske funkcije, ki zahtevajo tabelo vrednosti:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
+</ul>
   </nav></div>
 
 </div></div>

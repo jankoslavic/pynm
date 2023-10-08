@@ -177,101 +177,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Numpy, matplotlib</a></li>
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">Objektno programiranje, simbolno računanje</a></li>
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">Uvod v numerične metode in sistemi linearnih enačb</a></li>
-
-
-
-
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Sistemi linearnih enačb - nadaljevanje</a></li>
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">Interpolacija</a></li>
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">Aproksimacija</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">Reševanje enačb</a></li>
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">Numerično odvajanje</a></li>
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">Numerično integriranje</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">Numerično reševanje diferencialnih enačb - začetni problem</a></li>
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">Numerično reševanje diferencialnih enačb - robni problem</a></li>
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">Testiranje pravilnosti kode, uporabniški vmesnik</a></li>
-
-
-
 </ul>
 
     </div>
@@ -465,31 +383,29 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sistemi linearnih enačb - nadaljevanje</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#razcep-lu">Razcep LU</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#razcep-lu-matrike-koeficientov-mathbf-a">Razcep LU matrike koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numericna-implementacija-razcepa-lu">Numerična implementacija razcepa LU</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#razcep-lu">Razcep LU</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#razcep-lu-matrike-koeficientov-mathbf-a">Razcep LU matrike koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numericna-implementacija-razcepa-lu">Numerična implementacija razcepa LU</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pivotiranje">Pivotiranje</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussova-eliminacija-z-delnim-pivotiranjem">Gaussova eliminacija z delnim pivotiranjem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#razcep-lu-z-delnim-pivotiranjem">Razcep LU z delnim pivotiranjem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pivotiranje">Pivotiranje</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussova-eliminacija-z-delnim-pivotiranjem">Gaussova eliminacija z delnim pivotiranjem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#razcep-lu-z-delnim-pivotiranjem">Razcep LU z delnim pivotiranjem</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modul-scipy">Modul <code class="docutils literal notranslate"><span class="pre">SciPy</span></code></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#racunanje-inverzne-matrike">Računanje inverzne matrike</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resevanje-predolocenih-sistemov">Reševanje predoločenih sistemov</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iterativne-metode">Iterativne metode</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gauss-seidlova-metoda">Gauss-Seidlova metoda</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled">Zgled</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modul-scipy">Modul <code class="docutils literal notranslate"><span class="pre">SciPy</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#racunanje-inverzne-matrike">Računanje inverzne matrike</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resevanje-predolocenih-sistemov">Reševanje predoločenih sistemov</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterativne-metode">Iterativne metode</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gauss-seidlova-metoda">Gauss-Seidlova metoda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled">Zgled</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -502,9 +418,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sistemi-linearnih-enacb-nadaljevanje">
 <h1>Sistemi linearnih enačb - nadaljevanje<a class="headerlink" href="#sistemi-linearnih-enacb-nadaljevanje" title="Permalink to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="razcep-lu">
-<h1>Razcep LU<a class="headerlink" href="#razcep-lu" title="Permalink to this heading">#</a></h1>
+<section id="razcep-lu">
+<h2>Razcep LU<a class="headerlink" href="#razcep-lu" title="Permalink to this heading">#</a></h2>
 <p>Za rešitev sistema linearnih enačb zahteva Gaussov eliminacijski postopek najmanjše število računskih operacij.</p>
 <p>V primeru, ko se matrika koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> ne spreminja in se spreminja zgolj vektor konstant <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>, se je mogoče izogniti ponovni Gaussovi eliminaciji matrike koeficientov. Z razcepom matrike <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> lahko pridemo do rešitve z manj računskimi operacijami. V ta namen si bomo pogledali razcep LU!</p>
 <p>Poljubno matriko lahko zapišemo kot produkt dveh matrik:</p>
@@ -543,7 +458,7 @@ document.write(`
 \]</div>
 <p>določimo <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>.</p>
 <section id="razcep-lu-matrike-koeficientov-mathbf-a">
-<h2>Razcep LU matrike koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span><a class="headerlink" href="#razcep-lu-matrike-koeficientov-mathbf-a" title="Permalink to this heading">#</a></h2>
+<h3>Razcep LU matrike koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span><a class="headerlink" href="#razcep-lu-matrike-koeficientov-mathbf-a" title="Permalink to this heading">#</a></h3>
 <p>V nadaljevanju bomo pokazali, da Gaussova eliminacija dejanjsko predstavlja razcep LU matrike koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>. Pri tem si bomo pomagali s simbolnim izračunom, zato uvozimo paket <code class="docutils literal notranslate"><span class="pre">sympy</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -615,7 +530,7 @@ document.write(`
 </ul>
 </section>
 <section id="numericna-implementacija-razcepa-lu">
-<h2>Numerična implementacija razcepa LU<a class="headerlink" href="#numericna-implementacija-razcepa-lu" title="Permalink to this heading">#</a></h2>
+<h3>Numerična implementacija razcepa LU<a class="headerlink" href="#numericna-implementacija-razcepa-lu" title="Permalink to this heading">#</a></h3>
 <p>Numerično implementacijo si bomo pogledali na sistemu, ki je definiran kot:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -635,7 +550,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span> <span class="c1"># v=število vrstic, s=število stolpcev</span>
 <span class="n">U</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>     <span class="c1"># pripravimo matriko U kot kopijo A</span>
 <span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c1"># pripravimo matriko L dimenzije enake A (vrednosti 0)</span>
-<span class="c1"># eliminacija</span>
+<span class="c1">## eliminacija</span>
 <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">pivot_vrsta</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">U</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">vrsta</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">U</span><span class="p">[</span><span class="n">p</span><span class="o">+</span><span class="mi">1</span><span class="p">:]):</span>
         <span class="k">if</span> <span class="n">pivot_vrsta</span><span class="p">[</span><span class="n">p</span><span class="p">]:</span>
@@ -700,7 +615,7 @@ Korak: 1
 <p>Sedaj rešimo spodnje trikotni sistem enačb <span class="math notranslate nohighlight">\(\mathbf{L}\,\mathbf{y}=\mathbf{b}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># direktno vstavljanje</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## direktno vstavljanje</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">b_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
     <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">b_</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[:</span><span class="n">i</span><span class="p">]))</span>    
@@ -749,7 +664,7 @@ Korak: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># obratno vstavljanje</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## obratno vstavljanje</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">v</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">U</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:],</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:]))</span> <span class="o">/</span> <span class="n">U</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
@@ -797,8 +712,8 @@ Korak: 1
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="pivotiranje">
-<h1>Pivotiranje<a class="headerlink" href="#pivotiranje" title="Permalink to this heading">#</a></h1>
+<section id="pivotiranje">
+<h2>Pivotiranje<a class="headerlink" href="#pivotiranje" title="Permalink to this heading">#</a></h2>
 <p>Poglejmo si spodnji sistem enačb:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -818,9 +733,9 @@ Korak: 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_18732\3999418912.py:1: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_8428\3999418912.py:1: RuntimeWarning: divide by zero encountered in scalar divide
   A[1,:] - A[1,0]/A[0,0] * A[0,:]
-C:\Users\janko\AppData\Local\Temp\ipykernel_18732\3999418912.py:1: RuntimeWarning: invalid value encountered in multiply
+C:\Users\janko\AppData\Local\Temp\ipykernel_8428\3999418912.py:1: RuntimeWarning: invalid value encountered in multiply
   A[1,:] - A[1,0]/A[0,0] * A[0,:]
 </pre></div>
 </div>
@@ -838,7 +753,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_18732\3999418912.py:1: RuntimeWarnin
 \left|A_{ii}\right|&gt; \sum_{j=1, j\ne i}^n \left|A_{ij}\right|
 \]</div>
 <section id="gaussova-eliminacija-z-delnim-pivotiranjem">
-<h2>Gaussova eliminacija z delnim pivotiranjem<a class="headerlink" href="#gaussova-eliminacija-z-delnim-pivotiranjem" title="Permalink to this heading">#</a></h2>
+<h3>Gaussova eliminacija z delnim pivotiranjem<a class="headerlink" href="#gaussova-eliminacija-z-delnim-pivotiranjem" title="Permalink to this heading">#</a></h3>
 <p>Pogledali si bomo Gaussovo eliminacijo z <strong>delnim pivotiranjem</strong>. Brez delnega pivotiranja v <span class="math notranslate nohighlight">\(i\)</span>-tem koraku eliminacije izberemo vrstico <span class="math notranslate nohighlight">\(i\)</span> za pivotiranje. Pri delnem pivotiranju pa najprej preverimo, ali je <span class="math notranslate nohighlight">\(i\)</span>-ti diagonalni element po absolutni vrednosti največji element v stolpcu <span class="math notranslate nohighlight">\(i\)</span> na ali pod diagonalo; če ni, zamenjamo vrstico <span class="math notranslate nohighlight">\(i\)</span> s
 tisto vrstico pod njo, v kateri je v stolpcu <span class="math notranslate nohighlight">\(i\)</span> po absolutni vrednosti največji element. Z delnim pivotiranjem zmanjšamo vpliv zaokrožitvene napake na rezultat.</p>
 <p>V koliko bi izvedli <strong>polno pivotiranje</strong>, bi poleg zamenjave vrstic uporabili tudi zamenjavo vrstnega reda spremenljivk (zamenjava stolpcev). Polno pivotiranje izboljša stabilnost, se pa redko uporablja in ga tukaj ne bomo obravnavali.</p>
@@ -909,7 +824,7 @@ Pivot vrsta: [ 0. -6.  6.  6.]
 </div>
 </section>
 <section id="razcep-lu-z-delnim-pivotiranjem">
-<h2>Razcep LU z delnim pivotiranjem<a class="headerlink" href="#razcep-lu-z-delnim-pivotiranjem" title="Permalink to this heading">#</a></h2>
+<h3>Razcep LU z delnim pivotiranjem<a class="headerlink" href="#razcep-lu-z-delnim-pivotiranjem" title="Permalink to this heading">#</a></h3>
 <p>Podobno kakor pri Gaussovi eliminaciji lahko tudi razcep LU razširimo z delnim pivotiranjem. Reševanje tako postane numerično <strong>stabilno</strong>. Pri tem moramo shraniti informacijo o zamenjavi vrstic, ki jo potem posredujemo v funkcijo za rešitev ustreznih trikotnih sistemov.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1043,8 +958,8 @@ Pivot vrsta: [ 0. -6.  6.]
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="modul-scipy">
-<h1>Modul <code class="docutils literal notranslate"><span class="pre">SciPy</span></code><a class="headerlink" href="#modul-scipy" title="Permalink to this heading">#</a></h1>
+<section id="modul-scipy">
+<h2>Modul <code class="docutils literal notranslate"><span class="pre">SciPy</span></code><a class="headerlink" href="#modul-scipy" title="Permalink to this heading">#</a></h2>
 <p>Modul <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> temelji na <code class="docutils literal notranslate"><span class="pre">numpy</span></code> modulu in vsebuje veliko različnih visokonivojskih programov/modulov/funkcij. Teoretično ozadje modulov so seveda različni numerični algoritmi; nekatere spoznamo tudi v okviru tega učbenika. Dober vir teh numeričnih algoritmov v povezavi s <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> predstavlja <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/tutorial/">dokumentacija</a>. Za odličen uvod v SciPy si lahko ogledate <span class="xref myst">YouTube posnetek: SciPy Tutorial (2021): For Physicists, Engineers, and Mathematicians: For Physicists, Engineers, and Mathematicians</span></p>
 <p>Kratek pregled hierarhije modula:</p>
 <ul class="simple">
@@ -1157,8 +1072,8 @@ Pivot vrsta: [ 0. -6.  6.]
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="racunanje-inverzne-matrike">
-<h1>Računanje inverzne matrike<a class="headerlink" href="#racunanje-inverzne-matrike" title="Permalink to this heading">#</a></h1>
+<section id="racunanje-inverzne-matrike">
+<h2>Računanje inverzne matrike<a class="headerlink" href="#racunanje-inverzne-matrike" title="Permalink to this heading">#</a></h2>
 <p>Inverzno matriko h kvadratni matriki <span class="math notranslate nohighlight">\(\textbf{A}\)</span> reda <span class="math notranslate nohighlight">\(n\times n\)</span> označimo z <span class="math notranslate nohighlight">\(\textbf{A}^{-1}\)</span>. Je matrika reda <span class="math notranslate nohighlight">\(n\times n\)</span>,  takšna, da velja</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{A}\,\mathbf{A}^{-1} = \mathbf{A}^{-1}\,\mathbf{A} = \mathbf{I},\]</div>
@@ -1279,8 +1194,8 @@ poiščemo rešitev za vsak <span class="math notranslate nohighlight">\(\mathbf
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="resevanje-predolocenih-sistemov">
-<h1>Reševanje predoločenih sistemov<a class="headerlink" href="#resevanje-predolocenih-sistemov" title="Permalink to this heading">#</a></h1>
+<section id="resevanje-predolocenih-sistemov">
+<h2>Reševanje predoločenih sistemov<a class="headerlink" href="#resevanje-predolocenih-sistemov" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
@@ -1347,7 +1262,7 @@ poiščemo rešitev za vsak <span class="math notranslate nohighlight">\(\mathbf
 <p>Primer sistema z enolično rešitvijo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># število enačb enako številu neznank</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## število enačb enako številu neznank</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
               <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5.</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
@@ -1432,8 +1347,8 @@ poiščemo rešitev za vsak <span class="math notranslate nohighlight">\(\mathbf
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="iterativne-metode">
-<h1>Iterativne metode<a class="headerlink" href="#iterativne-metode" title="Permalink to this heading">#</a></h1>
+<section id="iterativne-metode">
+<h2>Iterativne metode<a class="headerlink" href="#iterativne-metode" title="Permalink to this heading">#</a></h2>
 <p>Pogosto se srečamo z velikimi sistemi linearnih enačb, katerih matrika koeficientov ima malo od nič različnih elementov (take matrike imenujemo <strong>redke</strong> ali tudi <strong>razpršene</strong>, angl. <em>sparse</em>).</p>
 <p>Pri reševanju takih sistemov linearnih enačb se zelo dobro izkažejo iterativne metode; prednosti v primerjavi z direktnimi metodami so:</p>
 <ul class="simple">
@@ -1441,7 +1356,7 @@ poiščemo rešitev za vsak <span class="math notranslate nohighlight">\(\mathbf
 <li><p>zahtevani spominski prostor je lahko neprimerno manjši.</p></li>
 </ul>
 <section id="gauss-seidlova-metoda">
-<h2>Gauss-Seidlova metoda<a class="headerlink" href="#gauss-seidlova-metoda" title="Permalink to this heading">#</a></h2>
+<h3>Gauss-Seidlova metoda<a class="headerlink" href="#gauss-seidlova-metoda" title="Permalink to this heading">#</a></h3>
 <p>V nadaljevanju si bomo pogledali idejo <em>Gauss-Seidelove</em> iterativne metode. Najprej sistem enačb <span class="math notranslate nohighlight">\(\mathbf{A}\,\mathbf{x}=\mathbf{b}\)</span> zapišemo kot:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1465,7 +1380,7 @@ x_{i}^{(k)} =\frac{1}{A_{ii}}\left(b_i-\sum_{j=0}^{i-1} A_{ij}x_{j}^{(k)}-\sum_{
 \]</div>
 </section>
 <section id="zgled">
-<h2>Zgled<a class="headerlink" href="#zgled" title="Permalink to this heading">#</a></h2>
+<h3>Zgled<a class="headerlink" href="#zgled" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
@@ -1568,8 +1483,8 @@ Norma 0.04590845211691733
 <p>Metoda deluje dobro, če je matrika diagonalno dominantna (obstajajo pa metode, ki delujejo tudi, ko matrika ni diagonalno dominantna, glejte npr.: J. Petrišič, Reševanje enačb, 1996, str 149: Metoda konjugiranih gradientov).</p>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="nekaj-vprasanj-za-razmislek">
-<h1>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this heading">#</a></h1>
+<section id="nekaj-vprasanj-za-razmislek">
+<h2>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this heading">#</a></h2>
 <p>Na sliki je prikazano paličje. Ob delovanju sil <span class="math notranslate nohighlight">\(F_1\)</span> in <span class="math notranslate nohighlight">\(F_2\)</span> se v palicah razvijejo notranje sile <span class="math notranslate nohighlight">\(P_i\)</span>. Dimenzije paličja zagotavljata kota <span class="math notranslate nohighlight">\(\alpha\)</span> in <span class="math notranslate nohighlight">\(\beta\)</span>.
 <img src="./fig/palicje_2.2_15.png" width=300>
 Sile v palicah izračunamo s pomočjo sistema linearnih enačb.</p>
@@ -1590,11 +1505,12 @@ Zgornji nastavek ima napako v predzadnji vrstici. Rešitev sistema v knjigi je: 
 <li><p>Na primeru poljubnih podatkov (npr: <code class="docutils literal notranslate"><span class="pre">podatki</span> <span class="pre">=</span> <span class="pre">{a:</span> <span class="pre">pi/4,</span> <span class="pre">b:</span> <span class="pre">pi/4,</span> <span class="pre">F1:</span> <span class="pre">18000,</span> <span class="pre">F2:</span> <span class="pre">12000}</span></code>) pokažite Gauss-Seidlov iterativni pristop k iskanju rešitve.</p></li>
 </ol>
 <section id="dodatno">
-<h2>Dodatno<a class="headerlink" href="#dodatno" title="Permalink to this heading">#</a></h2>
+<h3>Dodatno<a class="headerlink" href="#dodatno" title="Permalink to this heading">#</a></h3>
 <p>Analizirajte, koliko e-mailov dobite na dan:
 <img src="./fig/povprecje_emailov.jpg" width=300>
 <a class="reference external" href="https://plot.ly/ipython-notebooks/graph-gmail-inbox-data/">https://plot.ly/ipython-notebooks/graph-gmail-inbox-data/</a>
 (Nasvet: sledite kodi in uporabite <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> za prikaz).</p>
+</section>
 </section>
 </section>
 
@@ -1661,31 +1577,29 @@ Zgornji nastavek ima napako v predzadnji vrstici. Rešitev sistema v knjigi je: 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sistemi linearnih enačb - nadaljevanje</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#razcep-lu">Razcep LU</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#razcep-lu-matrike-koeficientov-mathbf-a">Razcep LU matrike koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numericna-implementacija-razcepa-lu">Numerična implementacija razcepa LU</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#razcep-lu">Razcep LU</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#razcep-lu-matrike-koeficientov-mathbf-a">Razcep LU matrike koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numericna-implementacija-razcepa-lu">Numerična implementacija razcepa LU</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pivotiranje">Pivotiranje</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussova-eliminacija-z-delnim-pivotiranjem">Gaussova eliminacija z delnim pivotiranjem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#razcep-lu-z-delnim-pivotiranjem">Razcep LU z delnim pivotiranjem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pivotiranje">Pivotiranje</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussova-eliminacija-z-delnim-pivotiranjem">Gaussova eliminacija z delnim pivotiranjem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#razcep-lu-z-delnim-pivotiranjem">Razcep LU z delnim pivotiranjem</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modul-scipy">Modul <code class="docutils literal notranslate"><span class="pre">SciPy</span></code></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#racunanje-inverzne-matrike">Računanje inverzne matrike</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resevanje-predolocenih-sistemov">Reševanje predoločenih sistemov</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iterativne-metode">Iterativne metode</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gauss-seidlova-metoda">Gauss-Seidlova metoda</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled">Zgled</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modul-scipy">Modul <code class="docutils literal notranslate"><span class="pre">SciPy</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#racunanje-inverzne-matrike">Računanje inverzne matrike</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resevanje-predolocenih-sistemov">Reševanje predoločenih sistemov</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterativne-metode">Iterativne metode</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gauss-seidlova-metoda">Gauss-Seidlova metoda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled">Zgled</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>

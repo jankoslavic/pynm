@@ -8,7 +8,7 @@ Predloge predavanj se nahajajo v mapi `notebooks`, lahko pa si jih ogledate v [s
 
 Prosimo, da si preberete [študijski in izpitni red](https://jankoslavic.github.io/pynm/notebooks/%C5%A0tudijski%20in%20izpitni%20red.html), tam so navedene ključne informacije v zvezi z opravljanjem predmeta.
 
-**Razpored predavanj**
+## Razpored predavanj
 
 1. [2.okt: Uvod v Python, 1. del](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2001%20-%20Uvod%20v%20Python.html)
 1. [9.okt: Uvod v Python, 2. del](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2001%20-%20Uvod%20v%20Python.html)
