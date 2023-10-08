@@ -21,3 +21,4 @@ pytest
 numba
 jupyter_contrib_nbextensions
 jupyter-book
+ghp-import
