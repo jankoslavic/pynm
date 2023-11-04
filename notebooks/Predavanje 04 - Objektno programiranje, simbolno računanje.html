@@ -886,23 +886,23 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;positive&#39;: True,
  &#39;nonnegative&#39;: True,
+ &#39;infinite&#39;: False,
+ &#39;nonpositive&#39;: False,
+ &#39;extended_real&#39;: True,
+ &#39;negative&#39;: False,
+ &#39;zero&#39;: False,
+ &#39;imaginary&#39;: False,
+ &#39;commutative&#39;: True,
+ &#39;nonzero&#39;: True,
+ &#39;extended_nonnegative&#39;: True,
+ &#39;extended_negative&#39;: False,
+ &#39;extended_nonpositive&#39;: False,
  &#39;hermitian&#39;: True,
  &#39;real&#39;: True,
- &#39;zero&#39;: False,
- &#39;extended_positive&#39;: True,
- &#39;infinite&#39;: False,
- &#39;extended_real&#39;: True,
- &#39;extended_nonpositive&#39;: False,
- &#39;extended_nonnegative&#39;: True,
- &#39;nonpositive&#39;: False,
- &#39;extended_nonzero&#39;: True,
- &#39;negative&#39;: False,
- &#39;nonzero&#39;: True,
- &#39;finite&#39;: True,
- &#39;commutative&#39;: True,
- &#39;extended_negative&#39;: False,
  &#39;complex&#39;: True,
- &#39;imaginary&#39;: False}
+ &#39;finite&#39;: True,
+ &#39;extended_nonzero&#39;: True,
+ &#39;extended_positive&#39;: True}
 </pre></div>
 </div>
 </div>
@@ -1153,7 +1153,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>314 ms ± 2.63 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>158 ms ± 24.1 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -1188,7 +1188,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40.8 µs ± 2.42 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24.5 µs ± 5.26 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1245,8 +1245,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0179702361f3657a9c1f41f6e48d9f7bb7068897925c358e29a6d17b9fa3a348.png" src="../_images/0179702361f3657a9c1f41f6e48d9f7bb7068897925c358e29a6d17b9fa3a348.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x21851404150&gt;
+<img alt="../_images/569512e14aff87baba747ba9a03d60a0d7a545330653cced2cdc3da70f640113.png" src="../_images/569512e14aff87baba747ba9a03d60a0d7a545330653cced2cdc3da70f640113.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x158e375cd10&gt;
 </pre></div>
 </div>
 </div>
@@ -1281,7 +1281,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9e136d234f8b24f75971fc1036b67263b9c4dbcb94b8b8d4febf865a896e13b0.png" src="../_images/9e136d234f8b24f75971fc1036b67263b9c4dbcb94b8b8d4febf865a896e13b0.png" />
+<img alt="../_images/271e1cc66e59a4f5b1f178f78910dd749885acb4fed90d66560a1fdeb1319c0b.png" src="../_images/271e1cc66e59a4f5b1f178f78910dd749885acb4fed90d66560a1fdeb1319c0b.png" />
 </div>
 </div>
 <section id="parametricni-izris">
@@ -1311,7 +1311,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/36b556eac8e0745ae6ea513c6f9cbb509003fe1afa24bbca59798e20171867c3.png" src="../_images/36b556eac8e0745ae6ea513c6f9cbb509003fe1afa24bbca59798e20171867c3.png" />
+<img alt="../_images/654af884a0b6a51ecea685940a5c2693297e3cac1d7fdfd0912ec6fc9de8b9d8.png" src="../_images/654af884a0b6a51ecea685940a5c2693297e3cac1d7fdfd0912ec6fc9de8b9d8.png" />
 </div>
 </div>
 </section>
@@ -1766,8 +1766,11 @@ document.write(`
 <img alt="../_images/d81096050bd44ce57b5d5fe4208dfd494a47c011aecee7a2c422785cd87b6ef4.png" src="../_images/d81096050bd44ce57b5d5fe4208dfd494a47c011aecee7a2c422785cd87b6ef4.png" />
 </div>
 </div>
-<p>Za primer si poglejmo uporabo limite na definiciji odvoda:
-$<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = \lim_{h\rightarrow 0}\frac{f(x+h,y)-f(x,y)}{h}.\)</span>$</p>
+<p>Za primer si poglejmo uporabo limite na definiciji odvoda:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\mathrm{d}f}{\mathrm{d}x} = \lim_{h\rightarrow 0}\frac{f(x+h,y)-f(x,y)}{h}.
+\]</div>
 <p>Pripravimo funkcijo <code class="docutils literal notranslate"><span class="pre">f</span></code> in njen odvod:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2055,7 +2058,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}f}{\mathrm{d}x} = 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/11055a6b464465e06438c714aba69385e490207da82ce1680b2860ac8bbffdfe.png" src="../_images/11055a6b464465e06438c714aba69385e490207da82ce1680b2860ac8bbffdfe.png" />
+<img alt="../_images/0f5ae46805c596692213c39cbd109329162973e4042d163259ba6c472f3f3d16.png" src="../_images/0f5ae46805c596692213c39cbd109329162973e4042d163259ba6c472f3f3d16.png" />
 </div>
 </div>
 <p>Kvadratna enačba:</p>

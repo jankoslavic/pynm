@@ -1438,7 +1438,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>46.3 ms ± 1.85 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47.2 ms ± 1.6 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1453,7 +1453,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.18 ms ± 241 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.22 ms ± 190 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1518,14 +1518,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">61</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pytube</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">yt</span> <span class="o">=</span> <span class="n">pytube</span><span class="o">.</span><span class="n">YouTube</span><span class="p">(</span><span class="s1">&#39;https://www.youtube.com/watch?v=P4IrAXbpeyI&#39;</span><span class="p">)</span> <span class="c1"># kreiramo instanco objekta (kaj to točno pomeni, spoznamo pozneje)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">yt</span><span class="o">.</span><span class="n">streams</span><span class="o">.</span><span class="n">get_highest_resolution</span><span class="p">()</span><span class="o">.</span><span class="n">download</span><span class="p">()</span> <span class="c1">#Prenesemo video</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pytube&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;c:\\_j\\Work Janko\\Pedagosko delo\\_predavanja\\Programiranje in numericne metode\\pynm\\notebooks\\Strojništvo je zabavno - 2 del.mp4&#39;
 </pre></div>
 </div>
 </div>
@@ -1567,11 +1560,21 @@ slika:)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 11, 4, 6, 31, 10, 918678)
+</pre></div>
+</div>
+</div>
 </div>
 <p>Podatek o času oblikujemo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sedaj</span><span class="si">:</span><span class="s1">%Y-%m-%d %H:%M:%S</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2023-11-04 06:31:10&#39;
 </pre></div>
 </div>
 </div>
@@ -1589,11 +1592,21 @@ slika:)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2023-11-04 06:31:10 Sat&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Sedaj v obratno smer, torej iz niza v <code class="docutils literal notranslate"><span class="pre">datetime</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s1">&#39;2017-09-28 05:31:45&#39;</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2017, 9, 28, 5, 31, 45)
 </pre></div>
 </div>
 </div>
@@ -1631,6 +1644,20 @@ slika:)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;c:\\_j\\Work Janko\\Pedagosko delo\\_predavanja\\Programiranje in numericne metode\\pynm\\notebooks&#39;,
+ &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python311\\python311.zip&#39;,
+ &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python311\\DLLs&#39;,
+ &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python311\\Lib&#39;,
+ &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python311&#39;,
+ &#39;&#39;,
+ &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages&#39;,
+ &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\win32&#39;,
+ &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\win32\\lib&#39;,
+ &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\Pythonwin&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="modul-os">
@@ -1651,11 +1678,21 @@ slika:)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;.&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>ali trenutno mapo v absolutni obliki:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">curdir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;c:\\_j\\Work Janko\\Pedagosko delo\\_predavanja\\Programiranje in numericne metode\\pynm\\notebooks&#39;
 </pre></div>
 </div>
 </div>
@@ -1679,6 +1716,14 @@ slika:)
             <span class="n">i</span> <span class="o">+=</span><span class="mi">1</span>
         <span class="k">if</span> <span class="n">i</span><span class="o">&gt;</span><span class="mi">3</span><span class="p">:</span>
             <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Našel sem datoteko: Predavanje 01 - Uvod v Python.ipynb
+Našel sem datoteko: Predavanje 02 - Print, delo z datotekami, funkcije, moduli.ipynb
+Našel sem datoteko: Predavanje 03 - Moduli, numpy, matplotlib.ipynb
+Našel sem datoteko: Predavanje 04 - Objektno programiranje, simbolno računanje.ipynb
 </pre></div>
 </div>
 </div>
