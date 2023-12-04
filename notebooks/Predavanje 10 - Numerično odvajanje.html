@@ -1169,7 +1169,7 @@ Za več informacij glejte <a class="reference external" href="https://docs.scipy
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_7936\2871079054.py:1: DeprecationWarning: scipy.misc.central_diff_weights is deprecated in SciPy v1.10.0; and will be completely removed in SciPy v1.12.0. You may consider using findiff: https://github.com/maroba/findiff or numdifftools: https://github.com/pbrod/numdifftools
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_22304\2871079054.py:1: DeprecationWarning: scipy.misc.central_diff_weights is deprecated in SciPy v1.10.0; and will be completely removed in SciPy v1.12.0. You may consider using findiff: https://github.com/maroba/findiff or numdifftools: https://github.com/pbrod/numdifftools
   central_diff_weights(Np=5, ndiv=3)
 </pre></div>
 </div>
@@ -1187,13 +1187,16 @@ Za več informacij glejte <a class="reference external" href="https://docs.scipy
 <div class="math notranslate nohighlight">
 \[f'(x_i)=f_o'(x_i)+e,\]</div>
 <p>kjer je <span class="math notranslate nohighlight">\(f_o'(x_i)\)</span> numerično izračunan odvod v točki <span class="math notranslate nohighlight">\(x_i\)</span> in <span class="math notranslate nohighlight">\(e\)</span> ocena napake.</p>
-<p>Za metodo reda točnosti <span class="math notranslate nohighlight">\(n\)</span>: <span class="math notranslate nohighlight">\(\mathcal{O}(h^{n})\)</span> pri koraku <span class="math notranslate nohighlight">\(h\)</span> velja:
-$<span class="math notranslate nohighlight">\(f'(x_i)=f_o'(x_i, h)+K\,h^n,\)</span><span class="math notranslate nohighlight">\(
-kjer je \)</span>K$ neznana konstanta.</p>
-<p>Če korak razpolovimo in predpostavimo, da se <span class="math notranslate nohighlight">\(K\)</span> ne spremeni, velja:
-$<span class="math notranslate nohighlight">\(f'(x_i)=f_o'\left(x_i, \frac{h}{2}\right)+K\,\left(\frac{h}{2}\right)^n.\)</span>$</p>
-<p>Iz obeh enačb izločimo konstanto <span class="math notranslate nohighlight">\(K\)</span> in določimo izboljšan približek:
-$<span class="math notranslate nohighlight">\(\overline{f}'(x_i)=\frac{2^n\,f_o'\left(x_i, \frac{h}{2}\right)-f_o'(x_i, h)}{2^n-1}\)</span>$</p>
+<p>Za metodo reda točnosti <span class="math notranslate nohighlight">\(n\)</span>: <span class="math notranslate nohighlight">\(\mathcal{O}(h^{n})\)</span> pri koraku <span class="math notranslate nohighlight">\(h\)</span> velja:</p>
+<div class="math notranslate nohighlight">
+\[f'(x_i)=f_o'(x_i, h)+K\,h^n,\]</div>
+<p>kjer je <span class="math notranslate nohighlight">\(K\)</span> neznana konstanta.</p>
+<p>Če korak razpolovimo in predpostavimo, da se <span class="math notranslate nohighlight">\(K\)</span> ne spremeni, velja:</p>
+<div class="math notranslate nohighlight">
+\[f'(x_i)=f_o'\left(x_i, \frac{h}{2}\right)+K\,\left(\frac{h}{2}\right)^n.\]</div>
+<p>Iz obeh enačb izločimo konstanto <span class="math notranslate nohighlight">\(K\)</span> in določimo izboljšan približek:</p>
+<div class="math notranslate nohighlight">
+\[\overline{f}'(x_i)=\frac{2^n\,f_o'\left(x_i, \frac{h}{2}\right)-f_o'(x_i, h)}{2^n-1}\]</div>
 <section id="zgled">
 <h4>Zgled<a class="headerlink" href="#zgled" title="Permalink to this heading">#</a></h4>
 <p>Poglejmo si zgled <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span> (analitični odvod je: <span class="math notranslate nohighlight">\(f'(x)=\cos(x)\)</span>):</p>
