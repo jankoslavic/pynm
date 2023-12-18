@@ -394,7 +394,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Odvod <span class="math notranslate nohighlight">\(f'''(x)\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odvod-f-4-x">Odvod <span class="math notranslate nohighlight">\(f^{(4)}(x)\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#povzetek-centralne-diferencne-sheme">Povzetek centralne diferenčne sheme*</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-scipy-misc-central-diff-weights">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.misc.central_diff_weights</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#izboljsan-priblizek-richardsonova-ekstrapolacija">Izboljšan približek - Richardsonova ekstrapolacija</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled">Zgled</a></li>
 </ul>
@@ -1148,42 +1147,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </tbody>
 </table>
 <p>Prikazana centralna diferenčna shema ima napako 2. reda <span class="math notranslate nohighlight">\(\mathcal{O}(h^{2})\)</span>.</p>
-</section>
-<section id="uporaba-scipy-misc-central-diff-weights">
-<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.misc.central_diff_weights</span></code><a class="headerlink" href="#uporaba-scipy-misc-central-diff-weights" title="Permalink to this heading">#</a></h3>
-<p>Uteži za centralno diferenčno metodo lahko izračunamo tudi z uporabo <code class="docutils literal notranslate"><span class="pre">scipy.misc.central_diff_weights()</span></code> (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.misc.central_diff_weights.html">dokumentacija</a>):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">central_diff_weights</span><span class="p">(</span><span class="n">Np</span><span class="p">,</span> <span class="n">ndiv</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">Np</span></code> predstavlja število točk, čez katere želimo izračunati odvod, <code class="docutils literal notranslate"><span class="pre">ndiv</span></code> pa stopnjo odvoda (privzeto 1).
-Za več informacij glejte <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.misc.central_diff_weights.html">dokumentacijo</a>.</p>
-<p>Uvozimo funkcijo:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">central_diff_weights</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>3<span class="math notranslate nohighlight">\(.\)</span> odvod (čez pet točk), napaka reda  <span class="math notranslate nohighlight">\(\mathcal{O}(h^{2})\)</span>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">central_diff_weights</span><span class="p">(</span><span class="n">Np</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">ndiv</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_21676\2871079054.py:1: DeprecationWarning: scipy.misc.central_diff_weights is deprecated in SciPy v1.10.0; and will be completely removed in SciPy v1.12.0. You may consider using findiff: https://github.com/maroba/findiff or numdifftools: https://github.com/pbrod/numdifftools
-  central_diff_weights(Np=5, ndiv=3)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-5.00000000e-01,  1.00000000e+00, -4.16333634e-17, -1.00000000e+00,
-        5.00000000e-01])
-</pre></div>
-</div>
-</div>
-</div>
-<p>Opomba: <code class="docutils literal notranslate"><span class="pre">SymPy.finite_diff_weights</span></code> omogoča izračun uteži tudi pri nekonstantnem koraku; v podrobnosti ne bomo šli in radovednega bralca napotimo na <a class="reference external" href="http://docs.sympy.org/latest/modules/calculus/index.html#sympy.calculus.finite_diff.finite_diff_weights">dokumentacijo</a>.</p>
+<p>Opomba: v kolikor vas zanima posplošitev diferenčne metode, prosim glejte paket <a class="reference external" href="https://github.com/maroba/findiff">findiff</a>.</p>
 </section>
 <section id="izboljsan-priblizek-richardsonova-ekstrapolacija">
 <h3>Izboljšan približek - Richardsonova ekstrapolacija<a class="headerlink" href="#izboljsan-priblizek-richardsonova-ekstrapolacija" title="Permalink to this heading">#</a></h3>
@@ -1706,7 +1670,7 @@ Za več informacij glejte <a class="reference external" href="https://docs.scipy
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_21676\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_26368\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
   f1_ocena = (fun(x+h, dtype=dtype)-fun(x-h,dtype=dtype))/(2*dtype(h))
 </pre></div>
 </div>
@@ -1933,7 +1897,6 @@ Dodatek k domačim nalogam: 6. vprašanje bi lahko nadaljevali in zašumljene po
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Odvod <span class="math notranslate nohighlight">\(f'''(x)\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odvod-f-4-x">Odvod <span class="math notranslate nohighlight">\(f^{(4)}(x)\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#povzetek-centralne-diferencne-sheme">Povzetek centralne diferenčne sheme*</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-scipy-misc-central-diff-weights">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.misc.central_diff_weights</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#izboljsan-priblizek-richardsonova-ekstrapolacija">Izboljšan približek - Richardsonova ekstrapolacija</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled">Zgled</a></li>
 </ul>
