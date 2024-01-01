@@ -1,9 +1,9 @@
 __author__ = 'Janko Slavic'
 
 import sys
-from PyQt5 import QtCore
-from PyQt5 import QtGui
-from PyQt5 import QtWidgets
+from PyQt6 import QtCore
+from PyQt6 import QtGui
+from PyQt6 import QtWidgets
 
 import time
 import numpy as np
@@ -113,15 +113,15 @@ class MainWindow(QtWidgets.QMainWindow):
     def init_actions(self):
         """ Pripravi actions za menuje
         """
-        self.new_file_action = QtWidgets.QAction('&Novo',
-                                             self, shortcut=QtGui.QKeySequence.New,
+        self.new_file_action = QtGui.QAction('&Novo',
+                                             self, shortcut=QtGui.QKeySequence.StandardKey.New,
                                              statusTip="Novi prikaz",
                                              triggered=self.clear_input)
-        self.reset_action = QtWidgets.QAction('&Ponastavi',
+        self.reset_action = QtGui.QAction('&Ponastavi',
                                           self,
                                           statusTip="Ponastavi",
                                           triggered=self.reset_input)
-        self.help_action = QtWidgets.QAction(  # QtWidgets.QIcon('new.png') # tako bi lahko vključili ikono
+        self.help_action = QtGui.QAction(  # QtWidgets.QIcon('new.png') # tako bi lahko vključili ikono
                                            '&Pomoč',
                                            self,
                                            triggered=self.file_show_help)
@@ -186,7 +186,7 @@ if __name__ == '__main__':
         mainWindow = MainWindow()
         mainWindow.show()
         mainWindow.show_progress()
-        app.exec_()
+        app.exec()
         sys.exit(0)
     except SystemExit:
         print('Zapiram okno.')

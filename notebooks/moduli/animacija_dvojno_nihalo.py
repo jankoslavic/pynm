@@ -1,7 +1,7 @@
 """
 Created on Mar 13, 2015
 
-@author: Martin ?esnik
+@author: Martin Česnik
 """
 
 import numpy as np
