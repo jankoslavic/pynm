@@ -563,7 +563,7 @@ document.write(`
 <section id="newton-cotesov-pristop">
 <h2>Newton-Cotesov pristop<a class="headerlink" href="#newton-cotesov-pristop" title="Permalink to this heading">#</a></h2>
 <p>Na sliki je prikazan splošen primer, kjer je razdalja med vozlišči <span class="math notranslate nohighlight">\(x_i\)</span> enaka <span class="math notranslate nohighlight">\(h\)</span> (gre za <strong>ekvidistantno delitev</strong>).
-<img src='./fig/integriranje.png' width=400></p>
+<img alt="Integriranje" src="../_images/integriranje.png" /></p>
 <p>V okviru tega poglavja si bomo najprej pogledali trapezno ter sestavljeno trapezno pravilo, pozneje pa bosta sledili še Simpsonova ter Rombergova metoda.</p>
 <section id="trapezno-pravilo">
 <h3>Trapezno pravilo<a class="headerlink" href="#trapezno-pravilo" title="Permalink to this heading">#</a></h3>
@@ -1983,7 +1983,7 @@ Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.inte
 <h2>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Na sliki (vir: J. Slavič: Dinamika, meh. nihanja …, 2014) je prikazan trikotnik s stranicami dolžine <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, z debelino <span class="math notranslate nohighlight">\(h\)</span> in gostoto <span class="math notranslate nohighlight">\(\rho\)</span>.
-<img src="./fig/Slavic_2014_str_242_slika_5.4.png" width=200>
+<img alt="Trikotnik iz knjige..." src="../_images/Slavic_2014_str_242_slika_5.4.png" />
 V simbolni obliki določite masni vztrajnostni moment glede na prikazano os <span class="math notranslate nohighlight">\(y\)</span>:
 $<span class="math notranslate nohighlight">\(J_{yy}=\int_0^b y^2\,\rho\,h\,(a-a/b\,y)\,\textrm{d}y.\)</span><span class="math notranslate nohighlight">\(
 Upoštevajte tudi: \)</span>m=a,b,h,\rho/2$. Za izmišljene vrednosti izračunajte numerični rezultat.</p></li>
@@ -1997,7 +1997,7 @@ Raziščite natančnost in hitrost metod.</p></li>
 <li><p>Z različnimi metodami izračunajte integrala (namig: vse metode niso primerne):
 <span class="math notranslate nohighlight">\(\int_1^2\frac{\sin(x)}{\sqrt{x}}.\)</span></p></li>
 <li><p>S pomočjo numeričnega integriranja določite ekvivalentno silo porazdeljene obremenitve (<span class="math notranslate nohighlight">\(Q\)</span>) ter njeno prijemališče vzdolž nosilca (<span class="math notranslate nohighlight">\(x_Q\)</span>) dolžine <span class="math notranslate nohighlight">\(L = 2\,\)</span>m. Konstanta obremenitve: <span class="math notranslate nohighlight">\(q_0 = 5\,\)</span>kN/m.
-<img src="./fig/nal-num_integriranje_1-1.jpg" width=350>
+<img alt="Sila porazdeljene obremenitve" src="../_images/nal-num_integriranje_1-1.jpg" />
 Rešitev:
 ekvivalentna obremenitev <span class="math notranslate nohighlight">\(Q = \int_0^L{q(x) \mathrm{d}x}\)</span>, pozicija (težišče) <span class="math notranslate nohighlight">\(x_Q = \frac{ \int_0^L{x\,q(x) \mathrm{d}x} }{ \int_0^L{q(x) \mathrm{d}x} }\)</span></p></li>
 </ol>
@@ -2006,7 +2006,7 @@ ekvivalentna obremenitev <span class="math notranslate nohighlight">\(Q = \int_0
 <h2>Dodatno<a class="headerlink" href="#dodatno" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Obravnavajte prikazan enoosni primer, obremenjen s porazdeljeno obremenitvijo <span class="math notranslate nohighlight">\(n(x)\)</span> ter točkovno silo <span class="math notranslate nohighlight">\(F=10\,\)</span>kN. Dolžina palice je <span class="math notranslate nohighlight">\(L = 2\,\)</span>m, konstanta <span class="math notranslate nohighlight">\(n_0 = 15\,\)</span>kN/m in <span class="math notranslate nohighlight">\(EA = 200000\,\mathrm{MPa} \times 50×50\, \mathrm{mm^2}\)</span>.
-<img src="./fig/nal-num_integriranje_2-2.jpg" width=350>
+<img alt="Porazdeljena obremenitev" src="../_images/nal-num_integriranje_2-2.jpg" />
 Naloga:</p>
 <ol class="arabic simple">
 <li><p>S pomočjo simbolnega integriranja določite funkcijo notranje osne sile <span class="math notranslate nohighlight">\(N(x)\)</span>.</p></li>

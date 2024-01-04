@@ -425,7 +425,7 @@ document.write(`
 <p>Če poženemo funkcijo <code class="docutils literal notranslate"><span class="pre">test_kvadrat()</span></code> se testira pravilnost <code class="docutils literal notranslate"><span class="pre">kvadrat(2)</span> <span class="pre">==</span> <span class="pre">4</span></code>; v primeru, da je rezultat <code class="docutils literal notranslate"><span class="pre">True</span></code> se ne zgodi nič, če pa je rezultat <code class="docutils literal notranslate"><span class="pre">False</span></code> se sproži <code class="docutils literal notranslate"><span class="pre">AssertionError()</span></code> (glejte <a class="reference external" href="https://docs.python.org/reference/simple_stmts.html#assert">dokumentacijo</a> za ukaz <code class="docutils literal notranslate"><span class="pre">assert</span></code>). Ker funkcija <code class="docutils literal notranslate"><span class="pre">kvadrat()</span></code> vrne <code class="docutils literal notranslate"><span class="pre">x**2+1</span></code>, bo testiranje neuspešno.</p>
 <p>Verjetno se sprašujete v čem je smisel takega <em>testiranja pravilnosti</em>. Ko koda postaja obsežna in na njej dela veliko oseb, postane nujno tudi prepletena. Tako se lahko zgodi, da razvijalec doda novo funkcionalnost in nehote poruši obstoječo. Če so vse funkcionalnosti testirane, bo testiranje zaznalo neustreznost predlagane spremembe.</p>
 <p>Večina paketov ima tako dodano testiranje pravilnosti; za primer si lahko pogledate izvorno kodo paketa <em>NumPy</em>, ki se nahaja na <a class="reference external" href="https://github.com/numpy/numpy/tree/master/numpy/">githubu</a>; če pogledate <a class="reference external" href="https://github.com/numpy/numpy/tree/master/numpy/linalg">vsebino</a> podmodula <code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code> za linearno algebro:</p>
-<img width=400 src='./fig/github_numpy_linalg.png'>
+<p><img alt="Numpy linalg" src="../_images/github_numpy_linalg.png" /></p>
 <p>opazimo podmapo <code class="docutils literal notranslate"><span class="pre">tests</span></code>. Slednja je v celoti namenjena testiranju in vsebuje množico Python datotek, ki preverjajo ustreznost podmodula.</p>
 <p>Obstaja več možnosti testiranja kode, pogosto se uporabljajo sledeče:</p>
 <ul class="simple">
@@ -544,7 +544,8 @@ document.write(`
 </div>
 </div>
 <p>Uporabniški vmesnik tipično gradimo na razredu <code class="docutils literal notranslate"><span class="pre">QtWidgets.QMainWindow</span></code> (<a class="reference external" href="http://doc.qt.io/qt-5/qmainwindow.html">dokumentacija</a>), ki ima  spodaj prikazano strukturo:</p>
-<img width=350 src="http://doc.qt.io/qt-5/images/mainwindowlayout.png"><p>Bistveni grafični elementi, ki jih pri takem uporabniškem vmesniku uporabimo, so:</p>
+<p><img alt="Window layout" src="http://doc.qt.io/qt-5/images/mainwindowlayout.png" /></p>
+<p>Bistveni grafični elementi, ki jih pri takem uporabniškem vmesniku uporabimo, so:</p>
 <ul class="simple">
 <li><p><em>Menu Bar</em>,</p></li>
 <li><p><em>Toolbars</em>,</p></li>
@@ -614,11 +615,6 @@ document.write(`
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zapiram okno.&#39;</span><span class="p">)</span>
 <span class="k">except</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zapiram okno.
 </pre></div>
 </div>
 </div>

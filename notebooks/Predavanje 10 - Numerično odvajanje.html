@@ -443,7 +443,7 @@ f'(x)=\lim_{\Delta x \rightarrow 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}.
 <li><p>računanje odvoda <strong>neposredno iz vrednosti iz tabele</strong>.</p></li>
 </ol>
 <p>V okviru tega poglavja se bomo seznanili s tem, kako numerično izračunamo odvod funkcije <span class="math notranslate nohighlight">\(f(x)\)</span>; pri tem so vrednosti funkcije <span class="math notranslate nohighlight">\(f(x)\)</span> podane tabelarično (pari <span class="math notranslate nohighlight">\(x_i\)</span>, <span class="math notranslate nohighlight">\(y_i\)</span>), kakor je prikazano na sliki:
-<img src='./fig/odvajanje_tabela.png' width=400>
+![Odvajanje](./fig/odvajanje_tabela.png‘ width=400&gt;
 Najprej se bomo osredotočili na ekvidistantno, s korakom <span class="math notranslate nohighlight">\(h\)</span>, razporejene vrednosti <span class="math notranslate nohighlight">\(x_i\)</span>; vrednosti funkcije pa bodo <span class="math notranslate nohighlight">\(y_i=f(x_i)\)</span>.</p>
 <p>Glede na zgornjo definicijo odvoda, bi prvi odvod (za mesto <span class="math notranslate nohighlight">\(i\)</span>) lahko zapisali:</p>
 <div class="math notranslate nohighlight">
@@ -1670,7 +1670,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_26368\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_25804\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
   f1_ocena = (fun(x+h, dtype=dtype)-fun(x-h,dtype=dtype))/(2*dtype(h))
 </pre></div>
 </div>
@@ -1800,8 +1800,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 <h2>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>Za batni mehanizem na spodnji sliki strojno izpeljite kinematiko gibanja bata, če se kolenasta gred giblje po zakonu <span class="math notranslate nohighlight">\(\varphi(t)=\omega\,t\)</span>.
-<img src='./fig/batni_mehanizem.png' width=300></p></li>
-<li><p>Za kotno hitrosti <span class="math notranslate nohighlight">\(\omega=2\,\pi\,50\,\)</span>rad/s izrišite lego bata v treh obratih gredi. Uporabite: <span class="math notranslate nohighlight">\(r=0,03\,\)</span>m in <span class="math notranslate nohighlight">\(l=0,1\,\)</span>m.</p></li>
+<img alt="Batni mehanizem" src="../_images/batni_mehanizem.png" />2. Za kotno hitrosti <span class="math notranslate nohighlight">\(\omega=2\,\pi\,50\,\)</span>rad/s izrišite lego bata v treh obratih gredi. Uporabite: <span class="math notranslate nohighlight">\(r=0,03\,\)</span>m in <span class="math notranslate nohighlight">\(l=0,1\,\)</span>m.</p></li>
 <li><p>Simbolno odvajajte lego <span class="math notranslate nohighlight">\(x(t)\)</span>, da pridobite pospešek <span class="math notranslate nohighlight">\(\ddot x(t)\)</span>.</p></li>
 <li><p>Pripravite funkcijo za klicanje simbolnih izrazov za lego <span class="math notranslate nohighlight">\(x(t)\)</span> in pospešek <span class="math notranslate nohighlight">\(\ddot x(t)\)</span> iz <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></li>
 <li><p>S pomočjo <code class="docutils literal notranslate"><span class="pre">scipy</span></code> pripravite centralno diferenčno shemo za 2. odvod čez 3, 5, in 7 točk.</p></li>
