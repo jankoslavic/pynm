@@ -2,12 +2,10 @@ __author__ = 'Janko Slavic'
 
 import sys
 
-from PyQt5 import QtCore
-from PyQt5 import QtWidgets
-from PyQt5 import QtGui
+from PyQt6 import QtWidgets
+from PyQt6 import QtGui
 
 import time
-import numpy as np
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -18,7 +16,7 @@ class MainWindow(QtWidgets.QMainWindow):
         """ Konstruktor MainWindow objekta
         """
         QtWidgets.QMainWindow.__init__(self)
-        self.setWindowTitle('Glavno okno - Jernej')
+        self.setWindowTitle('Glavno okno')
         self.setGeometry(0, 0, 1600, 1400)
         #self.showMaximized()
         self.init_status_bar()
@@ -106,15 +104,15 @@ class MainWindow(QtWidgets.QMainWindow):
     def init_actions(self):
         """ Pripravi actions za menuje
         """
-        self.new_file_action = QtWidgets.QAction('&Novo',
-                                             self, shortcut=QtGui.QKeySequence.New,
+        self.new_file_action = QtGui.QAction('&Novo',
+                                             self, shortcut=QtGui.QKeySequence.StandardKey.New,
                                              statusTip="Novi prikaz",
                                              triggered=self.clear_input)
-        self.reset_action = QtWidgets.QAction('&Ponastavi',
+        self.reset_action = QtGui.QAction('&Ponastavi',
                                           self,
                                           statusTip="Ponastavi",
                                           triggered=self.reset_input)
-        self.help_action = QtWidgets.QAction(  # QtGui.QIcon('new.png') # tako bi lahko vključili ikono
+        self.help_action = QtGui.QAction(  # QtGui.QIcon('new.png') # tako bi lahko vključili ikono
                                            '&Pomoč',
                                            self,
                                            triggered=self.file_show_help)
@@ -151,7 +149,7 @@ if __name__ == '__main__':
         app = QtWidgets.QApplication(sys.argv)
         mainWindow = MainWindow()
         mainWindow.show()
-        app.exec_()
+        app.exec()
         sys.exit(0)
     except SystemExit:
         print('Zapiram okno.')

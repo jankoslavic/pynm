@@ -529,19 +529,8 @@ document.write(`
 <p>Najprej uvozimo paket za interakcijo in z grafičnimi objekti:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtCore</span>     <span class="c1"># za interakcijo </span>
-<span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtWidgets</span>  <span class="c1"># grafični objekti</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtCore</span>     <span class="c1"># za interakcijo </span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtWidgets</span>  <span class="c1"># grafični objekti</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;PyQt5&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PyQt6</span> <span class="kn">import</span> <span class="n">QtCore</span>     <span class="c1"># za interakcijo </span>
+<span class="kn">from</span> <span class="nn">PyQt6</span> <span class="kn">import</span> <span class="n">QtWidgets</span>  <span class="c1"># grafični objekti</span>
 </pre></div>
 </div>
 </div>
@@ -566,16 +555,15 @@ document.write(`
 <p>Ni potrebno definirati vseh; spodaj si bomo pogledali primer, ko bomo definirali <em>Status bar</em>, <em>Central Widget</em> in <em>Menu Bar</em>. Ponavadi vse elemente definiramo pri inicializaciji instance razreda (metoda <code class="docutils literal notranslate"><span class="pre">__init__</span></code>).</p>
 <p>Tukaj izpostavimo, da grafični vmesnik temelji na t. i. <em>Widgetih</em>, (za na primer gumb, tabelo, datum itd.). Prikaz nekaterih možnosti je prikazan v:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://doc.qt.io/qt-5/gallery.html">Qt 5 Windows galeriji</a>,</p></li>
-<li><p><a class="reference external" href="https://doc.qt.io/qt-5/gallery.html">Qt5 galeriji</a>.</p></li>
+<li><p><a class="reference external" href="https://doc.qt.io/qt-6/gallery.html">Qt6 galeriji</a>.</p></li>
 </ul>
 <p>Zelo enostaven uporabniški vmesnik (z vrstičnimi komentarji kode) je prikazan spodaj.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtCore</span>
-<span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtGui</span>
-<span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">QtWidgets</span>
+<span class="kn">from</span> <span class="nn">PyQt6</span> <span class="kn">import</span> <span class="n">QtCore</span>
+<span class="kn">from</span> <span class="nn">PyQt6</span> <span class="kn">import</span> <span class="n">QtGui</span>
+<span class="kn">from</span> <span class="nn">PyQt6</span> <span class="kn">import</span> <span class="n">QtWidgets</span>
 
 <span class="k">class</span> <span class="nc">GlavnOkno</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Glavno okno podeduje `QtWidgets.QMainWindow`</span>
@@ -598,8 +586,8 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gumb1</span><span class="p">)</span> <span class="c1"># dodamo gumb v `CentralWidget`</span>
         
         <span class="c1"># menuji</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">moj_izhod_akcija</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QAction</span><span class="p">(</span><span class="s1">&#39;&amp;Izhod&#39;</span><span class="p">,</span> 
-                                             <span class="bp">self</span><span class="p">,</span> <span class="n">shortcut</span><span class="o">=</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QKeySequence</span><span class="o">.</span><span class="n">Close</span><span class="p">,</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">moj_izhod_akcija</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QAction</span><span class="p">(</span><span class="s1">&#39;&amp;Izhod&#39;</span><span class="p">,</span> 
+                                             <span class="bp">self</span><span class="p">,</span> <span class="n">shortcut</span><span class="o">=</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QKeySequence</span><span class="o">.</span><span class="n">StandardKey</span><span class="o">.</span><span class="n">Close</span><span class="p">,</span>
                                              <span class="n">statusTip</span><span class="o">=</span><span class="s2">&quot;Izhod iz programa&quot;</span><span class="p">,</span>
                                              <span class="n">triggered</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">moj_datoteka_menu</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">menuBar</span><span class="p">()</span><span class="o">.</span><span class="n">addMenu</span><span class="p">(</span><span class="s1">&#39;&amp;Datoteka&#39;</span><span class="p">)</span> <span class="c1"># menu &#39;Datoteka&#39;</span>
@@ -620,7 +608,7 @@ document.write(`
     <span class="n">app</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
     <span class="n">mainWindow</span> <span class="o">=</span> <span class="n">GlavnOkno</span><span class="p">()</span>
     <span class="n">mainWindow</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">SystemExit</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zapiram okno.&#39;</span><span class="p">)</span>
@@ -629,17 +617,21 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zapiram okno.
+</pre></div>
+</div>
+</div>
 </div>
 <p>Za naprednejši zgled glejte datoteki:</p>
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="../_downloads/01920e12eb7ec0c0ec6291e6b196ecbc/preprosti_uporabniski_vmesnik.py"><span class="xref download myst">preprosti_uporabniski_vmesnik.py</span></a>,</p></li>
-<li><p><a class="reference download internal" download="" href="../_downloads/1705b0a79afee173784d4e734cdc7fa9/uporabniski_vmesnik.py"><span class="xref download myst">uporabniski_vmesnik.py</span></a> in</p></li>
-<li><p><a class="reference download internal" download="" href="../_downloads/7fdeba448618e86ed949c5b1cd2d5939/brskalnik.py"><span class="xref download myst">brskalnik.py</span></a>.</p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/1705b0a79afee173784d4e734cdc7fa9/uporabniski_vmesnik.py"><span class="xref download myst">uporabniski_vmesnik.py</span></a></p></li>
 </ul>
 <p>Nekaj komentarjev na <code class="docutils literal notranslate"><span class="pre">uporabniski_vmesnik.py</span></code>:</p>
 <ol class="arabic simple">
 <li><p>Poglejte prepis dogodka <code class="docutils literal notranslate"><span class="pre">mouseDoubleClickEvent</span></code> in prepišite podedovan dogodek <code class="docutils literal notranslate"><span class="pre">keyPressEvent</span></code>, ki naj ob pritisku katerekoli tipke zapre program (če se nahajate v TextEdit polju, potem seveda pritisk tipke izpiše vrednost te tipke).</p></li>
-<li><p>Dodajte še kakšen <em>Widget</em> s <a class="reference external" href="http://doc.qt.io/qt-5/gallery-windows.html">seznama</a>.</p></li>
+<li><p>Dodajte še kakšen <em>Widget</em> s <a class="reference external" href="http://doc.qt.io/qt-6/gallery-windows.html">seznama</a>.</p></li>
 <li><p>Spremenite program, da se bo vedno izrisovala funkcija sinus, v vpisno polje <code class="docutils literal notranslate"><span class="pre">function_text</span></code> pa boste zapisali število diskretnih točk (sedaj je točk 100).  Povežite polje z ustreznimi funkcijami.</p></li>
 <li><p>Uredite lovljenje napak pri zgornji spremembi.</p></li>
 </ol>
@@ -648,7 +640,7 @@ document.write(`
 <section id="nekaj-vprasanj-za-razmislek">
 <h2>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>V PyCharm-u pripravite modul, ki bo imel dve funkciji:</p>
+<li><p>V VisualStudioCode pripravite modul, ki bo imel dve funkciji:</p>
 <ul class="simple">
 <li><p>za množenje matrike in vektorja,</p></li>
 <li><p>za množenje dveh matrik.</p></li>
