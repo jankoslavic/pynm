@@ -381,7 +381,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><em>Navodila za uporabo te predloge</em><span class="tocSkip"></span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><em>Navodila za uporabo te predloge</em><span class="tocSkip"></span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kazalo">Kazalo</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definicija-naloge">Definicija naloge</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simbolno-resevanje">Simbolno reševanje</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">…</a></li>
@@ -420,54 +423,18 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p>Avtor: <strong>Ime in priimek, vpisna številka</strong></p>
-<p>Datum: 1. januar 2023</p>
+<p>Datum: 1. januar 2024</p>
 <p><em>Potrjujem, da sem avtor projektne naloge in da sem vso vsebino pripravil sam. V primeru, da se ugotovi plagiatorstvo se zavedam, da ne bom izpolnjeval pogojev za pristop k izpitu.</em></p>
-<hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="navodila-za-uporabo-te-predloge-span-class-tocskip-span">
 <h1><em>Navodila za uporabo te predloge</em><span class="tocSkip"></span><a class="headerlink" href="#navodila-za-uporabo-te-predloge-span-class-tocskip-span" title="Permalink to this heading">#</a></h1>
-<p><em>Individualni seminar mora vsebovati <strong>kazalo vsebine</strong> z delujočimi povezavami na poglavja. Najlažje ga pripravite z uporabo razširitve <a class="reference external" href="https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tree/master/src/jupyter_contrib_nbextensions/nbextensions/toc2">toc2</a>. Za namestitev poženite spodnjo celico in nato ponovno poženite <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>:</em></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Namestitev toc2</span>
-<span class="o">%</span><span class="k">sx</span><span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>jupyter_contrib_nbextensions<span class="w"> </span>-y
-<span class="o">%</span><span class="k">sx</span><span class="w"> </span>jupyter<span class="w"> </span>contrib<span class="w"> </span>nbextension<span class="w"> </span>install<span class="w"> </span>--user
-<span class="o">%</span><span class="k">sx</span><span class="w"> </span>jupyter<span class="w"> </span>nbextension<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>toc2/main
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;usage: jupyter [-h] [--version] [--config-dir] [--data-dir] [--runtime-dir]&#39;,
- &#39;               [--paths] [--json] [--debug]&#39;,
- &#39;               [subcommand]&#39;,
- &#39;&#39;,
- &#39;Jupyter: Interactive Computing&#39;,
- &#39;&#39;,
- &#39;positional arguments:&#39;,
- &#39;  subcommand     the subcommand to launch&#39;,
- &#39;&#39;,
- &#39;options:&#39;,
- &#39;  -h, --help     show this help message and exit&#39;,
- &#39;  --version      show the versions of core jupyter packages and exit&#39;,
- &#39;  --config-dir   show Jupyter config dir&#39;,
- &#39;  --data-dir     show Jupyter data dir&#39;,
- &#39;  --runtime-dir  show Jupyter runtime dir&#39;,
- &#39;  --paths        show all Jupyter paths. Add --json for machine-readable&#39;,
- &#39;                 format.&#39;,
- &#39;  --json         output paths as machine-readable json&#39;,
- &#39;  --debug        output debug information about paths&#39;,
- &#39;&#39;,
- &#39;Available subcommands: book contrib dejavu events execute kernel kernelspec&#39;,
- &#39;lab labextension labhub migrate nbconvert nbextensions_configurator notebook&#39;,
- &#39;run server troubleshoot trust&#39;,
- &#39;&#39;,
- &#39;Jupyter command `jupyter-nbextension` not found.&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p><em>Po tem, ko ste zgorni dodatek namestili, ga vključite v poročilo (<strong>korak 1.</strong>), odprete nastavitve kazala (<strong>korak 2.</strong>) in v oknu, ki se odpre, izberete možnost „Add notebook ToC cell“ (<strong>korak 3.</strong>)</em></p>
-<img src="kazalo.gif" width=700><h1>Kazalo<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Definicija-naloge" data-toc-modified-id="Definicija-naloge-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Definicija naloge</a></span><ul class="toc-item"><li><span><a href="#Simbolno-reševanje" data-toc-modified-id="Simbolno-reševanje-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Simbolno reševanje</a></span></li><li><span><a href="#..." data-toc-modified-id="...-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>...</a></span></li></ul></li><li><span><a href="#Sistemi-linearnih-enačb" data-toc-modified-id="Sistemi-linearnih-enačb-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Sistemi linearnih enačb</a></span><ul class="toc-item"><li><span><a href="#..." data-toc-modified-id="...-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>...</a></span></li></ul></li><li><span><a href="#Interpolacija-/aproksimacija" data-toc-modified-id="Interpolacija-/aproksimacija-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Interpolacija /aproksimacija</a></span><ul class="toc-item"><li><span><a href="#..." data-toc-modified-id="...-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>...</a></span></li></ul></li><li><span><a href="#Reševanje-enačb-(iskanje-ničel)" data-toc-modified-id="Reševanje-enačb-(iskanje-ničel)-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Reševanje enačb (iskanje ničel)</a></span><ul class="toc-item"><li><span><a href="#..." data-toc-modified-id="...-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>...</a></span></li></ul></li><li><span><a href="#Integriranje-/-odvajanje" data-toc-modified-id="Integriranje-/-odvajanje-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Integriranje / odvajanje</a></span><ul class="toc-item"><li><span><a href="#..." data-toc-modified-id="...-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>...</a></span></li></ul></li><li><span><a href="#Reševanje-diferencialnih-enačb" data-toc-modified-id="Reševanje-diferencialnih-enačb-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Reševanje diferencialnih enačb</a></span><ul class="toc-item"><li><span><a href="#..." data-toc-modified-id="...-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>...</a></span></li></ul></li></ul></div></section>
+<p>Predlogo individualnega seminarja lahko uporabite tako, da to datoteko ustrezno preimenujete, dopolnite s svojimi podatki ter  pod pripravjenimi naslovi dodate svojo vsebino.</p>
+<p>Če individualni projekt pišete v svoji datoteki poskrbite, da bo ta ustrezno oblikovana, vsebuje zahtevane elemente vključno z izjavo o avtorstvu, in da so numerične vsebine jasno označene v naslovih poglavij poročila.</p>
+<section id="kazalo">
+<h2>Kazalo<a class="headerlink" href="#kazalo" title="Permalink to this heading">#</a></h2>
+<p>Zaradi urejenosti in preglednosti mora poročilo individualnega projekta vsebovati kazalo.</p>
+<p>V okolju Visual Studio Code vam kazala ni treba posebej ustvarjati. <strong>Poskrbite, da imate vsebino poročila ustrezno razčlenjeno in opremljeno z naslovi v <code class="docutils literal notranslate"><span class="pre">markdown</span></code> celicah</strong>, tako, da v polju „Outline“ vidite urejeno kazalo (glejte sliko).</p>
+<img src="kazalo.png" width=600></section>
+</section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="definicija-naloge">
 <h1>Definicija naloge<a class="headerlink" href="#definicija-naloge" title="Permalink to this heading">#</a></h1>
@@ -580,7 +547,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><em>Navodila za uporabo te predloge</em><span class="tocSkip"></span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><em>Navodila za uporabo te predloge</em><span class="tocSkip"></span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kazalo">Kazalo</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definicija-naloge">Definicija naloge</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simbolno-resevanje">Simbolno reševanje</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">…</a></li>
