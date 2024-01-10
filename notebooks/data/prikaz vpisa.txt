@@ -1,5 +1,5 @@
-test prve vrstice
-druga vrstica
+test druge vrstice
+
 0.00e+00	 0.0000e+00
 1.00e+00	 1.0000e+00
 2.00e+00	 2.0000e+00
