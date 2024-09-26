@@ -1,4 +1,4 @@
-# Numerične metode v ekosistemu Pythona, Janko Slavič, 2023/24
+# Numerične metode v ekosistemu Pythona, Janko Slavič, 2024/25
 
 Tukaj predstavljena vsebina je osnova za predmet Numerične metode, ki se poučujeta na [Fakulteti za strojništvo (Univerza v Ljubljani)](www.fs.uni-lj.si):
 
