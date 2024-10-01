@@ -26,7 +26,7 @@ Prosimo, da si preberete [študijski in izpitni red](https://jankoslavic.github.
 1. [Testiranje pravilnosti kode, uporabniški vmesnik](https://jankoslavic.github.io/pynm/notebooks/Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode,%20uporabniški%20vmesnik.html)
 1. Uvod v Mathematico*
 
-\* Fakultativno predavanje, študentje Fakultete za strojništvo UNI-LJ imate možnost pridobiti licenčno verzijo programa Mathematica na tej [povezavi](http://www.fs.uni-lj.si/studijska_dejavnost/it_podpora/programska_oprema_za_studente/2015071415154271/Registracija%20Mathematica/).
+\* Fakultativno predavanje, študentje Fakultete za strojništvo UNI-LJ imate možnost pridobiti licenčno verzijo programa Mathematica na tej [povezavi](https://www.fs.uni-lj.si/studij/studiraj-na-fs/programska-oprema-za-studente/registracija-mathematica/).
 
 ## Dovoljenje za uporabo (License)
 To delo je prosto za nekomercialno uporabo pri čemer morate navesti vir, avtorja in Fakulteto za strojništvo, Univerze v Ljubljani.
