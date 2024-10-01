@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="sl" data-content_root="" >
+<html lang="sl" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Moduli, zanke, funkcije &#8212; Numerične metode v ekosistemu Pythona</title>
   
@@ -15,54 +14,50 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=a3a20203"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/translations.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=852ec8ec"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Uvajalni tečaj/02 - moduli, zanke, funkcije';</script>
@@ -77,28 +72,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -120,12 +110,22 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -141,6 +141,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="../README.html">
@@ -159,18 +161,29 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Išči</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../README.html">
-                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2023/24
+                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2024/25
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2023/24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2024/25</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
@@ -203,7 +216,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -212,14 +225,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -344,10 +357,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -355,14 +368,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -417,11 +430,11 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <h1>Kazalo<span class="tocSkip"></span></h1>
 <div class="toc"><ul class="toc-item"><li><span><a href="#Moduli,-zanke,-funkcije" data-toc-modified-id="Moduli,-zanke,-funkcije-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Moduli, zanke, funkcije</a></span><ul class="toc-item"><li><span><a href="#Zanki-for-in-while:" data-toc-modified-id="Zanki-for-in-while:-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Zanki <code>for</code> in <code>while</code>:</a></span></li><li><span><a href="#Definicije-lastnih-funkcij" data-toc-modified-id="Definicije-lastnih-funkcij-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Definicije lastnih funkcij</a></span></li><li><span><a href="#Moduli---nadaljevanje" data-toc-modified-id="Moduli---nadaljevanje-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Moduli - nadaljevanje</a></span><ul class="toc-item"><li><span><a href="#Numpy" data-toc-modified-id="Numpy-1.3.1"><span class="toc-item-num">1.3.1&nbsp;&nbsp;</span>Numpy</a></span></li><li><span><a href="#Maplotlib" data-toc-modified-id="Maplotlib-1.3.2"><span class="toc-item-num">1.3.2&nbsp;&nbsp;</span>Maplotlib</a></span></li></ul></li></ul></li><li><span><a href="#Primer:-uporaba-Python-a-za-dimenzioniranje-nosilca" data-toc-modified-id="Primer:-uporaba-Python-a-za-dimenzioniranje-nosilca-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Primer: uporaba Python-a za dimenzioniranje nosilca</a></span><ul class="toc-item"><li><span><a href="#Naloga" data-toc-modified-id="Naloga-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Naloga</a></span></li><li><span><a href="#Enačbe" data-toc-modified-id="Enačbe-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Enačbe</a></span></li><li><span><a href="#Podatki:" data-toc-modified-id="Podatki:-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Podatki:</a></span></li><li><span><a href="#Rešitev" data-toc-modified-id="Rešitev-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Rešitev</a></span><ul class="toc-item"><li><span><a href="#Največja-upogibna-napetost-v-nosilcu" data-toc-modified-id="Največja-upogibna-napetost-v-nosilcu-2.4.1"><span class="toc-item-num">2.4.1&nbsp;&nbsp;</span>Največja upogibna napetost v nosilcu</a></span></li><li><span><a href="#Upogibnica" data-toc-modified-id="Upogibnica-2.4.2"><span class="toc-item-num">2.4.2&nbsp;&nbsp;</span>Upogibnica</a></span></li><li><span><a href="#Funkcija-napetost_upogib" data-toc-modified-id="Funkcija-napetost_upogib-2.4.3"><span class="toc-item-num">2.4.3&nbsp;&nbsp;</span>Funkcija <code>napetost_upogib</code></a></span></li><li><span><a href="#Dimenzioniranje-nosilca" data-toc-modified-id="Dimenzioniranje-nosilca-2.4.4"><span class="toc-item-num">2.4.4&nbsp;&nbsp;</span>Dimenzioniranje nosilca</a></span></li><li><span><a href="#Dodatek:" data-toc-modified-id="Dodatek:-2.4.5"><span class="toc-item-num">2.4.5&nbsp;&nbsp;</span>Dodatek:</a></span></li></ul></li></ul></li></ul></div><section class="tex2jax_ignore mathjax_ignore" id="moduli-zanke-funkcije">
-<h1>Moduli, zanke, funkcije<a class="headerlink" href="#moduli-zanke-funkcije" title="Permalink to this heading">#</a></h1>
+<h1>Moduli, zanke, funkcije<a class="headerlink" href="#moduli-zanke-funkcije" title="Link to this heading">#</a></h1>
 <p>Priprava podatkov, komentarji kode:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -433,7 +446,7 @@ document.write(`
 </div>
 </div>
 <section id="zanki-for-in-while">
-<h2>Zanki <code class="docutils literal notranslate"><span class="pre">for</span></code> in <code class="docutils literal notranslate"><span class="pre">while</span></code>:<a class="headerlink" href="#zanki-for-in-while" title="Permalink to this heading">#</a></h2>
+<h2>Zanki <code class="docutils literal notranslate"><span class="pre">for</span></code> in <code class="docutils literal notranslate"><span class="pre">while</span></code>:<a class="headerlink" href="#zanki-for-in-while" title="Link to this heading">#</a></h2>
 <p>Kadar želimo, da se koda izvede za vsak element seznama ali terke:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -549,7 +562,7 @@ ii
 </ul>
 </section>
 <section id="definicije-lastnih-funkcij">
-<h2>Definicije lastnih funkcij<a class="headerlink" href="#definicije-lastnih-funkcij" title="Permalink to this heading">#</a></h2>
+<h2>Definicije lastnih funkcij<a class="headerlink" href="#definicije-lastnih-funkcij" title="Link to this heading">#</a></h2>
 <p>Kadar želimo neko kodo uporabiti več kot enkrat, je je dobro definirati v obliki funkcije. Sintaksa je naslednja:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -643,9 +656,9 @@ izpiši_vse_dvakrat_2(seznam)
 </div>
 </section>
 <section id="moduli-nadaljevanje">
-<h2>Moduli - nadaljevanje<a class="headerlink" href="#moduli-nadaljevanje" title="Permalink to this heading">#</a></h2>
+<h2>Moduli - nadaljevanje<a class="headerlink" href="#moduli-nadaljevanje" title="Link to this heading">#</a></h2>
 <section id="numpy">
-<h3>Numpy<a class="headerlink" href="#numpy" title="Permalink to this heading">#</a></h3>
+<h3>Numpy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h3>
 <p>Modul z orodji za numerično računanje. Del paketa Anaconda.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -720,7 +733,7 @@ izpiši_vse_dvakrat_2(seznam)
 </div>
 </section>
 <section id="maplotlib">
-<h3>Maplotlib<a class="headerlink" href="#maplotlib" title="Permalink to this heading">#</a></h3>
+<h3>Maplotlib<a class="headerlink" href="#maplotlib" title="Link to this heading">#</a></h3>
 <p>Modul, nemenjen izrisu grafov. Prav tako del paketa Anaconda.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -736,10 +749,10 @@ izpiši_vse_dvakrat_2(seznam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1cd4f5b8250&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x21500145e50&gt;]
 </pre></div>
 </div>
-<img alt="../_images/d8246a2de049a2ae154ac2b4d6bd72136dcc221b67d02e396fe77bc784aa21ae.png" src="../_images/d8246a2de049a2ae154ac2b4d6bd72136dcc221b67d02e396fe77bc784aa21ae.png" />
+<img alt="../_images/0dc1230f2bca6daa6b2224e87e2ae09b931b1caa386762cc2810ced2463ec12e.png" src="../_images/0dc1230f2bca6daa6b2224e87e2ae09b931b1caa386762cc2810ced2463ec12e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -754,20 +767,20 @@ izpiši_vse_dvakrat_2(seznam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1cd4f6505d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x215001da3f0&gt;
 </pre></div>
 </div>
-<img alt="../_images/3dbfe5d9a8bd0a2f7e7a6c2859852dca7463a0e670171be45b1ce0ea5c50095f.png" src="../_images/3dbfe5d9a8bd0a2f7e7a6c2859852dca7463a0e670171be45b1ce0ea5c50095f.png" />
+<img alt="../_images/fa499a29a8355f8b2207f69907f33030cd4840c8a55416b29be2e6dc532b18ad.png" src="../_images/fa499a29a8355f8b2207f69907f33030cd4840c8a55416b29be2e6dc532b18ad.png" />
 </div>
 </div>
 </section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="primer-uporaba-python-a-za-dimenzioniranje-nosilca">
-<h1>Primer: uporaba Python-a za dimenzioniranje nosilca<a class="headerlink" href="#primer-uporaba-python-a-za-dimenzioniranje-nosilca" title="Permalink to this heading">#</a></h1>
+<h1>Primer: uporaba Python-a za dimenzioniranje nosilca<a class="headerlink" href="#primer-uporaba-python-a-za-dimenzioniranje-nosilca" title="Link to this heading">#</a></h1>
 <p>Obravnavamo nosilec na sliki.</p>
 <img src="img/konzola.png" style="width:550px"><section id="naloga">
-<h2>Naloga<a class="headerlink" href="#naloga" title="Permalink to this heading">#</a></h2>
+<h2>Naloga<a class="headerlink" href="#naloga" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Izračunaj največjo upogibno napetost v nosilcu <span class="math notranslate nohighlight">\(\sigma_{\text{max}}\)</span>.</p></li>
 </ol>
@@ -780,7 +793,7 @@ izpiši_vse_dvakrat_2(seznam)
 </ol>
 </section>
 <section id="enacbe">
-<h2>Enačbe<a class="headerlink" href="#enacbe" title="Permalink to this heading">#</a></h2>
+<h2>Enačbe<a class="headerlink" href="#enacbe" title="Link to this heading">#</a></h2>
 <p>Odpornostni in vztrajnostni moment prereza:
 $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</p>
 <div class="math notranslate nohighlight">
@@ -801,7 +814,7 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 \[y = \frac{f}{2} \, (2 - 3u + u^3)\]</div>
 </section>
 <section id="podatki">
-<h2>Podatki:<a class="headerlink" href="#podatki" title="Permalink to this heading">#</a></h2>
+<h2>Podatki:<a class="headerlink" href="#podatki" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -826,9 +839,9 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 </div>
 </section>
 <section id="resitev">
-<h2>Rešitev<a class="headerlink" href="#resitev" title="Permalink to this heading">#</a></h2>
+<h2>Rešitev<a class="headerlink" href="#resitev" title="Link to this heading">#</a></h2>
 <section id="najvecja-upogibna-napetost-v-nosilcu">
-<h3>Največja upogibna napetost v nosilcu<a class="headerlink" href="#najvecja-upogibna-napetost-v-nosilcu" title="Permalink to this heading">#</a></h3>
+<h3>Največja upogibna napetost v nosilcu<a class="headerlink" href="#najvecja-upogibna-napetost-v-nosilcu" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">W_z</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">h</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">6</span>
@@ -847,7 +860,7 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 </div>
 </section>
 <section id="upogibnica">
-<h3>Upogibnica<a class="headerlink" href="#upogibnica" title="Permalink to this heading">#</a></h3>
+<h3>Upogibnica<a class="headerlink" href="#upogibnica" title="Link to this heading">#</a></h3>
 <p>Najprej pripravimo polje koordinate <span class="math notranslate nohighlight">\(x\)</span>, kjer želimo izračunati upogibnico:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -881,7 +894,7 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23.80952380952381
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(23.80952380952381)
 </pre></div>
 </div>
 </div>
@@ -901,10 +914,10 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1cd4f73e490&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x21500295580&gt;]
 </pre></div>
 </div>
-<img alt="../_images/4aae90132c19eab24c2deaeaf4dd02db3842c0aed770dc13b48431caf64402d1.png" src="../_images/4aae90132c19eab24c2deaeaf4dd02db3842c0aed770dc13b48431caf64402d1.png" />
+<img alt="../_images/cd3b1bc1e1686c7aff5c716dd0d26da7ae8761197023cce2de7d788ad9cdd968.png" src="../_images/cd3b1bc1e1686c7aff5c716dd0d26da7ae8761197023cce2de7d788ad9cdd968.png" />
 </div>
 </div>
 <p>Izris še opremimo:</p>
@@ -922,12 +935,12 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y [mm]&#39;)
 </pre></div>
 </div>
-<img alt="../_images/cbffef25acb3f9412ab9ec84cbc734098598968c2dba8cd458936d033e73024c.png" src="../_images/cbffef25acb3f9412ab9ec84cbc734098598968c2dba8cd458936d033e73024c.png" />
+<img alt="../_images/aa9a721c024d813a3363060503c876e3f193518aeb811a3f39af49f02af95af2.png" src="../_images/aa9a721c024d813a3363060503c876e3f193518aeb811a3f39af49f02af95af2.png" />
 </div>
 </div>
 </section>
 <section id="funkcija-napetost-upogib">
-<h3>Funkcija <code class="docutils literal notranslate"><span class="pre">napetost_upogib</span></code><a class="headerlink" href="#funkcija-napetost-upogib" title="Permalink to this heading">#</a></h3>
+<h3>Funkcija <code class="docutils literal notranslate"><span class="pre">napetost_upogib</span></code><a class="headerlink" href="#funkcija-napetost-upogib" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="3">
 <li><p>* Definiraj funkcijo <code class="docutils literal notranslate"><span class="pre">napetost_upogib</span></code>, ki pri podanih parametrih <em>izriše</em> upogibnico nosilca in <em>vrne</em> vrednost največje upogibne napetosti <span class="math notranslate nohighlight">\(\sigma_{\text{max}}\)</span>.</p></li>
 </ol>
@@ -971,12 +984,12 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200.0
 </pre></div>
 </div>
-<img alt="../_images/cbffef25acb3f9412ab9ec84cbc734098598968c2dba8cd458936d033e73024c.png" src="../_images/cbffef25acb3f9412ab9ec84cbc734098598968c2dba8cd458936d033e73024c.png" />
+<img alt="../_images/aa9a721c024d813a3363060503c876e3f193518aeb811a3f39af49f02af95af2.png" src="../_images/aa9a721c024d813a3363060503c876e3f193518aeb811a3f39af49f02af95af2.png" />
 </div>
 </div>
 </section>
 <section id="dimenzioniranje-nosilca">
-<h3>Dimenzioniranje nosilca<a class="headerlink" href="#dimenzioniranje-nosilca" title="Permalink to this heading">#</a></h3>
+<h3>Dimenzioniranje nosilca<a class="headerlink" href="#dimenzioniranje-nosilca" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="4">
 <li><p>* Za različne možne <code class="docutils literal notranslate"><span class="pre">višine</span></code> prereza <span class="math notranslate nohighlight">\(h\)</span> izberi najmanjšo, pri kateri je največja upogibna napetost v nosilcu manjša od dopustne napetosti (<span class="math notranslate nohighlight">\(\sigma_{\text{max}} \leq \sigma_{\text{dop}}\)</span>).</p></li>
 </ol>
@@ -995,13 +1008,13 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Izbrana višina: 14.0 mm
 </pre></div>
 </div>
-<img alt="../_images/c7c409a7119cb4d93c136e8c53969a1a9cb9aa3d389dfdd40a0aef855e2dd9b6.png" src="../_images/c7c409a7119cb4d93c136e8c53969a1a9cb9aa3d389dfdd40a0aef855e2dd9b6.png" />
+<img alt="../_images/708e0817a27f6583eb1aec944beb1d0765c8187a63f5b308607027d2f25f88b0.png" src="../_images/708e0817a27f6583eb1aec944beb1d0765c8187a63f5b308607027d2f25f88b0.png" />
 </div>
 </div>
 </section>
 <hr class="docutils" />
 <section id="dodatek">
-<h3>Dodatek:<a class="headerlink" href="#dodatek" title="Permalink to this heading">#</a></h3>
+<h3>Dodatek:<a class="headerlink" href="#dodatek" title="Link to this heading">#</a></h3>
 <p>Pripravi modul (<code class="docutils literal notranslate"><span class="pre">.py</span></code> datoteko) z orodji za dimenzioniranje konzolno vpetega nosilca.</p>
 </section>
 </section>
@@ -1034,7 +1047,7 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
 </div>
@@ -1045,6 +1058,7 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1101,7 +1115,7 @@ Avtor Janko Slavič
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1125,8 +1139,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

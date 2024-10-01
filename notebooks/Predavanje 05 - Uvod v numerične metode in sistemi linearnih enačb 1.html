@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="sl" data-content_root="" >
+<html lang="sl" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Uvod v numerične metode in sistemi linearnih enačb &#8212; Numerične metode v ekosistemu Pythona</title>
   
@@ -15,54 +14,50 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=a3a20203"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/translations.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=852ec8ec"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Predavanje 05 - Uvod v numerične metode in sistemi linearnih enačb 1';</script>
@@ -79,28 +74,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -122,12 +112,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -143,6 +141,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="../README.html">
@@ -161,18 +161,29 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Išči</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../README.html">
-                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2023/24
+                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2024/25
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2023/24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2024/25</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
@@ -205,7 +216,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -214,14 +225,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -346,10 +357,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -357,14 +368,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -419,12 +430,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="uvod-v-numericne-metode-in-sistemi-linearnih-enacb">
-<h1>Uvod v numerične metode in sistemi linearnih enačb<a class="headerlink" href="#uvod-v-numericne-metode-in-sistemi-linearnih-enacb" title="Permalink to this heading">#</a></h1>
+<h1>Uvod v numerične metode in sistemi linearnih enačb<a class="headerlink" href="#uvod-v-numericne-metode-in-sistemi-linearnih-enacb" title="Link to this heading">#</a></h1>
 <section id="uvod-v-numericne-metode">
-<h2>Uvod v numerične metode<a class="headerlink" href="#uvod-v-numericne-metode" title="Permalink to this heading">#</a></h2>
+<h2>Uvod v numerične metode<a class="headerlink" href="#uvod-v-numericne-metode" title="Link to this heading">#</a></h2>
 <p>Kadar želimo simulirati izbrani fizikalni proces, ponavadi postopamo takole:</p>
 <ol class="arabic simple">
 <li><p>postavimo matematični model*,</p></li>
@@ -435,7 +446,7 @@ document.write(`
 <p>* Če lahko matematični model rešimo analitično, numerično reševanje ni potrebno.</p>
 <p>Matematični model poskušamo rešiti analitično, saj taka rešitev ni obremenjena z napakami. Iz tega razloga se v okviru matematike učimo reševanja sistema enačb, integriranja, odvajanja in podobno. Bistvo <strong>numeričnih metod</strong> je, da matematične modele rešujemo <strong>numerično</strong>, torej na podlagi <strong>diskretnih vrednosti</strong>. Kakor bomo spoznali pozneje, nam numerični pristop v primerjavi z analitičnim omogoča reševanje bistveno obsežnejših in kompleksnejših problemov.</p>
 <section id="zaokrozitvena-napaka">
-<h3>Zaokrožitvena napaka<a class="headerlink" href="#zaokrozitvena-napaka" title="Permalink to this heading">#</a></h3>
+<h3>Zaokrožitvena napaka<a class="headerlink" href="#zaokrozitvena-napaka" title="Link to this heading">#</a></h3>
 <p>V nadaljevanju si bomo pogledali nekatere omejitve in izzive numeričnega pristopa. Prva omejitev je, da so v računalniku realne vrednosti vedno zapisane s končno natančnostjo. V Pythonu se števila pogosto zapišejo v dvojni natančnosti s približno 15 signifikantnimi števkami.</p>
 <p>Število z dvojno natančnostjo se v Pythonu imenuje <strong>float64</strong> in je zapisano v spomin v binarni obliki v 64 bitih (11 bitov eksponent in 53 bitov mantisa (1 bit za predznak)). Ker je mantisa definirana na podlagi 52 binarnih števk, se lahko pojavi pri njegovem zapisu <em>relativna napaka</em> največ <span class="math notranslate nohighlight">\(\epsilon\approx2.2\cdot 10^{-16}\)</span>. Ta napaka se imenuje <strong>osnovna zaokrožitvena napaka</strong> in se lahko pojavi pri vsakem vmesnem
 izračunu!</p>
@@ -474,7 +485,7 @@ izračunu!</p>
 </div>
 </section>
 <section id="napaka-metode">
-<h3>Napaka metode<a class="headerlink" href="#napaka-metode" title="Permalink to this heading">#</a></h3>
+<h3>Napaka metode<a class="headerlink" href="#napaka-metode" title="Link to this heading">#</a></h3>
 <p>Poleg zaokrožitvene napake pa se pogosto srečamo tudi z <strong>napako metode</strong> ali <strong>metodično napako</strong>, ki jo naredimo takrat, ko natančen analitični postopek reševanja matematičnega modela zamenjamo s približnim numeričnim.</p>
 <p>Pomembna lastnost numeričnih algoritmov je <strong>stabilnost</strong>. To pomeni, da majhna sprememba vhodnih podatkov povzroči majhno spremembo rezultatov. Če se ob majhni spremembi na vhodu rezultati zelo spremenijo, pravimo, da je <strong>algoritem nestabilen</strong>. V praksi torej uporabljamo stabilne algoritme; bomo pa pozneje spoznali, da je stabilnost lahko pogojena tudi z vhodnimi podatki!</p>
 <p>Poznamo pa tudi nestabilnost matematičnega modela/naloge/enačbe; v tem primeru govorimo o <strong>slabi pogojenosti</strong>.</p>
@@ -486,7 +497,7 @@ izračunu!</p>
 </section>
 </section>
 <section id="uvod-v-sisteme-linearnih-enacb">
-<h2>Uvod v sisteme linearnih enačb<a class="headerlink" href="#uvod-v-sisteme-linearnih-enacb" title="Permalink to this heading">#</a></h2>
+<h2>Uvod v sisteme linearnih enačb<a class="headerlink" href="#uvod-v-sisteme-linearnih-enacb" title="Link to this heading">#</a></h2>
 <p>Pod zgornjim naslovom razumemo sistem <span class="math notranslate nohighlight">\(m\)</span> linearnih enačb (<span class="math notranslate nohighlight">\(E_i, i=0, 1,\dots,m-1\)</span>) z <span class="math notranslate nohighlight">\(n\)</span> neznankami (<span class="math notranslate nohighlight">\(x_j, j=0,1,\dots,n-1\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -510,7 +521,7 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 <li><p>matrične  spremenljivke pišemo z veliko črko poudarjeno, npr.: <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p></li>
 </ul>
 <section id="o-resitvi-sistema-linearnih-enacb">
-<h3>O rešitvi sistema linearnih enačb<a class="headerlink" href="#o-resitvi-sistema-linearnih-enacb" title="Permalink to this heading">#</a></h3>
+<h3>O rešitvi sistema linearnih enačb<a class="headerlink" href="#o-resitvi-sistema-linearnih-enacb" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
@@ -668,7 +679,7 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(2)
 </pre></div>
 </div>
 </div>
@@ -754,7 +765,7 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 </div>
 </section>
 <section id="norma-in-pogojenost-sistemov-enacb">
-<h3>Norma in pogojenost sistemov enačb<a class="headerlink" href="#norma-in-pogojenost-sistemov-enacb" title="Permalink to this heading">#</a></h3>
+<h3>Norma in pogojenost sistemov enačb<a class="headerlink" href="#norma-in-pogojenost-sistemov-enacb" title="Link to this heading">#</a></h3>
 <p>Numerična naloga je slabo pogojena, če majhna sprememba podatkov povzroči veliko spremembo rezultata. V primeru <em>majhne spremembe podatkov</em>, ki povzročijo <em>majhno spremembo rezultatov</em>, pa je naloga <strong>dobro pogojena</strong>.</p>
 <p>Sistem enačb je ponavadi dobro pogojen, če so absolutne vrednosti diagonalnih elementov matrike koeficientov velike v primerjavi z absolutnimi vrednostmi izven diagonalnih elementov.</p>
 <p>Za sistem linearnih enačb <span class="math notranslate nohighlight">\(\mathbf{A}\,\mathbf{x}=\mathbf{b}\)</span> lahko računamo <strong>število pogojenosti</strong> (<em>angl.</em> condition number):</p>
@@ -780,7 +791,7 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 <p>Če je število pogojenosti majhno, potem je matrika dobro pogojena in obratno - pri slabi pogojenosti se število pogojenosti zelo poveča.</p>
 <p>Žal je izračun pogojenosti matrike numerično relativno zahteven.</p>
 <section id="primer-slabo-pogojene-matrike">
-<h4>Primer slabo pogojene matrike<a class="headerlink" href="#primer-slabo-pogojene-matrike" title="Permalink to this heading">#</a></h4>
+<h4>Primer slabo pogojene matrike<a class="headerlink" href="#primer-slabo-pogojene-matrike" title="Link to this heading">#</a></h4>
 <p>Pogledali si bomo slabo pogojen sistem, kjer bomo z malenkostno spremembo na matriki koeficientov povzročili veliko spremembo rešitve.</p>
 <p>Matrika koeficientov:</p>
 <div class="cell docutils container">
@@ -792,7 +803,7 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>400002.00000320596
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(400002.0000028382)
 </pre></div>
 </div>
 </div>
@@ -851,7 +862,7 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-599999.9999960692
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(-599999.9999960692)
 </pre></div>
 </div>
 </div>
@@ -865,7 +876,7 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>600002.9999960692
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(600002.9999960692)
 </pre></div>
 </div>
 </div>
@@ -880,7 +891,7 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40002.000074915224
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(40002.00007491187)
 </pre></div>
 </div>
 </div>
@@ -906,7 +917,7 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[600002.9999960692, -599999.9999960692]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[np.float64(600002.9999960692), np.float64(-599999.9999960692)]
 </pre></div>
 </div>
 </div>
@@ -918,7 +929,7 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[600002.9999960692, -60000.00000000661]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[np.float64(600002.9999960692), np.float64(-60000.00000000661)]
 </pre></div>
 </div>
 </div>
@@ -927,14 +938,14 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 </section>
 </section>
 <section id="numericno-resevanje-sistemov-linearnih-enacb">
-<h3>Numerično reševanje sistemov linearnih enačb<a class="headerlink" href="#numericno-resevanje-sistemov-linearnih-enacb" title="Permalink to this heading">#</a></h3>
+<h3>Numerično reševanje sistemov linearnih enačb<a class="headerlink" href="#numericno-resevanje-sistemov-linearnih-enacb" title="Link to this heading">#</a></h3>
 <p>Pogledali si bomo dva, v principu različna pristopa k reševanju sistemov linearnih enačb:</p>
 <p>A) <strong>Direktni pristop</strong>: nad sistemom enačb izvajamo elementarne operacije, s katerimi predelamo sistem enačb v lažje rešljivega,</p>
 <p>B) <strong>Iterativni pristop</strong>: izberemo začetni približek, nato pa približek iterativno izboljšujemo.</p>
 </section>
 </section>
 <section id="gaussova-eliminacija">
-<h2>Gaussova eliminacija<a class="headerlink" href="#gaussova-eliminacija" title="Permalink to this heading">#</a></h2>
+<h2>Gaussova eliminacija<a class="headerlink" href="#gaussova-eliminacija" title="Link to this heading">#</a></h2>
 <p>Predpostavimo, da rešujemo sistem <span class="math notranslate nohighlight">\(n\)</span> enačb za <span class="math notranslate nohighlight">\(n\)</span> neznank, ki ima rang <span class="math notranslate nohighlight">\(n\)</span>. Tak sistem je enolično rešljiv.</p>
 <p>Gaussova eliminacija spada med direktne metode, saj s pomočjo elementarnih vrstičnih operacij sistem enačb prevedemo v zgornje poravnani trikotni sistem (pod glavno diagonalo v razširjeni matriki so vrednosti nič).</p>
 <p>Najprej pripravimo razširjeno matriko koeficientov:</p>
@@ -1125,7 +1136,7 @@ A_{n-1,0}&amp;A_{n-1,1}&amp;\cdots &amp; A_{n-1,n-1} &amp; b_{n-1}\\
 </div>
 </div>
 <section id="povzetek-gaussove-eliminacije">
-<h3>Povzetek Gaussove eliminacije<a class="headerlink" href="#povzetek-gaussove-eliminacije" title="Permalink to this heading">#</a></h3>
+<h3>Povzetek Gaussove eliminacije<a class="headerlink" href="#povzetek-gaussove-eliminacije" title="Link to this heading">#</a></h3>
 <p>V modul <code class="docutils literal notranslate"><span class="pre">orodja.py</span></code> shranimo funkciji:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1183,14 +1194,14 @@ A_{n-1,0}&amp;A_{n-1,1}&amp;\cdots &amp; A_{n-1,n-1} &amp; b_{n-1}\\
 </div>
 </section>
 <section id="numericna-zahtevnost">
-<h3>Numerična zahtevnost<a class="headerlink" href="#numericna-zahtevnost" title="Permalink to this heading">#</a></h3>
+<h3>Numerična zahtevnost<a class="headerlink" href="#numericna-zahtevnost" title="Link to this heading">#</a></h3>
 <p>Numerično zahtevnost ocenjujemo po številu matematičnih operacij, ki so potrebne za izračun.
 Za rešitev <span class="math notranslate nohighlight">\(n\)</span> linearnih enačb tako z Gaussovo eliminacijo potrebujemo približno <span class="math notranslate nohighlight">\(n^3/3\)</span> matematičnih operacij. Za določitev neznank <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> potrebujemo še dodatnih približno <span class="math notranslate nohighlight">\(n^2\)</span> operacij.</p>
 <p>Pri Gaussovi eliminaciji smo eliminacijo izvedli samo za člene pod diagonalo; če bi z eliminacijo nadaljevali in jo izvedli tudi za člene nad diagonalo, bi izvedli t. i. <em>Gauss-Jordanovo</em> eliminacijo, za katero pa potrebujemo dodatnih približno <span class="math notranslate nohighlight">\(n^3/3\)</span> operacij* (kar se šteje kot glavna slabost te metode).</p>
 <p>* Nekaj komentarjev na temo števila numeričnih operacij najdete tukaj: <a class="reference external" href="http://pinm.ladisk.si/303/kako-dolo%C4%8Damo-numeri%C4%8Dno-zahtevnost-algoritmov">pinm.ladisk.si</a>.</p>
 </section>
 <section id="uporaba-knjiznjice-numpy">
-<h3>Uporaba knjižnjice <code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#uporaba-knjiznjice-numpy" title="Permalink to this heading">#</a></h3>
+<h3>Uporaba knjižnjice <code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#uporaba-knjiznjice-numpy" title="Link to this heading">#</a></h3>
 <p>Reševanje sistema linearnih enačb z <code class="docutils literal notranslate"><span class="pre">numpy.linalg.solve</span></code> (<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.solve.html">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">solve</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
@@ -1211,7 +1222,7 @@ Za rešitev <span class="math notranslate nohighlight">\(n\)</span> linearnih en
 </section>
 </section>
 <section id="nekaj-vprasanj-za-razmislek">
-<h2>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this heading">#</a></h2>
+<h2>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>Za sistem enačb:</p>
 <div class="math notranslate nohighlight">
@@ -1248,7 +1259,7 @@ Določite sistem enačb v primeru dveh teles. Določite matriko koeficientov <sp
 </ol>
 </section>
 <section id="dodatno">
-<h2>Dodatno<a class="headerlink" href="#dodatno" title="Permalink to this heading">#</a></h2>
+<h2>Dodatno<a class="headerlink" href="#dodatno" title="Link to this heading">#</a></h2>
 <p>Poglejte si strani:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.micropython.org">micropython.org</a></p></li>
@@ -1256,7 +1267,7 @@ Določite sistem enačb v primeru dveh teles. Določite matriko koeficientov <sp
 <li><p><a class="reference external" href="http://www.openmodal.com">openmodal.com</a></p></li>
 </ul>
 <section id="primer-simbolnega-resevanja-sistema-linearnih-enacb-v-okviru-sympy">
-<h3>Primer simbolnega reševanja sistema linearnih enačb v okviru <code class="docutils literal notranslate"><span class="pre">sympy</span></code><a class="headerlink" href="#primer-simbolnega-resevanja-sistema-linearnih-enacb-v-okviru-sympy" title="Permalink to this heading">#</a></h3>
+<h3>Primer simbolnega reševanja sistema linearnih enačb v okviru <code class="docutils literal notranslate"><span class="pre">sympy</span></code><a class="headerlink" href="#primer-simbolnega-resevanja-sistema-linearnih-enacb-v-okviru-sympy" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -1344,7 +1355,7 @@ Določite sistem enačb v primeru dveh teles. Določite matriko koeficientov <sp
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1373,6 +1384,7 @@ Določite sistem enačb v primeru dveh teles. Določite matriko koeficientov <sp
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1429,7 +1441,7 @@ Avtor Janko Slavič
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1453,8 +1465,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,20 +1,20 @@
 Traceback (most recent call last):
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python311\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
     executenb(
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python311\Lib\site-packages\nbclient\client.py", line 1305, in execute
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1314, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python311\Lib\site-packages\jupyter_core\utils\__init__.py", line 168, in wrapped
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 687, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python311\Lib\site-packages\nbclient\client.py", line 705, in async_execute
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python311\Lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python311\Lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -29,12 +29,12 @@ Cell [1;32mIn[4], line 1[0m
 [1;32m----> 1[0m ani_LU, LU [38;5;241m=[39m [43mgauss_visualize[49m[43m([49m[43mA[49m[43m,[49m[43m [49m[43mb[49m[43m,[49m[43m [49m[43mLU[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m[43m [49m[43msavepath[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43m../fig/gauss_eliminacija_lu.gif[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mfps[49m[38;5;241;43m=[39;49m[38;5;241;43m0.25[39;49m[43m,[49m[43m [49m[43mfloat_precision[49m[38;5;241;43m=[39;49m[38;5;241;43m3[39;49m[43m)[49m
 [0;32m      2[0m plt[38;5;241m.[39mshow()
 
-File [1;32mc:\_j\Work Janko\Pedagosko delo\_predavanja\Programiranje in numericne metode\pynm\notebooks\moduli\gauss_prikaz.py:80[0m, in [0;36mgauss_visualize[1;34m(A, b, LU, cmap, float_precision, savepath, fps)[0m
+File [1;32mC:\_j\Work Janko\Pedagosko delo\_predavanja\Programiranje in numericne metode\pynm\notebooks\moduli\gauss_prikaz.py:80[0m, in [0;36mgauss_visualize[1;34m(A, b, LU, cmap, float_precision, savepath, fps)[0m
 [0;32m     77[0m [38;5;28;01melse[39;00m:
 [0;32m     78[0m     mat_steps[38;5;241m.[39mappend(mat_steps[[38;5;241m-[39m[38;5;241m1[39m])
 [1;32m---> 80[0m [38;5;28;01mreturn[39;00m [43mvisualize[49m[43m([49m[43mcolor_steps[49m[43m,[49m[43m [49m[43mmat_steps[49m[43m,[49m[43m [49m[43mcmap[49m[43m,[49m[43m [49m[43mfloat_precision[49m[43m,[49m[43m [49m[43msavepath[49m[43m,[49m[43m [49m[43mfps[49m[43m,[49m[43m [49m[43mLU[49m[43m)[49m, mat_steps[[38;5;241m-[39m[38;5;241m1[39m]
 
-File [1;32mc:\_j\Work Janko\Pedagosko delo\_predavanja\Programiranje in numericne metode\pynm\notebooks\moduli\gauss_prikaz.py:191[0m, in [0;36mvisualize[1;34m(colors, values, cmap, f_precision, savepath, fps, LU)[0m
+File [1;32mC:\_j\Work Janko\Pedagosko delo\_predavanja\Programiranje in numericne metode\pynm\notebooks\moduli\gauss_prikaz.py:191[0m, in [0;36mvisualize[1;34m(colors, values, cmap, f_precision, savepath, fps, LU)[0m
 [0;32m    188[0m ani [38;5;241m=[39m animation[38;5;241m.[39mFuncAnimation(fig, animate, np[38;5;241m.[39marange([38;5;241m1[39m, [38;5;28mlen[39m(colors)),
 [0;32m    189[0m                         interval[38;5;241m=[39m[38;5;241m1000[39m[38;5;241m/[39mfps, blit[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
 [0;32m    190[0m [38;5;28;01mif[39;00m savepath:

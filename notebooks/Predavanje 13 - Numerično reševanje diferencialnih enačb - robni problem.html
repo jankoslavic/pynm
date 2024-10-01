@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="sl" data-content_root="" >
+<html lang="sl" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Numerično reševanje diferencialnih enačb - robni problem &#8212; Numerične metode v ekosistemu Pythona</title>
   
@@ -15,54 +14,50 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=a3a20203"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/translations.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=852ec8ec"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Predavanje 13 - Numerično reševanje diferencialnih enačb - robni problem';</script>
@@ -79,28 +74,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -122,12 +112,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -143,6 +141,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="../README.html">
@@ -161,18 +161,29 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Išči</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../README.html">
-                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2023/24
+                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2024/25
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2023/24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2024/25</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
@@ -205,7 +216,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -214,14 +225,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -346,10 +357,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -357,14 +368,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -412,12 +423,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numericno-resevanje-diferencialnih-enacb-robni-problem">
-<h1>Numerično reševanje diferencialnih enačb - robni problem<a class="headerlink" href="#numericno-resevanje-diferencialnih-enacb-robni-problem" title="Permalink to this heading">#</a></h1>
+<h1>Numerično reševanje diferencialnih enačb - robni problem<a class="headerlink" href="#numericno-resevanje-diferencialnih-enacb-robni-problem" title="Link to this heading">#</a></h1>
 <section id="resevanje-dvotockovnih-robnih-problemov">
-<h2>Reševanje dvotočkovnih robnih problemov<a class="headerlink" href="#resevanje-dvotockovnih-robnih-problemov" title="Permalink to this heading">#</a></h2>
+<h2>Reševanje dvotočkovnih robnih problemov<a class="headerlink" href="#resevanje-dvotockovnih-robnih-problemov" title="Link to this heading">#</a></h2>
 <p>Pod dvotočkovnim robnim problemom razumemo navadno diferencialno enačbo drugega reda oblike:</p>
 <div class="math notranslate nohighlight">
 \[\ddot y=f(t, y, \dot y),\]</div>
@@ -432,7 +443,7 @@ document.write(`
 </ol>
 </section>
 <section id="strelska-metoda">
-<h2>Strelska metoda<a class="headerlink" href="#strelska-metoda" title="Permalink to this heading">#</a></h2>
+<h2>Strelska metoda<a class="headerlink" href="#strelska-metoda" title="Link to this heading">#</a></h2>
 <p>Rešujemo robni problem:</p>
 <div class="math notranslate nohighlight">
 \[\ddot y=f(t, y, \dot y),\qquad y(a)=\alpha,\quad y(b)=\beta,\]</div>
@@ -452,7 +463,7 @@ document.write(`
 \[\left|r(u_{i+1})\right|&lt;\epsilon.\]</div>
 <p>Rešitev strelske metode je obremenjena z napako metode reševanja nelinearne enačbe <span class="math notranslate nohighlight">\(\epsilon\)</span> in z napako numerične metode za reševanje začetnega problema.</p>
 <section id="numericni-zgled-posevni-met">
-<h3>Numerični zgled: poševni met<a class="headerlink" href="#numericni-zgled-posevni-met" title="Permalink to this heading">#</a></h3>
+<h3>Numerični zgled: poševni met<a class="headerlink" href="#numericni-zgled-posevni-met" title="Link to this heading">#</a></h3>
 <p>Na sliki je prikazan izstrelek mase <span class="math notranslate nohighlight">\(m\)</span>, ki ga izstrelimo s hitrostjo <span class="math notranslate nohighlight">\(\textbf{v}_0\)</span>.
 <img alt="Poševni met" src="../_images/posevni_met.png" /></p>
 <p>Velikost sile upora zraka je <span class="math notranslate nohighlight">\(|\textbf{F}|=c\,|\textbf{v}|^2\)</span>, potem sta gibalni enačbi:</p>
@@ -462,7 +473,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[F_x=-c\,x'\,\sqrt{x'^2+y'^2},\qquad F_y=-c\,y'\,\sqrt{x'^2+y'^2}.\]</div>
 <section id="vertikalni-met">
-<h4>Vertikalni met<a class="headerlink" href="#vertikalni-met" title="Permalink to this heading">#</a></h4>
+<h4>Vertikalni met<a class="headerlink" href="#vertikalni-met" title="Link to this heading">#</a></h4>
 <p>Najprej predpostavimo, da je <span class="math notranslate nohighlight">\(\varphi=90\)</span>° in torej v <span class="math notranslate nohighlight">\(x\)</span> smeri nimamo gibanja. Zanima nas rešitev, ko izstrelek izstrelimo iz višine <span class="math notranslate nohighlight">\(y=0\,\)</span>m in mora pri času <span class="math notranslate nohighlight">\(t=b=1\,\)</span>s biti na višini <span class="math notranslate nohighlight">\(y(b)=10\,\)</span>m. Definirali smo robni problem:</p>
 <div class="math notranslate nohighlight">
 \[y''(t)=F_y\,/m-g,\qquad y(0)=0,\quad y(1)=10.\]</div>
@@ -518,7 +529,7 @@ y'_1&amp;=&amp;-c\,y'\,\sqrt{y'^2}/m-g
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.634550939997352
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(5.63455093999735)
 </pre></div>
 </div>
 </div>
@@ -554,14 +565,14 @@ y'_1&amp;=&amp;-c\,y'\,\sqrt{y'^2}/m-g
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Novi približek je 5.644178759347213, napaka je -9.67253633180436.
-Novi približek je 33.67258709458855, napaka je 2.218701772528018.
-Novi približek je 28.442965190719487, napaka je 0.8225839451367207.
-Novi približek je 25.361704474139344, napaka je -0.10153714557799809.
-Novi približek je 25.700255797214545, napaka je 0.004276366407140131.
-Novi približek je 25.6865735228251, napaka je 2.1630891907875593e-05.
-Novi približek je 25.686503962732044, napaka je -4.623817773108385e-09.
-Rešitev 25.686503962732044
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Novi približek je 5.644178759347113, napaka je -9.672536331804414.
+Novi približek je 33.67258709458857, napaka je 2.2187017725280302.
+Novi približek je 28.442965190719487, napaka je 0.8225839451367332.
+Novi približek je 25.361704474139284, napaka je -0.10153714557803362.
+Novi približek je 25.70025579721459, napaka je 0.004276366407131249.
+Novi približek je 25.686573522825174, napaka je 2.16308919487318e-05.
+Novi približek je 25.686503962731987, napaka je -4.623860405672531e-09.
+Rešitev 25.686503962731987
 </pre></div>
 </div>
 </div>
@@ -604,12 +615,12 @@ Rešitev 25.686503962732044
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9ad8fe30c27c5b1be41200a144e96cf7beea67f013fe9ca9e2ee52f6c0a44f3c.png" src="../_images/9ad8fe30c27c5b1be41200a144e96cf7beea67f013fe9ca9e2ee52f6c0a44f3c.png" />
+<img alt="../_images/398e8de11c6678e21a94b43bc57853314cb7a243f5d5a9c6773c373c43df32bc.png" src="../_images/398e8de11c6678e21a94b43bc57853314cb7a243f5d5a9c6773c373c43df32bc.png" />
 </div>
 </div>
 </section>
 <section id="posevni-met">
-<h4>Poševni met<a class="headerlink" href="#posevni-met" title="Permalink to this heading">#</a></h4>
+<h4>Poševni met<a class="headerlink" href="#posevni-met" title="Link to this heading">#</a></h4>
 <p>Poglejmo si sedaj splošen poševni met (diferencialne enačbe so definirana že zgoraj). Najprej moramo sistem diferencialnih enačb drugega reda preoblikovati v sistem enačb prvega reda.</p>
 <p>Uporabimo:</p>
 <div class="math notranslate nohighlight">
@@ -692,9 +703,10 @@ y_3'&amp;=&amp;F_y/m-g.\\
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> message: The solution converged.
  success: True
   status: 1
-     fun: [ 1.101e-13 -3.357e-13]
+     fun: [ 1.013e-13 -3.446e-13]
        x: [ 1.938e+01  1.655e+01]
-    nfev: 17
+  method: hybr
+    nfev: 19
     fjac: [[-9.339e-01  3.575e-01]
            [-3.575e-01 -9.339e-01]]
        r: [-4.078e-01  2.409e-01 -3.754e-01]
@@ -711,7 +723,7 @@ y_3'&amp;=&amp;F_y/m-g.\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.10134124e-13, -3.35731443e-13])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.01252340e-13, -3.44613227e-13])
 </pre></div>
 </div>
 </div>
@@ -742,13 +754,13 @@ y_3'&amp;=&amp;F_y/m-g.\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2c9e52dd65e75405e4e2a1da83d7e19bac8c9cf5d06dbd77e51514ad294086a0.png" src="../_images/2c9e52dd65e75405e4e2a1da83d7e19bac8c9cf5d06dbd77e51514ad294086a0.png" />
+<img alt="../_images/65dedc7a9df5da5db5da744c75d002f07faabf4f8bfc216da7bec5dd054f893e.png" src="../_images/65dedc7a9df5da5db5da744c75d002f07faabf4f8bfc216da7bec5dd054f893e.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="uporaba-scipy-integrate-solve-bvp">
-<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.integrate.solve_bvp</span></code><a class="headerlink" href="#uporaba-scipy-integrate-solve-bvp" title="Permalink to this heading">#</a></h3>
+<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.integrate.solve_bvp</span></code><a class="headerlink" href="#uporaba-scipy-integrate-solve-bvp" title="Link to this heading">#</a></h3>
 <p>Namesto <code class="docutils literal notranslate"><span class="pre">scipy.integrate.solve_ivp</span></code> in <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code> lahko uporabimo vgrajeno funkcijo za reševanje robnih problemov <code class="docutils literal notranslate"><span class="pre">scipy.integrate.solve_bvp</span></code> (BVP - <em>angl.</em> Boundary Value Problem):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scipy</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">solve_bvp</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> 
                           <span class="n">p</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">S</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fun_jac</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bc_jac</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
@@ -840,12 +852,12 @@ y_3'&amp;=&amp;F_y/m-g.\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/37ca0ca0236c65ac0c3fb3dc101bf8281920993748b68a8680683617ebd3885f.png" src="../_images/37ca0ca0236c65ac0c3fb3dc101bf8281920993748b68a8680683617ebd3885f.png" />
+<img alt="../_images/836a0013276a7a34c71e965648baa86a1ba53cd2ae95a72e1c934ef3756a751f.png" src="../_images/836a0013276a7a34c71e965648baa86a1ba53cd2ae95a72e1c934ef3756a751f.png" />
 </div>
 </div>
 </section>
 <section id="numericni-zgled-nosilec-z-obremenitvijo">
-<h3>Numerični zgled: nosilec z obremenitvijo<a class="headerlink" href="#numericni-zgled-nosilec-z-obremenitvijo" title="Permalink to this heading">#</a></h3>
+<h3>Numerični zgled: nosilec z obremenitvijo<a class="headerlink" href="#numericni-zgled-nosilec-z-obremenitvijo" title="Link to this heading">#</a></h3>
 <p>Poglejmo si nosilec:
 <img alt="Nosilec" src="../_images/nosilec.png" /></p>
 <p>Poves <span class="math notranslate nohighlight">\(w(x)\)</span> nosilca popiše diferencialna enačba četrtega reda:</p>
@@ -912,7 +924,7 @@ y_3'&amp;=&amp;q(x)/(EI).\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b6ca5846cb31a16e0b1ea5ec5f153b1832498c50da008ebad37afd737f77e7bb.png" src="../_images/b6ca5846cb31a16e0b1ea5ec5f153b1832498c50da008ebad37afd737f77e7bb.png" />
+<img alt="../_images/e6d855e8749c8da44442e58d224e4f1771bde605389459c60fba03e40488c18f.png" src="../_images/e6d855e8749c8da44442e58d224e4f1771bde605389459c60fba03e40488c18f.png" />
 </div>
 </div>
 <p>Pripravimo seznam funkcij desne strani:</p>
@@ -971,7 +983,7 @@ y_3'&amp;=&amp;q(x)/(EI).\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9fd26243d50bdc92aee0e3b88c77ca60a9ad5eb6c9d9b07be088076194be6ec5.png" src="../_images/9fd26243d50bdc92aee0e3b88c77ca60a9ad5eb6c9d9b07be088076194be6ec5.png" />
+<img alt="../_images/565aad1b3504911a63336cae9dcde9c720b61d9d847b9c88dec83c9ffaf19d9a.png" src="../_images/565aad1b3504911a63336cae9dcde9c720b61d9d847b9c88dec83c9ffaf19d9a.png" />
 </div>
 </div>
 <p>In primerjavo povesa za različne tipe obremenitve:</p>
@@ -987,13 +999,13 @@ y_3'&amp;=&amp;q(x)/(EI).\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fa57a9ea5ca84848470db530c99b61ecf5d1980322279aef97354a0901c1033e.png" src="../_images/fa57a9ea5ca84848470db530c99b61ecf5d1980322279aef97354a0901c1033e.png" />
+<img alt="../_images/a695ed907071d12a229cf5d8b43cafa98f3d06af5539f5fde5e0c2c19a299562.png" src="../_images/a695ed907071d12a229cf5d8b43cafa98f3d06af5539f5fde5e0c2c19a299562.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="metoda-koncnih-razlik">
-<h2>Metoda končnih razlik<a class="headerlink" href="#metoda-koncnih-razlik" title="Permalink to this heading">#</a></h2>
+<h2>Metoda končnih razlik<a class="headerlink" href="#metoda-koncnih-razlik" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
@@ -1023,7 +1035,7 @@ y_3'&amp;=&amp;q(x)/(EI).\\
 <div class="math notranslate nohighlight">
 \[t=[t_0, t_1,\dots, t_{n-1}].\]</div>
 <p>Odvode nadomestimo s centralno diferenčno shemo:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Odvod<span class="math notranslate nohighlight">\(\downarrow\)</span> <span class="math notranslate nohighlight">\(\backslash\)</span> Vrednosti <span class="math notranslate nohighlight">\(\rightarrow\)</span></p></th>
 <th class="head text-center"><p><span class="math notranslate nohighlight">\(y_{i-2}\)</span></p></th>
@@ -1064,6 +1076,7 @@ y_3'&amp;=&amp;q(x)/(EI).\\
 </tr>
 </tbody>
 </table>
+</div>
 <p>Prikazana centralna diferenčna shema ima napako drugega reda <span class="math notranslate nohighlight">\(\mathcal{O}(h^{2})\)</span>.</p>
 <p>V <span class="math notranslate nohighlight">\(i\)</span>-ti točki navadno differencialno enačbo drugega reda s centralimi diferencami zapišemo:</p>
 <div class="math notranslate nohighlight">
@@ -1078,7 +1091,7 @@ y_3'&amp;=&amp;q(x)/(EI).\\
 \[y_0=\alpha,\quad y_{n-1}=\beta.\]</div>
 <p>V primeru linearnega robnega problema moramo za izračun <span class="math notranslate nohighlight">\(n\)</span> neznank <span class="math notranslate nohighlight">\(y_i\)</span> rešiti sistem <span class="math notranslate nohighlight">\(n\)</span> linearnih enačb (če je pa nelinearen, pa sistem nelinearnih enačb).</p>
 <section id="ocena-napake">
-<h3>Ocena napake<a class="headerlink" href="#ocena-napake" title="Permalink to this heading">#</a></h3>
+<h3>Ocena napake<a class="headerlink" href="#ocena-napake" title="Link to this heading">#</a></h3>
 <p>Točen rezultat <span class="math notranslate nohighlight">\(y(t_{i})\)</span> pri velikosti koraka <span class="math notranslate nohighlight">\(h\)</span> je:</p>
 <div class="math notranslate nohighlight">
 \[y(t_{i})=y_{i,h}+E_{i,h},\]</div>
@@ -1102,7 +1115,7 @@ y_3'&amp;=&amp;q(x)/(EI).\\
 \[E_{j,h}=\frac{y_{2j,h}-y_{j,2h}}{3}.\]</div>
 </section>
 <section id="numericni-zgled-vertikalni-met">
-<h3>Numerični zgled: vertikalni met<a class="headerlink" href="#numericni-zgled-vertikalni-met" title="Permalink to this heading">#</a></h3>
+<h3>Numerični zgled: vertikalni met<a class="headerlink" href="#numericni-zgled-vertikalni-met" title="Link to this heading">#</a></h3>
 <p>Zgoraj smo vertikalni met rešili s strelsko metodo; uporabimo sedaj metodo končnih razlik. Najprej robni problem:
 $<span class="math notranslate nohighlight">\(y''(t)=F_y/m-g,\qquad y(0)=0,\quad y(1)=10.\)</span><span class="math notranslate nohighlight">\(
 zapisati s pomočjo centralne diferenčne sheme (\)</span>F_y=-c,y‘$):</p>
@@ -1207,7 +1220,13 @@ zapisati s pomočjo centralne diferenčne sheme (\)</span>F_y=-c,y‘$):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/344b6092739b440069bb7b8c6d716082b991edf7b6973f8ba3812fe256946712.png" src="../_images/344b6092739b440069bb7b8c6d716082b991edf7b6973f8ba3812fe256946712.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+&lt;&gt;:1: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_20416\1662001320.py:1: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  plt.title(&#39;Vertikalni met (upor zraka: $-c\,\dot y$)&#39;)
+</pre></div>
+</div>
+<img alt="../_images/d0c3b9a9fa2a6c1569280a1a544bf678db70e6ce347b8ff0ba5e456c15ff97e5.png" src="../_images/d0c3b9a9fa2a6c1569280a1a544bf678db70e6ce347b8ff0ba5e456c15ff97e5.png" />
 </div>
 </div>
 <p>S pomočjo funkcije <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.gradient.html"><code class="docutils literal notranslate"><span class="pre">numpy.gradient()</span></code></a> izračunamo še hitrost in pospešek:</p>
@@ -1268,8 +1287,8 @@ zapisati s pomočjo centralne diferenčne sheme (\)</span>F_y=-c,y‘$):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4.55476113e-16, 3.24001809e+00, 5.79815462e+00, 7.73931207e+00,
-       9.12221538e+00, 1.00000000e+01])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        ,  3.24001809,  5.79815462,  7.73931207,  9.12221538,
+       10.        ])
 </pre></div>
 </div>
 </div>
@@ -1282,15 +1301,15 @@ zapisati s pomočjo centralne diferenčne sheme (\)</span>F_y=-c,y‘$):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.51825371e-16, 2.78057188e-01, 3.99842419e-01, 3.83525367e-01,
-       2.45385533e-01, 0.00000000e+00])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.27805719, 0.39984242, 0.38352537, 0.24538553,
+       0.        ])
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="id1">
-<h3>Numerični zgled: nosilec z obremenitvijo<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Numerični zgled: nosilec z obremenitvijo<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Vrnimo se k robnemu problemu nosilca s polsinusno obremenitvijo (<span class="math notranslate nohighlight">\(q(x)=-F_0\,\sin(\pi\,x/l))\)</span>), ki smo ga že obravnavali s strelsko metodo.</p>
 <p>Diferencialno enačbo četrtega reda zapišemo s pomočjo centralne diferenčne sheme (za <span class="math notranslate nohighlight">\(i\)</span>-to točko):</p>
 <div class="math notranslate nohighlight">
@@ -1456,13 +1475,13 @@ robnim pogojem.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/74eed916b798d1cab54e6a444691d6cb2f486ac0d9af2dfa8b8c8f30246d9e81.png" src="../_images/74eed916b798d1cab54e6a444691d6cb2f486ac0d9af2dfa8b8c8f30246d9e81.png" />
+<img alt="../_images/63171c24cf179d46eedbd4ff1299aa1e92281a7113fdbd9f4815c0af4f1b96d5.png" src="../_images/63171c24cf179d46eedbd4ff1299aa1e92281a7113fdbd9f4815c0af4f1b96d5.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="dodatno-simbolna-resitev-nosilca">
-<h2>Dodatno: simbolna rešitev nosilca<a class="headerlink" href="#dodatno-simbolna-resitev-nosilca" title="Permalink to this heading">#</a></h2>
+<h2>Dodatno: simbolna rešitev nosilca<a class="headerlink" href="#dodatno-simbolna-resitev-nosilca" title="Link to this heading">#</a></h2>
 <p>Tukaj si bomo pogledali simbolno reševanje robnega problema. Poudariti je treba, da gre tukaj zgolj za zgled, ki ga lahko naredimo za obravnavani nosilec z relativno enostavno polsinusno obremenitvijo. <strong>V praksi so seveda obremenitve in tudi oblike nosilca lahko bistveno bolj zahtevne in takrat druge poti kot numeričnega reševanja skoraj nimamo na voljo.</strong></p>
 <p>Najprej uvozimo <code class="docutils literal notranslate"><span class="pre">sympy</span></code>:</p>
 <div class="cell docutils container">
@@ -1534,7 +1553,7 @@ robnim pogojem.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8c98983908efd73fc9eb4530cb73083ecebb9343e47480ed8582e6043b85749b.png" src="../_images/8c98983908efd73fc9eb4530cb73083ecebb9343e47480ed8582e6043b85749b.png" />
+<img alt="../_images/0778a9dfe64cd4e944a510b2876e29459f70478c0af164013323ec393fc02b77.png" src="../_images/0778a9dfe64cd4e944a510b2876e29459f70478c0af164013323ec393fc02b77.png" />
 </div>
 </div>
 <p>Primerjajmo sedaj analitično rešitev, z rešitivijo z metodo končnih razlik in strelsko metodo:</p>
@@ -1545,7 +1564,7 @@ robnim pogojem.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3d5a9e736a7ba23c87dc1df6c5dd1b2709e748c282b29a25c42e78c08150e012.png" src="../_images/3d5a9e736a7ba23c87dc1df6c5dd1b2709e748c282b29a25c42e78c08150e012.png" />
+<img alt="../_images/d41e171228aae7d2de8ed8154cf4822f13b62b9cb322adab7fcb3ff4a505a92e.png" src="../_images/d41e171228aae7d2de8ed8154cf4822f13b62b9cb322adab7fcb3ff4a505a92e.png" />
 </div>
 </div>
 </section>
@@ -1578,7 +1597,7 @@ robnim pogojem.</p>
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1607,6 +1626,7 @@ robnim pogojem.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1656,7 +1676,7 @@ Avtor Janko Slavič
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1680,8 +1700,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

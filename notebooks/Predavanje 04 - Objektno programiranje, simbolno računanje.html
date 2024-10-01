@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="sl" data-content_root="" >
+<html lang="sl" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Objektno programiranje, simbolno računanje &#8212; Numerične metode v ekosistemu Pythona</title>
   
@@ -15,54 +14,50 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=a3a20203"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/translations.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=852ec8ec"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Predavanje 04 - Objektno programiranje, simbolno računanje';</script>
@@ -79,28 +74,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -122,12 +112,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -143,6 +141,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="../README.html">
@@ -161,18 +161,29 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Išči</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../README.html">
-                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2023/24
+                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2024/25
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2023/24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2024/25</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
@@ -205,7 +216,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -214,14 +225,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -346,10 +357,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -357,14 +368,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -445,12 +456,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="objektno-programiranje-simbolno-racunanje">
-<h1>Objektno programiranje, simbolno računanje<a class="headerlink" href="#objektno-programiranje-simbolno-racunanje" title="Permalink to this heading">#</a></h1>
+<h1>Objektno programiranje, simbolno računanje<a class="headerlink" href="#objektno-programiranje-simbolno-racunanje" title="Link to this heading">#</a></h1>
 <section id="objektno-programiranje">
-<h2>Objektno programiranje<a class="headerlink" href="#objektno-programiranje" title="Permalink to this heading">#</a></h2>
+<h2>Objektno programiranje<a class="headerlink" href="#objektno-programiranje" title="Link to this heading">#</a></h2>
 <p>Pri programiranju poznamo različne pristope, dokumentacija Python-a (<a class="reference external" href="https://docs.python.org/howto/functional.html">docs.python.org</a>) omenja npr:</p>
 <ol class="arabic simple">
 <li><p><strong>proceduralni</strong>: seznam navodil, kaj je treba izvesti (npr.: <code class="docutils literal notranslate"><span class="pre">C,</span> <span class="pre">Pascal</span></code>)</p></li>
@@ -570,7 +581,7 @@ document.write(`
 </div>
 </div>
 <section id="dedovanje">
-<h3>Dedovanje<a class="headerlink" href="#dedovanje" title="Permalink to this heading">#</a></h3>
+<h3>Dedovanje<a class="headerlink" href="#dedovanje" title="Link to this heading">#</a></h3>
 <p>Pomembna lastnost razredov je dedovanje; samo ime pove bistvo: tako kot ljudje dedujemo od svojih staršev, podobno velja tudi za razrede.  Vsak razred (<code class="docutils literal notranslate"><span class="pre">class</span></code>) tako lahko deduje lastnosti kakega drugega razreda (<a class="reference external" href="https://docs.python.org/tutorial/classes.html#inheritance">dokumentacija</a>). Lahko ima celo več staršev (v te podrobnosti tukaj ne bomo šli).</p>
 <p>Sintaksa razreda, ki deduje, je:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Otrok</span><span class="p">(</span><span class="n">Starš</span><span class="p">):</span>
@@ -633,7 +644,7 @@ document.write(`
 </div>
 </div>
 <section id="primer-dedovanja-razreda-list-seznam">
-<h4>Primer dedovanja razreda <code class="docutils literal notranslate"><span class="pre">list</span></code> (seznam)<a class="headerlink" href="#primer-dedovanja-razreda-list-seznam" title="Permalink to this heading">#</a></h4>
+<h4>Primer dedovanja razreda <code class="docutils literal notranslate"><span class="pre">list</span></code> (seznam)<a class="headerlink" href="#primer-dedovanja-razreda-list-seznam" title="Link to this heading">#</a></h4>
 <p>Najprej pripravimo seznam:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -666,7 +677,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/040ea4d694aa331eefee111e6da7bee796cc81b9f9849947d3e64e7dae22dbca.png" src="../_images/040ea4d694aa331eefee111e6da7bee796cc81b9f9849947d3e64e7dae22dbca.png" />
+<img alt="../_images/9aa465499a8dec5394f8bcb2ad09f5e16ce1f6fa116bdaba0436475fafe2ab57.png" src="../_images/9aa465499a8dec5394f8bcb2ad09f5e16ce1f6fa116bdaba0436475fafe2ab57.png" />
 </div>
 </div>
 <p>Če nekaj takega izvajamo pogosto, potem je bolje, da si pripravimo svoj razred <code class="docutils literal notranslate"><span class="pre">Seznam</span></code>, ki deduje od <code class="docutils literal notranslate"><span class="pre">list</span></code> in dodamo metodo za prikaz <code class="docutils literal notranslate"><span class="pre">nariši</span></code>:</p>
@@ -731,14 +742,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6c57f61dd5b4edbbedbb3da1cae3ca05f9e57a10b19ef81277f1282a9f50a13a.png" src="../_images/6c57f61dd5b4edbbedbb3da1cae3ca05f9e57a10b19ef81277f1282a9f50a13a.png" />
+<img alt="../_images/8e21bd2eada211d0373dee2b9cce77daa7cddb1e25815ece589fba8d5c651dcd.png" src="../_images/8e21bd2eada211d0373dee2b9cce77daa7cddb1e25815ece589fba8d5c651dcd.png" />
 </div>
 </div>
 </section>
 </section>
 </section>
 <section id="simbolno-racunanje-s-sympy">
-<h2>Simbolno računanje s <code class="docutils literal notranslate"><span class="pre">SymPy</span></code><a class="headerlink" href="#simbolno-racunanje-s-sympy" title="Permalink to this heading">#</a></h2>
+<h2>Simbolno računanje s <code class="docutils literal notranslate"><span class="pre">SymPy</span></code><a class="headerlink" href="#simbolno-racunanje-s-sympy" title="Link to this heading">#</a></h2>
 <p>Termin <strong>simbolno računanje</strong> pomeni, da matematične izraze rešujemo strojno v obliki abstraktnih simbolov (in <strong>ne numerično</strong>). Strojno simbolno računanje nam pomaga kadar nas zanima <strong>rezultat v simbolni obliki</strong> in so izrazi preobsežni za klasično reševanje na list in papir. K strojnemu reševanju se zatečemo tudi zaradi zmanjšanja možnosti napake (pri obsežnih izračunih se ljudje lahko zmotimo).</p>
 <p><strong>Simbolno računanje nikakor ni nadomestek numeričnih metod!</strong></p>
 <p>Pogledali si bomo nekatere osnove, nekateri priporočeni dodatni viri pa so:</p>
@@ -771,7 +782,7 @@ document.write(`
 </div>
 </div>
 <section id="definiranje-spremenljivk-in-numericni-izracun">
-<h3>Definiranje spremenljivk in numerični izračun<a class="headerlink" href="#definiranje-spremenljivk-in-numericni-izracun" title="Permalink to this heading">#</a></h3>
+<h3>Definiranje spremenljivk in numerični izračun<a class="headerlink" href="#definiranje-spremenljivk-in-numericni-izracun" title="Link to this heading">#</a></h3>
 <p>Spremenljivke definiramo takole:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -802,7 +813,112 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0a58b752f319b2638f2e0923cdaee2e59539ac0ed3fd94aa16a3177f6de716f0.png" src="../_images/0a58b752f319b2638f2e0923cdaee2e59539ac0ed3fd94aa16a3177f6de716f0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span><span class="o">**</span><span class="n">y</span> <span class="o">+</span> <span class="n">k</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\IPython\core\displayhook.py:268,</span> in <span class="ni">DisplayHook.__call__</span><span class="nt">(self, result)</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_displayhook</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span> <span class="bp">self</span><span class="o">.</span><span class="n">write_output_prompt</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">268</span> <span class="n">format_dict</span><span class="p">,</span> <span class="n">md_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_format_data</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_user_ns</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span> <span class="bp">self</span><span class="o">.</span><span class="n">fill_exec_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\IPython\core\displayhook.py:157,</span> in <span class="ni">DisplayHook.compute_format_data</span><span class="nt">(self, result)</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span> <span class="k">def</span> <span class="nf">compute_format_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Compute format data of the object to be displayed.</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span><span class="sd">     The format data is a generalization of the :func:`repr` of an object.</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">155</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">157</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">display_formatter</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\IPython\core\formatters.py:182,</span> in <span class="ni">DisplayFormatter.format</span><span class="nt">(self, obj, include, exclude)</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span> <span class="n">md</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">182</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">formatter</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span> <span class="k">except</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span>     <span class="c1"># FIXME: log the exception</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="k">raise</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\decorator.py:232,</span> in <span class="ni">decorate.&lt;locals&gt;.fun</span><span class="nt">(*args, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">kwsyntax</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span>     <span class="n">args</span><span class="p">,</span> <span class="n">kw</span> <span class="o">=</span> <span class="n">fix</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kw</span><span class="p">,</span> <span class="n">sig</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">232</span> <span class="k">return</span> <span class="n">caller</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">extras</span> <span class="o">+</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\IPython\core\formatters.py:226,</span> in <span class="ni">catch_format_error</span><span class="nt">(method, self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">224</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;show traceback on failed format call&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">226</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span> <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span>     <span class="c1"># don&#39;t warn on NotImplementedErrors</span>
+<span class="g g-Whitespace">    </span><span class="mi">229</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_return</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\IPython\core\formatters.py:347,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">346</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">347</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">348</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">349</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sympy\interactive\printing.py:178,</span> in <span class="ni">_init_ipython_printing.&lt;locals&gt;._print_latex_png</span><span class="nt">(o)</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span>     <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">displaystyle </span><span class="si">%s</span><span class="s1">$&#39;</span> <span class="o">%</span> <span class="n">s</span>
+<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">178</span>     <span class="k">return</span> <span class="n">_preview_wrapper</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span> <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="n">debug</span><span class="p">(</span><span class="s1">&#39;preview failed with:&#39;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span>           <span class="s1">&#39; Falling back to matplotlib backend&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sympy\interactive\printing.py:89,</span> in <span class="ni">_init_ipython_printing.&lt;locals&gt;._preview_wrapper</span><span class="nt">(o)</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span> <span class="n">exprbuffer</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">89</span>     <span class="n">preview</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="n">viewer</span><span class="o">=</span><span class="s1">&#39;BytesIO&#39;</span><span class="p">,</span> <span class="n">euler</span><span class="o">=</span><span class="n">euler</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span>             <span class="n">outputbuffer</span><span class="o">=</span><span class="n">exprbuffer</span><span class="p">,</span> <span class="n">extra_preamble</span><span class="o">=</span><span class="n">extra_preamble</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span>             <span class="n">dvioptions</span><span class="o">=</span><span class="n">dvioptions</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">92</span> <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span>     <span class="c1"># IPython swallows exceptions</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">debug</span><span class="p">(</span><span class="s2">&quot;png printing:&quot;</span><span class="p">,</span> <span class="s2">&quot;_preview_wrapper exception raised:&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span>           <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sympy\printing\preview.py:369,</span> in <span class="ni">preview</span><span class="nt">(expr, output, viewer, euler, packages, filename, outputbuffer, preamble, dvioptions, outputTexFile, extra_preamble, fontsize, **latex_settings)</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span> <span class="n">cmd</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">commandend</span><span class="p">[</span><span class="n">cmd_variant</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">368</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">369</span>     <span class="n">_check_output_no_window</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="n">workdir</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">STDOUT</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">370</span> <span class="k">except</span> <span class="n">CalledProcessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">371</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">372</span>         <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; exited abnormally with the following output:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+<span class="g g-Whitespace">    </span><span class="mi">373</span>         <span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cmd</span><span class="p">),</span> <span class="n">e</span><span class="o">.</span><span class="n">output</span><span class="p">))</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sympy\printing\preview.py:25,</span> in <span class="ni">_check_output_no_window</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">creation_flag</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Default value</span>
+<span class="ne">---&gt; </span><span class="mi">25</span> <span class="k">return</span> <span class="n">check_output</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">creationflags</span><span class="o">=</span><span class="n">creation_flag</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\subprocess.py:466,</span> in <span class="ni">check_output</span><span class="nt">(timeout, *popenargs, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span>         <span class="n">empty</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;input&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">empty</span>
+<span class="ne">--&gt; </span><span class="mi">466</span> <span class="k">return</span> <span class="n">run</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span>            <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">stdout</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\subprocess.py:550,</span> in <span class="ni">run</span><span class="nt">(input, capture_output, timeout, check, *popenargs, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">548</span> <span class="k">with</span> <span class="n">Popen</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">as</span> <span class="n">process</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">549</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">550</span>         <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">551</span>     <span class="k">except</span> <span class="n">TimeoutExpired</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">552</span>         <span class="n">process</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\subprocess.py:1196,</span> in <span class="ni">Popen.communicate</span><span class="nt">(self, input, timeout)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1194</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_stdin_write</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1195</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1196</span>     <span class="n">stdout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1197</span>     <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1198</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span><span class="p">:</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
 </div>
 </div>
 <p>Funkcijo lahko tudi poimenujemo; tukaj je primer, kjer uporabimo funkcijo sinus in konstanto <span class="math notranslate nohighlight">\(\pi\)</span>:</p>
@@ -889,24 +1005,24 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;positive&#39;: True,
- &#39;extended_nonnegative&#39;: True,
- &#39;extended_positive&#39;: True,
- &#39;finite&#39;: True,
- &#39;negative&#39;: False,
- &#39;extended_nonpositive&#39;: False,
- &#39;commutative&#39;: True,
- &#39;hermitian&#39;: True,
- &#39;real&#39;: True,
- &#39;extended_nonzero&#39;: True,
  &#39;extended_real&#39;: True,
- &#39;nonzero&#39;: True,
- &#39;zero&#39;: False,
- &#39;imaginary&#39;: False,
+ &#39;hermitian&#39;: True,
+ &#39;extended_nonzero&#39;: True,
  &#39;infinite&#39;: False,
+ &#39;nonzero&#39;: True,
+ &#39;imaginary&#39;: False,
+ &#39;commutative&#39;: True,
  &#39;nonpositive&#39;: False,
- &#39;extended_negative&#39;: False,
+ &#39;zero&#39;: False,
  &#39;complex&#39;: True,
- &#39;nonnegative&#39;: True}
+ &#39;negative&#39;: False,
+ &#39;extended_nonnegative&#39;: True,
+ &#39;finite&#39;: True,
+ &#39;extended_positive&#39;: True,
+ &#39;extended_negative&#39;: False,
+ &#39;nonnegative&#39;: True,
+ &#39;real&#39;: True,
+ &#39;extended_nonpositive&#39;: False}
 </pre></div>
 </div>
 </div>
@@ -920,7 +1036,7 @@ document.write(`
 </ul>
 <p>Ti tipi so pomembni, saj lahko vplivajo na način reševanja in na rešitev.</p>
 <section id="racionalna-stevila">
-<h4>Racionalna števila<a class="headerlink" href="#racionalna-stevila" title="Permalink to this heading">#</a></h4>
+<h4>Racionalna števila<a class="headerlink" href="#racionalna-stevila" title="Link to this heading">#</a></h4>
 <p>Zgoraj smo že definirali <em>realna števila</em>. Poglejmo na primeru sedaj <em>racionalna števila</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -963,7 +1079,7 @@ document.write(`
 </div>
 </section>
 <section id="kompleksna-stevila">
-<h4>Kompleksna števila<a class="headerlink" href="#kompleksna-stevila" title="Permalink to this heading">#</a></h4>
+<h4>Kompleksna števila<a class="headerlink" href="#kompleksna-stevila" title="Link to this heading">#</a></h4>
 <p>Imaginarno število se zapiše z <code class="docutils literal notranslate"><span class="pre">I</span></code> (to je drugače kot pri <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, kjer je imaginarni del definiran z <code class="docutils literal notranslate"><span class="pre">j</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -987,7 +1103,7 @@ document.write(`
 </div>
 </section>
 <section id="numericni-izracun">
-<h4>Numerični izračun<a class="headerlink" href="#numericni-izracun" title="Permalink to this heading">#</a></h4>
+<h4>Numerični izračun<a class="headerlink" href="#numericni-izracun" title="Link to this heading">#</a></h4>
 <p>Pri simbolnem izračunu najprej analitične izraze rešimo, poenostavimo itd., nato pa pogosto želimo tudi izračunati konkreten rezultat.</p>
 <p>Poglejmo primer:</p>
 <div class="cell docutils container">
@@ -1103,7 +1219,7 @@ document.write(`
 </section>
 </section>
 <section id="sympy-in-numpy">
-<h3><code class="docutils literal notranslate"><span class="pre">SymPy</span></code> in <code class="docutils literal notranslate"><span class="pre">NumPy</span></code><a class="headerlink" href="#sympy-in-numpy" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">SymPy</span></code> in <code class="docutils literal notranslate"><span class="pre">NumPy</span></code><a class="headerlink" href="#sympy-in-numpy" title="Link to this heading">#</a></h3>
 <p>Pogosto <code class="docutils literal notranslate"><span class="pre">sympy</span></code> povežemo z <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. Za primer si poglejmo, kako bi izraz:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1157,13 +1273,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>207 ms ± 36.7 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>377 ms ± 31.6 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
 </div>
 <section id="uporaba-funkcije-lambdify">
-<h4>Uporaba funkcije <code class="docutils literal notranslate"><span class="pre">lambdify</span></code><a class="headerlink" href="#uporaba-funkcije-lambdify" title="Permalink to this heading">#</a></h4>
+<h4>Uporaba funkcije <code class="docutils literal notranslate"><span class="pre">lambdify</span></code><a class="headerlink" href="#uporaba-funkcije-lambdify" title="Link to this heading">#</a></h4>
 <p>Bistveno hitrejši način je uporaba pristopa <code class="docutils literal notranslate"><span class="pre">lambdify</span></code>, kjer se pripravi prevedena funkcija, optimirana za numerično izvajanje. Sintaksa funkcije <code class="docutils literal notranslate"><span class="pre">sympy.lambdify()</span></code> je (<a class="reference external" href="http://docs.sympy.org/latest/modules/utilities/lambdify.html#sympy.utilities.lambdify.lambdify">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">simboli</span><span class="p">,</span> <span class="n">funkcija</span><span class="p">,</span> <span class="n">modules</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
@@ -1192,7 +1308,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17.9 µs ± 3.52 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The slowest run took 5.98 times longer than the fastest. This could mean that an intermediate result is being cached.
+53.6 µs ± 52 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1219,7 +1336,7 @@ document.write(`
 </section>
 </section>
 <section id="graficni-prikaz">
-<h3>Grafični prikaz<a class="headerlink" href="#graficni-prikaz" title="Permalink to this heading">#</a></h3>
+<h3>Grafični prikaz<a class="headerlink" href="#graficni-prikaz" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">SymPy</span></code> ima na <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> temelječ prikaz podatkov. Prikaz je sicer glede na <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> bolj omejen in ga uporabljamo za preproste prikaze. (<a class="reference external" href="http://docs.sympy.org/latest/modules/plotting.html">dokumentacija</a>).</p>
 <p>Pogledali si bomo preproste primere, ki se navezujejo na funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.plotting.plot</span></code>; najprej uvozimo funkcijo:</p>
 <div class="cell docutils container">
@@ -1249,8 +1366,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2c473954b5bfafd86708dbe590623330616a450b6cdf3affe4855d81de7e6855.png" src="../_images/2c473954b5bfafd86708dbe590623330616a450b6cdf3affe4855d81de7e6855.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x206b409d590&gt;
+<img alt="../_images/0f4a29f8ff3634ceacadd402b2a15013e5d34601d83502669839c1701a786f6b.png" src="../_images/0f4a29f8ff3634ceacadd402b2a15013e5d34601d83502669839c1701a786f6b.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x17308af6510&gt;
 </pre></div>
 </div>
 </div>
@@ -1285,11 +1402,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1bebba1d29a9d1045007aa3988bfa3c09e44e6e026a81885f66f2a81f38376a7.png" src="../_images/1bebba1d29a9d1045007aa3988bfa3c09e44e6e026a81885f66f2a81f38376a7.png" />
+<img alt="../_images/06e74443ff4f5a3cdab9d046aeb80c7908f4b5ef90d335ff6081f23442ad65e1.png" src="../_images/06e74443ff4f5a3cdab9d046aeb80c7908f4b5ef90d335ff6081f23442ad65e1.png" />
 </div>
 </div>
 <section id="parametricni-izris">
-<h4>Parametrični izris<a class="headerlink" href="#parametricni-izris" title="Permalink to this heading">#</a></h4>
+<h4>Parametrični izris<a class="headerlink" href="#parametricni-izris" title="Link to this heading">#</a></h4>
 <p>Podobno uporabljamo funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.plotting.plot_parametric</span></code> za parametrični izris (<a class="reference external" href="http://docs.sympy.org/latest/modules/plotting.html#sympy.plotting.plot.plot_parametric">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_parametric</span><span class="p">(</span><span class="n">izraz_x</span><span class="p">,</span> <span class="n">izraz_y</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
@@ -1315,12 +1432,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/25e26a9dba7ebba792e0882e62ff3f6313b32a07764b3829044a814b855f8b45.png" src="../_images/25e26a9dba7ebba792e0882e62ff3f6313b32a07764b3829044a814b855f8b45.png" />
+<img alt="../_images/3a17ff3a87cca9c70c8e04fccb994005c5053a00aaaed0d6ceed9b1692d6b8f3.png" src="../_images/3a17ff3a87cca9c70c8e04fccb994005c5053a00aaaed0d6ceed9b1692d6b8f3.png" />
 </div>
 </div>
 </section>
 <section id="izris-v-prostoru">
-<h4>Izris v prostoru<a class="headerlink" href="#izris-v-prostoru" title="Permalink to this heading">#</a></h4>
+<h4>Izris v prostoru<a class="headerlink" href="#izris-v-prostoru" title="Link to this heading">#</a></h4>
 <p>Funkcija <code class="docutils literal notranslate"><span class="pre">sympy.plotting.plot3D</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/modules/plotting.html#sympy.plotting.plot.plot3d">dokumentacija</a>) za izris v prostoru ima sintakso:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot3d</span><span class="p">(</span><span class="n">izraz</span><span class="p">,</span> <span class="n">razpon_x</span><span class="p">,</span> <span class="n">razpon_y</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
@@ -1355,10 +1472,10 @@ document.write(`
 </section>
 </section>
 <section id="algebra">
-<h3>Algebra<a class="headerlink" href="#algebra" title="Permalink to this heading">#</a></h3>
+<h3>Algebra<a class="headerlink" href="#algebra" title="Link to this heading">#</a></h3>
 <p>V tem poglavju si bomo pogledali nekatere osnove uporabe <code class="docutils literal notranslate"><span class="pre">SymPy</span></code> za algebrajske operacije.</p>
 <section id="uporaba-expand-in-factor">
-<h4>Uporaba <code class="docutils literal notranslate"><span class="pre">expand</span></code> in <code class="docutils literal notranslate"><span class="pre">factor</span></code><a class="headerlink" href="#uporaba-expand-in-factor" title="Permalink to this heading">#</a></h4>
+<h4>Uporaba <code class="docutils literal notranslate"><span class="pre">expand</span></code> in <code class="docutils literal notranslate"><span class="pre">factor</span></code><a class="headerlink" href="#uporaba-expand-in-factor" title="Link to this heading">#</a></h4>
 <p>Definirajmo matematični izraz:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1441,7 +1558,7 @@ document.write(`
 </div>
 </section>
 <section id="poenostavljanje-izrazov-s-simplify">
-<h4>Poenostavljanje izrazov s <code class="docutils literal notranslate"><span class="pre">simplify</span></code><a class="headerlink" href="#poenostavljanje-izrazov-s-simplify" title="Permalink to this heading">#</a></h4>
+<h4>Poenostavljanje izrazov s <code class="docutils literal notranslate"><span class="pre">simplify</span></code><a class="headerlink" href="#poenostavljanje-izrazov-s-simplify" title="Link to this heading">#</a></h4>
 <p>Funkcija <code class="docutils literal notranslate"><span class="pre">sympy.simplify()</span></code>  (<a class="reference external" href="http://docs.sympy.org/latest/tutorial/simplification.html#simplify">dokumentacija</a>) poskuša poenostaviti izraze v bolj preproste (npr. s krajšanjem spremenljivk).</p>
 <p>Za posebne namene lahko poenostavimo tudi z:</p>
 <ul class="simple">
@@ -1484,7 +1601,7 @@ document.write(`
 </section>
 </section>
 <section id="uporaba-apart-in-together">
-<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">apart</span></code> in <code class="docutils literal notranslate"><span class="pre">together</span></code><a class="headerlink" href="#uporaba-apart-in-together" title="Permalink to this heading">#</a></h3>
+<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">apart</span></code> in <code class="docutils literal notranslate"><span class="pre">together</span></code><a class="headerlink" href="#uporaba-apart-in-together" title="Link to this heading">#</a></h3>
 <p>Funkciji uporabljamo za delo z ulomki:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1533,7 +1650,7 @@ document.write(`
 </div>
 </section>
 <section id="odvajanje">
-<h3>Odvajanje<a class="headerlink" href="#odvajanje" title="Permalink to this heading">#</a></h3>
+<h3>Odvajanje<a class="headerlink" href="#odvajanje" title="Link to this heading">#</a></h3>
 <p>Odvajanje je načeloma relativno preprosta matematična operacija, ki jo izvedemo s funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.diff()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/tutorial/calculus.html#derivatives">dokumentacija</a>):</p>
 <p>Pripravimo primer:</p>
 <div class="cell docutils container">
@@ -1605,7 +1722,7 @@ document.write(`
 </div>
 </section>
 <section id="integriranje">
-<h3>Integriranje<a class="headerlink" href="#integriranje" title="Permalink to this heading">#</a></h3>
+<h3>Integriranje<a class="headerlink" href="#integriranje" title="Link to this heading">#</a></h3>
 <p>Funkcijo <code class="docutils literal notranslate"><span class="pre">integrate</span></code> lahko uporabimo za nedoločeno integriranje (<a class="reference external" href="http://docs.sympy.org/latest/modules/integrals/integrals.html#module-sympy.integrals">dokumentacija</a>):</p>
 <div class="highlight-pythoon notranslate"><div class="highlight"><pre><span></span>integrate(f, x)
 </pre></div>
@@ -1658,7 +1775,7 @@ document.write(`
 </div>
 </section>
 <section id="vsota-in-produkt-vrste">
-<h3>Vsota in produkt vrste<a class="headerlink" href="#vsota-in-produkt-vrste" title="Permalink to this heading">#</a></h3>
+<h3>Vsota in produkt vrste<a class="headerlink" href="#vsota-in-produkt-vrste" title="Link to this heading">#</a></h3>
 <p>Vsoto vrste definiramo s pomočju funkcije <code class="docutils literal notranslate"><span class="pre">sympy.Sum()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/modules/concrete.html#sympy.concrete.summations.Sum">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">Sum</span><span class="p">(</span><span class="n">izraz</span><span class="p">,</span> <span class="p">(</span><span class="n">spr</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span>
 </pre></div>
@@ -1736,7 +1853,7 @@ document.write(`
 </div>
 </section>
 <section id="limitni-racun">
-<h3>Limitni račun<a class="headerlink" href="#limitni-racun" title="Permalink to this heading">#</a></h3>
+<h3>Limitni račun<a class="headerlink" href="#limitni-racun" title="Link to this heading">#</a></h3>
 <p>Limite računamo s pomočjo funkcije <code class="docutils literal notranslate"><span class="pre">sympy.limit()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/tutorial/calculus.html#limits">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x0</span><span class="p">)</span>
 </pre></div>
@@ -1808,7 +1925,7 @@ document.write(`
 </div>
 </section>
 <section id="taylorjeve-vrste">
-<h3>Taylorjeve vrste<a class="headerlink" href="#taylorjeve-vrste" title="Permalink to this heading">#</a></h3>
+<h3>Taylorjeve vrste<a class="headerlink" href="#taylorjeve-vrste" title="Link to this heading">#</a></h3>
 <p>Taylorjeve vrste izračunamo s pomočjo funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.series()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/modules/series/series.html#id1">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">izraz</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="nb">dir</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1905,9 +2022,9 @@ document.write(`
 </div>
 </section>
 <section id="linearna-algebra">
-<h3>Linearna algebra<a class="headerlink" href="#linearna-algebra" title="Permalink to this heading">#</a></h3>
+<h3>Linearna algebra<a class="headerlink" href="#linearna-algebra" title="Link to this heading">#</a></h3>
 <section id="matrike-in-vektorji">
-<h4>Matrike in vektorji<a class="headerlink" href="#matrike-in-vektorji" title="Permalink to this heading">#</a></h4>
+<h4>Matrike in vektorji<a class="headerlink" href="#matrike-in-vektorji" title="Link to this heading">#</a></h4>
 <p>Matrike in vektorje definiramo s funkcjo <code class="docutils literal notranslate"><span class="pre">Matrix</span></code>. Če se pri <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> ni treba dosledno držati matematičnega zapisa vektorjev in matrik, je pri <code class="docutils literal notranslate"><span class="pre">sympy</span></code> to nujno.</p>
 <p>Poglejmo si primer; najprej pripravimo spremenljivke:</p>
 <div class="cell docutils container">
@@ -2008,7 +2125,7 @@ document.write(`
 </section>
 </section>
 <section id="resevanje-enacb">
-<h3>Reševanje enačb<a class="headerlink" href="#resevanje-enacb" title="Permalink to this heading">#</a></h3>
+<h3>Reševanje enačb<a class="headerlink" href="#resevanje-enacb" title="Link to this heading">#</a></h3>
 <p>Enačbe in sistem enačb rešujemo s funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.solve()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/modules/solvers/solvers.html#algebraic-equations">dokumentacija</a>). Podprto je reševanje sledečih enačb:</p>
 <ul class="simple">
 <li><p>polinomske enačbe,</p></li>
@@ -2062,7 +2179,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/422e7688f77f8d880b74735d046deb45c23bc046196ba8dcb2a8ce4d5b204d0f.png" src="../_images/422e7688f77f8d880b74735d046deb45c23bc046196ba8dcb2a8ce4d5b204d0f.png" />
+<img alt="../_images/b4a4cc308747a6593bf263ee9dca5404bd4eba8f75d56717882163499bcd91eb.png" src="../_images/b4a4cc308747a6593bf263ee9dca5404bd4eba8f75d56717882163499bcd91eb.png" />
 </div>
 </div>
 <p>Kvadratna enačba:</p>
@@ -2117,9 +2234,9 @@ document.write(`
 </div>
 </section>
 <section id="resevanje-diferencialnih-enacb">
-<h3>Reševanje diferencialnih enačb<a class="headerlink" href="#resevanje-diferencialnih-enacb" title="Permalink to this heading">#</a></h3>
+<h3>Reševanje diferencialnih enačb<a class="headerlink" href="#resevanje-diferencialnih-enacb" title="Link to this heading">#</a></h3>
 <section id="nedefinirane-funkcije">
-<h4>Nedefinirane funkcije<a class="headerlink" href="#nedefinirane-funkcije" title="Permalink to this heading">#</a></h4>
+<h4>Nedefinirane funkcije<a class="headerlink" href="#nedefinirane-funkcije" title="Link to this heading">#</a></h4>
 <p>Preden si ogledamo diferencialne enačbe, moramo spoznati nedefinirane funkcije. Take funkcije definiramo <code class="docutils literal notranslate"><span class="pre">sympy.Function</span></code> <a class="reference external" href="https://docs.sympy.org/latest/modules/functions/index.html">dokumentacija</a>.</p>
 <p>Kot primer si poglejmo kako definiramo enačbo <span class="math notranslate nohighlight">\(\ddot x(t)=g\)</span>. Najprej definirajmo nedoločeno funkcijo:</p>
 <div class="cell docutils container">
@@ -2150,7 +2267,7 @@ document.write(`
 </div>
 </section>
 <section id="diferencialne-enacbe">
-<h4>Diferencialne enačbe<a class="headerlink" href="#diferencialne-enacbe" title="Permalink to this heading">#</a></h4>
+<h4>Diferencialne enačbe<a class="headerlink" href="#diferencialne-enacbe" title="Link to this heading">#</a></h4>
 <p>Diferencialne enačbe in sisteme diferencialnih enačb rešujemo s funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.dsolve()</span></code> (<a class="reference external" href="http://docs.sympy.org/latest/modules/solvers/ode.html#dsolve">dokumentacija</a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hint</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">simplify</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
              <span class="n">ics</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">eta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -2248,7 +2365,7 @@ document.write(`
 </section>
 </section>
 <section id="nekaj-vprasanj-za-razmislek">
-<h2>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this heading">#</a></h2>
+<h2>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Pojasnite na primeru <em>proceduralno</em> in <em>funkcijsko</em> programiranje.</p></li>
 </ol>
@@ -2281,9 +2398,9 @@ document.write(`
 </ul>
 </section>
 <section id="dodatno">
-<h2>Dodatno<a class="headerlink" href="#dodatno" title="Permalink to this heading">#</a></h2>
+<h2>Dodatno<a class="headerlink" href="#dodatno" title="Link to this heading">#</a></h2>
 <section id="sympy-mechanics">
-<h3>sympy.mechanics<a class="headerlink" href="#sympy-mechanics" title="Permalink to this heading">#</a></h3>
+<h3>sympy.mechanics<a class="headerlink" href="#sympy-mechanics" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">sympy</span></code> ima vgrajeno podporo za klasično mehaniko (<a class="reference external" href="http://docs.sympy.org/latest/modules/physics/mechanics/index.html#classical-mechanics">dokumentacija</a>). Celovit tutorial je bil prikazan na znanstveni konferenci <a class="reference external" href="https://www.youtube.com/watch?v=r4piIKV4sDw">SciPy 2016</a>.</p>
 </section>
 </section>
@@ -2316,7 +2433,7 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -2345,6 +2462,7 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2427,7 +2545,7 @@ Avtor Janko Slavič
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -2451,8 +2569,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

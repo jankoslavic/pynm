@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="sl" data-content_root="" >
+<html lang="sl" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Reševanje enačb &#8212; Numerične metode v ekosistemu Pythona</title>
   
@@ -15,54 +14,50 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=a3a20203"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/translations.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=852ec8ec"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Predavanje 09 - Reševanje enačb';</script>
@@ -79,28 +74,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -122,12 +112,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -143,6 +141,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="../README.html">
@@ -161,18 +161,29 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Išči</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../README.html">
-                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2023/24
+                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2024/25
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2023/24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2024/25</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
@@ -205,7 +216,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -214,14 +225,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -346,10 +357,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -357,14 +368,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -439,12 +450,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="resevanje-enacb">
-<h1>Reševanje enačb<a class="headerlink" href="#resevanje-enacb" title="Permalink to this heading">#</a></h1>
+<h1>Reševanje enačb<a class="headerlink" href="#resevanje-enacb" title="Link to this heading">#</a></h1>
 <section id="uvod">
-<h2>Uvod<a class="headerlink" href="#uvod" title="Permalink to this heading">#</a></h2>
+<h2>Uvod<a class="headerlink" href="#uvod" title="Link to this heading">#</a></h2>
 <p>Za uvod si oglejmo spodnji video:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -477,11 +488,11 @@ document.write(`
 </ul>
 <p>Tukaj je pomembno izpostaviti, da iščemo rešitev poljubne enačbe <span class="math notranslate nohighlight">\(f(x)=0\)</span>. Če za linearne, kvadratne ali kubične enačbe, lahko določimo analitične rešitve; za večino nelinearnih enačb analitične rešitve ne moremo določiti. Iz tega razloga so numerični pristopi toliko bolj pomembni.</p>
 <section id="omejitve-funkcije-f-x">
-<h3>Omejitve funkcije <span class="math notranslate nohighlight">\(f(x)\)</span><a class="headerlink" href="#omejitve-funkcije-f-x" title="Permalink to this heading">#</a></h3>
+<h3>Omejitve funkcije <span class="math notranslate nohighlight">\(f(x)\)</span><a class="headerlink" href="#omejitve-funkcije-f-x" title="Link to this heading">#</a></h3>
 <p>Za funkcijo <span class="math notranslate nohighlight">\(y=f(x)\)</span> zahtevamo, da je na zaprtem intervalu <span class="math notranslate nohighlight">\([x_0, x_1]\)</span> zvezna. Pri računanju ničel, se bomo omejili samo na ničle prve stopnje.</p>
 </section>
 <section id="zgled">
-<h3>Zgled<a class="headerlink" href="#zgled" title="Permalink to this heading">#</a></h3>
+<h3>Zgled<a class="headerlink" href="#zgled" title="Link to this heading">#</a></h3>
 <p>Poljubno funkcijo <span class="math notranslate nohighlight">\(y=f(x)\)</span> lahko definiramo s <em>Pythonovo funkcijo</em>; za zgled tukaj definirajmo polinom:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -530,7 +541,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ac56bf61b7784d966db37b9ba3c2cfb4d628766628ebb8321a3273172163c870.png" src="../_images/ac56bf61b7784d966db37b9ba3c2cfb4d628766628ebb8321a3273172163c870.png" />
+<img alt="../_images/1989b1c02a0dda4d5e63cf307f785a9736ed4f252940c7046ebe9f342f585267.png" src="../_images/1989b1c02a0dda4d5e63cf307f785a9736ed4f252940c7046ebe9f342f585267.png" />
 </div>
 </div>
 <p>Opazimo, da so ničle funkcije <span class="math notranslate nohighlight">\(f(x)\)</span> blizu -0,7 in +0,7. Objekt <code class="docutils literal notranslate"><span class="pre">poly1d</span></code> ima atribut <code class="docutils literal notranslate"><span class="pre">roots</span></code> ali tudi <code class="docutils literal notranslate"><span class="pre">r</span></code> (<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.poly1d.html">glejte dokumentacijo</a>), ki vrne te ničle:</p>
@@ -550,7 +561,7 @@ document.write(`
 </section>
 </section>
 <section id="inkrementalna-metoda">
-<h2>Inkrementalna metoda<a class="headerlink" href="#inkrementalna-metoda" title="Permalink to this heading">#</a></h2>
+<h2>Inkrementalna metoda<a class="headerlink" href="#inkrementalna-metoda" title="Link to this heading">#</a></h2>
 <p>Inkrementalno reševanje temelji na ideji, da v kolikor ima funkcija <span class="math notranslate nohighlight">\(f(x)\)</span> pri <span class="math notranslate nohighlight">\(x_0\)</span> in <span class="math notranslate nohighlight">\(x_1\)</span> različna predznaka, potem je vmes vsaj ena ničla. Zaprti interval <span class="math notranslate nohighlight">\([x_0, x_1]\)</span> razdelimo torej na odseke širine <span class="math notranslate nohighlight">\(\Delta x\)</span>; na odseku, kjer opazimo spremembo predznaka, je vsaj ena ničla funkcije.</p>
 <p>Metoda je prikazana na sliki.
 <img alt="Inkrementalna metoda" src="../_images/inkrementalna.png" /></p>
@@ -567,7 +578,7 @@ document.write(`
 <p>Inkrementalna metoda spada med t. i. <em>zaprte</em> (angl. <em>bracketed</em>) metode, saj išče ničle funkcije samo na intervalu <span class="math notranslate nohighlight">\([x_0, x_1]\)</span>. Pozneje bomo spoznali tudi <em>odprte</em> metode, ki lahko konvergirajo k ničli zunaj podanega intervala.</p>
 <p>Zaradi vseh zgoraj navedenih slabosti inkrementalno metodo pogosto uporabimo samo za izračun začetnega približka ničle.</p>
 <section id="numericna-implementacija">
-<h3>Numerična implementacija<a class="headerlink" href="#numericna-implementacija" title="Permalink to this heading">#</a></h3>
+<h3>Numerična implementacija<a class="headerlink" href="#numericna-implementacija" title="Link to this heading">#</a></h3>
 <p>Poglejmo si sedaj inkrementalno iskanje ničel funkcije:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -614,7 +625,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.013071529000000304
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.013071529000000304)
 </pre></div>
 </div>
 </div>
@@ -644,19 +655,19 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/405790e03e574b055c3f044757b5fc4529d9c4afa6a0e86682baece87bc95e7a.png" src="../_images/405790e03e574b055c3f044757b5fc4529d9c4afa6a0e86682baece87bc95e7a.png" />
+<img alt="../_images/85d80c156945c7465162810a9726da82b9765d7d61faa6cbc9b78dba8d369867.png" src="../_images/85d80c156945c7465162810a9726da82b9765d7d61faa6cbc9b78dba8d369867.png" />
 </div>
 </div>
 <p>Da smo torej na intervalu <span class="math notranslate nohighlight">\([0, 1]\)</span> izračunali rešitev z natančnostjo <span class="math notranslate nohighlight">\(\Delta x=0,001\)</span>, smo morali 1000-krat klicati funkcijo <span class="math notranslate nohighlight">\(f(x)\)</span>. Gre za zelo neučinkovito metodo, zato bomo iskali boljše načine; najprej s preprostim iterativnim inkrementalnim pristopom.</p>
 </section>
 </section>
 <section id="iterativna-inkrementalna-metoda">
-<h2>Iterativna inkrementalna metoda<a class="headerlink" href="#iterativna-inkrementalna-metoda" title="Permalink to this heading">#</a></h2>
+<h2>Iterativna inkrementalna metoda<a class="headerlink" href="#iterativna-inkrementalna-metoda" title="Link to this heading">#</a></h2>
 <p>Iterativna inkrementalna metoda v prvi iteraciji z inkrementalno metodo omeji interval iskanja ničel pri relativno velikem koraku. Interval, najden v prvi iteraciji, se v drugi iteraciji razdeli na manjše intervale in ponovi se inkrementalno iskanje ničle. Tretja iteracija se nato omeji na interval določen v drugi in tako dalje. Z iteracijami zaključimo, ko smo dosegli predpisano natančnost rešitve <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
 <p>Metoda je prikazana na sliki:
 <img alt="Iterativna inkrementalna metoda" src="../_images/iterativna_inkrementalna.png" /></p>
 <section id="id1">
-<h3>Numerična implementacija<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Numerična implementacija<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inkrementalna_super</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">iteracij</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
@@ -726,7 +737,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.3073143190212022e-07
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.3073143190212022e-07)
 </pre></div>
 </div>
 </div>
@@ -734,7 +745,7 @@ document.write(`
 </section>
 </section>
 <section id="bisekcijska-metoda">
-<h2>Bisekcijska metoda<a class="headerlink" href="#bisekcijska-metoda" title="Permalink to this heading">#</a></h2>
+<h2>Bisekcijska metoda<a class="headerlink" href="#bisekcijska-metoda" title="Link to this heading">#</a></h2>
 <p>Na intervalu <span class="math notranslate nohighlight">\([x_0, x_1]\)</span>, kjer vemo, da obstaja ničla funkcije (predznaka <span class="math notranslate nohighlight">\(f(x_0)\)</span> in <span class="math notranslate nohighlight">\(f(x_1)\)</span> se razlikujeta), lahko uporabimo <em>bisekcijsko metodo</em>.</p>
 <p>Ideja metode je:</p>
 <ul class="simple">
@@ -746,7 +757,7 @@ document.write(`
 <img alt="Bisekcijska metoda" src="../_images/bisekcijska.png" /></p>
 <p>Bisekcijska metoda spada med <em>zaprte</em> metode, ki vrne ničlo funkcije na podanem intervalu <span class="math notranslate nohighlight">\([x_0, x_1]\)</span>.</p>
 <section id="ocena-napake">
-<h3>Ocena napake<a class="headerlink" href="#ocena-napake" title="Permalink to this heading">#</a></h3>
+<h3>Ocena napake<a class="headerlink" href="#ocena-napake" title="Link to this heading">#</a></h3>
 <p>Če v začetku začnemo z intervalom <span class="math notranslate nohighlight">\(\Delta x = \left|x_1-x_0\right|\)</span>, potem je natančnost bisekcijske metode po prvem koraku bisekcije:
 $<span class="math notranslate nohighlight">\(\varepsilon_1 = \Delta x/2,\)</span><span class="math notranslate nohighlight">\(
 po drugem koraku: 
@@ -759,7 +770,7 @@ in po \)</span>n<span class="math notranslate nohighlight">\( korakih:
 <p>Seveda je število korakov celo število.</p>
 </section>
 <section id="id2">
-<h3>Numerična implementacija<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Numerična implementacija<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bisekcija</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">Dtol</span><span class="o">=</span><span class="mf">1e-1</span><span class="p">,</span> <span class="n">izpis</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -831,13 +842,13 @@ in po \)</span>n<span class="math notranslate nohighlight">\( korakih:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>551 µs ± 20 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>294 μs ± 7.27 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
 <section id="iskanje-nicle-v-okolici-pola">
-<h4>Iskanje ničle v okolici pola<a class="headerlink" href="#iskanje-nicle-v-okolici-pola" title="Permalink to this heading">#</a></h4>
+<h4>Iskanje ničle v okolici pola<a class="headerlink" href="#iskanje-nicle-v-okolici-pola" title="Link to this heading">#</a></h4>
 <p>Poglejmo sedaj iskanje ničle funkcije <code class="docutils literal notranslate"><span class="pre">tan</span></code> v okolici pola (ničla dejansko ne obstaja):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -849,7 +860,7 @@ in po \)</span>n<span class="math notranslate nohighlight">\( korakih:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f3dd335c3e607fc9f5f58313e6e4922aa0b793801a3f1107987e3a89ab8f7e62.png" src="../_images/f3dd335c3e607fc9f5f58313e6e4922aa0b793801a3f1107987e3a89ab8f7e62.png" />
+<img alt="../_images/374ae7a24b2dfb26023f5bd1c82fee6463df14445fb8d7bf11167d38a7ef8bb2.png" src="../_images/374ae7a24b2dfb26023f5bd1c82fee6463df14445fb8d7bf11167d38a7ef8bb2.png" />
 </div>
 </div>
 <p>V primeru iskanja na intervalu <span class="math notranslate nohighlight">\([-1, 1]\)</span> najdemo pravo ničlo:</p>
@@ -877,7 +888,7 @@ in po \)</span>n<span class="math notranslate nohighlight">\( korakih:
 </section>
 </section>
 <section id="uporaba-scipy-optimize-bisect">
-<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.bisect</span></code><a class="headerlink" href="#uporaba-scipy-optimize-bisect" title="Permalink to this heading">#</a></h3>
+<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.bisect</span></code><a class="headerlink" href="#uporaba-scipy-optimize-bisect" title="Link to this heading">#</a></h3>
 <p>Bisekcijska metoda je <em>počasna</em>, vendar zanesljiva metoda iskanja ničel in je implementirana znotraj <code class="docutils literal notranslate"><span class="pre">scipy</span></code>. Najprej jo uvozimo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -912,7 +923,7 @@ in po \)</span>n<span class="math notranslate nohighlight">\( korakih:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>178 µs ± 3.3 µs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>223 μs ± 13.5 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -948,7 +959,7 @@ in po \)</span>n<span class="math notranslate nohighlight">\( korakih:
 </section>
 </section>
 <section id="sekantna-metoda">
-<h2>Sekantna metoda<a class="headerlink" href="#sekantna-metoda" title="Permalink to this heading">#</a></h2>
+<h2>Sekantna metoda<a class="headerlink" href="#sekantna-metoda" title="Link to this heading">#</a></h2>
 <p>Sekantna metoda zahteva dva začetna približka <span class="math notranslate nohighlight">\(x_0\)</span> in <span class="math notranslate nohighlight">\(x_1\)</span> in funkcijo <span class="math notranslate nohighlight">\(f(x)\)</span>. Ob predpostavki linearne interpolacije med točkama <span class="math notranslate nohighlight">\(x_0, f(x_0)\)</span> in <span class="math notranslate nohighlight">\(x_1, f(x_1)\)</span> (skozi točki potegnemo <em>sekanto</em>, od tukaj tudi ime), se določi <span class="math notranslate nohighlight">\(x_2\)</span>, kjer ima linearna interpolacijska funkcija ničlo. <span class="math notranslate nohighlight">\(x_2\)</span> predstavlja nov približek ničle.</p>
 <p>Glede na sliko:
 <img alt="Sekantna metoda" src="../_images/sekantna.png" /></p>
@@ -961,13 +972,13 @@ in po \)</span>n<span class="math notranslate nohighlight">\( korakih:
 <p>V naslednjem koraku pri sekantni metodi izvedemo sledeče zamenjave: <span class="math notranslate nohighlight">\(x_0=x_1\)</span> in <span class="math notranslate nohighlight">\(x_1=x_2\)</span>.</p>
 <p>Sekantna metoda spada med <em>odprte</em> metode, saj lahko najde ničlo funkcije, ki se nahaja zunaj območja <span class="math notranslate nohighlight">\([x_0, x_1]\)</span>.</p>
 <section id="id3">
-<h3>Ocena napake<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Ocena napake<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>Konzervativno lahko napako ocenimo iz razlike med dvema zaporednima približkoma:</p>
 <div class="math notranslate nohighlight">
 \[\varepsilon = \left|x_{n-1} -x_{n}\right|\]</div>
 </section>
 <section id="konvergenca-in-red-konvergence">
-<h3>Konvergenca in red konvergence<a class="headerlink" href="#konvergenca-in-red-konvergence" title="Permalink to this heading">#</a></h3>
+<h3>Konvergenca in red konvergence<a class="headerlink" href="#konvergenca-in-red-konvergence" title="Link to this heading">#</a></h3>
 <p>Konvergenca pomeni, da zaporedje približkov konvergira k rešitvi enačbe <span class="math notranslate nohighlight">\(\alpha\)</span> (<span class="math notranslate nohighlight">\(\alpha\)</span> je rešitev enačbe).</p>
 <p><strong>Red konvergence</strong> označuje hitrost konvergiranja.</p>
 <p>Če <span class="math notranslate nohighlight">\(\varepsilon\)</span> označimo napako približka in napako z vsakim korakom iteracije linearno zmanjšamo (<span class="math notranslate nohighlight">\(C\)</span> je konstanta):</p>
@@ -982,7 +993,7 @@ in po \)</span>n<span class="math notranslate nohighlight">\( korakih:
 <p>Še boljšo, kvadratično, konvergenco ima Newtonova metoda. Pri kvadratični konvergenci se na vsakem koraku iteracije število točnih cifer podvoji. Isti red konvergence ima tudi <em>Ridderjeva</em>  metoda, ki je implementirana v paketu <code class="docutils literal notranslate"><span class="pre">scipy</span></code> (glejte <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.ridder.html">dokumentacijo</a>) in je zaprtega tipa ter sorodna sekantni metodi. Kljub uporabnosti si je tukaj ne bomo podrobno ogledali.</p>
 </section>
 <section id="id4">
-<h3>Numerična implementacija<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>Numerična implementacija<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sekantna</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">Dtol</span><span class="o">=</span><span class="mf">1e-1</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">izpis</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -1048,7 +1059,7 @@ Rešitev: 0.73460351, D: 0.00000
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>284 µs ± 26.5 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>276 μs ± 16.7 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1079,7 +1090,7 @@ Rešitev: 3.142, D: 0.00002
 </div>
 </section>
 <section id="uporaba-scipy-optimize-newton">
-<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.newton</span></code><a class="headerlink" href="#uporaba-scipy-optimize-newton" title="Permalink to this heading">#</a></h3>
+<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.newton</span></code><a class="headerlink" href="#uporaba-scipy-optimize-newton" title="Link to this heading">#</a></h3>
 <p>Znotraj <code class="docutils literal notranslate"><span class="pre">scipy</span></code> je sekantna metoda definirana v okviru <code class="docutils literal notranslate"><span class="pre">scipy.optimize.newton</span></code> funkcije. Če le-tej namreč ne podamo funkcije, ki definira prvi odvod, potem je uporabljena sekantna metoda (glejte <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.newton.html">dokumentacijo</a>).</p>
 <p>Najprej jo uvozimo:</p>
 <div class="cell docutils container">
@@ -1122,7 +1133,7 @@ Rešitev: 3.142, D: 0.00002
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>521 µs ± 15.5 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>393 μs ± 21.2 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1146,7 +1157,7 @@ Rešitev: 3.142, D: 0.00002
 </section>
 </section>
 <section id="newtonova-metoda">
-<h2>Newtonova metoda<a class="headerlink" href="#newtonova-metoda" title="Permalink to this heading">#</a></h2>
+<h2>Newtonova metoda<a class="headerlink" href="#newtonova-metoda" title="Link to this heading">#</a></h2>
 <p>V literaturi za <strong>Newtonovo</strong> metodo tudi najdemo izraza <strong>tangentna</strong> in <strong>Newton-Raphsonova</strong> metoda. Potrebuje en začetni približek <span class="math notranslate nohighlight">\(x_0\)</span>, poleg definicije funkcije <span class="math notranslate nohighlight">\(f(x)\)</span> pa tudi njen odvod <span class="math notranslate nohighlight">\(f'(x)\)</span>.</p>
 <p>Princip delovanja metode je prikazan na sliki:
 <img alt="Newtonova metoda" src="../_images/newtonova.png" /></p>
@@ -1176,7 +1187,7 @@ $<span class="math notranslate nohighlight">\(f(x_{i+1})=f(x_i)+f'(x_i)\,\left(x
 <li><p>poznati moramo odvod funkcije.</p></li>
 </ul>
 <section id="red-konvergence">
-<h3>Red konvergence<a class="headerlink" href="#red-konvergence" title="Permalink to this heading">#</a></h3>
+<h3>Red konvergence<a class="headerlink" href="#red-konvergence" title="Link to this heading">#</a></h3>
 <p>Red konvergence Newtonove metode je kvadraten:
 $<span class="math notranslate nohighlight">\(\varepsilon_n = C\,\varepsilon_{n-1}^{2},\)</span><span class="math notranslate nohighlight">\(
 kjer je \)</span>C<span class="math notranslate nohighlight">\(:
@@ -1184,7 +1195,7 @@ kjer je \)</span>C<span class="math notranslate nohighlight">\(:
 <p>Konvergenca je torej hitra, v vsaki novi iteraciji se število točnih števk v približku podvoji.</p>
 </section>
 <section id="id5">
-<h3>Numerična implementacija<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>Numerična implementacija<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">newtonova</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">dfun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">Dtol</span><span class="o">=</span><span class="mf">1e-1</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">izpis</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span> 
@@ -1248,14 +1259,14 @@ kjer je \)</span>C<span class="math notranslate nohighlight">\(:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.6 µs ± 720 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21.1 μs ± 3.45 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="id6">
-<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.newton</span></code><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.newton</span></code><a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>Znotraj <code class="docutils literal notranslate"><span class="pre">scipy</span></code> je Newtonova metoda definirana v okviru <code class="docutils literal notranslate"><span class="pre">scipy.optimize.newton</span></code> funkcije, ki smo jo že spoznali zgoraj pri sekantni metodi (glejte <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.newton.html">dokumentacijo</a>).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">newton</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">fprime</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(),</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1.48e-08</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">fprime2</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
@@ -1286,7 +1297,7 @@ kjer je \)</span>C<span class="math notranslate nohighlight">\(:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>194 µs ± 13.9 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>128 μs ± 8.35 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1294,7 +1305,7 @@ kjer je \)</span>C<span class="math notranslate nohighlight">\(:
 </section>
 </section>
 <section id="resevanje-sistemov-nelinarnih-enacb">
-<h2>Reševanje sistemov nelinarnih enačb*<a class="headerlink" href="#resevanje-sistemov-nelinarnih-enacb" title="Permalink to this heading">#</a></h2>
+<h2>Reševanje sistemov nelinarnih enačb*<a class="headerlink" href="#resevanje-sistemov-nelinarnih-enacb" title="Link to this heading">#</a></h2>
 <p>Rešujemo sistem enačb, ki ga v vektorski obliki zapišemo takole:
 $<span class="math notranslate nohighlight">\(\mathbf{f}(\mathbf{x})=\mathbf{0}.\)</span><span class="math notranslate nohighlight">\(
 V skalarni obliki zgornji vektorski izraz zapišemo:
@@ -1324,7 +1335,7 @@ in torej sledi:
 <p>kjer je <span class="math notranslate nohighlight">\(h\)</span> majhen premik in je <span class="math notranslate nohighlight">\(\mathbf{e}_j\)</span> enotski pomik v smeri <span class="math notranslate nohighlight">\(x_j\)</span>. Če se Jakobijeva matrika izračuna numerično, govorimo o sekantni metodi in ne Newtonovi.</p>
 <p>Pri numeričnem izračunu si lahko pomagamo s funkcijo <code class="docutils literal notranslate"><span class="pre">scipy.optimize.approx_fprime</span></code> (za podrobnosti glejte <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.approx_fprime.html">dokumentacijo</a>).</p>
 <section id="id7">
-<h3>Numerična implementacija<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>Numerična implementacija<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>Algoritem torej je:</p>
 <ol class="arabic simple">
 <li><p>Izberemo začetni približek <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span>, največje število iteracij in postavimo indeks na nič: <span class="math notranslate nohighlight">\(i=0\)</span>.</p></li>
@@ -1339,7 +1350,7 @@ in torej sledi:
 <p>kjer je <span class="math notranslate nohighlight">\(i\)</span> indeks iteracije in <span class="math notranslate nohighlight">\(j\)</span> indeks elementa.</p>
 </section>
 <section id="uporaba-scipy-optimize-root">
-<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.root</span></code><a class="headerlink" href="#uporaba-scipy-optimize-root" title="Permalink to this heading">#</a></h3>
+<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.root</span></code><a class="headerlink" href="#uporaba-scipy-optimize-root" title="Link to this heading">#</a></h3>
 <p>Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.optimize.root</span></code> ima obsežno <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.root.html">dokumentacijo</a> in omogoča večje število različnih pristopov:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(),</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;hybr&#39;</span><span class="p">,</span> <span class="n">jac</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
@@ -1393,7 +1404,8 @@ in torej sledi:
   status: 1
      fun: [-6.972e-12  3.148e-11]
        x: [ 2.000e+00  3.000e+00]
-    nfev: 10
+  method: hybr
+    nfev: 12
     njev: 1
     fjac: [[-2.235e-01 -9.747e-01]
            [ 9.747e-01 -2.235e-01]]
@@ -1431,7 +1443,7 @@ in torej sledi:
 </section>
 </section>
 <section id="nekaj-vprasanj-za-razmislek">
-<h2>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Permalink to this heading">#</a></h2>
+<h2>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>V simbolni obliki definirajte izraz:
 $<span class="math notranslate nohighlight">\(f(x) = x^4 - 6.4\,x^3 + 6.45\,x^2 + 20.538\,x - 31.752.\)</span>$</p></li>
@@ -1462,10 +1474,10 @@ $<span class="math notranslate nohighlight">\(x^2 + y -2=0\qquad\textrm{in}\qqua
 </ol>
 </section>
 <section id="dodatno">
-<h2>Dodatno<a class="headerlink" href="#dodatno" title="Permalink to this heading">#</a></h2>
+<h2>Dodatno<a class="headerlink" href="#dodatno" title="Link to this heading">#</a></h2>
 <p>Tisti, ki ste navdušeni nad <a class="reference external" href="https://www.raspberrypi.org/">Raspberry Pi</a> in uporabljate njihovo kamero (npr. <a class="reference external" href="https://www.raspberrypi.org/products/pi-noir-camera/">tole brez infrardečega filtra</a>), vas bo morebiti zanimala knjižnica <a class="reference external" href="http://picamera.readthedocs.org/">picamera</a>.</p>
 <section id="uporaba-sympy-solve-za-resevanje-enacb">
-<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code> za reševanje enačb<a class="headerlink" href="#uporaba-sympy-solve-za-resevanje-enacb" title="Permalink to this heading">#</a></h3>
+<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">sympy.solve</span></code> za reševanje enačb<a class="headerlink" href="#uporaba-sympy-solve-za-resevanje-enacb" title="Link to this heading">#</a></h3>
 <p>Za manjše sisteme lahko rešitev najdemo tudi simbolno. Poglejmo si zgornji primer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1527,7 +1539,7 @@ Prva rešitev: (2, 3)
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1556,6 +1568,7 @@ Prva rešitev: (2, 3)
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1632,7 +1645,7 @@ Avtor Janko Slavič
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1656,8 +1669,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
