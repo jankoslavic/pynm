@@ -8,9 +8,8 @@ DOVOLJENI_TIPI = ['str', 'int', 'float', 'ndarray', 'tuple', 'list', 'dict']
 MAX_LEN = 15
 MAX_SIZE = 10e3 #bit
 
-int_type_names = [_.__name__ for _ in np.sctypes['int'] + np.sctypes['uint']] + ['int']
-float_type_names = [_.__name__ for _ in np.sctypes['float']] + ['float', 'Float', 'Zero']
-
+int_type_names = [dtype.__name__ for dtype in np.signedinteger.__subclasses__() + np.unsignedinteger.__subclasses__()] + ['int']
+float_type_names = [dtype.__name__ for dtype in np.floating.__subclasses__()] + ['float', 'Float', 'Zero']
 
 def pripravi_resitev(odgovor):
     """ 
