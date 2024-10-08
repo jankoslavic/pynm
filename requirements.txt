@@ -1,10 +1,6 @@
 numpy
 scipy
-ipykernel
-ipython
-ipython-genutils
-jupyter-client
-jupyter-core
+jupyterlab
 matplotlib
 pandas
 pylint
@@ -14,11 +10,10 @@ tqdm
 xlrd
 xlwt
 ipywidgets
-rise
 sympy
 lvm_read
 pytest
 numba
-jupyter_contrib_nbextensions
 jupyter-book
 ghp-import
+pyppeteer
