@@ -677,7 +677,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9aa465499a8dec5394f8bcb2ad09f5e16ce1f6fa116bdaba0436475fafe2ab57.png" src="../_images/9aa465499a8dec5394f8bcb2ad09f5e16ce1f6fa116bdaba0436475fafe2ab57.png" />
+<img alt="../_images/e9568a52f446b2dc7b3a32bebee292586c61083738b9980ba789422538c05680.png" src="../_images/e9568a52f446b2dc7b3a32bebee292586c61083738b9980ba789422538c05680.png" />
 </div>
 </div>
 <p>Če nekaj takega izvajamo pogosto, potem je bolje, da si pripravimo svoj razred <code class="docutils literal notranslate"><span class="pre">Seznam</span></code>, ki deduje od <code class="docutils literal notranslate"><span class="pre">list</span></code> in dodamo metodo za prikaz <code class="docutils literal notranslate"><span class="pre">nariši</span></code>:</p>
@@ -742,7 +742,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8e21bd2eada211d0373dee2b9cce77daa7cddb1e25815ece589fba8d5c651dcd.png" src="../_images/8e21bd2eada211d0373dee2b9cce77daa7cddb1e25815ece589fba8d5c651dcd.png" />
+<img alt="../_images/755491b0d6721de16599daf2dd3e79dc9bd99182bc86ca083533b5d927aa1897.png" src="../_images/755491b0d6721de16599daf2dd3e79dc9bd99182bc86ca083533b5d927aa1897.png" />
 </div>
 </div>
 </section>
@@ -813,112 +813,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span><span class="o">**</span><span class="n">y</span> <span class="o">+</span> <span class="n">k</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\IPython\core\displayhook.py:268,</span> in <span class="ni">DisplayHook.__call__</span><span class="nt">(self, result)</span>
-<span class="g g-Whitespace">    </span><span class="mi">266</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_displayhook</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">267</span> <span class="bp">self</span><span class="o">.</span><span class="n">write_output_prompt</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">268</span> <span class="n">format_dict</span><span class="p">,</span> <span class="n">md_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_format_data</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">269</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_user_ns</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span> <span class="bp">self</span><span class="o">.</span><span class="n">fill_exec_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\IPython\core\displayhook.py:157,</span> in <span class="ni">DisplayHook.compute_format_data</span><span class="nt">(self, result)</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span> <span class="k">def</span> <span class="nf">compute_format_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Compute format data of the object to be displayed.</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span><span class="sd">     The format data is a generalization of the :func:`repr` of an object.</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">155</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">157</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">display_formatter</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\IPython\core\formatters.py:182,</span> in <span class="ni">DisplayFormatter.format</span><span class="nt">(self, obj, include, exclude)</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span> <span class="n">md</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">182</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">formatter</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span> <span class="k">except</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span>     <span class="c1"># FIXME: log the exception</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="k">raise</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\decorator.py:232,</span> in <span class="ni">decorate.&lt;locals&gt;.fun</span><span class="nt">(*args, **kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">kwsyntax</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">231</span>     <span class="n">args</span><span class="p">,</span> <span class="n">kw</span> <span class="o">=</span> <span class="n">fix</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kw</span><span class="p">,</span> <span class="n">sig</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">232</span> <span class="k">return</span> <span class="n">caller</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">extras</span> <span class="o">+</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\IPython\core\formatters.py:226,</span> in <span class="ni">catch_format_error</span><span class="nt">(method, self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;show traceback on failed format call&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">226</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">227</span> <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">228</span>     <span class="c1"># don&#39;t warn on NotImplementedErrors</span>
-<span class="g g-Whitespace">    </span><span class="mi">229</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_return</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\IPython\core\formatters.py:347,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
-<span class="g g-Whitespace">    </span><span class="mi">345</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">346</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">347</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">348</span>     <span class="k">return</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">349</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sympy\interactive\printing.py:178,</span> in <span class="ni">_init_ipython_printing.&lt;locals&gt;._print_latex_png</span><span class="nt">(o)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span>     <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">displaystyle </span><span class="si">%s</span><span class="s1">$&#39;</span> <span class="o">%</span> <span class="n">s</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">178</span>     <span class="k">return</span> <span class="n">_preview_wrapper</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span> <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="n">debug</span><span class="p">(</span><span class="s1">&#39;preview failed with:&#39;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span>           <span class="s1">&#39; Falling back to matplotlib backend&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sympy\interactive\printing.py:89,</span> in <span class="ni">_init_ipython_printing.&lt;locals&gt;._preview_wrapper</span><span class="nt">(o)</span>
-<span class="g g-Whitespace">     </span><span class="mi">87</span> <span class="n">exprbuffer</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">88</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">89</span>     <span class="n">preview</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="n">viewer</span><span class="o">=</span><span class="s1">&#39;BytesIO&#39;</span><span class="p">,</span> <span class="n">euler</span><span class="o">=</span><span class="n">euler</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span>             <span class="n">outputbuffer</span><span class="o">=</span><span class="n">exprbuffer</span><span class="p">,</span> <span class="n">extra_preamble</span><span class="o">=</span><span class="n">extra_preamble</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span>             <span class="n">dvioptions</span><span class="o">=</span><span class="n">dvioptions</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">92</span> <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span>     <span class="c1"># IPython swallows exceptions</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">debug</span><span class="p">(</span><span class="s2">&quot;png printing:&quot;</span><span class="p">,</span> <span class="s2">&quot;_preview_wrapper exception raised:&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span>           <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sympy\printing\preview.py:369,</span> in <span class="ni">preview</span><span class="nt">(expr, output, viewer, euler, packages, filename, outputbuffer, preamble, dvioptions, outputTexFile, extra_preamble, fontsize, **latex_settings)</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span> <span class="n">cmd</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">commandend</span><span class="p">[</span><span class="n">cmd_variant</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">368</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">369</span>     <span class="n">_check_output_no_window</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="n">workdir</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">STDOUT</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">370</span> <span class="k">except</span> <span class="n">CalledProcessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">371</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">372</span>         <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; exited abnormally with the following output:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span>         <span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cmd</span><span class="p">),</span> <span class="n">e</span><span class="o">.</span><span class="n">output</span><span class="p">))</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sympy\printing\preview.py:25,</span> in <span class="ni">_check_output_no_window</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">creation_flag</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Default value</span>
-<span class="ne">---&gt; </span><span class="mi">25</span> <span class="k">return</span> <span class="n">check_output</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">creationflags</span><span class="o">=</span><span class="n">creation_flag</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\subprocess.py:466,</span> in <span class="ni">check_output</span><span class="nt">(timeout, *popenargs, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span>         <span class="n">empty</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;input&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">empty</span>
-<span class="ne">--&gt; </span><span class="mi">466</span> <span class="k">return</span> <span class="n">run</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span>            <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">stdout</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\subprocess.py:550,</span> in <span class="ni">run</span><span class="nt">(input, capture_output, timeout, check, *popenargs, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">548</span> <span class="k">with</span> <span class="n">Popen</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">as</span> <span class="n">process</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">549</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">550</span>         <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">551</span>     <span class="k">except</span> <span class="n">TimeoutExpired</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">552</span>         <span class="n">process</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\subprocess.py:1196,</span> in <span class="ni">Popen.communicate</span><span class="nt">(self, input, timeout)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1194</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_stdin_write</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1195</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1196</span>     <span class="n">stdout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1197</span>     <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1198</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span><span class="p">:</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
+<img alt="../_images/0a58b752f319b2638f2e0923cdaee2e59539ac0ed3fd94aa16a3177f6de716f0.png" src="../_images/0a58b752f319b2638f2e0923cdaee2e59539ac0ed3fd94aa16a3177f6de716f0.png" />
 </div>
 </div>
 <p>Funkcijo lahko tudi poimenujemo; tukaj je primer, kjer uporabimo funkcijo sinus in konstanto <span class="math notranslate nohighlight">\(\pi\)</span>:</p>
@@ -1005,24 +900,24 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;positive&#39;: True,
- &#39;extended_real&#39;: True,
- &#39;hermitian&#39;: True,
- &#39;extended_nonzero&#39;: True,
- &#39;infinite&#39;: False,
- &#39;nonzero&#39;: True,
- &#39;imaginary&#39;: False,
- &#39;commutative&#39;: True,
- &#39;nonpositive&#39;: False,
- &#39;zero&#39;: False,
+ &#39;nonnegative&#39;: True,
  &#39;complex&#39;: True,
  &#39;negative&#39;: False,
- &#39;extended_nonnegative&#39;: True,
+ &#39;nonzero&#39;: True,
+ &#39;extended_nonzero&#39;: True,
+ &#39;extended_real&#39;: True,
  &#39;finite&#39;: True,
+ &#39;infinite&#39;: False,
+ &#39;extended_nonnegative&#39;: True,
+ &#39;commutative&#39;: True,
  &#39;extended_positive&#39;: True,
+ &#39;nonpositive&#39;: False,
  &#39;extended_negative&#39;: False,
- &#39;nonnegative&#39;: True,
  &#39;real&#39;: True,
- &#39;extended_nonpositive&#39;: False}
+ &#39;zero&#39;: False,
+ &#39;hermitian&#39;: True,
+ &#39;extended_nonpositive&#39;: False,
+ &#39;imaginary&#39;: False}
 </pre></div>
 </div>
 </div>
@@ -1273,7 +1168,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>377 ms ± 31.6 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>124 ms ± 16.9 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -1308,8 +1203,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The slowest run took 5.98 times longer than the fastest. This could mean that an intermediate result is being cached.
-53.6 µs ± 52 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.5 μs ± 1.12 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1366,8 +1260,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0f4a29f8ff3634ceacadd402b2a15013e5d34601d83502669839c1701a786f6b.png" src="../_images/0f4a29f8ff3634ceacadd402b2a15013e5d34601d83502669839c1701a786f6b.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x17308af6510&gt;
+<img alt="../_images/bc37e14e84ae293967f52aab2331f88c71fd6cdd639367baac18170ef7104a91.png" src="../_images/bc37e14e84ae293967f52aab2331f88c71fd6cdd639367baac18170ef7104a91.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x234910c9910&gt;
 </pre></div>
 </div>
 </div>
@@ -1402,7 +1296,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06e74443ff4f5a3cdab9d046aeb80c7908f4b5ef90d335ff6081f23442ad65e1.png" src="../_images/06e74443ff4f5a3cdab9d046aeb80c7908f4b5ef90d335ff6081f23442ad65e1.png" />
+<img alt="../_images/7880c26a7d1e15e3aa3388637b3e75508cfad33ed5e5bc578007e983b5f6457e.png" src="../_images/7880c26a7d1e15e3aa3388637b3e75508cfad33ed5e5bc578007e983b5f6457e.png" />
 </div>
 </div>
 <section id="parametricni-izris">
@@ -1432,7 +1326,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3a17ff3a87cca9c70c8e04fccb994005c5053a00aaaed0d6ceed9b1692d6b8f3.png" src="../_images/3a17ff3a87cca9c70c8e04fccb994005c5053a00aaaed0d6ceed9b1692d6b8f3.png" />
+<img alt="../_images/cfc9a7d2e2841ab0a7777bc2bab27f853c8f126bc056f280735b34d632fda308.png" src="../_images/cfc9a7d2e2841ab0a7777bc2bab27f853c8f126bc056f280735b34d632fda308.png" />
 </div>
 </div>
 </section>
@@ -1465,7 +1359,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/593b8255f5a71422e100a2013a6e90f861926ed6f29bc36fa95950bc34591aa4.png" src="../_images/593b8255f5a71422e100a2013a6e90f861926ed6f29bc36fa95950bc34591aa4.png" />
+<img alt="../_images/e7018a486999d1dffd12ddd74c6b5bf93e820e317c83c1753b2f81c9226b4645.png" src="../_images/e7018a486999d1dffd12ddd74c6b5bf93e820e317c83c1753b2f81c9226b4645.png" />
 </div>
 </div>
 <p>Za ostale prikaze glejte <a class="reference external" href="http://docs.sympy.org/latest/modules/plotting.html#module-sympy.plotting.plot">dokumentacijo</a>.</p>
@@ -2179,7 +2073,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b4a4cc308747a6593bf263ee9dca5404bd4eba8f75d56717882163499bcd91eb.png" src="../_images/b4a4cc308747a6593bf263ee9dca5404bd4eba8f75d56717882163499bcd91eb.png" />
+<img alt="../_images/e041fa2e31beb9ffef7d870517016a6a52381e02235677d5971fde27f8bf91ca.png" src="../_images/e041fa2e31beb9ffef7d870517016a6a52381e02235677d5971fde27f8bf91ca.png" />
 </div>
 </div>
 <p>Kvadratna enačba:</p>
