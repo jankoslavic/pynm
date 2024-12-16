@@ -1527,7 +1527,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/371ab47bff51363eac872b0ec38dd9616a649631d39675360693b335d0c55198.png" src="../_images/371ab47bff51363eac872b0ec38dd9616a649631d39675360693b335d0c55198.png" />
+<img alt="../_images/fdbe21fc9730669e69f1342d8ee43e621f2775f367538a5929b998b244d56fbe.png" src="../_images/fdbe21fc9730669e69f1342d8ee43e621f2775f367538a5929b998b244d56fbe.png" />
 </div>
 </div>
 </section>
@@ -1693,7 +1693,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_5472\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_12932\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
   f1_ocena = (fun(x+h, dtype=dtype)-fun(x-h,dtype=dtype))/(2*dtype(h))
 </pre></div>
 </div>
@@ -1717,17 +1717,9 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
     <span class="n">plt</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">f1_64</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;float64=float&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Ocena odvoda za različne tipe natančnosti&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$h$&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Ocena odvoda: $-\exp(-1)=−0.3678794$&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Ocena odvoda: $-</span><span class="se">\\</span><span class="s1">exp(-1)=−0.3678794$&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.37</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.365</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_5472\4215166383.py:7: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-  plt.ylabel(&#39;Ocena odvoda: $-\exp(-1)=−0.3678794$&#39;)
 </pre></div>
 </div>
 </div>
@@ -1740,7 +1732,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_5472\4215166383.py:7: SyntaxWarning:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e3d078269efcade54ef8800ef1023528005b68833d63cadc2ed16a83d0033256.png" src="../_images/e3d078269efcade54ef8800ef1023528005b68833d63cadc2ed16a83d0033256.png" />
+<img alt="../_images/24d7fa21a2f74ec07fa1c842e57f82e125755ea5103ce2454aed0cee0d141e7d.png" src="../_images/24d7fa21a2f74ec07fa1c842e57f82e125755ea5103ce2454aed0cee0d141e7d.png" />
 </div>
 </div>
 <p>Pri relativno velikem koraku <span class="math notranslate nohighlight">\(h\)</span> prevladuje napaka metode, pri majhnem koraku pa zaokrožitvnea napaka; optimalni korak lahko ocenimo glede na:</p>
