@@ -454,7 +454,7 @@
 <img alt="Poševni met" src="../_images/posevni_met.png" /></p>
 <p>Velikost sile upora zraka je <span class="math notranslate nohighlight">\(|\textbf{F}|=c\,|\textbf{v}|^2\)</span>, potem sta gibalni enačbi:</p>
 <div class="math notranslate nohighlight">
-\[x''(t)=-F_x/m\qquad\ddot y(t)=-F_y/m-g.\]</div>
+\[x''(t)=-F_x/m\qquad y''(t)=-F_y/m-g.\]</div>
 <p>Komponente sile so (glejte izpeljavo pri poglavju iz reševanja začetnega problema sistema diferencialnih enačb):</p>
 <div class="math notranslate nohighlight">
 \[F_x=-c\,x'\,\sqrt{x'^2+y'^2},\qquad F_y=-c\,y'\,\sqrt{x'^2+y'^2}.\]</div>
@@ -802,6 +802,21 @@ y_3'&amp;=&amp;F_y/m-g.\\
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y0</span><span class="p">[:,:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[  0.,   0.,   0.],
+       [  5.,   5.,   5.],
+       [  0.,   0.,   0.],
+       [100., 100., 100.]])
+</pre></div>
+</div>
+</div>
+</div>
 <p>In rešimo robni problem in opis rezultata</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -813,12 +828,27 @@ y_3'&amp;=&amp;F_y/m-g.\\
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span><span class="o">.</span><span class="n">message</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;The algorithm converged to the desired accuracy.&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       message: The algorithm converged to the desired accuracy.
+       success: True
+        status: 0
+             x: [ 0.000e+00  2.381e-02 ...  9.762e-01  1.000e+00]
+           sol: &lt;scipy.interpolate._interpolate.PPoly object at 0x000001EFE42CA2B0&gt;
+             p: None
+             y: [[-1.588e-22  4.482e-01 ...  9.853e+00  1.000e+01]
+                 [ 1.939e+01  1.828e+01 ...  6.210e+00  6.117e+00]
+                 [-3.176e-22  3.801e-01 ...  5.031e+00  5.000e+00]
+                 [ 1.656e+01  1.539e+01 ... -1.189e+00 -1.403e+00]]
+            yp: [[ 1.939e+01  1.828e+01 ...  6.210e+00  6.117e+00]
+                 [-4.944e+01 -4.369e+01 ... -3.926e+00 -3.839e+00]
+                 [ 1.656e+01  1.539e+01 ... -1.189e+00 -1.403e+00]
+                 [-5.205e+01 -4.659e+01 ... -9.058e+00 -8.929e+00]]
+ rms_residuals: [ 4.302e-05  3.582e-05 ...  1.297e-06  4.151e-06]
+         niter: 2
 </pre></div>
 </div>
 </div>
