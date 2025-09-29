@@ -165,12 +165,12 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../README.html">
-                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2024/25
+                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2025/26
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2024/25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2025/26</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Funkcije, izjeme, moduli</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
@@ -1439,7 +1439,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>33.9 ms ± 392 μs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34.3 ms ± 892 μs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1454,7 +1454,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>814 μs ± 28.2 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.09 ms ± 678 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1487,8 +1487,8 @@ slika:)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Package                           Version&#39;,
  &#39;--------------------------------- --------------&#39;,
  &#39;accessible-pygments               0.0.5&#39;,
- &#39;alabaster                         0.7.16&#39;,
- &#39;anyio                             4.4.0&#39;]
+ &#39;acoustics                         0.2.6&#39;,
+ &#39;alabaster                         0.7.16&#39;]
 </pre></div>
 </div>
 </div>
@@ -1520,13 +1520,102 @@ slika:)
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">61</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pytube</span>
+<span class="ne">HTTPError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">61</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pytube</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">yt</span> <span class="o">=</span> <span class="n">pytube</span><span class="o">.</span><span class="n">YouTube</span><span class="p">(</span><span class="s1">&#39;https://www.youtube.com/watch?v=P4IrAXbpeyI&#39;</span><span class="p">)</span> <span class="c1"># kreiramo instanco objekta (kaj to točno pomeni, spoznamo pozneje)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">yt</span><span class="o">.</span><span class="n">streams</span><span class="o">.</span><span class="n">get_highest_resolution</span><span class="p">()</span><span class="o">.</span><span class="n">download</span><span class="p">()</span> <span class="c1">#Prenesemo video</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">yt</span><span class="o">.</span><span class="n">streams</span><span class="o">.</span><span class="n">get_highest_resolution</span><span class="p">()</span><span class="o">.</span><span class="n">download</span><span class="p">()</span> <span class="c1">#Prenesemo video</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pytube&#39;
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytube\__main__.py:296,</span> in <span class="ni">YouTube.streams</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Interface to query both adaptive (DASH) and progressive streams.</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span><span class="sd"> :rtype: :class:`StreamQuery &lt;StreamQuery&gt;`.</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_availability</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">296</span> <span class="k">return</span> <span class="n">StreamQuery</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fmt_streams</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytube\__main__.py:176,</span> in <span class="ni">YouTube.fmt_streams</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">172</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fmt_streams</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fmt_streams</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">--&gt; </span><span class="mi">176</span> <span class="n">stream_manifest</span> <span class="o">=</span> <span class="n">extract</span><span class="o">.</span><span class="n">apply_descrambler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">streaming_data</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span> <span class="c1"># If the cached js doesn&#39;t work, try fetching a new js file</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span> <span class="c1"># https://github.com/pytube/pytube/issues/1054</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span> <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytube\__main__.py:157,</span> in <span class="ni">YouTube.streaming_data</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span> <span class="nd">@property</span>
+<span class="g g-Whitespace">    </span><span class="mi">155</span> <span class="k">def</span> <span class="nf">streaming_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Return streamingData from video info.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">157</span>     <span class="k">if</span> <span class="s1">&#39;streamingData&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vid_info</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vid_info</span><span class="p">[</span><span class="s1">&#39;streamingData&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span>     <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytube\__main__.py:246,</span> in <span class="ni">YouTube.vid_info</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">242</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vid_info</span>
+<span class="g g-Whitespace">    </span><span class="mi">244</span> <span class="n">innertube</span> <span class="o">=</span> <span class="n">InnerTube</span><span class="p">(</span><span class="n">use_oauth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">use_oauth</span><span class="p">,</span> <span class="n">allow_cache</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">allow_oauth_cache</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">246</span> <span class="n">innertube_response</span> <span class="o">=</span> <span class="n">innertube</span><span class="o">.</span><span class="n">player</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">video_id</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">247</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vid_info</span> <span class="o">=</span> <span class="n">innertube_response</span>
+<span class="g g-Whitespace">    </span><span class="mi">248</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vid_info</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytube\innertube.py:448,</span> in <span class="ni">InnerTube.player</span><span class="nt">(self, video_id)</span>
+<span class="g g-Whitespace">    </span><span class="mi">444</span> <span class="n">query</span> <span class="o">=</span> <span class="p">{</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span>     <span class="s1">&#39;videoId&#39;</span><span class="p">:</span> <span class="n">video_id</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span> <span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span> <span class="n">query</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">base_params</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">448</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_api</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_data</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytube\innertube.py:390,</span> in <span class="ni">InnerTube._call_api</span><span class="nt">(self, endpoint, query, data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">386</span>         <span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Authorization&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Bearer </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">access_token</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span> <span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">390</span> <span class="n">response</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">_execute_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">391</span>     <span class="n">endpoint_url</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">392</span>     <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">393</span>     <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">394</span>     <span class="n">data</span><span class="o">=</span><span class="n">data</span>
+<span class="g g-Whitespace">    </span><span class="mi">395</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">396</span> <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\pytube\request.py:37,</span> in <span class="ni">_execute_request</span><span class="nt">(url, method, headers, data, timeout)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid URL&quot;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">37</span> <span class="k">return</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py:215,</span> in <span class="ni">urlopen</span><span class="nt">(url, data, timeout, cafile, capath, cadefault, context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>     <span class="n">opener</span> <span class="o">=</span> <span class="n">_opener</span>
+<span class="ne">--&gt; </span><span class="mi">215</span> <span class="k">return</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py:521,</span> in <span class="ni">OpenerDirector.open</span><span class="nt">(self, fullurl, data, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">519</span> <span class="k">for</span> <span class="n">processor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="p">[]):</span>
+<span class="g g-Whitespace">    </span><span class="mi">520</span>     <span class="n">meth</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">processor</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">521</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">meth</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">523</span> <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py:630,</span> in <span class="ni">HTTPErrorProcessor.http_response</span><span class="nt">(self, request, response)</span>
+<span class="g g-Whitespace">    </span><span class="mi">627</span> <span class="c1"># According to RFC 2616, &quot;2xx&quot; code indicates that the client&#39;s</span>
+<span class="g g-Whitespace">    </span><span class="mi">628</span> <span class="c1"># request was successfully received, understood, and accepted.</span>
+<span class="g g-Whitespace">    </span><span class="mi">629</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">200</span> <span class="o">&lt;=</span> <span class="n">code</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">630</span>     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span>         <span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">633</span> <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py:559,</span> in <span class="ni">OpenerDirector.error</span><span class="nt">(self, proto, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">557</span> <span class="k">if</span> <span class="n">http_err</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">558</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="s1">&#39;http_error_default&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">orig_args</span>
+<span class="ne">--&gt; </span><span class="mi">559</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py:492,</span> in <span class="ni">OpenerDirector._call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">490</span> <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">handlers</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">491</span>     <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">492</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">494</span>         <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py:639,</span> in <span class="ni">HTTPDefaultErrorHandler.http_error_default</span><span class="nt">(self, req, fp, code, msg, hdrs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">638</span> <span class="k">def</span> <span class="nf">http_error_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">639</span>     <span class="k">raise</span> <span class="n">HTTPError</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">full_url</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
+
+<span class="ne">HTTPError</span>: HTTP Error 400: Bad Request
 </pre></div>
 </div>
 </div>

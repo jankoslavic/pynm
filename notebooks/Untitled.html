@@ -167,12 +167,12 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../README.html">
-                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2024/25
+                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2025/26
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2024/25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2025/26</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
@@ -533,12 +533,12 @@
 <span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">toc</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
 <span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">return</span> <span class="n">toc</span><span class="o">-</span><span class="n">tic</span>
 
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\linalg\_linalg.py:615,</span> in <span class="ni">inv</span><span class="nt">(a)</span>
-<span class="g g-Whitespace">    </span><span class="mi">612</span> <span class="n">signature</span> <span class="o">=</span> <span class="s1">&#39;D-&gt;D&#39;</span> <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;d-&gt;d&#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">613</span> <span class="k">with</span> <span class="n">errstate</span><span class="p">(</span><span class="n">call</span><span class="o">=</span><span class="n">_raise_linalgerror_singular</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">&#39;call&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">614</span>               <span class="n">over</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">divide</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">under</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">615</span>     <span class="n">ainv</span> <span class="o">=</span> <span class="n">_umath_linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">616</span> <span class="k">return</span> <span class="n">wrap</span><span class="p">(</span><span class="n">ainv</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">result_t</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\linalg\_linalg.py:608,</span> in <span class="ni">inv</span><span class="nt">(a)</span>
+<span class="g g-Whitespace">    </span><span class="mi">605</span> <span class="n">signature</span> <span class="o">=</span> <span class="s1">&#39;D-&gt;D&#39;</span> <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;d-&gt;d&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">606</span> <span class="k">with</span> <span class="n">errstate</span><span class="p">(</span><span class="n">call</span><span class="o">=</span><span class="n">_raise_linalgerror_singular</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">&#39;call&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">607</span>               <span class="n">over</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">divide</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">under</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">608</span>     <span class="n">ainv</span> <span class="o">=</span> <span class="n">_umath_linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">609</span> <span class="k">return</span> <span class="n">wrap</span><span class="p">(</span><span class="n">ainv</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">result_t</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>

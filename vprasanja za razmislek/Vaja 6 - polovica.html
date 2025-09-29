@@ -167,12 +167,12 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../README.html">
-                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2024/25
+                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2025/26
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2024/25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2025/26</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
@@ -546,12 +546,12 @@ Sile v palicah izračunamo s pomočjo sistema linearnih enačb.</p>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">P</span>
 
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\linalg\_linalg.py:413,</span> in <span class="ni">solve</span><span class="nt">(a, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">410</span> <span class="n">signature</span> <span class="o">=</span> <span class="s1">&#39;DD-&gt;D&#39;</span> <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;dd-&gt;d&#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">411</span> <span class="k">with</span> <span class="n">errstate</span><span class="p">(</span><span class="n">call</span><span class="o">=</span><span class="n">_raise_linalgerror_singular</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">&#39;call&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">412</span>               <span class="n">over</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">divide</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">under</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">413</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">gufunc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">415</span> <span class="k">return</span> <span class="n">wrap</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">result_t</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\linalg\_linalg.py:410,</span> in <span class="ni">solve</span><span class="nt">(a, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span> <span class="n">signature</span> <span class="o">=</span> <span class="s1">&#39;DD-&gt;D&#39;</span> <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;dd-&gt;d&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">408</span> <span class="k">with</span> <span class="n">errstate</span><span class="p">(</span><span class="n">call</span><span class="o">=</span><span class="n">_raise_linalgerror_singular</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">&#39;call&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">409</span>               <span class="n">over</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">divide</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">under</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">410</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">gufunc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span> <span class="k">return</span> <span class="n">wrap</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">result_t</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
 
 <span class="ne">UFuncTypeError</span>: Cannot cast ufunc &#39;solve1&#39; input 0 from dtype(&#39;O&#39;) to dtype(&#39;float64&#39;) with casting rule &#39;same_kind&#39;
 </pre></div>

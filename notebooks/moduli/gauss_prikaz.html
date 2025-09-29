@@ -165,12 +165,12 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../README.html">
-                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2024/25
+                    Numerične metode v ekosistemu Pythona, Janko Slavič, 2025/26
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2024/25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2025/26</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
@@ -400,11 +400,6 @@
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">gauss_prikaz</span> <span class="kn">import</span> <span class="n">gauss_visualize</span>
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Token var=&lt;ContextVar name=&#39;format_options&#39; default={&#39;edgeitems&#39;: 3, &#39;threshold&#39;: 1000, &#39;floatmode&#39;: &#39;maxprec&#39;, &#39;precision&#39;: 8, &#39;suppress&#39;: False, &#39;linewidth&#39;: 75, &#39;nanstr&#39;: &#39;nan&#39;, &#39;infstr&#39;: &#39;inf&#39;, &#39;sign&#39;: &#39;-&#39;, &#39;formatter&#39;: None, &#39;legacy&#39;: 9223372036854775807, &#39;override_repr&#39;: None} at 0x000002C41C1C6DE0&gt; at 0x000002C4231FE9C0&gt;
 </pre></div>
 </div>
 </div>
@@ -1082,6 +1077,7 @@ mpl.figure.prototype.mouse_event = function (event, name) {
         y: y,
         button: event.button,
         step: event.step,
+        buttons: event.buttons,
         modifiers: getModifiers(event),
         guiEvent: simpleKeys(event),
     });
@@ -1419,7 +1415,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='65dc5d36-c105-4ffe-8d89-82ebfcbccee8'></div></div><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+</script><div class="output text_html"><div id='9110bbe4-db51-4dcb-b46d-a86ae6798318'></div></div><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ani_LU</span><span class="p">,</span> <span class="n">LU</span> <span class="o">=</span> <span class="n">gauss_visualize</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">LU</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">savepath</span><span class="o">=</span><span class="s1">&#39;../fig/gauss_eliminacija_lu.gif&#39;</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">float_precision</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>

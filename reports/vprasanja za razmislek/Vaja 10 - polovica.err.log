@@ -1,7 +1,7 @@
 Traceback (most recent call last):
   File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
     executenb(
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1314, in execute
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1319, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
@@ -18,14 +18,18 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-x_num_sum_glajen = np.convolve(glajenje, x_num_sum, mode='valid')
+from scipy.misc import central_diff_weights as cdw
 ------------------
 
+----- stderr -----
+C:\Users\janko\AppData\Local\Temp\ipykernel_64876\2572490975.py:1: DeprecationWarning: scipy.misc is deprecated and will be removed in 2.0.0
+  from scipy.misc import central_diff_weights as cdw
+------------------
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mNameError[0m                                 Traceback (most recent call last)
-Cell [1;32mIn[28], line 1[0m
-[1;32m----> 1[0m x_num_sum_glajen [38;5;241m=[39m np[38;5;241m.[39mconvolve(glajenje, [43mx_num_sum[49m, mode[38;5;241m=[39m[38;5;124m'[39m[38;5;124mvalid[39m[38;5;124m'[39m)
+[1;31mImportError[0m                               Traceback (most recent call last)
+Cell [1;32mIn[16], line 1[0m
+[1;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmisc[39;00m [38;5;28;01mimport[39;00m central_diff_weights [38;5;28;01mas[39;00m cdw
 
-[1;31mNameError[0m: name 'x_num_sum' is not defined
+[1;31mImportError[0m: cannot import name 'central_diff_weights' from 'scipy.misc' (C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\scipy\misc\__init__.py)
 
