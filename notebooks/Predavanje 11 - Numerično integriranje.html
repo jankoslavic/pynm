@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=a3a20203"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -70,7 +67,6 @@
     <link rel="prev" title="Numerično odvajanje" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="sl"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -86,8 +82,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -95,6 +102,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -102,8 +110,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -119,8 +127,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -150,17 +157,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Numerične metode v ekosistemu Pythona - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Numerične metode v ekosistemu Pythona - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Numerične metode v ekosistemu Pythona - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Išči</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Išči</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -198,14 +209,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -349,16 +355,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -486,7 +500,7 @@
 <p>Pripravimo si vozlišča. Osnovni korak naj bo <span class="math notranslate nohighlight">\(h=0.25\)</span>, v tem primeru imamo štiri podintervale in pet vozlišč, pri koraku <span class="math notranslate nohighlight">\(2h\)</span> so tri vozliščne točke in pri koraku <span class="math notranslate nohighlight">\(4h\)</span> samo dve (skrajni):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">xg</span><span class="p">,</span> <span class="n">hg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># goste točke (za prikaz)</span>
 <span class="n">x2v</span><span class="p">,</span> <span class="n">h2v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># korak h2v = 1 (2 vozlišči)</span>
 <span class="n">x3v</span><span class="p">,</span> <span class="n">h3v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># korak h3v = 0.5 (3 vozlišča)</span>
@@ -511,12 +525,12 @@
 <p>Pripravimo prikaz podatkov:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rc</span> <span class="c1"># to uvozimo, da so fonti na sliki latex ustrezni</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">rc</span> <span class="c1"># to uvozimo, da so fonti na sliki latex ustrezni</span>
 <span class="c1">#rc(&#39;font&#39;,**{&#39;family&#39;:&#39;sans-serif&#39;,&#39;sans-serif&#39;:[&#39;Helvetica&#39;]})</span>
 <span class="n">rc</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="n">usetex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="k">def</span> <span class="nf">fig_motivacija</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fig_motivacija</span><span class="p">():</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">xg</span><span class="p">,</span> <span class="n">yg</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\int_1^2\,x\,\sin(x)\,\textrm</span><span class="si">{d}</span><span class="s1">x$&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xg</span><span class="p">,</span> <span class="n">yg</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$x\,\sin(x)$&#39;</span><span class="p">)</span>
@@ -537,13 +551,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9bff1b848c9cbe530dbb3e0b7fbd825b896dd4b097d765583453628175532c3a.png" src="../_images/9bff1b848c9cbe530dbb3e0b7fbd825b896dd4b097d765583453628175532c3a.png" />
+<img alt="../_images/911ef723cfb0ca5b3fa7ea941e08f798d3b97aeb2ff3e991e4f65962b50372d7.png" src="../_images/911ef723cfb0ca5b3fa7ea941e08f798d3b97aeb2ff3e991e4f65962b50372d7.png" />
 </div>
 </div>
 <p>Analitično izračunajmo točen rezultat:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">I_točno</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">evalf</span><span class="p">())</span>
@@ -575,7 +589,7 @@
 <p>Numerična implementacija je:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trapezno</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">trapezno</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Trapezno pravilo integriranja.</span>
 <span class="sd">    </span>
@@ -605,7 +619,7 @@
 <p>Pripravimo sliko:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fig_trapezno</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fig_trapezno</span><span class="p">():</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x2v</span><span class="p">,</span> <span class="n">y2v</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x2v</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y2v</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$I_{</span><span class="se">\\</span><span class="s1">textrm</span><span class="si">{trapezno}</span><span class="s1">}$&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">1.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
@@ -628,7 +642,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/647256342a745057471e5aabf439d1f0c15078e10688f3b3c6ae9bae5d32896f.png" src="../_images/647256342a745057471e5aabf439d1f0c15078e10688f3b3c6ae9bae5d32896f.png" />
+<img alt="../_images/1348b51af42c868203316b2e968ce0f8a97dcd5469ebeb7bd3832e0caec9a1d8.png" src="../_images/1348b51af42c868203316b2e968ce0f8a97dcd5469ebeb7bd3832e0caec9a1d8.png" />
 </div>
 </div>
 </section>
@@ -660,7 +674,7 @@
 <p>Numerična implementacija je:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trapezno_sest</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">trapezno_sest</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Sestavljeno trapezno pravilo integriranja.</span>
 <span class="sd">    </span>
@@ -713,7 +727,7 @@
 <p>Pripravimo sliko:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fig_trapezno_sest</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fig_trapezno_sest</span><span class="p">():</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x3v</span><span class="p">,</span> <span class="n">y3v</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x3v</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y3v</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$I_{</span><span class="se">\\</span><span class="s1">textrm{trapezno sestavljeno}}$&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
@@ -738,7 +752,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/377a8b2dcabf3e06555dbe720b05a345734d9a8c5f0bc8fba2df5145da7c42b6.png" src="../_images/377a8b2dcabf3e06555dbe720b05a345734d9a8c5f0bc8fba2df5145da7c42b6.png" />
+<img alt="../_images/13678947e169eb25eca5019bfc7a3c077606754f98477ac792726cde1f8fc8b8.png" src="../_images/13678947e169eb25eca5019bfc7a3c077606754f98477ac792726cde1f8fc8b8.png" />
 </div>
 </div>
 </section>
@@ -868,7 +882,7 @@ Boljši približek: 1.4408392930139313
 <p>Pripravimo Python funkcijo, ki v simbolni obliki vrne seznam <span class="math notranslate nohighlight">\(n\)</span> koeficientov Lagrangevih polinomov <span class="math notranslate nohighlight">\([l_0(x), l_1(x),\dots, l_{n-1}(x)]\)</span> stopnje <span class="math notranslate nohighlight">\(n-1\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lagrange</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">vozlišča_predpona</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">lagrange</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">vozlišča_predpona</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">vozlišča_predpona</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
         <span class="n">vozlišča</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">vozlišča_predpona</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> 
     <span class="n">coeffs</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1005,14 +1019,14 @@ Boljši približek: 1.4408392930139313
 <p>Pripravimo sliko. Ker Simsonovo pravilo temelji na kvadratni interpolaciji, moramo naprej pripraviti interpolacijski polinom (pomagamo si s <code class="docutils literal notranslate"><span class="pre">scipy.interpolate</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">interpolate</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fig_Simpsonovo</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fig_Simpsonovo</span><span class="p">():</span>
     <span class="n">y_interpolate</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">lagrange</span><span class="p">(</span><span class="n">x3v</span><span class="p">,</span> <span class="n">y3v</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">xg</span><span class="p">,</span> <span class="n">y_interpolate</span><span class="p">(</span><span class="n">xg</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x3v</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y3v</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1038,7 +1052,7 @@ Boljši približek: 1.4408392930139313
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3d0656212a2ff41a611337535891d72b9ce4a45d517f52f30b06e00823ab988a.png" src="../_images/3d0656212a2ff41a611337535891d72b9ce4a45d517f52f30b06e00823ab988a.png" />
+<img alt="../_images/9facd1ded1df101146f6b9e66375ea0db4805e1a2c983a8a44d0a5250bc7995d.png" src="../_images/9facd1ded1df101146f6b9e66375ea0db4805e1a2c983a8a44d0a5250bc7995d.png" />
 </div>
 </div>
 </section>
@@ -1057,7 +1071,7 @@ Boljši približek: 1.4408392930139313
 <p>Poglejmo si primer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">integrate</span>
 <span class="n">integrate</span><span class="o">.</span><span class="n">newton_cotes</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1119,7 +1133,7 @@ Boljši približek: 1.4408392930139313
 <p>Pripravimo še prikaz:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fig_Simpsonovo38</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fig_Simpsonovo38</span><span class="p">():</span>
     <span class="n">y_interpolate</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">lagrange</span><span class="p">(</span><span class="n">x4v</span><span class="p">,</span> <span class="n">y4v</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">xg</span><span class="p">,</span> <span class="n">y_interpolate</span><span class="p">(</span><span class="n">xg</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x4v</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y4v</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1147,7 +1161,7 @@ Boljši približek: 1.4408392930139313
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e5cbbc1b8bf4bc056c69bfd9f2237922cf4c0662135b42c250345a5b5e9459fb.png" src="../_images/e5cbbc1b8bf4bc056c69bfd9f2237922cf4c0662135b42c250345a5b5e9459fb.png" />
+<img alt="../_images/30e67c95838d010447aaed64e9f81b63d41385a234e2372a74a02d367279dcc6.png" src="../_images/30e67c95838d010447aaed64e9f81b63d41385a234e2372a74a02d367279dcc6.png" />
 </div>
 </div>
 </section>
@@ -1171,7 +1185,7 @@ f(x_0)
 <p>Numerična implementacija:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simpsonovo_sest</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">simpsonovo_sest</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Sestavljeno Simpsonovo pravilo integriranja.</span>
 
@@ -1197,7 +1211,7 @@ f(x_0)
 <p>Pripravimo sliko:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fig_Simpsonovo_sest</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fig_Simpsonovo_sest</span><span class="p">():</span>
     <span class="n">y_interpolate</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">lagrange</span><span class="p">(</span><span class="n">x5v</span><span class="p">,</span> <span class="n">y5v</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">xg</span><span class="p">,</span> <span class="n">y_interpolate</span><span class="p">(</span><span class="n">xg</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>       
     <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x5v</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y5v</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1221,7 +1235,7 @@ f(x_0)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9fc708a4c79c116d0bd85150df7f4525741d6d332b4339335450644b87625d00.png" src="../_images/9fc708a4c79c116d0bd85150df7f4525741d6d332b4339335450644b87625d00.png" />
+<img alt="../_images/67eeea056bababb67bc970fe890ce914ae7584e968415d540cdd4177d380dc67.png" src="../_images/67eeea056bababb67bc970fe890ce914ae7584e968415d540cdd4177d380dc67.png" />
 </div>
 </div>
 <section id="boljsa-ocena-integrala">
@@ -1302,7 +1316,7 @@ Boljši približek: 1.4404218714139077
 <p>Poglejmo si primer, najprej uvozimo funkcijo <code class="docutils literal notranslate"><span class="pre">simpson</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">simpson</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">simpson</span>
 </pre></div>
 </div>
 </div>
@@ -1461,7 +1475,7 @@ Boljši približek: 1.4404218714139077
 <p>Poglejmo si primer od zgoraj:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">romb</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">romb</span>
 </pre></div>
 </div>
 </div>
@@ -1592,7 +1606,7 @@ Boljši približek: 1.4404218714139077
 <p>Pripravimo si najprej simbolni zapis polinoma in ustreznih spremenljivk:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">P_etc</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">):</span>                       <span class="c1"># n je stopnja polinoma</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">P_etc</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">):</span>                       <span class="c1"># n je stopnja polinoma</span>
     <span class="n">ai</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># seznam a_i</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                              <span class="c1"># spremenljivka x</span>
     <span class="k">return</span> <span class="n">ai</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="nb">sum</span><span class="p">([</span><span class="n">ai</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
@@ -1730,7 +1744,7 @@ Uteži:    (A0, A1)
 <p>Numerična implementacija (vključno s transformacijo mej) za eno, dve ali tri vozlišča:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Gaussova</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">vozlišč</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Gaussova</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">vozlišč</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
 <span class="sd">    Gaussova integracijska metoda.</span>
 
@@ -1739,7 +1753,7 @@ Uteži:    (A0, A1)
 <span class="sd">    :param b:   zgornja meja</span>
 <span class="sd">    :param vozlišča: število vozlišč (1, 2 ali 3)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">xi</span><span class="p">):</span> <span class="c1"># funkcija za transformacijo mej</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">xi</span><span class="p">):</span> <span class="c1"># funkcija za transformacijo mej</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">fun</span><span class="p">((</span><span class="n">b</span><span class="o">+</span><span class="n">a</span> <span class="o">+</span><span class="n">xi</span> <span class="o">*</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">vozlišč</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -1755,7 +1769,7 @@ Uteži:    (A0, A1)
 <p>Poglejmo si zgled. Najprej definirajmo funkcijo, ki jo želimo integrirati:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1811,7 +1825,7 @@ Uteži:    (A0, A1)
 <p>Poglejmo primer od zgoraj:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">fixed_quad</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">fixed_quad</span>
 <span class="n">fixed_quad</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -1865,7 +1879,7 @@ Uteži:    (A0, A1)
 <p>Poglejmo primer od zgoraj:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">integrate</span>
 </pre></div>
 </div>
 </div>
@@ -1902,11 +1916,11 @@ Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.inte
 <p>Definirajmo ustrezne Python funkcije in izračunajmo rezultat:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span> <span class="c1"># integracijska funkcija je enostavna, konstanta = 1!</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span> <span class="c1"># integracijska funkcija je enostavna, konstanta = 1!</span>
     <span class="k">return</span> <span class="mf">1.</span>
-<span class="k">def</span> <span class="nf">gfun</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>    <span class="c1"># spodnja meja = 0</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">gfun</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>    <span class="c1"># spodnja meja = 0</span>
     <span class="k">return</span> <span class="mf">0.</span>
-<span class="k">def</span> <span class="nf">hfun</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>    <span class="c1"># zgornja meja</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hfun</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>    <span class="c1"># zgornja meja</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">integrate</span><span class="o">.</span><span class="n">dblquad</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">gfun</span><span class="o">=</span><span class="n">gfun</span><span class="p">,</span> <span class="n">hfun</span><span class="o">=</span><span class="n">hfun</span><span class="p">)</span>
 </pre></div>
@@ -1929,7 +1943,7 @@ Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.inte
 <p>Tukaj si bomo na primeru ogledali funkcijo <code class="docutils literal notranslate"><span class="pre">cumtrapz</span></code>. Kot primer si, ko na maso <span class="math notranslate nohighlight">\(m=1\)</span> (enote izpustimo) deluje sila <span class="math notranslate nohighlight">\(F=\sin(t)\)</span>. Iz 2. Newtonovega zakona sledi: <span class="math notranslate nohighlight">\(F=m\,\ddot x\)</span>. Pospešek integriramo, da izračunamo hitrost; nato integriramo še enkrat za pomik. Definirajmo najprej funkcijo za pospešek:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pospešek</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pospešek</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
     <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">F</span><span class="o">/</span><span class="n">m</span>
@@ -2083,8 +2097,7 @@ Naloga:</p>
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2205,8 +2218,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=a3a20203"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -68,7 +65,6 @@
     <link rel="search" title="Išči" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="sl"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -84,8 +80,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -93,6 +100,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -100,8 +108,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -119,8 +127,7 @@
       
         
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -150,17 +157,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Numerične metode v ekosistemu Pythona - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Numerične metode v ekosistemu Pythona - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Numerične metode v ekosistemu Pythona - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Išči</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Išči</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -198,14 +209,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -349,16 +355,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -552,7 +566,7 @@ ii
 <p>Kadar želimo neko kodo uporabiti več kot enkrat, je je dobro definirati v obliki funkcije. Sintaksa je naslednja:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">izpiši_vse_dvakrat</span><span class="p">(</span><span class="n">seznam</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">izpiši_vse_dvakrat</span><span class="p">(</span><span class="n">seznam</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">element</span><span class="p">)</span>
 </pre></div>
@@ -577,7 +591,7 @@ ii
 <p>Pogosto želimo naše funkcije dokumentirati za lažjo prihodnjo rabo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">izpiši_vse_dvakrat_2</span><span class="p">(</span><span class="n">seznam</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">izpiši_vse_dvakrat_2</span><span class="p">(</span><span class="n">seznam</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Funkcija, ki izpiše dvakratnik vsakega elementa v podanem seznamu.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -605,7 +619,7 @@ izpiši_vse_dvakrat_2(seznam)
 <p>Včasih pričakujemo, da bo naša funkcija vrnila rezultat, ki ga lahko ponovno uporabimo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">izpiši_vse_dvakrat_3</span><span class="p">(</span><span class="n">seznam</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">izpiši_vse_dvakrat_3</span><span class="p">(</span><span class="n">seznam</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Funkcija, ki izpiše dvakratnik vsakega elementa v podanem seznamu.</span>
 <span class="sd">    Vrne seznam dvakratnikov elementov podanega seznama.</span>
@@ -648,7 +662,7 @@ izpiši_vse_dvakrat_2(seznam)
 <p>Modul z orodji za numerično računanje. Del paketa Anaconda.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -723,7 +737,7 @@ izpiši_vse_dvakrat_2(seznam)
 <p>Modul, nemenjen izrisu grafov. Prav tako del paketa Anaconda.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -735,10 +749,10 @@ izpiši_vse_dvakrat_2(seznam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1a5f5ab1640&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x26c73003b60&gt;]
 </pre></div>
 </div>
-<img alt="../_images/ea12cf13ae784b0b8ca07ec96e8fd851cf16067763a7ba3c83de198a632a5d87.png" src="../_images/ea12cf13ae784b0b8ca07ec96e8fd851cf16067763a7ba3c83de198a632a5d87.png" />
+<img alt="../_images/6f43eed3648043123ff52ad5fbc478dacba39214e0cfbaa42c4a074ab1c29b40.png" src="../_images/6f43eed3648043123ff52ad5fbc478dacba39214e0cfbaa42c4a074ab1c29b40.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -753,10 +767,10 @@ izpiši_vse_dvakrat_2(seznam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1a5f5a0ec30&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x26c751e44a0&gt;
 </pre></div>
 </div>
-<img alt="../_images/e0595be3e5d98b41984ce64e58d15b9adbb4dcb87fad10ba94fc2b39003a281b.png" src="../_images/e0595be3e5d98b41984ce64e58d15b9adbb4dcb87fad10ba94fc2b39003a281b.png" />
+<img alt="../_images/b5a78259c42a44a576972b89f11546e32aa65940ed655204a87a3f3f4d38e01d.png" src="../_images/b5a78259c42a44a576972b89f11546e32aa65940ed655204a87a3f3f4d38e01d.png" />
 </div>
 </div>
 </section>
@@ -803,7 +817,7 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 <h2>Podatki:<a class="headerlink" href="#podatki" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -888,7 +902,7 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 <p>Izris z <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -900,10 +914,10 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1a5f5b00980&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x26c7528a720&gt;]
 </pre></div>
 </div>
-<img alt="../_images/77ebbe2800367a4b5ab8d1cb36dce0c7ce4e9363c03d51ce231dc0d158eec1ce.png" src="../_images/77ebbe2800367a4b5ab8d1cb36dce0c7ce4e9363c03d51ce231dc0d158eec1ce.png" />
+<img alt="../_images/c5858c975a3478c400dee2b13b9db98b475b2d81417daa37dd612436112c6b37.png" src="../_images/c5858c975a3478c400dee2b13b9db98b475b2d81417daa37dd612436112c6b37.png" />
 </div>
 </div>
 <p>Izris še opremimo:</p>
@@ -921,7 +935,7 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y [mm]&#39;)
 </pre></div>
 </div>
-<img alt="../_images/b390ae8d89ae97d12c9ff96526389c59af6ade200d397651c83b292b32f64f68.png" src="../_images/b390ae8d89ae97d12c9ff96526389c59af6ade200d397651c83b292b32f64f68.png" />
+<img alt="../_images/15ae4950387754ba6e73c2463b3d1e1c0a6d2a78b0489b2dde9fc1eea5f1d827.png" src="../_images/15ae4950387754ba6e73c2463b3d1e1c0a6d2a78b0489b2dde9fc1eea5f1d827.png" />
 </div>
 </div>
 </section>
@@ -932,7 +946,7 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">napetost_upogib</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">izriši</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">napetost_upogib</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">izriši</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Za konzolno vpet nosilec in podane parametre izriše upogibnico</span>
 <span class="sd">    ter vrne vrednost maksimalne napetosti.</span>
@@ -970,7 +984,7 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200.0
 </pre></div>
 </div>
-<img alt="../_images/b390ae8d89ae97d12c9ff96526389c59af6ade200d397651c83b292b32f64f68.png" src="../_images/b390ae8d89ae97d12c9ff96526389c59af6ade200d397651c83b292b32f64f68.png" />
+<img alt="../_images/15ae4950387754ba6e73c2463b3d1e1c0a6d2a78b0489b2dde9fc1eea5f1d827.png" src="../_images/15ae4950387754ba6e73c2463b3d1e1c0a6d2a78b0489b2dde9fc1eea5f1d827.png" />
 </div>
 </div>
 </section>
@@ -994,7 +1008,7 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Izbrana višina: 14.0 mm
 </pre></div>
 </div>
-<img alt="../_images/601b585033e4df9fedaca2d50ba0d4590b8c44e667f29ff4b895de81132f6d4b.png" src="../_images/601b585033e4df9fedaca2d50ba0d4590b8c44e667f29ff4b895de81132f6d4b.png" />
+<img alt="../_images/3f0dcfb36891d0dace8b085a50a4960ecde850c0cfd6a4846c6586406cabe7b6.png" src="../_images/3f0dcfb36891d0dace8b085a50a4960ecde850c0cfd6a4846c6586406cabe7b6.png" />
 </div>
 </div>
 </section>
@@ -1043,8 +1057,7 @@ $<span class="math notranslate nohighlight">\(W_z = \frac{a\,h^2}{6}\)</span>$</
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1126,8 +1139,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

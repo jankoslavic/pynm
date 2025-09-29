@@ -1,10 +1,17 @@
 Traceback (most recent call last):
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_core\utils\__init__.py", line 154, in wrapped
+    asyncio.get_running_loop()
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
   File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
     executenb(
   File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1319, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_core\utils\__init__.py", line 158, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 687, in run_until_complete
@@ -26,22 +33,22 @@ plt.legend();
 ------------------
 
 
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mIndexError[0m                                Traceback (most recent call last)
-Cell [1;32mIn[12], line 2[0m
-[0;32m      1[0m xint [38;5;241m=[39m np[38;5;241m.[39mlinspace(np[38;5;241m.[39mmin(x), np[38;5;241m.[39mmax(x), [38;5;241m50[39m)
-[1;32m----> 2[0m yint [38;5;241m=[39m np[38;5;241m.[39masarray([[43mkubicni_zlepki[49m[43m([49m[43mk[49m[43m,[49m[43m [49m[43mx[49m[43m,[49m[43m [49m[43my[49m[43m,[49m[43m [49m[43m_[49m[43m,[49m[43m [49m[43mk0[49m[43m,[49m[43m [49m[43mkn[49m[43m)[49m [38;5;28;01mfor[39;00m _ [38;5;129;01min[39;00m xint])
-[0;32m      3[0m plt[38;5;241m.[39mplot(x, y, [38;5;124m'[39m[38;5;124mro[39m[38;5;124m'[39m)
-[0;32m      4[0m plt[38;5;241m.[39mplot(xint, yint, label[38;5;241m=[39m[38;5;124m'[39m[38;5;124mNaravni kubični zlepek[39m[38;5;124m'[39m)
+[31m---------------------------------------------------------------------------[39m
+[31mIndexError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[12][39m[32m, line 2[39m
+[32m      1[39m xint = np.linspace(np.min(x), np.max(x), [32m50[39m)
+[32m----> [39m[32m2[39m yint = np.asarray([[43mkubicni_zlepki[49m[43m([49m[43mk[49m[43m,[49m[43m [49m[43mx[49m[43m,[49m[43m [49m[43my[49m[43m,[49m[43m [49m[43m_[49m[43m,[49m[43m [49m[43mk0[49m[43m,[49m[43m [49m[43mkn[49m[43m)[49m [38;5;28;01mfor[39;00m _ [38;5;129;01min[39;00m xint])
+[32m      3[39m plt.plot(x, y, [33m'[39m[33mro[39m[33m'[39m)
+[32m      4[39m plt.plot(xint, yint, label=[33m'[39m[33mNaravni kubični zlepek[39m[33m'[39m)
 
-Cell [1;32mIn[10], line 19[0m, in [0;36mkubicni_zlepki[1;34m(k, x, y, x_najdi, k0, kn)[0m
-[0;32m     17[0m [38;5;28;01mif[39;00m i [38;5;241m>[39m[38;5;241m=[39m [38;5;28mlen[39m(k)[38;5;241m-[39m[38;5;241m1[39m:
-[0;32m     18[0m     i [38;5;241m=[39m [38;5;28mlen[39m(k)[38;5;241m-[39m[38;5;241m2[39m
-[1;32m---> 19[0m out [38;5;241m=[39m ((x_najdi [38;5;241m-[39m [43mx[49m[43m[[49m[43mi[49m[38;5;241;43m+[39;49m[38;5;241;43m1[39;49m[43m][49m)[38;5;241m*[39m[38;5;241m*[39m[38;5;241m3[39m[38;5;241m/[39mh [38;5;241m-[39m (x_najdi [38;5;241m-[39m x[i[38;5;241m+[39m[38;5;241m1[39m])[38;5;241m*[39mh)[38;5;241m*[39mk[i][38;5;241m/[39m[38;5;241m6.0[39m \
-[0;32m     20[0m     [38;5;241m-[39m ((x_najdi [38;5;241m-[39m x[i])[38;5;241m*[39m[38;5;241m*[39m[38;5;241m3[39m[38;5;241m/[39mh [38;5;241m-[39m (x_najdi [38;5;241m-[39m x[i])[38;5;241m*[39mh)[38;5;241m*[39mk[i[38;5;241m+[39m[38;5;241m1[39m][38;5;241m/[39m[38;5;241m6.0[39m \
-[0;32m     21[0m     [38;5;241m+[39m (y[i][38;5;241m*[39m(x_najdi [38;5;241m-[39m x[i[38;5;241m+[39m[38;5;241m1[39m]) \
-[0;32m     22[0m     [38;5;241m-[39m y[i[38;5;241m+[39m[38;5;241m1[39m][38;5;241m*[39m(x_najdi [38;5;241m-[39m x[i]))[38;5;241m/[39mh
-[0;32m     23[0m [38;5;28;01mreturn[39;00m out
+[36mCell[39m[36m [39m[32mIn[10][39m[32m, line 19[39m, in [36mkubicni_zlepki[39m[34m(k, x, y, x_najdi, k0, kn)[39m
+[32m     17[39m [38;5;28;01mif[39;00m i >= [38;5;28mlen[39m(k)-[32m1[39m:
+[32m     18[39m     i = [38;5;28mlen[39m(k)-[32m2[39m
+[32m---> [39m[32m19[39m out = ((x_najdi - [43mx[49m[43m[[49m[43mi[49m[43m+[49m[32;43m1[39;49m[43m][49m)**[32m3[39m/h - (x_najdi - x[i+[32m1[39m])*h)*k[i]/[32m6.0[39m \
+[32m     20[39m     - ((x_najdi - x[i])**[32m3[39m/h - (x_najdi - x[i])*h)*k[i+[32m1[39m]/[32m6.0[39m \
+[32m     21[39m     + (y[i]*(x_najdi - x[i+[32m1[39m]) \
+[32m     22[39m     - y[i+[32m1[39m]*(x_najdi - x[i]))/h
+[32m     23[39m [38;5;28;01mreturn[39;00m out
 
-[1;31mIndexError[0m: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+[31mIndexError[39m: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
 

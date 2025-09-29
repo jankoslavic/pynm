@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=a3a20203"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -70,7 +67,6 @@
     <link rel="prev" title="Osnove modula numpy" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="sl"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -86,8 +82,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -95,6 +102,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -102,8 +110,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -119,8 +127,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -150,17 +157,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Numerične metode v ekosistemu Pythona - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Numerične metode v ekosistemu Pythona - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Numerične metode v ekosistemu Pythona - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Išči</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Išči</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -198,14 +209,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -349,16 +355,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -458,7 +472,7 @@
 <p>Python je objektno orientiran programski jezik, vendar pa nas ne sili v uporabo objektov v vseh primerih. Kot bomo videli pozneje, ima objektno programiranje veliko prednosti, vendar pa je lahko mnogokrat okorno in bi po nepotrebnem naredilo program kompleksen. Iz tega razloga se eksplicitnemu objektnemu programiranju izognemo, če se le da.</p>
 <p>Objektno programiranje v Pythonu temelji na <strong>razredih</strong> (<em>class</em>), objekti so pa <strong>instance</strong> (<em>instance</em>) razreda.  Pogledali si bomo zgolj nekatere osnove objektnega programiranja (da boste lažje razumeli kodo drugih avtorjev in jo prirejali svojim potrebam).</p>
 <p>Razred definiramo z ukazom <code class="docutils literal notranslate"><span class="pre">class</span></code> (<a class="reference external" href="https://docs.python.org/tutorial/classes.html">dokumentacija</a>):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ImeRazreda</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ImeRazreda</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;docstring&#39;&#39;&#39;</span>
     <span class="p">[</span><span class="n">izraz</span> <span class="mi">1</span><span class="p">]</span>
     <span class="p">[</span><span class="n">izraz</span> <span class="mi">2</span><span class="p">]</span>
@@ -470,17 +484,17 @@
 <p>Poglejmo si primer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pravokotnik</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pravokotnik</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Razred za objekt pravokotnik&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">širina</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">višina</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># to je konstruktor objekta. Se izvede, ko kličemo Pravokotnik(sirina=1, visina=4)</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">širina</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">višina</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># to je konstruktor objekta. Se izvede, ko kličemo Pravokotnik(sirina=1, visina=4)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">širina</span> <span class="o">=</span> <span class="n">širina</span> 
         <span class="bp">self</span><span class="o">.</span><span class="n">višina</span> <span class="o">=</span> <span class="n">višina</span> <span class="c1"># višina je atribut objekta</span>
         
-    <span class="k">def</span> <span class="nf">površina</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">površina</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">širina</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">višina</span>
     
-    <span class="k">def</span> <span class="nf">set_širina</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">širina</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_širina</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">širina</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">širina</span> <span class="o">=</span> <span class="n">širina</span>
 </pre></div>
 </div>
@@ -570,7 +584,7 @@
 <h3>Dedovanje<a class="headerlink" href="#dedovanje" title="Link to this heading">#</a></h3>
 <p>Pomembna lastnost razredov je dedovanje; samo ime pove bistvo: tako kot ljudje dedujemo od svojih staršev, podobno velja tudi za razrede.  Vsak razred (<code class="docutils literal notranslate"><span class="pre">class</span></code>) tako lahko deduje lastnosti kakega drugega razreda (<a class="reference external" href="https://docs.python.org/tutorial/classes.html#inheritance">dokumentacija</a>). Lahko ima celo več staršev (v te podrobnosti tukaj ne bomo šli).</p>
 <p>Sintaksa razreda, ki deduje, je:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Otrok</span><span class="p">(</span><span class="n">Starš</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Otrok</span><span class="p">(</span><span class="n">Starš</span><span class="p">):</span>
     <span class="p">[</span><span class="n">izraz</span><span class="p">]</span>
     <span class="o">.</span>
     <span class="o">.</span>
@@ -580,14 +594,14 @@
 <p>Primer, ko novi razred <code class="docutils literal notranslate"><span class="pre">Kvadrat</span></code> podeduje obstoječega (<code class="docutils literal notranslate"><span class="pre">Pravokotnik</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kvadrat</span><span class="p">(</span><span class="n">Pravokotnik</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Kvadrat</span><span class="p">(</span><span class="n">Pravokotnik</span><span class="p">):</span>
     <span class="s2">&quot;Razred kvadrat&quot;</span>
     
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">širina</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">širina</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="c1"># kličimo iniciacijo razreda Pravokotnik</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">širina</span><span class="o">=</span><span class="n">širina</span><span class="p">,</span> <span class="n">višina</span><span class="o">=</span><span class="n">širina</span><span class="p">)</span>
         
-    <span class="k">def</span> <span class="nf">set_širina</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">širina</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_širina</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">širina</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">širina</span> <span class="o">=</span> <span class="n">širina</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">višina</span> <span class="o">=</span> <span class="n">širina</span>
 </pre></div>
@@ -656,22 +670,22 @@
 <p>Nato seznam prikažemo (najprej uvozimo <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">seznam</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e2cf9ac617912c2067894238781619ab64338b675ca12f9b9f318f1200347424.png" src="../_images/e2cf9ac617912c2067894238781619ab64338b675ca12f9b9f318f1200347424.png" />
+<img alt="../_images/154d3ba62ab8dc564e24c08c0296de265f509f2b0d97d761ad29d5211d7eb5df.png" src="../_images/154d3ba62ab8dc564e24c08c0296de265f509f2b0d97d761ad29d5211d7eb5df.png" />
 </div>
 </div>
 <p>Če nekaj takega izvajamo pogosto, potem je bolje, da si pripravimo svoj razred <code class="docutils literal notranslate"><span class="pre">Seznam</span></code>, ki deduje od <code class="docutils literal notranslate"><span class="pre">list</span></code> in dodamo metodo za prikaz <code class="docutils literal notranslate"><span class="pre">nariši</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Seznam</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Seznam</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
         
-    <span class="k">def</span> <span class="nf">nariši</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nariši</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Dolgo besedilo&#39;</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -728,7 +742,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e712de4669167ee70305f92ef9bc801289f503f8b768295e4a590b6e43648294.png" src="../_images/e712de4669167ee70305f92ef9bc801289f503f8b768295e4a590b6e43648294.png" />
+<img alt="../_images/d691453c8bfdb7fe04a06a8e8b94b3fab8f7f24ab7b33720bf76f7a7be940b18.png" src="../_images/d691453c8bfdb7fe04a06a8e8b94b3fab8f7f24ab7b33720bf76f7a7be940b18.png" />
 </div>
 </div>
 </section>
@@ -753,7 +767,7 @@
 <p>Najprej uvozimo modul <code class="docutils literal notranslate"><span class="pre">SymPy</span></code>; tipično paket uvozimo kot <code class="docutils literal notranslate"><span class="pre">sym</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 </pre></div>
 </div>
 </div>
@@ -885,25 +899,25 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;positive&#39;: True,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;commutative&#39;: True,
  &#39;complex&#39;: True,
- &#39;commutative&#39;: True,
  &#39;extended_negative&#39;: False,
+ &#39;extended_nonnegative&#39;: True,
  &#39;extended_nonpositive&#39;: False,
- &#39;infinite&#39;: False,
- &#39;nonnegative&#39;: True,
- &#39;finite&#39;: True,
  &#39;extended_nonzero&#39;: True,
- &#39;hermitian&#39;: True,
  &#39;extended_positive&#39;: True,
+ &#39;extended_real&#39;: True,
+ &#39;finite&#39;: True,
+ &#39;hermitian&#39;: True,
+ &#39;imaginary&#39;: False,
+ &#39;infinite&#39;: False,
  &#39;negative&#39;: False,
+ &#39;nonnegative&#39;: True,
  &#39;nonpositive&#39;: False,
  &#39;nonzero&#39;: True,
+ &#39;positive&#39;: True,
  &#39;real&#39;: True,
- &#39;extended_real&#39;: True,
- &#39;imaginary&#39;: False,
- &#39;zero&#39;: False,
- &#39;extended_nonnegative&#39;: True}
+ &#39;zero&#39;: False}
 </pre></div>
 </div>
 </div>
@@ -1118,7 +1132,7 @@
 <p>Najprej uvozimo paket <code class="docutils literal notranslate"><span class="pre">numpy</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -1148,13 +1162,13 @@
 <p>Opazimo, da je to dolgotrajno, zato izmerimo potreben čas:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it -n1
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%timeit</span> -n1
 <span class="n">y_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="n">subs</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">vrednost</span><span class="p">})</span> <span class="k">for</span> <span class="n">vrednost</span> <span class="ow">in</span> <span class="n">x_vec</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>53.8 ms ± 1.21 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>66.5 ms ± 2.29 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -1183,13 +1197,13 @@
 <p>Preverimo hitrost:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it -n100
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%timeit</span> -n100
 <span class="n">f_hitra</span><span class="p">(</span><span class="n">x_vec</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.6 μs ± 117 ns per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.6 μs ± 626 ns per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1221,7 +1235,7 @@
 <p>Pogledali si bomo preproste primere, ki se navezujejo na funkcijo <code class="docutils literal notranslate"><span class="pre">sympy.plotting.plot</span></code>; najprej uvozimo funkcijo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.plotting</span> <span class="kn">import</span> <span class="n">plot</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot</span>
 </pre></div>
 </div>
 </div>
@@ -1246,8 +1260,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8103a93eb5e4a0466919319bec80d3b65a858de7a70eb4a507ee49954b23dbdb.png" src="../_images/8103a93eb5e4a0466919319bec80d3b65a858de7a70eb4a507ee49954b23dbdb.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x1bd5af67140&gt;
+<img alt="../_images/0865c1ddf41cf8736d4ab0fa532ab736ad537dcb5348017d621ee86978aeaa6b.png" src="../_images/0865c1ddf41cf8736d4ab0fa532ab736ad537dcb5348017d621ee86978aeaa6b.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x225538d73e0&gt;
 </pre></div>
 </div>
 </div>
@@ -1282,7 +1296,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/694fcbd5478369e69b62dba4aa0743a23f56fc680d4f236085e9519ba6b81f02.png" src="../_images/694fcbd5478369e69b62dba4aa0743a23f56fc680d4f236085e9519ba6b81f02.png" />
+<img alt="../_images/c2146b929b1d010bda47e33020ff351ebec918fdeeb63043036b94cb89daa1da.png" src="../_images/c2146b929b1d010bda47e33020ff351ebec918fdeeb63043036b94cb89daa1da.png" />
 </div>
 </div>
 <section id="parametricni-izris">
@@ -1299,7 +1313,7 @@
 <p>Uvozimo funkcijo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.plotting</span> <span class="kn">import</span> <span class="n">plot_parametric</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_parametric</span>
 </pre></div>
 </div>
 </div>
@@ -1312,7 +1326,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/88c394a3c5d7d43f37b5e230d8bd2e81d619e3087e94dfc21a752de4ceafb771.png" src="../_images/88c394a3c5d7d43f37b5e230d8bd2e81d619e3087e94dfc21a752de4ceafb771.png" />
+<img alt="../_images/2c1f2ec901c210d21b9f4b78166648377f859fce36b84f56523139ec1bdaeda9.png" src="../_images/2c1f2ec901c210d21b9f4b78166648377f859fce36b84f56523139ec1bdaeda9.png" />
 </div>
 </div>
 </section>
@@ -1331,7 +1345,7 @@
 <p>Uvozimo funkcijo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.plotting</span> <span class="kn">import</span> <span class="n">plot3d</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot3d</span>
 </pre></div>
 </div>
 </div>
@@ -1345,7 +1359,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2908ba0404a96f6e78e5f8ca57dc2d179f54e4939751dff048295e7621480ca6.png" src="../_images/2908ba0404a96f6e78e5f8ca57dc2d179f54e4939751dff048295e7621480ca6.png" />
+<img alt="../_images/7fa75b63b2c242d3503dd09be9670d13e68b91cd676f1c75031ab34355105390.png" src="../_images/7fa75b63b2c242d3503dd09be9670d13e68b91cd676f1c75031ab34355105390.png" />
 </div>
 </div>
 <p>Za ostale prikaze glejte <a class="reference external" href="http://docs.sympy.org/latest/modules/plotting.html#module-sympy.plotting.plot">dokumentacijo</a>.</p>
@@ -2059,7 +2073,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/15727cb940db015f6bc73bae365791e244e1e6c5171f3308047d0d0622ac9669.png" src="../_images/15727cb940db015f6bc73bae365791e244e1e6c5171f3308047d0d0622ac9669.png" />
+<img alt="../_images/3cd1a76f9505c7a8d2a77c28b0e4b5a1487d455dad825375ffc1f8fa5e53628c.png" src="../_images/3cd1a76f9505c7a8d2a77c28b0e4b5a1487d455dad825375ffc1f8fa5e53628c.png" />
 </div>
 </div>
 <p>Kvadratna enačba:</p>
@@ -2341,8 +2355,7 @@
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2450,8 +2463,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

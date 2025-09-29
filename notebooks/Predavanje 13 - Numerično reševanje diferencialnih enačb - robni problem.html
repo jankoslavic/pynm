@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=a3a20203"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -70,7 +67,6 @@
     <link rel="prev" title="Numerično reševanje diferencialnih enačb - začetni problem" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="sl"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -86,8 +82,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -95,6 +102,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -102,8 +110,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -119,8 +127,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -150,17 +157,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Numerične metode v ekosistemu Pythona - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Numerične metode v ekosistemu Pythona - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Numerične metode v ekosistemu Pythona - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Išči</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Išči</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -198,14 +209,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -349,16 +355,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -478,8 +492,8 @@ y'_1&amp;=&amp;-c\,y'\,\sqrt{y'^2}/m-g
 <p>Uvozimo modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code> in <code class="docutils literal notranslate"><span class="pre">scipy.integrate.solve_ivp</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve_ivp</span>
 </pre></div>
 </div>
 </div>
@@ -487,7 +501,7 @@ y'_1&amp;=&amp;-c\,y'\,\sqrt{y'^2}/m-g
 <p>Pripravimo seznam funkcij desnih strani:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_vert</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">9.81</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f_vert</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">9.81</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">g</span><span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">m</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -496,8 +510,8 @@ y'_1&amp;=&amp;-c\,y'\,\sqrt{y'^2}/m-g
 <p>ter pripravimo funkcijo za izračun mejnega preostanka pri času <span class="math notranslate nohighlight">\(b\)</span> v odvisnosti od začetne hitrosti <span class="math notranslate nohighlight">\(v_0\)</span> (privzeti zračni upor je <span class="math notranslate nohighlight">\(c=0.1\)</span>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">r</span><span class="p">(</span><span class="n">v0</span><span class="o">=</span><span class="mf">100.</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ciljna_lega</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">9.81</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">f_vert_tmp</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="c1"># pripravimo funkcijo z željenimi parametri</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">r</span><span class="p">(</span><span class="n">v0</span><span class="o">=</span><span class="mf">100.</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ciljna_lega</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">9.81</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">f_vert_tmp</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="c1"># pripravimo funkcijo z željenimi parametri</span>
         <span class="k">return</span> <span class="n">f_vert</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
     <span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">f_vert_tmp</span><span class="p">,</span> <span class="n">t_span</span><span class="o">=</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">y0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="n">v0</span><span class="p">]))</span>
     <span class="n">r</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">ciljna_lega</span>
@@ -575,14 +589,14 @@ Rešitev v0=25.686503962731987
 </div>
 </div>
 <p>Zgoraj smo uporabili <code class="docutils literal notranslate"><span class="pre">lambda</span></code> izraz (<a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions">dokumentacija</a>). Izraz <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">t,</span> <span class="pre">y:</span> <span class="pre">f_vert(t,</span> <span class="pre">y,</span> <span class="pre">c=0.1)</span></code> je ekvivalenten:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ime_funkcije</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ime_funkcije</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">f_vert</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Uvozimo <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
@@ -601,7 +615,7 @@ Rešitev v0=25.686503962731987
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6b4ba4d15386183afd247613c4849269bc170fb946dd582e8e474b860ac72a46.png" src="../_images/6b4ba4d15386183afd247613c4849269bc170fb946dd582e8e474b860ac72a46.png" />
+<img alt="../_images/603c42b9a89b473b7519dd1d7a7cf66beffd29460481a537ed47dccdb63222ab.png" src="../_images/603c42b9a89b473b7519dd1d7a7cf66beffd29460481a537ed47dccdb63222ab.png" />
 </div>
 </div>
 </section>
@@ -624,7 +638,7 @@ y_3'&amp;=&amp;F_y/m-g.\\
 <p>Pripravimo seznam funkcij desnih strani:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_poševno</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">9.81</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f_poševno</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">9.81</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">vx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">vy</span> <span class="o">=</span> <span class="n">y</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">vx</span><span class="p">,</span> <span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">vx</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">vx</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">vy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">m</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="o">-</span><span class="n">g</span><span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">vy</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">vx</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">vy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">m</span><span class="p">])</span>
 </pre></div>
@@ -634,7 +648,7 @@ y_3'&amp;=&amp;F_y/m-g.\\
 <p>Pripravimo še funkcijo za izračun mejnega preostanka pri času <span class="math notranslate nohighlight">\(b=1\)</span> v odvisnosti od vektorja začetne hitrosti <span class="math notranslate nohighlight">\(\mathbf{v}_0\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">r_poševno</span><span class="p">(</span><span class="n">v0</span><span class="o">=</span><span class="p">[</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">100.</span><span class="p">],</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ciljna_lega</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mf">5.</span><span class="p">]),</span> <span class="n">g</span><span class="o">=</span><span class="mf">9.81</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">r_poševno</span><span class="p">(</span><span class="n">v0</span><span class="o">=</span><span class="p">[</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">100.</span><span class="p">],</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ciljna_lega</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mf">5.</span><span class="p">]),</span> <span class="n">g</span><span class="o">=</span><span class="mf">9.81</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
     <span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">f_poševno</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">),</span>
                       <span class="n">t_span</span><span class="o">=</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span>
                       <span class="n">y0</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">v0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">v0</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
@@ -665,7 +679,7 @@ y_3'&amp;=&amp;F_y/m-g.\\
 <p>Najprej jo uvozimo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">optimize</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">optimize</span>
 </pre></div>
 </div>
 </div>
@@ -740,7 +754,7 @@ y_3'&amp;=&amp;F_y/m-g.\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ad076707dcedc1cabb4d2bb8eedc9d60f787e21261c19879f909e721f5e8e31c.png" src="../_images/ad076707dcedc1cabb4d2bb8eedc9d60f787e21261c19879f909e721f5e8e31c.png" />
+<img alt="../_images/fb0a045de35e39b5ae4a3aa592de6176fbc6bfa95318a4a1bdbeffc6e978f467.png" src="../_images/fb0a045de35e39b5ae4a3aa592de6176fbc6bfa95318a4a1bdbeffc6e978f467.png" />
 </div>
 </div>
 </section>
@@ -770,7 +784,7 @@ y_3'&amp;=&amp;F_y/m-g.\\
 <p>Poglejmo primer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_bvp</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve_bvp</span>
 </pre></div>
 </div>
 </div>
@@ -786,7 +800,7 @@ y_3'&amp;=&amp;F_y/m-g.\\
 <p>In mejni preostanek (želimo, da je pri času <code class="docutils literal notranslate"><span class="pre">b</span></code> lega <span class="math notranslate nohighlight">\(x=10\)</span> m in <span class="math notranslate nohighlight">\(y=5\)</span> m):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mejni_preostanek</span><span class="p">(</span><span class="n">ya</span><span class="p">,</span> <span class="n">yb</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mejni_preostanek</span><span class="p">(</span><span class="n">ya</span><span class="p">,</span> <span class="n">yb</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ya</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ya</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">yb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="n">yb</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="mi">5</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -837,7 +851,7 @@ y_3'&amp;=&amp;F_y/m-g.\\
        success: True
         status: 0
              x: [ 0.000e+00  2.381e-02 ...  9.762e-01  1.000e+00]
-           sol: &lt;scipy.interpolate._interpolate.PPoly object at 0x0000019414803E80&gt;
+           sol: &lt;scipy.interpolate._interpolate.PPoly object at 0x0000026164A93A70&gt;
              p: None
              y: [[-1.588e-22  4.482e-01 ...  9.853e+00  1.000e+01]
                  [ 1.939e+01  1.828e+01 ...  6.210e+00  6.117e+00]
@@ -868,7 +882,7 @@ y_3'&amp;=&amp;F_y/m-g.\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3ad41b0c961aa9a4fed0dfcce7c34ef3d8cc559402aa6aae387cd9528f90e27e.png" src="../_images/3ad41b0c961aa9a4fed0dfcce7c34ef3d8cc559402aa6aae387cd9528f90e27e.png" />
+<img alt="../_images/f03308ea5db310e5ec81948752bed02284f0ea5b55b1192ffc1eefa7782228d0.png" src="../_images/f03308ea5db310e5ec81948752bed02284f0ea5b55b1192ffc1eefa7782228d0.png" />
 </div>
 </div>
 </section>
@@ -907,13 +921,13 @@ y_3'&amp;=&amp;q(x)/(EI).\\
 <p>Pripravimo različne porazdeljene obremenitve:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">q_konstanta</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">F_0</span><span class="o">=</span><span class="mf">1e3</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">q_konstanta</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">F_0</span><span class="o">=</span><span class="mf">1e3</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">F_0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">q_trikotna</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">F_0</span><span class="o">=</span><span class="mf">1e3</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">q_trikotna</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">F_0</span><span class="o">=</span><span class="mf">1e3</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">F_0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">l</span>
 
-<span class="k">def</span> <span class="nf">q_pol_sinusna</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">F_0</span><span class="o">=</span><span class="mf">1e3</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">q_pol_sinusna</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">F_0</span><span class="o">=</span><span class="mf">1e3</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">F_0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">l</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -940,17 +954,17 @@ y_3'&amp;=&amp;q(x)/(EI).\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b775ddb194ee8d655196ec55f8e0727bdbe5ddc78a439e78ec01f33567de9638.png" src="../_images/b775ddb194ee8d655196ec55f8e0727bdbe5ddc78a439e78ec01f33567de9638.png" />
+<img alt="../_images/0d1c7d01dfaee5f05147e1701d0ddb7bdc52f3d2478f4b3568aa161b5400eebc.png" src="../_images/0d1c7d01dfaee5f05147e1701d0ddb7bdc52f3d2478f4b3568aa161b5400eebc.png" />
 </div>
 </div>
 <p>Pripravimo seznam funkcij desne strani:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_nosilec_konstanta</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="mf">2.1e11</span><span class="p">,</span> <span class="n">I</span><span class="o">=</span><span class="mf">2.1e-5</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f_nosilec_konstanta</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="mf">2.1e11</span><span class="p">,</span> <span class="n">I</span><span class="o">=</span><span class="mf">2.1e-5</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">q_konstanta</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="p">)],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">f_nosilec_pol_sinusna</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="mf">2.1e11</span><span class="p">,</span> <span class="n">I</span><span class="o">=</span><span class="mf">2.1e-5</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f_nosilec_pol_sinusna</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="mf">2.1e11</span><span class="p">,</span> <span class="n">I</span><span class="o">=</span><span class="mf">2.1e-5</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">q_pol_sinusna</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="p">)])</span>
-<span class="k">def</span> <span class="nf">f_nosilec_trikotna</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="mf">2.1e11</span><span class="p">,</span> <span class="n">I</span><span class="o">=</span><span class="mf">2.1e-5</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f_nosilec_trikotna</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="mf">2.1e11</span><span class="p">,</span> <span class="n">I</span><span class="o">=</span><span class="mf">2.1e-5</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">q_trikotna</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="p">)])</span>
 </pre></div>
 </div>
@@ -959,7 +973,7 @@ y_3'&amp;=&amp;q(x)/(EI).\\
 <p>Definirajmo sedaj robne pogoje oz. mejni preostanek (poves in moment sta na robovih enaka nič):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mejni_nosilec</span><span class="p">(</span><span class="n">ya</span><span class="p">,</span> <span class="n">yb</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mejni_nosilec</span><span class="p">(</span><span class="n">ya</span><span class="p">,</span> <span class="n">yb</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ya</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ya</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">yb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">yb</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
 </pre></div>
 </div>
@@ -1000,7 +1014,7 @@ y_3'&amp;=&amp;q(x)/(EI).\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/90d7c162ba6bed5adfa6dc89919b0d55c9099dff2bb1346345b134cff23158c5.png" src="../_images/90d7c162ba6bed5adfa6dc89919b0d55c9099dff2bb1346345b134cff23158c5.png" />
+<img alt="../_images/ab34e7785cd8733e22c545832c8258ab85a7043f128da44a5c0223b3c73a927a.png" src="../_images/ab34e7785cd8733e22c545832c8258ab85a7043f128da44a5c0223b3c73a927a.png" />
 </div>
 </div>
 <p>In primerjavo povesa za različne tipe obremenitve:</p>
@@ -1016,7 +1030,7 @@ y_3'&amp;=&amp;q(x)/(EI).\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/021cb2a02aba1085d99c1f89e7decb54f3995f21e7950b40eeb7dcf033309c26.png" src="../_images/021cb2a02aba1085d99c1f89e7decb54f3995f21e7950b40eeb7dcf033309c26.png" />
+<img alt="../_images/1882bcb63d4ccfec5c2581ca26cefb34b7f29ac548896f3e0733e60fb8c9d18a.png" src="../_images/1882bcb63d4ccfec5c2581ca26cefb34b7f29ac548896f3e0733e60fb8c9d18a.png" />
 </div>
 </div>
 </section>
@@ -1025,7 +1039,7 @@ y_3'&amp;=&amp;q(x)/(EI).\\
 <h2>Metoda končnih razlik<a class="headerlink" href="#metoda-koncnih-razlik" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">YouTubeVideo</span>
 <span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;YozKGsNYZ6Y&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1237,7 +1251,7 @@ zapisati s pomočjo centralne diferenčne sheme (\)</span>F_y=-c,y‘$):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/354e8e4c26edcb142a5af206f5021ca880c24b07571a80efce632aeb25dabc73.png" src="../_images/354e8e4c26edcb142a5af206f5021ca880c24b07571a80efce632aeb25dabc73.png" />
+<img alt="../_images/13b3d6348f3b0cb35ff281e910eca33d9ef453b6365f64fcb135fb3c25d0ce2c.png" src="../_images/13b3d6348f3b0cb35ff281e910eca33d9ef453b6365f64fcb135fb3c25d0ce2c.png" />
 </div>
 </div>
 <p>S pomočjo funkcije <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.gradient.html"><code class="docutils literal notranslate"><span class="pre">numpy.gradient()</span></code></a> izračunamo še hitrost in pospešek:</p>
@@ -1486,7 +1500,7 @@ robnim pogojem.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0395076bea0dbde442b5fb7f7c7a73238d5e252c0714d8069835e02e13fb8459.png" src="../_images/0395076bea0dbde442b5fb7f7c7a73238d5e252c0714d8069835e02e13fb8459.png" />
+<img alt="../_images/1a08ed7c5e118f8ae210608e27fff31c8cee56fda99d3652364281e00573e409.png" src="../_images/1a08ed7c5e118f8ae210608e27fff31c8cee56fda99d3652364281e00573e409.png" />
 </div>
 </div>
 </section>
@@ -1497,7 +1511,7 @@ robnim pogojem.</p>
 <p>Najprej uvozimo <code class="docutils literal notranslate"><span class="pre">sympy</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1564,7 +1578,7 @@ robnim pogojem.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9a35de1163e9f7eae7b0d4c87526a60dfb8d5bf2bd98bfded957310b797cdcd2.png" src="../_images/9a35de1163e9f7eae7b0d4c87526a60dfb8d5bf2bd98bfded957310b797cdcd2.png" />
+<img alt="../_images/7c3f0523140e285d73edefed9baa94bc94270cd49d41c7bd60f12f2d721f1dec.png" src="../_images/7c3f0523140e285d73edefed9baa94bc94270cd49d41c7bd60f12f2d721f1dec.png" />
 </div>
 </div>
 <p>Primerjajmo sedaj analitično rešitev, z rešitivijo z metodo končnih razlik in strelsko metodo:</p>
@@ -1636,8 +1650,7 @@ robnim pogojem.</p>
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1712,8 +1725,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
