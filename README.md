@@ -2,7 +2,7 @@
 
 Tukaj predstavljena vsebina je osnova za predmet Numerične metode, ki se poučujeta na [Fakulteti za strojništvo (Univerza v Ljubljani)](www.fs.uni-lj.si):
 
-* [Numerične metode 2l. RR](http://www.ladisk.si/?what=incfl&flnm=NM.php)
+* [Numerične metode 2l. RR](http://www.ladisk.si/?what=incfl\&flnm=NM.php)
 
 Predloge predavanj se nahajajo v mapi `notebooks`, lahko pa si jih ogledate v [spletni knjigi](https://jankoslavic.github.io/pynm/README.html) (povezave so navedene spodaj).
 
