@@ -58,8 +58,6 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Untitled';</script>
     <link rel="index" title="Abecedni seznam" href="../genindex.html" />
     <link rel="search" title="Išči" href="../search.html" />
@@ -410,234 +408,64 @@ document.write(`
                   
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
-<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x x0, x1, h&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">lagrange</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">vozlišča_predpona</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">vozlišča_predpona</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="n">vozlišča</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">vozlišča_predpona</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> 
-    <span class="n">coeffs</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-        <span class="n">numer</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">denom</span> <span class="o">=</span> <span class="p">[]</span>
-
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">:</span>
-                <span class="k">continue</span>
-
-            <span class="n">numer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span>    <span class="o">-</span> <span class="n">vozlišča</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
-            <span class="n">denom</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vozlišča</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">vozlišča</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
-        
-        <span class="n">numer</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Mul</span><span class="p">(</span><span class="o">*</span><span class="n">numer</span><span class="p">)</span>
-        <span class="n">denom</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Mul</span><span class="p">(</span><span class="o">*</span><span class="n">denom</span><span class="p">)</span>
-
-        <span class="n">coeffs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numer</span><span class="o">/</span><span class="n">denom</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">coeffs</span>    
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lag</span> <span class="o">=</span> <span class="n">lagrange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-<span class="n">lag</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/43da3eee486ca3106e6e041e37b1514723ee4e1adf5dab8f3b8dca9de33d95cb.png" src="../_images/43da3eee486ca3106e6e041e37b1514723ee4e1adf5dab8f3b8dca9de33d95cb.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">int0</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">lag</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">))</span>
-<span class="n">int0</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/5a15c04f739f018c3d94d46d3e495dbf16cabaf2d8f4915a60ba3595a3707a00.png" src="../_images/5a15c04f739f018c3d94d46d3e495dbf16cabaf2d8f4915a60ba3595a3707a00.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">int1</span> <span class="o">=</span><span class="n">int0</span><span class="o">.</span><span class="n">factor</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zamenjave</span> <span class="o">=</span> <span class="p">{</span><span class="n">x1</span><span class="p">:</span> <span class="n">x0</span><span class="o">+</span><span class="n">h</span><span class="p">}</span>
-<span class="n">int1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">zamenjave</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/e2abba0eab29227f23842e1010ee6629320fc4e5ebed65cb5028343b83902c77.png" src="../_images/e2abba0eab29227f23842e1010ee6629320fc4e5ebed65cb5028343b83902c77.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;OPENBLAS_NUM_THREADS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;4&quot;</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;OMP_NUM_THREADS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;4&quot;</span>  <span class="c1"># Set the desired number of threads</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">symbols</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy.physics.continuum_mechanics.beam</span><span class="w"> </span><span class="kn">import</span> <span class="n">Beam</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parametri nosilca</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mf">1.0</span>         <span class="c1"># dolžina nosilca [m]</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mi">1000</span>        <span class="c1"># sila na koncu [N]</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mf">210e9</span>       <span class="c1"># modul elastičnosti [Pa]</span>
+<span class="n">I</span> <span class="o">=</span> <span class="mf">1e-6</span>        <span class="c1"># moment vztrajnosti preseka [m^4]</span>
 
-<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">aa</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-    <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-        
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">ainv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-    <span class="n">toc</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">toc</span><span class="o">-</span><span class="n">tic</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">1000</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Time: &#39;</span><span class="p">,</span><span class="mi">1000</span><span class="o">*</span><span class="p">(</span><span class="n">aa</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">/</span><span class="n">n</span><span class="p">,</span> <span class="s1">&#39; ms&#39;</span><span class="p">)</span>
+<span class="c1"># Izračun maksimalnega povesa</span>
+<span class="n">delta_max</span> <span class="o">=</span> <span class="n">F</span> <span class="o">*</span> <span class="n">L</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">E</span> <span class="o">*</span> <span class="n">I</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Maksimalni poves na koncu nosilca: </span><span class="si">{</span><span class="n">delta_max</span><span class="si">:</span><span class="s2">.6e</span><span class="si">}</span><span class="s2"> m&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">n</span><span class="o">=</span><span class="mi">1000</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Time: &#39;</span><span class="p">,</span><span class="mi">1000</span><span class="o">*</span><span class="p">(</span><span class="n">aa</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">/</span><span class="n">n</span><span class="p">,</span> <span class="s1">&#39; ms&#39;</span><span class="p">)</span>
-
-<span class="nn">Cell In[10], line 11,</span> in <span class="ni">aa</span><span class="nt">(n)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">11</span>     <span class="n">ainv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">toc</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">return</span> <span class="n">toc</span><span class="o">-</span><span class="n">tic</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\linalg\_linalg.py:609,</span> in <span class="ni">inv</span><span class="nt">(a)</span>
-<span class="g g-Whitespace">    </span><span class="mi">606</span> <span class="n">signature</span> <span class="o">=</span> <span class="s1">&#39;D-&gt;D&#39;</span> <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;d-&gt;d&#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">607</span> <span class="k">with</span> <span class="n">errstate</span><span class="p">(</span><span class="n">call</span><span class="o">=</span><span class="n">_raise_linalgerror_singular</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">&#39;call&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">608</span>               <span class="n">over</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">divide</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">under</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">609</span>     <span class="n">ainv</span> <span class="o">=</span> <span class="n">_umath_linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">610</span> <span class="k">return</span> <span class="n">wrap</span><span class="p">(</span><span class="n">ainv</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">result_t</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maksimalni poves na koncu nosilca: 1.587302e-03 m
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">threadpoolctl</span><span class="w"> </span><span class="kn">import</span> <span class="n">ThreadpoolController</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="n">controller</span> <span class="o">=</span> <span class="n">ThreadpoolController</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beam</span> <span class="o">=</span> <span class="n">Beam</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">I</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">bb</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">threads</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">tic</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-
-    <span class="k">with</span> <span class="n">controller</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">limits</span><span class="o">=</span><span class="n">threads</span><span class="p">,</span> <span class="n">user_api</span><span class="o">=</span><span class="s1">&#39;blas&#39;</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-            <span class="n">ainv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-        <span class="n">toc</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">toc</span><span class="o">-</span><span class="n">tic</span>
+<span class="n">beam</span><span class="o">.</span><span class="n">bc_deflection</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">beam</span><span class="o">.</span><span class="n">bc_slope</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">beam</span><span class="o">.</span><span class="n">apply_load</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">100</span>
-<span class="mi">1000</span><span class="o">*</span><span class="n">bb</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">threads</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beam</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62.76603079999768
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="p">;</span> <span class="n">numpy</span><span class="o">.</span><span class="n">show_runtime</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;numpy_version&#39;: &#39;1.26.4&#39;,
-  &#39;python&#39;: &#39;3.12.5 (tags/v3.12.5:ff3bc82, Aug  6 2024, 20:45:27) [MSC v.1940 &#39;
-            &#39;64 bit (AMD64)]&#39;,
-  &#39;uname&#39;: uname_result(system=&#39;Windows&#39;, node=&#39;Spectre-JS&#39;, release=&#39;11&#39;, version=&#39;10.0.22631&#39;, machine=&#39;AMD64&#39;)},
- {&#39;simd_extensions&#39;: {&#39;baseline&#39;: [&#39;SSE&#39;, &#39;SSE2&#39;, &#39;SSE3&#39;],
-                      &#39;found&#39;: [&#39;SSSE3&#39;,
-                                &#39;SSE41&#39;,
-                                &#39;POPCNT&#39;,
-                                &#39;SSE42&#39;,
-                                &#39;AVX&#39;,
-                                &#39;F16C&#39;,
-                                &#39;FMA3&#39;,
-                                &#39;AVX2&#39;],
-                      &#39;not_found&#39;: [&#39;AVX512F&#39;,
-                                    &#39;AVX512CD&#39;,
-                                    &#39;AVX512_SKX&#39;,
-                                    &#39;AVX512_CLX&#39;,
-                                    &#39;AVX512_CNL&#39;,
-                                    &#39;AVX512_ICL&#39;]}},
- {&#39;architecture&#39;: &#39;Haswell&#39;,
-  &#39;filepath&#39;: &#39;C:\\Users\\janko\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy.libs\\libopenblas64__v0.3.23-293-gc2f4bdbb-gcc_10_3_0-2bde3a66a51006b2b53eb373ff767a3f.dll&#39;,
-  &#39;internal_api&#39;: &#39;openblas&#39;,
-  &#39;num_threads&#39;: 22,
-  &#39;prefix&#39;: &#39;libopenblas&#39;,
-  &#39;threading_layer&#39;: &#39;pthreads&#39;,
-  &#39;user_api&#39;: &#39;blas&#39;,
-  &#39;version&#39;: &#39;0.3.23.dev&#39;}]
-</pre></div>
-</div>
+<img alt="../_images/709723071f43f35f2f9045f434a826d47f9fbfd63ffe9c872488b646bef72cfc.png" src="../_images/709723071f43f35f2f9045f434a826d47f9fbfd63ffe9c872488b646bef72cfc.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">5</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Time: &#39;</span><span class="p">,</span><span class="mi">1000</span><span class="o">*</span><span class="p">(</span><span class="n">aa</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">/</span><span class="n">n</span><span class="p">,</span> <span class="s1">&#39; ms&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beam</span><span class="o">.</span><span class="n">plot_deflection</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time:  12025.513820000924  ms
+<img alt="../_images/158c2ea91ebbefd7fac80e5ec967e1ebc5ab782a65bb62b265cd3cd3d6a5575f.png" src="../_images/158c2ea91ebbefd7fac80e5ec967e1ebc5ab782a65bb62b265cd3cd3d6a5575f.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x1fd5e7bc050&gt;
 </pre></div>
 </div>
 </div>
