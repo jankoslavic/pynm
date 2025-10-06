@@ -134,6 +134,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+.vscode/
+
 /notebooks/3. Discrete Fourier transform, Fast FT, convolution, windows.ipynb
 /notebooks/4. Digitalizacija, SNR, vzorčenje.ipynb
 /notebooks/4. ADC, SNR, sampling.ipynb
