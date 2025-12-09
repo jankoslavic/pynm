@@ -415,24 +415,24 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#iskanje-nicle-v-okolici-pola">Iskanje ničle v okolici pola</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-scipy-optimize-bisect">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.bisect</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-scipy-optimize-root-scalar">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.root_scalar</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sekantna-metoda">Sekantna metoda</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Ocena napake</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konvergenca-in-red-konvergence">Konvergenca in red konvergence</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Numerična implementacija</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-scipy-optimize-newton">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.newton</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.root_scalar</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newtonova-metoda">Newtonova metoda</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#red-konvergence">Red konvergence</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Numerična implementacija</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.newton</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Numerična implementacija</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.root_scalar</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resevanje-sistemov-nelinarnih-enacb">Reševanje sistemov nelinarnih enačb*</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Numerična implementacija</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Numerična implementacija</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-scipy-optimize-root">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.root</span></code></a></li>
 </ul>
 </li>
@@ -845,7 +845,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>259 μs ± 7.07 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>297 μs ± 5.03 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -890,30 +890,34 @@ document.write(`
 <p>V <code class="docutils literal notranslate"><span class="pre">scipy</span></code> vgrajena bisekcijska metoda takega preverjanja nima (zaradi hitrosti) in bo vrnila rezultat, ki bo pa napačen. Pri uporabi moramo torej biti previdni.</p>
 </section>
 </section>
-<section id="uporaba-scipy-optimize-bisect">
-<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.bisect</span></code><a class="headerlink" href="#uporaba-scipy-optimize-bisect" title="Link to this heading">#</a></h3>
+<section id="uporaba-scipy-optimize-root-scalar">
+<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.root_scalar</span></code><a class="headerlink" href="#uporaba-scipy-optimize-root-scalar" title="Link to this heading">#</a></h3>
 <p>Bisekcijska metoda je <em>počasna</em>, vendar zanesljiva metoda iskanja ničel in je implementirana znotraj <code class="docutils literal notranslate"><span class="pre">scipy</span></code>. Najprej jo uvozimo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">bisect</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">root_scalar</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(),</span> <span class="n">xtol</span><span class="o">=</span><span class="mf">2e-12</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">8.8817841970012523e-16</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> 
-    <span class="n">full_output</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disp</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">root_scalar</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(),</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;bisect&#39;</span><span class="p">,</span> <span class="n">bracket</span><span class="o">=</span><span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">],</span> <span class="n">fprime</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fprime2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">xtol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Funkcija <code class="docutils literal notranslate"><span class="pre">bisect</span></code> zahteva tri parametre: funkijo <code class="docutils literal notranslate"><span class="pre">f</span></code> ter parametra <code class="docutils literal notranslate"><span class="pre">a</span></code> in <code class="docutils literal notranslate"><span class="pre">b</span></code>, ki definirata zaprti interval <code class="docutils literal notranslate"><span class="pre">[a,</span> <span class="pre">b]</span></code>. Predznaka <code class="docutils literal notranslate"><span class="pre">f(a)</span></code> in <code class="docutils literal notranslate"><span class="pre">f(b)</span></code> morata biti različna. Ostali parametri, npr. absolutna <code class="docutils literal notranslate"><span class="pre">xtol</span></code> in relativna <code class="docutils literal notranslate"><span class="pre">rtol</span></code> napaka ter največje število iteracij <code class="docutils literal notranslate"><span class="pre">maxiter</span></code> so opcijski - imajo privzete vrednosti. Za več glejte <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.bisect.html">dokumentacijo</a>.</p>
+<p>Da s funkcijo <code class="docutils literal notranslate"><span class="pre">root_scalar</span></code> prikličemo bisekcijsko metodo moramo funkciji podati tri parametre: funkijo <code class="docutils literal notranslate"><span class="pre">f</span></code> ter zaprti interval <code class="docutils literal notranslate"><span class="pre">[a,</span> <span class="pre">b]</span></code> (prek parametra <code class="docutils literal notranslate"><span class="pre">bracket</span></code>). Predznaka <code class="docutils literal notranslate"><span class="pre">f(a)</span></code> in <code class="docutils literal notranslate"><span class="pre">f(b)</span></code> morata biti različna. Ostali parametri, npr. absolutna <code class="docutils literal notranslate"><span class="pre">xtol</span></code> in relativna <code class="docutils literal notranslate"><span class="pre">rtol</span></code> napaka ter največje število iteracij <code class="docutils literal notranslate"><span class="pre">maxiter</span></code> so opcijski - imajo privzete vrednosti. Za več glejte <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.root_scalar.html">dokumentacijo</a>.</p>
 <p>Poglejmo uporabo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bisect</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">xtol</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root_scalar</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">bracket</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;bisect&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7353515625
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      converged: True
+           flag: converged
+ function_calls: 41
+     iterations: 39
+           root: 0.7346035077880515
+         method: bisect
 </pre></div>
 </div>
 </div>
@@ -921,26 +925,30 @@ document.write(`
 <p>in hitrost:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> bisect(f, 0, 1, xtol=1e-3)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> root_scalar(f, bracket=[0, 1], method=&#39;bisect&#39;)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>69.4 μs ± 5.85 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>285 μs ± 17.8 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
-<p>Ugotovimo, da je <em>naša</em> implementacija bisekcijske metode približno 5-krat počasnejša.</p>
 <p>Preverimo še lahko funkcijo <code class="docutils literal notranslate"><span class="pre">tan(x)</span></code>, najprej na intervalu, kjer je funkcija zvezna:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bisect</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root_scalar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">,</span> <span class="n">bracket</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;bisect&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      converged: True
+           flag: converged
+ function_calls: 3
+     iterations: 1
+           root: 0.0
+         method: bisect
 </pre></div>
 </div>
 </div>
@@ -948,12 +956,17 @@ document.write(`
 <p>Potem še v okolici pola, kjer ni zvezna:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bisect</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root_scalar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">,</span> <span class="n">bracket</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;bisect&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.5707963267941523
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      converged: True
+           flag: converged
+ function_calls: 42
+     iterations: 40
+           root: -1.5707963267941523
+         method: bisect
 </pre></div>
 </div>
 </div>
@@ -993,7 +1006,6 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\varepsilon_n = C\,\varepsilon_{n-1}^{1.618}.\]</div>
 <p>Iz zgornje ocene sledi, da se na vsakem koraku iteracije število točnih cifer poveča za približno 60%. Ker je red konvergence višji od 1 in manjši od kvadratične, tako konvergenco imenujemo <em>superlinearna</em> konvergenca.</p>
-<p>Še boljšo, kvadratično, konvergenco ima Newtonova metoda. Pri kvadratični konvergenci se na vsakem koraku iteracije število točnih cifer podvoji. Isti red konvergence ima tudi <em>Ridderjeva</em>  metoda, ki je implementirana v paketu <code class="docutils literal notranslate"><span class="pre">scipy</span></code> (glejte <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.ridder.html">dokumentacijo</a>) in je zaprtega tipa ter sorodna sekantni metodi. Kljub uporabnosti si je tukaj ne bomo podrobno ogledali.</p>
 </section>
 <section id="id4">
 <h3>Numerična implementacija<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
@@ -1062,7 +1074,7 @@ Rešitev: 0.73460351, D: 0.00000
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>104 μs ± 6.07 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>132 μs ± 11.6 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1092,21 +1104,26 @@ Rešitev: 3.142, D: 0.00002
 </div>
 </div>
 </section>
-<section id="uporaba-scipy-optimize-newton">
-<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.newton</span></code><a class="headerlink" href="#uporaba-scipy-optimize-newton" title="Link to this heading">#</a></h3>
-<p>Znotraj <code class="docutils literal notranslate"><span class="pre">scipy</span></code> je sekantna metoda definirana v okviru <code class="docutils literal notranslate"><span class="pre">scipy.optimize.newton</span></code> funkcije. Če le-tej namreč ne podamo funkcije, ki definira prvi odvod, potem je uporabljena sekantna metoda (glejte <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.newton.html">dokumentacijo</a>).</p>
-<p>Najprej jo uvozimo:</p>
+<section id="id5">
+<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.root_scalar</span></code><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Znotraj <code class="docutils literal notranslate"><span class="pre">scipy</span></code> je sekantna metoda definirana v okviru <code class="docutils literal notranslate"><span class="pre">scipy.optimize.root_scalar</span></code> funkcije:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">newton</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root_scalar</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;secant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      converged: True
+           flag: converged
+ function_calls: 7
+     iterations: 6
+           root: 0.7346035077893033
+         method: secant
 </pre></div>
 </div>
 </div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">newton</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">fprime</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(),</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1.48e-08</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">fprime2</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Funkcija <code class="docutils literal notranslate"><span class="pre">newton</span></code> zahteva dva parametra: funkcijo <code class="docutils literal notranslate"><span class="pre">func</span></code> ter začetno vrednost <code class="docutils literal notranslate"><span class="pre">x0</span></code>. Opcijska parametra sta še <code class="docutils literal notranslate"><span class="pre">fprime</span></code> in <code class="docutils literal notranslate"><span class="pre">fprime2</span></code> za prvi in drugi odvod funkcije <code class="docutils literal notranslate"><span class="pre">func</span></code>; če nista podana, se uporabi sekantna metoda (več o odvodih spodaj pri Newtonovi metodi). Največje število iteracij definira <code class="docutils literal notranslate"><span class="pre">maxiter</span></code>.</p>
 <p>V primeru sekantne metode, se druga meja intervala izračuna glede na kodo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x0</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
     <span class="n">x1</span> <span class="o">=</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">1e-4</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-4</span>
@@ -1114,45 +1131,33 @@ Rešitev: 3.142, D: 0.00002
     <span class="n">x1</span> <span class="o">=</span> <span class="n">x0</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">1e-4</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1e-4</span>
 </pre></div>
 </div>
-<p>Poglejmo si uporabo:</p>
+<p>Poglejmo še hitrost</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1.e-8</span><span class="p">)</span>
-<span class="sa">f</span><span class="s1">&#39;Rezultat: </span><span class="si">{</span><span class="n">r</span><span class="si">:</span><span class="s1">2.8f</span><span class="si">}</span><span class="s1">&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> root_scalar(f, x0=1, method=&#39;secant&#39;)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Rezultat: 0.73460351&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 μs ± 10.1 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
-<p>in hitrost</p>
+<p>Sorodna sekantni metodi je <em>Ridderjeva</em>  metoda; v podrobnosti metode tukaj ne gremo, je pa zaprtega tipa, ima kvadratičen red konvergence ter jo kličemo s pomočjo funkcije <code class="docutils literal notranslate"><span class="pre">root_scalar</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> newton(f, x0=0.1, tol=1.e-8)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root_scalar</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">bracket</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;ridder&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>119 μs ± 15.3 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
-</pre></div>
-</div>
-</div>
-</div>
-<p>Ugotovimo, da je naša implementacija sekantne metode podobno hitra.</p>
-<p>Uporabimo še Ridderjevo metodo:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">ridder</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">ridder</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">xtol</span><span class="o">=</span><span class="mf">1.e-8</span><span class="p">)</span>
-<span class="sa">f</span><span class="s1">&#39;Rezultat: </span><span class="si">{</span><span class="n">r</span><span class="si">:</span><span class="s1">2.8f</span><span class="si">}</span><span class="s1">&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Rezultat: 0.73460350&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      converged: True
+           flag: converged
+ function_calls: 14
+     iterations: 6
+           root: 0.7346035077883111
+         method: ridder
 </pre></div>
 </div>
 </div>
@@ -1201,8 +1206,8 @@ Rešitev: 3.142, D: 0.00002
 \[C=-\frac{f''(x)}{2\,f'(x)}.\]</div>
 <p>Konvergenca je torej hitra, v vsaki novi iteraciji se število točnih števk v približku podvoji.</p>
 </section>
-<section id="id5">
-<h3>Numerična implementacija<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h3>Numerična implementacija<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">newtonova</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">dfun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">Dtol</span><span class="o">=</span><span class="mf">1e-1</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">izpis</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span> 
@@ -1266,32 +1271,28 @@ Rešitev: 3.142, D: 0.00002
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.99 μs ± 246 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.01 μs ± 438 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="id6">
-<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.newton</span></code><a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
-<p>Znotraj <code class="docutils literal notranslate"><span class="pre">scipy</span></code> je Newtonova metoda definirana v okviru <code class="docutils literal notranslate"><span class="pre">scipy.optimize.newton</span></code> funkcije, ki smo jo že spoznali zgoraj pri sekantni metodi (glejte <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.newton.html">dokumentacijo</a>).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">newton</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">fprime</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(),</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1.48e-08</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">fprime2</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Če v funkcijo <code class="docutils literal notranslate"><span class="pre">newton</span></code> poleg funkcije <code class="docutils literal notranslate"><span class="pre">func</span></code> in začetne vrednosti <code class="docutils literal notranslate"><span class="pre">x0</span></code> podamo tudi prvi odvod <code class="docutils literal notranslate"><span class="pre">fprime</span></code>, se dejansko uporabi Newtonova metoda.</p>
-<p>Če podamo tudi drugi odvod <code class="docutils literal notranslate"><span class="pre">fprime2</span></code>, se uporabi Halleyeva metoda, ki temelji na izrazu:</p>
-<div class="math notranslate nohighlight">
-\[x_{n+1}=x_{n}-\frac{2f(x_{n})f'(x_{n})}{2\,f'^{2}(x_{n})-f(x_{n})f''(x_{n})}\]</div>
-<p>Poglejmo si primer uporabe Newtonove metode v <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>:</p>
+<section id="id7">
+<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.root_scalar</span></code><a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>Znotraj <code class="docutils literal notranslate"><span class="pre">scipy</span></code> je Newtonova metoda definirana v okviru <code class="docutils literal notranslate"><span class="pre">scipy.optimize.root_scalar</span></code> funkcije:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">newton</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">fprime</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
-<span class="sa">f</span><span class="s1">&#39;Rezultat: </span><span class="si">{</span><span class="n">r</span><span class="si">:</span><span class="s1">2.8f</span><span class="si">}</span><span class="s1">&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root_scalar</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;newton&#39;</span><span class="p">,</span> <span class="n">fprime</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Rezultat: 0.73460351&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      converged: True
+           flag: converged
+ function_calls: 10
+     iterations: 5
+           root: 0.7346035077893033
+         method: newton
 </pre></div>
 </div>
 </div>
@@ -1299,16 +1300,58 @@ Rešitev: 3.142, D: 0.00002
 <p>In izmerimo hitrost:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> newton(func=f, x0=1., fprime=df)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> root_scalar(f, x0=1, method=&#39;newton&#39;, fprime=df)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32.4 μs ± 906 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>51.1 μs ± 3.92 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
+<p>Če pri <code class="docutils literal notranslate"><span class="pre">root_scalar</span></code> podamo tudi drugi odvod <code class="docutils literal notranslate"><span class="pre">fprime2</span></code>, se uporabi Halleyeva metoda, ki temelji na izrazu:</p>
+<div class="math notranslate nohighlight">
+\[x_{n+1}=x_{n}-\frac{2f(x_{n})f'(x_{n})}{2\,f'^{2}(x_{n})-f(x_{n})f''(x_{n})}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ddf</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">6</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root_scalar</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;halley&#39;</span><span class="p">,</span> <span class="n">fprime</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">fprime2</span><span class="o">=</span><span class="n">ddf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      converged: True
+           flag: converged
+ function_calls: 10
+     iterations: 3
+           root: 0.7346035077893033
+         method: halley
+</pre></div>
+</div>
+</div>
+</div>
+<p>In hitrost:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> root_scalar(f, x0=1, method=&#39;halley&#39;, fprime=df, fprime2=ddf)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43.2 μs ± 2.53 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Poglejmo si primer uporabe Newtonove metode v <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>:</p>
 </section>
 </section>
 <section id="resevanje-sistemov-nelinarnih-enacb">
@@ -1348,8 +1391,8 @@ f_{n-1}(x_0,x_1,\dots, x_{n-1})&amp;=&amp;0.\\
 \frac{f_i(\mathbf{x}+\mathbf{e}_j\,h)-f_i(\mathbf{x})}{h},\]</div>
 <p>kjer je <span class="math notranslate nohighlight">\(h\)</span> majhen premik in je <span class="math notranslate nohighlight">\(\mathbf{e}_j\)</span> enotski pomik v smeri <span class="math notranslate nohighlight">\(x_j\)</span>. Če se Jakobijeva matrika izračuna numerično, govorimo o sekantni metodi in ne Newtonovi.</p>
 <p>Pri numeričnem izračunu si lahko pomagamo s funkcijo <code class="docutils literal notranslate"><span class="pre">scipy.optimize.approx_fprime</span></code> (za podrobnosti glejte <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.approx_fprime.html">dokumentacijo</a>).</p>
-<section id="id7">
-<h3>Numerična implementacija<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<section id="id8">
+<h3>Numerična implementacija<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>Algoritem torej je:</p>
 <ol class="arabic simple">
 <li><p>Izberemo začetni približek <span class="math notranslate nohighlight">\(\mathbf{x}_0\)</span>, največje število iteracij in postavimo indeks na nič: <span class="math notranslate nohighlight">\(i=0\)</span>.</p></li>
@@ -1606,24 +1649,24 @@ Prva rešitev: (2, 3)
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#iskanje-nicle-v-okolici-pola">Iskanje ničle v okolici pola</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-scipy-optimize-bisect">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.bisect</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-scipy-optimize-root-scalar">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.root_scalar</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sekantna-metoda">Sekantna metoda</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Ocena napake</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konvergenca-in-red-konvergence">Konvergenca in red konvergence</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Numerična implementacija</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-scipy-optimize-newton">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.newton</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.root_scalar</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newtonova-metoda">Newtonova metoda</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#red-konvergence">Red konvergence</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Numerična implementacija</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.newton</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Numerična implementacija</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.root_scalar</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resevanje-sistemov-nelinarnih-enacb">Reševanje sistemov nelinarnih enačb*</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Numerična implementacija</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Numerična implementacija</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-scipy-optimize-root">Uporaba <code class="docutils literal notranslate"><span class="pre">scipy.optimize.root</span></code></a></li>
 </ul>
 </li>
