@@ -845,7 +845,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>297 μs ± 5.03 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>286 μs ± 14 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -930,7 +930,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>285 μs ± 17.8 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>257 μs ± 6.24 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1074,7 +1074,7 @@ Rešitev: 0.73460351, D: 0.00000
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>132 μs ± 11.6 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>104 μs ± 1.82 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1139,7 +1139,7 @@ Rešitev: 3.142, D: 0.00002
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 μs ± 10.1 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>94 μs ± 1.83 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1162,11 +1162,74 @@ Rešitev: 3.142, D: 0.00002
 </div>
 </div>
 </div>
+<p><em>Brentova</em> metoda (brentq) je v Scipy privzeta in priporočena izbira za iskanje ničel na intervalu.
+Združuje zanesljivost bisekcije in hitrost sekantne metode/inverzne kvadratne interpolacije. Uporaba in hitrost:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root_scalar</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">bracket</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;brentq&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      converged: True
+           flag: converged
+ function_calls: 9
+     iterations: 8
+           root: 0.7346035077893034
+         method: brentq
+</pre></div>
+</div>
+</div>
+</div>
+<p>Primerjava hitrosti kaže, da je običajno hitrejša od bisekcije:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> root_scalar(f, bracket=[0, 1], method=&#39;brentq&#39;)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>64.4 μs ± 2.06 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sicer pa Scipy podpira tudi algoritem <a class="reference external" href="https://docs.scipy.org/doc//scipy/reference/generated/scipy.optimize.toms748.html">TOMS 748</a>, ki velja za asimptotično najučinkovitejšo metodo za iskanje ničel na intervalu:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root_scalar</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">bracket</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;toms748&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      converged: True
+           flag: converged
+ function_calls: 9
+     iterations: 4
+           root: 0.7346035077893033
+         method: toms748
+</pre></div>
+</div>
+</div>
+</div>
+<p>Primerjava hitrosti (v večini primerov bi naj bila najhitrejša):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> root_scalar(f, bracket=[0, 1], method=&#39;toms748&#39;)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>342 μs ± 11.2 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="newtonova-metoda">
 <h2>Newtonova metoda<a class="headerlink" href="#newtonova-metoda" title="Link to this heading">#</a></h2>
-<p>V literaturi za <strong>Newtonovo</strong> metodo tudi najdemo izraza <strong>tangentna</strong> in <strong>Newton-Raphsonova</strong> metoda. Potrebuje en začetni približek <span class="math notranslate nohighlight">\(x_0\)</span>, poleg definicije funkcije <span class="math notranslate nohighlight">\(f(x)\)</span> pa tudi njen odvod <span class="math notranslate nohighlight">\(f'(x)\)</span>.</p>
+<p>Doslej predstavljene metode ne zahtevajo dodatnih odvodov funkcije; Newtonova metoda, ki si jo bomo pogledali v nadaljevanju, zahteva en začetni približek <span class="math notranslate nohighlight">\(x_0\)</span>, poleg definicije funkcije <span class="math notranslate nohighlight">\(f(x)\)</span> pa tudi njen odvod <span class="math notranslate nohighlight">\(f'(x)\)</span>. V literaturi za <strong>Newtonovo</strong> metodo tudi najdemo izraza <strong>tangentna</strong> in <strong>Newton-Raphsonova</strong> metoda.</p>
 <p>Princip delovanja metode je prikazan na sliki:
 <img alt="Newtonova metoda" src="../_images/newtonova.png" /></p>
 <p>Metodo bi lahko izpeljali grafično (s  slike), tukaj pa si poglejmo izpeljavo s pomočjo Taylorjeve vrste:</p>
@@ -1271,7 +1334,7 @@ Rešitev: 3.142, D: 0.00002
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.01 μs ± 438 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.62 μs ± 122 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1305,7 +1368,7 @@ Rešitev: 3.142, D: 0.00002
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>51.1 μs ± 3.92 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>46.9 μs ± 753 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1346,7 +1409,7 @@ Rešitev: 3.142, D: 0.00002
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43.2 μs ± 2.53 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>35.9 μs ± 1.53 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1495,6 +1558,43 @@ f_{n-1}(x_0,x_1,\dots, x_{n-1})&amp;=&amp;0.\\
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Priprava mreže točk</span>
+<span class="n">x0_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">x1_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">X0</span><span class="p">,</span> <span class="n">X1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x0_range</span><span class="p">,</span> <span class="n">x1_range</span><span class="p">)</span>
+
+<span class="c1">#  Definicija funkcij sistema</span>
+<span class="n">F0</span> <span class="o">=</span> <span class="n">X0</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">X0</span><span class="o">*</span><span class="n">X1</span> <span class="o">-</span> <span class="mi">10</span>
+<span class="n">F1</span> <span class="o">=</span> <span class="n">X1</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">X0</span><span class="o">*</span><span class="n">X1</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">57</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Izris ničelnih izolinij (kjer je f(x) = 0)</span>
+<span class="n">CS0</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X0</span><span class="p">,</span> <span class="n">X1</span><span class="p">,</span> <span class="n">F0</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">CS1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X0</span><span class="p">,</span> <span class="n">X1</span><span class="p">,</span> <span class="n">F1</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="c1"># Označbe</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">CS0</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;f0=0&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">CS1</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;f1=0&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="s1">&#39;ko&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Začetni približek&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rešitev</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rešitev</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Rešitev&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x_0$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x_1$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Grafična rešitev sistema (presečišče krivulj)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/4164b3f4aaa319a220eba5041982db5077c1db4a1fb400c4772a652b6cde8bfa.png" src="../_images/4164b3f4aaa319a220eba5041982db5077c1db4a1fb400c4772a652b6cde8bfa.png" />
 </div>
 </div>
 </section>
