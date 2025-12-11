@@ -404,7 +404,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Odvod <span class="math notranslate nohighlight">\(f''(x)\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Odvod <span class="math notranslate nohighlight">\(f'''(x)\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odvod-f-4-x">Odvod <span class="math notranslate nohighlight">\(f^{(4)}(x)\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#povzetek-centralne-diferencne-sheme">Povzetek centralne diferenčne sheme*</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#povzetek-centralne-diferencne-sheme">Povzetek centralne diferenčne sheme</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#izboljsan-priblizek-richardsonova-ekstrapolacija">Izboljšan približek - Richardsonova ekstrapolacija</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled">Zgled</a></li>
 </ul>
@@ -418,13 +418,14 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-numpy-gradient">Uporaba <code class="docutils literal notranslate"><span class="pre">numpy.gradient</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Zgled</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-numpy-diff">Uporaba <code class="docutils literal notranslate"><span class="pre">numpy.diff</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zaokrozitvena-napaka-pri-numericnem-odvajanju">Zaokrožitvena napaka pri numeričnem odvajanju*</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zaokrozitvena-napaka-pri-numericnem-odvajanju">Zaokrožitvena napaka pri numeričnem odvajanju</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Zgled</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-odvoda-s-kompleksnim-korakom">Aproksimacija odvoda s kompleksnim korakom*</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-odvoda-s-kompleksnim-korakom">Aproksimacija odvoda s kompleksnim korakom</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 </ul>
@@ -1074,7 +1075,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </section>
 <section id="povzetek-centralne-diferencne-sheme">
-<h3>Povzetek centralne diferenčne sheme*<a class="headerlink" href="#povzetek-centralne-diferencne-sheme" title="Link to this heading">#</a></h3>
+<h3>Povzetek centralne diferenčne sheme<a class="headerlink" href="#povzetek-centralne-diferencne-sheme" title="Link to this heading">#</a></h3>
 <p>Zgoraj smo izpeljali prve štiri odvode z napako metode 2. reda. Bistvo zgornjih izpeljav je, da nam dajo <strong>uteži</strong>, s katerimi moramo množiti funkcijske vrednosti, da izračunamo približek določenega odvoda. Iz tega razloga bomo tukaj te uteži zbrali. Če ste neučakani, lahko skočite na tabelo spodaj. Z branjem nadaljujte, če pa želite spoznati, kako predhodno izpeljane izraze strojno uredimo.</p>
 <p>Najprej zberimo vse ocene odvodov v seznam:</p>
 <div class="cell docutils container">
@@ -1532,9 +1533,37 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 </section>
+<section id="uporaba-numpy-diff">
+<h3>Uporaba <code class="docutils literal notranslate"><span class="pre">numpy.diff</span></code><a class="headerlink" href="#uporaba-numpy-diff" title="Link to this heading">#</a></h3>
+<p>Dajmo tukaj predstaviti še pogosto uporabljeno funkcijo <code class="docutils literal notranslate"><span class="pre">numpy.diff</span></code> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.diff.html">documentacija</a>) izračuna <code class="docutils literal notranslate"><span class="pre">n</span></code>-to diskretno razliko vzdolž podane osi. Prva razlika je podana kot <span class="math notranslate nohighlight">\(a[i+1] - a[i]\)</span>. To je osnovna operacija za numerično odvajanje  (gre za odvod prve stopnje natančnosti), vendar moramo rezultat deliti s korakom <span class="math notranslate nohighlight">\(h\)</span>.</p>
+<p>Pri uporabi <code class="docutils literal notranslate"><span class="pre">np.diff</span></code> se dolžina polja zmanjša za 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">y_d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x_d</span><span class="p">)</span>
+<span class="n">h_d</span> <span class="o">=</span> <span class="n">x_d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x_d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Prvi odvod z np.diff (naprej diferenca)</span>
+<span class="n">dy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">y_d</span><span class="p">)</span> <span class="o">/</span> <span class="n">h_d</span>
+<span class="n">x_diff</span> <span class="o">=</span> <span class="n">x_d</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># x os se zmanjša</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_d</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x_d</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Točen odvod&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_diff</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;np.diff aproksimacija&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Uporaba np.diff za odvajanje&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e5322cea3309ec9429b93cb1b3db9d7d3ce80ee703b0fbb5211efe0c89ddc105.png" src="../_images/e5322cea3309ec9429b93cb1b3db9d7d3ce80ee703b0fbb5211efe0c89ddc105.png" />
+</div>
+</div>
+</section>
 </section>
 <section id="zaokrozitvena-napaka-pri-numericnem-odvajanju">
-<h2>Zaokrožitvena napaka pri numeričnem odvajanju*<a class="headerlink" href="#zaokrozitvena-napaka-pri-numericnem-odvajanju" title="Link to this heading">#</a></h2>
+<h2>Zaokrožitvena napaka pri numeričnem odvajanju<a class="headerlink" href="#zaokrozitvena-napaka-pri-numericnem-odvajanju" title="Link to this heading">#</a></h2>
 <p>Zgoraj smo se osredotočili na napako metode. Pri numeričnem odvajanju pa moramo biti zelo pozorni tudi na <strong>zaokrožitveno</strong> (ali tudi <em>upodobitveno</em>) napako! Poglejmo si prvi odvod (po centralni diferenčni shemi) zapisan z napako metode (<span class="math notranslate nohighlight">\(k\,h^2\)</span>) in zaokrožitveno napako <span class="math notranslate nohighlight">\(\varepsilon\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[y_i'=\frac{1}{2h}\left((-y_{i-1}\pm\varepsilon)+(y_{i+1}\pm\varepsilon)\right) + k\,h^2\]</div>
@@ -1694,7 +1723,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_6288\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_3288\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
   f1_ocena = (fun(x+h, dtype=dtype)-fun(x-h,dtype=dtype))/(2*dtype(h))
 </pre></div>
 </div>
@@ -1780,8 +1809,8 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </section>
 </section>
 <section id="aproksimacija-odvoda-s-kompleksnim-korakom">
-<h2>Aproksimacija odvoda s kompleksnim korakom*<a class="headerlink" href="#aproksimacija-odvoda-s-kompleksnim-korakom" title="Link to this heading">#</a></h2>
-<p>Aproksimacija odvoda s kompleksnim korakom je uporabna takrat, ko imamo definirano analitično funkcijo, vendar pa nimamo na voljo analitičnega izraza za prvi odvod, za podrobnosti glejte <a class="reference external" href="https://nhigham.com/2020/10/06/what-is-the-complex-step-approximation/">vir</a>. Ideja izhaja iz razvoja funkcije <span class="math notranslate nohighlight">\(f(x)\)</span> v Taylorjevo vrsto, vendar se izvede korak v smeri imaginarne osi <span class="math notranslate nohighlight">\(i\,h\)</span> (<span class="math notranslate nohighlight">\(i=\sqrt(-1)\)</span>):</p>
+<h2>Aproksimacija odvoda s kompleksnim korakom<a class="headerlink" href="#aproksimacija-odvoda-s-kompleksnim-korakom" title="Link to this heading">#</a></h2>
+<p>Aproksimacija odvoda s kompleksnim korakom je uporabna takrat, ko imamo definirano katerokoli analitično funkcijo, vendar pa nimamo na voljo analitičnega izraza za prvi odvod, za podrobnosti glejte (<a class="reference external" href="https://nhigham.com/2020/10/06/what-is-the-complex-step-approximation/">vir</a>). Ideja izhaja iz razvoja funkcije <span class="math notranslate nohighlight">\(f(x)\)</span> v Taylorjevo vrsto, vendar se izvede korak v smeri imaginarne osi <span class="math notranslate nohighlight">\(i\,h\)</span> (<span class="math notranslate nohighlight">\(i=\sqrt(-1)\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[f{\left(x + i\,h \right)} = f{\left(x \right)} + i\,h\,\frac{d}{d x} f{\left(x \right)} - \frac{h^{2}}{2} \frac{d^{2}}{d x^{2}} f{\left(x \right)} + O\left(h^{3}\right)\]</div>
 <p>Če sedaj predpostavimo, da funkcija <span class="math notranslate nohighlight">\(f(x)\)</span> realne vrednosti slika na realno os in da sta <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(h\)</span> realni vrednosti, potem lahko izpeljemo:</p>
@@ -1794,6 +1823,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 <div class="math notranslate nohighlight">
 \[f'{\left(x \right)}=\frac{\mathbf{Im} \left( f{\left(x + i\,h \right)}\right)}{h}+ O\left(h^{2}\right)\]</div>
 <p>Rezultat je na nek način zelo presenetljiv. Zgoraj smo z eno koračno shemo naprej uspeli pridobiti natančnost <span class="math notranslate nohighlight">\(O\left(h^{1}\right)\)</span>, tukaj pa <span class="math notranslate nohighlight">\(O\left(h^{2}\right)\)</span>!</p>
+<p>Pomembna prednost metode s kompleksnim korakom je, da <strong>nima težav z odštevanjem skoraj enakih števil</strong> (<em>ang.</em> cancellation error), ki pesti klasične diferenčne metode pri zelo majhnih korakih <span class="math notranslate nohighlight">\(h\)</span>. Zato lahko izberemo izjemno majhen <span class="math notranslate nohighlight">\(h\)</span> (npr. <span class="math notranslate nohighlight">\(10^{-200}\)</span>) in dobimo praktično točen rezultat (do strojne natančnosti).</p>
 <p>Če pogledamo sedaj uporabo metoda na primeru od zgoraj <span class="math notranslate nohighlight">\(\exp(-x)\)</span>, spomnimo se najprej točnega rezultata pri vrednosti <span class="math notranslate nohighlight">\(x=1\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1805,7 +1835,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 <img alt="../_images/f7c54ce0311350b3d12ede7326031814eeab54516129b31274749d23e27c31f6.png" src="../_images/f7c54ce0311350b3d12ede7326031814eeab54516129b31274749d23e27c31f6.png" />
 </div>
 </div>
-<p>Pri klicu s korakom <span class="math notranslate nohighlight">\(h=0.1\)</span> dobimo točni dve (tri) števki (podobno kakor pri centralni diferenčni shemi), zmanjšanjem koraka na desetino pa bi število točnih števk približno podvojili:</p>
+<p>Pri klicu s korakom <span class="math notranslate nohighlight">\(h=0.1\)</span> dobimo točni dve (tri) števki (podobno kakor pri centralni diferenčni shemi), zmanjšanjem koraka na desetino pa bi število točnih števk približno podvojili.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h1_kompleksno</span> <span class="o">=</span> <span class="mf">0.1</span>
@@ -1817,6 +1847,96 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/d623eb36dc2373afab2d6483c7b361389e102a993e9c80f311391b126e7aab1b.png" src="../_images/d623eb36dc2373afab2d6483c7b361389e102a993e9c80f311391b126e7aab1b.png" />
+</div>
+</div>
+<p>Ker nimamo težav z odštevanjem skoraj enakih števil, lahko korak izjemno zmanjšamo in dobimo točen rezulta (do strojne natančnosti):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h1_kompleksno</span> <span class="o">=</span> <span class="mf">1e-10</span>
+<span class="n">y1_kompleksno</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="mf">1.</span><span class="o">+</span><span class="mf">1.</span><span class="n">j</span><span class="o">*</span><span class="n">h1_kompleksno</span><span class="p">))</span>
+<span class="n">f1_kompleksno</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">y1_kompleksno</span><span class="p">)</span><span class="o">/</span><span class="n">h1_kompleksno</span>
+<span class="n">f1_kompleksno</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f7c54ce0311350b3d12ede7326031814eeab54516129b31274749d23e27c31f6.png" src="../_images/f7c54ce0311350b3d12ede7326031814eeab54516129b31274749d23e27c31f6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x0</span><span class="o">*</span><span class="mf">1e-5j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.+0.e+00j, 0.+2.e-05j, 0.+4.e-05j])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x0</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x0</span><span class="o">*</span><span class="mf">1e-5j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        +0.00000000e+00j,  0.84147098+1.08060461e-05j,
+       -0.7568025 -2.61457448e-05j])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Poglejmo si še primer odvoda funkcije <code class="docutils literal notranslate"><span class="pre">sin(x**2)</span></code>. Iz kode in slike spodaj vidimo bistveno hitrejšo konvergenco metode kompleksnega koraka. Zakaj metoda deluje tako dobro? Če vstavimo <span class="math notranslate nohighlight">\(x+i\,h\)</span> v <span class="math notranslate nohighlight">\(x^2\)</span>, dobimo: <span class="math notranslate nohighlight">\((x+i\,h)^2 = x^2 + 2i\,x\,h - h^2\)</span></p>
+<p>Ker je <span class="math notranslate nohighlight">\(h\)</span> zelo majhen, je <span class="math notranslate nohighlight">\(h^2\)</span> zanemarljiv v realnem delu, imaginarni del <span class="math notranslate nohighlight">\(2\,x\,h\)</span> pa se linearno prenese skozi sinus. Na tak način dobimo približek teoretičnega odvoda <span class="math notranslate nohighlight">\(2\,x\,\cos(x^2)\)</span>. Metoda <em>vidi</em> odvod v imaginarnem delu brez odštevanja, zato ne pride do napake zaokroževanja.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Funkcija: sin(x^2)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Analitični odvod: 2x * cos(x^2)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">df_analytical</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">točno</span> <span class="o">=</span> <span class="n">df_analytical</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+
+<span class="n">h_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">err_fd</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">err_cs</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">h_vals</span><span class="p">:</span>
+    <span class="c1"># Končna razlika (Forward)</span>
+    <span class="n">fd_approx</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x0</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x0</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span>
+    <span class="n">err_fd</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">fd_approx</span> <span class="o">-</span> <span class="n">točno</span><span class="p">))</span>
+    
+    <span class="c1"># Kompleksni korak</span>
+    <span class="c1"># f(x + ih) = sin((x+ih)^2) ≈ sin(x^2 + 2ixh) </span>
+    <span class="c1">#           ≈ sin(x^2) + i * 2xh * cos(x^2) </span>
+    <span class="c1"># Imag/h nam da točno 2x*cos(x^2)</span>
+    <span class="n">cs_approx</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x0</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">h</span><span class="p">)</span><span class="o">.</span><span class="n">imag</span> <span class="o">/</span> <span class="n">h</span>
+    <span class="n">err_cs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">cs_approx</span> <span class="o">-</span> <span class="n">točno</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">h_vals</span><span class="p">,</span> <span class="n">err_fd</span><span class="p">,</span> <span class="s1">&#39;r-o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Končna razlika&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">h_vals</span><span class="p">,</span> <span class="n">err_cs</span><span class="p">,</span> <span class="s1">&#39;b--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Kompleksni korak&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Korak $h$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Absolutna napaka&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Napaka pri odvajanju $f(x)=\sin(x^2)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/820c42bd0c36f7d8786e7628573ac97790d3e50c0cc89ab062ecb5bffda8c64c.png" src="../_images/820c42bd0c36f7d8786e7628573ac97790d3e50c0cc89ab062ecb5bffda8c64c.png" />
 </div>
 </div>
 </section>
@@ -1920,7 +2040,7 @@ Dodatek k domačim nalogam: 6. vprašanje bi lahko nadaljevali in zašumljene po
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Odvod <span class="math notranslate nohighlight">\(f''(x)\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Odvod <span class="math notranslate nohighlight">\(f'''(x)\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odvod-f-4-x">Odvod <span class="math notranslate nohighlight">\(f^{(4)}(x)\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#povzetek-centralne-diferencne-sheme">Povzetek centralne diferenčne sheme*</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#povzetek-centralne-diferencne-sheme">Povzetek centralne diferenčne sheme</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#izboljsan-priblizek-richardsonova-ekstrapolacija">Izboljšan približek - Richardsonova ekstrapolacija</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled">Zgled</a></li>
 </ul>
@@ -1934,13 +2054,14 @@ Dodatek k domačim nalogam: 6. vprašanje bi lahko nadaljevali in zašumljene po
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-numpy-gradient">Uporaba <code class="docutils literal notranslate"><span class="pre">numpy.gradient</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Zgled</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-numpy-diff">Uporaba <code class="docutils literal notranslate"><span class="pre">numpy.diff</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zaokrozitvena-napaka-pri-numericnem-odvajanju">Zaokrožitvena napaka pri numeričnem odvajanju*</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zaokrozitvena-napaka-pri-numericnem-odvajanju">Zaokrožitvena napaka pri numeričnem odvajanju</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Zgled</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-odvoda-s-kompleksnim-korakom">Aproksimacija odvoda s kompleksnim korakom*</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-odvoda-s-kompleksnim-korakom">Aproksimacija odvoda s kompleksnim korakom</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 </ul>
