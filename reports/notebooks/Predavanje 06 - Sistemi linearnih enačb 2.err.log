@@ -26,19 +26,18 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 # Podatki
-#!pip install findiff
-import findiff
-findiff.coefficients(deriv=2, acc=4)['center']['coefficients']
+X = np.linspace(1, 10, 100)
+Y = 0.7*X - 15.5 + np.random.randn(len(X)) 
+plt.plot(X, Y, 'b.')
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
-[31mModuleNotFoundError[39m                       Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[80][39m[32m, line 3[39m
-[32m      1[39m [38;5;66;03m# Podatki[39;00m
-[32m      2[39m [38;5;66;03m#!pip install findiff[39;00m
-[32m----> [39m[32m3[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mfindiff[39;00m
-[32m      4[39m findiff.coefficients(deriv=[32m2[39m, acc=[32m4[39m)[[33m'[39m[33mcenter[39m[33m'[39m][[33m'[39m[33mcoefficients[39m[33m'[39m]
+[31mNameError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[58][39m[32m, line 4[39m
+[32m      2[39m X = np.linspace([32m1[39m, [32m10[39m, [32m100[39m)
+[32m      3[39m Y = [32m0.7[39m*X - [32m15.5[39m + np.random.randn([38;5;28mlen[39m(X)) 
+[32m----> [39m[32m4[39m [43mplt[49m.plot(X, Y, [33m'[39m[33mb.[39m[33m'[39m)
 
-[31mModuleNotFoundError[39m: No module named 'findiff'
+[31mNameError[39m: name 'plt' is not defined
 

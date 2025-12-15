@@ -185,21 +185,34 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2025/26</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Uvod v Python</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">Objektno programiranje, simbolno računanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">Uvod v numerične metode in sistemi linearnih enačb</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">Sistemi linearnih enačb - nadaljevanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">Interpolacija</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">Aproksimacija</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">Reševanje enačb</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">Numerično odvajanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">Numerično integriranje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">Numerično reševanje diferencialnih enačb - začetni problem</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">Numerično reševanje diferencialnih enačb - robni problem</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">Testiranje pravilnosti kode, uporabniški vmesnik</a></li>
 </ul>
 
@@ -396,6 +409,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Uvod v Python</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kaj-je-ekosistem-pythona">Kaj je ekosistem Pythona?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kdo-se-uci-python-zakaj-ga-uporabljati">Kdo se uči Python, zakaj ga uporabljati?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-pythona">Uporaba Pythona?</a></li>
@@ -459,6 +473,19 @@ document.write(`
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Niz (string)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seznam-list-terka-tuple">Seznam (list), terka (tuple)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Funkcija zip</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slovarji">Slovarji</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stavek-if-for-in-while-zanke">Stavek <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code> in <code class="docutils literal notranslate"><span class="pre">while</span></code> zanke</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -2028,7 +2055,7 @@ g = 9.81
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.6 μs ± 6.26 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.4 μs ± 5.01 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2042,7 +2069,7 @@ g = 9.81
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40.2 μs ± 4.6 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>39 μs ± 4.27 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2222,6 +2249,41 @@ Pari so:  3 in 30
 </section>
 </section>
 </section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="vprasanja-za-vaje">
+<h1>Vprašanja za vaje<a class="headerlink" href="#vprasanja-za-vaje" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="id1">
+<h2>Niz (string)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p><strong>Vprašanje 1</strong>: V obliki niza zapišite svoje ime in priimek. Niz pretvorite v seznam in ga izpišite.</p>
+<p><strong>Vprašanje 2:</strong> Zadnji znak v pripravljenem seznamu dvajsetkrat izpišite.</p>
+</section>
+<section id="seznam-list-terka-tuple">
+<h2>Seznam (list), terka (tuple)<a class="headerlink" href="#seznam-list-terka-tuple" title="Link to this heading">#</a></h2>
+<p><strong>Vprašanje 3:</strong> V Jupyter notebooku pošičite pomoč za funkcijo <code class="docutils literal notranslate"><span class="pre">tuple</span></code>. Definirajte seznam s petimi različnimi števili s plavajočo vejico in ga pretvorite v terko.</p>
+<p><strong>Vprašanje 4:</strong> Ustvarjeni terki poskusite dodati nov element. Komentirajte, terko pretvorite v seznam…</p>
+<p><strong>Vprašanje 5:</strong> Poiščite indeks najvišjega elementa v seznamu in ta element odstranite. Če je treba poiščite pomoč za funkciji <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">list.index</span></code>.</p>
+<p><strong>Vprašanje 6:</strong> Pripravite nov seznam, tako da seznam iz prejšnje naloge uredite po velikosti in prve (najmanjše) tri shranite v nov seznam.</p>
+<section id="id2">
+<h3>Funkcija zip<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p><strong>Vprašanje 7:</strong> Pripravite seznam treh nizov: <code class="docutils literal notranslate"><span class="pre">['najmanjši',</span> <span class="pre">'srednji',</span> <span class="pre">'največji']</span></code>.</p>
+<p>Z uporabo funkcije <code class="docutils literal notranslate"><span class="pre">zip</span></code> in <code class="docutils literal notranslate"><span class="pre">list</span></code> pripravite seznam terk iz seznama nizov in seznama iz prejšnjega vprašanja.</p>
+</section>
+</section>
+<section id="slovarji">
+<h2>Slovarji<a class="headerlink" href="#slovarji" title="Link to this heading">#</a></h2>
+<p><strong>Vprašanje 8:</strong> Iz seznama terk iz prejšnje naloge tvorite slovar. Dodajte mu nov ključ ‚negativen‘ in vanj shranite poljubno negativno število.</p>
+</section>
+<section id="stavek-if-for-in-while-zanke">
+<h2>Stavek <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code> in <code class="docutils literal notranslate"><span class="pre">while</span></code> zanke<a class="headerlink" href="#stavek-if-for-in-while-zanke" title="Link to this heading">#</a></h2>
+<p><strong>Vprašanje 9:</strong> Pripravite seznam vseh lihih deliteljev poljubnega naravnega števila <code class="docutils literal notranslate"><span class="pre">N</span></code>, večjega od 100, ki ni praštevilo.</p>
+<p><strong>Vprašanje 10:</strong> Za vsa naravna števila <code class="docutils literal notranslate"><span class="pre">i</span></code>, manjša ali enaka 20, ki jih ni na seznamu deliteljev iz prejšnje naloge, v nov seznam zapišite ostanek pri celoštevilskem deljenju <code class="docutils literal notranslate"><span class="pre">N</span></code> z <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
+<p><strong>Vprašanje 11:</strong> Iz zgornjega seznama ostankov odstranite podvojene elemente.</p>
+<p><strong>Vprašanje 12:</strong> Za vse elemente seznama iz prejšnje naloge izpišite par elementa in njegovega indeksa v seznamu, v obliki <code class="docutils literal notranslate"><span class="pre">indeks:</span> <span class="pre">element</span></code>.</p>
+<p><strong>Vprašanje 13:</strong> Z uporabo <code class="docutils literal notranslate"><span class="pre">while</span></code> zanke delite število 1000 z 2, tolikokrat, da bo rezultat manjši od <span class="math notranslate nohighlight">\(10^{-3}\)</span>.</p>
+<p>Izpišite število potrebnih operacij deljenja.</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2287,6 +2349,7 @@ Pari so:  3 in 30
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Uvod v Python</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kaj-je-ekosistem-pythona">Kaj je ekosistem Pythona?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kdo-se-uci-python-zakaj-ga-uporabljati">Kdo se uči Python, zakaj ga uporabljati?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-pythona">Uporaba Pythona?</a></li>
@@ -2350,6 +2413,19 @@ Pari so:  3 in 30
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Niz (string)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seznam-list-terka-tuple">Seznam (list), terka (tuple)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Funkcija zip</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slovarji">Slovarji</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stavek-if-for-in-while-zanke">Stavek <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code> in <code class="docutils literal notranslate"><span class="pre">while</span></code> zanke</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

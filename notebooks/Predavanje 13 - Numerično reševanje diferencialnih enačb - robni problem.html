@@ -185,21 +185,34 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2025/26</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">Objektno programiranje, simbolno računanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">Uvod v numerične metode in sistemi linearnih enačb</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">Sistemi linearnih enačb - nadaljevanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">Interpolacija</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">Aproksimacija</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">Reševanje enačb</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">Numerično odvajanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">Numerično integriranje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">Numerično reševanje diferencialnih enačb - začetni problem</a></li>
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Numerično reševanje diferencialnih enačb - robni problem</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">Testiranje pravilnosti kode, uporabniški vmesnik</a></li>
 </ul>
 
@@ -396,6 +409,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Numerično reševanje diferencialnih enačb - robni problem</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resevanje-dvotockovnih-robnih-problemov">Reševanje dvotočkovnih robnih problemov</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strelska-metoda">Strelska metoda</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numericni-zgled-posevni-met">Numerični zgled: poševni met</a><ul class="nav section-nav flex-column">
@@ -415,6 +429,22 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno-simbolna-resitev-nosilca">Dodatno: simbolna rešitev nosilca</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga-1-posevni-met">Naloga 1: poševni met</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga-2-nosilec">Naloga 2: nosilec</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simbolno">Simbolno</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numericno-scipy-integrate-solve-bvp">Numerično - <code class="docutils literal notranslate"><span class="pre">scipy.integrate.solve_bvp</span></code>:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga-3-nosilec-z-dvema-poljema">Naloga 3: Nosilec z dvema poljema</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numericno-resevanje">Numerično reševanje:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -851,7 +881,7 @@ y_3'&amp;=&amp;F_y/m-g.\\
        success: True
         status: 0
              x: [ 0.000e+00  2.381e-02 ...  9.762e-01  1.000e+00]
-           sol: &lt;scipy.interpolate._interpolate.PPoly object at 0x0000026164A93A70&gt;
+           sol: &lt;scipy.interpolate._interpolate.PPoly object at 0x0000014D12BFA080&gt;
              p: None
              y: [[-1.588e-22  4.482e-01 ...  9.853e+00  1.000e+01]
                  [ 1.939e+01  1.828e+01 ...  6.210e+00  6.117e+00]
@@ -1594,6 +1624,240 @@ robnim pogojem.</p>
 </div>
 </section>
 </section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="vprasanja-za-vaje">
+<h1>Vprašanja za vaje<a class="headerlink" href="#vprasanja-za-vaje" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="naloga-1-posevni-met">
+<h2>Naloga 1: poševni met<a class="headerlink" href="#naloga-1-posevni-met" title="Link to this heading">#</a></h2>
+<p>Izstrelek mase <span class="math notranslate nohighlight">\(m\)</span> izstrelimo z neznano hitrostjo hitrostjo <span class="math notranslate nohighlight">\(v_0\)</span> pod neznanim kotom <span class="math notranslate nohighlight">\(\alpha\)</span>. Gibalni enačbi za pomike v smereh <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(y\)</span> sta:</p>
+<div class="math notranslate nohighlight">
+\[\ddot{x}(t) = - F~\frac{\cos(\alpha)}{m} \qquad \ddot{y}(t) = -F~\frac{\sin(\alpha)}{m} - g\]</div>
+<p>Sila upora <span class="math notranslate nohighlight">\(F\)</span> je enaka <span class="math notranslate nohighlight">\(F = c~v^{3/2}\)</span>, pri čemer je hitrost <span class="math notranslate nohighlight">\(v = \sqrt{\dot{x}^2 + \dot{y}^2}\)</span> in <span class="math notranslate nohighlight">\(\alpha = \arctan{\Big(\frac{\dot{y}}{\dot{x}}\Big)}\)</span></p>
+<img src="fig/vaje/izstrelek.png" width=300>
+<center><font size="1.5">vir: Numerical Methods in Engineering With Python 3, 3rd Ed, Jaan Kiusalaas</font></center>
+<p>Izstrelek ste izstrelili <strong>iz koordinatnega izhodišča</strong> vzdolž vodoravnega polja, izmeirli ste, da je <strong>padel na tla po 6 sekundah</strong> in pri tem <strong>preletel razdaljo 250 m</strong>.</p>
+<p>Rešite sistem diferencialnih enačb in določite krivuljo (trajektorijo) leta izstrelka.</p>
+<p>Podatki:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1"># m/s^2</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">0.029</span> <span class="c1"># N/(ms)^2</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">0.41</span> <span class="c1"># kg</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">6</span> <span class="c1"># s</span>
+<span class="n">D</span> <span class="o">=</span> <span class="mi">250</span> <span class="c1"># m</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="naloga-2-nosilec">
+<h2>Naloga 2: nosilec<a class="headerlink" href="#naloga-2-nosilec" title="Link to this heading">#</a></h2>
+<img src="fig/vaje/konzola_s_podporo.png" width=450>
+<p>Diferenicalna enačba (Euler Bernoulli):</p>
+<div class="math notranslate nohighlight">
+\[EI \, y^{IV} = q(x)\]</div>
+<p><strong>Robni pogoji:</strong></p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{align}\\\begin{split}y(A) = 0\\
+y'(A) = 0\\
+y(B) = 0\\
+y''(B)  = 0
+\end{align}\end{split}\end{aligned}\end{align} \]</div>
+<p>Podatki:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E</span> <span class="o">=</span> <span class="mf">2.1e5</span> <span class="c1"># N/mm2</span>
+<span class="n">I</span> <span class="o">=</span> <span class="mf">5.0e6</span> <span class="c1"># mm^4</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mi">1300</span>  <span class="c1"># mm</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mi">150</span>   <span class="c1"># kg/mm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="simbolno">
+<h3>Simbolno<a class="headerlink" href="#simbolno" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">EI</span><span class="p">,</span> <span class="n">q0</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x EI q_0&#39;</span><span class="p">)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">EI</span><span class="o">*</span><span class="n">y</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">q0</span><span class="p">)</span>
+<span class="n">eq</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/97eb6039980494c6e97378e4ed1e158883b238a784f960bb0ee78e7e1ed42704.png" src="../_images/97eb6039980494c6e97378e4ed1e158883b238a784f960bb0ee78e7e1ed42704.png" />
+</div>
+</div>
+<p>Rešitev diferencialne enačbe</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">)</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">res</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a7eb766914496f73ba12fe559ec5c06772b98613c5124be86a787b9a368c9d50.png" src="../_images/a7eb766914496f73ba12fe559ec5c06772b98613c5124be86a787b9a368c9d50.png" />
+</div>
+</div>
+<p>Določitev integracijskih konstant - reševanje sistema enačb robnih pogojev</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">en1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">en2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">en3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">l</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">en4</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">l</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">sistem</span> <span class="o">=</span> <span class="p">(</span><span class="n">en1</span><span class="p">,</span> <span class="n">en2</span><span class="p">,</span> <span class="n">en3</span><span class="p">,</span> <span class="n">en4</span><span class="p">)</span>
+<span class="n">sistem</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c131dc58f54435d39628906f1b72eb35255a1fa864d0bdcccba428a73e29b35e.png" src="../_images/c131dc58f54435d39628906f1b72eb35255a1fa864d0bdcccba428a73e29b35e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">konstante</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">sistem</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="s1">&#39;C3&#39;</span><span class="p">,</span> <span class="s1">&#39;C4&#39;</span><span class="p">])</span>
+<span class="n">konstante</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e2337e99c90fd9f424deb4986a4568f59479a073b2d0d8979d310957a4635c8b.png" src="../_images/e2337e99c90fd9f424deb4986a4568f59479a073b2d0d8979d310957a4635c8b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">končna_rešitev</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">konstante</span><span class="p">)</span>
+<span class="n">končna_rešitev</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b672fdeff9f176f195223df26abbb67ca729376ad75c8c3c43d4092a63788ba7.png" src="../_images/b672fdeff9f176f195223df26abbb67ca729376ad75c8c3c43d4092a63788ba7.png" />
+</div>
+</div>
+<p>Vstavimo podatke:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">l</span><span class="p">:</span><span class="n">L</span><span class="p">,</span> <span class="n">EI</span><span class="p">:</span><span class="n">E</span><span class="o">*</span><span class="n">I</span><span class="p">,</span> <span class="n">q0</span><span class="p">:</span><span class="n">q</span><span class="p">}</span>
+<span class="n">poves</span> <span class="o">=</span> <span class="n">končna_rešitev</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">poves</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/904ebfc3c61de3435d8cd1e19006499a860feedf29934d58ef2897fd227878d3.png" src="../_images/904ebfc3c61de3435d8cd1e19006499a860feedf29934d58ef2897fd227878d3.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x14d171eb6e0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pripravimo funkcijo končne rešitve</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_poves</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">poves</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numericno-scipy-integrate-solve-bvp">
+<h3>Numerično - <code class="docutils literal notranslate"><span class="pre">scipy.integrate.solve_bvp</span></code>:<a class="headerlink" href="#numericno-scipy-integrate-solve-bvp" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="naloga-3-nosilec-z-dvema-poljema">
+<h2>Naloga 3: Nosilec z dvema poljema<a class="headerlink" href="#naloga-3-nosilec-z-dvema-poljema" title="Link to this heading">#</a></h2>
+<img src="fig/vaje/konzola_s_podporo_dve_polji.png" width=550>
+<p><strong>Polje I:</strong></p>
+<p>Diferenicalna enačba (Euler Bernoulli):</p>
+<div class="math notranslate nohighlight">
+\[EI \, y_I^{IV} = q(x) = 0\]</div>
+<p>Nove neznanke:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+y_0 = y_{I}(x)\\
+y_1 = y_{I}'(x)\\
+y_2 = y_{I}''(x)\\
+y_3 = y_{I}'''(x)
+\end{align}\end{split}\]</div>
+<p><strong>Polje II:</strong></p>
+<p>Diferenicalna enačba (Euler Bernoulli):</p>
+<div class="math notranslate nohighlight">
+\[EI \, y_{II}^{IV} = q(x) = 0\]</div>
+<p>Nove neznanke:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+y_4 = y_{II}(x)\\
+y_5 = y_{II}'(x)\\
+y_6 = y_{II}''(x)\\
+y_7 = y_{II}'''(x)
+\end{align}\end{split}\]</div>
+<p><strong>8 novih neznank!</strong></p>
+<p><strong>Prvi odvodi novih neznank:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;y_0' = y_1\\
+&amp;y_1' = y_2\\
+&amp;y_2' = y_3\\
+&amp;y_3' = y^{IV}(x) = 0\\
+\end{align}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;y_4' = y_5\\
+&amp;y_5' = y_6\\
+&amp;y_6' = y_7\\
+&amp;y_7' = y^{IV}(x) = 0
+\end{align}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="mi">2000</span> <span class="c1"># mm</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mi">210000</span> <span class="c1"># MPa</span>
+<span class="n">I</span> <span class="o">=</span> <span class="mf">2e6</span> <span class="c1"># mm^4</span>
+<span class="n">F</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5000</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Robni pogoji (8!):</strong></p>
+<p><span class="math notranslate nohighlight">\(x \in [0, L/2]\)</span></p>
+<p><span class="math notranslate nohighlight">\(x = 0 \quad \Rightarrow \quad \text{rob A}\)</span></p>
+<p><span class="math notranslate nohighlight">\(x = L/2 \quad \Rightarrow \quad \text{rob B}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+y_0(x_I=0) = y_0^A = 0\\
+y_1(x_I=0) = y_1^A = 0\\
+y_4(x_{II}=L/2) = y_4^B = 0\\
+y_6(x_{II}=L/2) = y_6^B  = 0
+\end{align}\end{split}\]</div>
+<p>Pogoji na prehodu med polji:
+$<span class="math notranslate nohighlight">\(\begin{align}
+y_0(x_I=L/2) &amp;= y_4(x_{II}=0)\\
+y_1(x_I=L/2) &amp;= y_5(x_{II}=0)\\
+y_2(x_I=L/2) &amp;= y_6(x_{II}=0)\\
+\end{align}\)</span>$</p>
+<p>Strižna sila na prehodu med polji:
+$<span class="math notranslate nohighlight">\(T(x_I=L/2) = T(x_{II}=0) + F, \quad \quad T(x) = -EI \, y'''(x)\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[y_3(x_I=L/2) = y_7(x_{II}=0) - \frac{F}{EI}\]</div>
+<section id="numericno-resevanje">
+<h3>Numerično reševanje:<a class="headerlink" href="#numericno-resevanje" title="Link to this heading">#</a></h3>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1659,6 +1923,7 @@ robnim pogojem.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Numerično reševanje diferencialnih enačb - robni problem</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resevanje-dvotockovnih-robnih-problemov">Reševanje dvotočkovnih robnih problemov</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strelska-metoda">Strelska metoda</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numericni-zgled-posevni-met">Numerični zgled: poševni met</a><ul class="nav section-nav flex-column">
@@ -1678,6 +1943,22 @@ robnim pogojem.</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno-simbolna-resitev-nosilca">Dodatno: simbolna rešitev nosilca</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga-1-posevni-met">Naloga 1: poševni met</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga-2-nosilec">Naloga 2: nosilec</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simbolno">Simbolno</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numericno-scipy-integrate-solve-bvp">Numerično - <code class="docutils literal notranslate"><span class="pre">scipy.integrate.solve_bvp</span></code>:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga-3-nosilec-z-dvema-poljema">Naloga 3: Nosilec z dvema poljema</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numericno-resevanje">Numerično reševanje:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

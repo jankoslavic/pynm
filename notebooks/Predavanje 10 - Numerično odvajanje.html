@@ -185,21 +185,34 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2025/26</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">Objektno programiranje, simbolno računanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">Uvod v numerične metode in sistemi linearnih enačb</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">Sistemi linearnih enačb - nadaljevanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">Interpolacija</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">Aproksimacija</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">Reševanje enačb</a></li>
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Numerično odvajanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">Numerično integriranje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">Numerično reševanje diferencialnih enačb - začetni problem</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">Numerično reševanje diferencialnih enačb - robni problem</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">Testiranje pravilnosti kode, uporabniški vmesnik</a></li>
 </ul>
 
@@ -396,6 +409,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Numerično odvajanje</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-prvega-odvoda-po-metodi-koncnih-razlik">Aproksimacija prvega odvoda po metodi končnih razlik</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centralna-diferencna-shema">Centralna diferenčna shema</a><ul class="nav section-nav flex-column">
@@ -429,6 +443,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utezi-centralne-diferencne-sheme-v-scipy">Uteži centralne diferenčne sheme v <code class="docutils literal notranslate"><span class="pre">scipy</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izboljsanje-priblizka-odvoda-z-richardsonovo-ekstrapolacijo">Izboljšanje približka odvoda z Richardsonovo ekstrapolacijo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-np-convolve">Uporaba <code class="docutils literal notranslate"><span class="pre">np.convolve</span></code></a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -1723,7 +1746,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_3288\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_8568\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
   f1_ocena = (fun(x+h, dtype=dtype)-fun(x-h,dtype=dtype))/(2*dtype(h))
 </pre></div>
 </div>
@@ -1967,6 +1990,139 @@ Dodatek k domačim nalogam: 6. vprašanje bi lahko nadaljevali in zašumljene po
 <p><a class="reference external" href="https://www.youtube.com/watch?v=ZJkGI5DZQv8&amp;amp;list=PLYdroRCLMg5OvLx1EtY1ByvveJeTEXQd_&amp;amp;index=18">Video predavanja na temo numeričnega odvajanja</a>.</p>
 </section>
 </section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="vprasanja-za-vaje">
+<h1>Vprašanja za vaje<a class="headerlink" href="#vprasanja-za-vaje" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p><strong>Vprašanje 1:</strong> Podane so izmerjene vrednosti opravljene poti tekača <code class="docutils literal notranslate"><span class="pre">s</span></code> pri <span class="math notranslate nohighlight">\(N\)</span> točkah v času. Numerično izračunajte potek hitrosti in pospeška (uporabite lahko poljubno metodo).</p>
+<p>Opazujte in komentirajte kaj se dogaja, ko povečujete število točk <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Podatki</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">s_</span> <span class="o">=</span> <span class="mi">50</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">12</span><span class="p">)</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span> <span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">s_</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;s šumom&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s_</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;brez šuma&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1eb1cac2420&gt;
+</pre></div>
+</div>
+<img alt="../_images/5e44f697e72cb974cd7afe8c7df171ed5716c8f557be36f2a5fc283219a687aa.png" src="../_images/5e44f697e72cb974cd7afe8c7df171ed5716c8f557be36f2a5fc283219a687aa.png" />
+</div>
+</div>
+<p><strong>Vprašanje 2:</strong> Simbolno je podana funkcija <span class="math notranslate nohighlight">\(f(x)\)</span> in njen odvod, <span class="math notranslate nohighlight">\(f'(x)\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[x(t) = e^{-t} \Big( \sin(\omega t) - 0.5 \cos(2 \omega t) \Big)\]</div>
+<div class="math notranslate nohighlight">
+\[\omega = 2\pi f \quad \text{in} \quad f=4~\text{Hz}\]</div>
+<p>Potek funkcije in njenega odvoda opazujemo pri 100 točkah časa <span class="math notranslate nohighlight">\(t\in [0, 1]\)</span>.</p>
+<p>Pripravi funkciji <code class="docutils literal notranslate"><span class="pre">x_fun</span></code>, <code class="docutils literal notranslate"><span class="pre">dx_fun</span></code> za numerično računanje. Izriši pripravljeni funkciji na intervalu <span class="math notranslate nohighlight">\(t\in [0, 1]\)</span> z uporabo paketa <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Podatki</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
+
+<span class="n">t_sym</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">w</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">4</span>
+<span class="n">x_sym</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t_sym</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">t_sym</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="o">*</span><span class="n">t_sym</span><span class="p">))</span>
+<span class="n">dx_sym</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x_sym</span><span class="p">,</span> <span class="n">t_sym</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Vprašanje 3:</strong> Razdelite opazovan časovni interval <span class="math notranslate nohighlight">\(t \in [0,1]\)</span> na 100 ekvidistantnih segmentov.</p>
+<p>Pripravite vektor vrednosti <span class="math notranslate nohighlight">\(x(t)\)</span> in odvod <span class="math notranslate nohighlight">\(x'(t)\)</span> izračunajte še numerično, z uporabo funkcije <code class="docutils literal notranslate"><span class="pre">numpy.gradient(x,</span> <span class="pre">h)</span></code>.</p>
+<p><strong>Vprašanje 4:</strong> Uporabite funkcijo <code class="docutils literal notranslate"><span class="pre">np.gradient</span></code> še za izračun drugega odvoda <span class="math notranslate nohighlight">\(x''(t)\)</span>. Opazujte vpliv parametra <code class="docutils literal notranslate"><span class="pre">edge_order</span></code> na natančnost odvodov na robovih intervala.</p>
+<p><strong>Vprašanje 5:</strong> Numeričnemu polju <span class="math notranslate nohighlight">\(x(t)\)</span> pri 500 ekvidistantnih točkah na intervalu <span class="math notranslate nohighlight">\(t \in [0, 1]\)</span> dodajte naključni šum <span class="math notranslate nohighlight">\(n(t)\)</span> amplitude <span class="math notranslate nohighlight">\(A=0.1\)</span> z uporabo funkcijo <code class="docutils literal notranslate"><span class="pre">np.random.randn</span></code>.</p>
+<div class="math notranslate nohighlight">
+\[x_{\text{šum}}(t) = x(t) + A\cdot n(t)\]</div>
+<p>Z uporabo funkcije <code class="docutils literal notranslate"><span class="pre">np.gradient</span></code> numerično določite vrednost prvega in drugega odvoda šumnega signala.</p>
+<hr class="docutils" />
+<section id="utezi-centralne-diferencne-sheme-v-scipy">
+<h2>Uteži centralne diferenčne sheme v <code class="docutils literal notranslate"><span class="pre">scipy</span></code><a class="headerlink" href="#utezi-centralne-diferencne-sheme-v-scipy" title="Link to this heading">#</a></h2>
+<p><strong>Primer 6:</strong> Izračunajte vrednosti drugega odvoda <span class="math notranslate nohighlight">\(x''(t)\)</span>. Uporabite centralno diferenčno shemo drugega odvoda čez 5 točk (red napake 4).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Podatki</span>
+<span class="c1">#!pip install findiff</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">findiff</span>
+<span class="n">findiff</span><span class="o">.</span><span class="n">coefficients</span><span class="p">(</span><span class="n">deriv</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">acc</span><span class="o">=</span><span class="mi">4</span><span class="p">)[</span><span class="s1">&#39;center&#39;</span><span class="p">][</span><span class="s1">&#39;coefficients&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">80</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Podatki</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#!pip install findiff</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">findiff</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">findiff</span><span class="o">.</span><span class="n">coefficients</span><span class="p">(</span><span class="n">deriv</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">acc</span><span class="o">=</span><span class="mi">4</span><span class="p">)[</span><span class="s1">&#39;center&#39;</span><span class="p">][</span><span class="s1">&#39;coefficients&#39;</span><span class="p">]</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;findiff&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">t_sym</span><span class="p">,</span> <span class="n">x_sym</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">drugi_odvod</span> <span class="o">=</span> <span class="n">findiff</span><span class="o">.</span><span class="n">FinDiff</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">acc</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># axis, dx, derivative, accuracy</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">drugi_odvod</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Vprašanje 7:</strong> Na podlagi numeričnih podatkov <span class="math notranslate nohighlight">\(x(t)\)</span> pri delitvi intervala <span class="math notranslate nohighlight">\(t \in [0,1]\)</span> na 100 točk izračunajte vrednost prvega odvoda, <span class="math notranslate nohighlight">\(x'(t)\)</span> po enačbi centralne diferenčne sheme preko treh točk. Ali lahko na ta način določite vrednost odvoda v točkah <span class="math notranslate nohighlight">\(t=0\)</span> in <span class="math notranslate nohighlight">\(t=1\)</span>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Podatek</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Vprašanje 8:</strong> Z uporabo diferenčne sheme naprej oz. nazaj izračunajte prvi odvod <span class="math notranslate nohighlight">\(x'(t)\)</span> tudi v točkah na robu (<span class="math notranslate nohighlight">\(t=0\)</span>, <span class="math notranslate nohighlight">\(t=1\)</span>). Primerjajte dobljene vrednosti z rezultatom funkcije <code class="docutils literal notranslate"><span class="pre">np.gradient</span></code>, kjer nastavite argument <code class="docutils literal notranslate"><span class="pre">edge_order=2</span></code>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\text{naprej: } &amp; \frac{d}{dx}f(x) = \frac{1}{2h}\Big( -3f(x) + 4f(x+h) -f(x+2h)\Big)\\
+\text{nazaj: } &amp; \frac{d}{dx}f(x) = \frac{1}{2h}\Big(f(x-2h) - 4f(x-h) + 3f(x)\Big)
+\end{align}\end{split}\]</div>
+<p>(Namig: uporabite lahko funkcijo <code class="docutils literal notranslate"><span class="pre">np.dot</span></code>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Podatki</span>
+<span class="n">naprej</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">nazaj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="izboljsanje-priblizka-odvoda-z-richardsonovo-ekstrapolacijo">
+<h2>Izboljšanje približka odvoda z Richardsonovo ekstrapolacijo<a class="headerlink" href="#izboljsanje-priblizka-odvoda-z-richardsonovo-ekstrapolacijo" title="Link to this heading">#</a></h2>
+<p><strong>Vprašanje 9:</strong> Izračunajte izboljšan približek odvoda funkcije:</p>
+<div class="math notranslate nohighlight">
+\[x(t) = e^{-t} \Big( \sin(8 \pi t) - 0.5 \cos(16 \pi t) \Big)\]</div>
+<p>pri vrednosti <span class="math notranslate nohighlight">\(t_i = 0.5\)</span>, tako, da uporabite zgornjo enačbo za dve različni delitvi, <span class="math notranslate nohighlight">\(h=0.05\)</span> in <span class="math notranslate nohighlight">\(h/2 = 0.025\)</span>. Uporabite centralno diferenčno shemo za 1. odvod za red napake <span class="math notranslate nohighlight">\(n=2\)</span>.</p>
+<hr class="docutils" />
+</section>
+<section id="uporaba-np-convolve">
+<h2>Uporaba <code class="docutils literal notranslate"><span class="pre">np.convolve</span></code><a class="headerlink" href="#uporaba-np-convolve" title="Link to this heading">#</a></h2>
+<img src="fig/vaje/primer_convolve.gif"><p><strong>Vprašanje 10:</strong> Uporabite funkcijo <code class="docutils literal notranslate"><span class="pre">np.convolve</span></code> in izračunajte vrednosti drugega odvoda <span class="math notranslate nohighlight">\(x(t)\)</span> pri delitvi intervala <span class="math notranslate nohighlight">\(t \in [0, 1]\)</span> na 100 točk. Uporabite centralno diferenčno shemo drugega odvoda čez 5 točk, uteži izračunajte s pomočjo <code class="docutils literal notranslate"><span class="pre">scipy.misc.central_diff_weights</span></code>.</p>
+<p>Rezultat grafično prikažite (pazite na število robnih točk!).</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2032,6 +2188,7 @@ Dodatek k domačim nalogam: 6. vprašanje bi lahko nadaljevali in zašumljene po
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Numerično odvajanje</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-prvega-odvoda-po-metodi-koncnih-razlik">Aproksimacija prvega odvoda po metodi končnih razlik</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centralna-diferencna-shema">Centralna diferenčna shema</a><ul class="nav section-nav flex-column">
@@ -2065,6 +2222,15 @@ Dodatek k domačim nalogam: 6. vprašanje bi lahko nadaljevali in zašumljene po
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utezi-centralne-diferencne-sheme-v-scipy">Uteži centralne diferenčne sheme v <code class="docutils literal notranslate"><span class="pre">scipy</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izboljsanje-priblizka-odvoda-z-richardsonovo-ekstrapolacijo">Izboljšanje približka odvoda z Richardsonovo ekstrapolacijo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-np-convolve">Uporaba <code class="docutils literal notranslate"><span class="pre">np.convolve</span></code></a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

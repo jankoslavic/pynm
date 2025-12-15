@@ -185,21 +185,34 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2025/26</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">Objektno programiranje, simbolno računanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">Uvod v numerične metode in sistemi linearnih enačb</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">Sistemi linearnih enačb - nadaljevanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">Interpolacija</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">Aproksimacija</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">Reševanje enačb</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">Numerično odvajanje</a></li>
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Numerično integriranje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">Numerično reševanje diferencialnih enačb - začetni problem</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">Numerično reševanje diferencialnih enačb - robni problem</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">Testiranje pravilnosti kode, uporabniški vmesnik</a></li>
 </ul>
 
@@ -396,6 +409,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Numerično integriranje</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivacijski-primer">Motivacijski primer</a></li>
 </ul>
@@ -461,6 +475,16 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Trapezno pravilo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izboljsan-priblizek-z-richardsonovo-esktrapolacijo">Izboljšan približek z Richardsonovo esktrapolacijo:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simpsonovo-1-3-pravilo">Simpsonovo 1/3 pravilo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussova-integracijska-metoda-gaussova-kvadratura">Gaussova integracijska metoda (Gaussova kvadratura)</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -2041,6 +2065,73 @@ Naloga:</p>
 </ol>
 </section>
 </section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="vprasanja-za-vaje">
+<h1>Vprašanja za vaje<a class="headerlink" href="#vprasanja-za-vaje" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p><strong>Vprašanje 1:</strong> Z uporabo orodij paketa <code class="docutils literal notranslate"><span class="pre">sympy</span></code> simbolno določite vrednost statičnega momenta prereza v obliki četrtine kroga na sliki:</p>
+<div class="math notranslate nohighlight">
+\[S_{xx} = \int_{A}y~\text{d}A=\int_0^r \int_0^{\pi/2}y(\varphi)~r~\text{d}\varphi~\text{d}r = \int_{0}^{\pi/2}\frac{r^3}{3}\, \sin (\varphi)\, \text{d}\varphi\]</div>
+<img src="fig/vaje/cetrtina_kroga.png" style="width:340px">
+<p>Pripravite tudi numerično funkcijo odvisnosti integranda <span class="math notranslate nohighlight">\(f(\varphi) = \Big(\frac{r^3}{3}\, \sin (\varphi) \Big)\)</span> pri podani vrednosti polmera <span class="math notranslate nohighlight">\(R\)</span>.</p>
+<p><em>Podatki:</em></p>
+<p><span class="math notranslate nohighlight">\(R = 7.5\)</span> mm</p>
+<p><strong>Vprašanje 2:</strong> Uporabite numerično funkcijo, pripravljeno pri prejšnji nalogi, in izračunajte ter grafično prikažite vrednosti integranda iz prve naloge <span class="math notranslate nohighlight">\(\Big(f(\varphi) = \frac{r^3}{3}\sin (\varphi) \Big)\)</span> pri 100 diskretnih točkah na intervalu <span class="math notranslate nohighlight">\(\varphi \in [0, \pi/2]\)</span>.</p>
+<p>Izračunajte vrednost določenega integrala <span class="math notranslate nohighlight">\(S\)</span> še numerično, s pomočjo trapezne in Simpsonove 1/3 metode iz paketov <code class="docutils literal notranslate"><span class="pre">numpy</span></code> oziroma <code class="docutils literal notranslate"><span class="pre">scipy</span></code>.</p>
+<div class="math notranslate nohighlight">
+\[ S = \int_{0}^{\pi/2}\frac{r^3}{3}\sin (\varphi)\text{d}\varphi\]</div>
+<hr class="docutils" />
+<section id="id6">
+<h2>Trapezno pravilo<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p><strong>Vprašanje 3:</strong> Z uporabo lastne implementacije trapeznega pravila (osnovnega, ne sestavljenega) izračunajte določeni integral</p>
+<div class="math notranslate nohighlight">
+\[I = \int_{0}^{2} -0.5x^3 - x^2 + 8 ~\text{d}x\]</div>
+<p>Dobljeno vrednost primerjajte z rezultatom funkcije <code class="docutils literal notranslate"><span class="pre">numpy.trapz</span></code>, kjer opazovan interval razdelite na 10 ekvidistantnih odsekov.</p>
+<hr class="docutils" />
+</section>
+<section id="izboljsan-priblizek-z-richardsonovo-esktrapolacijo">
+<h2>Izboljšan približek z Richardsonovo esktrapolacijo:<a class="headerlink" href="#izboljsan-priblizek-z-richardsonovo-esktrapolacijo" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\bar{I} = \frac{4I_h - I_{2h}}{3}\]</div>
+<p><strong>Vprašanje 4</strong> : Uporabite Richardsonovo ekstrapolacijo in določite natančnejšo vrednost integrala iz prejšnje naloge tako, da opazovan interval <span class="math notranslate nohighlight">\(x \in [0, 2]\)</span> najprej razdelite na 2, nato še na 4 ekvidistantne segmente in uporabite sestavljeno trapezno metodo iz paketa <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
+<hr class="docutils" />
+</section>
+<section id="simpsonovo-1-3-pravilo">
+<h2>Simpsonovo 1/3 pravilo<a class="headerlink" href="#simpsonovo-1-3-pravilo" title="Link to this heading">#</a></h2>
+<p><strong>Vprašanje 5:</strong> Določen integral iz prejšnje naloge izračunajte z lastno kodo Simpsonove 1/3 metode (osnovne, ne sestavljene).</p>
+<div class="math notranslate nohighlight">
+\[I = \int_{0}^{2} -0.5x^3 - x^2 + 8 ~\text{d}x\]</div>
+<p>Dobljeno vrednost primerjajte z rezultatom funkcije <code class="docutils literal notranslate"><span class="pre">scipy.integrate.simps</span></code>, kjer opazovan interval razdelite na 7 ekvidistantnih točk.</p>
+<hr class="docutils" />
+<p><strong>Vprašanje 6:</strong> Podane so izmerjene vrednosti pospeška avtomobila v smeri vožnje v času. Z uporabo kumulativne trapezne metode (<code class="docutils literal notranslate"><span class="pre">scipy.integrate.cumtrapz</span></code>) določite vrednosti hitrosti in opravljene poti avtomobila v opazovanm časovnem intervalu.</p>
+<p>Avto pri času <span class="math notranslate nohighlight">\(t = 0\)</span> miruje (namig: argument <code class="docutils literal notranslate"><span class="pre">initial</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Podatki</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># s</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">3.47</span><span class="p">,</span>  <span class="mf">4.03</span><span class="p">,</span>  <span class="mf">4.36</span><span class="p">,</span>  <span class="mf">4.48</span><span class="p">,</span>  <span class="mf">4.27</span><span class="p">,</span>  <span class="mf">3.78</span><span class="p">,</span>  <span class="mf">3.19</span><span class="p">,</span>  <span class="mf">2.73</span><span class="p">,</span>  <span class="mf">2.54</span><span class="p">,</span>  <span class="mf">2.53</span><span class="p">])</span> <span class="c1"># m/s^2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="gaussova-integracijska-metoda-gaussova-kvadratura">
+<h2>Gaussova integracijska metoda (Gaussova kvadratura)<a class="headerlink" href="#gaussova-integracijska-metoda-gaussova-kvadratura" title="Link to this heading">#</a></h2>
+<p><strong>Vprašanje 7:</strong> Z uporabo sestavljene trapezne metode iz <code class="docutils literal notranslate"><span class="pre">scipy</span></code> in metode Gaussove integracije (<code class="docutils literal notranslate"><span class="pre">scipy.integrate.quad</span></code>) izračunajte vrednosti integralov:</p>
+<div class="math notranslate nohighlight">
+\[I_1 = \int_{0}^{1}\frac{\sin(x)}{x} \text{d}x\]</div>
+<div class="math notranslate nohighlight">
+\[I_2 = \int_{1}^{2}\frac{\sin(x)}{x} \text{d}x\]</div>
+<div class="math notranslate nohighlight">
+\[I_3 = \int_{-0.5}^{0.5}\frac{\sin(x)}{x} \text{d}x\]</div>
+<p>Pri uporabi trapezne metode razdelite opazovan interval na 10 točk.</p>
+<p><strong>Vprašanje 8:</strong> Integral:</p>
+<div class="math notranslate nohighlight">
+\[I = \int_{-0.5}^{0.5}\frac{\sin(x)}{x} \text{d}x\]</div>
+<p>izračunajte še z uporabo funkcije <code class="docutils literal notranslate"><span class="pre">scipy.integrate.fixed_quad</span></code>, ki ji lahko podamo tudi parameter števila vozlišč pri integraciji, <code class="docutils literal notranslate"><span class="pre">n</span></code>. Najprej uporabite integracijo z enim vozliščem, nato z dvema in nazadnje še s tremi vozlišči.</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2106,6 +2197,7 @@ Naloga:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Numerično integriranje</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivacijski-primer">Motivacijski primer</a></li>
 </ul>
@@ -2171,6 +2263,16 @@ Naloga:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Trapezno pravilo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izboljsan-priblizek-z-richardsonovo-esktrapolacijo">Izboljšan približek z Richardsonovo esktrapolacijo:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simpsonovo-1-3-pravilo">Simpsonovo 1/3 pravilo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussova-integracijska-metoda-gaussova-kvadratura">Gaussova integracijska metoda (Gaussova kvadratura)</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

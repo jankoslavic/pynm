@@ -58,6 +58,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Predavanje 02 - Print, delo z datotekami, funkcije, moduli';</script>
     <link rel="index" title="Abecedni seznam" href="../genindex.html" />
     <link rel="search" title="Išči" href="../search.html" />
@@ -183,21 +185,34 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2025/26</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Funkcije, izjeme, moduli</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">Objektno programiranje, simbolno računanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">Uvod v numerične metode in sistemi linearnih enačb</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">Sistemi linearnih enačb - nadaljevanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">Interpolacija</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">Aproksimacija</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">Reševanje enačb</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">Numerično odvajanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">Numerično integriranje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">Numerično reševanje diferencialnih enačb - začetni problem</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">Numerično reševanje diferencialnih enačb - robni problem</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">Testiranje pravilnosti kode, uporabniški vmesnik</a></li>
 </ul>
 
@@ -394,6 +409,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Funkcije, izjeme, moduli</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcije">Funkcije</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcija-print">Funkcija print</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblikovanje-nizov">Oblikovanje nizov</a></li>
@@ -436,6 +452,20 @@ document.write(`
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcija-print-formatiranje-nizov">Funkcija print, formatiranje nizov</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Funkcije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Delo z datotekami</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#izpeljevanje-seznamov-terk-slovarjev">Izpeljevanje seznamov, terk, slovarjev…</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kontrola-napak-in-izjem">Kontrola napak in izjem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moduli">Moduli</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -1453,7 +1483,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32.7 ms ± 545 μs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>38.4 ms ± 1.3 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1468,7 +1498,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>766 μs ± 20.9 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.02 ms ± 80.7 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1498,11 +1528,8 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Package                           Version&#39;,
- &#39;--------------------------------- --------------&#39;,
- &#39;accessible-pygments               0.0.5&#39;,
- &#39;acoustics                         0.2.6&#39;,
- &#39;alabaster                         0.7.16&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&quot;&#39;pip&#39; is not recognized as an internal or external command,&quot;,
+ &#39;operable program or batch file.&#39;]
 </pre></div>
 </div>
 </div>
@@ -1843,6 +1870,72 @@ Našel sem datoteko: Predavanje 04 - Objektno programiranje, simbolno računanje
 </section>
 </section>
 </section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="vprasanja-za-vaje">
+<h1>Vprašanja za vaje<a class="headerlink" href="#vprasanja-za-vaje" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="funkcija-print-formatiranje-nizov">
+<h2>Funkcija print, formatiranje nizov<a class="headerlink" href="#funkcija-print-formatiranje-nizov" title="Link to this heading">#</a></h2>
+<p><strong>Vprašanje 1:</strong> V poljubno poimenovan niz zapišite svoje ime in priimek. Z uporabo funkcije <code class="docutils literal notranslate"><span class="pre">print</span></code> in f-nizov izpišite poljuben tekst, v katerega vključite tudi pripravljen niz.</p>
+<p><strong>Vprašanje 2:</strong> Z vsa naravna števila od 1 do 10 v <code class="docutils literal notranslate"><span class="pre">for</span></code> zanki izpišite <code class="docutils literal notranslate"><span class="pre">'10</span> <span class="pre">/</span> <span class="pre">&lt;število&gt;</span> <span class="pre">=</span> <span class="pre">&lt;rezultat</span> <span class="pre">deljenja&gt;'</span></code>. Uporabite funkijo <code class="docutils literal notranslate"><span class="pre">print</span></code> in f-nize! Prikažite različne možnosti formatiranja.</p>
+<p><strong>Vprašanje 3:</strong> Z uporabo funkcije <code class="docutils literal notranslate"><span class="pre">print</span></code> in f-nizov podatke iz slovarja zapišite v tabelarični obliki,  <code class="docutils literal notranslate"><span class="pre">'&lt;ključ&gt;</span> <span class="pre">\t</span> <span class="pre">&lt;vrednost&gt;'</span></code> (namig: <code class="docutils literal notranslate"><span class="pre">slovar.items()</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="mi">1013</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">:</span> <span class="mf">0.19</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="mi">55</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">:</span> <span class="mf">19.22</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">:</span> <span class="mf">77.6</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>Funkcije<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p><strong>Vprašanje 4</strong>: Definirajte funkcijo, ki sprejme več nepoimenovanih argumentov in vrne njihovo vsoto.</p>
+<p><strong>Vprašanje 5</strong>: Definirajte funkcijo, ki sprejme več poimenovanih argumentov. Če ji kot argumenta posredujete maso <code class="docutils literal notranslate"><span class="pre">m</span></code> in hitrost <code class="docutils literal notranslate"><span class="pre">v</span></code>, naj vrne kinetično energijo, <span class="math notranslate nohighlight">\(\frac{1}{2}m~v^2\)</span>.</p>
+</section>
+<section id="id2">
+<h2>Delo z datotekami<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p><strong>Vprašanje 6:</strong> Po vzoru ene od zgornjih nalog podatke iz slovarja v tabelarini obliki zapišite v tekstovno datoteko.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pot_do_datoteke</span> <span class="o">=</span> <span class="s1">&#39;.//data//tabela.txt&#39;</span>
+<span class="n">podatki</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Vprašanje 7:</strong> Preberite prej zapisano tekstovno datoteko, vse vrstice shranite seznam.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pot_do_datoteke</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Vprašanje 8:</strong> Definirajte funkcijo <code class="docutils literal notranslate"><span class="pre">preberi_vrstice</span></code>, ki prebere poljubno tekstovno datoteko in vrne seznam vseh njenih vrstic. Njen argument naj bo pot do datoteke.</p>
+<section id="izpeljevanje-seznamov-terk-slovarjev">
+<h3>Izpeljevanje seznamov, terk, slovarjev…<a class="headerlink" href="#izpeljevanje-seznamov-terk-slovarjev" title="Link to this heading">#</a></h3>
+<p><strong>Vprašanje 9:</strong> Številčne vrednosti podatkov, ki so v zgornjem seznamu zapisane v obliki nizov, pretvorite v števila s plavajočo vejico. Uporabite izpeljevanje seznamov.</p>
+</section>
+<hr class="docutils" />
+<section id="kontrola-napak-in-izjem">
+<h3>Kontrola napak in izjem<a class="headerlink" href="#kontrola-napak-in-izjem" title="Link to this heading">#</a></h3>
+<p><strong>Vprašanje 10:</strong> Za vse vrednosti <code class="docutils literal notranslate"><span class="pre">i</span></code> v <code class="docutils literal notranslate"><span class="pre">range(-10,10)</span></code> v seznam zapišite rezultat <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">/</span> <span class="pre">i</span></code>. Uporabite izpeljevanje seznamov. Lovite in izpisujte izjeme.</p>
+<p><strong>Vprašanje 11</strong> Funkcijo <code class="docutils literal notranslate"><span class="pre">preberi_vrstice</span></code> iz ene od prejšnjih nalog, ki prebere tekstovno datoteko in vrne seznam vseh njenih vrstic, nadgradite tako, da bo v primeru neustrezno podane poti ulovila in izpisala napako.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="moduli">
+<h2>Moduli<a class="headerlink" href="#moduli" title="Link to this heading">#</a></h2>
+<p><strong>Vprašnje 12:</strong> Funkcijo iz prejšnje naloge shranite v mapo <code class="docutils literal notranslate"><span class="pre">moj_modul</span></code>, v modul <code class="docutils literal notranslate"><span class="pre">moja_funkcija.py</span></code>. Modul uvozite in funkcijo uporabite.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">moj_modul.moja_funkcija</span><span class="w"> </span><span class="kn">import</span> <span class="n">preberi_vrstice</span> <span class="k">as</span> <span class="n">pv_iz_modula</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1908,6 +2001,7 @@ Našel sem datoteko: Predavanje 04 - Objektno programiranje, simbolno računanje
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Funkcije, izjeme, moduli</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcije">Funkcije</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcija-print">Funkcija print</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblikovanje-nizov">Oblikovanje nizov</a></li>
@@ -1950,6 +2044,20 @@ Našel sem datoteko: Predavanje 04 - Objektno programiranje, simbolno računanje
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcija-print-formatiranje-nizov">Funkcija print, formatiranje nizov</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Funkcije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Delo z datotekami</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#izpeljevanje-seznamov-terk-slovarjev">Izpeljevanje seznamov, terk, slovarjev…</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kontrola-napak-in-izjem">Kontrola napak in izjem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moduli">Moduli</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

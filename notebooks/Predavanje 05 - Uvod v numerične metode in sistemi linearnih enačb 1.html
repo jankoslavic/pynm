@@ -185,21 +185,34 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2025/26</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">Objektno programiranje, simbolno računanje</a></li>
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Uvod v numerične metode in sistemi linearnih enačb</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2006%20-%20Sistemi%20linearnih%20ena%C4%8Db%202.html">Sistemi linearnih enačb - nadaljevanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">Interpolacija</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">Aproksimacija</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">Reševanje enačb</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">Numerično odvajanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">Numerično integriranje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">Numerično reševanje diferencialnih enačb - začetni problem</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">Numerično reševanje diferencialnih enačb - robni problem</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">Testiranje pravilnosti kode, uporabniški vmesnik</a></li>
 </ul>
 
@@ -396,6 +409,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Uvod v numerične metode in sistemi linearnih enačb</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod-v-numericne-metode">Uvod v numerične metode</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zaokrozitvena-napaka">Zaokrožitvena napaka</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#napaka-metode">Napaka metode</a></li>
@@ -422,6 +436,18 @@ document.write(`
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemi-linearnih-algebrajskih-enacb">Sistemi linearnih algebrajskih enačb</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enolicnost-resitve">Enoličnost rešitve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Gaussova eliminacija</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pogojenost-sistemov-linearnih-enacb">Pogojenost sistemov linearnih enačb</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -1327,6 +1353,144 @@ Določite sistem enačb v primeru dveh teles. Določite matriko koeficientov <sp
 </section>
 </section>
 </section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="vprasanja-za-vaje">
+<h1>Vprašanja za vaje<a class="headerlink" href="#vprasanja-za-vaje" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="sistemi-linearnih-algebrajskih-enacb">
+<h2>Sistemi linearnih algebrajskih enačb<a class="headerlink" href="#sistemi-linearnih-algebrajskih-enacb" title="Link to this heading">#</a></h2>
+<p><strong>Vprašanje 1:</strong> Spodaj zapisan sistem linearnih enačb definirajte in rešite z uporabo orodij paketa <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. S pomočjo matričnega množenja preverite pravilnost rešiteve.</p>
+<div class="math notranslate nohighlight">
+\[6x_1 - 2x_2 + x_3 = 18\]</div>
+<div class="math notranslate nohighlight">
+\[2.5x_2 - 0.5x_3 = 5.5\]</div>
+<div class="math notranslate nohighlight">
+\[-x_1 + 4x_3 = 13\]</div>
+<p><strong>Vprašanje 2:</strong> Enačbe ravnotežja sil in momentov za nosilec na sliki zapišemo:</p>
+<img src="fig/vaje/nosilec.PNG" style="width:550px">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\text{smer }x &amp;:\quad A_x - F~\cos(\varphi) = 0\\
+\text{smer }y &amp;:\quad A_y + B - F~\sin(\varphi) = 0\\
+\text{moment okoli }A&amp;:\quad Bl - Fa~\sin(\varphi) = 0
+\end{align}
+\end{split}\]</div>
+<p>Določite reakcije v podporah <span class="math notranslate nohighlight">\([A_x, A_y, B]\)</span>, tako da definirate sistem enačb v okolju <code class="docutils literal notranslate"><span class="pre">numpy</span></code> in ga rešite z obstoječimi orodji.</p>
+<p>Podatki:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(L = 1\)</span> m</p></li>
+<li><p><span class="math notranslate nohighlight">\(a = 0.3\)</span> m</p></li>
+<li><p><span class="math notranslate nohighlight">\(F = 105\)</span> N</p></li>
+<li><p><span class="math notranslate nohighlight">\(\varphi = \pi /3 \)</span> rad</p></li>
+</ul>
+<p><strong>Vprašanje 3:</strong> Obravnavate nosilec, zelo podoben tistemu na zgornji sliki. Poznate kot <span class="math notranslate nohighlight">\(\varphi\)</span> in vrednost <span class="math notranslate nohighlight">\(a\)</span>, pomerili ste reakciji v podporah v navpični smeri, a ne poznate dolžine nosilca, amplitude sile <span class="math notranslate nohighlight">\(F\)</span>, ter vrednosti <span class="math notranslate nohighlight">\(A_x\)</span>.</p>
+<p>Ravnotežne enačbe ostajajo enake:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\text{smer }x &amp;:\quad A_x - F~\cos(\varphi) = 0\\
+\text{smer }y &amp;:\quad A_y + B - F~\sin(\varphi) = 0\\
+\text{moment okoli }A&amp;:\quad Bl - Fa~\sin(\varphi) = 0
+\end{align}
+\end{split}\]</div>
+<p>Izračunajte vrednosti <span class="math notranslate nohighlight">\([A_x, F, L]\)</span>.</p>
+<p>Podatki:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a = 0.6\)</span> m</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_y = 72\)</span> N</p></li>
+<li><p><span class="math notranslate nohighlight">\(B = 31\)</span> N</p></li>
+<li><p><span class="math notranslate nohighlight">\(\varphi = \pi /4 \)</span> rad</p></li>
+</ul>
+<hr class="docutils" />
+<section id="enolicnost-resitve">
+<h3>Enoličnost rešitve<a class="headerlink" href="#enolicnost-resitve" title="Link to this heading">#</a></h3>
+<p><strong>Vprašanje 4</strong>: Pripravi funkcijo, ki preveri če je sistem enačb enolično rešljiv. Funkcija naj kot argument sprejme matriko koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> in vektor konstatnt <span class="math notranslate nohighlight">\(\bold{b}\)</span>. Če je sistem rešljiv naj vrne <code class="docutils literal notranslate"><span class="pre">True</span></code>, drugače naj sproži <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p>
+<p>Preverite rešitev naslednjih sistemov enačb in komentirajte.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Podatki</span>
+<span class="n">A_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">]])</span>
+<span class="n">b_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">6.</span><span class="p">,</span> <span class="mf">15.</span><span class="p">,</span> <span class="mf">25.</span><span class="p">])</span>
+
+
+<span class="n">A_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="mf">9.</span><span class="p">]])</span>
+<span class="n">b_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">])</span>
+
+
+<span class="n">A_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">],</span>
+                <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="mf">9.</span><span class="p">]])</span>
+<span class="n">b_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">6.</span><span class="p">,</span> <span class="mf">12.</span><span class="p">,</span> <span class="mf">18.</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h3>Gaussova eliminacija<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<img src="fig/vaje/Gauss_primer.gif" style="height:400px">
+<p><strong>Vprašanje 5:</strong> Pripravite funkcijo <code class="docutils literal notranslate"><span class="pre">gauss_eliminacija</span></code>, ki:</p>
+<ul class="simple">
+<li><p>kot argumenta sprejme matriko <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> in vektor <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>,</p></li>
+<li><p>pripravi razširjeno matriko koeficientov <span class="math notranslate nohighlight">\(\mathbf{[A|b]}\)</span></p></li>
+<li><p>za vsako pivotno vrstico <code class="docutils literal notranslate"><span class="pre">i</span></code>, <span class="math notranslate nohighlight">\(0 \leq i \leq n-1\)</span>, izračuna koeficient <span class="math notranslate nohighlight">\(\lambda\)</span> za vse vrstice pod pivotno (<span class="math notranslate nohighlight">\(i+1 \leq j \leq n\)</span>) (<span class="math notranslate nohighlight">\(n\)</span> je število vrstic <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>).
+$<span class="math notranslate nohighlight">\( \lambda = \frac{a_{ji}}{a_{ii}}\)</span>$</p></li>
+<li><p>če je koeficient <span class="math notranslate nohighlight">\(a_{ii}\)</span> različen od 0, opravi zamenjavo:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[E_j \leftarrow E_j - \lambda E_i\]</div>
+<p><strong>Vprašanje 6:</strong> Pripravte funkijo <code class="docutils literal notranslate"><span class="pre">gauss_resitev</span></code>, ki na podlagi rezutata funkcije <code class="docutils literal notranslate"><span class="pre">gauss_eliminacija</span></code> izračuna vrednosti elementov vektorja neznank <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> z uporabo obratnega vstavljanja.</p>
+<div class="math notranslate nohighlight">
+\[x_i = \frac{b_i - \sum_{j=i+1}^{n}a_{ij} x_j}{a_{ii}}\]</div>
+<p><strong>Namig:</strong> Sistem z zgornje trikotno razširjeno matriko koeficientov rešujemo „od spodaj navzgor“. Vrstni red vrstic matrike lahko obrnete z <code class="docutils literal notranslate"><span class="pre">A[::-1]</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="pogojenost-sistemov-linearnih-enacb">
+<h3>Pogojenost sistemov linearnih enačb<a class="headerlink" href="#pogojenost-sistemov-linearnih-enacb" title="Link to this heading">#</a></h3>
+<p><strong>Vprašanje 7:</strong> Z uporabo orodij paketa <code class="docutils literal notranslate"><span class="pre">numpy</span></code> rešite spodnji sistem enačb. Nato element <code class="docutils literal notranslate"><span class="pre">A[2,1]</span></code>povečajte za <span class="math notranslate nohighlight">\(0.1\)</span>% in nov sistem rešite še enkrat. Komentirajte rezultat, pomagajte si z vrednostjo determinante, norme in pogojenosti matrike <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+1.1 &amp; 22 &amp; -35 \\
+-7 &amp; -2.4 &amp; 3.5\\
+0.3 &amp; 6.6 &amp; -10.5
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\ x_2 \\ x_3
+\end{bmatrix}
+=
+\begin{bmatrix}
+3 \\ -0.5 \\ 1.5
+\end{bmatrix}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Podatek, ne briši!</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="o">-</span><span class="mi">35</span><span class="p">],</span>
+             <span class="p">[</span><span class="o">-</span><span class="mf">7.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.4</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">],</span>
+             <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">6.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.5</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Vprašanje 8:</strong> Z uporabo orodij paketa <code class="docutils literal notranslate"><span class="pre">numpy</span></code> pripravite lastne funkcije za Evklidsko ali neskončno normo ter merilo pogojenosti matrike. Izračunajte pogojenost matrike koeficientov iz zgornje naloge.</p>
+<ul class="simple">
+<li><p>Evklidska (Frobeniusova) norma (koren vsote kvadratov vseh elementov):
+$<span class="math notranslate nohighlight">\(||\textbf{A}||_e=\sqrt{\sum_{i=1}^n\sum_{j=1}^nA_{ij}^2}\)</span>$</p></li>
+<li><p>Neskončna norma (maksimum vsote vrstic):
+$<span class="math notranslate nohighlight">\(||\textbf{A}||_{\infty}=\max_{1\le i\le n}\sum_{j=1}^n |A_{ij}|\)</span>$</p></li>
+<li><p>Število pogojenosti:
+$<span class="math notranslate nohighlight">\(\textrm{cond}(||\textbf{A}||)=||\textbf{A}||\,||\textbf{A}^{-1}||\)</span>$</p></li>
+</ul>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1392,6 +1556,7 @@ Določite sistem enačb v primeru dveh teles. Določite matriko koeficientov <sp
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Uvod v numerične metode in sistemi linearnih enačb</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod-v-numericne-metode">Uvod v numerične metode</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zaokrozitvena-napaka">Zaokrožitvena napaka</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#napaka-metode">Napaka metode</a></li>
@@ -1418,6 +1583,18 @@ Določite sistem enačb v primeru dveh teles. Določite matriko koeficientov <sp
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemi-linearnih-algebrajskih-enacb">Sistemi linearnih algebrajskih enačb</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enolicnost-resitve">Enoličnost rešitve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Gaussova eliminacija</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pogojenost-sistemov-linearnih-enacb">Pogojenost sistemov linearnih enačb</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

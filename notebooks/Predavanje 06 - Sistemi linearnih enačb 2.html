@@ -185,21 +185,34 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="%C5%A0tudijski%20in%20izpitni%20red.html">Študijski in izpitni red: 2025/26</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2001%20-%20Uvod%20v%20Python.html">Uvod v Python</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">Objektno programiranje, simbolno računanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">Uvod v numerične metode in sistemi linearnih enačb</a></li>
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Sistemi linearnih enačb - nadaljevanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">Interpolacija</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">Aproksimacija</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">Reševanje enačb</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">Numerično odvajanje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">Numerično integriranje</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">Numerično reševanje diferencialnih enačb - začetni problem</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">Numerično reševanje diferencialnih enačb - robni problem</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2014%20-%20Testiranje%20pravilnosti%20kode%2C%20uporabni%C5%A1ki%20vmesnik.html">Testiranje pravilnosti kode, uporabniški vmesnik</a></li>
 </ul>
 
@@ -396,6 +409,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sistemi linearnih enačb - nadaljevanje</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#razcep-lu">Razcep LU</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#razcep-lu-matrike-koeficientov-mathbf-a">Razcep LU matrike koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numericna-implementacija-razcepa-lu">Numerična implementacija razcepa LU</a></li>
@@ -419,6 +433,19 @@ document.write(`
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lu-razcep">LU razcep</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#racunanje-inverza-matrike">Računanje inverza matrike</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resevanje-predolocenih-sistemov-psevdoinverz">Reševanje predoločenih sistemov - psevdoinverz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterativne-metode-resevanja-sistemov-linearnih-enacb">Iterativne metode reševanja sistemov linearnih enačb</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gauss-seidel">Gauss-Seidel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -746,9 +773,9 @@ Korak: 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_40532\3999418912.py:1: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_28480\3999418912.py:1: RuntimeWarning: divide by zero encountered in scalar divide
   A[1,:] - A[1,0]/A[0,0] * A[0,:]
-C:\Users\janko\AppData\Local\Temp\ipykernel_40532\3999418912.py:1: RuntimeWarning: invalid value encountered in multiply
+C:\Users\janko\AppData\Local\Temp\ipykernel_28480\3999418912.py:1: RuntimeWarning: invalid value encountered in multiply
   A[1,:] - A[1,0]/A[0,0] * A[0,:]
 </pre></div>
 </div>
@@ -1526,6 +1553,98 @@ Zgornji nastavek ima napako v predzadnji vrstici. Rešitev sistema v knjigi je: 
 </section>
 </section>
 </section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="vprasanja-za-vaje">
+<h1>Vprašanja za vaje<a class="headerlink" href="#vprasanja-za-vaje" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="lu-razcep">
+<h2>LU razcep<a class="headerlink" href="#lu-razcep" title="Link to this heading">#</a></h2>
+<p><strong>Vprašanje 1:</strong> Enačbe ravnotežja sil in momentov za nosilec na sliki zapišemo:</p>
+<img src="fig/vaje/nosilec.PNG" style="width:550px">
+<p>Določite reakcije v podporah za pet različnih kotov <span class="math notranslate nohighlight">\(\varphi\)</span> iz podanega seznama, tako, da razcep matrike koeficientov opravite le enkrat. Rešitev vsakič izpišite s funkcijo <code class="docutils literal notranslate"><span class="pre">print</span></code>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\text{smer }x &amp;:\quad  A_x = F\,\cos(\varphi)\\
+\text{smer }y &amp;:\quad A_y + B = F\,\sin(\varphi)\\
+\text{moment okoli }A&amp;:\quad Bl = Fa\,\sin(\varphi)
+\end{align}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Podatki</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="c1"># m</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.55</span> <span class="c1"># m</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mi">85</span> <span class="c1"># N</span>
+<span class="n">seznam_phi</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">6</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="racunanje-inverza-matrike">
+<h2>Računanje inverza matrike<a class="headerlink" href="#racunanje-inverza-matrike" title="Link to this heading">#</a></h2>
+<p><strong>Vprašanje 2:</strong> uporabite LU razcep in po zgoraj opisanem postopku določite inverz matrike <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> iz prejšnje naloge.</p>
+</section>
+<hr class="docutils" />
+<section id="resevanje-predolocenih-sistemov-psevdoinverz">
+<h2>Reševanje predoločenih sistemov - psevdoinverz<a class="headerlink" href="#resevanje-predolocenih-sistemov-psevdoinverz" title="Link to this heading">#</a></h2>
+<p><strong>Vprašanje 3:</strong> Določite aproksimacijsko premico, ki z minimalno kvadratično napako opiše <span class="math notranslate nohighlight">\(n\)</span> podanih točk <span class="math notranslate nohighlight">\((X, Y)\)</span>. Parametra <span class="math notranslate nohighlight">\(k\)</span> in <span class="math notranslate nohighlight">\(n\)</span> aproksimacijske premice <span class="math notranslate nohighlight">\(y = kx+n\)</span> poiščite z rešitvijo sistema linearnih enačb:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{[X, 1]}_{~n\times 2}~\mathbf{x} = \mathbf{[Y]}\]</div>
+<p>kjer so v prvem stolpcu matrike koeficientov koordinate <span class="math notranslate nohighlight">\(X\)</span> podanih točk, v drugem stolpcu pa same enice. Vektor desnih strani je enak vektorju <span class="math notranslate nohighlight">\(Y\)</span> koordinat obravnvanih točk.</p>
+<p>Izrišite na isti sliki množico točk <span class="math notranslate nohighlight">\((X, Y)\)</span> in dobljeno aproksimacijsko premico.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Podatki</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="mf">0.7</span><span class="o">*</span><span class="n">X</span> <span class="o">-</span> <span class="mf">15.5</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">))</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="s1">&#39;b.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">58</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">Y</span> <span class="o">=</span> <span class="mf">0.7</span><span class="o">*</span><span class="n">X</span> <span class="o">-</span> <span class="mf">15.5</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">))</span> 
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="s1">&#39;b.&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="iterativne-metode-resevanja-sistemov-linearnih-enacb">
+<h2>Iterativne metode reševanja sistemov linearnih enačb<a class="headerlink" href="#iterativne-metode-resevanja-sistemov-linearnih-enacb" title="Link to this heading">#</a></h2>
+<section id="gauss-seidel">
+<h3>Gauss-Seidel<a class="headerlink" href="#gauss-seidel" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[x_i =\frac{1}{A_{ii}}\left(b_i-\sum_{j=0, j\ne i}^n A_{ij}x_j\right)\qquad{}i=0,1,\dots,n-1\]</div>
+<p><strong>Vprašanje 4:</strong> Z uporabo iterativne Gauss-Seidel metode rešite podan sistem enačb.</p>
+<p>Primerjajte rezultat z Gaussovo eliminacijo. Opazujte vpliv števila iteracij na natančnost rešitve.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Podatek</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+             <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+             <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+             <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+             <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+             <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1591,6 +1710,7 @@ Zgornji nastavek ima napako v predzadnji vrstici. Rešitev sistema v knjigi je: 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sistemi linearnih enačb - nadaljevanje</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#razcep-lu">Razcep LU</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#razcep-lu-matrike-koeficientov-mathbf-a">Razcep LU matrike koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numericna-implementacija-razcepa-lu">Numerična implementacija razcepa LU</a></li>
@@ -1614,6 +1734,19 @@ Zgornji nastavek ima napako v predzadnji vrstici. Rešitev sistema v knjigi je: 
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lu-razcep">LU razcep</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#racunanje-inverza-matrike">Računanje inverza matrike</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resevanje-predolocenih-sistemov-psevdoinverz">Reševanje predoločenih sistemov - psevdoinverz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterativne-metode-resevanja-sistemov-linearnih-enacb">Iterativne metode reševanja sistemov linearnih enačb</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gauss-seidel">Gauss-Seidel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
