@@ -188,12 +188,13 @@
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 
 
 
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">Objektno programiranje, simbolno računanje</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">Uvod v numerične metode in sistemi linearnih enačb</a></li>
 
@@ -201,15 +202,21 @@
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">Interpolacija</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">Aproksimacija</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">Reševanje enačb</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">Numerično odvajanje</a></li>
+
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Numerično integriranje</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">Numerično reševanje diferencialnih enačb - začetni problem</a></li>
+
+
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">Numerično reševanje diferencialnih enačb - robni problem</a></li>
 
@@ -472,8 +479,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intergracijske-funkcije-ki-zahtevajo-tabelo-vrednosti">Intergracijske funkcije, ki zahtevajo tabelo vrednosti:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
@@ -2028,42 +2033,6 @@ Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.inte
 </div>
 </section>
 </section>
-<section id="nekaj-vprasanj-za-razmislek">
-<h2>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Na sliki (vir: J. Slavič: Dinamika, meh. nihanja …, 2014) je prikazan trikotnik s stranicami dolžine <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, z debelino <span class="math notranslate nohighlight">\(h\)</span> in gostoto <span class="math notranslate nohighlight">\(\rho\)</span>.
-<img alt="Trikotnik iz knjige..." src="../_images/Slavic_2014_str_242_slika_5.4.png" />
-V simbolni obliki določite masni vztrajnostni moment glede na prikazano os <span class="math notranslate nohighlight">\(y\)</span>:
-$<span class="math notranslate nohighlight">\(J_{yy}=\int_0^b y^2\,\rho\,h\,(a-a/b\,y)\,\textrm{d}y.\)</span><span class="math notranslate nohighlight">\(
-Upoštevajte tudi: \)</span>m=a,b,h,\rho/2$. Za izmišljene vrednosti izračunajte numerični rezultat.</p></li>
-<li><p>Izračunajte integral tudi numerično. Uporabite <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code> in integrirajte glede na pravila: trapezno, Simpsonovo 1/3. Rezultat primerjajte tudi z Gaussovo kvadraturo.
-Raziščite natančnost in hitrost metod.</p></li>
-<li><p>Preštudirajte <code class="docutils literal notranslate"><span class="pre">scipy.special.legendre</span></code>, ki vam vrne objekt <code class="docutils literal notranslate"><span class="pre">orthopoly1d</span></code>. Ta objekt ima metodo <code class="docutils literal notranslate"><span class="pre">weights</span></code>, ki vrne seznam <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">w,</span> <span class="pre">mu0]</span></code> vrednosti, ki jih uporabimo pri Gaussovi kvadraturi. (Če vsega ne razumete, ne skrbite preveč, bo asistent pokazal/komentiral). Opazite lahko, da smo vrednosti izpeljali na predavanjih!</p></li>
-<li><p>S pomočjo zgoraj pridobljenih uteži in vozlišč izračunajte integral s pomočjo Gaussove kvadrature: <span class="math notranslate nohighlight">\(\sum_iw_i\,f(x_i)\)</span>. Pazite na transformacijo mej.</p></li>
-<li><p>Preprost integral <span class="math notranslate nohighlight">\(\int_0^2x^2\,dx\)</span> izrabite za prikaz trapeznega in Simpsonovega 1/3 pravila (osnovno pravilo, ne sestavljeno). Uteži izračunajte z uporabo <code class="docutils literal notranslate"><span class="pre">scipy</span></code>.</p></li>
-<li><p>Integral predhodne točke razširite za sestavljeno trapezno pravilo (lastna koda). Prikažite vpliv števila podintervalov, primerjajte napako izračuna s predhodnim številom podintervalov in prikažite konvergenco.</p></li>
-<li><p>Integral predhodne točke razširite za sestavljeno Simpsonovo 1/3 pravilo (lastna koda). Prikažite vpliv števila podintervalov, primerjajte napako izračuna s predhodnim številom podintervalov in prikažite konvergenco.</p></li>
-<li><p>Z različnimi metodami izračunajte integrala (namig: vse metode niso primerne):
-<span class="math notranslate nohighlight">\(\int_1^2\frac{\sin(x)}{\sqrt{x}}.\)</span></p></li>
-<li><p>S pomočjo numeričnega integriranja določite ekvivalentno silo porazdeljene obremenitve (<span class="math notranslate nohighlight">\(Q\)</span>) ter njeno prijemališče vzdolž nosilca (<span class="math notranslate nohighlight">\(x_Q\)</span>) dolžine <span class="math notranslate nohighlight">\(L = 2\,\)</span>m. Konstanta obremenitve: <span class="math notranslate nohighlight">\(q_0 = 5\,\)</span>kN/m.
-<img alt="Sila porazdeljene obremenitve" src="../_images/nal-num_integriranje_1-1.jpg" />
-Rešitev:
-ekvivalentna obremenitev <span class="math notranslate nohighlight">\(Q = \int_0^L{q(x) \mathrm{d}x}\)</span>, pozicija (težišče) <span class="math notranslate nohighlight">\(x_Q = \frac{ \int_0^L{x\,q(x) \mathrm{d}x} }{ \int_0^L{q(x) \mathrm{d}x} }\)</span></p></li>
-</ol>
-</section>
-<section id="dodatno">
-<h2>Dodatno<a class="headerlink" href="#dodatno" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Obravnavajte prikazan enoosni primer, obremenjen s porazdeljeno obremenitvijo <span class="math notranslate nohighlight">\(n(x)\)</span> ter točkovno silo <span class="math notranslate nohighlight">\(F=10\,\)</span>kN. Dolžina palice je <span class="math notranslate nohighlight">\(L = 2\,\)</span>m, konstanta <span class="math notranslate nohighlight">\(n_0 = 15\,\)</span>kN/m in <span class="math notranslate nohighlight">\(EA = 200000\,\mathrm{MPa} \times 50×50\, \mathrm{mm^2}\)</span>.
-<img alt="Porazdeljena obremenitev" src="../_images/nal-num_integriranje_2-2.jpg" />
-Naloga:</p>
-<ol class="arabic simple">
-<li><p>S pomočjo simbolnega integriranja določite funkcijo notranje osne sile <span class="math notranslate nohighlight">\(N(x)\)</span>.</p></li>
-<li><p>S pomočjo numeričnega integriranja izračunajte pomik prostega konca palice <span class="math notranslate nohighlight">\(u_0\)</span>.</p></li>
-</ol>
-</li>
-</ol>
-</section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="vprasanja-za-vaje">
@@ -2260,8 +2229,6 @@ Naloga:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intergracijske-funkcije-ki-zahtevajo-tabelo-vrednosti">Intergracijske funkcije, ki zahtevajo tabelo vrednosti:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">

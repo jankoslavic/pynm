@@ -188,12 +188,13 @@
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 
 
 
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">Objektno programiranje, simbolno računanje</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">Uvod v numerične metode in sistemi linearnih enačb</a></li>
 
@@ -201,15 +202,21 @@
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">Interpolacija</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">Aproksimacija</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">Reševanje enačb</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">Numerično odvajanje</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">Numerično integriranje</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">Numerično reševanje diferencialnih enačb - začetni problem</a></li>
+
+
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">Numerično reševanje diferencialnih enačb - robni problem</a></li>
 
@@ -426,10 +433,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterativne-metode">Iterativne metode</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gauss-seidlova-metoda">Gauss-Seidlova metoda</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled">Zgled</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 </ul>
 </li>
 </ul>
@@ -773,9 +776,9 @@ Korak: 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_28480\3999418912.py:1: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_26248\3999418912.py:1: RuntimeWarning: divide by zero encountered in scalar divide
   A[1,:] - A[1,0]/A[0,0] * A[0,:]
-C:\Users\janko\AppData\Local\Temp\ipykernel_28480\3999418912.py:1: RuntimeWarning: invalid value encountered in multiply
+C:\Users\janko\AppData\Local\Temp\ipykernel_26248\3999418912.py:1: RuntimeWarning: invalid value encountered in multiply
   A[1,:] - A[1,0]/A[0,0] * A[0,:]
 </pre></div>
 </div>
@@ -1523,35 +1526,6 @@ Norma 0.04590845211691733
 <p>Metoda deluje dobro, če je matrika diagonalno dominantna (obstajajo pa metode, ki delujejo tudi, ko matrika ni diagonalno dominantna, glejte npr.: J. Petrišič, Reševanje enačb, 1996, str 149: Metoda konjugiranih gradientov).</p>
 </section>
 </section>
-<section id="nekaj-vprasanj-za-razmislek">
-<h2>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Link to this heading">#</a></h2>
-<p>Na sliki je prikazano paličje. Ob delovanju sil <span class="math notranslate nohighlight">\(F_1\)</span> in <span class="math notranslate nohighlight">\(F_2\)</span> se v palicah razvijejo notranje sile <span class="math notranslate nohighlight">\(P_i\)</span>. Dimenzije paličja zagotavljata kota <span class="math notranslate nohighlight">\(\alpha\)</span> in <span class="math notranslate nohighlight">\(\beta\)</span>.
-<img alt="Paličje" src="../_images/palicje_2.2_15.png" />
-Sile v palicah izračunamo s pomočjo sistema linearnih enačb.</p>
-<ol class="arabic simple">
-<li><p>V simbolni obliki zapišite ravnotežje sil za točko 1 v <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(y\)</span> smeri (namig: naloga je posplošitev naloge 15 na strani 81 v knjigi Numerical methods in Eng with Py 3 z nastavkom za rešitev):
-<img alt="Paličje rešitev" src="../_images/palicje_2.2_15_resitev.png" />
-Zgornji nastavek ima napako v predzadnji vrstici. Rešitev sistema v knjigi je: <span class="math notranslate nohighlight">\(P_{1} = -42000, P_{2}=-12000, P_{3}= 42426, P_{4} = -12000, P_{5} = 16971, P_{6} = 12000\)</span>
-).</p></li>
-<li><p>V simbolni obliki zapišite ravnotežje sil za točko 2 v <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(y\)</span> smeri.</p></li>
-<li><p>Najdite simbolno rešitev za sile <span class="math notranslate nohighlight">\(P_i\)</span>.</p></li>
-<li><p>Uporabite podatke: <span class="math notranslate nohighlight">\(\alpha=\beta=\pi/4\)</span>, <span class="math notranslate nohighlight">\(F_1=18\)</span> kN in <span class="math notranslate nohighlight">\(F_2=12\)</span> kN ter najdite številčno rešitev.</p></li>
-<li><p>Pripravite si funkcijo, ki bo za poljubne podatke (npr: <code class="docutils literal notranslate"><span class="pre">podatki</span> <span class="pre">=</span> <span class="pre">{a:</span> <span class="pre">pi/4,</span> <span class="pre">b:</span> <span class="pre">pi/4,</span> <span class="pre">F1:</span> <span class="pre">18000,</span> <span class="pre">F2:</span> <span class="pre">12000}</span></code>) vrnila numerično matriko koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> in vektor konstant <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>. Če ne uspete tega narediti avtomatizirano, delajte „na roke“ (splača se vam potruditi, saj bomo to večkrat rabili).</p></li>
-<li><p>Razširite zgornjo funkcijo, da vam vrne rešitev linearnega sistema (uporabite kar <code class="docutils literal notranslate"><span class="pre">numpy</span></code> knjižnico)</p></li>
-<li><p>Predpostavite <span class="math notranslate nohighlight">\(F_1=F_2=10\)</span> kN. V vsaj petih vrednostih kota <span class="math notranslate nohighlight">\(\alpha=\beta\)</span> od 10<span class="math notranslate nohighlight">\(^{\circ}\)</span> do 80<span class="math notranslate nohighlight">\(^{\circ}\)</span> izračunajte sile v palicah.</p></li>
-<li><p>Za primer iz predhodne naloge narišite sile v palicah.</p></li>
-<li><p>S pomočjo funkcije <code class="docutils literal notranslate"><span class="pre">np.linalg.solve</span></code> izračunajte inverz poljubne matrike <code class="docutils literal notranslate"><span class="pre">A</span></code> (nato izračunajte še inverz s pomočjo funkcije <code class="docutils literal notranslate"><span class="pre">np.linalg.inv</span></code>).</p></li>
-<li><p>Na primeru poljubnih podatkov (npr: <code class="docutils literal notranslate"><span class="pre">podatki</span> <span class="pre">=</span> <span class="pre">{a:</span> <span class="pre">pi/4,</span> <span class="pre">b:</span> <span class="pre">pi/4,</span> <span class="pre">F1:</span> <span class="pre">18000,</span> <span class="pre">F2:</span> <span class="pre">12000}</span></code>) pokažite Gaussovo eliminacijo z delnim pivotiranjem.</p></li>
-<li><p>Na primeru poljubnih podatkov (npr: <code class="docutils literal notranslate"><span class="pre">podatki</span> <span class="pre">=</span> <span class="pre">{a:</span> <span class="pre">pi/4,</span> <span class="pre">b:</span> <span class="pre">pi/4,</span> <span class="pre">F1:</span> <span class="pre">18000,</span> <span class="pre">F2:</span> <span class="pre">12000}</span></code>) pokažite Gauss-Seidlov iterativni pristop k iskanju rešitve.</p></li>
-</ol>
-<section id="dodatno">
-<h3>Dodatno<a class="headerlink" href="#dodatno" title="Link to this heading">#</a></h3>
-<p>Analizirajte, koliko e-mailov dobite na dan:
-<img alt="Povprečje emailov" src="../_images/povprecje_emailov.jpg" />
-<a class="reference external" href="https://plot.ly/ipython-notebooks/graph-gmail-inbox-data/">https://plot.ly/ipython-notebooks/graph-gmail-inbox-data/</a>
-(Nasvet: sledite kodi in uporabite <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> za prikaz).</p>
-</section>
-</section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="vprasanja-za-vaje">
@@ -1727,10 +1701,6 @@ Zgornji nastavek ima napako v predzadnji vrstici. Rešitev sistema v knjigi je: 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterativne-metode">Iterativne metode</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gauss-seidlova-metoda">Gauss-Seidlova metoda</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled">Zgled</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 </ul>
 </li>
 </ul>

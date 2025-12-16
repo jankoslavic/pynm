@@ -188,12 +188,13 @@
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 
 
 
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">Objektno programiranje, simbolno računanje</a></li>
+
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Uvod v numerične metode in sistemi linearnih enačb</a></li>
 
@@ -201,15 +202,21 @@
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">Interpolacija</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">Aproksimacija</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">Reševanje enačb</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2010%20-%20Numeri%C4%8Dno%20odvajanje.html">Numerično odvajanje</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">Numerično integriranje</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">Numerično reševanje diferencialnih enačb - začetni problem</a></li>
+
+
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">Numerično reševanje diferencialnih enačb - robni problem</a></li>
 
@@ -430,11 +437,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-knjiznjice-numpy">Uporaba knjižnjice <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-simbolnega-resevanja-sistema-linearnih-enacb-v-okviru-sympy">Primer simbolnega reševanja sistema linearnih enačb v okviru <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-simbolnega-resevanja-sistema-linearnih-enacb-v-okviru-sympy">Primer simbolnega reševanja sistema linearnih enačb v okviru <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
@@ -1247,53 +1251,11 @@ Za rešitev <span class="math notranslate nohighlight">\(n\)</span> linearnih en
 </div>
 </section>
 </section>
-<section id="nekaj-vprasanj-za-razmislek">
-<h2>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Link to this heading">#</a></h2>
-<ol class="arabic">
-<li><p>Za sistem enačb:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \mathbf{A}=
-    \begin{bmatrix}
-    1 &amp; -4 &amp; 1\\
-    1 &amp; 6 &amp; -1\\
-    2 &amp; -1 &amp; 2
-    \end{bmatrix}
-    \qquad
-    \mathbf{b}=
-    \begin{bmatrix}
-    7\\
-    13\\
-    5
-    \end{bmatrix}
-    \end{split}\]</div>
-<p>najdite rešitev s pomočjo <code class="docutils literal notranslate"><span class="pre">np.linalg.solve()</span></code>.</p>
-</li>
-<li><p>Za zgoraj definirano matriko <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> določite Evklidsko normo (lastni program).</p></li>
-<li><p>Za zgoraj definirano matriko <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> določite neskončno normo (lastni program).</p></li>
-<li><p>Za zgoraj definirano matriko <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> določite pogojenost (<code class="docutils literal notranslate"><span class="pre">numpy</span></code> funkcija).</p></li>
-<li><p>Definirajte funkcijo <code class="docutils literal notranslate"><span class="pre">gauss_elim</span></code>, ki za poljubno matriko <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> in vektor <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> izvede Gaussovo eliminacijo (posebej za matriko in posebej za vektor tako, da ne sestavite razširjene matrike <span class="math notranslate nohighlight">\([\mathbf{A}|\mathbf{b}]\)</span>).</p></li>
-<li><p>Definirajte funkcijo <code class="docutils literal notranslate"><span class="pre">gauss_elim_x</span></code>, ki za razultat funkcije <code class="docutils literal notranslate"><span class="pre">gauss_elim</span></code> najde ustrezne vrednosti vektorja <span class="math notranslate nohighlight">\(\textbf{x}\)</span>.</p></li>
-<li><p>Zgornji funkciji dopolnite s štetjem matematičnih operacij.</p></li>
-<li><p>Na sliki je prikazan sistem mas:</p>
-<p><img alt="Masa na klancu" src="../_images/mase_na_klancu.png" /></p>
-<p>Predpostavite, da se sistem zaradi teže giblje po klancu navzdol z neznanim pospeškom <span class="math notranslate nohighlight">\(a\)</span> in da so vrvi napete z neznanimi silami <span class="math notranslate nohighlight">\(F_i\)</span>. Znane veličine so (sami jih določite): posamično telo ima maso <span class="math notranslate nohighlight">\(m_i\)</span>, koeficient trenja s podlago <span class="math notranslate nohighlight">\(\mu_i=1\)</span>, <span class="math notranslate nohighlight">\(g=9,81\)</span>m/s<span class="math notranslate nohighlight">\(^2\)</span>, <span class="math notranslate nohighlight">\(\varphi=55^{\circ}\)</span>.
-Določite sistem enačb v primeru dveh teles. Določite matriko koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> in vektorja <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> ter <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>.</p>
-</li>
-<li><p>Za zgoraj definiran sistem mas predpostavite, da je mas 4 (ali več) ter določite matriko koeficientov <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>, in vektorja <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> ter <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>. Rešite sistem s pomočjo Gaussove elimnacije/LU razcepa ali <code class="docutils literal notranslate"><span class="pre">np.linalg.solve</span></code>. Preverite pogojenost!</p></li>
-<li><p>V sistemu mas dobimo fizikalno nekonsistentno rešitev, če imamo v kateri od vrvi tlačno silo (vrv ne prenese tlačne sile). Preverite, ali je to v vašem primeru res. Ustrezno spremenite koeficient(e) trenja, da se bo to zgodilo.</p></li>
-</ol>
-</section>
 <section id="dodatno">
 <h2>Dodatno<a class="headerlink" href="#dodatno" title="Link to this heading">#</a></h2>
-<p>Poglejte si strani:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="http://www.micropython.org">micropython.org</a></p></li>
-<li><p><a class="reference external" href="http://www.kivy.org">kivy.org</a></p></li>
-<li><p><a class="reference external" href="http://www.openmodal.com">openmodal.com</a></p></li>
-</ul>
+</section>
 <section id="primer-simbolnega-resevanja-sistema-linearnih-enacb-v-okviru-sympy">
-<h3>Primer simbolnega reševanja sistema linearnih enačb v okviru <code class="docutils literal notranslate"><span class="pre">sympy</span></code><a class="headerlink" href="#primer-simbolnega-resevanja-sistema-linearnih-enacb-v-okviru-sympy" title="Link to this heading">#</a></h3>
+<h2>Primer simbolnega reševanja sistema linearnih enačb v okviru <code class="docutils literal notranslate"><span class="pre">sympy</span></code><a class="headerlink" href="#primer-simbolnega-resevanja-sistema-linearnih-enacb-v-okviru-sympy" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
@@ -1350,7 +1312,6 @@ Določite sistem enačb v primeru dveh teles. Določite matriko koeficientov <sp
 <img alt="../_images/55ed0b3a79041ba38e7ac73d405528030a86ff252e25184fd90128b60a5eade0.png" src="../_images/55ed0b3a79041ba38e7ac73d405528030a86ff252e25184fd90128b60a5eade0.png" />
 </div>
 </div>
-</section>
 </section>
 </section>
 <hr class="docutils" />
@@ -1577,11 +1538,8 @@ $<span class="math notranslate nohighlight">\(\textrm{cond}(||\textbf{A}||)=||\t
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-knjiznjice-numpy">Uporaba knjižnjice <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-simbolnega-resevanja-sistema-linearnih-enacb-v-okviru-sympy">Primer simbolnega reševanja sistema linearnih enačb v okviru <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-simbolnega-resevanja-sistema-linearnih-enacb-v-okviru-sympy">Primer simbolnega reševanja sistema linearnih enačb v okviru <code class="docutils literal notranslate"><span class="pre">sympy</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">

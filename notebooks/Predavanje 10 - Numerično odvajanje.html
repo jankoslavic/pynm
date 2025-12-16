@@ -188,12 +188,13 @@
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2002%20-%20Print%2C%20delo%20z%20datotekami%2C%20funkcije%2C%20moduli.html">Funkcije, izjeme, moduli</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2003%20-%20Moduli%2C%20numpy%2C%20matplotlib.html">Osnove modula <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 
 
 
-
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2004%20-%20Objektno%20programiranje%2C%20simbolno%20ra%C4%8Dunanje.html">Objektno programiranje, simbolno računanje</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2005%20-%20Uvod%20v%20numeri%C4%8Dne%20metode%20in%20sistemi%20linearnih%20ena%C4%8Db%201.html">Uvod v numerične metode in sistemi linearnih enačb</a></li>
 
@@ -201,15 +202,21 @@
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2007%20-%20Interpolacija.html">Interpolacija</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2008%20-%20Aproksimacija.html">Aproksimacija</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2009%20-%20Re%C5%A1evanje%20ena%C4%8Db.html">Reševanje enačb</a></li>
 
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Numerično odvajanje</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2011%20-%20Numeri%C4%8Dno%20integriranje.html">Numerično integriranje</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2012%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20za%C4%8Detni%20problem.html">Numerično reševanje diferencialnih enačb - začetni problem</a></li>
+
+
 
 <li class="toctree-l1"><a class="reference internal" href="Predavanje%2013%20-%20Numeri%C4%8Dno%20re%C5%A1evanje%20diferencialnih%20ena%C4%8Db%20-%20robni%20problem.html">Numerično reševanje diferencialnih enačb - robni problem</a></li>
 
@@ -440,10 +447,9 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-odvoda-s-kompleksnim-korakom">Aproksimacija odvoda s kompleksnim korakom</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utezi-centralne-diferencne-sheme-v-scipy">Uteži centralne diferenčne sheme v <code class="docutils literal notranslate"><span class="pre">scipy</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izboljsanje-priblizka-odvoda-z-richardsonovo-ekstrapolacijo">Izboljšanje približka odvoda z Richardsonovo ekstrapolacijo</a></li>
@@ -1746,7 +1752,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_8568\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_31852\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
   f1_ocena = (fun(x+h, dtype=dtype)-fun(x-h,dtype=dtype))/(2*dtype(h))
 </pre></div>
 </div>
@@ -1963,32 +1969,10 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 </section>
-<section id="nekaj-vprasanj-za-razmislek">
-<h2>Nekaj vprašanj za razmislek!<a class="headerlink" href="#nekaj-vprasanj-za-razmislek" title="Link to this heading">#</a></h2>
-<ol class="arabic">
-<li><p>Za batni mehanizem na spodnji sliki strojno izpeljite kinematiko gibanja bata, če se kolenasta gred giblje po zakonu <span class="math notranslate nohighlight">\(\varphi(t)=\omega\,t\)</span>.
-<img alt="Batni mehanizem" src="../_images/batni_mehanizem.png" />2. Za kotno hitrosti <span class="math notranslate nohighlight">\(\omega=2\,\pi\,50\,\)</span>rad/s izrišite lego bata v treh obratih gredi. Uporabite: <span class="math notranslate nohighlight">\(r=0,03\,\)</span>m in <span class="math notranslate nohighlight">\(l=0,1\,\)</span>m.</p></li>
-<li><p>Simbolno odvajajte lego <span class="math notranslate nohighlight">\(x(t)\)</span>, da pridobite pospešek <span class="math notranslate nohighlight">\(\ddot x(t)\)</span>.</p></li>
-<li><p>Pripravite funkcijo za klicanje simbolnih izrazov za lego <span class="math notranslate nohighlight">\(x(t)\)</span> in pospešek <span class="math notranslate nohighlight">\(\ddot x(t)\)</span> iz <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p></li>
-<li><p>S pomočjo <code class="docutils literal notranslate"><span class="pre">scipy</span></code> pripravite centralno diferenčno shemo za 2. odvod čez 3, 5, in 7 točk.</p></li>
-<li><p>Raziščite funkcijo <code class="docutils literal notranslate"><span class="pre">numpy.convolve</span></code> in z njo na podlagi numeričnih vrednosti za <span class="math notranslate nohighlight">\(x\)</span> numerično izračunajte pospešek <span class="math notranslate nohighlight">\(\ddot x\)</span>. Kje je odvod pravilen?</p></li>
-<li><p>S centralno diferenčno shemo 2. odvoda čez tri točke ste izračunali notranje točke, nastavite diferenčno shemo naprej za izračun prve točke z natančnostjo <span class="math notranslate nohighlight">\(\mathcal{O}(h^{2})\)</span>.</p></li>
-<li><p>Dodajte podatkom lege, določeno mero šuma in preverite, zakaj ni primerna uporaba numeričnega odvajanja na šumnih podatkih.</p></li>
-<li><p>S centralno diferenčno shemo 2. odvoda čez tri točke ste doslej izračunali notranje točke, nastavite diferenčno shemo nazaj za izračun zadnje točke z natančnostjo <span class="math notranslate nohighlight">\(\mathcal{O}(h^{2})\)</span>.</p></li>
-<li><p>Raziščite vpliv časovnega koraka na izračun 2. odvoda.</p></li>
-<li><p>Izmerjene imamo sledeče pozicije (gibanja) avtomobila:</p>
-<p><span class="math notranslate nohighlight">\(t = [ 0. ,  0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1. ]\)</span> [h]</p>
-<p><span class="math notranslate nohighlight">\(s = [0, 3, 10, 13, 17, 25, 33, 46, 58, 75]\)</span> [km]</p>
-<p>Izračunajte hitrost in pospešek avtomobila pri času 0,5 h. Hitrost in pospešek prikažite tudi v grafični obliki.</p>
-</li>
-</ol>
-<p>Opomba:
-Dodatek k domačim nalogam: 6. vprašanje bi lahko nadaljevali in zašumljene podatke gladili ter nato izvedli odvajanje. Glajenje izvedite s konvolucijo med [0,21194156,  0,57611688,  0,21194156] in <span class="math notranslate nohighlight">\(x\)</span>.</p>
 </section>
-<section id="dodatno">
-<h2>Dodatno<a class="headerlink" href="#dodatno" title="Link to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="dodatno">
+<h1>Dodatno<a class="headerlink" href="#dodatno" title="Link to this heading">#</a></h1>
 <p><a class="reference external" href="https://www.youtube.com/watch?v=ZJkGI5DZQv8&amp;amp;list=PLYdroRCLMg5OvLx1EtY1ByvveJeTEXQd_&amp;amp;index=18">Video predavanja na temo numeričnega odvajanja</a>.</p>
-</section>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="vprasanja-za-vaje">
@@ -2011,10 +1995,10 @@ Dodatek k domačim nalogam: 6. vprašanje bi lahko nadaljevali in zašumljene po
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1eb1cac2420&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1ce7c2f3fe0&gt;
 </pre></div>
 </div>
-<img alt="../_images/5e44f697e72cb974cd7afe8c7df171ed5716c8f557be36f2a5fc283219a687aa.png" src="../_images/5e44f697e72cb974cd7afe8c7df171ed5716c8f557be36f2a5fc283219a687aa.png" />
+<img alt="../_images/d06daec591c438b463a646196ffea2f3befb1b152773e622cc6a04fe52e228fc.png" src="../_images/d06daec591c438b463a646196ffea2f3befb1b152773e622cc6a04fe52e228fc.png" />
 </div>
 </div>
 <p><strong>Vprašanje 2:</strong> Simbolno je podana funkcija <span class="math notranslate nohighlight">\(f(x)\)</span> in njen odvod, <span class="math notranslate nohighlight">\(f'(x)\)</span>.</p>
@@ -2219,10 +2203,9 @@ Dodatek k domačim nalogam: 6. vprašanje bi lahko nadaljevali in zašumljene po
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aproksimacija-odvoda-s-kompleksnim-korakom">Aproksimacija odvoda s kompleksnim korakom</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-vprasanj-za-razmislek">Nekaj vprašanj za razmislek!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dodatno">Dodatno</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vprasanja-za-vaje">Vprašanja za vaje</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utezi-centralne-diferencne-sheme-v-scipy">Uteži centralne diferenčne sheme v <code class="docutils literal notranslate"><span class="pre">scipy</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izboljsanje-priblizka-odvoda-z-richardsonovo-ekstrapolacijo">Izboljšanje približka odvoda z Richardsonovo ekstrapolacijo</a></li>
