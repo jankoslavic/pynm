@@ -1965,11 +1965,11 @@ Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.inte
 <h3>Intergracijske funkcije, ki zahtevajo tabelo vrednosti:<a class="headerlink" href="#intergracijske-funkcije-ki-zahtevajo-tabelo-vrednosti" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">trapz(y[,</span> <span class="pre">x,</span> <span class="pre">dx,</span> <span class="pre">axis])</span></code> sestavljeno trapezno pravilo,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cumtrapz(y[,</span> <span class="pre">x,</span> <span class="pre">dx,</span> <span class="pre">axis,</span> <span class="pre">initial])</span></code> kumulativni integral podintegralske funkcije (vrne rezultat v vsakem vozlišču),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cumulative_trapezoid(y[,</span> <span class="pre">x,</span> <span class="pre">dx,</span> <span class="pre">axis,</span> <span class="pre">initial])</span></code> kumulativni integral podintegralske funkcije (vrne rezultat v vsakem vozlišču),</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">simps(y[,</span> <span class="pre">x,</span> <span class="pre">dx,</span> <span class="pre">axis,</span> <span class="pre">even])</span></code>	Simpsonova metoda,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">romb(y[,</span> <span class="pre">dx,</span> <span class="pre">axis,</span> <span class="pre">show])</span></code>	Rombergova metoda.</p></li>
 </ul>
-<p>Tukaj si bomo na primeru ogledali funkcijo <code class="docutils literal notranslate"><span class="pre">cumtrapz</span></code>. Kot primer si, ko na maso <span class="math notranslate nohighlight">\(m=1\)</span> (enote izpustimo) deluje sila <span class="math notranslate nohighlight">\(F=\sin(t)\)</span>. Iz 2. Newtonovega zakona sledi: <span class="math notranslate nohighlight">\(F=m\,\ddot x\)</span>. Pospešek integriramo, da izračunamo hitrost; nato integriramo še enkrat za pomik. Definirajmo najprej funkcijo za pospešek:</p>
+<p>Tukaj si bomo na primeru ogledali funkcijo <code class="docutils literal notranslate"><span class="pre">cumulative_trapezoid</span></code>. Kot primer si, ko na maso <span class="math notranslate nohighlight">\(m=1\)</span> (enote izpustimo) deluje sila <span class="math notranslate nohighlight">\(F=\sin(t)\)</span>. Iz 2. Newtonovega zakona sledi: <span class="math notranslate nohighlight">\(F=m\,\ddot x\)</span>. Pospešek integriramo, da izračunamo hitrost; nato integriramo še enkrat za pomik. Definirajmo najprej funkcijo za pospešek:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pospešek</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
@@ -1992,18 +1992,7 @@ Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.inte
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">pospešek</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">cumtrapz</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">initial</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">74</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">a</span> <span class="o">=</span> <span class="n">pospešek</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">v</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">cumtrapz</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">initial</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: module &#39;scipy.integrate&#39; has no attribute &#39;cumtrapz&#39;
+<span class="n">v</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">cumulative_trapezoid</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">initial</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2011,7 +2000,7 @@ Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.inte
 <p>Hitrost sedaj še enkrat integrirajmo, da izračunamo pot:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">cumtrapz</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">initial</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">cumulative_trapezoid</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">initial</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2028,7 +2017,7 @@ Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.inte
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3b689f1d92aaa35620811d840bb60339f6d29628055e1e76a9f926662ff46643.png" src="../_images/3b689f1d92aaa35620811d840bb60339f6d29628055e1e76a9f926662ff46643.png" />
+<img alt="../_images/ed486b305ac0239188787ea3a9c51d1b00e89e743760f5889b6bdab3b2d6548e.png" src="../_images/ed486b305ac0239188787ea3a9c51d1b00e89e743760f5889b6bdab3b2d6548e.png" />
 </div>
 </div>
 </section>
@@ -2072,7 +2061,7 @@ Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.inte
 \[I = \int_{0}^{2} -0.5x^3 - x^2 + 8 ~\text{d}x\]</div>
 <p>Dobljeno vrednost primerjajte z rezultatom funkcije <code class="docutils literal notranslate"><span class="pre">scipy.integrate.simps</span></code>, kjer opazovan interval razdelite na 7 ekvidistantnih točk.</p>
 <hr class="docutils" />
-<p><strong>Vprašanje 6:</strong> Podane so izmerjene vrednosti pospeška avtomobila v smeri vožnje v času. Z uporabo kumulativne trapezne metode (<code class="docutils literal notranslate"><span class="pre">scipy.integrate.cumtrapz</span></code>) določite vrednosti hitrosti in opravljene poti avtomobila v opazovanm časovnem intervalu.</p>
+<p><strong>Vprašanje 6:</strong> Podane so izmerjene vrednosti pospeška avtomobila v smeri vožnje v času. Z uporabo kumulativne trapezne metode (<code class="docutils literal notranslate"><span class="pre">scipy.integrate.cumulative_trapezoid</span></code>) določite vrednosti hitrosti in opravljene poti avtomobila v opazovanm časovnem intervalu.</p>
 <p>Avto pri času <span class="math notranslate nohighlight">\(t = 0\)</span> miruje (namig: argument <code class="docutils literal notranslate"><span class="pre">initial</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
