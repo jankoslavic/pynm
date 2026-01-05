@@ -1629,14 +1629,14 @@ Boljši približek: 1.4404218714139077
 <p>kjer je polinom stopnje <span class="math notranslate nohighlight">\(n=2v-1\)</span> definiran kot:</p>
 <div class="math notranslate nohighlight">
 \[P_{2v-1}(x)=\sum_{i=0}^{2v-1} a_i\,x^i.\]</div>
-<p>Z dvema Gaussovima točkama/vozliščema točno izračunamo integral polinoma do tretjega reda, s tremi Gausovimi vozlišči pa točno izračunamo integral polinoma do petega reda!</p>
+<p>Z dvema Gaussovima točkama/vozliščema točno izračunamo integral polinoma do tretjega reda, s tremi Gaussovimi vozlišči pa točno izračunamo integral polinoma do petega reda!</p>
 <section id="strojno-izpeljevanje">
 <h4>Strojno izpeljevanje<a class="headerlink" href="#strojno-izpeljevanje" title="Link to this heading">#</a></h4>
 <p>Pripravimo si najprej simbolni zapis polinoma in ustreznih spremenljivk:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">P_etc</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">):</span>                       <span class="c1"># n je stopnja polinoma</span>
-    <span class="n">ai</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># seznam a_i</span>
+    <span class="n">ai</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>                  <span class="c1"># seznam a_i</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                              <span class="c1"># spremenljivka x</span>
     <span class="k">return</span> <span class="n">ai</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="nb">sum</span><span class="p">([</span><span class="n">ai</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
 </pre></div>
@@ -1687,7 +1687,7 @@ Uteži:    (A0, A1)
 <img alt="../_images/46fe99ea7d6cdc3d2de1fd82d92f2f19bde8dc4f4def9894c56d9573063b3b52.png" src="../_images/46fe99ea7d6cdc3d2de1fd82d92f2f19bde8dc4f4def9894c56d9573063b3b52.png" />
 </div>
 </div>
-<p>Rešimo jih za za neznane <span class="math notranslate nohighlight">\(x_i\)</span> in <span class="math notranslate nohighlight">\(w_i\)</span>:</p>
+<p>Rešimo jih za neznane <span class="math notranslate nohighlight">\(x_i\)</span> in <span class="math notranslate nohighlight">\(w_i\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">eqs</span><span class="p">,</span> <span class="n">sym</span><span class="o">.</span><span class="n">flatten</span><span class="p">((</span><span class="n">xi</span><span class="p">,</span> <span class="n">Ai</span><span class="p">)))</span>
