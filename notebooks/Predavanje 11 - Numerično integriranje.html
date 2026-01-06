@@ -2044,7 +2044,7 @@ Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.inte
 <p><strong>Vprašanje 3:</strong> Z uporabo lastne implementacije trapeznega pravila (osnovnega, ne sestavljenega) izračunajte določeni integral</p>
 <div class="math notranslate nohighlight">
 \[I = \int_{0}^{2} -0.5x^3 - x^2 + 8 ~\text{d}x\]</div>
-<p>Dobljeno vrednost primerjajte z rezultatom funkcije <code class="docutils literal notranslate"><span class="pre">numpy.trapz</span></code>, kjer opazovan interval razdelite na 10 ekvidistantnih odsekov.</p>
+<p>Dobljeno vrednost primerjajte z rezultatom funkcije <code class="docutils literal notranslate"><span class="pre">numpy.trapz</span></code> (ali <code class="docutils literal notranslate"><span class="pre">scipy.integrate.trapezoid</span></code>), kjer opazovan interval razdelite na 10 ekvidistantnih odsekov.</p>
 <hr class="docutils" />
 </section>
 <section id="izboljsan-priblizek-z-richardsonovo-esktrapolacijo">
@@ -2059,7 +2059,7 @@ Funkcija <code class="docutils literal notranslate"><span class="pre">scipy.inte
 <p><strong>Vprašanje 5:</strong> Določen integral iz prejšnje naloge izračunajte z lastno kodo Simpsonove 1/3 metode (osnovne, ne sestavljene).</p>
 <div class="math notranslate nohighlight">
 \[I = \int_{0}^{2} -0.5x^3 - x^2 + 8 ~\text{d}x\]</div>
-<p>Dobljeno vrednost primerjajte z rezultatom funkcije <code class="docutils literal notranslate"><span class="pre">scipy.integrate.simps</span></code>, kjer opazovan interval razdelite na 7 ekvidistantnih točk.</p>
+<p>Dobljeno vrednost primerjajte z rezultatom funkcije <code class="docutils literal notranslate"><span class="pre">scipy.integrate.simpson</span></code>, kjer opazovan interval razdelite na 7 ekvidistantnih točk.</p>
 <hr class="docutils" />
 <p><strong>Vprašanje 6:</strong> Podane so izmerjene vrednosti pospeška avtomobila v smeri vožnje v času. Z uporabo kumulativne trapezne metode (<code class="docutils literal notranslate"><span class="pre">scipy.integrate.cumulative_trapezoid</span></code>) določite vrednosti hitrosti in opravljene poti avtomobila v opazovanm časovnem intervalu.</p>
 <p>Avto pri času <span class="math notranslate nohighlight">\(t = 0\)</span> miruje (namig: argument <code class="docutils literal notranslate"><span class="pre">initial</span></code>).</p>
