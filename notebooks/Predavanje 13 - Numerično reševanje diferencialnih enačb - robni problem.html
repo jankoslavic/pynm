@@ -505,7 +505,7 @@ document.write(`
 <img alt="Poševni met" src="../_images/posevni_met.png" /></p>
 <p>Velikost sile upora zraka je <span class="math notranslate nohighlight">\(|\textbf{F}|=c\,|\textbf{v}|^2\)</span>, potem sta gibalni enačbi:</p>
 <div class="math notranslate nohighlight">
-\[x''(t)=-F_x/m\qquad y''(t)=-F_y/m-g.\]</div>
+\[x''(t)=F_x/m\qquad y''(t)=F_y/m-g.\]</div>
 <p>Komponente sile so (glejte izpeljavo pri poglavju iz reševanja začetnega problema sistema diferencialnih enačb):</p>
 <div class="math notranslate nohighlight">
 \[F_x=-c\,x'\,\sqrt{x'^2+y'^2},\qquad F_y=-c\,y'\,\sqrt{x'^2+y'^2}.\]</div>
@@ -888,7 +888,7 @@ y_3'&amp;=&amp;F_y/m-g.\\
        success: True
         status: 0
              x: [ 0.000e+00  2.381e-02 ...  9.762e-01  1.000e+00]
-           sol: &lt;scipy.interpolate._interpolate.PPoly object at 0x0000014D12BFA080&gt;
+           sol: &lt;scipy.interpolate._interpolate.PPoly object at 0x000001CE669D3200&gt;
              p: None
              y: [[-1.588e-22  4.482e-01 ...  9.853e+00  1.000e+01]
                  [ 1.939e+01  1.828e+01 ...  6.210e+00  6.117e+00]
@@ -1184,9 +1184,10 @@ y_3'&amp;=&amp;q(x)/(EI).\\
 </section>
 <section id="numericni-zgled-vertikalni-met">
 <h3>Numerični zgled: vertikalni met<a class="headerlink" href="#numericni-zgled-vertikalni-met" title="Link to this heading">#</a></h3>
-<p>Zgoraj smo vertikalni met rešili s strelsko metodo; uporabimo sedaj metodo končnih razlik. Najprej robni problem:
-$<span class="math notranslate nohighlight">\(y''(t)=F_y/m-g,\qquad y(0)=0,\quad y(1)=10.\)</span><span class="math notranslate nohighlight">\(
-zapisati s pomočjo centralne diferenčne sheme (\)</span>F_y=-c,y‘$):</p>
+<p>Zgoraj smo vertikalni met rešili s strelsko metodo; uporabimo sedaj metodo končnih razlik. Najprej robni problem:</p>
+<div class="math notranslate nohighlight">
+\[y''(t)=F_y/m-g,\qquad y(0)=0,\quad y(1)=10.\]</div>
+<p>zapisati s pomočjo centralne diferenčne sheme (<span class="math notranslate nohighlight">\(F_y=-c\,y'\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{h^2}\left(y_{i-1}-2\,y_{i}+y_{i+1}\right)= -c\left(\frac{1}{2h}\left(-y_{i-1}+y_{i+1}\right)\right)/m-g.\]</div>
 <p>(Tukaj smo predpostavili, da je zračni upor linearno odvisen od hitrost. V nasprotnem primeru bi imeli nelinearni robni problem, in posledično razvili sistem nelinearnih enačb.)</p>
@@ -1311,7 +1312,7 @@ zapisati s pomočjo centralne diferenčne sheme (\)</span>F_y=-c,y‘$):</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n2h</span> <span class="o">=</span> <span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span>
 <span class="n">t2h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n2h</span><span class="p">)</span>
-<span class="n">h2h</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">h2h</span> <span class="o">=</span> <span class="n">t2h</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">A2h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n2h</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> \
     <span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">h2h</span><span class="o">/</span><span class="p">(</span><span class="n">m</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n2h</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> \
     <span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="n">c</span><span class="o">*</span><span class="n">h2h</span><span class="o">/</span><span class="p">(</span><span class="n">m</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n2h</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
@@ -1335,7 +1336,7 @@ zapisati s pomočjo centralne diferenčne sheme (\)</span>F_y=-c,y‘$):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        ,  2.40584652,  4.59862736,  6.58873597,  8.38605878,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        ,  3.24082594,  5.7992875 ,  7.74037178,  9.12287659,
        10.        ])
 </pre></div>
 </div>
@@ -1363,8 +1364,8 @@ zapisati s pomočjo centralne diferenčne sheme (\)</span>F_y=-c,y‘$):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.27805719, 0.39984242, 0.38352537, 0.24538553,
-       0.        ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        , -0.00026928, -0.00037763, -0.00035324, -0.0002204 ,
+        0.        ])
 </pre></div>
 </div>
 </div>
@@ -1768,7 +1769,7 @@ y''(B)  = 0
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/904ebfc3c61de3435d8cd1e19006499a860feedf29934d58ef2897fd227878d3.png" src="../_images/904ebfc3c61de3435d8cd1e19006499a860feedf29934d58ef2897fd227878d3.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x14d171eb6e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x1ce6ad27890&gt;
 </pre></div>
 </div>
 </div>
@@ -1850,14 +1851,16 @@ y_1(x_I=0) = y_1^A = 0\\
 y_4(x_{II}=L/2) = y_4^B = 0\\
 y_6(x_{II}=L/2) = y_6^B  = 0
 \end{align}\end{split}\]</div>
-<p>Pogoji na prehodu med polji:
-$<span class="math notranslate nohighlight">\(\begin{align}
+<p>Pogoji na prehodu med polji:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
 y_0(x_I=L/2) &amp;= y_4(x_{II}=0)\\
 y_1(x_I=L/2) &amp;= y_5(x_{II}=0)\\
 y_2(x_I=L/2) &amp;= y_6(x_{II}=0)\\
-\end{align}\)</span>$</p>
-<p>Strižna sila na prehodu med polji:
-$<span class="math notranslate nohighlight">\(T(x_I=L/2) = T(x_{II}=0) + F, \quad \quad T(x) = -EI \, y'''(x)\)</span>$</p>
+\end{align}\end{split}\]</div>
+<p>Strižna sila na prehodu med polji:</p>
+<div class="math notranslate nohighlight">
+\[T(x_I=L/2) = T(x_{II}=0) + F, \quad \quad T(x) = -EI \, y'''(x)\]</div>
 <div class="math notranslate nohighlight">
 \[y_3(x_I=L/2) = y_7(x_{II}=0) - \frac{F}{EI}\]</div>
 <section id="numericno-resevanje">

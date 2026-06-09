@@ -1400,8 +1400,11 @@ Za rešitev <span class="math notranslate nohighlight">\(n\)</span> linearnih en
 <ul class="simple">
 <li><p>kot argumenta sprejme matriko <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> in vektor <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>,</p></li>
 <li><p>pripravi razširjeno matriko koeficientov <span class="math notranslate nohighlight">\(\mathbf{[A|b]}\)</span></p></li>
-<li><p>za vsako pivotno vrstico <code class="docutils literal notranslate"><span class="pre">i</span></code>, <span class="math notranslate nohighlight">\(0 \leq i \leq n-1\)</span>, izračuna koeficient <span class="math notranslate nohighlight">\(\lambda\)</span> za vse vrstice pod pivotno (<span class="math notranslate nohighlight">\(i+1 \leq j \leq n\)</span>) (<span class="math notranslate nohighlight">\(n\)</span> je število vrstic <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>).
-$<span class="math notranslate nohighlight">\( \lambda = \frac{a_{ji}}{a_{ii}}\)</span>$</p></li>
+<li><p>za vsako pivotno vrstico <code class="docutils literal notranslate"><span class="pre">i</span></code>, <span class="math notranslate nohighlight">\(0 \leq i \leq n-1\)</span>, izračuna koeficient <span class="math notranslate nohighlight">\(\lambda\)</span> za vse vrstice pod pivotno (<span class="math notranslate nohighlight">\(i+1 \leq j \leq n\)</span>) (<span class="math notranslate nohighlight">\(n\)</span> je število vrstic <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>).</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ \lambda = \frac{a_{ji}}{a_{ii}}\]</div>
+<ul class="simple">
 <li><p>če je koeficient <span class="math notranslate nohighlight">\(a_{ii}\)</span> različen od 0, opravi zamenjavo:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
@@ -1441,14 +1444,20 @@ x_1 \\ x_2 \\ x_3
 </div>
 </div>
 <p><strong>Vprašanje 8:</strong> Z uporabo orodij paketa <code class="docutils literal notranslate"><span class="pre">numpy</span></code> pripravite lastne funkcije za Evklidsko ali neskončno normo ter merilo pogojenosti matrike. Izračunajte pogojenost matrike koeficientov iz zgornje naloge.</p>
-<ul class="simple">
-<li><p>Evklidska (Frobeniusova) norma (koren vsote kvadratov vseh elementov):
-$<span class="math notranslate nohighlight">\(||\textbf{A}||_e=\sqrt{\sum_{i=1}^n\sum_{j=1}^nA_{ij}^2}\)</span>$</p></li>
-<li><p>Neskončna norma (maksimum vsote vrstic):
-$<span class="math notranslate nohighlight">\(||\textbf{A}||_{\infty}=\max_{1\le i\le n}\sum_{j=1}^n |A_{ij}|\)</span>$</p></li>
-<li><p>Število pogojenosti:
-$<span class="math notranslate nohighlight">\(\textrm{cond}(||\textbf{A}||)=||\textbf{A}||\,||\textbf{A}^{-1}||\)</span>$</p></li>
+<ul>
+<li><p>Evklidska (Frobeniusova) norma (koren vsote kvadratov vseh elementov):</p>
+<div class="math notranslate nohighlight">
+\[||\textbf{A}||_e=\sqrt{\sum_{i=1}^n\sum_{j=1}^nA_{ij}^2}\]</div>
+</li>
+<li><p>Neskončna norma (maksimum vsote vrstic):</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[||\textbf{A}||_{\infty}=\max_{1\le i\le n}\sum_{j=1}^n |A_{ij}|\]</div>
+<ul class="simple">
+<li><p>Število pogojenosti:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\textrm{cond}(||\textbf{A}||)=||\textbf{A}||\,||\textbf{A}^{-1}||\]</div>
 </section>
 </section>
 </section>

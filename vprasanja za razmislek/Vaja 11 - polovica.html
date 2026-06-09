@@ -444,9 +444,10 @@ document.write(`
 </div>
 <p>Vprašanje 1: Na sliki (vir: J. Slavič: Dinamika, meh. nihanja…, 2014) je prikazan trikotnik s stranicami dolžine <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, debelino <span class="math notranslate nohighlight">\(h\)</span> in gostoto <span class="math notranslate nohighlight">\(\rho\)</span>.
 <img src="../fig/Slavic 2014 str 242 slika 5.4.png" width=200>
-V simbolni obliki določite masni vztrajnostni moment glede na prikazano os <span class="math notranslate nohighlight">\(y\)</span>:
-$<span class="math notranslate nohighlight">\(J_{yy}=\int_0^b y^2\,\rho\,h\,(a-a/b\,y)\,dy.\)</span><span class="math notranslate nohighlight">\(
-Upoštevajte tudi: \)</span>m=a,b,h,\rho/2$. Za izmišljene vrednosti izračunajte numerični rezultat.</p>
+V simbolni obliki določite masni vztrajnostni moment glede na prikazano os <span class="math notranslate nohighlight">\(y\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[J_{yy}=\int_0^b y^2\,\rho\,h\,(a-a/b\,y)\,dy.\]</div>
+<p>Upoštevajte tudi: <span class="math notranslate nohighlight">\(m=a\,b\,h\,\rho/2\)</span>. Za izmišljene vrednosti izračunajte numerični rezultat.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a, b, h, rho, y, m&#39;</span><span class="p">)</span>
@@ -601,9 +602,11 @@ Upoštevajte tudi: \)</span>m=a,b,h,\rho/2$. Za izmišljene vrednosti izračunaj
 </div>
 </div>
 </div>
-<p>Vprašanje 4: S pomočjo zgoraj pridobljenih uteži in vozlišč izračunajte integral s pomočjo Gaussove kvadrature: <span class="math notranslate nohighlight">\(\sum_iw_i\,f(x_i)\)</span>. Pazite na transformacijo mej:
-$<span class="math notranslate nohighlight">\(x=\frac{b+a}{2}+\frac{b-a}{2}\xi\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(\int_a^bf(x)\,dx\approx\frac{b-a}{2}\sum_i A_i\,f(x_i).\)</span>$</p>
+<p>Vprašanje 4: S pomočjo zgoraj pridobljenih uteži in vozlišč izračunajte integral s pomočjo Gaussove kvadrature: <span class="math notranslate nohighlight">\(\sum_iw_i\,f(x_i)\)</span>. Pazite na transformacijo mej:</p>
+<div class="math notranslate nohighlight">
+\[x=\frac{b+a}{2}+\frac{b-a}{2}\xi\]</div>
+<div class="math notranslate nohighlight">
+\[\int_a^bf(x)\,dx\approx\frac{b-a}{2}\sum_i A_i\,f(x_i).\]</div>
 <p>Pripravimo delni rezultat:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
