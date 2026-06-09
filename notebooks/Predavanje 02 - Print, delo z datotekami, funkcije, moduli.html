@@ -752,7 +752,7 @@ pi = 3.14
 </div>
 </div>
 </div>
-<p>Metoda <code class="docutils literal notranslate"><span class="pre">write</span></code> vrne število zapisanih zankov. Če boste v tem trenutku pogledali vsebino datoteke, je velika možnost, da je še prazna. Razlog je v tem, da je vsebina še v medpolnilniku, ki se izprazni na disk samo občasno ali ob zaprtju datoteke (razlog za tako delovanje je v hitrosti zapisa na disk; za podrobnosti glejte dokumentacijo argumenta <code class="docutils literal notranslate"><span class="pre">buffering</span></code> funkcije <code class="docutils literal notranslate"><span class="pre">open</span></code>).</p>
+<p>Metoda <code class="docutils literal notranslate"><span class="pre">write</span></code> vrne število zapisanih znakov. Če boste v tem trenutku pogledali vsebino datoteke, je velika možnost, da je še prazna. Razlog je v tem, da je vsebina še v medpolnilniku, ki se izprazni na disk samo občasno ali ob zaprtju datoteke (razlog za tako delovanje je v hitrosti zapisa na disk; za podrobnosti glejte dokumentacijo argumenta <code class="docutils literal notranslate"><span class="pre">buffering</span></code> funkcije <code class="docutils literal notranslate"><span class="pre">open</span></code>).</p>
 <p>Zapišimo drugo vrstico:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1427,7 +1427,7 @@ slika:)
 <section id="modul-pickle">
 <h3>Modul <code class="docutils literal notranslate"><span class="pre">pickle</span></code><a class="headerlink" href="#modul-pickle" title="Link to this heading">#</a></h3>
 <p>Modul <code class="docutils literal notranslate"><span class="pre">pickle</span></code> bomo velikokrat uporabljali za zelo hitro in kompaktno shranjevanje in branje podatkov.
-<code class="docutils literal notranslate"><span class="pre">pickle</span></code> vrednosti spremenljivke shrani v taki obliki, kot so zapisane v spominu. V primeru racionalnih števil tako  <strong>ne izgublja na natančnosti</strong> (zapis v tekstovno obliko izgublja natančnost, saj definiramo število izpisanih števk, ki pa je lahko manjše od števila decimalnih mest v spominu). Poleg tega pa je zapis v <strong>spominu ponavadi manj zahteven</strong> kakor zapis v tekstovni obliki. Ker vrednosti ni treba pretvarjati v/iz tekstovno/e obliko/e, je pisanje/branje tudi <strong>zelo hitro</strong>! Tukaj si bomo pogledali osnovno uporabo, celovito je <code class="docutils literal notranslate"><span class="pre">pickle</span></code> opisan v  <a class="reference external" href="https://docs.python.org/library/pickle.html">dokumentaciji</a>.</p>
+<code class="docutils literal notranslate"><span class="pre">pickle</span></code> vrednosti spremenljivke shrani v taki obliki, kot so zapisane v spominu. V primeru realnih števil tako  <strong>ne izgublja na natančnosti</strong> (zapis v tekstovno obliko izgublja natančnost, saj definiramo število izpisanih števk, ki pa je lahko manjše od števila decimalnih mest v spominu). Poleg tega pa je zapis v <strong>spominu ponavadi manj zahteven</strong> kakor zapis v tekstovni obliki. Ker vrednosti ni treba pretvarjati v/iz tekstovno/e obliko/e, je pisanje/branje tudi <strong>zelo hitro</strong>! Tukaj si bomo pogledali osnovno uporabo, celovito je <code class="docutils literal notranslate"><span class="pre">pickle</span></code> opisan v  <a class="reference external" href="https://docs.python.org/library/pickle.html">dokumentaciji</a>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">pickle</span></code> ima dve pomembni metodi:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">dump(obj,</span> <span class="pre">file,</span> <span class="pre">protocol=None,</span> <span class="pre">*,</span> <span class="pre">fix_imports=True)</span></code> za shranjevanje objekta <code class="docutils literal notranslate"><span class="pre">obj</span></code>,</p></li>
@@ -1490,7 +1490,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37.9 ms ± 2.64 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43.3 ms ± 2.95 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1505,7 +1505,7 @@ slika:)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>908 μs ± 58.8 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.02 ms ± 34.3 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>

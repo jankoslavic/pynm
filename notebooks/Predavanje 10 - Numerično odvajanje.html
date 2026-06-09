@@ -484,7 +484,7 @@ f'(x)=\lim_{\Delta x \rightarrow 0}\frac{f(x+\Delta x)-f(x)}{\Delta x}.
 <li><p>računanje odvoda <strong>neposredno iz vrednosti iz tabele</strong>.</p></li>
 </ol>
 <p>V okviru tega poglavja se bomo seznanili s tem, kako numerično izračunamo odvod funkcije <span class="math notranslate nohighlight">\(f(x)\)</span>; pri tem so vrednosti funkcije <span class="math notranslate nohighlight">\(f(x)\)</span> podane tabelarično (pari <span class="math notranslate nohighlight">\(x_i\)</span>, <span class="math notranslate nohighlight">\(y_i\)</span>), kakor je prikazano na sliki:
-![Odvajanje](./fig/odvajanje_tabela.png‘ width=400&gt;
+<img src="./fig/odvajanje_tabela.png" width=400>
 Najprej se bomo osredotočili na ekvidistantno, s korakom <span class="math notranslate nohighlight">\(h\)</span>, razporejene vrednosti <span class="math notranslate nohighlight">\(x_i\)</span>; vrednosti funkcije pa bodo <span class="math notranslate nohighlight">\(y_i=f(x_i)\)</span>.</p>
 <p>Glede na zgornjo definicijo odvoda, bi prvi odvod (za mesto <span class="math notranslate nohighlight">\(i\)</span>) lahko zapisali:</p>
 <div class="math notranslate nohighlight">
@@ -1752,7 +1752,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_31852\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_19000\1408319698.py:2: RuntimeWarning: invalid value encountered in divide
   f1_ocena = (fun(x+h, dtype=dtype)-fun(x-h,dtype=dtype))/(2*dtype(h))
 </pre></div>
 </div>
@@ -1995,10 +1995,10 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1ce7c2f3fe0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x24cfde92ae0&gt;
 </pre></div>
 </div>
-<img alt="../_images/d06daec591c438b463a646196ffea2f3befb1b152773e622cc6a04fe52e228fc.png" src="../_images/d06daec591c438b463a646196ffea2f3befb1b152773e622cc6a04fe52e228fc.png" />
+<img alt="../_images/8138a32c86ef1b65ab3094a882e757cb27ddbd2df164e8a3e93768c20076b264.png" src="../_images/8138a32c86ef1b65ab3094a882e757cb27ddbd2df164e8a3e93768c20076b264.png" />
 </div>
 </div>
 <p><strong>Vprašanje 2:</strong> Simbolno je podana funkcija <span class="math notranslate nohighlight">\(f(x)\)</span> in njen odvod, <span class="math notranslate nohighlight">\(f'(x)\)</span>.</p>
@@ -2069,7 +2069,7 @@ f_o'(x_i)=\frac{1}{h}\left(y_{i+1}-y_i\right)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Podatek</span>
-<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>

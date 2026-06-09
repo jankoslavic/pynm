@@ -1771,7 +1771,7 @@ odstranjeni element: 1
 <p>kar pomeni, da se seznam <code class="docutils literal notranslate"><span class="pre">s</span></code> razreže od elementa <code class="docutils literal notranslate"><span class="pre">i</span></code> do <code class="docutils literal notranslate"><span class="pre">j</span></code>	po koraku <code class="docutils literal notranslate"><span class="pre">k</span></code>. Če katerega elementa ne podamo potem se uporabi (logična) vrednost:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">i</span></code> je privzeto 0, kar pomeni prvi element,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">j</span></code> je privzeto -1, kar pomeni zadnji element,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">j</span></code> je privzeto <code class="docutils literal notranslate"><span class="pre">len(s)</span></code> (dolžina zaporedja), zato je vključen tudi zadnji element,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">k</span></code> je privzeto 1.</p></li>
 </ul>
 <p>Prvi znak je torej:</p>
@@ -2061,7 +2061,7 @@ g = 9.81
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41.2 μs ± 841 ns per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43.1 μs ± 3.53 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2075,7 +2075,7 @@ g = 9.81
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42.1 μs ± 5.24 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41.8 μs ± 3.37 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>

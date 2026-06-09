@@ -478,7 +478,7 @@ document.write(`
 <section id="zaokrozitvena-napaka">
 <h3>Zaokrožitvena napaka<a class="headerlink" href="#zaokrozitvena-napaka" title="Link to this heading">#</a></h3>
 <p>V nadaljevanju si bomo pogledali nekatere omejitve in izzive numeričnega pristopa. Prva omejitev je, da so v računalniku realne vrednosti vedno zapisane s končno natančnostjo. V Pythonu se števila pogosto zapišejo v dvojni natančnosti s približno 15 signifikantnimi števkami.</p>
-<p>Število z dvojno natančnostjo se v Pythonu imenuje <strong>float64</strong> in je zapisano v spomin v binarni obliki v 64 bitih (11 bitov eksponent in 53 bitov mantisa (1 bit za predznak)). Ker je mantisa definirana na podlagi 52 binarnih števk, se lahko pojavi pri njegovem zapisu <em>relativna napaka</em> največ <span class="math notranslate nohighlight">\(\epsilon\approx2.2\cdot 10^{-16}\)</span>. Ta napaka se imenuje <strong>osnovna zaokrožitvena napaka</strong> in se lahko pojavi pri vsakem vmesnem
+<p>Število z dvojno natančnostjo se v Pythonu imenuje <strong>float64</strong> in je zapisano v spomin v binarni obliki v 64 bitih (11 bitov eksponent in 52 bitov mantisa (1 bit za predznak)). Ker je mantisa definirana na podlagi 52 binarnih števk, se lahko pojavi pri njegovem zapisu <em>relativna napaka</em> največ <span class="math notranslate nohighlight">\(\epsilon\approx2.2\cdot 10^{-16}\)</span>. Ta napaka se imenuje <strong>osnovna zaokrožitvena napaka</strong> in se lahko pojavi pri vsakem vmesnem
 izračunu!</p>
 <p>Če je korakov veliko, lahko napaka zelo naraste in zato je pomembno, da je njen vpliv na rezultat čim manjši!</p>
 <p>Spodaj je primer podrobnejših informacij za tip podatkov z dvojno natančnostjo (<code class="docutils literal notranslate"><span class="pre">float</span></code>); pri tem si pomagamo z vgrajenim modulom <code class="docutils literal notranslate"><span class="pre">sys</span></code> za klic parametrov in funkcij python sistema (<a class="reference external" href="https://docs.python.org/3/library/sys.html">dokumentacija</a>):</p>
@@ -817,7 +817,7 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cond</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>ki sprejme dva parametra: matriko <code class="docutils literal notranslate"><span class="pre">x</span></code> in opcijski tip norme <code class="docutils literal notranslate"><span class="pre">p</span></code> (privzeti tip je <code class="docutils literal notranslate"><span class="pre">None</span></code>; v tem primeru se uporabi Evklidska/Frobeniusova norma).</p>
+<p>ki sprejme dva parametra: matriko <code class="docutils literal notranslate"><span class="pre">x</span></code> in opcijski tip norme <code class="docutils literal notranslate"><span class="pre">p</span></code> (privzeti tip je <code class="docutils literal notranslate"><span class="pre">None</span></code>; v tem primeru se uporabi 2-norma (razmerje največje in najmanjše singularne vrednosti); za Frobeniusovo normo je treba podati <code class="docutils literal notranslate"><span class="pre">p='fro'</span></code>).</p>
 <p>Če je število pogojenosti majhno, potem je matrika dobro pogojena in obratno - pri slabi pogojenosti se število pogojenosti zelo poveča.</p>
 <p>Žal je izračun pogojenosti matrike numerično relativno zahteven.</p>
 <section id="primer-slabo-pogojene-matrike">
@@ -934,7 +934,7 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 <span class="s1">število neznank: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s1">, det(A)=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span>
 <span class="n">Ab</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span> <span class="o">-=</span> <span class="n">Ab</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
 <span class="n">x1_</span> <span class="o">=</span> <span class="n">Ab</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="n">Ab</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">x0_</span> <span class="o">=</span> <span class="p">(</span><span class="n">Ab</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">Ab</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span><span class="o">/</span><span class="n">Ab</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">x0_</span> <span class="o">=</span> <span class="p">(</span><span class="n">Ab</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">Ab</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x1_</span><span class="p">)</span><span class="o">/</span><span class="n">Ab</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -959,7 +959,7 @@ E_{m-1}: &amp; A_{m-1,0}\,x_0&amp;+&amp;A_{m-1,1}\,x_1&amp;+&amp; \ldots &amp;+&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[np.float64(600002.9999960692), np.float64(-60000.00000000661)]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[np.float64(60003.00000000661), np.float64(-60000.00000000661)]
 </pre></div>
 </div>
 </div>

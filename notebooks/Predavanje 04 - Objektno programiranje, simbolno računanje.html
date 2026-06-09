@@ -618,7 +618,7 @@ document.write(`
     <span class="o">.</span>
 </pre></div>
 </div>
-<p>Opomba: tudi, če razredu ne definiramo <em>starša</em>, deduje razred <code class="docutils literal notranslate"><span class="pre">class</span></code>.</p>
+<p>Opomba: tudi, če razredu ne definiramo <em>starša</em>, deduje razred <code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
 <p>Primer, ko novi razred <code class="docutils literal notranslate"><span class="pre">Kvadrat</span></code> podeduje obstoječega (<code class="docutils literal notranslate"><span class="pre">Pravokotnik</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1196,7 +1196,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62.9 ms ± 3.98 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>155 ms ± 41.1 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -1231,7 +1231,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.4 μs ± 2.69 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13 μs ± 2.5 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1289,7 +1289,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/0865c1ddf41cf8736d4ab0fa532ab736ad537dcb5348017d621ee86978aeaa6b.png" src="../_images/0865c1ddf41cf8736d4ab0fa532ab736ad537dcb5348017d621ee86978aeaa6b.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x2620cf3fe60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.backends.matplotlibbackend.matplotlib.MatplotlibBackend at 0x1278b6acb60&gt;
 </pre></div>
 </div>
 </div>
@@ -1720,7 +1720,7 @@ document.write(`
 <img alt="../_images/294dce18e8c07e6fdb70e7f5c58d0b5add61b77dea190a4b5f065f8cc748c4cb.png" src="../_images/294dce18e8c07e6fdb70e7f5c58d0b5add61b77dea190a4b5f065f8cc748c4cb.png" />
 </div>
 </div>
-<p>Šele ko uporabimo metodo <code class="docutils literal notranslate"><span class="pre">doit_()</span></code>, se izračun izvede:</p>
+<p>Šele ko uporabimo metodo <code class="docutils literal notranslate"><span class="pre">doit()</span></code>, se izračun izvede:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
@@ -2145,7 +2145,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">eq</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">)</span>
-<span class="n">sol</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">nsolve</span><span class="p">(</span><span class="n">en</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">nsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">sol</span>
 </pre></div>
 </div>
