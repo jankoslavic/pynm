@@ -143,3 +143,7 @@ dmypy.json
 /notebooks/2. Fourier transform and linear systems.ipynb
 /notebooks/1. Fourierjeve vrste.ipynb
 /notebooks/Untitled.ipynb
+
+# Claude Code (lokalne opombe, ne objavljamo)
+CLAUDE.md
+.claude/
