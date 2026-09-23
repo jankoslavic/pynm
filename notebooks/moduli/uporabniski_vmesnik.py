@@ -1,18 +1,18 @@
 __author__ = 'Janko Slavic'
 
 import sys
-from PyQt6 import QtCore
-from PyQt6 import QtGui
-from PyQt6 import QtWidgets
+from PySide6 import QtCore
+from PySide6 import QtGui
+from PySide6 import QtWidgets
 
 import time
 import numpy as np
 
 import matplotlib
 
-matplotlib.use('Qt5Agg')
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
-from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
+matplotlib.use('QtAgg')
+from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
+from matplotlib.backends.backend_qtagg import NavigationToolbar2QT as NavigationToolbar
 from matplotlib.figure import Figure
 
 
@@ -127,7 +127,7 @@ class MainWindow(QtWidgets.QMainWindow):
                                            triggered=self.file_show_help)
 
     def get_figure(self):
-        self.fig = Figure(figsize=(600, 600), dpi=72, facecolor=(1, 1, 1), edgecolor=(0, 0, 0))
+        self.fig = Figure(figsize=(6, 6), dpi=72, facecolor=(1, 1, 1), edgecolor=(0, 0, 0))
         self.ax = self.fig.add_subplot(111)
 
         self.canvas = FigureCanvasQTAgg(self.fig)
