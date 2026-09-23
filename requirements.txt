@@ -15,6 +15,5 @@ lvm_read
 pytest
 numba
 findiff
-jupyter-book>=0.15,<2
-ghp-import
-pyppeteer
+jupyter-book>=2.1
+pyyaml

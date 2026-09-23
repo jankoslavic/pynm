@@ -1,0 +1,41 @@
+# Jupyter Book 2 / MyST konfiguracija knjige.
+# Gradnja:  jupyter book build --html          (iz shranjenih izhodov beležnic)
+#           jupyter book build --html --execute (ponovno izvede vse beležnice)
+# Predogled: jupyter book start
+# Dokumentacija: https://mystmd.org/guide
+version: 1
+project:
+  title: Numerične metode v ekosistemu Pythona
+  authors:
+    - name: Janko Slavič
+      affiliations:
+        - Fakulteta za strojništvo, Univerza v Ljubljani
+  github: jankoslavic/pynm
+  license:
+    content: CC-BY-NC-4.0
+  bibliography:
+    - references.bib
+  toc:
+    - file: README.md
+    - file: notebooks/Studijski in izpitni red.ipynb
+    - file: notebooks/Predavanje 01 - Uvod v Python.ipynb
+    - file: notebooks/Predavanje 02 - Print, delo z datotekami, funkcije, moduli.ipynb
+    - file: notebooks/Predavanje 03 - Moduli, numpy, matplotlib.ipynb
+    - file: notebooks/Predavanje 04 - Objektno programiranje, simbolno racunanje.ipynb
+    - file: notebooks/Predavanje 05 - Uvod v numericne metode in sistemi linearnih enacb 1.ipynb
+    - file: notebooks/Predavanje 06 - Sistemi linearnih enacb 2.ipynb
+    - file: notebooks/Predavanje 07 - Interpolacija.ipynb
+    - file: notebooks/Predavanje 08 - Aproksimacija.ipynb
+    - file: notebooks/Predavanje 09 - Resevanje enacb.ipynb
+    - file: notebooks/Predavanje 10 - Numericno odvajanje.ipynb
+    - file: notebooks/Predavanje 11 - Numericno integriranje.ipynb
+    - file: notebooks/Predavanje 12 - Numericno resevanje diferencialnih enacb - zacetni problem.ipynb
+    - file: notebooks/Predavanje 13 - Numericno resevanje diferencialnih enacb - robni problem.ipynb
+    - file: notebooks/Predavanje 14 - Testiranje pravilnosti kode, uporabniski vmesnik.ipynb
+    - file: literatura.md
+site:
+  template: book-theme
+  options:
+    logo: logo.png
+    logo_text: Numerične metode
+    folders: true

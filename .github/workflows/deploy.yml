@@ -1,12 +1,22 @@
 name: deploy-book
 
-# Build the Jupyter Book (executing every notebook, per _config.yml) and
-# publish the HTML to GitHub Pages.
+# Zgradi knjigo z Jupyter Book 2 (MyST) in jo objavi na GitHub Pages.
+# Privzeto se beležnice NE izvajajo: knjiga se zgradi iz izhodov, shranjenih v
+# repozitoriju (< 1 min). Ročni zagon (workflow_dispatch) z "execute: true"
+# ponovno izvede vse beležnice (~10 min) - uporabi za preverjanje, da vsa koda teče.
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      execute:
+        description: 'Ponovno izvedi vse beležnice'
+        type: boolean
+        default: false
+
+env:
+  BASE_URL: /${{ github.event.repository.name }}
 
 permissions:
   contents: read
@@ -26,41 +36,37 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
       - uses: actions/setup-python@v7
         with:
-          python-version: '3.11'
+          python-version: '3.12'
           cache: pip
 
-      - name: System libraries (for Qt / headless rendering)
+      - name: Install Jupyter Book
+        run: pip install "jupyter-book>=2.1" pyyaml
+
+      - name: Install Python dependencies (execution only)
+        if: ${{ inputs.execute }}
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            libegl1 libgl1 libxkbcommon0 libdbus-1-3 libglib2.0-0 xvfb
+          sudo apt-get install -y --no-install-recommends libegl1 libgl1 libxkbcommon0 libdbus-1-3 libglib2.0-0 xvfb
+          pip install -r requirements.txt jupyter-server ipykernel
 
-      - name: Install Python dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+      - name: Build the book
+        if: ${{ !inputs.execute }}
+        run: jupyter book build --html
 
-      - name: Build the book (executes all notebooks)
-        run: xvfb-run -a jupyter-book build .
+      - name: Build the book (executing all notebooks)
+        if: ${{ inputs.execute }}
+        run: xvfb-run -a jupyter book build --html --execute
 
-      - name: Copy figures into the HTML output
-        if: always()
-        run: |
-          mkdir -p _build/html/notebooks/fig
-          cp -r notebooks/fig/. _build/html/notebooks/fig/ || true
+      - name: Redirects for old (Sphinx) URLs
+        run: python .github/redirects.py _build/html
 
-      - name: Upload build log on failure
-        if: failure()
-        uses: actions/upload-artifact@v7
-        with:
-          name: build-log
-          path: _build/html/reports
-          if-no-files-found: ignore
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v5
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: _build/html
 
