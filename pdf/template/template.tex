@@ -1,0 +1,130 @@
+% Predloga za PDF celotne knjige (MyST / Jupyter Book 2, prevajanje z xelatex).
+% Izpeljana iz predloge plain_latex_book (Rowan Cockett, Curvenote, CC-BY-4.0).
+% MyST v predlogo vstavi dodatne pakete (oznaka IMPORTS) in \include poglavij (oznaka CONTENT).
+\documentclass[a4paper,11pt,oneside]{book}
+\usepackage[top=2.2cm, bottom=2.2cm, left=2.4cm, right=2.4cm]{geometry}
+
+% Pisave: Latin Modern (OpenType) prek fontspec, da so šumniki in vsi Unicode znaki na voljo.
+\usepackage{fontspec}
+\setmainfont{lmroman10-regular.otf}[
+  BoldFont=lmroman10-bold.otf, ItalicFont=lmroman10-italic.otf,
+  BoldItalicFont=lmroman10-bolditalic.otf, Ligatures=TeX]
+\setsansfont{lmsans10-regular.otf}[
+  BoldFont=lmsans10-bold.otf, ItalicFont=lmsans10-oblique.otf,
+  BoldItalicFont=lmsans10-boldoblique.otf, Ligatures=TeX]
+\setmonofont{lmmono10-regular.otf}[
+  BoldFont=lmmonolt10-bold.otf, ItalicFont=lmmono10-italic.otf,
+  BoldItalicFont=lmmonolt10-boldoblique.otf, Scale=MatchLowercase]
+\usepackage[[-options.language-], shorthands=off]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+% Slike nikoli čez širino besedila (MyST "width=400" px prevede v 4\linewidth)
+\usepackage{adjustbox}
+\let\Oincludegraphics\includegraphics
+% (neobvezni argument je zapisan kot [{#1}], ker ima predloga jtex rezervirano zaporedje oglati-oklepaj-lojtra)
+\RenewDocumentCommand{\includegraphics}{O{} m}{%
+  \adjustbox{max width=\linewidth, max totalheight=0.5\textheight}{\Oincludegraphics[{#1}]{#2}}}
+
+% Glava strani: ime poglavja levo (brez velikih črk, manjša pisava), številka strani desno
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape\nouppercase{\leftmark}}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{natbib}
+\usepackage{xcolor}
+\usepackage{changepage}
+\usepackage{framed}
+\usepackage{url}
+\usepackage{hyperref}
+\bibliographystyle{abbrvnat}
+
+% Koda in izpisi: MyST oddaja okolje verbatim; z fvextra dobimo prelom dolgih vrstic in levo črto.
+\usepackage{fvextra}
+\RecustomVerbatimEnvironment{verbatim}{Verbatim}{%
+  fontsize=\small, breaklines, breakanywhere, breaksymbolleft={},
+  frame=leftline, framerule=1.5pt, rulecolor=\color{codebar}, framesep=3mm, xleftmargin=1mm}
+
+% Kompaktnejši seznami
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=0pt}
+
+% Vsaka beležnica je svoje poglavje: MyST naslov strani izvozi kot \section,
+% nižje naslove pa kot \subsection ... ; vse premaknemo za eno raven navzgor.
+\let\Osection\section
+\let\Osubsection\subsection
+\let\Osubsubsection\subsubsection
+\let\section\chapter
+\let\subsection\Osection
+\let\subsubsection\Osubsection
+\let\paragraph\Osubsubsection
+\numberwithin{equation}{chapter}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{1}
+
+[- IMPORTS -]
+
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
+\definecolor{codebar}{gray}{0.75}
+\definecolor{quoteshade}{rgb}{0.95, 0.95, 1}
+\hypersetup{
+  colorlinks,
+  linkcolor={darkblue},
+  citecolor={darkblue},
+  urlcolor={darkblue},
+  pdftitle={[-doc.title-]},
+  pdfauthor={[#- for author in doc.authors #][-author.name-][# if not loop.last #], [# endif #][#- endfor -#]}
+}
+
+% Navedki (blockquote) z barvnim robom
+\renewenvironment{quote}{%
+  \def\FrameCommand{%
+    \hspace{1pt}%
+    {\color{darkblue}\vrule width 2pt}%
+    {\color{quoteshade}\vrule width 4pt}%
+    \colorbox{quoteshade}%
+  }%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}%
+  \noindent\hspace{-8pt}%
+  \begin{adjustwidth}{0pt}{0pt}%
+  \vspace{2pt}\vspace{2pt}%
+}
+{%
+  \vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+
+\title{\Huge \textbf{[-doc.title-]}[# if doc.subtitle #] \\[1ex] \huge [-doc.subtitle-][# endif #]%
+[# if options.online_url #]\\[3ex] \normalsize \url{[-options.online_url-]}[# endif #]}
+\author{\textsc{
+[#- for author in doc.authors #]
+  [#- if not loop.first #] in [# endif #][-author.name-][# if not loop.last and not loop.first #], [# endif #]
+[#- endfor -#]
+}}
+\date{\today}
+
+\begin{document}
+\sloppy
+\emergencystretch=1.5em
+
+\frontmatter
+\maketitle
+\tableofcontents
+
+\mainmatter
+\setcounter{chapter}{[-options.first_chapter-]}
+\addtocounter{chapter}{-1}
+
+[- CONTENT -]
+
+[# if doc.bibliography #]
+\bibliography{[- doc.bibliography | join(", ") -]}
+[# endif #]
+
+\end{document}

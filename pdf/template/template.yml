@@ -1,0 +1,50 @@
+myst: v1
+title: Knjiga (LaTeX, xelatex)
+description: >
+  Predloga za izvoz celotne knjige v PDF (Jupyter Book 2 / MyST). Izpeljana iz
+  predloge plain_latex_book (Rowan Cockett, Curvenote, CC-BY-4.0): dodani so
+  fontspec (šumniki), babel, poglavje za vsako beležnico in prelom dolgih vrstic kode.
+version: '1.0.0'
+license: CC-BY-4.0
+tags:
+  - book
+doc:
+  - id: title
+    required: true
+  - id: subtitle
+  - id: authors
+    required: true
+options:
+  - id: language
+    type: string
+    description: Jezik za babel (slovene, english ...)
+    default: slovene
+  - id: online_url
+    type: string
+    description: Naslov spletne različice knjige (izpiše se na naslovnici)
+  - id: first_chapter
+    type: number
+    description: Številka prvega poglavja (0, če je pred predavanji še uvodno poglavje)
+    default: 1
+files:
+  - template.tex
+packages:
+  - amsmath
+  - amssymb
+  - babel
+  - booktabs
+  - caption
+  - changepage
+  - enumitem
+  - fontspec
+  - framed
+  - fvextra
+  - adjustbox
+  - fancyhdr
+  - geometry
+  - graphicx
+  - hyperref
+  - lm
+  - natbib
+  - url
+  - xcolor

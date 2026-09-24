@@ -13,6 +13,17 @@ project:
   github: jankoslavic/pynm
   license:
     content: CC-BY-NC-4.0
+  # PDF celotne knjige: python .github/build_pdf.py (glej opis v skripti)
+  exports:
+    - format: pdf
+      template: ./pdf/template
+      output: _build/exports/pynm.pdf
+      language: slovene
+      online_url: https://jankoslavic.github.io/pynm/
+      first_chapter: 0
+  downloads:
+    - url: https://jankoslavic.github.io/pynm/pynm.pdf
+      title: Celotna knjiga (PDF)
   toc:
     - file: README.md
     - file: notebooks/Studijski in izpitni red.ipynb

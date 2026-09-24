@@ -6,6 +6,8 @@ Tukaj predstavljena vsebina je osnova za predmet Numerične metode, ki se pouču
 
 Predloge predavanj (beležnice Jupyter) se nahajajo v mapi `notebooks`, lahko pa si jih ogledate v [spletni knjigi](https://jankoslavic.github.io/pynm/README.html) (povezave so navedene spodaj).
 
+Celotna knjiga je na voljo tudi kot [PDF](https://jankoslavic.github.io/pynm/pynm.pdf) (samodejno zgrajen ob vsaki objavi).
+
 Prosimo, da si preberete [študijski in izpitni red](https://jankoslavic.github.io/pynm/notebooks/studijski-in-izpitni-red/), tam so navedene ključne informacije v zvezi z opravljanjem predmeta.
 
 ## Razpored predavanj

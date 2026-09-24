@@ -4,6 +4,7 @@ name: deploy-book
 # Privzeto se beležnice NE izvajajo: knjiga se zgradi iz izhodov, shranjenih v
 # repozitoriju (< 1 min). Ročni zagon (workflow_dispatch) z "execute: true"
 # ponovno izvede vse beležnice (~10 min) - uporabi za preverjanje, da vsa koda teče.
+# Po gradnji HTML nastane še PDF celotne knjige (.github/build_pdf.py, predloga pdf/template).
 
 on:
   push:
@@ -65,6 +66,25 @@ jobs:
 
       - name: Redirects for old (Sphinx) URLs
         run: python .github/redirects.py _build/html
+
+      # PDF celotne knjige (xelatex); ob napaki se spletna knjiga vseeno objavi (brez novega PDF-ja).
+      - name: Install TeX Live (for the PDF)
+        uses: teatimeguest/setup-texlive-action@v3
+        with:
+          cache: true
+          packages: |
+            scheme-basic
+            xetex dvipdfmx latexmk
+            fontspec lm unicode-data
+            babel babel-slovenian babel-english hyphen-slovenian
+            amsmath amsfonts adjustbox collectbox booktabs caption changepage enumitem
+            fancyhdr fancyvrb fvextra upquote lineno framed geometry graphics graphics-cfg
+            graphics-def hyperref hycolor url xcolor xkeyval natbib etoolbox iftex
+            kvoptions kvsetkeys kvdefinekeys ltxcmds pdftexcmds pdfescape infwarerr
+            bigintcalc bitset intcalc uniquecounter refcount rerunfilecheck gettitlestring stringenc
+      - name: Build the PDF
+        continue-on-error: true
+        run: python .github/build_pdf.py
 
       - uses: actions/upload-pages-artifact@v5
         with:
