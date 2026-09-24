@@ -1,0 +1,10 @@
+# Paketi TeX Live, ki jih potrebuje pdf/template/template.tex (namesti jih deploy.yml v TinyTeX).
+# Seznam je izpeljan iz .fls zapisa uspešne gradnje; sprememba te datoteke obnovi CI predpomnilnik.
+xetex dvipdfmx latexmk
+fontspec lm unicode-data
+babel babel-slovenian babel-english hyphen-slovenian
+amsmath amsfonts adjustbox collectbox booktabs caption changepage enumitem
+fancyhdr fancyvrb fvextra upquote lineno framed geometry graphics graphics-cfg
+graphics-def hyperref hycolor url xcolor xkeyval natbib etoolbox iftex
+kvoptions kvsetkeys kvdefinekeys ltxcmds pdftexcmds pdfescape infwarerr
+bigintcalc bitset intcalc uniquecounter refcount rerunfilecheck gettitlestring stringenc

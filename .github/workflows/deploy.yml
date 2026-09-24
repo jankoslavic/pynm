@@ -68,20 +68,19 @@ jobs:
         run: python .github/redirects.py _build/html
 
       # PDF celotne knjige (xelatex); ob napaki se spletna knjiga vseeno objavi (brez novega PDF-ja).
-      - name: Install TeX Live (for the PDF)
-        uses: teatimeguest/setup-texlive-action@v3
+      - name: Cache TinyTeX
+        id: tinytex
+        uses: actions/cache@v5
         with:
-          cache: true
-          packages: |
-            scheme-basic
-            xetex dvipdfmx latexmk
-            fontspec lm unicode-data
-            babel babel-slovenian babel-english hyphen-slovenian
-            amsmath amsfonts adjustbox collectbox booktabs caption changepage enumitem
-            fancyhdr fancyvrb fvextra upquote lineno framed geometry graphics graphics-cfg
-            graphics-def hyperref hycolor url xcolor xkeyval natbib etoolbox iftex
-            kvoptions kvsetkeys kvdefinekeys ltxcmds pdftexcmds pdfescape infwarerr
-            bigintcalc bitset intcalc uniquecounter refcount rerunfilecheck gettitlestring stringenc
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/texlive-packages.txt') }}
+      - name: Install TinyTeX (for the PDF)
+        if: steps.tinytex.outputs.cache-hit != 'true'
+        run: |
+          wget -qO- https://yihui.org/tinytex/install-bin-unix.sh | sh
+          ~/.TinyTeX/bin/x86_64-linux/tlmgr install $(grep -v '^#' .github/texlive-packages.txt | tr '\n' ' ')
+      - name: Add TinyTeX to PATH
+        run: echo "$HOME/.TinyTeX/bin/x86_64-linux" >> "$GITHUB_PATH"
       - name: Build the PDF
         continue-on-error: true
         run: python .github/build_pdf.py
