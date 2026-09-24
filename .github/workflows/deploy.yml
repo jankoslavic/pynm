@@ -81,6 +81,8 @@ jobs:
           ~/.TinyTeX/bin/x86_64-linux/tlmgr install $(grep -v '^#' .github/texlive-packages.txt | tr '\n' ' ')
       - name: Add TinyTeX to PATH
         run: echo "$HOME/.TinyTeX/bin/x86_64-linux" >> "$GITHUB_PATH"
+      - name: Install ImageMagick (MyST converts .gif/.svg images for LaTeX with it)
+        run: sudo apt-get install -y --no-install-recommends imagemagick librsvg2-bin
       - name: Build the PDF
         continue-on-error: true
         run: python .github/build_pdf.py
