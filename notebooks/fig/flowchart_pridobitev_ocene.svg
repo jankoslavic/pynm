@@ -358,24 +358,19 @@
          y="35.042282"
          id="text819"><tspan
            sodipodi:role="line"
-           id="tspan817"
            x="12.22331"
-           y="35.042282"
-           style="stroke-width:0.264583">Vaje  ≥  50 %</tspan><tspan
-           sodipodi:role="line"
-           x="12.22331"
-           y="38.922844"
+           y="36.982563"
            style="stroke-width:0.264583"
            id="tspan821">Domače naloge  ≥  50 %</tspan><tspan
            id="tspan886"
            sodipodi:role="line"
            x="12.22331"
-           y="42.803402"
+           y="40.863121"
            style="stroke-width:0.264583">Projekt  ≥  50 %</tspan><tspan
            id="tspan890"
            sodipodi:role="line"
            x="12.22331"
-           y="46.68396"
+           y="44.743679"
            style="stroke-width:0.264583" /></text>
     </g>
     <g
@@ -396,18 +391,13 @@
          y="56.264214"
          id="text819-6"><tspan
            sodipodi:role="line"
-           id="tspan817-5"
            x="93.616501"
-           y="56.264214"
-           style="stroke-width:0.264583">Vaje   ≥  40 %</tspan><tspan
-           sodipodi:role="line"
-           x="93.616501"
-           y="60.144768"
+           y="58.204491"
            style="stroke-width:0.264583"
            id="tspan821-9">Domače naloge  ≥  40 %</tspan><tspan
            sodipodi:role="line"
            x="93.616501"
-           y="64.025322"
+           y="62.085045"
            style="stroke-width:0.264583"
            id="tspan823-8">Projekt  ≥  40 %</tspan></text>
     </g>
@@ -459,71 +449,5 @@
          x="56.121742"
          id="tspan891-0-5-5"
          sodipodi:role="line">Uspešno</tspan></text>
-    <g
-       inkscape:export-ydpi="183.6114"
-       inkscape:export-xdpi="183.6114"
-       transform="translate(186.08676,-16.254721)"
-       id="g975">
-      <g
-         id="g1228"
-         transform="translate(1.3229166,5.1026786)">
-        <g
-           id="g960">
-          <rect
-             style="opacity:1;fill:#ffccaa;fill-opacity:1;stroke:none;stroke-width:0.51850188;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
-             id="rect1159"
-             width="90.336304"
-             height="40.443451"
-             x="6.9151521"
-             y="69.753128" />
-          <text
-             xml:space="preserve"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;line-height:1;font-family:Cambria;-inkscape-font-specification:Cambria;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-             x="9.3544331"
-             y="77.838989"
-             id="text1096"><tspan
-               sodipodi:role="line"
-               id="tspan1094"
-               x="9.3544331"
-               y="77.838989"
-               style="font-size:6.35px;stroke-width:0.264583">Ocenjevanje vaj:</tspan><tspan
-               sodipodi:role="line"
-               x="9.3544331"
-               y="82.268173"
-               id="tspan1098" /><tspan
-               sodipodi:role="line"
-               x="9.3544331"
-               y="86.148735"
-               style="stroke-width:0.264583"
-               id="tspan1100">- Ocenjeni ste lahko na vsaki vaji</tspan><tspan
-               sodipodi:role="line"
-               x="9.3544331"
-               y="90.029289"
-               style="stroke-width:0.264583"
-               id="tspan1102">- Možne ocene: 0 %, 50 %, 75 % in 100 %</tspan><tspan
-               sodipodi:role="line"
-               x="9.3544331"
-               y="93.909843"
-               style="stroke-width:0.264583"
-               id="tspan1104">- Če niste prisotni na vaji: 0 %</tspan><tspan
-               sodipodi:role="line"
-               x="9.3544331"
-               y="97.790398"
-               id="tspan1106" /><tspan
-               sodipodi:role="line"
-               x="9.3544331"
-               y="101.67095"
-               style="stroke-width:0.264583"
-               id="tspan1108">- Negativno oceno vaje lahko popravljate</tspan><tspan
-               sodipodi:role="line"
-               x="9.3544331"
-               y="105.55151"
-               style="stroke-width:0.264583"
-               id="tspan1110">  na <tspan
-   style="font-weight:bold"
-   id="tspan1112">naslednjih</tspan> govorilnih urah (dobite max. 75 %)</tspan></text>
-        </g>
-      </g>
-    </g>
   </g>
 </svg>
