@@ -4,7 +4,9 @@ Beležnic v repozitoriju ne spreminja: knjigo najprej prepiše v _build/pdf_src/
 pripravi kopije beležnic za tisk:
   * odstrani HTML izhode z vdelanimi base64 podatki (zvok, video ...), ki jih LaTeX ne zna;
   * dodatne naslove 1. ravni ("# Dodatno", "# Vprašanja za vaje") zniža na 2. raven, da ima
-    vsaka beležnica en sam naslov (= poglavje) in MyST enako preslika nižje ravni.
+    vsaka beležnica en sam naslov (= poglavje) in MyST enako preslika nižje ravni;
+  * zložene razdelke (<details><summary>…</summary> … </details>) razpre, sicer bi LaTeX
+    izpustil vso njihovo vsebino; povzetek postane krepak odstavek.
 Rezultat: _build/exports/<ime>.pdf; če obstaja _build/html/, PDF skopira tudi tja
 (objavi se skupaj s spletno knjigo).
 
@@ -47,6 +49,7 @@ for name in os.listdir(ROOT):
 
 # 2. priprava beležnic
 H1 = re.compile(r'^# (?!#)')
+SUMMARY = re.compile(r'<details[^>]*>\s*<summary>(?:<b>)?(.*?)(?:</b>)?</summary>', re.S)
 for rel in toc_files:
     if not rel.endswith('.ipynb'):
         continue
@@ -81,6 +84,10 @@ for rel in toc_files:
                     seen_title = True
                 lines.append(line)
             cell['source'] = '\n'.join(lines)
+            if '<details' in cell['source']:
+                cell['source'] = SUMMARY.sub(lambda m: f'**{m.group(1).strip()}**', cell['source'])
+                cell['source'] = cell['source'].replace('</details>', '')
+                changed.append('razprt <details>')
         for out in cell.get('outputs', []):
             data = out.get('data', {})
             html = ''.join(data.get('text/html', []))
