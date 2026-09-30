@@ -147,3 +147,5 @@ dmypy.json
 # Claude Code (lokalne opombe, ne objavljamo)
 CLAUDE.md
 .claude/
+
+_temp/
