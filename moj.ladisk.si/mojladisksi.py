@@ -12,8 +12,21 @@ int_type_names = [dtype.__name__ for dtype in np.signedinteger.__subclasses__() 
 float_type_names = [dtype.__name__ for dtype in np.floating.__subclasses__()] + ['float', 'Float', 'Zero']
 
 def pripravi_resitev(odgovor):
-    """ 
+    """
     Funkcija pripravi rešitev za posredovanje na strežnik.
+
+    Rezultat gre še skozi JSON, tako da vsebuje samo tipe, ki jih JSON pozna.
+    Študentov odgovor gre čez JSON že ob pošiljanju, strežnik pa svojo rešitev
+    izračuna lokalno in je ne serializira; brez tega bi tuple na strežniku ostal
+    tuple, pri študentu pa bi postal list, in primerjava bi spodletela. Tip
+    odgovora se ne izgubi, zapisan je v ključu 'tip'.
+    """
+    return json.loads(json.dumps(_pripravi_resitev(odgovor), default=data_to_json))
+
+
+def _pripravi_resitev(odgovor):
+    """
+    Pripravi rešitev, preden gre skozi JSON (glej `pripravi_resitev`).
     Poimenovanje ključev je pomembno pri preverjanju odgovorov - naj se ne spreminja!
     Rezultat je: tip                (vsi)
                  vrednost           (NE ndarray)
@@ -93,7 +106,7 @@ def data_to_json(object):
         return prepare_ndarray(object)
 
     if isinstance(object, complex):
-        return (object.real, object.imag)
+        return [object.real, object.imag]
 
     if type(object).__name__ in int_type_names:
         return int(object)
