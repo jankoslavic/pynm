@@ -143,4 +143,9 @@ def poslji(odgovor, id, st):
                         headers=headers,
                         cookies=cookies)
 
-    return r.json()['status']
+    # Odgovor strežnika izpišemo, ne vrnemo. Celice v nalogah kličejo `poslji(...)` brez
+    # `print(...)`, Jupyter pa za zadnji izraz v celici izpiše `repr()`, zato bi se
+    # večvrstično sporočilo izpisalo z vidnimi `\n` in narekovaji. Strežnik ob prvem
+    # oddanem odgovoru v odprtem oknu sporoči tudi, da se je začel čas za reševanje, in
+    # povezavo do odštevalnika, zato mora biti izpis večvrstičen.
+    print(r.json()['status'])
