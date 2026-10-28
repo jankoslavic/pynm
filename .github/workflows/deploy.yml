@@ -78,6 +78,7 @@ jobs:
         if: steps.tinytex.outputs.cache-hit != 'true'
         run: |
           wget -qO- https://yihui.org/tinytex/install-bin-unix.sh | sh
+          ~/.TinyTeX/bin/x86_64-linux/tlmgr update --self  # the bundled tlmgr can lag behind the repository
           ~/.TinyTeX/bin/x86_64-linux/tlmgr install $(grep -v '^#' .github/texlive-packages.txt | tr '\n' ' ')
       - name: Add TinyTeX to PATH
         run: echo "$HOME/.TinyTeX/bin/x86_64-linux" >> "$GITHUB_PATH"
